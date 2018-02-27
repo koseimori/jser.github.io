@@ -5,9 +5,266 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 25 Feb 2018 14:18:08 +0900</pubDate>
-    <lastBuildDate>Sun, 25 Feb 2018 14:18:08 +0900</lastBuildDate>
+    <pubDate>Tue, 27 Feb 2018 12:16:09 +0900</pubDate>
+    <lastBuildDate>Tue, 27 Feb 2018 12:16:09 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>2018-02-27のJS: webpack 4、プロファイルとパフォーマンス改善、KeyboardEvent.keyCodeの問題</title>
+        <description>&lt;p&gt;JSer.info #372 - webpack 4が正式リリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/webpack/webpack-4-released-today-6cdb994702d4&quot;&gt;🎼webpack 4: released today!!✨ – webpack – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/webpack/webpack/releases/tag/v4.0.0&quot;&gt;Release v4.0.0 · webpack/webpack&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ビルドパフォーマンスの改善、&lt;code&gt;mode&lt;/code&gt;オプションの追加、&lt;code&gt;CommonsChunkPlugin&lt;/code&gt;を廃止し代わりに&lt;code&gt;optimize&lt;/code&gt;オプションの追加、&lt;code&gt;.wasm&lt;/code&gt;、&lt;code&gt;.mjs&lt;/code&gt;などをEntry Pointとしてサポートなどが行われています。&lt;/p&gt;
+
+&lt;p&gt;新しいプラグインシステムが導入され、plugin/loader周りに破壊的な変更が行われています。&lt;br&gt;
+まだ、いくつかのplugin/loaderは4.xには対応していないものもあります。&lt;/p&gt;
+
+&lt;p&gt;plugin/loader作者向けのマイグレーションガイドは次の記事で公開されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/webpack/webpack-4-migration-guide-for-plugins-loaders-20a79b927202&quot; title=&quot;webpack 4: migration guide for plugins/loaders – webpack – Medium&quot;&gt;webpack 4: migration guide for plugins/loaders – webpack – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://mrale.ph/blog/2018/02/03/maybe-you-dont-need-rust-to-speed-up-your-js.html&quot; title=&quot;Maybe you don&amp;amp;#39;t need Rust and WASM to speed up your JS&quot;&gt;Maybe you don&amp;#39;t need Rust and WASM to speed up your JS&lt;/a&gt;という記事では、&lt;a href=&quot;https://twitter.com/mraleph&quot; title=&quot;@mraleph&quot;&gt;@mraleph&lt;/a&gt;さんがプロファイルを取りながらパフォーマンス改善を行うことについてを&lt;a href=&quot;https://github.com/mozilla/source-map&quot; title=&quot;mozilla/source-map&quot;&gt;mozilla/source-map&lt;/a&gt;を例に解説しています。&lt;/p&gt;
+
+&lt;p&gt;最近、&lt;a href=&quot;https://github.com/mozilla/source-map&quot; title=&quot;mozilla/source-map&quot;&gt;mozilla/source-map&lt;/a&gt;は作者である&lt;a href=&quot;https://twitter.com/fitzgen&quot; title=&quot;@fitzgen&quot;&gt;@fitzgen&lt;/a&gt;さんによってWebAssembly + Rustに書き換えられパフォーマンスが改善されました。これについては次の記事で解説されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2018/01/oxidizing-source-maps-with-rust-and-webassembly/&quot; title=&quot;Oxidizing Source Maps with Rust and WebAssembly – Mozilla Hacks – the Web developer blog&quot;&gt;Oxidizing Source Maps with Rust and WebAssembly – Mozilla Hacks – the Web developer blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;しかし&lt;a href=&quot;https://twitter.com/mraleph&quot; title=&quot;@mraleph&quot;&gt;@mraleph&lt;/a&gt;さんは、元となったJavaScript版での改善の余地について分析し、JavaScript版を元に改善のアプローチを3つのグループに分けて解説しています。&lt;br&gt;
+この記事では&lt;code&gt;d8&lt;/code&gt;(V8)や&lt;code&gt;perf&lt;/code&gt;を使ったプロファイルを取りながら、言語やV8の実装など深いところまで見ていく形になっています。&lt;/p&gt;
+
+&lt;p&gt;また、この記事に対して&lt;a href=&quot;https://twitter.com/fitzgen&quot; title=&quot;@fitzgen&quot;&gt;@fitzgen&lt;/a&gt;さんが&lt;a href=&quot;http://fitzgeraldnick.com/2018/02/26/speed-without-wizardry.html&quot; title=&quot;Speed Without Wizardry&quot;&gt;Speed Without Wizardry&lt;/a&gt;というレスポンス記事を書いているので併せて読むと良さそうです。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://d-toybox.com/studio/lib/what_is_keyCode.html&quot; title=&quot;KeyboardEvent.keyCodeとは何か - WebStudio&quot;&gt;KeyboardEvent.keyCodeとは何か - WebStudio&lt;/a&gt;という記事では&lt;code&gt;KeyboardEvent.keyCode&lt;/code&gt;の歴史や問題点について書かれています。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;KeyboardEvent.keyCode&lt;/code&gt;はブラウザやOS間で互換性の問題があり、また標準仕様がない問題について書かれています。&lt;br&gt;
+&lt;code&gt;keyCode&lt;/code&gt;の代わりに&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key&quot; title=&quot;KeyboardEvent.key&quot;&gt;KeyboardEvent.key&lt;/a&gt;や&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/API/KeyboardEvent/code&quot; title=&quot;KeyboardEvent.code&quot;&gt;KeyboardEvent.code&lt;/a&gt;など仕様化されたものがあります。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jest/changelog.md-at-v22.4.0-·-facebook/jest&quot;&gt;jest/CHANGELOG.md at v22.4.0 · facebook/jest&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/jest/blob/v22.4.0/CHANGELOG.md&quot; title=&quot;jest/CHANGELOG.md at v22.4.0 · facebook/jest&quot;&gt;github.com/facebook/jest/blob/v22.4.0/CHANGELOG.md&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Jest 22.4.0リリース。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;nohoist-in-workspaces-|-yarn-blog&quot;&gt;nohoist in Workspaces | Yarn Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://yarnpkg.com/blog/2018/02/15/nohoist/&quot; title=&quot;nohoist in Workspaces | Yarn Blog&quot;&gt;yarnpkg.com/blog/2018/02/15/nohoist/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;yarn workspaceの&lt;code&gt;nohoist&lt;/code&gt;オプションについての解説&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v1.1.0-·-googlechrome/puppeteer&quot;&gt;Release v1.1.0 · GoogleChrome/puppeteer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/puppeteer/releases/tag/v1.1.0&quot; title=&quot;Release v1.1.0 · GoogleChrome/puppeteer&quot;&gt;github.com/GoogleChrome/puppeteer/releases/tag/v1.1.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;puppeteer 1.1.0リリース。&lt;br&gt;
+Chromium 66.0.3348.0に更新、&lt;code&gt;BrowserFetcher&lt;/code&gt;、&lt;code&gt;page.waitForXPath&lt;/code&gt;のサポート。&lt;br&gt;
+&lt;code&gt;frame&lt;/code&gt;周りのイベントサポートの追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-electron-v2.0.0-beta.1-·-electron/electron&quot;&gt;Release electron v2.0.0-beta.1 · electron/electron&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/electron/electron/releases/tag/v2.0.0-beta.1&quot; title=&quot;Release electron v2.0.0-beta.1 · electron/electron&quot;&gt;github.com/electron/electron/releases/tag/v2.0.0-beta.1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Electron v2.0.0-beta.1リリース。&lt;br&gt;
+Chrome 61.0.3163.10、Node 8.9.3に更新。&lt;br&gt;
+非推奨のAPIの削除、&lt;code&gt;window.loadFile&lt;/code&gt;のサポート、Macでin-app purchaseのサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v9.6.0-(current)-|-node.js&quot;&gt;Node v9.6.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v9.6.0/&quot; title=&quot;Node v9.6.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v9.6.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node v9.6.0リリース。&lt;br&gt;
+&lt;code&gt;asyncResource.emit{Before,After}&lt;/code&gt;が非推奨となり&lt;code&gt;asyncResource.runInAsyncScope&lt;/code&gt;を代わりに追加。&lt;br&gt;
+Dynamic Importのサポート、&lt;code&gt;vm&lt;/code&gt;モジュールがES Moduleをサポート、&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-almin@0.16.0-·-almin/almin&quot;&gt;Release almin@0.16.0 · almin/almin&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/almin/almin/releases/tag/almin%400.16.0&quot; title=&quot;Release almin@0.16.0 · almin/almin&quot;&gt;github.com/almin/almin/releases/tag/almin%400.16.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;almin&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;almin 0.16.0リリース。&lt;br&gt;
+&lt;code&gt;Context&lt;/code&gt;の&lt;code&gt;dispatcher&lt;/code&gt;がオプショナルな引数に変更、&lt;code&gt;almin-react-container&lt;/code&gt;のバグ修正など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;🎼webpack-4:-released-today!!✨-–-webpack-–-medium&quot;&gt;🎼webpack 4: released today!!✨ – webpack – Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/webpack/webpack-4-released-today-6cdb994702d4&quot; title=&quot;🎼webpack 4: released today!!✨ – webpack – Medium&quot;&gt;medium.com/webpack/webpack-4-released-today-6cdb994702d4&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;opinion&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webpack 4リリース。&lt;br&gt;
+ビルドパフォーマンスの改善、&lt;code&gt;mode&lt;/code&gt;オプションの追加、&lt;code&gt;CommonsChunkPlugin&lt;/code&gt;の代わりに&lt;code&gt;optimize&lt;/code&gt;オプションの追加、&lt;code&gt;.wasm&lt;/code&gt;、&lt;code&gt;.mjs&lt;/code&gt;のサポートなど。&lt;br&gt;
+新しいプラグインシステムが導入され、plugin/loader周りに破壊的な変更が行われている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/webpack/webpack/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · webpack/webpack&quot;&gt;Release v4.0.0 · webpack/webpack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/webpack/webpack-4-mode-and-optimization-5423a6bc597a&quot; title=&quot;webpack 4: mode and optimization – webpack – Medium&quot;&gt;webpack 4: mode and optimization – webpack – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/webpack/webpack-4-migration-guide-for-plugins-loaders-20a79b927202&quot; title=&quot;webpack 4: migration guide for plugins/loaders – webpack – Medium&quot;&gt;webpack 4: migration guide for plugins/loaders – webpack – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://auth0.com/blog/webpack-4-release-what-is-new/&quot; title=&quot;Webpack 4.0 Release: What&amp;amp;amp;#39;s New?&quot;&gt;Webpack 4.0 Release: What&amp;#39;s New?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v5.7.0-·-npm/npm&quot;&gt;Release v5.7.0 · npm/npm&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/npm/npm/releases/tag/v5.7.0&quot; title=&quot;Release v5.7.0 · npm/npm&quot;&gt;github.com/npm/npm/releases/tag/v5.7.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm 5.7プレリリース。&lt;br&gt;
+package-lockのgit merge conflictを解決する&lt;code&gt;npm-merge-driver&lt;/code&gt;の公開、&lt;br&gt;
+常にlock-fileのみを参照する&lt;code&gt;npm ci&lt;/code&gt;コマンドの追加など。&lt;br&gt;
+5.7.0には&lt;code&gt;sudo&lt;/code&gt;利用時に問題があるため、5.7.1がリリースされている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/npm-merge-driver&quot; title=&quot;npm-merge-driver&quot;&gt;npm-merge-driver&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;using-promise.prototype.finally-in-node.js-|-www.thecodebarbarian.com&quot;&gt;Using Promise.prototype.finally in Node.js | www.thecodebarbarian.com&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://thecodebarbarian.com/using-promise-finally-in-node-js.html&quot; title=&quot;Using Promise.prototype.finally in Node.js | www.thecodebarbarian.com&quot;&gt;thecodebarbarian.com/using-promise-finally-in-node-js.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Promises&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Promise#finally&lt;/code&gt;についての記事。&lt;br&gt;
+Promiseの状態遷移や&lt;code&gt;finally&lt;/code&gt;の動作について。また&lt;code&gt;finally&lt;/code&gt;のハンドラでエラーが起きた際の動作について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;measuring-the-impact-of-3rd-party-tags-with-webpagetest---andy-davies&quot;&gt;Measuring the Impact of 3rd-Party Tags with WebPageTest - Andy Davies&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://andydavies.me/blog/2018/02/19/using-webpagetest-to-measure-the-impact-of-3rd-party-tags/&quot; title=&quot;Measuring the Impact of 3rd-Party Tags with WebPageTest - Andy Davies&quot;&gt;andydavies.me/blog/2018/02/19/using-webpagetest-to-measure-the-impact-of-3rd-party-tags/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;web &lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebPageTestを使ってサードパーティスクリプトがロードパフォーマンスにどのような影響を与えているかを比較する方法について。&lt;br&gt;
+特定のリクエストをブロックした結果と比較する方法について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;keyboardevent.keycodeとは何か---webstudio&quot;&gt;KeyboardEvent.keyCodeとは何か - WebStudio&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://d-toybox.com/studio/lib/what_is_keyCode.html&quot; title=&quot;KeyboardEvent.keyCodeとは何か - WebStudio&quot;&gt;d-toybox.com/studio/lib/what_is_keyCode.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;キーボード&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;KeyboardEvent.keyCode&lt;/code&gt;の歴史や実装について。 &lt;code&gt;keyCode&lt;/code&gt;はOSやブラウザ間で問題があり標準化もされていないため、&lt;code&gt;key&lt;/code&gt;や&lt;code&gt;code&lt;/code&gt;を代わりに使うべきという話。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;maybe-you-don&amp;#39;t-need-rust-and-wasm-to-speed-up-your-js&quot;&gt;Maybe you don&amp;#39;t need Rust and WASM to speed up your JS&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://mrale.ph/blog/2018/02/03/maybe-you-dont-need-rust-to-speed-up-your-js.html&quot; title=&quot;Maybe you don&amp;#39;t need Rust and WASM to speed up your JS&quot;&gt;mrale.ph/blog/2018/02/03/maybe-you-dont-need-rust-to-speed-up-your-js.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;opinion&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;プロファイルを取りながらパフォーマンスを改善していく話。 Rust + wasmで書き直されたSource Mapライブラリを例に、JS版でのボトルネックを調べ改善していく話。 アルゴリズムの改善、言語に依存する問題、実装に依存する問題について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ecmascriptの使い方&quot;&gt;ECMAScriptの使い方&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://azu.github.io/slide/2018/node/ecmascript39.html&quot; title=&quot;ECMAScriptの使い方&quot;&gt;azu.github.io/slide/2018/node/ecmascript39.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ECMAScriptのバージョンの歴史、なぜES2016以降の策定プロセスを変更したのかについて。&lt;br&gt;
+各ブラウザ実装の比較、仕様やプロポーザルの調べ方や利用方法について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;wedgetail&quot;&gt;Wedgetail&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wedgetail.js.org/index.html&quot; title=&quot;Wedgetail&quot;&gt;wedgetail.js.org/index.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;benchmark&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;コードの実行時間が期待値かをテストするライブラリ。 low、hight、averageを指定しコードの実行時間のテストを行える。 またパーセンタイルに対応している。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;theia-ide/theia:-theia-is-a-cloud-&amp;amp;-desktop-ide-framework-implemented-in-typescript.&quot;&gt;theia-ide/theia: Theia is a cloud &amp;amp; desktop IDE framework implemented in TypeScript.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/theia-ide/theia&quot; title=&quot;theia-ide/theia: Theia is a cloud &amp;amp; desktop IDE framework implemented in TypeScript.&quot;&gt;github.com/theia-ide/theia&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;editor&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;monaco-editorベースのCould IDE、Desktop IDE。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/monaco-editor&quot; title=&quot;Microsoft/monaco-editor: A browser based code editor&quot;&gt;Microsoft/monaco-editor: A browser based code editor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;exploring-es2018-and-es2019&quot;&gt;Exploring ES2018 and ES2019&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://exploringjs.com/es2018-es2019/&quot; title=&quot;Exploring ES2018 and ES2019&quot;&gt;exploringjs.com/es2018-es2019/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Exploring ES2018 and ES2019が公開された&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 27 Feb 2018 11:15:36 +0900</pubDate>
+        <link>https://jser.info/2018/02/27/webpack-4-keyboardevent.keycode/</link>
+        <guid isPermaLink="true">https://jser.info/2018/02/27/webpack-4-keyboardevent.keycode/</guid>
+        
+        <category>webpack</category>
+        
+        <category>performance</category>
+        
+        <category>keyboard</category>
+        
+        
+        <category>_i18n</category>
+        
+        <category>ja</category>
+        
+        <category>jser</category>
+        
+      </item>
     
       <item>
         <title>2018-02-20のJS: Ember 3.0、Propel MLでの機械学習</title>
@@ -2853,311 +3110,6 @@ lerna runのようにそれぞれのパッケージに対してコマンドを�
         <category>gulp</category>
         
         <category>babel</category>
-        
-        
-        <category>_i18n</category>
-        
-        <category>ja</category>
-        
-        <category>jser</category>
-        
-      </item>
-    
-      <item>
-        <title>2017-12-26のJS: Service Worker in MSEdge/Safari、Jest 22、jQuery UIとMobileの統合</title>
-        <description>&lt;p&gt;JSer.info #363 - MSEdge(Insider build)とSafari(Technology Preview)でそれぞれService Workerが実装されたことについてのブログが公開されました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2017/12/19/service-workers-going-beyond-page/&quot;&gt;Service Workers: Going beyond the page - Microsoft Edge Dev BlogMicrosoft Edge Dev Blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://webkit.org/blog/8042/release-notes-for-safari-technology-preview-46/&quot;&gt;Release Notes for Safari Technology Preview 46 | WebKit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;これによりモダンブラウザにはService Workerが実装されることになります。&lt;/p&gt;
-
-&lt;p class=&quot;ciu_embed&quot; data-feature=&quot;serviceworkers&quot; data-periods=&quot;future_1,current,past_1,past_2&quot;&gt;
-  &lt;a href=&quot;http://caniuse.com/#feat=serviceworkers&quot;&gt;Can I Use serviceworkers?&lt;/a&gt; Data on support for the serviceworkers feature across the major browsers from caniuse.com.
-&lt;/p&gt;
-
-&lt;p&gt;MSEdgeとSafariどちらもまだ実験的なビルドでの公開なので、正常に動かないケースもあるようです。&lt;br&gt;
-その場合はそれぞれのIssue Trackerに報告することが推奨されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;MSEdge: &lt;a href=&quot;https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/?page=1&amp;amp;q=Service%20Worker&quot; title=&quot;Microsoft Edge issue tracker - Microsoft Edge Development&quot;&gt;Microsoft Edge issue tracker - Microsoft Edge Development&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Safari: &lt;a href=&quot;https://bugs.webkit.org/buglist.cgi?quicksearch=Service%20Worker&quot; title=&quot;Bug List&quot;&gt;Bug List&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Jest 22がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://facebook.github.io/jest/blog/2017/12/18/jest-22.html&quot; title=&quot;Jest 22: Refinements &amp;amp;amp; Custom Runners · Jest&quot;&gt;Jest 22: Refinements &amp;amp; Custom Runners · Jest&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Node.js 4のサポート終了、Custom Runnerのコアとなる&lt;a href=&quot;https://github.com/facebook/jest/tree/master/packages/jest-worker&quot; title=&quot;jest-worker&quot;&gt;jest-worker&lt;/a&gt;が公開されました。&lt;br&gt;
-Jestは元々&lt;a href=&quot;https://github.com/rvagg/node-worker-farm&quot; title=&quot;node-worker-farm&quot;&gt;node-worker-farm&lt;/a&gt;を使い、テストの並列実行を行っていましたが、その役目を&lt;a href=&quot;https://github.com/facebook/jest/tree/master/packages/jest-worker&quot; title=&quot;jest-worker&quot;&gt;jest-worker&lt;/a&gt;に置き換えていました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/jest/pull/4497&quot; title=&quot;Initial version of jest-worker by mjesun · Pull Request #4497 · facebook/jest&quot;&gt;Initial version of jest-worker by mjesun · Pull Request #4497 · facebook/jest&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;そして、Jestを並列実行処理の基盤として使えるCustom RunnerがJest 22で正式に公開されています。&lt;br&gt;
-これにより、Jestの上で&lt;a href=&quot;https://github.com/rogeliog/jest-runner-mocha&quot; title=&quot;jest-runner-mocha&quot;&gt;jest-runner-mocha&lt;/a&gt;や&lt;a href=&quot;https://github.com/jest-community/jest-runner-eslint&quot; title=&quot;jest-runner-eslint&quot;&gt;jest-runner-eslint&lt;/a&gt;のように別のテストフレームワークやLint処理などを並列実行できるようになっています。&lt;/p&gt;
-
-&lt;p&gt;詳しくは次の動画を見てください。&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/NtjyeojAOBs&quot; frameborder=&quot;0&quot; gesture=&quot;media&quot; allow=&quot;encrypted-media&quot; allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;またテスト結果のフォーマッタの変更、&lt;code&gt;--detectLeaks&lt;/code&gt;の追加、Babel 7のサポートなどが行われています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.jqueryui.com/2017/12/the-future-of-jquery-ui-and-jquery-mobile/&quot; title=&quot;The Future of jQuery UI and jQuery Mobile | jQuery UI Blog&quot;&gt;The Future of jQuery UI and jQuery Mobile | jQuery UI Blog&lt;/a&gt;では、jQuery UIとjQuery Mobileのプロジェクト統合について書かれています。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jquery/jquery-mobile&quot; title=&quot;jquery-mobile&quot;&gt;jquery-mobile&lt;/a&gt;は&lt;a href=&quot;https://github.com/jquery/jquery-ui&quot; title=&quot;jquery-ui&quot;&gt;jquery-ui&lt;/a&gt;に依存していますが、今までチームやリポジトリは別々にありました。&lt;br&gt;
-今回、&lt;a href=&quot;https://github.com/scottgonzalez&quot; title=&quot;scottgonzalez&quot;&gt;@scottgonzalez&lt;/a&gt;がjQuery UIプロジェクトのリーダを辞めることになり、現在jQuery Mobileのプロジェクトリーダである&lt;a href=&quot;https://github.com/arschmitz&quot; title=&quot;arschmitz&quot;&gt;@arschmitz&lt;/a&gt;がjQuery UIプロジェクトも見ることになりました。&lt;br&gt;
-jQuery MobileはUIに依存しているため、重複や無駄を避けるために2つのプロジェクトを統合したチームにしていく方針について書かれています。&lt;/p&gt;
-
-&lt;p&gt;また合わせて協力者を募集するため&lt;a href=&quot;https://jqueryui-dev.slack.com/&quot;&gt;https://jqueryui-dev.slack.com/&lt;/a&gt;のslackチームを作り、意見を募集しています。&lt;br&gt;
-(&lt;a href=&quot;http://bit.ly/2Btf6pu&quot;&gt;http://bit.ly/2Btf6pu&lt;/a&gt;からslackチームにjoinできる)&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-46-|-webkit&quot;&gt;Release Notes for Safari Technology Preview 46 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8042/release-notes-for-safari-technology-preview-46/&quot; title=&quot;Release Notes for Safari Technology Preview 46 | WebKit&quot;&gt;webkit.org/blog/8042/release-notes-for-safari-technology-preview-46/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview Release 46リリース。&lt;br&gt;
-Service Workerがデフォルトで有効化、&lt;code&gt;--useBigInt&lt;/code&gt;フラグつきBigIntの実装、&lt;code&gt;img&lt;/code&gt;要素の&lt;code&gt;decoding&lt;/code&gt;属性のサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;v8-javascript-engine:-v8-release-v6.4&quot;&gt;V8 JavaScript Engine: V8 release v6.4&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://v8project.blogspot.com/2017/12/v8-release-64.html&quot; title=&quot;V8 JavaScript Engine: V8 release v6.4&quot;&gt;v8project.blogspot.com/2017/12/v8-release-64.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;V8 v6.4リリース。&lt;br&gt;
-パフォーマンス、メモリ使用量の改善。named captureなどの正規表現Proposalの実装と有効化、&lt;code&gt;import.meta.url&lt;/code&gt;のサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-webpack-cli-v.2.0.0-·-webpack/webpack-cli&quot;&gt;Release Webpack-CLI V.2.0.0 · webpack/webpack-cli&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/webpack/webpack-cli/releases/tag/v.2.0.0&quot; title=&quot;Release Webpack-CLI V.2.0.0 · webpack/webpack-cli&quot;&gt;github.com/webpack/webpack-cli/releases/tag/v.2.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpack-cli 2.0.0リリース。&lt;br&gt;
-&lt;code&gt;add&lt;/code&gt;コマンド、&lt;code&gt;serve&lt;/code&gt;コマンドの追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2.0.0-·-karma-runner/karma&quot;&gt;Release v2.0.0 · karma-runner/karma&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/karma-runner/karma/releases/tag/v2.0.0&quot; title=&quot;Release v2.0.0 · karma-runner/karma&quot;&gt;github.com/karma-runner/karma/releases/tag/v2.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Karma v2.0.0リリース。&lt;br&gt;
-Node.js 4未満のサポート終了、エラー表示の改善など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;eslint-v4.14.0-released---eslint---pluggable-javascript-linter&quot;&gt;ESLint v4.14.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2017/12/eslint-v4.14.0-released&quot; title=&quot;ESLint v4.14.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2017/12/eslint-v4.14.0-released&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ESLint 4.14.0リリース。&lt;br&gt;
-パーサ向けにScope解析のhookポイントが追加された。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jest-22:-refinements-&amp;amp;-custom-runners-·-jest&quot;&gt;Jest 22: Refinements &amp;amp; Custom Runners · Jest&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://facebook.github.io/jest/blog/2017/12/18/jest-22.html&quot; title=&quot;Jest 22: Refinements &amp;amp; Custom Runners · Jest&quot;&gt;facebook.github.io/jest/blog/2017/12/18/jest-22.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Jest 22リリース。&lt;br&gt;
-Node.js 4のサポート終了、カスタムRunnerのコアとなる&lt;code&gt;jest-worker&lt;/code&gt;の公開。&lt;br&gt;
-テスト結果のフォーマッタの変更、&lt;code&gt;--detectLeaks&lt;/code&gt;の追加、Babel 7のサポート、MITライセンスに変更など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;【連載記事】javascriptでプログラミングを学ぶ　その1：基礎と文法&quot;&gt;【連載記事】JavaScriptでプログラミングを学ぶ　その1：基礎と文法&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://sbfl.net/blog/2017/12/14/javascript-programming-1/&quot; title=&quot;【連載記事】JavaScriptでプログラミングを学ぶ　その1：基礎と文法&quot;&gt;sbfl.net/blog/2017/12/14/javascript-programming-1/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;プログラミングを学んだことない人向けのJavaScript入門連載。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;use-a-render-prop!-–-componentdidblog&quot;&gt;Use a Render Prop! – componentDidBlog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce&quot; title=&quot;Use a Render Prop! – componentDidBlog&quot;&gt;cdb.reacttraining.com/use-a-render-prop-50de598f11ce&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Reactの子コンポーネントと値やロジックを共有するパターンとしてのrender propsについて&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/reactjs/reactjs.org/pull/355&quot; title=&quot;Add doc about Render Props by mjackson · Pull Request #355 · reactjs/reactjs.org&quot;&gt;Add doc about Render Props by mjackson · Pull Request #355 · reactjs/reactjs.org&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-🎄&quot;&gt;React 🎄&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://react.holiday/&quot; title=&quot;React 🎄&quot;&gt;react.holiday/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;アドベントカレンダー形式のReactチュートリアル&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;service-workers:-going-beyond-the-page---microsoft-edge-dev-blogmicrosoft-edge-dev-blog&quot;&gt;Service Workers: Going beyond the page - Microsoft Edge Dev BlogMicrosoft Edge Dev Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2017/12/19/service-workers-going-beyond-page/&quot; title=&quot;Service Workers: Going beyond the page - Microsoft Edge Dev BlogMicrosoft Edge Dev Blog&quot;&gt;blogs.windows.com/msedgedev/2017/12/19/service-workers-going-beyond-page/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MSEdgeのService Workerが実装された。&lt;br&gt;
-Service Workerの基本的な使い方やService Workerの制限について書かれている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-future-of-jquery-ui-and-jquery-mobile-|-jquery-ui-blog&quot;&gt;The Future of jQuery UI and jQuery Mobile | jQuery UI Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.jqueryui.com/2017/12/the-future-of-jquery-ui-and-jquery-mobile/&quot; title=&quot;The Future of jQuery UI and jQuery Mobile | jQuery UI Blog&quot;&gt;blog.jqueryui.com/2017/12/the-future-of-jquery-ui-and-jquery-mobile/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;mobile&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;opinion&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;jQuery MobileはjQuery UIに依存しているが、今までは別々のチーム/リポジトリとなっていた。&lt;br&gt;
-重複などの無駄があるため、チームを統合し、停滞しているプロジェクトを改善していく指針が公開された。&lt;br&gt;
-あわせてSlackチャンネルを開設して協力者を募集している。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;preloading-modules- | -web- | -google-developers&quot;&gt;Preloading modules  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2017/12/modulepreload&quot; title=&quot;Preloading modules  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2017/12/modulepreload&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;modulepreload&amp;quot;&amp;gt;&lt;/code&gt;について。&lt;br&gt;
-&lt;code&gt;&amp;lt;link rel=&amp;quot;preload&amp;quot;&amp;gt;&lt;/code&gt;との違い、モジュールの依存関係はフラットにすべてのファイルを定義するべきかについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;idiomatic-redux:-using-reselect-selectors-for-encapsulation-and-performance-·-mark&amp;#39;s-dev-blog&quot;&gt;Idiomatic Redux: Using Reselect Selectors for Encapsulation and Performance · Mark&amp;#39;s Dev Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.isquaredsoftware.com/2017/12/idiomatic-redux-using-reselect-selectors/&quot; title=&quot;Idiomatic Redux: Using Reselect Selectors for Encapsulation and Performance · Mark&amp;#39;s Dev Blog&quot;&gt;blog.isquaredsoftware.com/2017/12/idiomatic-redux-using-reselect-selectors/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;reselectを使ったパフォーマンスの最適化について。&lt;br&gt;
-reselectはstateからstateを作るライブラリで、入力に対してメモ化が行われている。&lt;br&gt;
-これを使いReduxのstateからアプリケーションに適切な形へstateを変換させる例について紹介している&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;es6-modules-のエラー処理を決定的(deterministic)にした話---google-ドキュメント&quot;&gt;ES6 Modules のエラー処理を決定的(deterministic)にした話 - Google ドキュメント&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.google.com/document/d/1Wuc2LVLb2Ii-itnA4sKw_KndJGvZ4mvdfw0POm5qcs4/edit#&quot; title=&quot;ES6 Modules のエラー処理を決定的(deterministic)にした話 - Google ドキュメント&quot;&gt;docs.google.com/document/d/1Wuc2LVLb2Ii-itnA4sKw_KndJGvZ4mvdfw0POm5qcs4/edit#&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;spec&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ES Modules(仕様)のエラーがネットワークに依存したものとなっていて、毎回異なるエラーになる問題があった。&lt;br&gt;
-エラーが毎回同じ結果となるように、仕様をどのように修正していったかについて。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ブラウザのしくみ:-データ構造とアルゴリズムと雰囲気で理解する-dom-と-shadow-dom-—-hayato.io&quot;&gt;ブラウザのしくみ: データ構造とアルゴリズムと雰囲気で理解する DOM と Shadow DOM — hayato.io&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hayato.io/2017/dom/&quot; title=&quot;ブラウザのしくみ: データ構造とアルゴリズムと雰囲気で理解する DOM と Shadow DOM — hayato.io&quot;&gt;hayato.io/2017/dom/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;DOMやShadow DOMの構造や実装についての解説記事。&lt;br&gt;
-Shadow DOMの登場によってDOMはツリーのツリー(Super Tree)となっている。&lt;br&gt;
-その場合におけるCSSセレクタのマッチングやイベントパスについてなどをChromeの実装と合わせて解説している。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;lint-the-web-forward-with-sonarwhal-◆-24-ways&quot;&gt;Lint the Web Forward With Sonarwhal ◆ 24 ways&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://24ways.org/2017/lint-the-web-forward-with-sonarwhal/&quot; title=&quot;Lint the Web Forward With Sonarwhal ◆ 24 ways&quot;&gt;24ways.org/2017/lint-the-web-forward-with-sonarwhal/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;web &lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Sonarwhalを使ったウェブサイトのLintについての記事。&lt;br&gt;
-Sonarwhalの基本的な使い方や設定について解説している&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;testing-angular-2-and-continuous-integration-with-jest---semaphore&quot;&gt;Testing Angular 2 and Continuous Integration with Jest - Semaphore&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://semaphoreci.com/community/tutorials/testing-angular-2-and-continuous-integration-with-jest&quot; title=&quot;Testing Angular 2 and Continuous Integration with Jest - Semaphore&quot;&gt;semaphoreci.com/community/tutorials/testing-angular-2-and-continuous-integration-with-jest&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Jestを使ったAngularのテストについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;日経電子版-サイト高速化とpwa対応-/-nikkei-high-performance-pwa-//-speaker-deck&quot;&gt;日経電子版 サイト高速化とPWA対応 / nikkei-high-performance-pwa // Speaker Deck&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/sisidovski/nikkei-high-performance-pwa&quot; title=&quot;日経電子版 サイト高速化とPWA対応 / nikkei-high-performance-pwa // Speaker Deck&quot;&gt;speakerdeck.com/sisidovski/nikkei-high-performance-pwa&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ウェブサイトのパフォーマンス改善についてのスライド。&lt;br&gt;
-アセットの配信の最適化、Resource Hintsでのpreload。&lt;br&gt;
-SpeedCurveを使ってのモニタリングやファイルサイズのチェック。&lt;br&gt;
-Service Workerでのキャッシュやデバッグなどについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;amsul/react-performance:-helpers-to-debug-and-record-component-render-performance-🚀&quot;&gt;amsul/react-performance: Helpers to debug and record component render performance 🚀&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/amsul/react-performance&quot; title=&quot;amsul/react-performance: Helpers to debug and record component render performance 🚀&quot;&gt;github.com/amsul/react-performance&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React 16で動く&lt;code&gt;react-addons-perf&lt;/code&gt;のようなものを目指すライブラリ。&lt;br&gt;
-Reactコンポーネントのプロファイルを取れるライブラリ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;responsively-retrofitting:-retrofitting-web-sites-with-html5-and-css3:-christopher-schmitt:-9781449364205:-amazon.com:-books&quot;&gt;Responsively Retrofitting: Retrofitting Web Sites with HTML5 and CSS3: Christopher Schmitt: 9781449364205: Amazon.com: Books&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/Responsively-Retrofitting-Sites-HTML5-CSS3/dp/1449364209&quot; title=&quot;Responsively Retrofitting: Retrofitting Web Sites with HTML5 and CSS3: Christopher Schmitt: 9781449364205: Amazon.com: Books&quot;&gt;www.amazon.com/Responsively-Retrofitting-Sites-HTML5-CSS3/dp/1449364209&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2018年8月25日発売&lt;br&gt;
-既存のレガシーなウェブサイトをモバイル向けにリニューアルする方法についてを扱う書籍&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 26 Dec 2017 18:55:06 +0900</pubDate>
-        <link>https://jser.info/2017/12/26/service-worker-in-msedgesafari-jest-22-jquery-uimobile/</link>
-        <guid isPermaLink="true">https://jser.info/2017/12/26/service-worker-in-msedgesafari-jest-22-jquery-uimobile/</guid>
-        
-        <category>ServiceWorker</category>
-        
-        <category>jest</category>
-        
-        <category>jQuery</category>
         
         
         <category>_i18n</category>
