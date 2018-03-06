@@ -5,9 +5,304 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 04 Mar 2018 13:06:29 +0900</pubDate>
-    <lastBuildDate>Sun, 04 Mar 2018 13:06:29 +0900</lastBuildDate>
+    <pubDate>Tue, 06 Mar 2018 11:29:18 +0900</pubDate>
+    <lastBuildDate>Tue, 06 Mar 2018 11:29:18 +0900</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>2018-03-06のJS:  TestCafe v0.19.0、ランタイム情報を使ったTypeScriptの型付け、Web Componentsでの開発</title>
+        <description>&lt;p&gt;JSer.info #373 - TestCafe v0.19.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://devexpress.github.io/testcafe/blog/testcafe-v0-19-0-released.html&quot; title=&quot;TestCafe v0.19.0 Released - Rapid Test Development Tool, Screenshots of Page Elements, etc | TestCafe&quot;&gt;TestCafe v0.19.0 Released - Rapid Test Development Tool, Screenshots of Page Elements, etc | TestCafe&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ファイルの変更を監視し、更新されたら再実行できる&lt;code&gt;testcafe-live&lt;/code&gt;コマンドの追加されています。&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/RWQtB6Xv01Q&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cypress.io/&quot; title=&quot;Cypress&quot;&gt;Cypress&lt;/a&gt;もそうですが、テストを書く際にトライアンドエラーがしやすい機能を持ったテストフレームワークが増えている印象です。&lt;/p&gt;
+
+&lt;p&gt;また、セレクタの結果をフィルターする&lt;code&gt;filterVisible&lt;/code&gt;と&lt;code&gt;filterHidden&lt;/code&gt;、テキストマッチした要素を取得する&lt;code&gt;withExactText&lt;/code&gt;の追加などが行われています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/urish/typewiz&quot; title=&quot;typewiz&quot;&gt;typewiz&lt;/a&gt;というTypeScriptの型付を補助するツールが公開されています。&lt;/p&gt;
+
+&lt;p&gt;このツールで&lt;a href=&quot;https://github.com/urish/typewiz/blob/master/packages/typewiz-node/README.md&quot; title=&quot;typewiz-node&quot;&gt;typewiz-node&lt;/a&gt;、&lt;a href=&quot;https://github.com/urish/typewiz/blob/master/packages/typewiz-webpack/README.md&quot; title=&quot;typewiz-webpack&quot;&gt;typewiz-webpack&lt;/a&gt;で変換して実行して得た実行時の型情報を元に、コードベースに型を付けるツールです。&lt;/p&gt;
+
+&lt;p&gt;ASTを使ったコード変換したコードの実行時に関数の引数/変数/返り値にどのような値が入るかを記録し、その情報を元に&lt;code&gt;string&lt;/code&gt;/&lt;code&gt;number&lt;/code&gt;/&lt;code&gt;boolean&lt;/code&gt;/&lt;code&gt;null&lt;/code&gt;/&lt;code&gt;undefined&lt;/code&gt;といった型を推測します。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/urish/typewiz/blob/35e8dc31fb7cdca968b212ba905710af4dfb2d22/src/instrument.ts&quot; title=&quot;instrument.ts&quot;&gt;instrument.ts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/urish/typewiz/blob/master/src/type-collector-snippet.ts&quot; title=&quot;type-collector-snippet.ts&quot;&gt;type-collector-snippet.ts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;any&lt;/code&gt;で型を付けされたTypeScriptのコードに対して型を付けることが目的のツールです。&lt;br&gt;
+詳細は次の記事で解説されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@urish/manual-typing-is-no-fun-introducing-typewiz-58e3e8813f4c&quot; title=&quot;Manual Typing is No Fun: Introducing TypeWiz! – Uri Shaked – Medium&quot;&gt;Manual Typing is No Fun: Introducing TypeWiz! – Uri Shaked – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;prettier-1.11:-css-fixes-and-new-typescript-feature-support-·-prettier&quot;&gt;Prettier 1.11: CSS fixes and new TypeScript feature support · Prettier&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://prettier.io/blog/2018/02/26/1.11.0.html&quot; title=&quot;Prettier 1.11: CSS fixes and new TypeScript feature support · Prettier&quot;&gt;prettier.io/blog/2018/02/26/1.11.0.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Prettier 1.11リリース。&lt;br&gt;
+Facebookのコードベースは100% Prettierを通すようになった。&lt;br&gt;
+PostCSSの対応改善、TypeScript 2.7の対応、pluginでオプションのサポートなど。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;google-developers-blog:-announcing-flutter-beta-1:-build-beautiful-native-apps&quot;&gt;Google Developers Blog: Announcing Flutter beta 1: Build beautiful native apps&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.googleblog.com/2018/02/announcing-flutter-beta-1.html&quot; title=&quot;Google Developers Blog: Announcing Flutter beta 1: Build beautiful native apps&quot;&gt;developers.googleblog.com/2018/02/announcing-flutter-beta-1.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;dart&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Dartを使いモバイルアプリを作るフレームワークのFlutter β1がリリースされた。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v9.7.0-(current)-|-node.js&quot;&gt;Node v9.7.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v9.7.0/&quot; title=&quot;Node v9.7.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v9.7.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 9.7.0リリース。&lt;br&gt;
+&lt;code&gt;util.getSystemErrorName&lt;/code&gt;の追加、&lt;code&gt;immediate.ref()&lt;/code&gt;と&lt;code&gt;immediate.unref()&lt;/code&gt;の追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;moment/changelog.md-at-develop-·-moment/moment&quot;&gt;moment/CHANGELOG.md at develop · moment/moment&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/moment/moment/blob/develop/CHANGELOG.md&quot; title=&quot;moment/CHANGELOG.md at develop · moment/moment&quot;&gt;github.com/moment/moment/blob/develop/CHANGELOG.md&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;moment 2.21.0リリース。&lt;br&gt;
+バグ修正やロケールの追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jasmine/3.1.0.md-at-master-·-jasmine/jasmine&quot;&gt;jasmine/3.1.0.md at master · jasmine/jasmine&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jasmine/jasmine/blob/master/release_notes/3.1.0.md&quot; title=&quot;jasmine/3.1.0.md at master · jasmine/jasmine&quot;&gt;github.com/jasmine/jasmine/blob/master/release_notes/3.1.0.md&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;jasmine&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;jasmine 3.1リリース。 matcherに&lt;code&gt;truthy&lt;/code&gt;、&lt;code&gt;falsy&lt;/code&gt;、&lt;code&gt;empty&lt;/code&gt;、&lt;code&gt;notEmpty&lt;/code&gt;の追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;testcafe-v0.19.0-released---rapid-test-development-tool,-screenshots-of-page-elements,-etc-|-testcafe&quot;&gt;TestCafe v0.19.0 Released - Rapid Test Development Tool, Screenshots of Page Elements, etc | TestCafe&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://devexpress.github.io/testcafe/blog/testcafe-v0-19-0-released.html&quot; title=&quot;TestCafe v0.19.0 Released - Rapid Test Development Tool, Screenshots of Page Elements, etc | TestCafe&quot;&gt;devexpress.github.io/testcafe/blog/testcafe-v0-19-0-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TestCafe 0.19.0リリース。 ファイル監視し保存されたら再実行できる&lt;code&gt;testcafe-live&lt;/code&gt;コマンドの追加。 セレクタの結果をフィルターする&lt;code&gt;filterVisible&lt;/code&gt;と&lt;code&gt;filterHidden&lt;/code&gt;の追加、テキストマッチした要素を取得する&lt;code&gt;withExactText&lt;/code&gt;の追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;demystifying-es6-classes-and-prototypal-inheritance-―-scotch&quot;&gt;Demystifying ES6 Classes And Prototypal Inheritance ― Scotch&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://scotch.io/tutorials/demystifying-es6-classes-and-prototypal-inheritance&quot; title=&quot;Demystifying ES6 Classes And Prototypal Inheritance ― Scotch&quot;&gt;scotch.io/tutorials/demystifying-es6-classes-and-prototypal-inheritance&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ES2015の&lt;code&gt;class&lt;/code&gt;構文についての解説。&lt;br&gt;
+クラスの定義や使い方、継承について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;exploring-different-graphql-clients-–-itnext&quot;&gt;Exploring different GraphQL Clients – ITNEXT&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://itnext.io/exploring-different-graphql-clients-d1bc69de305f&quot; title=&quot;Exploring different GraphQL Clients – ITNEXT&quot;&gt;itnext.io/exploring-different-graphql-clients-d1bc69de305f&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;GraphQLクライアントの紹介記事。&lt;br&gt;
+FetchQL、GraphQL Request、Apollo Fetch、Lokka、Micro GraphQL React、URQL、Apollo Client、Relay Modernについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;manual-typing-is-no-fun:-introducing-typewiz!-–-uri-shaked-–-medium&quot;&gt;Manual Typing is No Fun: Introducing TypeWiz! – Uri Shaked – Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@urish/manual-typing-is-no-fun-introducing-typewiz-58e3e8813f4c&quot; title=&quot;Manual Typing is No Fun: Introducing TypeWiz! – Uri Shaked – Medium&quot;&gt;medium.com/@urish/manual-typing-is-no-fun-introducing-typewiz-58e3e8813f4c&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScriptの型付けを補助するツール。&lt;br&gt;
+webpackやnode hookを使い変換したコードを実行し、実行時の関数の引数、返り値、変数へ実際に入った値から型を推測する。&lt;br&gt;
+その推測した型をTypeScriptのコードに対して適応することで型付けを補助する。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-capacitor-1.0.0-alpha-|-the-official-ionic-blog&quot;&gt;Announcing Capacitor 1.0.0 Alpha | The Official Ionic Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.ionicframework.com/announcing-capacitor-1-0-0-alpha/&quot; title=&quot;Announcing Capacitor 1.0.0 Alpha | The Official Ionic Blog&quot;&gt;blog.ionicframework.com/announcing-capacitor-1-0-0-alpha/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Ionicからクロスプラットフォームで動作するアプリ開発フレームワークのCapacitorがα版公開された&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;angular-v6で導入されるtree-shakable-diの紹介---らこらこブログ&quot;&gt;Angular v6で導入されるTree-Shakable DIの紹介 - らこらこブログ&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://lacolaco.hatenablog.com/entry/2018/03/01/150847&quot; title=&quot;Angular v6で導入されるTree-Shakable DIの紹介 - らこらこブログ&quot;&gt;lacolaco.hatenablog.com/entry/2018/03/01/150847&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Angular 6で導入される新しいDependency Injectionの仕組みと目的について。&lt;br&gt;
+bundleする際のdead codeを削除し易い依存関係にしたDIの仕組み&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react.js-frequently-faced-problems-–-samer-buna-–-medium&quot;&gt;React.js Frequently Faced Problems – Samer Buna – Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@samerbuna/react-js-frequently-faced-problems-45e7060ef884&quot; title=&quot;React.js Frequently Faced Problems – Samer Buna – Medium&quot;&gt;medium.com/@samerbuna/react-js-frequently-faced-problems-45e7060ef884&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;初めてReactを使うときのRact/JSXのつまりどころについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;🌏-hello-world!-progressive-web-blog!!&quot;&gt;🌏 Hello World! Progressive Web-Blog!!&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.uskay.io/article/001-pwa-blog-loading&quot; title=&quot;🌏 Hello World! Progressive Web-Blog!!&quot;&gt;blog.uskay.io/article/001-pwa-blog-loading&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Web Componentsを使ったブログの開発とPRPL Patternでのパフォーマンス最適化について。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;hyperhtmlやlit-htmlが効率的に再描画を行う仕組み---qiita&quot;&gt;hyperHTMLやlit-htmlが効率的に再描画を行う仕組み - Qiita&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/rikuba/items/92da6d99e2b0f831cc65&quot; title=&quot;hyperHTMLやlit-htmlが効率的に再描画を行う仕組み - Qiita&quot;&gt;qiita.com/rikuba/items/92da6d99e2b0f831cc65&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;hyperHTMLやlit-htmlのDOM更新の仕組みについて。&lt;br&gt;
+タグ付きテンプレート関数を使い、初回時に更新時はどの位置の要素を更新するかをマッピング、更新時はマッピングを元に要素/値の更新だけを行う。&lt;br&gt;
+またテンプレートのキャッシュを利用し無駄なパースを避けるなどの工夫について。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;loading-third-party-javascript- | -web-fundamentals- | -google-developers&quot;&gt;Loading Third-Party JavaScript  |  Web Fundamentals  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/&quot; title=&quot;Loading Third-Party JavaScript  |  Web Fundamentals  |  Google Developers&quot;&gt;developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;サードパーティスクリプトのパフォーマンスへの影響について。&lt;br&gt;
+開発者ツールを使っての可視化、開発者ツールやWebPageTestでリクエストをブロックしての影響度の確認方法、Long Taskの確認方法、Resource Hintなどを使った改善方法について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-npm-blog-—-introducing-`npm-ci`-for-faster,-more-reliable...&quot;&gt;The npm Blog — Introducing `npm ci` for faster, more reliable...&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable&quot; title=&quot;The npm Blog — Introducing \`npm ci\` for faster, more reliable...&quot;&gt;blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;pacakge-lock.json&lt;/code&gt;から常にクリーンインストールする&lt;code&gt;npm ci&lt;/code&gt;について。&lt;br&gt;
+現在の存在する&lt;code&gt;node_modules&lt;/code&gt;ディレクトリを削除し、&lt;code&gt;pacakge-lock.json&lt;/code&gt;を元にインストールするCI環境向けのインストールコマンド。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zkat/node-package-manager-benchmark/tree/zkat/cipm&quot; title=&quot;zkat/node-package-manager-benchmark at zkat/cipm&quot;&gt;zkat/node-package-manager-benchmark at zkat/cipm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;what&amp;#39;s-new-in-devtools-(chrome-66)- | -web- | -google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 66)  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/02/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 66)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/02/devtools&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 66の開発者ツールの変更点について。&lt;br&gt;
+ネットワークパネルからブラックボックススクリプト化を選択できるように、CSSファイルの変更のみだったLocal OverridesがHTML内のCSSにも対応など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webpack4への簡単なマイグレーションガイド---技術探し&quot;&gt;webpack4への簡単なマイグレーションガイド - 技術探し&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://abouthiroppy.hatenablog.jp/entry/migrate-to-webpack4&quot; title=&quot;webpack4への簡単なマイグレーションガイド - 技術探し&quot;&gt;abouthiroppy.hatenablog.jp/entry/migrate-to-webpack4&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webpack 4の変更点とマイグレーションのために必要な変更について。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;web-components-で-社内-ui-ライブラリを作っている話&quot;&gt;Web Components で 社内 UI ライブラリを作っている話&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jmblog.jp/slides/webcomponents.kyoto.2.pdf&quot; title=&quot;Web Components で 社内 UI ライブラリを作っている話&quot;&gt;jmblog.jp/slides/webcomponents.kyoto.2.pdf&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;プリミティブなコンポーネントをWebComponentとして作成することに関するスライド。&lt;br&gt;
+ReactやAngularなど各種ライブラリから利用できる共通コンポーネントとして作成。&lt;br&gt;
+&lt;code&gt;lit-html&lt;/code&gt;を使ったコンポーネントとスタイル、コンポーネントの配布の問題についてなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://custom-elements-everywhere.com/&quot; title=&quot;Custom Elements Everywhere&quot;&gt;Custom Elements Everywhere&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jmblog.jp/posts/2018-02-15/lit-html-with-shadycss/&quot; title=&quot;lit-html と ShadyCSS - jmblog.jp&quot;&gt;lit-html と ShadyCSS - jmblog.jp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;bit---the-fastest-way-to-share-code&quot;&gt;Bit - The fastest way to share code&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bitsrc.io/&quot; title=&quot;Bit - The fastest way to share code&quot;&gt;bitsrc.io/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptのコード/コンポーネントシェアサービス。&lt;br&gt;
+コンポーネントを管理/公開するCLIが用意されている。&lt;br&gt;
+コンポーネントの公開/管理/発見の難しさの問題の解決を意図したサービス。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.bitsrc.io/how-to-publish-multiple-packages-from-any-repository-in-5-minutes-9aafd31d85b7&quot; title=&quot;How To “Publish” Multiple Packages From Any Repository In 5 Minutes&quot;&gt;How To “Publish” Multiple Packages From Any Repository In 5 Minutes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;fabiandev/ts-runtime:-runtime-type-checks-for-typescript&quot;&gt;fabiandev/ts-runtime: Runtime Type Checks for TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/fabiandev/ts-runtime&quot; title=&quot;fabiandev/ts-runtime: Runtime Type Checks for TypeScript&quot;&gt;github.com/fabiandev/ts-runtime&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScriptのコードをランタイムチェックできるように変換するツール&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 06 Mar 2018 10:36:45 +0900</pubDate>
+        <link>https://jser.info/2018/03/06/testcafe-v0.19.0-web-components/</link>
+        <guid isPermaLink="true">https://jser.info/2018/03/06/testcafe-v0.19.0-web-components/</guid>
+        
+        <category>E2E</category>
+        
+        <category>TypeScript</category>
+        
+        
+        <category>_i18n</category>
+        
+        <category>ja</category>
+        
+        <category>jser</category>
+        
+      </item>
     
       <item>
         <title>2018-02-27のJS: webpack 4、プロファイルとパフォーマンス改善、KeyboardEvent.keyCodeの問題</title>
@@ -2803,313 +3098,6 @@ SEO auditの追加、手動のアクセシビリティチェックリストの�
         <category>fusebox</category>
         
         <category>vue</category>
-        
-        
-        <category>_i18n</category>
-        
-        <category>ja</category>
-        
-        <category>jser</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-01-02のJS: npmのパッケージ名のルール変更、gulp 4.0.0プレリリース、Babel 7の変更予定</title>
-        <description>&lt;p&gt;JSer.info #364 - &lt;a href=&quot;http://blog.npmjs.org/post/168978377570/new-package-moniker-rules&quot; title=&quot;The npm Blog — New Package Moniker rules&quot;&gt;The npm Blog — New Package Moniker rules&lt;/a&gt;という記事では、npmが受け付けるパッケージ名のルールが変更されたことについて書かれています。&lt;/p&gt;
-
-&lt;p&gt;今までは、パッケージ名の&lt;code&gt;.&lt;/code&gt;, &lt;code&gt;_&lt;/code&gt;, &lt;code&gt;-&lt;/code&gt;の違いを区別し、別のパッケージであるものとして受け付けていました。&lt;br&gt;
-しかし、これからは&lt;code&gt;.&lt;/code&gt;, &lt;code&gt;_&lt;/code&gt;, &lt;code&gt;-&lt;/code&gt;は含められますが、それらの違いを区別しなくなりました&lt;/p&gt;
-
-&lt;p&gt;たとえば、&lt;code&gt;react-native&lt;/code&gt;というパッケージが公開されている場合に、次のような名前のパッケージは公開(publish)できなくなります。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;reactnative&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;react_native&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;react.native&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;この変更によりパッケージ名に使える名前は減りますが、代わりに現在はScoped module(&lt;code&gt;@user/package&lt;/code&gt;)として名前空間を分けることができます。そのためScoped moduleを使ってパッケージを公開するで、引き続き一意な名前で公開できます。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · gulpjs/gulp&quot;&gt;gulp 4.0.0&lt;/a&gt;がプレリリースされています。&lt;br&gt;
-次のように&lt;code&gt;@next&lt;/code&gt;を指定することでインストールできます。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;npm install gulp@next
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp/blob/v4.0.0/CHANGELOG.md&quot; title=&quot;gulp/CHANGELOG.md at v4.0.0 · gulpjs/gulp&quot;&gt;gulp/CHANGELOG.md at v4.0.0 · gulpjs/gulp&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;gulp.reset&lt;/code&gt;の削除、&lt;code&gt;gulp.task&lt;/code&gt;の引数の変更。&lt;br&gt;
-&lt;code&gt;gulp.series&lt;/code&gt;と&lt;code&gt;gulp.parallel&lt;/code&gt;、&lt;code&gt;gulp.tree&lt;/code&gt;、&lt;code&gt;gulp.registry&lt;/code&gt;の追加。&lt;/p&gt;
-
-&lt;p&gt;今までは、&lt;code&gt;gulp.task&lt;/code&gt;の第二引数で依存のTaskを定義していました。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;default&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;del&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// default task code here&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;gulp 4.0.0からは、&lt;code&gt;gulp.series&lt;/code&gt;などを使い依存を含めたTaskを定義します。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;default&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;series&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;del&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// default task code here&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;詳しくはドキュメントが公開されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp/tree/master/docs&quot; title=&quot;gulp/docs at master · gulpjs/gulp&quot;&gt;gulp/docs at master · gulpjs/gulp&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;現在このドキュメントの更新なども行われていて、gulp 4の正式リリースはこのドキュメントの修正やマイグレーションガイドなどが用意できたら行うようです。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp/issues/1486&quot;&gt;[Notice] gulp 4 release process · Issue #1486 · gulpjs/gulp&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp/milestone/5&quot;&gt;gulp 4 - latest tag Milestone&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://babeljs.io/blog/2017/12/27/nearing-the-7.0-release&quot; title=&quot;Nearing the 7.0 Release · Babel&quot;&gt;Nearing the 7.0 Release · Babel&lt;/a&gt;という記事ではリリースが近づいてきているBabel 7の変更点について書かれています。&lt;/p&gt;
-
-&lt;p&gt;Babelプラグインの最新のECMAScript仕様への追従や&lt;code&gt;@babel/*&lt;/code&gt;へのScoped moduleへの変更、ECMAScript Proposalに関するパッケージ名のルール変更などについて書かれています。&lt;/p&gt;
-
-&lt;p&gt;また、前回の&lt;a href=&quot;https://babeljs.io/blog/2017/09/12/planning-for-7.0&quot; title=&quot;Planning for 7.0 · Babel&quot;&gt;Planning for 7.0 · Babel&lt;/a&gt;から変更点についても書かれています。&lt;br&gt;
-当初は&lt;a href=&quot;https://github.com/babel/babel/issues/5276&quot; title=&quot;Deprecate env option in .babelrc&quot;&gt;Deprecate env option in .babelrc&lt;/a&gt;のように&lt;code&gt;env&lt;/code&gt;オプションを非推奨とする予定でしたが、この変更は撤回されています。&lt;br&gt;
-併せて、今までは&lt;code&gt;class MyArray extends Array{}&lt;/code&gt;のようなビルトインオブジェクトの継承は動かない変換が行われていましたが、&lt;a href=&quot;https://github.com/babel/babel/pull/7020&quot; title=&quot;Add support for extending builtins by nicolo-ribaudo · Pull Request #7020 · babel/babel&quot;&gt;Add support for extending builtins&lt;/a&gt;によってサポートされるようになります。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://speakingjs.com/es5/ch28.html&quot; title=&quot;Chapter 28. Subclassing Built-ins&quot;&gt;Chapter 28. Subclassing Built-ins&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ES5ではビルトインオブジェクトの継承について書かれている&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-npm-blog-—-new-package-moniker-rules&quot;&gt;The npm Blog — New Package Moniker rules&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.npmjs.org/post/168978377570/new-package-moniker-rules&quot; title=&quot;The npm Blog — New Package Moniker rules&quot;&gt;blog.npmjs.org/post/168978377570/new-package-moniker-rules&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npmにパッケージをpublishする際のルールが変更された。&lt;br&gt;
-パッケージ名に含まれる&lt;code&gt;.&lt;/code&gt;、&lt;code&gt;-&lt;/code&gt;、&lt;code&gt;_&lt;/code&gt;の違いによる区別をしなくなった。&lt;br&gt;
-&lt;code&gt;react-native&lt;/code&gt;と&lt;code&gt;react.native&lt;/code&gt;を同じものとして扱い、タイプミスを狙った類似パッケージの公開を防止する目的。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/validate-npm-package-name&quot; title=&quot;validate-npm-package-name&quot;&gt;validate-npm-package-name&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introducing-hyperapp-1.0-🎉-–-jorge-bucaran-–-medium&quot;&gt;Introducing Hyperapp 1.0 🎉 – Jorge Bucaran – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@JorgeBucaran/introducing-hyperapp-1-0-dbf4229abfef&quot; title=&quot;Introducing Hyperapp 1.0 🎉 – Jorge Bucaran – Medium&quot;&gt;medium.com/@JorgeBucaran/introducing-hyperapp-1-0-dbf4229abfef&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;hyperapp 1.0.0リリース。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/hyperapp/hyperapp/releases/tag/1.0.0&quot; title=&quot;Release 1.0.0 · hyperapp/hyperapp&quot;&gt;Release 1.0.0 · hyperapp/hyperapp&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v4.0.0-·-gulpjs/gulp&quot;&gt;Release v4.0.0 · gulpjs/gulp&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · gulpjs/gulp&quot;&gt;github.com/gulpjs/gulp/releases/tag/v4.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;gulp 4.0.0プレリリース。&lt;br&gt;
-&lt;code&gt;npm install gulp@next&lt;/code&gt;でインストールできるように。&lt;br&gt;
-&lt;code&gt;gulp.reset&lt;/code&gt;、&lt;code&gt;gulp.task&lt;/code&gt;の第三引数の削除。&lt;br&gt;
-&lt;code&gt;gulp.series&lt;/code&gt;と&lt;code&gt;gulp.parallel&lt;/code&gt;、&lt;code&gt;gulp.tree&lt;/code&gt;、&lt;code&gt;gulp.registry&lt;/code&gt;の追加。&lt;br&gt;
-&lt;code&gt;gulp&lt;/code&gt;と&lt;code&gt;gulp-cli&lt;/code&gt;の分離など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp/blob/v4.0.0/CHANGELOG.md&quot; title=&quot;gulp/CHANGELOG.md at v4.0.0 · gulpjs/gulp&quot;&gt;gulp/CHANGELOG.md at v4.0.0 · gulpjs/gulp&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp/issues/1486&quot; title=&quot;\[Notice\] gulp 4 release process · Issue #1486 · gulpjs/gulp&quot;&gt;[Notice] gulp 4 release process · Issue #1486 · gulpjs/gulp&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ember.js---ember-2.18-and-3.0-beta-released&quot;&gt;Ember.js - Ember 2.18 and 3.0 Beta Released&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://emberjs.com/blog/2018/01/01/ember-2-18-released.html&quot; title=&quot;Ember.js - Ember 2.18 and 3.0 Beta Released&quot;&gt;emberjs.com/blog/2018/01/01/ember-2-18-released.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Ember&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Ember 2.1.8と3.0βリリース。&lt;br&gt;
-Ember 3.0ではIE 9, 10のサポート終了、2.xで非推奨となった機能の削除され、それらは&lt;code&gt;ember-2-legacy&lt;/code&gt;アドオンにポートされる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/emberjs/rfcs/blob/master/text/0252-browser-support-changes.md&quot; title=&quot;rfcs/0252-browser-support-changes.md at master · emberjs/rfcs&quot;&gt;rfcs/0252-browser-support-changes.md at master · emberjs/rfcs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.emberjs.com/blog/2017/10/03/the-road-to-ember-3-0.html&quot; title=&quot;Ember.js - The Road to Ember 3.0&quot;&gt;Ember.js - The Road to Ember 3.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/emberjs/ember-2-legacy&quot; title=&quot;emberjs/ember-2-legacy&quot;&gt;emberjs/ember-2-legacy&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;neutrino:-releasing-v8-🎉-–-eli-perelman-–-medium&quot;&gt;Neutrino: Releasing v8 🎉 – Eli Perelman – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@eliperelman/neutrino-releasing-v8-a643f356f410&quot; title=&quot;Neutrino: Releasing v8 🎉 – Eli Perelman – Medium&quot;&gt;medium.com/@eliperelman/neutrino-releasing-v8-a643f356f410&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptの開発環境セットアップツールのNeutrino v8.0.0リリース。&lt;br&gt;
-モジュールを&lt;code&gt;@neutrinojs&lt;/code&gt;のScoped moduleへ移行、&lt;code&gt;@neutrinojs/library&lt;/code&gt;などのコアミドルウェアの追加、複数ページのアプリへの対応など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://neutrino.js.org/migration-guide#neutrino-v7-to-v8&quot; title=&quot;Migration Guide · Neutrino&quot;&gt;Migration Guide · Neutrino&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;performance-calendar-»-performance-insurance&quot;&gt;Performance Calendar » Performance insurance&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://calendar.perfplanet.com/2017/performance-insurance/&quot; title=&quot;Performance Calendar » Performance insurance&quot;&gt;calendar.perfplanet.com/2017/performance-insurance/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;パフォーマンス関係のツール紹介記事。&lt;br&gt;
-ファイルサイズチェック、ファイル分割チェック、LightHouse、モニタリングサービスなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;christmas-gifts-for-your-future-self:-testing-the-web-platform-◆-24-ways&quot;&gt;Christmas Gifts for Your Future Self: Testing the Web Platform ◆ 24 ways&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://24ways.org/2017/testing-the-web-platform/&quot; title=&quot;Christmas Gifts for Your Future Self: Testing the Web Platform ◆ 24 ways&quot;&gt;24ways.org/2017/testing-the-web-platform/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ウェブ標準におけるテストについて。&lt;br&gt;
-Web Platform Testsでのテストの見かた、コントリビュート方法やテストの書き方についてなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://wpt.fyi/&quot; title=&quot;web-platform-tests dashboard&quot;&gt;web-platform-tests dashboard&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;nearing-the-7.0-release-·-babel&quot;&gt;Nearing the 7.0 Release · Babel&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://babeljs.io/blog/2017/12/27/nearing-the-7.0-release&quot; title=&quot;Nearing the 7.0 Release · Babel&quot;&gt;babeljs.io/blog/2017/12/27/nearing-the-7.0-release&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Babel 7の変更予定について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;resizeobserver-による変更検知と-element-query-|-blog.jxck.io&quot;&gt;ResizeObserver による変更検知と Element Query | blog.jxck.io&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.jxck.io/entries/2017-12-30/resize-observer-and-element-query.html&quot; title=&quot;ResizeObserver による変更検知と Element Query | blog.jxck.io&quot;&gt;blog.jxck.io/entries/2017-12-30/resize-observer-and-element-query.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ResizeObserverについての解説記事。&lt;br&gt;
-要素のリサイズを監視するObserver API&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;profiling-adventure---qiita&quot;&gt;Profiling adventure - Qiita&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://qiita.com/martinheidegger/items/5a5c40770ef6f47a92b2&quot; title=&quot;Profiling adventure - Qiita&quot;&gt;qiita.com/martinheidegger/items/5a5c40770ef6f47a92b2&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsで&lt;code&gt;perf_hooks&lt;/code&gt;を使ったプロファイル、Node.jsの&lt;code&gt;--prof&lt;/code&gt;フラグを使ったより詳細なダンプデータのとり方。&lt;br&gt;
-また&lt;code&gt;--inspect-brk&lt;/code&gt;を使いChromeの開発者ツールを使ってのデバッグについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript-のスレッド並列実行環境&quot;&gt;JavaScript のスレッド並列実行環境&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://nhiroki.jp/2017/12/10/javascript-parallel-processing&quot; title=&quot;JavaScript のスレッド並列実行環境&quot;&gt;nhiroki.jp/2017/12/10/javascript-parallel-processing&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptにおけるスレッド関係の機構について。&lt;br&gt;
-タスクキュー、Web Workerのモデル、スレッド間のメッセージング、データのコピーと移譲(Transferable)、SharedArrayBuffer、Agentの共有メモリモデル。 Worklet/Tasklet、Web Locks、Thread APIについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;getting-started-with-jest-and-puppeteer-–-noteworthy — the-journal-blog&quot;&gt;Getting Started with Jest and Puppeteer – Noteworthy — The Journal Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.usejournal.com/getting-started-with-jest-and-puppeteer-7cf6c59a2cae&quot; title=&quot;Getting Started with Jest and Puppeteer – Noteworthy — The Journal Blog&quot;&gt;blog.usejournal.com/getting-started-with-jest-and-puppeteer-7cf6c59a2cae&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JestとPuppeteerを使ったテストの設定や書き方について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;tbfleming/cib:-clang-running-in-browser-(wasm)&quot;&gt;tbfleming/cib: clang running in browser (wasm)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/tbfleming/cib/&quot; title=&quot;tbfleming/cib: clang running in browser (wasm)&quot;&gt;github.com/tbfleming/cib/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Clang&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;C++&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;clang&lt;/code&gt;と&lt;code&gt;clang-format&lt;/code&gt;をJavaScriptにコンパイルし、ブラウザ上で&lt;code&gt;clang&lt;/code&gt;を使ってC++をWebAssemblyへコンパイルして実行するデモ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;anseki/leader-line:-draw-a-leader-line-in-your-web-page.&quot;&gt;anseki/leader-line: Draw a leader line in your web page.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/anseki/leader-line&quot; title=&quot;anseki/leader-line: Draw a leader line in your web page.&quot;&gt;github.com/anseki/leader-line&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;指定要素同士を矢印で繋いだり、指定要素への矢印とキャプションを描画できるライブラリ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;whoeverest/wsrun:-command-runner-for-yarn-workspaces.-dependency-aware.&quot;&gt;whoeverest/wsrun: Command runner for Yarn workspaces. Dependency aware.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/whoeverest/wsrun&quot; title=&quot;whoeverest/wsrun: Command runner for Yarn workspaces. Dependency aware.&quot;&gt;github.com/whoeverest/wsrun&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Yarn workspace向けのツール。&lt;br&gt;
-lerna runのようにそれぞれのパッケージに対してコマンドを実行できる&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;keithamus/sort-package-json:-sort-an-object-or-package.json-based-on-the-well-known-package.json-keys&quot;&gt;keithamus/sort-package-json: Sort an Object or package.json based on the well-known package.json keys&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/keithamus/sort-package-json&quot; title=&quot;keithamus/sort-package-json: Sort an Object or package.json based on the well-known package.json keys&quot;&gt;github.com/keithamus/sort-package-json&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;package.json&lt;/code&gt;のフィールドをソートするツール&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript-のスレッド並列実行環境&quot;&gt;JavaScript のスレッド並列実行環境&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://nhiroki.jp/2017/12/10/javascript-parallel-processing&quot; title=&quot;JavaScript のスレッド並列実行環境&quot;&gt;nhiroki.jp/2017/12/10/javascript-parallel-processing&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptにおけるWebWorkerやSharedWorker、Workletなどのスレッドの仕組みについてや違いについて。&lt;br&gt;
-また検討されているWeb Locks APIやThread APIについて&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 02 Jan 2018 20:38:53 +0900</pubDate>
-        <link>https://jser.info/2018/01/02/npm-gulp-4.0.0-babel-7/</link>
-        <guid isPermaLink="true">https://jser.info/2018/01/02/npm-gulp-4.0.0-babel-7/</guid>
-        
-        <category>npm</category>
-        
-        <category>gulp</category>
-        
-        <category>babel</category>
         
         
         <category>_i18n</category>
