@@ -17,7 +17,7 @@
     
     
       
-      <meta content="_i18n" property="article:section">
+      <meta content="report" property="article:section">
       
     
     
@@ -71,12 +71,6 @@
 
 
 <meta property="article:published_time" content="2017-01-31T10:12:00+09:00">
-
-<meta property="og:see_also" content="https://jser.info/2018/04/01/typescript-2.8-react-16.3.0-tensorflow.js/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/26/d3.js-5.0.0-oclif/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/20/typescript-2.8rc-firefox-59-smooshgate/">
 
 
 
@@ -197,17 +191,23 @@
         <aside class="post-content-toc">
             <h2 class="post-content-toc-title">レポートサマリ</h2>
             <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#bundler-1">Bundler #1</a></li>
+<li class="toc-entry toc-h1"><a href="#bundler-1">Bundler #1</a>
+<ul>
 <li class="toc-entry toc-h2"><a href="#webpack-2">webpack 2</a></li>
 <li class="toc-entry toc-h2"><a href="#fusebox">Fusebox</a></li>
 <li class="toc-entry toc-h2"><a href="#rollup">Rollup</a></li>
 <li class="toc-entry toc-h2"><a href="#browserify">Browserify</a></li>
 <li class="toc-entry toc-h2"><a href="#es-modules">ES modules</a></li>
-<li class="toc-entry toc-h1"><a href="#testing-framework-3">Testing Framework #3</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#testing-framework-3">Testing Framework #3</a>
+<ul>
 <li class="toc-entry toc-h2"><a href="#mochaがcontributorを募集">MochaがContributorを募集</a></li>
 <li class="toc-entry toc-h2"><a href="#sinonjs-20へ向けて">Sinon.js 2.0へ向けて</a></li>
 <li class="toc-entry toc-h2"><a href="#2016-javascript-rising-stars">2016 JavaScript Rising Stars</a></li>
 <li class="toc-entry toc-h2"><a href="#ava-will-introduce-magic-assert">AVA will introduce Magic assert</a></li>
+</ul>
+</li>
 </ul>
         </aside>
         
@@ -219,7 +219,7 @@
 
 <p>レポートなどの更新情報を知りたい方は<a href="https://jser.info/rss/">RSS</a>や<a href="https://twitter.com/jser_info">Twitter@jser_info</a>をフォローしてみてください。</p>
 
-<h1 id="bundler-#1"><a href="https://github.com/jser/report/issues/1" title="Next Bundler #1">Bundler #1</a></h1>
+<h1 id="bundler-1"><a href="https://github.com/jser/report/issues/1" title="Next Bundler #1">Bundler #1</a></h1>
 
 <p>JavaScriptのコードはモジュールに分けて開発することが一般的です。<br>
 ブラウザにおいて、一つずつ<code>&lt;script&gt;</code>タグでモジュールをロードするのはラウンドトリップやコネクションの問題が発生します。</p>
@@ -272,14 +272,14 @@
 <p>基本的に設定はJavaScriptのコードとして書くようになっていて、<code>node</code>で実行するだけです。</p>
 
 <p>また、webpackのように設定としてentryポイントを設定するのではなく、ビルドの設定をする<code>FuseBox.init</code>と実際にbudnleするものを決める<code>fuse.bundle</code>メソッドで分かれています。</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">FuseBox</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;fusebox&quot;</span><span class="p">).</span><span class="nx">FuseBox</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">const</span> <span class="nx">FuseBox</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fusebox"</span><span class="p">).</span><span class="nx">FuseBox</span>
 <span class="kd">let</span> <span class="nx">fuse</span> <span class="o">=</span> <span class="nx">FuseBox</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
-    <span class="nx">homeDir</span><span class="o">:</span> <span class="s2">&quot;src/&quot;</span><span class="p">,</span>
-    <span class="nx">globals</span><span class="o">:</span> <span class="p">{</span> <span class="k">default</span><span class="o">:</span> <span class="s2">&quot;myLib&quot;</span><span class="p">},</span>
-    <span class="nx">outFile</span><span class="o">:</span> <span class="s2">&quot;./out.js&quot;</span>
+    <span class="na">homeDir</span><span class="p">:</span> <span class="s2">"src/"</span><span class="p">,</span>
+    <span class="na">globals</span><span class="p">:</span> <span class="p">{</span> <span class="na">default</span><span class="p">:</span> <span class="s2">"myLib"</span><span class="p">},</span>
+    <span class="na">outFile</span><span class="p">:</span> <span class="s2">"./out.js"</span>
 <span class="p">});</span>
 
-<span class="nx">fuse</span><span class="p">.</span><span class="nx">bundle</span><span class="p">(</span><span class="s2">&quot;&gt;index.js&quot;</span><span class="p">);</span>
+<span class="nx">fuse</span><span class="p">.</span><span class="nx">bundle</span><span class="p">(</span><span class="s2">"&gt;index.js"</span><span class="p">);</span>
 </code></pre></div>
 <p>そのためコードとして設定を書くgulpとは相性がいいため、公式のサンプルでもgulp内に書いている例を見かけます。</p>
 
@@ -317,8 +317,8 @@ Issue/PRにはNode.js v6&gt;=で追加されたDeprecated Warningや依存する
 <code>TypedArray</code>を使う実装になったため、bufferを含んだコードを変換した場合に、IE10以下では動かなくなります。</p>
 
 <p>IE10以下でも動くようにしたい場合は、古い<a href="https://github.com/feross/buffer" title="feross/buffer">feross/buffer</a>を利用する必要があります。</p>
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">$ </span>npm install buffer@4 --save
-<span class="nv">$ </span>browserify -r buffer/:buffer main.js &gt; bundle.js
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">$ </span>npm <span class="nb">install </span>buffer@4 <span class="nt">--save</span>
+<span class="nv">$ </span>browserify <span class="nt">-r</span> buffer/:buffer main.js <span class="o">&gt;</span> bundle.js
 </code></pre></div>
 <h2 id="es-modules">ES modules</h2>
 
@@ -342,11 +342,11 @@ Bundlerはそこへ直接関係するツールであるため、今後の動き�
 
 <hr>
 
-<h1 id="testing-framework-#3"><a href="https://github.com/jser/report/issues/3" title="Testing Framework #3">Testing Framework #3</a></h1>
+<h1 id="testing-framework-3"><a href="https://github.com/jser/report/issues/3" title="Testing Framework #3">Testing Framework #3</a></h1>
 
 <p>JavaScriptのテスティングフレームワーク周りのレポートです。</p>
 
-<h2 id="mochaがcontributorを募集"><a href="https://github.com/mochajs/mocha">Mocha</a>がContributorを募集</h2>
+<h2 id="mocha-contributor"><a href="https://github.com/mochajs/mocha">Mocha</a>がContributorを募集</h2>
 
 <blockquote>
 <p>Mocha needs YOU!<br>
@@ -362,7 +362,7 @@ IssueやPull Requestのレビューをしてくれる人やMochaへのテスト�
 <li><a href="https://gitter.im/mochajs/mocha" title="mochajs/mocha - Gitter">mochajs/mocha - Gitter</a></li>
 </ul>
 
-<h2 id="sinon.js-2.0へ向けて">Sinon.js 2.0へ向けて</h2>
+<h2 id="sinon-js-2-0">Sinon.js 2.0へ向けて</h2>
 
 <p><a href="http://sinonjs.org/" title="Sinon.JS">Sinon.JS</a> が2.0向けての作業が進められています。<br>
 タスクについては次のIssueで管理されています。</p>

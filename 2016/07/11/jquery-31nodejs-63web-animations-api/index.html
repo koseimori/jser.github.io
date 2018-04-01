@@ -17,7 +17,7 @@
     
     
       
-      <meta content="_i18n" property="article:section">
+      <meta content="JSer" property="article:section">
       
     
     
@@ -69,12 +69,6 @@
 
 
 <meta property="article:published_time" content="2016-07-11T20:19:00+09:00">
-
-<meta property="og:see_also" content="https://jser.info/2018/04/01/typescript-2.8-react-16.3.0-tensorflow.js/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/26/d3.js-5.0.0-oclif/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/20/typescript-2.8rc-firefox-59-smooshgate/">
 
 
 
@@ -198,16 +192,16 @@
 <p>jQuery 3.0では<code>jQuery.ready</code>はPromise A/+互換の<a href="https://api.jquery.com/category/deferred-object/" title="Deferred Object">Deferred Object</a>を使うようになっています。<br>
 そのため、次のようなコードは何もコンソールにエラーが表示されない状態になっていました。</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;This is Error&quot;</span><span class="p">);</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">"This is Error"</span><span class="p">);</span>
 <span class="p">});</span>
 <span class="c1">// ≒</span>
 <span class="nx">jQuery</span><span class="p">.</span><span class="nx">ready</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;This is Error&quot;</span><span class="p">);</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">"This is Error"</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>いわゆる<a href="http://azu.github.io/promises-book/#_%E6%B2%88%E9%BB%99%E3%81%97%E3%81%9F%E3%82%A8%E3%83%A9%E3%83%BC">unhandled rejection</a>となってしまうため、次のように<code>.catch</code>でエラーハンドリングを行う必要がありました。</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">jQuery</span><span class="p">.</span><span class="nx">ready</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;This is Error&quot;</span><span class="p">);</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">"This is Error"</span><span class="p">);</span>
 <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
 <span class="p">});</span>
@@ -237,7 +231,7 @@
 
 <p><code>--inspect</code>のコマンドライン引数をつけてNode.jsを起動することで、Node.jsアプリに対してChromeの開発者ツールでリモートデバッグできるようになります。<br>
 CLIなどは一瞬で終わってしまうので、<code>--debug-brk</code>オプションを付けるとブレークした状態で開始できます。</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">node --inspect --debug-brk
+<div class="highlight"><pre><code class="language-" data-lang="">node --inspect --debug-brk
 </code></pre></div>
 <p>以下の記事も参考になります。</p>
 
@@ -263,7 +257,7 @@ CLIなどは一瞬で終わってしまうので、<code>--debug-brk</code>オ�
 
 <hr>
 
-<h2 id="jquery-3.1.0-released-–-no-more-silent-errors-|-official-jquery-blog">jQuery 3.1.0 Released – No More Silent Errors | Official jQuery Blog</h2>
+<h2 id="jquery-3-1-0-released-no-more-silent-errors-official-jquery-blog">jQuery 3.1.0 Released – No More Silent Errors | Official jQuery Blog</h2>
 
 <p><a href="http://blog.jquery.com/2016/07/07/jquery-3-1-0-released-no-more-silent-errors/" title="jQuery 3.1.0 Released – No More Silent Errors | Official jQuery Blog">blog.jquery.com/2016/07/07/jquery-3-1-0-released-no-more-silent-errors/</a></p>
 
@@ -278,7 +272,7 @@ CLIなどは一瞬で終わってしまうので、<code>--debug-brk</code>オ�
 
 <hr>
 
-<h2 id="angular/changelog.md-at-2.0.0-rc.4-·-angular/angular">angular/CHANGELOG.md at 2.0.0-rc.4 · angular/angular</h2>
+<h2 id="angular-changelog-md-at-2-0-0-rc-4-angular-angular">angular/CHANGELOG.md at 2.0.0-rc.4 · angular/angular</h2>
 
 <p><a href="https://github.com/angular/angular/blob/2.0.0-rc.4/CHANGELOG.md" title="angular/CHANGELOG.md at 2.0.0-rc.4 · angular/angular">github.com/angular/angular/blob/2.0.0-rc.4/CHANGELOG.md</a></p>
 
@@ -294,7 +288,7 @@ CLIなどは一瞬で終わってしまうので、<code>--debug-brk</code>オ�
 
 <hr>
 
-<h2 id="node-v6.3.0-(current)-|-node.js">Node v6.3.0 (Current) | Node.js</h2>
+<h2 id="node-v6-3-0-current-node-js">Node v6.3.0 (Current) | Node.js</h2>
 
 <p><a href="https://nodejs.org/en/blog/release/v6.3.0/" title="Node v6.3.0 (Current) | Node.js">nodejs.org/en/blog/release/v6.3.0/</a></p>
 
@@ -309,7 +303,7 @@ CLIなどは一瞬で終わってしまうので、<code>--debug-brk</code>オ�
 
 <hr>
 
-<h2 id="release-notes-for-safari-technology-preview-release-8-|-webkit">Release Notes for Safari Technology Preview Release 8 | WebKit</h2>
+<h2 id="release-notes-for-safari-technology-preview-release-8-webkit">Release Notes for Safari Technology Preview Release 8 | WebKit</h2>
 
 <p><a href="https://webkit.org/blog/6744/release-notes-for-safari-technology-preview-release-8/" title="Release Notes for Safari Technology Preview Release 8 | WebKit">webkit.org/blog/6744/release-notes-for-safari-technology-preview-release-8/</a></p>
 
@@ -335,7 +329,7 @@ ES6の実装完了、Apple Payのコードをリポジトリに移動、<code>:f
 
 <hr>
 
-<h2 id="accessible-svgs-|-css-tricks">Accessible SVGs | CSS-Tricks</h2>
+<h2 id="accessible-svgs-css-tricks">Accessible SVGs | CSS-Tricks</h2>
 
 <p><a href="https://css-tricks.com/accessible-svgs/" title="Accessible SVGs | CSS-Tricks">css-tricks.com/accessible-svgs/</a></p>
 
@@ -345,7 +339,7 @@ ES6の実装完了、Apple Payのコードをリポジトリに移動、<code>:f
 
 <hr>
 
-<h2 id="metagrover/es6-for-humans:-a-kickstarter-guide-to-writing-es6.">metagrover/ES6-for-humans: A kickstarter guide to writing ES6.</h2>
+<h2 id="metagrover-es6-for-humans-a-kickstarter-guide-to-writing-es6">metagrover/ES6-for-humans: A kickstarter guide to writing ES6.</h2>
 
 <p><a href="https://github.com/metagrover/ES6-for-humans" title="metagrover/ES6-for-humans: A kickstarter guide to writing ES6.">github.com/metagrover/ES6-for-humans</a></p>
 
@@ -355,7 +349,7 @@ ES6の実装完了、Apple Payのコードをリポジトリに移動、<code>:f
 
 <hr>
 
-<h2 id="how-well-do-you-know-css-display?">How well do you know CSS display?</h2>
+<h2 id="how-well-do-you-know-css-display">How well do you know CSS display?</h2>
 
 <p><a href="https://www.chenhuijing.com/blog/how-well-do-you-know-display/" title="How well do you know CSS display?">www.chenhuijing.com/blog/how-well-do-you-know-display/</a></p>
 
@@ -365,7 +359,7 @@ ES6の実装完了、Apple Payのコードをリポジトリに移動、<code>:f
 
 <hr>
 
-<h2 id="backbone.jsにreduxを導入してみる---qiita">Backbone.jsにReduxを導入してみる - Qiita</h2>
+<h2 id="backbone-js-redux-qiita">Backbone.jsにReduxを導入してみる - Qiita</h2>
 
 <p><a href="http://qiita.com/takeshy/items/2bca340ffa157841a482" title="Backbone.jsにReduxを導入してみる - Qiita">qiita.com/takeshy/items/2bca340ffa157841a482</a></p>
 
@@ -385,7 +379,7 @@ redux-devtools-extensionを使ってStateの変化を確認する方法につい
 
 <hr>
 
-<h2 id="blinkon-6---munich,-germany---youtube">BlinkOn 6 - Munich, Germany - YouTube</h2>
+<h2 id="blinkon-6-munich-germany-youtube">BlinkOn 6 - Munich, Germany - YouTube</h2>
 
 <p><a href="https://www.youtube.com/watch?v=iCSAUHpPbiU" title="BlinkOn 6 - Munich, Germany - YouTube">www.youtube.com/watch?v=iCSAUHpPbiU</a></p>
 
@@ -403,7 +397,7 @@ redux-devtools-extensionを使ってStateの変化を確認する方法につい
 
 <hr>
 
-<h2 id="web-animations-apiの基本的な使い方・まとめ">Web Animations APIの基本的な使い方・まとめ</h2>
+<h2 id="web-animations-api">Web Animations APIの基本的な使い方・まとめ</h2>
 
 <p><a href="http://www.h2.dion.ne.jp/%7Edefghi/webanim/webanim.htm" title="Web Animations APIの基本的な使い方・まとめ">www.h2.dion.ne.jp/~defghi/webanim/webanim.htm</a></p>
 
@@ -418,7 +412,7 @@ redux-devtools-extensionを使ってStateの変化を確認する方法につい
 
 <hr>
 
-<h2 id="paulirish/devtools-timeline-model:-parse-raw-trace-data-into-the-chrome-devtools&#x27;-structured-profiling-data-models">paulirish/devtools-timeline-model: Parse raw trace data into the Chrome DevTools&#x27; structured profiling data models</h2>
+<h2 id="paulirish-devtools-timeline-model-parse-raw-trace-data-into-the-chrome-devtools-structured-profiling-data-models">paulirish/devtools-timeline-model: Parse raw trace data into the Chrome DevTools&#x27; structured profiling data models</h2>
 
 <p><a href="https://github.com/paulirish/devtools-timeline-model" title="paulirish/devtools-timeline-model: Parse raw trace data into the Chrome DevTools&#39; structured profiling data models">github.com/paulirish/devtools-timeline-model</a></p>
 
@@ -428,7 +422,7 @@ redux-devtools-extensionを使ってStateの変化を確認する方法につい
 
 <hr>
 
-<h2 id="boopathi/babel-minify:-some-babel-plugins-and-tools-to-minify-es6+-code">boopathi/babel-minify: Some babel plugins and tools to minify ES6+ code</h2>
+<h2 id="boopathi-babel-minify-some-babel-plugins-and-tools-to-minify-es6-code">boopathi/babel-minify: Some babel plugins and tools to minify ES6+ code</h2>
 
 <p><a href="https://github.com/boopathi/babel-minify" title="boopathi/babel-minify: Some babel plugins and tools to minify ES6+ code">github.com/boopathi/babel-minify</a></p>
 
@@ -439,7 +433,7 @@ redux-devtools-extensionを使ってStateの変化を確認する方法につい
 
 <hr>
 
-<h2 id="filipelinhares/ress:-a-modern-css-reset">filipelinhares/ress: A modern CSS reset</h2>
+<h2 id="filipelinhares-ress-a-modern-css-reset">filipelinhares/ress: A modern CSS reset</h2>
 
 <p><a href="https://github.com/filipelinhares/ress" title="filipelinhares/ress: A modern CSS reset">github.com/filipelinhares/ress</a></p>
 
@@ -449,7 +443,7 @@ redux-devtools-extensionを使ってStateの変化を確認する方法につい
 
 <hr>
 
-<h2 id="thejameskyle/assert-equal-jsx:-assertequaljsx">thejameskyle/assert-equal-jsx: assertEqualJSX</h2>
+<h2 id="thejameskyle-assert-equal-jsx-assertequaljsx">thejameskyle/assert-equal-jsx: assertEqualJSX</h2>
 
 <p><a href="https://github.com/thejameskyle/assert-equal-jsx" title="thejameskyle/assert-equal-jsx: assertEqualJSX">github.com/thejameskyle/assert-equal-jsx</a></p>
 
@@ -459,7 +453,7 @@ redux-devtools-extensionを使ってStateの変化を確認する方法につい
 
 <hr>
 
-<h2 id="declandewet/common-tags:-useful-template-literal-tags-for-dealing-with-strings-in-es2015+">declandewet/common-tags: Useful template literal tags for dealing with strings in ES2015+</h2>
+<h2 id="declandewet-common-tags-useful-template-literal-tags-for-dealing-with-strings-in-es2015">declandewet/common-tags: Useful template literal tags for dealing with strings in ES2015+</h2>
 
 <p><a href="https://github.com/declandewet/common-tags" title="declandewet/common-tags: Useful template literal tags for dealing with strings in ES2015+">github.com/declandewet/common-tags</a></p>
 
@@ -473,7 +467,7 @@ redux-devtools-extensionを使ってStateの変化を確認する方法につい
 
 <hr>
 
-<h2 id="javascript-functions…-by-amin-meyghani-[pdf/ipad/kindle]">JavaScript Functions… by Amin Meyghani [PDF/iPad/Kindle]</h2>
+<h2 id="javascript-functions-by-amin-meyghani-pdf-ipad-kindle">JavaScript Functions… by Amin Meyghani [PDF/iPad/Kindle]</h2>
 
 <p><a href="https://leanpub.com/javascript-closure" title="JavaScript Functions… by Amin Meyghani \[PDF/iPad/Kindle\]">leanpub.com/javascript-closure</a></p>
 
@@ -484,7 +478,7 @@ $0から購入できる</p>
 
 <hr>
 
-<h2 id="practical…-by-daniel-schmitz-et-al.-[leanpub-pdf/ipad/kindle]">Practical… by Daniel Schmitz et al. [Leanpub PDF/iPad/Kindle]</h2>
+<h2 id="practical-by-daniel-schmitz-et-al-leanpub-pdf-ipad-kindle">Practical… by Daniel Schmitz et al. [Leanpub PDF/iPad/Kindle]</h2>
 
 <p><a href="https://leanpub.com/vue" title="Practical… by Daniel Schmitz et al. \[Leanpub PDF/iPad/Kindle\]">leanpub.com/vue</a></p>
 

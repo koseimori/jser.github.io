@@ -17,7 +17,7 @@
     
     
       
-      <meta content="_i18n" property="article:section">
+      <meta content="JSer" property="article:section">
       
     
     
@@ -71,12 +71,6 @@
 
 
 <meta property="article:published_time" content="2016-09-20T09:48:00+09:00">
-
-<meta property="og:see_also" content="https://jser.info/2018/04/01/typescript-2.8-react-16.3.0-tensorflow.js/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/26/d3.js-5.0.0-oclif/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/20/typescript-2.8rc-firefox-59-smooshgate/">
 
 
 
@@ -214,7 +208,7 @@
 
 <p>6.6.0ではEventEmitterのmemory leak警告と<br>
 PromiseのUnhandled rejectionの警告を次のように書くことで受け取れるようになっています。</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">process</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;warning&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">warning</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">process</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'warning'</span><span class="p">,</span> <span class="p">(</span><span class="nx">warning</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">warning</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div>
@@ -226,22 +220,22 @@ PromiseのUnhandled rejectionの警告を次のように書くことで受け取
 
 <p>ブラウザでは自動でコンソールにPromiseの<a href="http://azu.github.io/slide/error-handling/promise-error-handling.html">Unhandled Rejection</a>の警告が表示されます。<br>
 Node.js 6.6.0でも同様にデフォルトで<code>stderr</code>へ警告が出力されるようになりました。</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="s1">&#39;This was rejected&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">const</span> <span class="nx">p</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="s1">'This was rejected'</span><span class="p">);</span>
 <span class="c1">// UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): This was rejected</span>
 </code></pre></div>
 <p>また、これらの警告は<code>&quot;warning&quot;</code>イベントとしてキャッチすることができるようになっています。</p>
 
 <p>今まで、EventEmitterのメモリリーク警告は<code>stderr</code>にログを出すだけでテストも難しいものでしたが、同じように<code>warning</code>イベントで取得できるようになりました。</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">events</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;events&quot;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">events</span><span class="p">.</span><span class="nx">EventEmitter</span><span class="p">();</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">const</span> <span class="nx">events</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"events"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">events</span><span class="p">.</span><span class="nx">EventEmitter</span><span class="p">();</span>
 <span class="nx">event</span><span class="p">.</span><span class="nx">setMaxListeners</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="nx">process</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;warning&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">warning</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">process</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'warning'</span><span class="p">,</span> <span class="p">(</span><span class="nx">warning</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="nx">warning</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
     <span class="c1">// Warning: Possible EventEmitter memory leak detected. 2 test listeners added. Use emitter.setMaxListeners() to increase limit</span>
 <span class="p">});</span>
 
-<span class="nx">event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{});</span>
-<span class="nx">event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{});</span>
+<span class="nx">event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"test"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{});</span>
+<span class="nx">event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"test"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{});</span>
 </code></pre></div>
 <ul>
 <li><a href="https://github.com/azu/node6.6-warning-demo" title="azu/node6.6-warning-demo">azu/node6.6-warning-demo</a></li>
@@ -263,7 +257,7 @@ Node.js 6.6.0でも同様にデフォルトで<code>stderr</code>へ警告が出
 
 <hr>
 
-<h2 id="angular,-version-2:-proprioception-reinforcement">Angular, version 2: proprioception-reinforcement</h2>
+<h2 id="angular-version-2-proprioception-reinforcement">Angular, version 2: proprioception-reinforcement</h2>
 
 <p><a href="http://angularjs.blogspot.com/2016/09/angular2-final.html" title="Angular, version 2: proprioception-reinforcement">angularjs.blogspot.com/2016/09/angular2-final.html</a></p>
 
@@ -277,7 +271,7 @@ Node.js 6.6.0でも同様にデフォルトで<code>stderr</code>へ警告が出
 
 <hr>
 
-<h2 id="node-v6.6.0-(current)-|-node.js">Node v6.6.0 (Current) | Node.js</h2>
+<h2 id="node-v6-6-0-current-node-js">Node v6.6.0 (Current) | Node.js</h2>
 
 <p><a href="https://nodejs.org/en/blog/release/v6.6.0/" title="Node v6.6.0 (Current) | Node.js">nodejs.org/en/blog/release/v6.6.0/</a></p>
 
@@ -289,7 +283,7 @@ PromiseのUnhandled rejectionの警告が、<code>process.on(&#39;warning&#39;, 
 
 <hr>
 
-<h2 id="jquery-ui-1.12.1-|-jquery-ui-blog">jQuery UI 1.12.1 | jQuery UI Blog</h2>
+<h2 id="jquery-ui-1-12-1-jquery-ui-blog">jQuery UI 1.12.1 | jQuery UI Blog</h2>
 
 <p><a href="http://blog.jqueryui.com/2016/09/jquery-ui-1-12-1/" title="jQuery UI 1.12.1 | jQuery UI Blog">blog.jqueryui.com/2016/09/jquery-ui-1-12-1/</a></p>
 
@@ -300,7 +294,7 @@ PromiseのUnhandled rejectionの警告が、<code>process.on(&#39;warning&#39;, 
 
 <hr>
 
-<h2 id="release-notes-for-safari-technology-preview-release-13-|-webkit">Release Notes for Safari Technology Preview Release 13 | WebKit</h2>
+<h2 id="release-notes-for-safari-technology-preview-release-13-webkit">Release Notes for Safari Technology Preview Release 13 | WebKit</h2>
 
 <p><a href="https://webkit.org/blog/6937/release-notes-for-safari-technology-preview-release-13/" title="Release Notes for Safari Technology Preview Release 13 | WebKit">webkit.org/blog/6937/release-notes-for-safari-technology-preview-release-13/</a></p>
 
@@ -311,7 +305,7 @@ PromiseのUnhandled rejectionの警告が、<code>process.on(&#39;warning&#39;, 
 
 <hr>
 
-<h2 id="chromium-blog:-chrome-54-beta:-custom-elements-v1,-broadcastchannel,-and-media-platform-improvements">Chromium Blog: Chrome 54 Beta: Custom Elements V1, BroadcastChannel, and media platform improvements</h2>
+<h2 id="chromium-blog-chrome-54-beta-custom-elements-v1-broadcastchannel-and-media-platform-improvements">Chromium Blog: Chrome 54 Beta: Custom Elements V1, BroadcastChannel, and media platform improvements</h2>
 
 <p><a href="http://blog.chromium.org/2016/09/chrome-54-beta-custom-elements-v1.html" title="Chromium Blog: Chrome 54 Beta: Custom Elements V1, BroadcastChannel, and media platform improvements">blog.chromium.org/2016/09/chrome-54-beta-custom-elements-v1.html</a></p>
 
@@ -327,7 +321,7 @@ Resource Timing API のtransferやencoded/decodedのサポート、<code>initTou
 
 <hr>
 
-<h2 id="introducing-debugger.html-★-mozilla-hacks-–-the-web-developer-blog">Introducing debugger.html ★ Mozilla Hacks – the Web developer blog</h2>
+<h2 id="introducing-debugger-html-mozilla-hacks-the-web-developer-blog">Introducing debugger.html ★ Mozilla Hacks – the Web developer blog</h2>
 
 <p><a href="https://hacks.mozilla.org/2016/09/introducing-debugger-html/" title="Introducing debugger.html ★ Mozilla Hacks – the Web developer blog">hacks.mozilla.org/2016/09/introducing-debugger-html/</a></p>
 
@@ -343,7 +337,7 @@ Firefoxの開発者ツールに統合される予定</p>
 
 <hr>
 
-<h2 id="devtools-digest,-september-2016:-perf-roundup-|-web-updates---google-developers">DevTools Digest, September 2016: Perf Roundup | Web Updates - Google Developers</h2>
+<h2 id="devtools-digest-september-2016-perf-roundup-web-updates-google-developers">DevTools Digest, September 2016: Perf Roundup | Web Updates - Google Developers</h2>
 
 <p><a href="https://developers.google.com/web/updates/2016/09/devtools-digest" title="DevTools Digest, September 2016: Perf Roundup | Web Updates - Google Developers">developers.google.com/web/updates/2016/09/devtools-digest</a></p>
 
@@ -354,7 +348,7 @@ CPU Throttling、TimelineにNetwork viewの表示、スクロールパフォー�
 
 <hr>
 
-<h2 id="js-web-frameworks-benchmark-–-round-4-|-stefan_krause.blog()">JS web frameworks benchmark – Round 4 | Stefan_Krause.blog()</h2>
+<h2 id="js-web-frameworks-benchmark-round-4-stefan_krause-blog">JS web frameworks benchmark – Round 4 | Stefan_Krause.blog()</h2>
 
 <p><a href="http://www.stefankrause.net/wp/?p=316" title="JS web frameworks benchmark – Round 4 | Stefan\_Krause.blog()">www.stefankrause.net/wp/?p=316</a></p>
 
@@ -368,7 +362,7 @@ CPU Throttling、TimelineにNetwork viewの表示、スクロールパフォー�
 
 <hr>
 
-<h2 id="how-developers-use-node.js---survey-results-|-@risingstack">How Developers use Node.js - Survey Results | @RisingStack</h2>
+<h2 id="how-developers-use-node-js-survey-results-risingstack">How Developers use Node.js - Survey Results | @RisingStack</h2>
 
 <p><a href="http://blog.risingstack.com/node-js-developer-survey-results-2016/" title="How Developers use Node.js - Survey Results | @RisingStack">blog.risingstack.com/node-js-developer-survey-results-2016/</a></p>
 
@@ -378,7 +372,7 @@ CPU Throttling、TimelineにNetwork viewの表示、スクロールパフォー�
 
 <hr>
 
-<h2 id="why-use-flow?-·-aria">Why Use Flow? · Aria</h2>
+<h2 id="why-use-flow-aria">Why Use Flow? · Aria</h2>
 
 <p><a href="https://blog.aria.ai/post/why-use-flow/" title="Why Use Flow? · Aria">blog.aria.ai/post/why-use-flow/</a></p>
 
@@ -392,7 +386,7 @@ CPU Throttling、TimelineにNetwork viewの表示、スクロールパフォー�
 
 <hr>
 
-<h2 id="the-future-of-es6-(jafar-husain)---full-stack-fest-2016---youtube">The future of ES6 (Jafar Husain) - Full Stack Fest 2016 - YouTube</h2>
+<h2 id="the-future-of-es6-jafar-husain-full-stack-fest-2016-youtube">The future of ES6 (Jafar Husain) - Full Stack Fest 2016 - YouTube</h2>
 
 <p><a href="https://www.youtube.com/watch?v=3pKNRgResq0" title="The future of ES6 (Jafar Husain) - Full Stack Fest 2016 - YouTube">www.youtube.com/watch?v=3pKNRgResq0</a></p>
 
@@ -405,7 +399,7 @@ PushなAPIとしてObservable(Stage 1)について</p>
 
 <hr>
 
-<h2 id="Пользовательские-свойства-как-основа-архитектуры-css-(fronttalks)-//-speaker-deck">Пользовательские свойства как основа архитектуры CSS (FrontTalks) // Speaker Deck</h2>
+<h2 id="css-fronttalks-speaker-deck">Пользовательские свойства как основа архитектуры CSS (FrontTalks) // Speaker Deck</h2>
 
 <p><a href="https://speakerdeck.com/lautsevich/pol-zovatiel-skiie-svoistva-kak-osnova-arkhitiektury-css-fronttalks" title="Пользовательские свойства как основа архитектуры CSS (FrontTalks) // Speaker Deck">speakerdeck.com/lautsevich/pol-zovatiel-skiie-svoistva-kak-osnova-arkhitiektury-css-fronttalks</a></p>
 
@@ -416,7 +410,7 @@ Fallback、i18n、CSS Custom Propertiesとcalc、JavaScriptからの利用、@su
 
 <hr>
 
-<h2 id="testing-javascript-with-jest---lesson-playlist-@eggheadio">Testing JavaScript with Jest - Lesson Playlist @eggheadio</h2>
+<h2 id="testing-javascript-with-jest-lesson-playlist-eggheadio">Testing JavaScript with Jest - Lesson Playlist @eggheadio</h2>
 
 <p><a href="https://egghead.io/playlists/testing-javascript-with-jest-a36c4074" title="Testing JavaScript with Jest - Lesson Playlist @eggheadio">egghead.io/playlists/testing-javascript-with-jest-a36c4074</a></p>
 
@@ -426,7 +420,7 @@ Fallback、i18n、CSS Custom Propertiesとcalc、JavaScriptからの利用、@su
 
 <hr>
 
-<h2 id="building-applications-with-react-and-redux-in-es6-|-zombie-code-kill">Building Applications with React and Redux in ES6 | Zombie Code Kill</h2>
+<h2 id="building-applications-with-react-and-redux-in-es6-zombie-code-kill">Building Applications with React and Redux in ES6 | Zombie Code Kill</h2>
 
 <p><a href="https://zombiecodekill.com/2016/05/21/building-applications-with-react-and-redux-in-es6/" title="Building Applications with React and Redux in ES6 | Zombie Code Kill">zombiecodekill.com/2016/05/21/building-applications-with-react-and-redux-in-es6/</a></p>
 
@@ -440,7 +434,7 @@ Fallback、i18n、CSS Custom Propertiesとcalc、JavaScriptからの利用、@su
 
 <hr>
 
-<h2 id="developer&#x27;s-guide-to-accessibility-mechanics-—-developer&#x27;s-guide-to-accessibility-mechanics">Developer&#x27;s guide to accessibility mechanics — Developer&#x27;s guide to accessibility mechanics</h2>
+<h2 id="developers-guide-to-accessibility-mechanics-developers-guide-to-accessibility-mechanics">Developer&#x27;s guide to accessibility mechanics — Developer&#x27;s guide to accessibility mechanics</h2>
 
 <p><a href="https://ljwatson.github.io/decks/2016/fromthefront/index.html#cover" title="Developer&#39;s guide to accessibility mechanics — Developer&#39;s guide to accessibility mechanics">ljwatson.github.io/decks/2016/fromthefront/index.html#cover</a></p>
 
@@ -456,7 +450,7 @@ Fallback、i18n、CSS Custom Propertiesとcalc、JavaScriptからの利用、@su
 
 <hr>
 
-<h2 id="avocode/combokeys:-web-browser-keyboard-shortcuts.-commonjs,-npm.">avocode/combokeys: Web browser keyboard shortcuts. CommonJS, NPM.</h2>
+<h2 id="avocode-combokeys-web-browser-keyboard-shortcuts-commonjs-npm">avocode/combokeys: Web browser keyboard shortcuts. CommonJS, NPM.</h2>
 
 <p><a href="https://github.com/avocode/combokeys" title="avocode/combokeys: Web browser keyboard shortcuts. CommonJS, NPM.">github.com/avocode/combokeys</a></p>
 
@@ -471,7 +465,7 @@ Fallback、i18n、CSS Custom Propertiesとcalc、JavaScriptからの利用、@su
 
 <hr>
 
-<h2 id="kentcdodds/match-sorter:-simple,-expected,-and-deterministic-best-match-sorting-of-an-array-in-javascript">kentcdodds/match-sorter: Simple, expected, and deterministic best-match sorting of an array in JavaScript</h2>
+<h2 id="kentcdodds-match-sorter-simple-expected-and-deterministic-best-match-sorting-of-an-array-in-javascript">kentcdodds/match-sorter: Simple, expected, and deterministic best-match sorting of an array in JavaScript</h2>
 
 <p><a href="https://github.com/kentcdodds/match-sorter" title="kentcdodds/match-sorter: Simple, expected, and deterministic best-match sorting of an array in JavaScript">github.com/kentcdodds/match-sorter</a></p>
 
@@ -486,7 +480,7 @@ Fallback、i18n、CSS Custom Propertiesとcalc、JavaScriptからの利用、@su
 
 <hr>
 
-<h2 id="build-pacman-by-jeffrey-biles-[leanpub-pdf/ipad/kindle]">BUILD PACMAN by Jeffrey Biles [Leanpub PDF/iPad/Kindle]</h2>
+<h2 id="build-pacman-by-jeffrey-biles-leanpub-pdf-ipad-kindle">BUILD PACMAN by Jeffrey Biles [Leanpub PDF/iPad/Kindle]</h2>
 
 <p><a href="https://leanpub.com/buildpacman" title="BUILD PACMAN by Jeffrey Biles \[Leanpub PDF/iPad/Kindle\]">leanpub.com/buildpacman</a></p>
 

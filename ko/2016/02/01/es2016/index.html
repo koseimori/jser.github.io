@@ -17,7 +17,7 @@
     
     
       
-      <meta content="_i18n" property="article:section">
+      <meta content="JavaScript" property="article:section">
       
     
     
@@ -65,12 +65,6 @@
 
 
 <meta property="article:published_time" content="2016-02-01T18:34:00+09:00">
-
-<meta property="og:see_also" content="https://jser.info/ko/2018/03/20/typescript-2.8rc-firefox-59-smooshgate/">
-
-<meta property="og:see_also" content="https://jser.info/ko/2018/02/20/ember-3.0-propel-ml/">
-
-<meta property="og:see_also" content="https://jser.info/ko/2018/02/13/inferno-v4-safariservice-worker-eloquent-javascript/">
 
 
 
@@ -185,7 +179,7 @@
 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<h2 id="array.prototype.includes"><a href="https://github.com/tc39/Array.prototype.includes/" title="Array.prototype.includes">Array.prototype.includes</a></h2>
+<h2 id="array-prototype-includes"><a href="https://github.com/tc39/Array.prototype.includes/" title="Array.prototype.includes">Array.prototype.includes</a></h2>
 
 <p>ES6에서 <code>Array.prototype.contains</code>로 추가될 예정이었지만, Break the web(웹을 망가뜨리는 구현 방식)이었기 때문에 연기 됐던 기능입니다.</p>
 
@@ -224,11 +218,11 @@
 
 <p>지금까지의 드래프트 버전에는 추가된 기능 이외에도 사양적인 여러 업데이트가 포함돼 있습니다.</p>
 
-<h2 id="변경된-사양">변경된 사양</h2>
+<h2 id="part-6c56cb02cc579360">변경된 사양</h2>
 
 <p>몇 가지 예를 들어보겠습니다.</p>
 
-<h3 id="promise.all과-promise.race가-@@species를-무시하도록-변경"><code>Promise.all</code>과 <code>Promise.race</code>가 <code>@@species</code>를 무시하도록 변경</h3>
+<h3 id="promise-all-promise-race-species"><code>Promise.all</code>과 <code>Promise.race</code>가 <code>@@species</code>를 무시하도록 변경</h3>
 
 <p>ES6에서 이미 <code>Promise.resolve</code>가 <code>@@species</code>를 무시하는 변경이 들어가 있었으며, 이번에 all과 race에도 이러한 변경이 들어가게 됐습니다.</p>
 
@@ -236,7 +230,7 @@
 <li><a href="https://github.com/tc39/ecma262/issues/151" title="Remove @@species lookup from Promise.all() and Promise.race() · Issue #151 · tc39/ecma262">Remove @@species lookup from Promise.all() and Promise.race() · Issue #151 · tc39/ecma262</a></li>
 </ul>
 
-<h3 id="hostpromiserejectiontracker(일본어)-추상-인터페이스-추가"><a href="https://wiki.suikawiki.org/n/HostPromiseRejectionTracker" title="HostPromiseRejectionTracker">HostPromiseRejectionTracker</a>(일본어) 추상 인터페이스 추가</h3>
+<h3 id="hostpromiserejectiontracker"><a href="https://wiki.suikawiki.org/n/HostPromiseRejectionTracker" title="HostPromiseRejectionTracker">HostPromiseRejectionTracker</a>(일본어) 추상 인터페이스 추가</h3>
 
 <p>이것은 <code>HostPromiseRejectionTracker</code>를 Host 환경(브라우저 등)이 구현하고 있다면<br>
 Promise에서 Unhandled Rejection이 발생했을 때 호출되는 방법에 관한 사양입니다.</p>
@@ -257,19 +251,19 @@ Promise에서 Unhandled Rejection이 발생했을 때 호출되는 방법에 관
 </ul></li>
 </ul>
 
-<h3 id="generatorfunction에서-[[construct]]를-제외">GeneratorFunction에서 <code>[[Construct]]</code>를 제외</h3>
+<h3 id="generatorfunction-construct">GeneratorFunction에서 <code>[[Construct]]</code>를 제외</h3>
 
 <p>ES6에서는 GeneratorFunction이 <code>new</code> 가능했습니다.<br>
 하지만, ES2016에서는 예외가 발생하도록 변경됐습니다.<br>
 (<code>[[Construct]]</code>을 갖는다는 것은 <code>new</code>가 가능하다는 뜻입니다)</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">var g = { *g() {} }.g;
+<div class="highlight"><pre><code class="language-" data-lang="">var g = { *g() {} }.g;
 new g(); // ES6에서는 valid, ES2016에서는 throw error
 </code></pre></div>
 <ul>
 <li><a href="https://github.com/tc39/ecma262/releases/tag/es2016-draft-20151201" title="Release ES2016 Draft 2015-12-01 · tc39/ecma262">Release ES2016 Draft 2015-12-01 · tc39/ecma262</a></li>
 </ul>
 
-<h3 id="proxy의-[[enumerate]]-trap-변경">Proxy의 <code>[[Enumerate]]</code> trap 변경</h3>
+<h3 id="proxy-enumerate-trap">Proxy의 <code>[[Enumerate]]</code> trap 변경</h3>
 
 <p>아직 사양이 변경되진 않았지만, 변경이 예정돼 있는 사항입니다.</p>
 
@@ -280,7 +274,7 @@ new g(); // ES6에서는 valid, ES2016에서는 throw error
 <p>이처럼, 기능이 추가되는 것 외에도 세세한 변경이 이뤄지고 있습니다.<br>
 Breaking Change지만, 아직 사용하고 있는 케이스가 적기(애초에 구현한 브라우저가 적다) 때문에 빠르게 수정하고 있다는 느낌입니다.</p>
 
-<h2 id="변경-사항을-알-수-있는-방법">변경 사항을 알 수 있는 방법</h2>
+<h2 id="part-7e4cdb1ba5bc339c">변경 사항을 알 수 있는 방법</h2>
 
 <p>이러한 정식 변경 사항을 어디서 알 수 있는지를 간단하게 정리해보겠습니다.<br>
 세세한 수정 이외의 변경은, 2개월 마다 1회 개최되고 있는 TC39의 미팅에서 의논된 후 추가됩니다.</p>
@@ -310,7 +304,7 @@ Breaking Change지만, 아직 사용하고 있는 케이스가 적기(애초에 
 
 <ul>
 <li><a href="https://tc39-mtg.doorkeeper.jp/" title="TC39 MTG Notes MTG | Doorkeeper">TC39 MTG Notes MTG | Doorkeeper</a></li>
-<li><a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=%23TC39MTG&amp;src=typd" title="#TC39MTG">#TC39MTG</a></li>
+<li><a href="https://twitter.com/search?f=tweets&vertical=default&q=%23TC39MTG&src=typd" title="#TC39MTG">#TC39MTG</a></li>
 </ul>
 
 <h3 id="github">GitHub</h3>
@@ -322,7 +316,7 @@ Breaking Change지만, 아직 사용하고 있는 케이스가 적기(애초에 
 <li><a href="https://github.com/tc39/ecma262" title="tc39/ecma262">tc39/ecma262</a></li>
 </ul>
 
-<h3 id="기타">기타</h3>
+<h3 id="part-654371c48e7">기타</h3>
 
 <p>기타로 공식적인 것은 아니지만 ECMAScript 관련 정보를 잘 소개하는 아래와 같은 사이트를 몇 개 소개합니다.</p>
 

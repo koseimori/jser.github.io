@@ -17,7 +17,7 @@
     
     
       
-      <meta content="_i18n" property="article:section">
+      <meta content="JSer" property="article:section">
       
     
     
@@ -69,12 +69,6 @@
 
 
 <meta property="article:published_time" content="2017-11-14T10:27:38+09:00">
-
-<meta property="og:see_also" content="https://jser.info/2018/04/01/typescript-2.8-react-16.3.0-tensorflow.js/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/26/d3.js-5.0.0-oclif/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/20/typescript-2.8rc-firefox-59-smooshgate/">
 
 
 
@@ -200,8 +194,8 @@
 <p>また、<a href="https://github.com/facebook/react/tree/master/packages/react-call-return" title="react-call-return">react-call-return</a>というパッケージが試験的に公開されています。<br>
 次の記事で解説されていますが、<code>ReactCallReturn.unstable_createCall</code>でChildrenに値を渡して呼び出し、その結果を使って別の要素を返すことができる仕組みのようです。</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// https://github.com/facebook/react/blob/2d23a4563ef2bec7d90c4a7edff2657c890b4334/packages/react-call-return/src/__tests__/ReactCallReturn-test.js</span>
-<span class="kr">class</span> <span class="nx">Counter</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
-  <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span><span class="nx">value</span><span class="o">:</span> <span class="mi">5</span><span class="p">};</span>
+<span class="kd">class</span> <span class="nx">Counter</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span><span class="na">value</span><span class="p">:</span> <span class="mi">5</span><span class="p">};</span>
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">ReactCallReturn</span><span class="p">.</span><span class="nx">unstable_createReturn</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
   <span class="p">}</span>
@@ -209,12 +203,12 @@
 <span class="kd">function</span> <span class="nx">App</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
  <span class="k">return</span> <span class="nx">ReactCallReturn</span><span class="p">.</span><span class="nx">unstable_createCall</span><span class="p">(</span>
    <span class="p">[</span>
-     <span class="o">&lt;</span><span class="nx">Counter</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;a&quot;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;a&quot;</span> <span class="o">/&gt;</span><span class="p">,</span>
-     <span class="o">&lt;</span><span class="nx">Counter</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;b&quot;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;b&quot;</span> <span class="o">/&gt;</span><span class="p">,</span>
-     <span class="o">&lt;</span><span class="nx">Counter</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;c&quot;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;c&quot;</span> <span class="o">/&gt;</span><span class="p">,</span>
+     <span class="o">&lt;</span><span class="nx">Counter</span> <span class="nx">key</span><span class="o">=</span><span class="s2">"a"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"a"</span> <span class="o">/&gt;</span><span class="p">,</span>
+     <span class="o">&lt;</span><span class="nx">Counter</span> <span class="nx">key</span><span class="o">=</span><span class="s2">"b"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"b"</span> <span class="o">/&gt;</span><span class="p">,</span>
+     <span class="o">&lt;</span><span class="nx">Counter</span> <span class="nx">key</span><span class="o">=</span><span class="s2">"c"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"c"</span> <span class="o">/&gt;</span><span class="p">,</span>
    <span class="p">],</span>
-   <span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">returns</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">y</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">i</span><span class="p">}</span> <span class="nx">prop</span><span class="o">=</span><span class="p">{</span><span class="nx">y</span> <span class="o">*</span> <span class="mi">100</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">),</span>
-   <span class="p">{},</span>
+   <span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">returns</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">y</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">i</span><span class="p">}</span> <span class="nx">prop</span><span class="o">=</span><span class="p">{</span><span class="nx">y</span> <span class="o">*</span> <span class="mi">100</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="se">)</span><span class="err">,
+</span>   <span class="p">{},</span>
  <span class="p">);</span>
 <span class="p">}</span>
 
@@ -255,7 +249,7 @@
 
 <hr>
 
-<h2 id="polymerlabs/lit-html:-html-template-literals-in-javascript">PolymerLabs/lit-html: HTML template literals in JavaScript</h2>
+<h2 id="polymerlabs-lit-html-html-template-literals-in-javascript">PolymerLabs/lit-html: HTML template literals in JavaScript</h2>
 
 <p><a href="https://github.com/PolymerLabs/lit-html" title="PolymerLabs/lit-html: HTML template literals in JavaScript">github.com/PolymerLabs/lit-html</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">HTML</span> <span class="jser-tag">DOM</span> <span class="jser-tag">library</span></p></p>
@@ -269,7 +263,7 @@
 
 <hr>
 
-<h2 id="release-v1.0.0-·-addyosmani/critical">Release v1.0.0 · addyosmani/critical</h2>
+<h2 id="release-v1-0-0-addyosmani-critical">Release v1.0.0 · addyosmani/critical</h2>
 
 <p><a href="https://github.com/addyosmani/critical/releases/tag/v1.0.0" title="Release v1.0.0 · addyosmani/critical">github.com/addyosmani/critical/releases/tag/v1.0.0</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">CSS</span> <span class="jser-tag">Tools</span></p></p>
@@ -279,7 +273,7 @@
 
 <hr>
 
-<h2 id="dev.opera-—-what’s-new-in-chromium-62-and-opera-49">Dev.Opera — What’s new in Chromium 62 and Opera 49</h2>
+<h2 id="dev-opera-what-s-new-in-chromium-62-and-opera-49">Dev.Opera — What’s new in Chromium 62 and Opera 49</h2>
 
 <p><a href="https://dev.opera.com/blog/opera-49/" title="Dev.Opera — What’s new in Chromium 62 and Opera 49">dev.opera.com/blog/opera-49/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">Opera</span> <span class="jser-tag">ReleaseNote</span></p></p>
@@ -289,7 +283,7 @@ Network Information API、OpenType Variable Fonts、DOM要素のMedia Captureな
 
 <hr>
 
-<h2 id="release-v16.1.0-·-facebook/react">Release v16.1.0 · facebook/react</h2>
+<h2 id="release-v16-1-0-facebook-react">Release v16.1.0 · facebook/react</h2>
 
 <p><a href="https://github.com/facebook/react/releases/tag/v16.1.0" title="Release v16.1.0 · facebook/react">github.com/facebook/react/releases/tag/v16.1.0</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">React</span> <span class="jser-tag">ReleaseNote</span></p></p>
@@ -299,7 +293,7 @@ Bowerのサポート終了、<code>React.Children</code> utilがPortalをサポ�
 
 <hr>
 
-<h2 id="announcing-draftjs-plugins-2.0-–-nik-graf-–-medium">Announcing DraftJS Plugins 2.0 – Nik Graf – Medium</h2>
+<h2 id="announcing-draftjs-plugins-2-0-nik-graf-medium">Announcing DraftJS Plugins 2.0 – Nik Graf – Medium</h2>
 
 <p><a href="https://medium.com/@nikgraf/announcing-draftjs-plugins-2-0-8c25f2a4df55" title="Announcing DraftJS Plugins 2.0 – Nik Graf – Medium">medium.com/@nikgraf/announcing-draftjs-plugins-2-0-8c25f2a4df55</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">React</span> <span class="jser-tag">plugin</span> <span class="jser-tag">ReleaseNote</span></p></p>
@@ -317,7 +311,7 @@ Bowerのサポート終了、<code>React.Children</code> utilがPortalをサポ�
 
 <hr>
 
-<h2 id="es-proposal:-`import.meta`-–-module-metadata">ES proposal: `import.meta` – module metadata</h2>
+<h2 id="es-proposal-import-meta-module-metadata">ES proposal: `import.meta` – module metadata</h2>
 
 <p><a href="http://2ality.com/2017/11/import-meta.html" title="ES proposal: \`import.meta\` – module metadata">2ality.com/2017/11/import-meta.html</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">ECMAScript</span> <span class="jser-tag">proposal</span> <span class="jser-tag">node.js</span></p></p>
@@ -327,7 +321,7 @@ Bowerのサポート終了、<code>React.Children</code> utilがPortalをサポ�
 
 <hr>
 
-<h2 id="creating-a-star-to-heart-animation-with-svg-and-vanilla-javascript-|-css-tricks">Creating a Star to Heart Animation with SVG and Vanilla JavaScript | CSS-Tricks</h2>
+<h2 id="creating-a-star-to-heart-animation-with-svg-and-vanilla-javascript-css-tricks">Creating a Star to Heart Animation with SVG and Vanilla JavaScript | CSS-Tricks</h2>
 
 <p><a href="https://css-tricks.com/creating-star-heart-animation-svg-vanilla-javascript/" title="Creating a Star to Heart Animation with SVG and Vanilla JavaScript | CSS-Tricks">css-tricks.com/creating-star-heart-animation-svg-vanilla-javascript/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">SVG</span> <span class="jser-tag">article</span></p></p>
@@ -336,7 +330,7 @@ Bowerのサポート終了、<code>React.Children</code> utilがPortalをサポ�
 
 <hr>
 
-<h2 id="angular-5:-upgrading-&amp;-summary-of-new-features-←-alligator.io">Angular 5: Upgrading &amp; Summary of New Features ← Alligator.io</h2>
+<h2 id="angular-5-upgrading-summary-of-new-features-alligator-io">Angular 5: Upgrading &amp; Summary of New Features ← Alligator.io</h2>
 
 <p><a href="https://alligator.io/angular/angular-5/" title="Angular 5: Upgrading &amp; Summary of New Features ← Alligator.io">alligator.io/angular/angular-5/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">Angular</span> <span class="jser-tag">article</span></p></p>
@@ -346,7 +340,7 @@ Angular CLIの改善や最適化オプション、<code>updateOn</code>オプシ
 
 <hr>
 
-<h2 id="high-performance-service-worker-loading- | -web-fundamentals- | -google-developers">High-performance service worker loading  |  Web Fundamentals  |  Google Developers</h2>
+<h2 id="high-performance-service-worker-loading-web-fundamentals-google-developers">High-performance service worker loading  |  Web Fundamentals  |  Google Developers</h2>
 
 <p><a href="https://developers.google.com/web/fundamentals/primers/service-workers/high-performance-loading" title="High-performance service worker loading  |  Web Fundamentals  |  Google Developers">developers.google.com/web/fundamentals/primers/service-workers/high-performance-loading</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">ServiceWorker</span> <span class="jser-tag">article</span></p></p>
@@ -356,7 +350,7 @@ HTMLのキャッシュ、Application Shellパターン、<code>fetch</code>ハ�
 
 <hr>
 
-<h2 id="resource-prioritization-–-getting-the-browser-to-help-you- | -web-fundamentals- | -google-developers">Resource Prioritization – Getting the Browser to Help You  |  Web Fundamentals  |  Google Developers</h2>
+<h2 id="resource-prioritization-getting-the-browser-to-help-you-web-fundamentals-google-developers">Resource Prioritization – Getting the Browser to Help You  |  Web Fundamentals  |  Google Developers</h2>
 
 <p><a href="https://developers.google.com/web/fundamentals/performance/resource-prioritization" title="Resource Prioritization – Getting the Browser to Help You  |  Web Fundamentals  |  Google Developers">developers.google.com/web/fundamentals/performance/resource-prioritization</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">performance</span> <span class="jser-tag">browser</span> <span class="jser-tag">debug</span> <span class="jser-tag">article</span></p></p>
@@ -366,7 +360,7 @@ HTMLのキャッシュ、Application Shellパターン、<code>fetch</code>ハ�
 
 <hr>
 
-<h2 id="proper-error-handling-in-javascript-―-scotch">Proper Error Handling in JavaScript ― Scotch</h2>
+<h2 id="proper-error-handling-in-javascript-scotch">Proper Error Handling in JavaScript ― Scotch</h2>
 
 <p><a href="https://scotch.io/tutorials/proper-error-handling-in-javascript" title="Proper Error Handling in JavaScript ― Scotch">scotch.io/tutorials/proper-error-handling-in-javascript</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">article</span></p></p>
@@ -376,7 +370,7 @@ try...catch...finally、throw、window.onerror、コールスタックの読み�
 
 <hr>
 
-<h2 id="browser-automation-revisited---meet-puppeteer">Browser automation revisited - meet Puppeteer</h2>
+<h2 id="browser-automation-revisited-meet-puppeteer">Browser automation revisited - meet Puppeteer</h2>
 
 <p><a href="https://nemethgergely.com/puppeteer-browser-automation/" title="Browser automation revisited - meet Puppeteer">nemethgergely.com/puppeteer-browser-automation/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">Chrome</span> <span class="jser-tag">JavaScript</span> <span class="jser-tag">debug</span> <span class="jser-tag">article</span></p></p>
@@ -390,7 +384,7 @@ try...catch...finally、throw、window.onerror、コールスタックの読み�
 
 <hr>
 
-<h2 id="コンポーネント指向と余白の設計">コンポーネント指向と余白の設計</h2>
+<h2 id="part-2b21f76eb8b65c7e">コンポーネント指向と余白の設計</h2>
 
 <p><a href="https://www.slideshare.net/manabuyasuda1/ss-71261608" title="コンポーネント指向と余白の設計">www.slideshare.net/manabuyasuda1/ss-71261608</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">design</span> <span class="jser-tag">CSS</span> <span class="jser-tag">slide</span></p></p>
@@ -403,7 +397,7 @@ try...catch...finally、throw、window.onerror、コールスタックの読み�
 
 <hr>
 
-<h2 id="docusaurus-·-easy-to-maintain-open-source-documentation-websites">Docusaurus · Easy to Maintain Open Source Documentation Websites</h2>
+<h2 id="docusaurus-easy-to-maintain-open-source-documentation-websites">Docusaurus · Easy to Maintain Open Source Documentation Websites</h2>
 
 <p><a href="https://docusaurus.io/" title="Docusaurus · Easy to Maintain Open Source Documentation Websites">docusaurus.io/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">React</span> <span class="jser-tag">Markdown</span> <span class="jser-tag">API</span> <span class="jser-tag">document</span> <span class="jser-tag">Tools</span></p></p>
@@ -413,7 +407,7 @@ Reactを使ったカスタマイズ、翻訳への対応、ブログ機能やalg
 
 <hr>
 
-<h2 id="debugger-playground-|-introduction-|-mozilla">Debugger PlayGround | Introduction | Mozilla</h2>
+<h2 id="debugger-playground-introduction-mozilla">Debugger PlayGround | Introduction | Mozilla</h2>
 
 <p><a href="https://mozilladevelopers.github.io/playground/debugger" title="Debugger PlayGround | Introduction | Mozilla">mozilladevelopers.github.io/playground/debugger</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">firefox</span> <span class="jser-tag">debug</span> <span class="jser-tag">tutorial</span></p></p>
@@ -427,7 +421,7 @@ Reactを使ったカスタマイズ、翻訳への対応、ブログ機能やalg
 
 <hr>
 
-<h2 id="bogdan-lyashenko/under-the-hood-reactjs:-entire-react-code-base-explanation-by-visual-block-schemes-(stack+fiber-versions)">Bogdan-Lyashenko/Under-the-hood-ReactJS: Entire React code base explanation by visual block schemes (Stack+Fiber versions)</h2>
+<h2 id="bogdan-lyashenko-under-the-hood-reactjs-entire-react-code-base-explanation-by-visual-block-schemes-stack-fiber-versions">Bogdan-Lyashenko/Under-the-hood-ReactJS: Entire React code base explanation by visual block schemes (Stack+Fiber versions)</h2>
 
 <p><a href="https://github.com/Bogdan-Lyashenko/Under-the-hood-ReactJS" title="Bogdan-Lyashenko/Under-the-hood-ReactJS: Entire React code base explanation by visual block schemes (Stack+Fiber versions)">github.com/Bogdan-Lyashenko/Under-the-hood-ReactJS</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">React</span> <span class="jser-tag">document</span></p></p>
@@ -445,7 +439,7 @@ Reactを使ったカスタマイズ、翻訳への対応、ブログ機能やalg
 
 <hr>
 
-<h2 id="lifenautjoe/noel:-a-universal,-human-centric,-replayable-javascript-event-emitter.">lifenautjoe/noel: A universal, human-centric, replayable javascript event emitter.</h2>
+<h2 id="lifenautjoe-noel-a-universal-human-centric-replayable-javascript-event-emitter">lifenautjoe/noel: A universal, human-centric, replayable javascript event emitter.</h2>
 
 <p><a href="https://github.com/lifenautjoe/noel" title="lifenautjoe/noel: A universal, human-centric, replayable javascript event emitter.">github.com/lifenautjoe/noel</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">library</span></p></p>
@@ -454,7 +448,7 @@ Reactを使ったカスタマイズ、翻訳への対応、ブログ機能やalg
 
 <hr>
 
-<h2 id="papercss-·-the-less-formal-css-framework">PaperCSS · the less formal CSS framework</h2>
+<h2 id="papercss-the-less-formal-css-framework">PaperCSS · the less formal CSS framework</h2>
 
 <p><a href="https://www.getpapercss.com/" title="PaperCSS · the less formal CSS framework">www.getpapercss.com/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">CSS</span> <span class="jser-tag">library</span></p></p>
@@ -463,7 +457,7 @@ Reactを使ったカスタマイズ、翻訳への対応、ブログ機能やalg
 
 <hr>
 
-<h2 id="bogdan-lyashenko/js-code-to-svg-flowchart:-js2flowchart---a-visualization-library-to-convert-any-javascript-code-into-beautiful-svg-flowchart.-learn-other’s-code.-design-your-code.-refactor-code.-document-code.-explain-code.">Bogdan-Lyashenko/js-code-to-svg-flowchart: js2flowchart - a visualization library to convert any JavaScript code into beautiful SVG flowchart. Learn other’s code. Design your code. Refactor code. Document code. Explain code.</h2>
+<h2 id="bogdan-lyashenko-js-code-to-svg-flowchart-js2flowchart-a-visualization-library-to-convert-any-javascript-code-into-beautiful-svg-flowchart-learn-other-s-code-design-your-code-refactor-code-document-code-explain-code">Bogdan-Lyashenko/js-code-to-svg-flowchart: js2flowchart - a visualization library to convert any JavaScript code into beautiful SVG flowchart. Learn other’s code. Design your code. Refactor code. Document code. Explain code.</h2>
 
 <p><a href="https://github.com/Bogdan-Lyashenko/js-code-to-svg-flowchart" title="Bogdan-Lyashenko/js-code-to-svg-flowchart: js2flowchart - a visualization library to convert any JavaScript code into beautiful SVG flowchart. Learn other’s code. Design your code. Refactor code. Document code. Explain code.">github.com/Bogdan-Lyashenko/js-code-to-svg-flowchart</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">SVG</span> <span class="jser-tag">Tools</span> <span class="jser-tag">library</span></p></p>

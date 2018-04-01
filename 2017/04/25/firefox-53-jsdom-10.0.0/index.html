@@ -17,7 +17,7 @@
     
     
       
-      <meta content="_i18n" property="article:section">
+      <meta content="JSer" property="article:section">
       
     
     
@@ -69,12 +69,6 @@
 
 
 <meta property="article:published_time" content="2017-04-25T10:55:35+09:00">
-
-<meta property="og:see_also" content="https://jser.info/2018/04/01/typescript-2.8-react-16.3.0-tensorflow.js/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/26/d3.js-5.0.0-oclif/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/20/typescript-2.8rc-firefox-59-smooshgate/">
 
 
 
@@ -209,9 +203,9 @@ Firefox52までは次のように無名関数は<code>fn.name</code>がundefined
 </code></pre></div>
 <p>Firefox53からは、無名関数やArrow Functionに対してもコンテキストに基づいた名前がつくようになりました。</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// &quot;foo&quot;</span>
-<span class="kr">const</span> <span class="nx">bar</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bar</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// &quot;bar&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// "foo"</span>
+<span class="kd">const</span> <span class="nx">bar</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bar</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// "bar"</span>
 </code></pre></div>
 <ul>
 <li><a href="http://js-next.hatenablog.com/entry/2016/04/19/190006" title="Function#nameについて - JS.next">Function#nameについて - JS.next</a></li>
@@ -232,18 +226,18 @@ Firefox52までは次のように無名関数は<code>fn.name</code>がundefined
 </ul>
 
 <p>今までは、<code>jsdom.env</code>というメソッドで初期化を行っていました。</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">jsdom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsdom&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">jsdom</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"jsdom"</span><span class="p">);</span>
 <span class="nx">jsdom</span><span class="p">.</span><span class="nx">env</span><span class="p">(</span>
-  <span class="err">`</span><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="nx">world</span><span class="o">&lt;</span><span class="err">/p&gt;`,</span>
+  <span class="s2">`&lt;!DOCTYPE html&gt;&lt;p&gt;Hello world&lt;/p&gt;`</span><span class="p">,</span>
   <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nb">window</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">textContent</span><span class="p">);</span> <span class="c1">// &quot;Hello world&quot;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">textContent</span><span class="p">);</span> <span class="c1">// "Hello world"</span>
   <span class="p">}</span>
 <span class="p">);</span>
 </code></pre></div>
 <p>10.0.0からは、JSDOMコンストラクタをnewすることで、<code>dom</code>オブジェクト経由で<code>window</code>を手に入れることができるようになりました。</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">{</span> <span class="nx">JSDOM</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsdom&quot;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">dom</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JSDOM</span><span class="p">(</span><span class="err">`</span><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="nx">world</span><span class="o">&lt;</span><span class="err">/p&gt;`);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dom</span><span class="p">.</span><span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">textContent</span><span class="p">);</span> <span class="c1">// &quot;Hello world&quot;</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">const</span> <span class="p">{</span> <span class="nx">JSDOM</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"jsdom"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">dom</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JSDOM</span><span class="p">(</span><span class="s2">`&lt;!DOCTYPE html&gt;&lt;p&gt;Hello world&lt;/p&gt;`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dom</span><span class="p">.</span><span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">textContent</span><span class="p">);</span> <span class="c1">// "Hello world"</span>
 </code></pre></div>
 <p>その他にも<code>Script</code>や<code>CookieJar</code>の追加、<code>omitJsdomErrors</code>を<code>omitJSDOMErrors</code>へリネーム、<code>dir</code>の対応改善、<code>window.postMessage()</code>のoriginチェックを修正などが含まれています。</p>
 
@@ -253,7 +247,7 @@ Firefox52までは次のように無名関数は<code>fn.name</code>がundefined
 
 <hr>
 
-<h2 id="release-notes-for-safari-technology-preview 28-|-webkit">Release Notes for Safari Technology Preview 28 | WebKit</h2>
+<h2 id="release-notes-for-safari-technology-preview-28-webkit">Release Notes for Safari Technology Preview 28 | WebKit</h2>
 
 <p><a href="https://webkit.org/blog/7516/release-notes-for-safari-technology-preview-28/" title="Release Notes for Safari Technology Preview 28 | WebKit">webkit.org/blog/7516/release-notes-for-safari-technology-preview-28/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">safari</span> <span class="jser-tag">ReleaseNote</span></p></p>
@@ -264,7 +258,7 @@ WebCryptoでAES-CTRをサポート</p>
 
 <hr>
 
-<h2 id="firefox-—-notes-(53.0)-—-mozilla">Firefox — Notes (53.0) — Mozilla</h2>
+<h2 id="firefox-notes-53-0-mozilla">Firefox — Notes (53.0) — Mozilla</h2>
 
 <p><a href="https://www.mozilla.org/en-US/firefox/53.0/releasenotes/" title="Firefox — Notes (53.0) — Mozilla">www.mozilla.org/en-US/firefox/53.0/releasenotes/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">firefox</span> <span class="jser-tag">ReleaseNote</span></p></p>
@@ -275,14 +269,14 @@ ES2015のFunction.nameの仕様追従<br>
 
 <ul>
 <li><a href="https://developer.mozilla.org/ja/Firefox/Releases/53" title="Firefox 53 for developers - Mozilla | MDN">Firefox 53 for developers - Mozilla | MDN</a></li>
-<li><a href="http://mozillazine.jp/?p&amp;#x3D;5422" title="MozillaZine.jp » Blog Archive » Firefox 53 がリリースされた">MozillaZine.jp » Blog Archive » Firefox 53 がリリースされた</a></li>
+<li><a href="http://mozillazine.jp/?p&#x3D;5422" title="MozillaZine.jp » Blog Archive » Firefox 53 がリリースされた">MozillaZine.jp » Blog Archive » Firefox 53 がリリースされた</a></li>
 <li><a href="https://hacks.mozilla.org/2017/04/firefox-53-quantum-compositor-compact-themes-css-masks-and-more/" title="Firefox 53: Quantum Compositor, Compact Themes, CSS Masks, and More ★ Mozilla Hacks – the Web developer blog">Firefox 53: Quantum Compositor, Compact Themes, CSS Masks, and More ★ Mozilla Hacks – the Web developer blog</a></li>
 <li><a href="https://www.fxsitecompat.com/ja/versions/53/" title="Firefox 53 サイト互換性情報 | Firefox サイト互換性情報">Firefox 53 サイト互換性情報 | Firefox サイト互換性情報</a></li>
 </ul>
 
 <hr>
 
-<h2 id="new-in-chrome-58- | -web- | -google-developers">New in Chrome 58  |  Web  |  Google Developers</h2>
+<h2 id="new-in-chrome-58-web-google-developers">New in Chrome 58  |  Web  |  Google Developers</h2>
 
 <p><a href="https://developers.google.com/web/updates/2017/04/nic58" title="New in Chrome 58  |  Web  |  Google Developers">developers.google.com/web/updates/2017/04/nic58</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">Chrome</span> <span class="jser-tag">ReleaseNote</span></p></p>
@@ -296,7 +290,7 @@ IndexedDB 2.0、<code>display: flow-root</code>のサポートなど</p>
 
 <hr>
 
-<h2 id="jsdom/changelog.md-at-10.0.0-·-tmpvar/jsdom">jsdom/Changelog.md at 10.0.0 · tmpvar/jsdom</h2>
+<h2 id="jsdom-changelog-md-at-10-0-0-tmpvar-jsdom">jsdom/Changelog.md at 10.0.0 · tmpvar/jsdom</h2>
 
 <p><a href="https://github.com/tmpvar/jsdom/blob/10.0.0/Changelog.md" title="jsdom/Changelog.md at 10.0.0 · tmpvar/jsdom">github.com/tmpvar/jsdom/blob/10.0.0/Changelog.md</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">node.js</span> <span class="jser-tag">DOM</span> <span class="jser-tag">library</span> <span class="jser-tag">ReleaseNote</span></p></p>
@@ -315,7 +309,7 @@ Node.js &lt;=5のサポートを終了、基本的な使い方を変更(<code>ne
 
 <hr>
 
-<h2 id="async-iterators-and-generators---jakearchibald.com">Async iterators and generators - JakeArchibald.com</h2>
+<h2 id="async-iterators-and-generators-jakearchibald-com">Async iterators and generators - JakeArchibald.com</h2>
 
 <p><a href="https://jakearchibald.com/2017/async-iterators-and-generators/" title="Async iterators and generators - JakeArchibald.com">jakearchibald.com/2017/async-iterators-and-generators/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">ECMAScript</span> <span class="jser-tag">JavaScript</span></p></p>
@@ -324,7 +318,7 @@ Node.js &lt;=5のサポートを終了、基本的な使い方を変更(<code>ne
 
 <hr>
 
-<h2 id="a-vue.js-introduction-for-people-who-know-just-enough-jquery-to-get-by">A Vue.js introduction for people who know just enough jQuery to get by</h2>
+<h2 id="a-vue-js-introduction-for-people-who-know-just-enough-jquery-to-get-by">A Vue.js introduction for people who know just enough jQuery to get by</h2>
 
 <p><a href="https://medium.freecodecamp.com/vue-js-introduction-for-people-who-know-just-enough-jquery-to-get-by-eab5aa193d77" title="A Vue.js introduction for people who know just enough jQuery to get by">medium.freecodecamp.com/vue-js-introduction-for-people-who-know-just-enough-jquery-to-get-by-eab5aa193d77</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">Vue</span> <span class="jser-tag">tutorial</span></p></p>
@@ -334,7 +328,7 @@ Node.js &lt;=5のサポートを終了、基本的な使い方を変更(<code>ne
 
 <hr>
 
-<h2 id="fresh!-web-パフォーマンス改善-〜クライアントサイド編〜-|-cyberagent-developers-blog-|-サイバーエージェント-デベロッパーズブログ">FRESH! Web パフォーマンス改善 〜クライアントサイド編〜 | CyberAgent Developers Blog | サイバーエージェント デベロッパーズブログ</h2>
+<h2 id="fresh-web-cyberagent-developers-blog">FRESH! Web パフォーマンス改善 〜クライアントサイド編〜 | CyberAgent Developers Blog | サイバーエージェント デベロッパーズブログ</h2>
 
 <p><a href="https://developers.cyberagent.co.jp/blog/archives/6057/" title="FRESH! Web パフォーマンス改善 〜クライアントサイド編〜 | CyberAgent Developers Blog | サイバーエージェント デベロッパーズブログ">developers.cyberagent.co.jp/blog/archives/6057/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">browser</span> <span class="jser-tag">performance</span></p></p>
@@ -344,7 +338,7 @@ Service Workerを使ったキャッシュ、Intersection Observerを使ったlaz
 
 <hr>
 
-<h2 id="脱jqueryのためにしたこと---qiita">脱jQueryのためにしたこと - Qiita</h2>
+<h2 id="jquery-qiita">脱jQueryのためにしたこと - Qiita</h2>
 
 <p><a href="http://qiita.com/clockmaker/items/50c3a9772e36a95ae500" title="脱jQueryのためにしたこと - Qiita">qiita.com/clockmaker/items/50c3a9772e36a95ae500</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">jQuery</span> <span class="jser-tag">Vue</span> <span class="jser-tag">リファクタリング</span> <span class="jser-tag">opinion</span></p></p>
@@ -353,7 +347,7 @@ Service Workerを使ったキャッシュ、Intersection Observerを使ったlaz
 
 <hr>
 
-<h2 id="visual-testing-—-the-pragmatic-way-to-test-uis-–-chroma">Visual Testing — the pragmatic way to test UIs – Chroma</h2>
+<h2 id="visual-testing-the-pragmatic-way-to-test-uis-chroma">Visual Testing — the pragmatic way to test UIs – Chroma</h2>
 
 <p><a href="https://blog.hichroma.com/visual-testing-the-pragmatic-way-to-test-uis-18c8da617ecf" title="Visual Testing — the pragmatic way to test UIs – Chroma">blog.hichroma.com/visual-testing-the-pragmatic-way-to-test-uis-18c8da617ecf</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">UI</span> <span class="jser-tag">testing</span> <span class="jser-tag">React</span></p></p>
@@ -367,7 +361,7 @@ Service Workerを使ったキャッシュ、Intersection Observerを使ったlaz
 
 <hr>
 
-<h2 id="how-to-build-a-math-expression-tokenizer-using-javascript-(or-any-other-language)">How to build a math expression tokenizer using JavaScript (or any other language)</h2>
+<h2 id="how-to-build-a-math-expression-tokenizer-using-javascript-or-any-other-language">How to build a math expression tokenizer using JavaScript (or any other language)</h2>
 
 <p><a href="https://medium.freecodecamp.com/how-to-build-a-math-expression-tokenizer-using-javascript-3638d4e5fbe9" title="How to build a math expression tokenizer using JavaScript (or any other language)">medium.freecodecamp.com/how-to-build-a-math-expression-tokenizer-using-javascript-3638d4e5fbe9</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">tutorial</span></p></p>
@@ -376,7 +370,7 @@ Service Workerを使ったキャッシュ、Intersection Observerを使ったlaz
 
 <hr>
 
-<h2 id="javascript-testing-tool-showdown:-sinon.js-vs-testdouble.js-—-sitepoint">JavaScript Testing Tool Showdown: Sinon.js vs testdouble.js — SitePoint</h2>
+<h2 id="javascript-testing-tool-showdown-sinon-js-vs-testdouble-js-sitepoint">JavaScript Testing Tool Showdown: Sinon.js vs testdouble.js — SitePoint</h2>
 
 <p><a href="https://www.sitepoint.com/javascript-testing-tool-showdown-sinon-js-vs-testdouble-js/" title="JavaScript Testing Tool Showdown: Sinon.js vs testdouble.js — SitePoint">www.sitepoint.com/javascript-testing-tool-showdown-sinon-js-vs-testdouble-js/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">testing</span></p></p>
@@ -385,7 +379,7 @@ Service Workerを使ったキャッシュ、Intersection Observerを使ったlaz
 
 <hr>
 
-<h2 id="react-fiber現状確認---blog.koba04.com">React Fiber現状確認 - blog.koba04.com</h2>
+<h2 id="react-fiber-blog-koba04-com">React Fiber現状確認 - blog.koba04.com</h2>
 
 <p><a href="http://blog.koba04.com/post/2017/04/25/a-state-of-react-fiber/" title="React Fiber現状確認 - blog.koba04.com">blog.koba04.com/post/2017/04/25/a-state-of-react-fiber/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">React</span> <span class="jser-tag">article</span></p></p>
@@ -414,7 +408,7 @@ Web Animations APIやフレームアニメーションについて、またそ�
 
 <hr>
 
-<h2 id="abouthiroppy/node8">abouthiroppy/node8</h2>
+<h2 id="abouthiroppy-node8">abouthiroppy/node8</h2>
 
 <p><a href="https://abouthiroppy.github.io/slides/node8/" title="abouthiroppy/node8">abouthiroppy.github.io/slides/node8/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">node.js</span> <span class="jser-tag">V8</span> <span class="jser-tag">slide</span></p></p>
@@ -425,7 +419,7 @@ Node.js 8.0.0ではV8の新しいコンパイラパイプラインが入る予�
 
 <ul>
 <li><a href="https://v8project.blogspot.jp/2017/02/help-us-test-future-of-v8.html" title="V8 JavaScript Engine: Help us test the future of V8!">V8 JavaScript Engine: Help us test the future of V8!</a></li>
-<li><a href="https://docs.google.com/document/d/11T2CRex9hXxoJwbYqVQ32yIPMh0uouUZLdyrtmMoL44/edit?pli&amp;#x3D;1" title="Ignition Design Doc - Google ドキュメント">Ignition Design Doc - Google ドキュメント</a></li>
+<li><a href="https://docs.google.com/document/d/11T2CRex9hXxoJwbYqVQ32yIPMh0uouUZLdyrtmMoL44/edit?pli&#x3D;1" title="Ignition Design Doc - Google ドキュメント">Ignition Design Doc - Google ドキュメント</a></li>
 </ul>
 
 <hr>
@@ -434,7 +428,7 @@ Node.js 8.0.0ではV8の新しいコンパイラパイプラインが入る予�
 
 <hr>
 
-<h2 id="ericvicenti/intro-to-react:-a-hands-on-walkthrough-of-your-first-react-web-app">ericvicenti/intro-to-react: A Hands-On Walkthrough of your first React Web App</h2>
+<h2 id="ericvicenti-intro-to-react-a-hands-on-walkthrough-of-your-first-react-web-app">ericvicenti/intro-to-react: A Hands-On Walkthrough of your first React Web App</h2>
 
 <p><a href="https://github.com/ericvicenti/intro-to-react" title="ericvicenti/intro-to-react: A Hands-On Walkthrough of your first React Web App">github.com/ericvicenti/intro-to-react</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">React</span> <span class="jser-tag">tutorial</span></p></p>
@@ -443,7 +437,7 @@ Node.js 8.0.0ではV8の新しいコンパイラパイプラインが入る予�
 
 <hr>
 
-<h2 id="get-started-with-analyzing-runtime-performance- | -web- | -google-developers">Get Started With Analyzing Runtime Performance  |  Web  |  Google Developers</h2>
+<h2 id="get-started-with-analyzing-runtime-performance-web-google-developers">Get Started With Analyzing Runtime Performance  |  Web  |  Google Developers</h2>
 
 <p><a href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/" title="Get Started With Analyzing Runtime Performance  |  Web  |  Google Developers">developers.google.com/web/tools/chrome-devtools/evaluate-performance/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">performance</span> <span class="jser-tag">tutorial</span> <span class="jser-tag">Chrome</span></p></p>
@@ -452,7 +446,7 @@ Node.js 8.0.0ではV8の新しいコンパイラパイプラインが入る予�
 
 <hr>
 
-<h2 id="wcag-2.0-達成方法集">WCAG 2.0 達成方法集</h2>
+<h2 id="wcag-2-0">WCAG 2.0 達成方法集</h2>
 
 <p><a href="http://waic.jp/docs/WCAG-TECHS/Overview.html" title="WCAG 2.0 達成方法集">waic.jp/docs/WCAG-TECHS/Overview.html</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">accessibility</span> <span class="jser-tag">W3C</span> <span class="jser-tag">翻訳</span></p></p>
@@ -465,7 +459,7 @@ Node.js 8.0.0ではV8の新しいコンパイラパイプラインが入る予�
 
 <hr>
 
-<h2 id="state-architecture-patterns-in-react:-a-review-–-skyler-nelson-–-medium">State Architecture Patterns in React: A Review – Skyler Nelson – Medium</h2>
+<h2 id="state-architecture-patterns-in-react-a-review-skyler-nelson-medium">State Architecture Patterns in React: A Review – Skyler Nelson – Medium</h2>
 
 <p><a href="https://medium.com/@skylernelson_64801/state-architecture-patterns-in-react-a-review-df02c1e193c6" title="State Architecture Patterns in React: A Review – Skyler Nelson – Medium">medium.com/@skylernelson_64801/state-architecture-patterns-in-react-a-review-df02c1e193c6</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">React</span> <span class="jser-tag">設計</span> <span class="jser-tag">opinion</span></p></p>
@@ -475,7 +469,7 @@ Node.js 8.0.0ではV8の新しいコンパイラパイプラインが入る予�
 
 <hr>
 
-<h2 id="introducing-a-faster-bbc-news-front-page-|-wildly-inaccurate">Introducing a faster BBC News front page | Wildly Inaccurate</h2>
+<h2 id="introducing-a-faster-bbc-news-front-page-wildly-inaccurate">Introducing a faster BBC News front page | Wildly Inaccurate</h2>
 
 <p><a href="https://wildlyinaccurate.com/introducing-a-faster-bbc-news-front-page" title="Introducing a faster BBC News front page | Wildly Inaccurate">wildlyinaccurate.com/introducing-a-faster-bbc-news-front-page</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">browser</span> <span class="jser-tag">performance</span> <span class="jser-tag">React</span> <span class="jser-tag">opinion</span></p></p>
@@ -490,7 +484,7 @@ SpeedCurveを使って計測を行い、画像遅延ロード、Reactをサー�
 
 <hr>
 
-<h2 id="chadhietala/babel-plugin-debug-macros">chadhietala/babel-plugin-debug-macros</h2>
+<h2 id="chadhietala-babel-plugin-debug-macros">chadhietala/babel-plugin-debug-macros</h2>
 
 <p><a href="https://github.com/chadhietala/babel-plugin-debug-macros/" title="chadhietala/babel-plugin-debug-macros">github.com/chadhietala/babel-plugin-debug-macros/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">babel</span> <span class="jser-tag">plugin</span></p></p>
@@ -500,7 +494,7 @@ assertやdeprecate、warning、feature flagなどのマクロ化したもの</p>
 
 <hr>
 
-<h2 id="aweary/tinytime:-a-straightforward-time-and-time-formatter-in-&lt;1kb">aweary/tinytime: A straightforward time and time formatter in &lt;1kb</h2>
+<h2 id="aweary-tinytime-a-straightforward-time-and-time-formatter-in-1kb">aweary/tinytime: A straightforward time and time formatter in &lt;1kb</h2>
 
 <p><a href="https://github.com/aweary/tinytime" title="aweary/tinytime: A straightforward time and time formatter in &lt;1kb">github.com/aweary/tinytime</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">library</span></p></p>

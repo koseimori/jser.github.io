@@ -2,13 +2,14 @@
 <html>
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>2015-06-23 JS: ECMAScript 6 공개、SVG 가이드、JSConf US 2015 - JSer.info</title>
     <meta name="description" content="JSer.info #233 - ECMAScript 2015(aka. ES6)가 Ecma 표준으로 승인되었습니다! :tada:">
     
-    <meta name="keywords" content="ES6,Promise,SVG,동영상" />
+    <meta name="keywords" content="ES6,Promise,SVG,동영상">
     
     <meta name="author" content="azu">
     
@@ -17,7 +18,7 @@
     
     
       
-      <meta content="_i18n" property="article:section">
+      <meta content="JSer" property="article:section">
       
     
     
@@ -56,8 +57,8 @@
     <!-- JavaScript -->
     <script src="/public/js/switch-alt-link.js"></script>
     <!-- Open graph tags -->
-<meta name="twitter:card" content="JSer.info #233 - ECMAScript 2015(aka. ES6)가 Ecma 표준으로 승인되었습니다! :tada:" />
-<meta name="twitter:site" content="@jser_info" />
+<meta name="twitter:card" content="JSer.info #233 - ECMAScript 2015(aka. ES6)가 Ecma 표준으로 승인되었습니다! :tada:">
+<meta name="twitter:site" content="@jser_info">
 
 
 <meta property="og:title" content="2015-06-23 JS: ECMAScript 6 공개、SVG 가이드、JSConf US 2015">
@@ -72,12 +73,6 @@
 
 <meta property="article:published_time" content="2015-06-23T21:06:00+09:00">
 
-<meta property="og:see_also" content="https://jser.info/ko/2018/03/20/typescript-2.8rc-firefox-59-smooshgate/">
-
-<meta property="og:see_also" content="https://jser.info/ko/2018/02/20/ember-3.0-propel-ml/">
-
-<meta property="og:see_also" content="https://jser.info/ko/2018/02/13/inferno-v4-safariservice-worker-eloquent-javascript/">
-
 
 
 
@@ -91,8 +86,8 @@
 <meta property="article:tag" content="동영상">
 
 
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-<script async src='/public/js/autotrack.custom.js'></script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src="/public/js/autotrack.custom.js"></script>
 <script async>
     window.ga = window.ga || function () {
                 (ga.q = ga.q || []).push(arguments)
@@ -123,13 +118,10 @@
 <body>
 <header>
     <a href="https://github.com/jser/jser.github.io" class="github-ribbon">
-        <img style="position: absolute; top: 0; right: 0; border: 0;"
-             src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
-             alt="Fork me on GitHub"
-             data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
     </a>
     <div class="global-header">
-    <h1 class="site-title"><a href="/ko/"><img alt="JSer.info" src="/public/img/logo.png" /></a></h1>
+    <h1 class="site-title"><a href="/ko/"><img alt="JSer.info" src="/public/img/logo.png"></a></h1>
     <h2 class="site-description">JavaScript의 최신 소식을 소개하는 주간 블로그</h2>
     <nav class="lang-menu">
         <ul>
@@ -154,9 +146,9 @@
                 
                 <span class="post-translator">Translator: ChoEun</span>
                 
-                <span class="svg-icon"><img src="/public/svg/github.svg"/></span>
+                <span class="svg-icon"><img src="/public/svg/github.svg"></span>
                 <a class="btn edit-on-github" href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ko/_posts/2015/2015-06-23-es6-svg-jsconfus.md"><span class="edit-on-github-label"></span>Edit on GitHub</a>
-                <span class="svg-icon"><img src="/public/svg/git.svg"/></span>
+                <span class="svg-icon"><img src="/public/svg/git.svg"></span>
                 <a class="btn revision-on-github" href="https://github.com/jser/jser.github.io/commits/develop/_i18n/ko/_posts/2015/2015-06-23-es6-svg-jsconfus.md"><span class="revision-on-github-label"></span>See Revisions</a>
             </div>
 
@@ -166,9 +158,8 @@
     <!-- Feedly -->
     
     <li>
-        <a href="https://jser.info/ping/" title="Ping! JSer.info | JSer.infoに記事を紹介" ga-on="click" ga-event-category="Ping Badge"
-            ga-event-action="click">
-            <img src="https://img.shields.io/badge/Ping-JSer.info-green.svg?style=for-the-badge" alt="" />
+        <a href="https://jser.info/ping/" title="Ping! JSer.info | JSer.infoに記事を紹介" ga-on="click" ga-event-category="Ping Badge" ga-event-action="click">
+            <img src="https://img.shields.io/badge/Ping-JSer.info-green.svg?style=for-the-badge" alt="">
         </a>
     </li>
     <!-- Twitter -->
@@ -183,15 +174,14 @@
     </li>
     <!-- Pocket -->
     <li>
-        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/ko/2015/06/23/es6-svg-jsconfus/"
-            data-pocket-count="horizontal" data-pocket-align="left">Pocket</a>
+        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/ko/2015/06/23/es6-svg-jsconfus/" data-pocket-count="horizontal" data-pocket-align="left">Pocket</a>
     </li>
 </ul>
 
         </div>
     </header>
     <article class="post-content">
-        <p>JSer.info #233 - ECMAScript 2015(aka. ES6)가 Ecma 표준으로 승인되었습니다! <img class='emoji' title=':tada:' alt=':tada:' src='https://assets.github.com/images/icons/emoji/unicode/1f389.png' height='20' width='20' align='absmiddle' /></p>
+        <p>JSer.info #233 - ECMAScript 2015(aka. ES6)가 Ecma 표준으로 승인되었습니다! <img class="emoji" title=":tada:" alt=":tada:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f389.png" height="20" width="20"></p>
 
 <ul>
 <li><a href="https://esdiscuss.org/topic/ecmascript-2015-is-now-an-ecma-standard" title="ECMAScript 2015 is now an Ecma Standard">ECMAScript 2015 is now an Ecma Standard</a></li>
@@ -243,7 +233,7 @@
 
 <hr>
 
-<h2 id="babel/changelog.md-at-master-·-babel/babel">babel/CHANGELOG.md at master · babel/babel</h2>
+<h2 id="babel-changelog-md-at-master-babel-babel">babel/CHANGELOG.md at master · babel/babel</h2>
 
 <p><a href="https://github.com/babel/babel/blob/master/CHANGELOG.md#560" title="babel/CHANGELOG.md at master · babel/babel">github.com/babel/babel/blob/master/CHANGELOG.md#560</a></p>
 
@@ -259,7 +249,7 @@
 
 <hr>
 
-<h2 id="qooxdoo-5.0-released-|-qooxdoo-news">qooxdoo 5.0 released | qooxdoo News</h2>
+<h2 id="qooxdoo-5-0-released-qooxdoo-news">qooxdoo 5.0 released | qooxdoo News</h2>
 
 <p><a href="http://news.qooxdoo.org/qooxdoo-5-0-released" title="qooxdoo 5.0 released | qooxdoo News">news.qooxdoo.org/qooxdoo-5-0-released</a></p>
 
@@ -270,7 +260,7 @@ qx.Website widgets 추가, MSEdge 대응, pointer event 등 대응,SVG, 풀 스�
 
 <hr>
 
-<h2 id="node-v0.12.5-(stable)">Node v0.12.5 (Stable)</h2>
+<h2 id="node-v0-12-5-stable">Node v0.12.5 (Stable)</h2>
 
 <p><a href="http://blog.nodejs.org/2015/06/22/node-v0-12-5-stable/" title="Node v0.12.5 (Stable)">blog.nodejs.org/2015/06/22/node-v0-12-5-stable/</a></p>
 
@@ -280,7 +270,7 @@ qx.Website widgets 추가, MSEdge 대응, pointer event 등 대응,SVG, 풀 스�
 
 <hr>
 
-<h2 id="release-jshint-2.8.0-·-jshint/jshint">Release JSHint 2.8.0 · jshint/jshint</h2>
+<h2 id="release-jshint-2-8-0-jshint-jshint">Release JSHint 2.8.0 · jshint/jshint</h2>
 
 <p><a href="https://github.com/jshint/jshint/releases/tag/2.8.0" title="Release JSHint 2.8.0 · jshint/jshint">github.com/jshint/jshint/releases/tag/2.8.0</a></p>
 
@@ -291,7 +281,7 @@ qx.Website widgets 추가, MSEdge 대응, pointer event 등 대응,SVG, 풀 스�
 
 <hr>
 
-<h2 id="node.js-foundation-advances-community-collaboration,-announces-new-members-and-ratified-technical-governance-|-the-linux-foundation">Node.js Foundation Advances Community Collaboration, Announces New Members and Ratified Technical Governance | The Linux Foundation</h2>
+<h2 id="node-js-foundation-advances-community-collaboration-announces-new-members-and-ratified-technical-governance-the-linux-foundation">Node.js Foundation Advances Community Collaboration, Announces New Members and Ratified Technical Governance | The Linux Foundation</h2>
 
 <p><a href="http://www.linuxfoundation.org/news-media/announcements/2015/06/nodejs-foundation-advances-community-collaboration-announces-new" title="Node.js Foundation Advances Community Collaboration, Announces New Members and Ratified Technical Governance | The Linux Foundation">www.linuxfoundation.org/news-media/announcements/2015/06/nodejs-foundation-advances-community-collaboration-announces-new</a></p>
 
@@ -310,7 +300,7 @@ Node.js와 io.js 머지나 기구모델에 대한 동의가 진행되어, Linux 
 
 <hr>
 
-<h2 id="brendan-eich-»-blog-archive-»-from-asm.js-to-webassembly">Brendan Eich » Blog Archive » From ASM.JS to WebAssembly</h2>
+<h2 id="brendan-eich-blog-archive-from-asm-js-to-webassembly">Brendan Eich » Blog Archive » From ASM.JS to WebAssembly</h2>
 
 <p><a href="https://brendaneich.com/2015/06/from-asm-js-to-webassembly/" title="Brendan Eich » Blog Archive » From ASM.JS to WebAssembly">brendaneich.com/2015/06/from-asm-js-to-webassembly/</a></p>
 
@@ -328,7 +318,7 @@ JavaScript를 옮겨놓는 게 아닌, JavaScript가 약한 부분을 보완 가
 
 <hr>
 
-<h2 id="webassembly:-a-binary-format-for-the-web">WebAssembly: a binary format for the web</h2>
+<h2 id="webassembly-a-binary-format-for-the-web">WebAssembly: a binary format for the web</h2>
 
 <p><a href="http://www.2ality.com/2015/06/web-assembly.html" title="WebAssembly: a binary format for the web">www.2ality.com/2015/06/web-assembly.html</a></p>
 
@@ -338,7 +328,7 @@ JavaScript를 옮겨놓는 게 아닌, JavaScript가 약한 부분을 보완 가
 
 <hr>
 
-<h2 id="es6-in-depth:-collections-✩-mozilla-hacks-–-the-web-developer-blog">ES6 In Depth: Collections ✩ Mozilla Hacks – the Web developer blog</h2>
+<h2 id="es6-in-depth-collections-mozilla-hacks-the-web-developer-blog">ES6 In Depth: Collections ✩ Mozilla Hacks – the Web developer blog</h2>
 
 <p><a href="https://hacks.mozilla.org/2015/06/es6-in-depth-collections/" title="ES6 In Depth: Collections ✩ Mozilla Hacks – the Web developer blog">hacks.mozilla.org/2015/06/es6-in-depth-collections/</a></p>
 
@@ -360,7 +350,7 @@ JavaScript를 옮겨놓는 게 아닌, JavaScript가 약한 부분을 보완 가
 
 <hr>
 
-<h2 id="midi,javascript---javascript로-midi-파일을-해석해보자-1---qiita">MIDI,JavaScript - JavaScript로 MIDI 파일을 해석해보자 1 - Qiita</h2>
+<h2 id="midi-javascript-javascript-midi-1-qiita">MIDI,JavaScript - JavaScript로 MIDI 파일을 해석해보자 1 - Qiita</h2>
 
 <p><a href="http://qiita.com/PianoScoreJP/items/2f03ae61d91db0334d45" title="MIDI,JavaScript - JavaScript로 MIDI 파일을 해석해보자 1 - Qiita">qiita.com/PianoScoreJP/items/2f03ae61d91db0334d45</a></p>
 
@@ -374,7 +364,7 @@ JavaScript를 옮겨놓는 게 아닌, JavaScript가 약한 부분을 보완 가
 
 <hr>
 
-<h2 id="jsconf-us-2015---youtube">JSConf US 2015 - YouTube</h2>
+<h2 id="jsconf-us-2015-youtube">JSConf US 2015 - YouTube</h2>
 
 <p><a href="https://www.youtube.com/playlist?list=PL37ZVnwpeshEkVjFZlLm1krvx0mPYPOoq" title="JSConf US 2015 - YouTube">www.youtube.com/playlist?list=PL37ZVnwpeshEkVjFZlLm1krvx0mPYPOoq</a></p>
 
@@ -404,7 +394,7 @@ JavaScript를 옮겨놓는 게 아닌, JavaScript가 약한 부분을 보완 가
 
 <hr>
 
-<h2 id="javascript.com">JavaScript.com</h2>
+<h2 id="javascript-com">JavaScript.com</h2>
 
 <p><a href="https://www.javascript.com/" title="JavaScript.com">www.javascript.com/</a></p>
 
@@ -414,7 +404,7 @@ JavaScript를 옮겨놓는 게 아닌, JavaScript가 약한 부분을 보완 가
 
 <hr>
 
-<h2 id="custom-elements---explore-the-world-of-web-components">Custom Elements - Explore the world of Web Components</h2>
+<h2 id="custom-elements-explore-the-world-of-web-components">Custom Elements - Explore the world of Web Components</h2>
 
 <p><a href="https://customelements.io/" title="Custom Elements - Explore the world of Web Components">customelements.io/</a></p>
 
@@ -428,7 +418,7 @@ JavaScript를 옮겨놓는 게 아닌, JavaScript가 약한 부분을 보완 가
 
 <hr>
 
-<h2 id="oceanhouse21/dokker">oceanhouse21/dokker</h2>
+<h2 id="oceanhouse21-dokker">oceanhouse21/dokker</h2>
 
 <p><a href="https://github.com/oceanhouse21/dokker" title="oceanhouse21/dokker">github.com/oceanhouse21/dokker</a></p>
 
@@ -438,7 +428,7 @@ JavaScript를 옮겨놓는 게 아닌, JavaScript가 약한 부분을 보완 가
 
 <hr>
 
-<h2 id="trueadm/t7">trueadm/t7</h2>
+<h2 id="trueadm-t7">trueadm/t7</h2>
 
 <p><a href="https://github.com/trueadm/t7" title="trueadm/t7">github.com/trueadm/t7</a></p>
 
@@ -449,7 +439,7 @@ JavaScript를 옮겨놓는 게 아닌, JavaScript가 약한 부분을 보완 가
 
 <hr>
 
-<h2 id="sighjs/sigh">sighjs/sigh</h2>
+<h2 id="sighjs-sigh">sighjs/sigh</h2>
 
 <p><a href="https://github.com/sighjs/sigh" title="sighjs/sigh">github.com/sighjs/sigh</a></p>
 
@@ -461,7 +451,7 @@ http://sighjs.github.io/</p>
 
 <hr>
 
-<h2 id="eorroe/nodelist-prototype-extension">eorroe/NodeList-Prototype-Extension</h2>
+<h2 id="eorroe-nodelist-prototype-extension">eorroe/NodeList-Prototype-Extension</h2>
 
 <p><a href="https://github.com/eorroe/NodeList-Prototype-Extension" title="eorroe/NodeList-Prototype-Extension">github.com/eorroe/NodeList-Prototype-Extension</a></p>
 
@@ -474,15 +464,11 @@ http://sighjs.github.io/</p>
     </article>
 
     <div class="post-post-toolbar">
-        <span class="svg-icon"><img src="/public/svg/github.svg"/></span>
-        <a class="btn edit-on-github"
-           href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ko/_posts/2015/2015-06-23-es6-svg-jsconfus.md"><span
-                class="edit-on-github-label"></span>Pull Request to this article</a>
+        <span class="svg-icon"><img src="/public/svg/github.svg"></span>
+        <a class="btn edit-on-github" href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ko/_posts/2015/2015-06-23-es6-svg-jsconfus.md"><span class="edit-on-github-label"></span>Pull Request to this article</a>
         
-        <nav class="tags"
-             id="js-post-tags"
-             data-post-tags='["ES6","Promise","SVG","동영상"]'>
-            <span><span class="svg-icon"><img src="/public/svg/tag.svg"/></span>Tags:</span>
+        <nav class="tags" id="js-post-tags" data-post-tags='["ES6","Promise","SVG","동영상"]'>
+            <span><span class="svg-icon"><img src="/public/svg/tag.svg"></span>Tags:</span>
             <ul>
                 
                 <li>ES6</li>
@@ -502,9 +488,8 @@ http://sighjs.github.io/</p>
     <!-- Feedly -->
     
     <li>
-        <a href="https://jser.info/ping/" title="Ping! JSer.info | JSer.infoに記事を紹介" ga-on="click" ga-event-category="Ping Badge"
-            ga-event-action="click">
-            <img src="https://img.shields.io/badge/Ping-JSer.info-green.svg?style=for-the-badge" alt="" />
+        <a href="https://jser.info/ping/" title="Ping! JSer.info | JSer.infoに記事を紹介" ga-on="click" ga-event-category="Ping Badge" ga-event-action="click">
+            <img src="https://img.shields.io/badge/Ping-JSer.info-green.svg?style=for-the-badge" alt="">
         </a>
     </li>
     <!-- Twitter -->
@@ -519,8 +504,7 @@ http://sighjs.github.io/</p>
     </li>
     <!-- Pocket -->
     <li>
-        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/ko/2015/06/23/es6-svg-jsconfus/"
-            data-pocket-count="horizontal" data-pocket-align="left">Pocket</a>
+        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/ko/2015/06/23/es6-svg-jsconfus/" data-pocket-count="horizontal" data-pocket-align="left">Pocket</a>
     </li>
 </ul>
 
@@ -567,17 +551,15 @@ http://sighjs.github.io/</p>
         <a class="social-icon__rss" href="https://jser.info/ko/rss/" title="RSS Feed">
             <img src="/public/svg/feed.svg" alt="RSS">
         </a>
-        <a class="social-icon__feedly" href='https://cloud.feedly.com/#subscription%2Ffeed%2Fhttps://jser.info/ko/rss/'
-           target='blank'>
-            <img id='feedlyFollow' src='https://s3.feedly.com/img/follows/feedly-follow-square-flat-green_2x.png'
-                 alt='follow us in feedly' width='28' height='28'></a>
+        <a class="social-icon__feedly" href="https://cloud.feedly.com/#subscription%2Ffeed%2Fhttps://jser.info/ko/rss/" target="blank">
+            <img id="feedlyFollow" src="https://s3.feedly.com/img/follows/feedly-follow-square-flat-green_2x.png" alt="follow us in feedly" width="28" height="28"></a>
     </div>
 
     <nav>
         <div class="search-bar">
             <div class="search-and-submit">
                 <form class="search-box" method="get" action="https://www.google.co.jp/search">
-                    <input type="search" name="q" placeholder="Enter Search"/>
+                    <input type="search" name="q" placeholder="Enter Search">
                     <input type="hidden" name="q" value="site:jser.info">
                     <button type="submit">
                         <span class="drawic drawic-search"></span>
@@ -639,14 +621,11 @@ http://sighjs.github.io/</p>
     <div class="page-footer">
     <div class="copyright-footer">
         <div class="copyright">
-            <p>JSer.info is maintained by @<a href="https://twitter.com/azu_re"
-                                              title="azu (azu_re) on Twitter">azu_re</a>.
+            <p>JSer.info is maintained by @<a href="https://twitter.com/azu_re" title="azu (azu_re) on Twitter">azu_re</a>.
             </p>
         </div>
         <div class="cc-license">
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative commons LISENCE"
-                                                                                     style="border-width:0"
-                                                                                     src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative commons LISENCE" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
         </div>
     </div>
 </div>
@@ -677,12 +656,6 @@ http://sighjs.github.io/</p>
         transition: all .3s ease;
     }
 </style>
-<a 
-    class="ping-show-button"
-    href="https://jser.info/ping/"
-    ga-on="click"
-    ga-event-category="Ping"
-    ga-event-action="click"
->記事を紹介する</a>
+<a class="ping-show-button" href="https://jser.info/ping/" ga-on="click" ga-event-category="Ping" ga-event-action="click">記事を紹介する</a>
 </body>
 </html>

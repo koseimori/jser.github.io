@@ -17,7 +17,7 @@
     
     
       
-      <meta content="_i18n" property="article:section">
+      <meta content="JSer" property="article:section">
       
     
     
@@ -71,12 +71,6 @@
 
 
 <meta property="article:published_time" content="2017-10-17T09:54:58+09:00">
-
-<meta property="og:see_also" content="https://jser.info/2018/04/01/typescript-2.8-react-16.3.0-tensorflow.js/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/26/d3.js-5.0.0-oclif/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/20/typescript-2.8rc-firefox-59-smooshgate/">
 
 
 
@@ -211,10 +205,10 @@
 <p>Angularに対応する<a href="https://github.com/DevExpress/testcafe-angular-selectors" title="testcafe-angular-selectors">testcafe-angular-selectors</a>の追加や<code>t.getBrowserConsoleMessages</code>というAPIが追加されています。<br>
 <code>t.getBrowserConsoleMessages</code>はテストを実行したブラウザのコンソールに吐き出された情報を取得することができるAPIで、ライブラリなどが実行時にdeprecated warningを出した情報を取得してテストを落とすなどに利用できます。</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-    <span class="nx">error</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Cannot access the &#39;db&#39; database. Wrong credentials.&quot;</span><span class="p">,</span> <span class="s1">&#39;...&#39;</span><span class="p">],</span> <span class="c1">// error messages</span>
-    <span class="nx">warn</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;The setTimeout property is deprecated&#39;</span><span class="p">,</span> <span class="s1">&#39;...&#39;</span><span class="p">],</span>                <span class="c1">// warning messages</span>
-    <span class="nx">log</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;[09:12:08] Logged in&#39;</span><span class="p">,</span> <span class="s1">&#39;[09:25:43] Changes saved&#39;</span><span class="p">,</span> <span class="s1">&#39;...&#39;</span><span class="p">],</span>      <span class="c1">// log messages</span>
-    <span class="nx">info</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;The application was updated since your last visit.&#39;</span><span class="p">,</span> <span class="s1">&#39;...&#39;</span><span class="p">]</span>    <span class="c1">// info messages</span>
+    <span class="nl">error</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Cannot access the 'db' database. Wrong credentials."</span><span class="p">,</span> <span class="s1">'...'</span><span class="p">],</span> <span class="c1">// error messages</span>
+    <span class="nx">warn</span><span class="p">:</span> <span class="p">[</span><span class="s1">'The setTimeout property is deprecated'</span><span class="p">,</span> <span class="s1">'...'</span><span class="p">],</span>                <span class="c1">// warning messages</span>
+    <span class="nx">log</span><span class="p">:</span> <span class="p">[</span><span class="s1">'[09:12:08] Logged in'</span><span class="p">,</span> <span class="s1">'[09:25:43] Changes saved'</span><span class="p">,</span> <span class="s1">'...'</span><span class="p">],</span>      <span class="c1">// log messages</span>
+    <span class="nx">info</span><span class="p">:</span> <span class="p">[</span><span class="s1">'The application was updated since your last visit.'</span><span class="p">,</span> <span class="s1">'...'</span><span class="p">]</span>    <span class="c1">// info messages</span>
 <span class="p">}</span>
 </code></pre></div>
 <hr>
@@ -247,22 +241,22 @@ CypressはTime Travelなどデバッグのしやすさ、Automatic waitingなど
 </code></pre></div>
 <p>コンパイラーがテンプレートをJSON形式の中間表現(IR)にします。<br>
 （現在のGlimmer VMがコンパイルするのは、このJSON表現までです）</p>
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span>
-  <span class="p">[</span><span class="s2">&quot;open-element&quot;</span><span class="p">,</span> <span class="s2">&quot;h1&quot;</span><span class="p">,</span> <span class="p">[]],</span>
-  <span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">],</span>
-  <span class="p">[</span><span class="s2">&quot;close-element&quot;</span><span class="p">]</span>
-<span class="p">]</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+  </span><span class="p">[</span><span class="s2">"open-element"</span><span class="p">,</span><span class="w"> </span><span class="s2">"h1"</span><span class="p">,</span><span class="w"> </span><span class="p">[]],</span><span class="w">
+  </span><span class="p">[</span><span class="s2">"text"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Hello World"</span><span class="p">],</span><span class="w">
+  </span><span class="p">[</span><span class="s2">"close-element"</span><span class="p">]</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
 <p>ランタイムでJSONを読み込み、Opcodeと定数で表現したテンプレート情報を作ります。</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// OpCode</span>
-<span class="kr">const</span> <span class="nx">Program</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="kr">const</span> <span class="nx">ConstantsPool</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">strings</span><span class="o">:</span> <span class="p">[...</span> <span class="err">‘</span><span class="nx">h1</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="nx">Hello</span> <span class="nx">World</span><span class="err">’</span><span class="p">]</span>
+<span class="kd">const</span> <span class="nx">Program</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="kd">const</span> <span class="nx">ConstantsPool</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">strings</span><span class="p">:</span> <span class="p">[...</span> <span class="err">‘</span><span class="nx">h1</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="nx">Hello</span> <span class="nx">World</span><span class="err">’</span><span class="p">]</span>
   <span class="p">...</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>最後にランタイムがテンプレート情報を元にDOMを組み立てます。</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">APPEND_OPCODES</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">Op</span><span class="p">.</span><span class="nx">OpenElement</span><span class="p">,</span> <span class="p">(</span><span class="nx">vm</span><span class="p">,</span> <span class="p">{</span> <span class="nx">op1</span><span class="o">:</span> <span class="nx">tag</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">APPEND_OPCODES</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">Op</span><span class="p">.</span><span class="nx">OpenElement</span><span class="p">,</span> <span class="p">(</span><span class="nx">vm</span><span class="p">,</span> <span class="p">{</span> <span class="na">op1</span><span class="p">:</span> <span class="nx">tag</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">vm</span><span class="p">.</span><span class="nx">elements</span><span class="p">().</span><span class="nx">openElement</span><span class="p">(</span><span class="nx">vm</span><span class="p">.</span><span class="nx">constants</span><span class="p">.</span><span class="nx">getString</span><span class="p">(</span><span class="nx">tag</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre></div>
@@ -299,7 +293,7 @@ CypressはTime Travelなどデバッグのしやすさ、Automatic waitingなど
 
 <hr>
 
-<h2 id="testcafe-v0.18.0-released---angular-selectors,-using-multiple-reporters,-etc-|-testcafe">TestCafe v0.18.0 Released - Angular Selectors, Using Multiple Reporters, etc | TestCafe</h2>
+<h2 id="testcafe-v0-18-0-released-angular-selectors-using-multiple-reporters-etc-testcafe">TestCafe v0.18.0 Released - Angular Selectors, Using Multiple Reporters, etc | TestCafe</h2>
 
 <p><a href="http://devexpress.github.io/testcafe/blog/testcafe-v0-18-0-released.html" title="TestCafe v0.18.0 Released - Angular Selectors, Using Multiple Reporters, etc | TestCafe">devexpress.github.io/testcafe/blog/testcafe-v0-18-0-released.html</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">testing</span> <span class="jser-tag">E2E</span> <span class="jser-tag">ReleaseNote</span></p></p>
@@ -309,7 +303,7 @@ Angular Selectorのサポート、出力に複数のreporterを指定できる�
 
 <hr>
 
-<h2 id="announcing-typescript-2.6-rc-|-typescript">Announcing TypeScript 2.6 RC | TypeScript</h2>
+<h2 id="announcing-typescript-2-6-rc-typescript">Announcing TypeScript 2.6 RC | TypeScript</h2>
 
 <p><a href="https://blogs.msdn.microsoft.com/typescript/2017/10/12/announcing-typescript-2-6-rc/" title="Announcing TypeScript 2.6 RC | TypeScript">blogs.msdn.microsoft.com/typescript/2017/10/12/announcing-typescript-2-6-rc/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">TypeScript</span> <span class="jser-tag">ReleaseNote</span></p></p>
@@ -323,7 +317,7 @@ Angular Selectorのサポート、出力に複数のreporterを指定できる�
 
 <hr>
 
-<h2 id="release-v2.5.0-level-e-·-vuejs/vue">Release v2.5.0 Level E · vuejs/vue</h2>
+<h2 id="release-v2-5-0-level-e-vuejs-vue">Release v2.5.0 Level E · vuejs/vue</h2>
 
 <p><a href="https://github.com/vuejs/vue/releases/tag/v2.5.0" title="Release v2.5.0 Level E · vuejs/vue">github.com/vuejs/vue/releases/tag/v2.5.0</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">Vue</span> <span class="jser-tag">ReleaseNote</span></p></p>
@@ -338,7 +332,7 @@ Angular Selectorのサポート、出力に複数のreporterを指定できる�
 
 <hr>
 
-<h2 id="eslint-v4.9.0-released---eslint---pluggable-javascript-linter">ESLint v4.9.0 released - ESLint - Pluggable JavaScript linter</h2>
+<h2 id="eslint-v4-9-0-released-eslint-pluggable-javascript-linter">ESLint v4.9.0 released - ESLint - Pluggable JavaScript linter</h2>
 
 <p><a href="https://eslint.org/blog/2017/10/eslint-v4.9.0-released" title="ESLint v4.9.0 released - ESLint - Pluggable JavaScript linter">eslint.org/blog/2017/10/eslint-v4.9.0-released</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">ESLint</span> <span class="jser-tag">ReleaseNote</span></p></p>
@@ -357,7 +351,7 @@ Angular Selectorのサポート、出力に複数のreporterを指定できる�
 
 <hr>
 
-<h2 id="prosemirror-1.0">ProseMirror 1.0</h2>
+<h2 id="prosemirror-1-0">ProseMirror 1.0</h2>
 
 <p><a href="http://marijnhaverbeke.nl/blog/prosemirror-1.html" title="ProseMirror 1.0">marijnhaverbeke.nl/blog/prosemirror-1.html</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">editor</span> <span class="jser-tag">library</span> <span class="jser-tag">ReleaseNote</span></p></p>
@@ -368,7 +362,7 @@ ProseMirrorはよりよいWYSIWYG-styleのエディタを実装できるコア�
 
 <hr>
 
-<h2 id="release-v3.7.0-·-webpack/webpack">Release v3.7.0 · webpack/webpack</h2>
+<h2 id="release-v3-7-0-webpack-webpack">Release v3.7.0 · webpack/webpack</h2>
 
 <p><a href="https://github.com/webpack/webpack/releases/tag/v3.7.0" title="Release v3.7.0 · webpack/webpack">github.com/webpack/webpack/releases/tag/v3.7.0</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">webpack</span> <span class="jser-tag">ReleaseNote</span></p></p>
@@ -387,7 +381,7 @@ ProseMirrorはよりよいWYSIWYG-styleのエディタを実装できるコア�
 
 <hr>
 
-<h2 id="ember.js---glimmer.js-progress-report">Ember.js - Glimmer.js Progress Report</h2>
+<h2 id="ember-js-glimmer-js-progress-report">Ember.js - Glimmer.js Progress Report</h2>
 
 <p><a href="https://emberjs.com/blog/2017/10/10/glimmer-progress-report.html" title="Ember.js - Glimmer.js Progress Report">emberjs.com/blog/2017/10/10/glimmer-progress-report.html</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">article</span></p></p>
@@ -402,7 +396,7 @@ ProseMirrorはよりよいWYSIWYG-styleのエディタを実装できるコア�
 
 <hr>
 
-<h2 id="cypress.io-|-javascript-end-to-end-testing-|-cypress-is-now-public-beta">Cypress.io | JavaScript End to End Testing | Cypress is now public beta</h2>
+<h2 id="cypress-io-javascript-end-to-end-testing-cypress-is-now-public-beta">Cypress.io | JavaScript End to End Testing | Cypress is now public beta</h2>
 
 <p><a href="https://www.cypress.io/blog/2017/10/10/cypress-is-now-public-beta/" title="Cypress.io | JavaScript End to End Testing | Cypress is now public beta">www.cypress.io/blog/2017/10/10/cypress-is-now-public-beta/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">testing</span> <span class="jser-tag">browser</span> <span class="jser-tag">library</span></p></p>
@@ -415,7 +409,7 @@ ProseMirrorはよりよいWYSIWYG-styleのエディタを実装できるコア�
 
 <hr>
 
-<h2 id="dependency-inversion-with-redux-thunk-&amp;-typescript-–-dave-l.-–-medium">Dependency Inversion with Redux-Thunk &amp; Typescript – Dave L. – Medium</h2>
+<h2 id="dependency-inversion-with-redux-thunk-typescript-dave-l-medium">Dependency Inversion with Redux-Thunk &amp; Typescript – Dave L. – Medium</h2>
 
 <p><a href="https://medium.com/@david.losert_73564/dependency-inversion-with-redux-thunk-typescript-e09cebabdc1f" title="Dependency Inversion with Redux-Thunk &amp; Typescript – Dave L. – Medium">medium.com/@david.losert_73564/dependency-inversion-with-redux-thunk-typescript-e09cebabdc1f</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">redux</span> <span class="jser-tag">testing</span> <span class="jser-tag">article</span></p></p>
@@ -424,7 +418,7 @@ ProseMirrorはよりよいWYSIWYG-styleのエディタを実装できるコア�
 
 <hr>
 
-<h2 id="what&#39;s-new-in-devtools-(chrome-63)- | -web- | -google-developers">What&#39;s New In DevTools (Chrome 63)  |  Web  |  Google Developers</h2>
+<h2 id="whats-new-in-devtools-chrome-63-web-google-developers">What&#39;s New In DevTools (Chrome 63)  |  Web  |  Google Developers</h2>
 
 <p><a href="https://developers.google.com/web/updates/2017/10/devtools-release-notes" title="What&#39;s New In DevTools (Chrome 63)  |  Web  |  Google Developers">developers.google.com/web/updates/2017/10/devtools-release-notes</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">Chrome</span> <span class="jser-tag">debug</span> <span class="jser-tag">article</span></p></p>
@@ -438,7 +432,7 @@ AuditsパネルにSynkDBを使った脆弱性情報の表示、Workspaces 2.0、
 
 <hr>
 
-<h2 id="npm-task-running-techniques-–-netscape-–-medium">NPM Task Running Techniques – Netscape – Medium</h2>
+<h2 id="npm-task-running-techniques-netscape-medium">NPM Task Running Techniques – Netscape – Medium</h2>
 
 <p><a href="https://medium.com/netscape/npm-task-running-techniques-15fe5b697f15" title="NPM Task Running Techniques – Netscape – Medium">medium.com/netscape/npm-task-running-techniques-15fe5b697f15</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">npm</span> <span class="jser-tag">console</span> <span class="jser-tag">Tools</span> <span class="jser-tag">article</span></p></p>
@@ -447,7 +441,7 @@ AuditsパネルにSynkDBを使った脆弱性情報の表示、Workspaces 2.0、
 
 <hr>
 
-<h2 id="node.js---a-tale-of-two-bugs">Node.js - a tale of two bugs</h2>
+<h2 id="node-js-a-tale-of-two-bugs">Node.js - a tale of two bugs</h2>
 
 <p><a href="https://dev.to/mikeralphson/nodejs---a-tale-of-two-bugs-18c" title="Node.js - a tale of two bugs">dev.to/mikeralphson/nodejs---a-tale-of-two-bugs-18c</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">node.js</span> <span class="jser-tag">issue</span> <span class="jser-tag">performance</span> <span class="jser-tag">article</span></p></p>
@@ -476,7 +470,7 @@ AuditsパネルにSynkDBを使った脆弱性情報の表示、Workspaces 2.0、
 
 <hr>
 
-<h2 id="googlechrome/confluence:-service-and-api-for-web-api-confluence:-metrics-for-web-platform-health">GoogleChrome/confluence: Service and API for Web API Confluence: Metrics for web platform health</h2>
+<h2 id="googlechrome-confluence-service-and-api-for-web-api-confluence-metrics-for-web-platform-health">GoogleChrome/confluence: Service and API for Web API Confluence: Metrics for web platform health</h2>
 
 <p><a href="https://github.com/GoogleChrome/confluence" title="GoogleChrome/confluence: Service and API for Web API Confluence: Metrics for web platform health">github.com/GoogleChrome/confluence</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">browser</span> <span class="jser-tag">WebPlatformAPI</span></p></p>
@@ -489,7 +483,7 @@ AuditsパネルにSynkDBを使った脆弱性情報の表示、Workspaces 2.0、
 
 <hr>
 
-<h2 id="dt-fe/number-precision:-🚀1k-tiny-&amp;-fast-lib-for-doing-addition,-subtraction,-multiplication-and-division-operations-precisely">dt-fe/number-precision: 🚀1K tiny &amp; fast lib for doing addition, subtraction, multiplication and division operations precisely</h2>
+<h2 id="dt-fe-number-precision-1k-tiny-fast-lib-for-doing-addition-subtraction-multiplication-and-division-operations-precisely">dt-fe/number-precision: 🚀1K tiny &amp; fast lib for doing addition, subtraction, multiplication and division operations precisely</h2>
 
 <p><a href="https://github.com/dt-fe/number-precision" title="dt-fe/number-precision: 🚀1K tiny &amp; fast lib for doing addition, subtraction, multiplication and division operations precisely">github.com/dt-fe/number-precision</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">library</span></p></p>
@@ -498,7 +492,7 @@ AuditsパネルにSynkDBを使った脆弱性情報の表示、Workspaces 2.0、
 
 <hr>
 
-<h2 id="spireteam/whitelister:-simple,-basic-filtering-and-validation-tool-for-node.js.">SpireTeam/whitelister: Simple, basic filtering and validation tool for Node.js.</h2>
+<h2 id="spireteam-whitelister-simple-basic-filtering-and-validation-tool-for-node-js">SpireTeam/whitelister: Simple, basic filtering and validation tool for Node.js.</h2>
 
 <p><a href="https://github.com/SpireTeam/whitelister" title="SpireTeam/whitelister: Simple, basic filtering and validation tool for Node.js.">github.com/SpireTeam/whitelister</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">library</span></p></p>
@@ -509,7 +503,7 @@ AuditsパネルにSynkDBを使った脆弱性情報の表示、Workspaces 2.0、
 
 <hr>
 
-<h2 id="planttheidea/fast-equals:-a-blazing-fast-equality-comparison,-either-shallow-or-deep">planttheidea/fast-equals: A blazing fast equality comparison, either shallow or deep</h2>
+<h2 id="planttheidea-fast-equals-a-blazing-fast-equality-comparison-either-shallow-or-deep">planttheidea/fast-equals: A blazing fast equality comparison, either shallow or deep</h2>
 
 <p><a href="https://github.com/planttheidea/fast-equals" title="planttheidea/fast-equals: A blazing fast equality comparison, either shallow or deep">github.com/planttheidea/fast-equals</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">library</span></p></p>

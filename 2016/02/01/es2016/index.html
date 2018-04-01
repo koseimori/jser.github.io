@@ -17,7 +17,7 @@
     
     
       
-      <meta content="_i18n" property="article:section">
+      <meta content="JavaScript" property="article:section">
       
     
     
@@ -65,12 +65,6 @@
 
 
 <meta property="article:published_time" content="2016-02-01T18:34:00+09:00">
-
-<meta property="og:see_also" content="https://jser.info/2018/04/01/typescript-2.8-react-16.3.0-tensorflow.js/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/26/d3.js-5.0.0-oclif/">
-
-<meta property="og:see_also" content="https://jser.info/2018/03/20/typescript-2.8rc-firefox-59-smooshgate/">
 
 
 
@@ -187,7 +181,7 @@
 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<h2 id="array.prototype.includes"><a href="https://github.com/tc39/Array.prototype.includes/" title="Array.prototype.includes">Array.prototype.includes</a></h2>
+<h2 id="array-prototype-includes"><a href="https://github.com/tc39/Array.prototype.includes/" title="Array.prototype.includes">Array.prototype.includes</a></h2>
 
 <p>ES6で<code>Array.prototype.contains</code>として追加される予定でしたが、Break the webであったため延期されていた機能です。</p>
 
@@ -227,11 +221,11 @@
 
 <p>これまでのドラフト版を見ると追加された機能以外も仕様的には色々なアップデートが含まれていることが分かります。</p>
 
-<h2 id="変更された仕様">変更された仕様</h2>
+<h2 id="part-907365b52a415312">変更された仕様</h2>
 
 <p>幾つか例をあげてみます。</p>
 
-<h3 id="promise.allとpromise.raceが@@speciesを無視するように"><code>Promise.all</code>と<code>Promise.race</code>が<code>@@species</code>を無視するように</h3>
+<h3 id="promise-all-promise-race-species"><code>Promise.all</code>と<code>Promise.race</code>が<code>@@species</code>を無視するように</h3>
 
 <p>ES6では<code>Promise.resolve</code>が<code>@@species</code>を無視する変更は入ってましたが、allとraceについても同様の変更が入りました。</p>
 
@@ -239,7 +233,7 @@
 <li><a href="https://github.com/tc39/ecma262/issues/151" title="Remove @@species lookup from Promise.all() and Promise.race() · Issue #151 · tc39/ecma262">Remove @@species lookup from Promise.all() and Promise.race() · Issue #151 · tc39/ecma262</a></li>
 </ul>
 
-<h3 id="hostpromiserejectiontrackerの抽象インタフェースが追加された"><a href="https://wiki.suikawiki.org/n/HostPromiseRejectionTracker" title="HostPromiseRejectionTracker">HostPromiseRejectionTracker</a>の抽象インタフェースが追加された</h3>
+<h3 id="hostpromiserejectiontracker"><a href="https://wiki.suikawiki.org/n/HostPromiseRejectionTracker" title="HostPromiseRejectionTracker">HostPromiseRejectionTracker</a>の抽象インタフェースが追加された</h3>
 
 <p>これは<code>HostPromiseRejectionTracker</code>をHost環境(ブラウザなど)が実装していると、<br>
 PromiseでUnhandled Rejectionが起きた際に呼ぶという仕様です。</p>
@@ -260,19 +254,19 @@ PromiseでUnhandled Rejectionが起きた際に呼ぶという仕様です。</p
 </ul></li>
 </ul>
 
-<h3 id="generatorfunctionから[[construct]]が取り除かれた">GeneratorFunctionから<code>[[Construct]]</code>が取り除かれた</h3>
+<h3 id="generatorfunction-construct">GeneratorFunctionから<code>[[Construct]]</code>が取り除かれた</h3>
 
 <p>ES6ではGeneratorFunctionが<code>new</code>できました。<br>
 しかし、ES2016では例外を投げるように変更されました。<br>
 (<code>[[Construct]]</code>を持つ == <code>new</code>できる)</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">var g = { *g() {} }.g;
+<div class="highlight"><pre><code class="language-" data-lang="">var g = { *g() {} }.g;
 new g(); // ES6ではvalid、ES2016ではthrow error
 </code></pre></div>
 <ul>
 <li><a href="https://github.com/tc39/ecma262/releases/tag/es2016-draft-20151201" title="Release ES2016 Draft 2015-12-01 · tc39/ecma262">Release ES2016 Draft 2015-12-01 · tc39/ecma262</a></li>
 </ul>
 
-<h3 id="proxyの[[enumerate]]-trapの変更">Proxyの<code>[[Enumerate]]</code> trapの変更</h3>
+<h3 id="proxy-enumerate-trap">Proxyの<code>[[Enumerate]]</code> trapの変更</h3>
 
 <p>まだ仕様に変更は入ってないですが、変更が予定されています。</p>
 
@@ -283,7 +277,7 @@ new g(); // ES6ではvalid、ES2016ではthrow error
 <p>このように、追加された機能以外も細かな変更などが行われています。<br>
 Breaking Changeですが、まだ利用してるケースも少ない(そもそも実装が少ない)ので早いうちに修正してるという印象です。</p>
 
-<h2 id="変更を知る方法">変更を知る方法</h2>
+<h2 id="part-4a499458a69035e1">変更を知る方法</h2>
 
 <p>このような正式な変更はどこで知るのかを簡単にまとめてみます。<br>
 細かい修正以外の変更は、2ヶ月に1回開催されているTC39のミーティングで議論されてから追加されます。</p>
@@ -313,7 +307,7 @@ Breaking Changeですが、まだ利用してるケースも少ない(そもそ�
 
 <ul>
 <li><a href="https://tc39-mtg.doorkeeper.jp/" title="TC39 MTG Notes MTG | Doorkeeper">TC39 MTG Notes MTG | Doorkeeper</a></li>
-<li><a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=%23TC39MTG&amp;src=typd" title="#TC39MTG">#TC39MTG</a></li>
+<li><a href="https://twitter.com/search?f=tweets&vertical=default&q=%23TC39MTG&src=typd" title="#TC39MTG">#TC39MTG</a></li>
 </ul>
 
 <h3 id="github">GitHub</h3>
@@ -327,7 +321,7 @@ Breaking Changeですが、まだ利用してるケースも少ない(そもそ�
 
 <p>Proposalはそれぞれリポジトリがあるので、ミーティングがある時期に大体Issueなどが更新されています。</p>
 
-<h3 id="その他">その他</h3>
+<h3 id="part-37868f09a1cf28d">その他</h3>
 
 <p>その他公式ではないものとしてECMAScript周りについてよく扱うサイトとしては以下のようなものがあります。</p>
 
