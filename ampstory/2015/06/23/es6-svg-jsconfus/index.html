@@ -1,0 +1,453 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2015-06-23のJS: ECMAScript 6公開、SVGガイド、JSConf US 2015 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2015/06/23/es6-svg-jsconfus/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2015-06-23のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://esdiscuss.org/topic/ecmascript-2015-is-now-an-ecma-standard">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ECMAScript 2015 is now an Ecma Standard</amp-fit-text>
+        <p class="contents">ECMAScript 2015(ES6)正式リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ECMAScript 2015 is now an Ecma Standard" href="https://esdiscuss.org/topic/ecmascript-2015-is-now-an-ecma-standard">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/babel/babel/blob/master/CHANGELOG.md#560">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">babel/CHANGELOG.md at master · babel/babel</amp-fit-text>
+        <p class="contents">Babel 5.6.0リリース。
+<code>--watch</code>開始時にパースエラーが起きてもCLIを停止しないように、transformerの一部をpluginとして分離するなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="babel/CHANGELOG.md at master · babel/babel" href="https://github.com/babel/babel/blob/master/CHANGELOG.md#560">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://news.qooxdoo.org/qooxdoo-5-0-released">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">qooxdoo 5.0 released | qooxdoo News</amp-fit-text>
+        <p class="contents">JavaScriptのRIAフレームワークであるqooxdoo 5.0リリース。
+qx.Website widgetsの追加、MSEdgeの対応、Pointer Eventsなどの対応、SVG、Fullscreen APIの対応、WebDriverを使ってテストの導入など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="qooxdoo 5.0 released | qooxdoo News" href="http://news.qooxdoo.org/qooxdoo-5-0-released">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.nodejs.org/2015/06/22/node-v0-12-5-stable/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node v0.12.5 (Stable)</amp-fit-text>
+        <p class="contents">Node v0.12.5リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v0.12.5 (Stable)" href="http://blog.nodejs.org/2015/06/22/node-v0-12-5-stable/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jshint/jshint/releases/tag/2.8.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release JSHint 2.8.0 · jshint/jshint</amp-fit-text>
+        <p class="contents">JSHint 2.8.0リリース。
+<code>module</code>でコードをES6 moduleとみなしてチェック出来るように、バグ修正など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release JSHint 2.8.0 · jshint/jshint" href="https://github.com/jshint/jshint/releases/tag/2.8.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.linuxfoundation.org/news-media/announcements/2015/06/nodejs-foundation-advances-community-collaboration-announces-new">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node.js Foundation Advances Community Collaboration, Announces New Members and Ratified Technical Governance | The Linux Foundation</amp-fit-text>
+        <p class="contents">Node.js Foundationについての公式アナウンス。
+Node.jsとio.jsのマージやガバナンスモデルについての同意がとれて、Linux FoundationのコラボレーションプロジェクトとしてNode.js Foundationが誕生した。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node.js Foundation Advances Community Collaboration, Announces New Members and Ratified Technical Governance | The Linux Foundation" href="http://www.linuxfoundation.org/news-media/announcements/2015/06/nodejs-foundation-advances-community-collaboration-announces-new">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://brendaneich.com/2015/06/from-asm-js-to-webassembly/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Brendan Eich » Blog Archive » From ASM.JS to WebAssembly</amp-fit-text>
+        <p class="contents">ブラウザ向けのバイナリフォーマットの標準化プロジェクトとしてWebAssemblyが公開された。
+サイズやデコードの効率化を目的としたバイナリフォーマットで、第一段階の目標としてはasm.jsのバイナリ版相当の機能を予定している。
+JavaScriptを置き換えるものではなく、JavaScriptが苦手な部分を補完できるような立ち位置であることなどがFAQにかかれています。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Brendan Eich » Blog Archive » From ASM.JS to WebAssembly" href="https://brendaneich.com/2015/06/from-asm-js-to-webassembly/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.2ality.com/2015/06/web-assembly.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">WebAssembly: a binary format for the web</amp-fit-text>
+        <p class="contents">WebAssemblyの概要解説
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WebAssembly: a binary format for the web" href="http://www.2ality.com/2015/06/web-assembly.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hacks.mozilla.org/2015/06/es6-in-depth-collections/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ES6 In Depth: Collections ✩ Mozilla Hacks – the Web developer blog</amp-fit-text>
+        <p class="contents">SetとMapについて。
+それぞれのメソッドの解説、JSと他の言語でのMapの特性の違い、列挙の順序問題、WeakSet、WeakMapが何故必要になるのかについてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ES6 In Depth: Collections ✩ Mozilla Hacks – the Web developer blog" href="https://hacks.mozilla.org/2015/06/es6-in-depth-collections/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://svgontheweb.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">A Practical Guide to SVGs on the web</amp-fit-text>
+        <p class="contents">SVGの使い方ガイドライン。
+最適化、使い方、表示方法のまとめ、CSSやJavaScriptからの操作方法、レスポンシブ、アニメーションなどSVGについてまとまってる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="A Practical Guide to SVGs on the web" href="https://svgontheweb.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/PianoScoreJP/items/2f03ae61d91db0334d45">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">MIDI,JavaScript - JavaScriptでMIDIファイルを解析してみる 1 - Qiita</amp-fit-text>
+        <p class="contents">JavaScriptでMIDIファイル(SMF)を解析してヘッダ情報やトラックを取り出すチュートリアル
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="MIDI,JavaScript - JavaScriptでMIDIファイルを解析してみる 1 - Qiita" href="http://qiita.com/PianoScoreJP/items/2f03ae61d91db0334d45">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/playlist?list=PL37ZVnwpeshEkVjFZlLm1krvx0mPYPOoq">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JSConf US 2015 - YouTube</amp-fit-text>
+        <p class="contents">JSConf US 2015の動画が公開された。
+それぞれの動画の文字起こしをしたGistも公開されている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JSConf US 2015 - YouTube" href="https://www.youtube.com/playlist?list=PL37ZVnwpeshEkVjFZlLm1krvx0mPYPOoq">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://jslive.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript Live</amp-fit-text>
+        <p class="contents">RubyFlowみたいなJavaScriptのコミュニティニュースサイト
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript Live" href="https://jslive.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.javascript.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript.com</amp-fit-text>
+        <p class="contents">CodeSchoolによるJavaScript初心者向けの学習リソースの紹介、コミュニティによる記事紹介などをしているサイト
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript.com" href="https://www.javascript.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://customelements.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Custom Elements - Explore the world of Web Components</amp-fit-text>
+        <p class="contents">Bowerかnpmのキーワードにweb-componentsがついてるものを検索出来るサイト
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Custom Elements - Explore the world of Web Components" href="https://customelements.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/oceanhouse21/dokker">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">oceanhouse21/dokker</amp-fit-text>
+        <p class="contents">JSDocのコメントからlodashのようなドキュメントページ/Markdownを生成してくれるツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="oceanhouse21/dokker" href="https://github.com/oceanhouse21/dokker">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/trueadm/t7">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">trueadm/t7</amp-fit-text>
+        <p class="contents">Template Stringsを使ったテンプレートライブラリ。
+結果をReactやその他のvirtual-domライブラリを使ってるもの向けへ出力できる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="trueadm/t7" href="https://github.com/trueadm/t7">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/sighjs/sigh">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">sighjs/sigh</amp-fit-text>
+        <p class="contents">JavaScriptビルドツール。
+gulp pluginをサポートしていて、デフォルトで並列タスク、インクリメンタルリビルド、Source Mapの対応など他のビルドツールの特徴も持たせてる
+http://sighjs.github.io/
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="sighjs/sigh" href="https://github.com/sighjs/sigh">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/eorroe/NodeList-Prototype-Extension">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">eorroe/NodeList-Prototype-Extension</amp-fit-text>
+        <p class="contents">DOM NodeのCollectionに対して操作出来るライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="eorroe/NodeList-Prototype-Extension" href="https://github.com/eorroe/NodeList-Prototype-Extension">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

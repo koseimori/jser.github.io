@@ -1,0 +1,646 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2014-09-15のJS: JavaScriptエンジンの最適化、ビルドツールBroccoli - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2014/09/15/v8-react-broccoli/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2014-09-15のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://www.sitepen.com/blog/2014/09/12/intern-2-1-released/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Intern 2.1 released | Blog | SitePen</amp-fit-text>
+        <p class="contents">Intern 2.1リリース。
+HTMLレポーター/JUnit XMLレポーターの追加。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Intern 2.1 released | Blog | SitePen" href="http://www.sitepen.com/blog/2014/09/12/intern-2-1-released/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/postcss/autoprefixer/releases/tag/3.1.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release 3.1 “Satyameva Jayate” · postcss/autoprefixer</amp-fit-text>
+        <p class="contents">autoprefixer 3.1リリース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 3.1 “Satyameva Jayate” · postcss/autoprefixer" href="https://github.com/postcss/autoprefixer/releases/tag/3.1.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://gist.github.com/kevincennis/0cd2138c78a07412ef21">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">V8 Installation and d8 shell usage</amp-fit-text>
+        <p class="contents">d8コマンドをインストールして、最適化/非最適化、プロファイリング、GCのトレース、Hidden Class等のチェック方法などについてまとまってるチュートリアル
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 Installation and d8 shell usage" href="https://gist.github.com/kevincennis/0cd2138c78a07412ef21">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://efcl.info/2014/09/13/v8-optimization-memo/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">V8の最適化とIRHydraでの可視化とベンチマークについてのメモ | Web Scratch</amp-fit-text>
+        <p class="contents">V8のHidden Class等のJavaScriptの最適化やhot codeについて。
+IRHydra2を使った最適化されてない事の可視化や参考リソースについて。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8の最適化とIRHydraでの可視化とベンチマークについてのメモ | Web Scratch" href="http://efcl.info/2014/09/13/v8-optimization-memo/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://jxck.hatenablog.com/entry/for-with-eventloop">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">「for やめろ」またはイベントループと nextTick() - Block Rockin’ Codes</amp-fit-text>
+        <p class="contents">node.jsにおけるイベントループとブロックについて。
+setTimeout、process.nextTick、setImmediateの意味の違い。
+I/Oイベントとそれぞれの実行タイミングについて分かりやすく解説してる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="「for やめろ」またはイベントループと nextTick() - Block Rockin’ Codes" href="http://jxck.hatenablog.com/entry/for-with-eventloop">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://nicolashery.com/integrating-d3js-visualizations-in-a-react-app/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Integrating D3.js visualizations in a React app - Nicolas Hery</amp-fit-text>
+        <p class="contents">D3.jsのデータ・ドリブンのデータ更新とReactのVirtual DOMを組み合わせた話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Integrating D3.js visualizations in a React app - Nicolas Hery" href="http://nicolashery.com/integrating-d3js-visualizations-in-a-react-app/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hacks.mozilla.org/2014/09/firefox-tools-adapter/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Firefox Add-on Enables Web Development Across Browsers and Devices ✩ Mozilla Hacks – the Web developer blog</amp-fit-text>
+        <p class="contents">Firefoxの開発者ツールを使ってChromeやSafariで表示してるページをデバッグするアダプタのアドオン。
+remotedebug.org と似ているが、共有のプロトコルの提供ではなく、Firefoxのプロトコルをベースとしてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Firefox Add-on Enables Web Development Across Browsers and Devices ✩ Mozilla Hacks – the Web developer blog" href="https://hacks.mozilla.org/2014/09/firefox-tools-adapter/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://aexmachina.info/assets/talks/intro-to-broccoli/#1">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Intro to Broccoli</amp-fit-text>
+        <p class="contents">ビルドツールであるBroccoliについてのスライド。 Railsで言えばBroccoliはasset pipelineで、GruntやGulpはrakeに当たるツール。
+ビルドに焦点をおいているという特徴がある
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Intro to Broccoli" href="http://aexmachina.info/assets/talks/intro-to-broccoli/#1">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://emberfest.eu/talks/talks_12C5ADD371A9A5D4">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Talk talks_12C5ADD371A9A5D4 - Ember Fest!</amp-fit-text>
+        <p class="contents">JavaScriptベースのビルドツールであるBroccoliについての動画
+&lt;a href='https://github.com/broccolijs/broccoli'&gt;https://github.com/broccolijs/broccoli&lt;/a&gt;
+Broccoliがどのようなプロセスでファイルを処理するかについて話されてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Talk talks_12C5ADD371A9A5D4 - Ember Fest!" href="https://emberfest.eu/talks/talks_12C5ADD371A9A5D4">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.slideshare.net/jeharrell/9-antipatterns-for-nodejs-teams">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">9 anti-patterns for node.js teams</amp-fit-text>
+        <p class="contents">node.jsにおける9つのアンチパターンについてのスライド &lt;a href='http://efcl.hatenablog.com/entry/2014/09/11/212846'&gt;http://efcl.hatenablog.com/entry/2014/09/11/212846&lt;/a&gt;
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="9 anti-patterns for node.js teams" href="http://www.slideshare.net/jeharrell/9-antipatterns-for-nodejs-teams">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://d.pr/f/sP4H">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">2014-09-09-performance-in-css-hikalab-yuya-saito.pdf • Droplr</amp-fit-text>
+        <p class="contents">CSSとパフォーマンスについてのスライド。CSSのスタイル変更がどのようなレンダリングツリーの変更/再描画を起こしてるか、それを計測する方法、回避する方法について詳しく書かれてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="2014-09-09-performance-in-css-hikalab-yuya-saito.pdf • Droplr" href="http://d.pr/f/sP4H">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/vjeux/oscon-react-architecture">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">OSCON - React Architecture // Speaker Deck</amp-fit-text>
+        <p class="contents">Reactの歴史とReactのDOM Diffについてのスライド
+&lt;a href='https://www.youtube.com/watch?v=eCf5CquV_Bw'&gt;https://www.youtube.com/watch?v=eCf5CquV_Bw&lt;/a&gt;
+ReactのVirtual DOM = DOMのバージョン管理という話やVirtual DOMのdiffの仕組みについて解説されてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="OSCON - React Architecture // Speaker Deck" href="https://speakerdeck.com/vjeux/oscon-react-architecture">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://raynos.github.io/nodeconfeu2014-talk/#/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Building high quality services at Uber</amp-fit-text>
+        <p class="contents">Uber社のnode.jsを使ったプロダクションを運用するにあたってのスライド。
+ログ、モニター、設定の管理、例外のログ、プロファイル、初期設定のscaffolding等のツールについて。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Building high quality services at Uber" href="http://raynos.github.io/nodeconfeu2014-talk/#/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.innoarchitech.com/asynchronous-javascript-promises/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Asynchronous JavaScript &amp;amp; Promises</amp-fit-text>
+        <p class="contents">JavaScriptの非同期処理、Promiseについての動画とスライド。
+Promiseとはどういうものかについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Asynchronous JavaScript &amp;amp; Promises" href="http://www.innoarchitech.com/asynchronous-javascript-promises/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/oreoshake/bsidesla-managing-content-security-policy">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">BSidesLA Managing Content Security Policy // Speaker Deck</amp-fit-text>
+        <p class="contents">CSPについてのスライド。
+CSPとは何か、どうやって適応するか、どうやって管理するかについてTwitterの人が発表した内容。
+CSP Lv2のscript hashについてやCSPレポート解析と &lt;a href='http://caspr.io/'&gt;http://caspr.io/&lt;/a&gt; について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="BSidesLA Managing Content Security Policy // Speaker Deck" href="https://speakerdeck.com/oreoshake/bsidesla-managing-content-security-policy">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://cdn.polyfill.io/v1/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Polyfill service</amp-fit-text>
+        <p class="contents">polyfillライブラリを配信してくれるCDNサービス。
+クエリでfeaturesやuaを指定してそれに対するpolyfillをまとめくれたものを配信してくれる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Polyfill service" href="https://cdn.polyfill.io/v1/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://terkel.github.io/srcset-sizes/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">srcset と sizes</amp-fit-text>
+        <p class="contents">srcset と sizes 属性の入門の翻訳
+&lt;a href='http://ericportis.com/posts/2014/srcset-sizes/'&gt;http://ericportis.com/posts/2014/srcset-sizes/&lt;/a&gt;
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="srcset と sizes" href="http://terkel.github.io/srcset-sizes/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/thlorenz/v8-perf">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">thlorenz/v8-perf</amp-fit-text>
+        <p class="contents">V8のパフォーマンスに関するレポートや資料のまとめ。
+Data type、コンパイラ、最適化、GC、メモリ、CPUプロファイリング。
+またfast objectであるかどうかの確認方法やプロファイルの取り方などについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="thlorenz/v8-perf" href="https://github.com/thlorenz/v8-perf">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.chromium.org/developers/speed-hall-of-fame">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Speed Hall of Fame - The Chromium Projects</amp-fit-text>
+        <p class="contents">ChromiumやV8のパフォーマンスの最適化/向上のIssue(内容)とその結果についてまとめられてるページ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Speed Hall of Fame - The Chromium Projects" href="http://www.chromium.org/developers/speed-hall-of-fame">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.cresc.co.jp/tech/java/Google_Dart/DartLanguageSpecification_Japanese.pdf">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">DartLanguageSpecification_Japanese.pdf</amp-fit-text>
+        <p class="contents">Dartの仕様書日本語訳
+ECMA-408版
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="DartLanguageSpecification_Japanese.pdf" href="http://www.cresc.co.jp/tech/java/Google_Dart/DartLanguageSpecification_Japanese.pdf">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://johnkpaul.github.io/presentations/jqcon/2014/es6-now/#/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ES6 right now</amp-fit-text>
+        <p class="contents">ES6の動かせるサンプルと共に機能紹介と今スグ使う設定についてのスライド
+traceur(+grunt/gulp/broccoli/browserify)やes6-shimの紹介
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ES6 right now" href="http://johnkpaul.github.io/presentations/jqcon/2014/es6-now/#/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/davidmarkclements/decofun">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">davidmarkclements/decofun</amp-fit-text>
+        <p class="contents">無名関数を自動的にそのコンテキストに応じた名前を付けるデバッグツール。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="davidmarkclements/decofun" href="https://github.com/davidmarkclements/decofun">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/GraftJS/jschan">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">GraftJS/jschan · GitHub</amp-fit-text>
+        <p class="contents">libchanのJavaScriptポート。
+ネットワークを超えてChannel同士でやり取りをする。
+WebSocketsとSPDYをサポートしていて、msgpackを使う
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="GraftJS/jschan · GitHub" href="https://github.com/GraftJS/jschan">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/uupaa/WMCache.js">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">uupaa/WMCache.js</amp-fit-text>
+        <p class="contents">FileSystem, IndexedDB, Quota Management APIを使って100MB超えのテンポラリなストレージを管理するライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="uupaa/WMCache.js" href="https://github.com/uupaa/WMCache.js">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://adodson.com/hello.js/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">hello.js - Javascript API for OAuth2 authentication and REST services</amp-fit-text>
+        <p class="contents">OAuth 2対応のアプリの認証やAPIを叩く機能を持ったライブラリ。
+&lt;a href='https://auth-server.herokuapp.com/'&gt;https://auth-server.herokuapp.com/&lt;/a&gt; という認証のサーバを使っていて、クライアントサイドを書くだけでGitHubやFacebook等のAPIを利用できる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="hello.js - Javascript API for OAuth2 authentication and REST services" href="http://adodson.com/hello.js/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/BlackDice/lill">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">BlackDice/lill</amp-fit-text>
+        <p class="contents">es6-symbolを使った linked-listの実装ライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="BlackDice/lill" href="https://github.com/BlackDice/lill">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://d.hatena.ne.jp/hasegawayosuke/20140912/p1">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ブラウザ内で安全に文字列からDOMを組み立てるためのRickDOMというライブラリを書いた - 葉っぱ日記</amp-fit-text>
+        <p class="contents">DOMParserやcreateHTMLDocumentを使って文字列から安全にDOMを組み立てるライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ブラウザ内で安全に文字列からDOMを組み立てるためのRickDOMというライブラリを書いた - 葉っぱ日記" href="http://d.hatena.ne.jp/hasegawayosuke/20140912/p1">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/thlorenz/proxyquireify">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">thlorenz/proxyquireify</amp-fit-text>
+        <p class="contents"><code>require</code>をラップして読み込んだモジュールのメソッドのstubを行えるbrowserify plugin。
+変換によってDIが行われるので元モジュールに特殊な仕組みが必要ない
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="thlorenz/proxyquireify" href="https://github.com/thlorenz/proxyquireify">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://shop.oreilly.com/product/9780992461225.do">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript: Novice to Ninja - O&amp;#x27;Reilly Media</amp-fit-text>
+        <p class="contents">2014年10月 発売
+基礎から学ぶJavaScript
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript: Novice to Ninja - O&amp;#x27;Reilly Media" href="http://shop.oreilly.com/product/9780992461225.do">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

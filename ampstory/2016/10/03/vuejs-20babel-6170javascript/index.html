@@ -1,0 +1,510 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2016-10-03のJS: Vue.js 2.0、Babel 6.17.0、複雑なJavaScript - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2016/10/03/vuejs-20babel-6170javascript/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2016-10-03のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://nodejs.org/en/blog/release/v6.7.0/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node v6.7.0 (Current) | Node.js</amp-fit-text>
+        <p class="contents">Node v6.7.0リリース。
+セキュリティアップデートが含まれる更新
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v6.7.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v6.7.0/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/the-vue-point/vue-2-0-is-here-ef1f26acf4b8">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Vue 2.0 is Here! – The Vue Point – Medium</amp-fit-text>
+        <p class="contents">Vue.js 2.0リリース。
+1.xからのマイグレーションヘルパーも公開されている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Vue 2.0 is Here! – The Vue Point – Medium" href="https://medium.com/the-vue-point/vue-2-0-is-here-ef1f26acf4b8">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://babeljs.io/blog/2016/09/28/6.16.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">6.16.0 Released · Babel</amp-fit-text>
+        <p class="contents">Babel 6.16.0リリース。
+babel-coreが<code>parserOpts</code>と<code>generatorOpts</code>をサポートするなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="6.16.0 Released · Babel" href="https://babeljs.io/blog/2016/09/28/6.16.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/babel/babel/releases/tag/v6.17.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v6.17.0 · babel/babel</amp-fit-text>
+        <p class="contents">Babel v6.17.0リリース。
+ProposalのStage変更を反映、async generatorとobject rest-spreadをstage3へ、optimize-js関連の変更など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v6.17.0 · babel/babel" href="https://github.com/babel/babel/releases/tag/v6.17.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://eslint.org/blog/2016/09/eslint-v3.7.0-released">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ESLint v3.7.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+        <p class="contents">ESLint v3.7.0リリース。
+<code>--fix</code>対応のルールの追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ESLint v3.7.0 released - ESLint - Pluggable JavaScript linter" href="http://eslint.org/blog/2016/09/eslint-v3.7.0-released">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/re-dom/re-dom-is-now-1-0-58ec0328a59d">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">RE:DOM is now 1.0! – RE:DOM – Medium</amp-fit-text>
+        <p class="contents">RE:DOM 1.0リリース
+合わせてRE:DOM向けのfake domであるNO:DOMも公開されてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="RE:DOM is now 1.0! – RE:DOM – Medium" href="https://medium.com/re-dom/re-dom-is-now-1-0-58ec0328a59d">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/facebook/flow/releases/tag/v0.33.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v0.33.0 · facebook/flow</amp-fit-text>
+        <p class="contents">FlowType 0.33.0リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v0.33.0 · facebook/flow" href="https://github.com/facebook/flow/releases/tag/v0.33.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/6969/release-notes-for-safari-technology-preview-release-14/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release Notes for Safari Technology Preview Release 14 | WebKit</amp-fit-text>
+        <p class="contents">Safari Technology Preview Release 14リリース。
+<code>URLSearchParams</code>の実装、safaridriverも含むようになるなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview Release 14 | WebKit" href="https://webkit.org/blog/6969/release-notes-for-safari-technology-preview-release-14/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.hospodarets.com/nodejs-debugging-in-chrome-devtools">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node.js debugging with Chrome DevTools (in parallel with browser JavaScript)</amp-fit-text>
+        <p class="contents">Node.jsをChromeの開発者ツールでデバッグする方法について。
+設定を有効にする手順
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node.js debugging with Chrome DevTools (in parallel with browser JavaScript)" href="https://blog.hospodarets.com/nodejs-debugging-in-chrome-devtools">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@pakastin/master-the-dom-bc1a2a06089b">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Master the DOM – Medium</amp-fit-text>
+        <p class="contents">DOM APIでのDOM Treeの基本的な操作を見ていく話。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Master the DOM – Medium" href="https://medium.com/@pakastin/master-the-dom-bc1a2a06089b">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.mariano.io/common-css-mistakes-and-how-to-fix-them-8ee0f5e88d64">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Common CSS Mistakes (And How To Fix Them)</amp-fit-text>
+        <p class="contents">CSSのよくある間違いと修正方法
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Common CSS Mistakes (And How To Fix Them)" href="https://blog.mariano.io/common-css-mistakes-and-how-to-fix-them-8ee0f5e88d64">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://havelog.ayumusato.com/develop/javascript/e725-timer_vs_raf.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">requestAnimationFrame とタイマーの今更な比較とデモ ::ハブろぐ</amp-fit-text>
+        <p class="contents"><code>requestAnimationFrame</code>と<code>setTimeout</code>の比較。
+<code>setTimeout</code>は細かい処理でも影響を受けやすいという話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="requestAnimationFrame とタイマーの今更な比較とデモ ::ハブろぐ" href="https://havelog.ayumusato.com/develop/javascript/e725-timer_vs_raf.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/hemanth/es-next">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">hemanth/es-next: stage-0 to stage-4 ECMAscript proposals.</amp-fit-text>
+        <p class="contents">ECMAScript proposalsのStage別まとめ。
+それぞれに小さなサンプルコードが書かれている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="hemanth/es-next: stage-0 to stage-4 ECMAscript proposals." href="https://github.com/hemanth/es-next">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://philipwalton.com/articles/loading-polyfills-only-when-needed/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Loading Polyfills Only When Needed — Philip Walton</amp-fit-text>
+        <p class="contents">polyfillをサポートしてない環境だけで動的に読み込みたいという話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Loading Polyfills Only When Needed — Philip Walton" href="https://philipwalton.com/articles/loading-polyfills-only-when-needed/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://azu.github.io/slide/2016/react-meetup/large-scale-javascript.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">複雑なJavaScriptアプリケーションを考えながら作る話</amp-fit-text>
+        <p class="contents">JavaScriptで複雑なアプリケーションを作る場合にどのように考えるかというスライド。
+ドメインモデルをどのように考えて作っていくかについて。 Babel、React、Almin、PostCSSがベース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="複雑なJavaScriptアプリケーションを考えながら作る話" href="http://azu.github.io/slide/2016/react-meetup/large-scale-javascript.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://codepen.io/netsi1964/full/NRgyZX/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">CodePen - React ES6 lifecycles</amp-fit-text>
+        <p class="contents">Reactのライフサイクルのまとめ。
+実際に動くコードがドキュメントになっていて、動作をさせながらライフサイクルメソッドの実行順について見ることができる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CodePen - React ES6 lifecycles" href="http://codepen.io/netsi1964/full/NRgyZX/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://paulirish.github.io/web-feature-availability/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Web Platform Feature Availability</amp-fit-text>
+        <p class="contents">CanIUseとStatCounterを使いある機能がどれぐらいのプラットフォームで利用できるかを一覧できるサイト
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Web Platform Feature Availability" href="https://paulirish.github.io/web-feature-availability/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://react.statuscode.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React Status: A Free, Weekly Email Newsletter</amp-fit-text>
+        <p class="contents">Reactについてを扱うWeeklyメールマガジン
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React Status: A Free, Weekly Email Newsletter" href="http://react.statuscode.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://snyk.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Fix and prevent known vulnerabilities in Node.js apps | Snyk</amp-fit-text>
+        <p class="contents">Node.js appの既知の脆弱性などを通知、修正などを行うサービス。
+CIで自動的にチェックできる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Fix and prevent known vulnerabilities in Node.js apps | Snyk" href="https://snyk.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mkwtys/bundle-size">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">mkwtys/bundle-size: Show bundle file size of npm packages</amp-fit-text>
+        <p class="contents">指定したパッケージのファイルサイズを出力できるCLI。
+Environmentを指定できるのでdevelopmentとproductionのファイルサイズをminify、gzip済みで比較できる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="mkwtys/bundle-size: Show bundle file size of npm packages" href="https://github.com/mkwtys/bundle-size">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/krasimir/navigo">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">krasimir/navigo: A simple vanilla JavaScript router with a fallback for older browsers</amp-fit-text>
+        <p class="contents">シンプルなルーターライブラリ。
+マッピングに正規表現も利用できる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="krasimir/navigo: A simple vanilla JavaScript router with a fallback for older browsers" href="https://github.com/krasimir/navigo">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://shop.oreilly.com/product/9781785280832.do">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">TypeScript Design Patterns - O&amp;#x27;Reilly Media</amp-fit-text>
+        <p class="contents">TypeScriptでのデザインパターン本
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="TypeScript Design Patterns - O&amp;#x27;Reilly Media" href="http://shop.oreilly.com/product/9781785280832.do">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

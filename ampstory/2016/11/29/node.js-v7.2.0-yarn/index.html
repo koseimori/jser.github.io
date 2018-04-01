@@ -1,0 +1,491 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2016-11-29のJS: Node.js v7.2.0、Yarnでオフラインインストール - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2016/11/29/node.js-v7.2.0-yarn/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2016-11-29のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/vuejs/vue/releases/tag/v2.1.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v2.1.0 · vuejs/vue</amp-fit-text>
+        <p class="contents">Vue.js 2.1.0リリース。
+Scoped Slots、<code>v-else-if</code>、<code>dist</code>以下のファイルの変更、JSX対応の改善、サーバサイドレンダリングの際に<code>process.env.VUE_ENV=server</code>は不要になるなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v2.1.0 · vuejs/vue" href="https://github.com/vuejs/vue/releases/tag/v2.1.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://eslint.org/blog/2016/11/eslint-v3.11.0-released">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ESLint v3.11.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+        <p class="contents">ESLint v3.11.0リリース。
+<code>capitalized-comments</code>、<code>require-await</code>のルールを追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ESLint v3.11.0 released - ESLint - Pluggable JavaScript linter" href="http://eslint.org/blog/2016/11/eslint-v3.11.0-released">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v7.2.0/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node v7.2.0 (Current) | Node.js</amp-fit-text>
+        <p class="contents">Node v7.2.0リリース。
+Windows向けのセキュリティリリース、<code>process.memoryUsage().external</code>の追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v7.2.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v7.2.0/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://riotjs.com/release-notes/#november-22-2016">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release notes · Riot.js</amp-fit-text>
+        <p class="contents">Riot.js 3.0リリース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release notes · Riot.js" href="http://riotjs.com/release-notes/#november-22-2016">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://yarnpkg.com/blog/2016/11/24/offline-mirror">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title"> Running Yarn offline | Yarn</amp-fit-text>
+        <p class="contents">yarnをオフラインで使う方法や、オフラインのミラーをリポジトリに含める方法について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title=" Running Yarn offline | Yarn" href="https://yarnpkg.com/blog/2016/11/24/offline-mirror">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.freecodecamp.com/explained-css-pseudo-classes-cef3c3177361">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">How CSS pseudo-classes work, explained with code and lots of diagrams</amp-fit-text>
+        <p class="contents"><code>:*-of-type</code>と<code>:*-child</code>などの擬似クラスについての分かりやすい図解
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="How CSS pseudo-classes work, explained with code and lots of diagrams" href="https://medium.freecodecamp.com/explained-css-pseudo-classes-cef3c3177361">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.zsoltnagy.eu/es6-iterators-and-generators-in-practice/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ES6 Iterators and Generators in Practice – Zsolt Nagy</amp-fit-text>
+        <p class="contents">Iterator、Iterable、Generatorについて。
+サンプルコード中心でどのような挙動になるかを解説してる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ES6 Iterators and Generators in Practice – Zsolt Nagy" href="http://www.zsoltnagy.eu/es6-iterators-and-generators-in-practice/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://dassur.ma/things/reading-specs-2/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">DasSur.ma – How to read web specs Part IIa – Or: ECMAScript Symbols</amp-fit-text>
+        <p class="contents">ECMAScriptの仕様をどうやって読んでいくかについて。
+<code>@@iterator</code>とは何か?というところから<code>Symbol</code>の仕様を見ていく話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="DasSur.ma – How to read web specs Part IIa – Or: ECMAScript Symbols" href="https://dassur.ma/things/reading-specs-2/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.mariusschulz.com/2016/11/25/typescript-2-0-built-in-type-declarations">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">TypeScript 2.0: Built-In Type Declarations | Marius Schulz</amp-fit-text>
+        <p class="contents">TypeScript 2.0のBuilt-In Typeについて。
+<code>--lib</code>オプションで含めるビルトインのlibを指定できる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="TypeScript 2.0: Built-In Type Declarations | Marius Schulz" href="https://blog.mariusschulz.com/2016/11/25/typescript-2-0-built-in-type-declarations">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@zfrisch/understanding-javascript-micro-templating-f37a37b3b40e">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Understanding JavaScript Micro-Templating – Medium</amp-fit-text>
+        <p class="contents">John Resig製の140bytesで動くMicro Templatingがどのような仕組みで動いているのかを見ていく記事。
+Functionコンストラクタ、正規表現など構成要素を丁寧に解説してる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Understanding JavaScript Micro-Templating – Medium" href="https://medium.com/@zfrisch/understanding-javascript-micro-templating-f37a37b3b40e">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@u_glow/the-numbers-on-webpack-1-vs-2-7f457bb4658c">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The numbers on Webpack 1 vs 2 – Medium</amp-fit-text>
+        <p class="contents">webpack 1.xと2.0βのビルドサイズやビルド時間(prod/dev)の比較
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The numbers on Webpack 1 vs 2 – Medium" href="https://medium.com/@u_glow/the-numbers-on-webpack-1-vs-2-7f457bb4658c">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://techblog.commercetools.com/advanced-data-tables-in-react-dbe33f8345ab">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Advanced Data Tables in React</amp-fit-text>
+        <p class="contents">Reactのgridライブラリの比較まとめ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Advanced Data Tables in React" href="https://techblog.commercetools.com/advanced-data-tables-in-react-dbe33f8345ab">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://css-tricks.com/introduction-mo-js/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">An Introduction to mo.js | CSS-Tricks</amp-fit-text>
+        <p class="contents">宣言的なアニメーションライブラリであるmo.jsについてのチュートリアル
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="An Introduction to mo.js | CSS-Tricks" href="https://css-tricks.com/introduction-mo-js/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://r7kamura.hatenablog.com/entry/2016/11/24/030101">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">katatema.js - ✘╹◡╹✘</amp-fit-text>
+        <p class="contents">Next.jsみたいな形でディレクトリにReactのコンポーネントを置くとHTMLにそれぞれ変換できるツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="katatema.js - ✘╹◡╹✘" href="http://r7kamura.hatenablog.com/entry/2016/11/24/030101">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/rstankov/react-at-product-hunt">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React at Product Hunt // Speaker Deck</amp-fit-text>
+        <p class="contents">ProductHuntのJavaScript変遷についてのスライド。
+jQuery -&gt; Backbone -&gt; React + Redux。
+Duxyを使ったRest APIの操作についてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React at Product Hunt // Speaker Deck" href="https://speakerdeck.com/rstankov/react-at-product-hunt">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/azat-co/you-dont-know-node">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">azat-co/you-dont-know-node: You Don&amp;#x27;t Know Node.js</amp-fit-text>
+        <p class="contents">Node.jsとはどのような特徴を持っているかという入門者向けの紹介。
+非同期I/O、Stream、エラーハンドリング、ネイティブモジュールについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="azat-co/you-dont-know-node: You Don&amp;#x27;t Know Node.js" href="https://github.com/azat-co/you-dont-know-node">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://cssreference.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">CSS Reference - A free visual guide to the most popular CSS properties.</amp-fit-text>
+        <p class="contents">CSSリファレンスサイト。
+それぞれのプロパティを当てた結果を表示してくれている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CSS Reference - A free visual guide to the most popular CSS properties." href="http://cssreference.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://featurejs.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Feature.js</amp-fit-text>
+        <p class="contents">Modernizrのように色々な機能が利用できるかを一括で判定するライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Feature.js" href="http://featurejs.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://dollarshaveclub.github.io/reframe.js">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Reframe.js</amp-fit-text>
+        <p class="contents">iframeなどの埋め込み要素をレスポンシブルに扱うライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Reframe.js" href="https://dollarshaveclub.github.io/reframe.js">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://immutablecss.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">immutable-css</amp-fit-text>
+        <p class="contents">
+A CSS linter for immutable selectors.
+
+セレクタのoverrideをチェックするLintツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="immutable-css" href="http://immutablecss.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/nuxt/nuxt.js">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">nuxt/nuxt.js: A minimalistic framework for server-rendered Vue.js applications (inspired by Next.js)</amp-fit-text>
+        <p class="contents">Next.jsインスパイアのVue.js向けサーバサイドレンダリングフレームワーク
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="nuxt/nuxt.js: A minimalistic framework for server-rendered Vue.js applications (inspired by Next.js)" href="https://github.com/nuxt/nuxt.js">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

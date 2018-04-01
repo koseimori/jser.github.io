@@ -1,0 +1,448 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2015-05-27のJS: Promiseのありがちな間違い、AngularJS 2に向けて、Plain JS - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2015/05/27/promise-angular2/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2015-05-27のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/caolan/async/blob/master/CHANGELOG.md#v100">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">async/CHANGELOG.md at master · caolan/async</amp-fit-text>
+        <p class="contents">非同期処理を管理するライブラリであるasync 1.0.0リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="async/CHANGELOG.md at master · caolan/async" href="https://github.com/caolan/async/blob/master/CHANGELOG.md#v100">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">We have a problem with promises</amp-fit-text>
+        <p class="contents">Promiseの色々な落とし穴やアンチパターンについてよくまとまってる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="We have a problem with promises" href="http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/armorik83/items/5542daed0c408cb9f605">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript - AngularJSモダンプラクティス - Qiita</amp-fit-text>
+        <p class="contents">AngularJS 2に移行しやすくするにはどうするかというチュートリアル。
+1.xでもES6 Classesを使った書き方をするためのリファクタリング方法。
+AngularJS 2でのdirective、モジュール、関連ライブラリやツール、FAQなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript - AngularJSモダンプラクティス - Qiita" href="http://qiita.com/armorik83/items/5542daed0c408cb9f605">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://gist.github.com/danielgtaylor/0b60c2ed1f069f118562">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Moving to ES6 from CoffeeScript</amp-fit-text>
+        <p class="contents">CoffeeScriptからES6への移行において文法の比較やES6の構文や機能の紹介
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Moving to ES6 from CoffeeScript" href="https://gist.github.com/danielgtaylor/0b60c2ed1f069f118562">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@mrzepinski/es6-classes-and-inheritance-607804080906">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ES6 — classes and inheritance — Medium</amp-fit-text>
+        <p class="contents">ES6 ClassesとES5との書き方比較。
+getterやsetter、細かいショートハンドとともに紹介してる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ES6 — classes and inheritance — Medium" href="https://medium.com/@mrzepinski/es6-classes-and-inheritance-607804080906">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://roost.bocoup.com/2015/austin/blog/why-backbone/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Why Backbone.js? - Roost Austin</amp-fit-text>
+        <p class="contents">JavaScriptライブラリをどのような基準で比較して選択するかについて。
+メジャーなライブラリの統計を比較した図や学習曲線、欠点などについて書かれていて、どのような見方があるかについての話が興味深い
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Why Backbone.js? - Roost Austin" href="https://roost.bocoup.com/2015/austin/blog/why-backbone/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://updates.html5rocks.com/2015/05/Notifying-you-of-notificiation-changes">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Notifying you of Changes to Notifications</amp-fit-text>
+        <p class="contents">Chrome 44でService Workerを使ったプッシュ通知で任意のオブジェクトを渡せるようになり、また<code>getNotifications()</code>で特定のtagがついたNotificationのみを取り出せるようになった
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Notifying you of Changes to Notifications" href="http://updates.html5rocks.com/2015/05/Notifying-you-of-notificiation-changes">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/Jxck_/items/abfa9f3dd15c5572cbfd">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">graphite, grafana, sitespeed.io, diamond で継続 Web パフォーマンスモニタリング - Qiita</amp-fit-text>
+        <p class="contents">sitespeed.ioを使い実際のブラウザを動かしてTiming API等のクライアントサイドでのメトリクス情報を継続的に取得したデータをgraphiteに保存し可視化する方法について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="graphite, grafana, sitespeed.io, diamond で継続 Web パフォーマンスモニタリング - Qiita" href="http://qiita.com/Jxck_/items/abfa9f3dd15c5572cbfd">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://shimz.me/blog/map/4268">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ここ最近のWeb地図周辺の動向をまとめてみた | #GUNMAGISGEEK</amp-fit-text>
+        <p class="contents">GeoJSONを始めウェブの地図周りの技術についての変化について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ここ最近のWeb地図周辺の動向をまとめてみた | #GUNMAGISGEEK" href="http://shimz.me/blog/map/4268">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@nickheiner/testing-javascript-8c8efe8434e">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Testing JavaScript — Medium</amp-fit-text>
+        <p class="contents">proxyquireを使ったテスト、E2Eとモック、tapeを使ったテストについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Testing JavaScript — Medium" href="https://medium.com/@nickheiner/testing-javascript-8c8efe8434e">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://wp-p.info/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ウェブクリエイターの為の情報サイト | Web Programming Primer</amp-fit-text>
+        <p class="contents">HTML/CSS/JavaScriptの入門的な内容のチュートリアル集
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ウェブクリエイターの為の情報サイト | Web Programming Primer" href="http://wp-p.info/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://plainjs.com/javascript/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Plain JavaScript - Functions and Helpers</amp-fit-text>
+        <p class="contents">Pure JavaScriptでDOM操作などについての逆引きリファレンス
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Plain JavaScript - Functions and Helpers" href="http://plainjs.com/javascript/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://emberweekend.com/episodes">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">EmberWeekend</amp-fit-text>
+        <p class="contents">Ember.jsについてのpodcast
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="EmberWeekend" href="https://emberweekend.com/episodes">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/sebastian-lenz/typedoc">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">sebastian-lenz/typedoc</amp-fit-text>
+        <p class="contents">TypeScriptのAPIドキュメント生成ツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="sebastian-lenz/typedoc" href="https://github.com/sebastian-lenz/typedoc">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://webdriver.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">WebdriverIO - Selenium 2.0 javascript bindings for nodejs</amp-fit-text>
+        <p class="contents">Node.jsのSelenium/WebDriver APIのバインディング。
+モバイルのフリックやタブの切替等色々なAPIが用意されてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WebdriverIO - Selenium 2.0 javascript bindings for nodejs" href="http://webdriver.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://symdiff.github.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">symdiff</amp-fit-text>
+        <p class="contents">HTMLとCSSを渡して使われてないCSSを検索するツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="symdiff" href="https://symdiff.github.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/padolsey/operative">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">padolsey/operative</amp-fit-text>
+        <p class="contents">直接関数を渡してそれをWeb Workerで動かせるライブラリ。
+古いブラウザ向けのfallbackやPromiseのサポートなど、できるだけシームレスに書けるようにしてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="padolsey/operative" href="https://github.com/padolsey/operative">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://famous.org/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">High-performance javascript library for animations &amp;amp; interfaces | Famous.org</amp-fit-text>
+        <p class="contents">アニメーションライブラリであるFamousがリニューアル公開された
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="High-performance javascript library for animations &amp;amp; interfaces | Famous.org" href="http://famous.org/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/qubit-engineering/easily-testing-react-components-with-react-test-tree-f9e1668b1c2d">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Easily testing React components with react-test-tree — Qubit Engineering — Medium</amp-fit-text>
+        <p class="contents">React component向けのテストライブラリ。
+対象のReact componentに<code>ref</code>属性を追加しておくことで、clickなどのイベントのシミュレートや子componentをstubすることができる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Easily testing React components with react-test-tree — Qubit Engineering — Medium" href="https://medium.com/qubit-engineering/easily-testing-react-components-with-react-test-tree-f9e1668b1c2d">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

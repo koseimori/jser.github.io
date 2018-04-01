@@ -1,0 +1,458 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2018-03-13のJS: MobX 4.0.0、PreactとGlimmerのパフォーマンス比較実験 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2018/03/13/preactglimmer/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2018-03-13のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://www.bitovi.com/blog/donejs-2.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">DoneJS 2.0 Released</amp-fit-text>
+        <p class="contents">DoneJS 2.0リリース。
+CanJS 4.0に対応、CIやデプロイの設定を<code>donejs add</code>で行えるように、<code>donejs upgrade</code>でマイグレーションができるようになっている。
+HTTP/2 pushを使ったインクリメンタルレンダリングの対応改善など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="DoneJS 2.0 Released" href="https://www.bitovi.com/blog/donejs-2.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://protonmail.com/blog/openpgpjs-3-release/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">We have released version 3.0 of OpenPGPjs, an open source OpenPGP library - ProtonMail Blog</amp-fit-text>
+        <p class="contents">OpenPGPの実装であるOpenPGP.js 3.0リリース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="We have released version 3.0 of OpenPGPjs, an open source OpenPGP library - ProtonMail Blog" href="https://protonmail.com/blog/openpgpjs-3-release/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2018/03/nic65">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">New in Chrome 65  |  Web  |  Google Developers</amp-fit-text>
+        <p class="contents">Chrome 65の変更点について。
+CSS Paint API、Server Tming API、<code>display: contents</code>の対応、Feature Policyの対応など。
+また<code>document.all</code>が上書きできなくなるようになるなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="New in Chrome 65  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2018/03/nic65">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@mweststrate/mobx-4-better-simpler-faster-smaller-c1fbc08008da">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">MobX 4: Better, simpler, faster, smaller – Michel Weststrate – Medium</amp-fit-text>
+        <p class="contents">MobX 4リリース。
+Decorator proposal(<code>@decorator</code>)を使わずに同じことをする<code>decorate</code>関数の追加、コレクション向けのUtility APIを追加、<code>when</code>の追加など。
+また<code>shareGlobalState</code>の削除、APIのリネーム、default exportをしないようにするなどの破壊的変更が行われている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="MobX 4: Better, simpler, faster, smaller – Michel Weststrate – Medium" href="https://medium.com/@mweststrate/mobx-4-better-simpler-faster-smaller-c1fbc08008da">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/sass/libsass/releases/tag/3.5.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release Futura · sass/libsass</amp-fit-text>
+        <p class="contents">libsass 3.5リリース。 引数のtrailing commasサポート、<code>content-exists</code>関数のサポート、CSSのCustom Property、<code>var()</code>のサポートなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Futura · sass/libsass" href="https://github.com/sass/libsass/releases/tag/3.5.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.logrocket.com/an-imperative-guide-to-forms-in-react-927d9670170a">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">An imperative guide to forms in React – LogRocket</amp-fit-text>
+        <p class="contents">Reactを使ったフォームの扱いについての記事。
+Formikを使ったフォームの作成などについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="An imperative guide to forms in React – LogRocket" href="https://blog.logrocket.com/an-imperative-guide-to-forms-in-react-927d9670170a">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2018/03/emscripting-a-c-library">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Emscripting a C library to Wasm  |  Web  |  Google Developers</amp-fit-text>
+        <p class="contents">Emscriptenを使いCのコードをWebAssemblyにして実行するチュートリアル。
+libwebpをwasmにコンパイルする話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Emscripting a C library to Wasm  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2018/03/emscripting-a-c-library">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.jxck.io/entries/2018-03-08/feature-policy-permission-delegation.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Feature Policy による Permission Delegation | blog.jxck.io</amp-fit-text>
+        <p class="contents">iframe sandbox、CSP、Feature Policyの役割について。
+<code>sandbox</code>はホワイリトストでの機能制限、CSPはブラックリストでの機能制限、Feature Policyは権限の設定をオリジンに対して行う。
+また<code>sandbox</code>とFeature Policyの機能重複はしないことについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Feature Policy による Permission Delegation | blog.jxck.io" href="https://blog.jxck.io/entries/2018-03-08/feature-policy-permission-delegation.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://rast.io/web-workers-rescue">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Web Workers to the rescue – Rastislav Svarba – Medium</amp-fit-text>
+        <p class="contents">Web Workerを使った処理の移譲のコストと効果についての記事。
+データの取得と処理をWorkerに移動した場合の処理時間とWorkerへのデータ受け渡しのコストについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Web Workers to the rescue – Rastislav Svarba – Medium" href="https://rast.io/web-workers-rescue">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The npm Blog — Introducing \`npm ci\` for faster, more reliable...</amp-fit-text>
+        <p class="contents"><code>pacakge-lock.json</code>から常にクリーンインストールする<code>npm ci</code>について。 現在の存在する<code>node_modules</code>ディレクトリを削除し、<code>pacakge-lock.json</code>を元にインストールする。 キャッシュを使わないCI環境向けのインストールコマンド。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The npm Blog — Introducing \`npm ci\` for faster, more reliable..." href="http://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://engineering.linkedin.com/blog/2018/03/how-we-built-the-same-app-twice-with-preact-and-glimmerjs">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Lighter than Lightweight: How We Built the Same App Twice with Preact and Glimmer.js | LinkedIn Engineering</amp-fit-text>
+        <p class="contents">同じアプリをPreactとGlimmer.jsで実装し、ページロードに関するパフォーマンスの比較実験をした結果について。
+ファイルサイズは重要であるが、ファイルサイズがすべてを決めるわけではないという点について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Lighter than Lightweight: How We Built the Same App Twice with Preact and Glimmer.js | LinkedIn Engineering" href="https://engineering.linkedin.com/blog/2018/03/how-we-built-the-same-app-twice-with-preact-and-glimmerjs">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/andrew--r/frontend-case-studies">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">andrew--r/frontend-case-studies: 💼 A curated list of technical talks and articles about real-world enterprise frontend development</amp-fit-text>
+        <p class="contents">フロントエンドのケーススタディのまとめ。
+色々な企業の事例が書かれている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="andrew--r/frontend-case-studies: 💼 A curated list of technical talks and articles about real-world enterprise frontend development" href="https://github.com/andrew--r/frontend-case-studies">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://atomiks.github.io/30-seconds-of-css/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">30 Seconds of CSS</amp-fit-text>
+        <p class="contents">CSSのスニペットとその解説をまとめたもの。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="30 Seconds of CSS" href="https://atomiks.github.io/30-seconds-of-css/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://boxy-svg.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Boxy SVG Editor</amp-fit-text>
+        <p class="contents">SVGエディタアプリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Boxy SVG Editor" href="https://boxy-svg.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/pshihn/workly">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">pshihn/workly: A really simple way to move a stand-alone function/class to a web worker. 🏋️‍♀️→ 😄</amp-fit-text>
+        <p class="contents">ProxyとWebWorkerを使い既存の関数やクラスをWorkerで処理するライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="pshihn/workly: A really simple way to move a stand-alone function/class to a web worker. 🏋️‍♀️→ 😄" href="https://github.com/pshihn/workly">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/midwayjs/pandora">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">midwayjs/pandora: A Manageable, Measurable and Traceable Node.js Application Manager represented by Alibaba powered by TypeScript</amp-fit-text>
+        <p class="contents">Alibaba製のNode.jsアプリケーションの管理ツール。
+アプリケーションプロセスの管理、計測、監視、トラブルシューティングのためのデバッグの仕組みなどが持っている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="midwayjs/pandora: A Manageable, Measurable and Traceable Node.js Application Manager represented by Alibaba powered by TypeScript" href="https://github.com/midwayjs/pandora">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://run.tools/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Run</amp-fit-text>
+        <p class="contents">Node.js製のデプロイツール。
+&quot;Resource&quot;という単位で設定を行い、S3へデプロイといったことを行える。
+Resourceは自分で作成することができ、どのようなオプションを受け取るかやオプションを受け取って処理を記述できる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Run" href="https://run.tools/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://jgranstrom.github.io/zipson/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">zipson | JSON parse and stringify with compression</amp-fit-text>
+        <p class="contents"><code>JSON.stringify</code>/<code>JSON.parse</code>の代替ライブラリ。
+データの圧縮やStreamingのサポートを目的にしている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="zipson | JSON parse and stringify with compression" href="https://jgranstrom.github.io/zipson/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://roughjs.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Rough.js</amp-fit-text>
+        <p class="contents">手書き風の線を描くCanvasライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Rough.js" href="http://roughjs.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

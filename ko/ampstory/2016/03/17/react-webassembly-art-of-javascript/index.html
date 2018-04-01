@@ -1,0 +1,472 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2016-03-17のJS: React.js v15.0 RC、WebAssembly、最近のJavaScriptツール/ライブラリ - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2016/03/17/react-webassembly-art-of-javascript/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2016-03-17のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://v8project.blogspot.com/2016/03/v8-release-50.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">V8 JavaScript Engine: V8 Release 5.0</amp-fit-text>
+        <p class="contents">V8 5.0リリース。
+RegExp Unicode flagのサポート、RegExpのwell-known symbolsをサポート、<code>Object.keys()</code>やrest parameterの速度改善など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 JavaScript Engine: V8 Release 5.0" href="http://v8project.blogspot.com/2016/03/v8-release-50.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/babel/babel/releases/tag/v6.7.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v6.7.0 · babel/babel</amp-fit-text>
+        <p class="contents">Babel v6.7.0リリース。
+async/await周りのバグ修正、内部的な変更してAST上に存在したキャッシュをWeakMapベースで保存するように変更。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v6.7.0 · babel/babel" href="https://github.com/babel/babel/releases/tag/v6.7.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/nodejs/node/blob/v5.8.0/CHANGELOG.md">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">node/CHANGELOG.md at v5.8.0 · nodejs/node</amp-fit-text>
+        <p class="contents">Node.js 5.8.0リリース。
+<code>path.normalize</code>のレグレッションを修正、<code>util.format</code>のパフォーマンス改善。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="node/CHANGELOG.md at v5.8.0 · nodejs/node" href="https://github.com/nodejs/node/blob/v5.8.0/CHANGELOG.md">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v5.9.0/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node v5.9.0 (Stable) | Node.js</amp-fit-text>
+        <p class="contents">Node.js 5.9.0リリース。
+<code>vm</code>モジュールのメモリ使用量の削減、<code>zlib</code>モジュールがconcatenated archivesをサポート
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v5.9.0 (Stable) | Node.js" href="https://nodejs.org/en/blog/release/v5.9.0/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/testem/testem/releases/tag/v1.5.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v1.5.0 · testem/testem</amp-fit-text>
+        <p class="contents">testem v1.5.0リリース。
+複数のTest Pageを指定するとparallel実行できるように、Mochaのテストにかかった時間を表示できるようになるなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v1.5.0 · testem/testem" href="https://github.com/testem/testem/releases/tag/v1.5.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.koba04.com/post/2016/03/09/react-js-v15-changes/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React.js v15.0 changes - blog.koba04.com</amp-fit-text>
+        <p class="contents">React.js v15.0 RCの変更点まとめ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React.js v15.0 changes - blog.koba04.com" href="http://blog.koba04.com/post/2016/03/09/react-js-v15-changes/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hacks.mozilla.org/2016/03/a-webassembly-milestone/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">A WebAssembly Milestone: Experimental Support in Multiple Browsers ★ Mozilla Hacks – the Web developer blog</amp-fit-text>
+        <p class="contents">WebAssemblyの仕様、ブラウザの実装のステータスについて。
+最初のbinary formatドラフト仕様がでており、Firefox、Chrome、ChackraCoreのNightlyで試験的な実装がされている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="A WebAssembly Milestone: Experimental Support in Multiple Browsers ★ Mozilla Hacks – the Web developer blog" href="https://hacks.mozilla.org/2016/03/a-webassembly-milestone/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://dev.mozilla.jp/2016/03/debugging-service-workers-and-push-with-firefox-devtools/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Firefox 開発ツールを使った Service Workers と Push のデバッグ | Mozilla Developer Street (modest)</amp-fit-text>
+        <p class="contents">FirefoxでのService WorkerとPush Notificationsのデバッグについて。
+<code>about:debugging</code>というデバッグのダッシュボード画面についても書かれている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Firefox 開発ツールを使った Service Workers と Push のデバッグ | Mozilla Developer Street (modest)" href="https://dev.mozilla.jp/2016/03/debugging-service-workers-and-push-with-firefox-devtools/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/javascript-and-opinions/state-of-the-art-javascript-in-2016-ab67fc68eb0b">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">State of the Art JavaScript in 2016 — JavaScript and Opinions — Medium</amp-fit-text>
+        <p class="contents">最近のJavaScriptにおける主流となったライブラリやツールについて。
+React、Redux、Babel、ESLint、npm、webpack、mochaなどのテストツールなどや人について
+
+If you don’t need it, don’t use it
+
+と書かれているように全てに対するベストではないという話も書かれている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="State of the Art JavaScript in 2016 — JavaScript and Opinions — Medium" href="https://medium.com/javascript-and-opinions/state-of-the-art-javascript-in-2016-ab67fc68eb0b">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/javascript-inside/learn-the-concepts-part-1-418952d968cb">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Learning React Without Using React Part 1 — JavaScript Inside — Medium</amp-fit-text>
+        <p class="contents">ツールなどは使わないで学ぶReactのチュートリアル。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Learning React Without Using React Part 1 — JavaScript Inside — Medium" href="https://medium.com/javascript-inside/learn-the-concepts-part-1-418952d968cb">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://k94n.com/webpack-ftw">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Webpack FTW!!!!</amp-fit-text>
+        <p class="contents">webpackはどんなことができるのかというのをわかりやすく簡単に紹介してる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Webpack FTW!!!!" href="https://k94n.com/webpack-ftw">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.atmarkit.co.jp/ait/articles/1603/11/news042.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">特集：C#×JavaScript：ECMAScriptの最新情報を得るには (1/2) - ＠IT</amp-fit-text>
+        <p class="contents">ECMAScriptの仕様策定のプロセスやリソースがどこにあるかがまとまってる記事
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="特集：C#×JavaScript：ECMAScriptの最新情報を得るには (1/2) - ＠IT" href="http://www.atmarkit.co.jp/ait/articles/1603/11/news042.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://facebook.github.io/jest/blog/2016/03/11/javascript-unit-testing-performance.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Jest | &amp;quot;JavaScript Unit Testing Performance&amp;quot;</amp-fit-text>
+        <p class="contents">テストフレームワークのJestが実行時間を改善するためにやっていることについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Jest | &amp;quot;JavaScript Unit Testing Performance&amp;quot;" href="http://facebook.github.io/jest/blog/2016/03/11/javascript-unit-testing-performance.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://ponyfoo.com/articles/weakref">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript Proposal for weak references: WeakRef</amp-fit-text>
+        <p class="contents"><code>WeakRef</code> Proposalについての解説。
+WeakMapと同じようにWeakな扱いだが、WeakMapと違いGCで回収された時に呼ばれる<code>executor</code>を指定できる。(WeakMap/Setは回収されたタイミングを知ることができない)
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript Proposal for weak references: WeakRef" href="https://ponyfoo.com/articles/weakref">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@jasnell/node-js-buffer-api-changes-3c21f1048f97">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node.js Buffer API Changes — Medium</amp-fit-text>
+        <p class="contents">Node.js v6で予定されているBuffer APIの変更についての解説
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node.js Buffer API Changes — Medium" href="https://medium.com/@jasnell/node-js-buffer-api-changes-3c21f1048f97">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/watch?v=9UYoKyuFXrM&amp;list=PL055Epbe6d5bQubu5EWf_kUNA3ef_qbmL">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Fluent Conference 2016 (San Francisco, CA) - YouTube</amp-fit-text>
+        <p class="contents">Fluent Conference 2016の動画が公開された
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Fluent Conference 2016 (San Francisco, CA) - YouTube" href="https://www.youtube.com/watch?v=9UYoKyuFXrM&amp;list=PL055Epbe6d5bQubu5EWf_kUNA3ef_qbmL">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://postcss.parts/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">PostCSS.parts | A searchable catalog of PostCSS plugins</amp-fit-text>
+        <p class="contents">PostCSSのカタログサイト
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="PostCSS.parts | A searchable catalog of PostCSS plugins" href="http://postcss.parts/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.wolksoftware.com/introducing-inversify-2">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Introducing InversifyJS 2.0</amp-fit-text>
+        <p class="contents">Inversion of control (IoC)コンテナーのTypeScript向けライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introducing InversifyJS 2.0" href="http://blog.wolksoftware.com/introducing-inversify-2">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/rajasegar/compack">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">rajasegar/compack: An awesome bundler for Web Components</amp-fit-text>
+        <p class="contents">Web Componentsのscaffoldingとbundleするツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="rajasegar/compack: An awesome bundler for Web Components" href="https://github.com/rajasegar/compack">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/eanplatter/enclave">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">eanplatter/enclave: A simpler way to compile React applications http://enclave.js.org</amp-fit-text>
+        <p class="contents"><code>npm install</code>して<code>npm start</code>するだけで、React+Babelな環境を動かせるブートストラップ的なツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="eanplatter/enclave: A simpler way to compile React applications http://enclave.js.org" href="https://github.com/eanplatter/enclave">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

@@ -1,0 +1,691 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2017-02-25のJS: Node v7.6.0、CoffeeScript 2.0α、Vue v2.2.0 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2017/02/27/node-v7.6.0-coffeescript-2.0a-vue-v2.2.0/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2017-02-25のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://facebook.github.io/jest/blog/2017/02/21/jest-19-immersive-watch-mode-test-platform-improvements.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">🃏 Jest 19: Immersive Watch Mode &amp; Test Platform Improvements · Jest</amp-fit-text>
+        <p class="contents">est 19プレリリース。
+Watchモードの改善、Snapshotテストで<code>test</code>prefixが不要に。
+<code>expect.stringContaining()</code>と<code>expect.toMatchObject()</code>のサポート。
+<code>eslint-plugin-jest</code>は公式プラグイン、設定をチェックできる<code>jest-validate</code>の公開
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="🃏 Jest 19: Immersive Watch Mode &amp; Test Platform Improvements · Jest" href="https://facebook.github.io/jest/blog/2017/02/21/jest-19-immersive-watch-mode-test-platform-improvements.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/karma-runner/karma/releases/tag/v1.5.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title"># Release v1.5.0 · karma-runner/karma
+</amp-fit-text>
+        <p class="contents">rma v1.5.0リリース。
+テストをクライアントと同じ<code>window</code>で実行する<code>runInParent</code>オプションとクライアントページのHTMLを指定できる<code>customClientContextFile</code>オプションの追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="# Release v1.5.0 · karma-runner/karma
+" href="https://github.com/karma-runner/karma/releases/tag/v1.5.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v7.6.0/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title"> Node v7.6.0 (Current) | Node.js
+[</amp-fit-text>
+        <p class="contents">e v7.6.0リリース。
+V8 5.5にアップデートされasync/awaitのサポート、<code>url.format</code>がWHATWG URLをサポートするようになるなど
+<ul>
+<li></li>
+</ul>
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title=" Node v7.6.0 (Current) | Node.js
+[" href="https://nodejs.org/en/blog/release/v7.6.0/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/coffeescript6/discuss/issues/71">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Progress as of February 2017: 2.0.0-alpha1! · Issue #71 · coffeescript6/discuss
+[g</amp-fit-text>
+        <p class="contents">eeScript 2.0.0-alpha1リリース。
+ES2015+に準拠した変更を取り入れていっているバージョンであるため、既存のものとは非互換な部分がある。
+<code>class</code>や<code>=&gt;</code>がES2015と同等に、
+splatsはspreadへコンパイルされるように、Tagged Template literal、async/await、<code>for...of</code>のサポートなど
+<ul>
+<li></li>
+</ul>
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Progress as of February 2017: 2.0.0-alpha1! · Issue #71 · coffeescript6/discuss
+[g" href="https://github.com/coffeescript6/discuss/issues/71">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blogs.msdn.microsoft.com/typescript/2017/02/22/announcing-typescript-2-2/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">nnouncing TypeScript 2.2 | TypeScript
+[bl</amp-fit-text>
+        <p class="contents">cript 2.2リリース。
+language serviceの改善、<code>object</code> typeの追加、string index、mixin class、<code>new.target</code>のサポートなど
+<ul>
+<li>[</li>
+</ul>
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="nnouncing TypeScript 2.2 | TypeScript
+[bl" href="https://blogs.msdn.microsoft.com/typescript/2017/02/22/announcing-typescript-2-2/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/7423/release-notes-for-safari-technology-preview-24/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">lease Notes for Safari Technology Preview 24 | WebKit
+[web</amp-fit-text>
+        <p class="contents">Technology Preview Release 24リリース。
+<code>PerformanceObserver</code>、<code>&lt;link preload&gt;</code>の試験的サポート、<code>URL</code>オブジェクトに<code>toJSON()</code>の実装、dynamic <code>import()</code>のサポートなど
+
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="lease Notes for Safari Technology Preview 24 | WebKit
+[web" href="https://webkit.org/blog/7423/release-notes-for-safari-technology-preview-24/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.mozilla.org/javascript/2017/02/22/ecmascript-2016plus-in-firefox/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">AScript 2016+ in Firefox | JavaScript
+[blog</amp-fit-text>
+        <p class="contents">Nightly 54 でES2016+ Compat tableが100％実装されたとのこと。
+ES2016の<code>**</code>や<code>Array#include</code>などの追加やGenerator Constructorの仕様変更の追従、ES2017の実装について
+
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="AScript 2016+ in Firefox | JavaScript
+[blog" href="https://blog.mozilla.org/javascript/2017/02/22/ecmascript-2016plus-in-firefox/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/npm/npm/releases/tag/v4.4.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ase v4.4.0 · npm/npm
+[githu</amp-fit-text>
+        <p class="contents">0公開。
+起動時に最新のnpmがあるかを通知するように、<code>npm run-script</code>のエラーメッセージが短くなるようになるなど
+
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ase v4.4.0 · npm/npm
+[githu" href="https://github.com/npm/npm/releases/tag/v4.4.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/babel/babylon/releases/tag/v6.16.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">se v6.16.0 · babel/babylon
+[github</amp-fit-text>
+        <p class="contents">.16.0リリース。
+ESTree互換モードを提供するプラグインの追加、Flowでpritimitive typeを上書する問題を修正するなど
+
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="se v6.16.0 · babel/babylon
+[github" href="https://github.com/babel/babylon/releases/tag/v6.16.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/facebook/flow/releases/tag/v0.40.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">e v0.40.0 · facebook/flow
+[github.</amp-fit-text>
+        <p class="contents">.0リリース。
+<code>this</code>や<code>super</code>をデフォルト引数に利用できるように、built-in libraryの更新、union type周りの最適化など
+
+
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="e v0.40.0 · facebook/flow
+[github." href="https://github.com/facebook/flow/releases/tag/v0.40.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/angular/angular/blob/4.0.0-rc.1/CHANGELOG.md">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">/CHANGELOG.md at 4.0.0-rc.1 · angular/angular
+[github.c</amp-fit-text>
+        <p class="contents">.0 RC1リリース。
+AOTコンパイルしたViewのコード量を削減、コードベースがTypeScript 2.1ベースでStrictNullChecksが有効化された。
+あわせてAngularをサーバサイドでも動かせるUniversalも更新されるなど
+<ul>
+<li>[angula</li>
+</ul>
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="/CHANGELOG.md at 4.0.0-rc.1 · angular/angular
+[github.c" href="https://github.com/angular/angular/blob/4.0.0-rc.1/CHANGELOG.md">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/vuejs/vue/releases/tag/v2.2.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">v2.2.0 · vuejs/vue
+[github.co</amp-fit-text>
+        <p class="contents">0リリース。
+テンプレートで閉じタグがない場合にエラーを投げるように、PropsやComputedプロパティはインスタンスではなくprototypeへ定義されるように。
+サーバサイドレンダリング向けに<code>template</code>オプションの追加、<code>errorHandler</code>や<code>renderError</code>でエラーがキャッチできるように。
+React Context的な値を差し込める<code>provide</code>と<code>inject</code>のDI機構の追加など
+
+&lt;h1
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="v2.2.0 · vuejs/vue
+[github.co" href="https://github.com/vuejs/vue/releases/tag/v2.2.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.2ality.com/2017/02/babel-preset-env.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">set-env: a preset that configures Babel for you
+[www.2ality</amp-fit-text>
+        <p class="contents">文でサポートブラウザやNode.jsのバージョンなどのターゲットを指定して、その設定を元にBabelの変換やpolyfillを展開してくれるbabel-preset-envについて
+
+R
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="set-env: a preset that configures Babel for you
+[www.2ality" href="http://www.2ality.com/2017/02/babel-preset-env.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.sitepoint.com/react-storybook-develop-beautiful-user-interfaces-with-ease/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ybook: Develop Beautiful User Interfaces with Ease
+[www.sitepoi</amp-fit-text>
+        <p class="contents">助ツールであるReact StoryBookについて。
+<code>getstorybook</code>を使ってのセットアップや使い方、Storyの書き方、カスタマイズ方法、デバッグ、自動テストについて
+<ul>
+<li>[mthuret/s</li>
+</ul>
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ybook: Develop Beautiful User Interfaces with Ease
+[www.sitepoi" href="https://www.sitepoint.com/react-storybook-develop-beautiful-user-interfaces-with-ease/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://lucasfcosta.com/2017/02/17/JavaScript-Errors-and-Stack-Traces.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Errors and Stack Traces in Depth
+[lucasfcosta.</amp-fit-text>
+        <p class="contents">トレースをどうやって操作するかという話。
+Chaiにおける<code>Error.captureStackTrace</code>を使ったスタックトレース操作を例にしている。
+スタックトレースはどのようにできているか、<code>Error.captureStackTrace</code>の使い方について
+
+Rea
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Errors and Stack Traces in Depth
+[lucasfcosta." href="http://lucasfcosta.com/2017/02/17/JavaScript-Errors-and-Stack-Traces.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.tai2.net/real-world-redux.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Real World Examples 〜先人から学ぶReact Reduxの知恵〜
+[blog.tai2.net</amp-fit-text>
+        <p class="contents">例を元に、そのアプリのStoreやComponentがどのような構成になっているかを紐解いていった記事
+
+Vend
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Real World Examples 〜先人から学ぶReact Reduxの知恵〜
+[blog.tai2.net" href="http://blog.tai2.net/real-world-redux.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@adamrackis/vendor-and-code-splitting-in-webpack-2-6376358f1923">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">de splitting in webpack 2 – Medium
+[medium.com/@ad</amp-fit-text>
+        <p class="contents">ついて。
+<code>import()</code>での動的ロードと分割、BundleAnalyzerPluginでの分析、CommonsChunkでの分割
+
+逆引き！フ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="de splitting in webpack 2 – Medium
+[medium.com/@ad" href="https://medium.com/@adamrackis/vendor-and-code-splitting-in-webpack-2-6376358f1923">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.aocomme.com/entry/2017/01/18/185753">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ドキパフォーマンス改善 - 青空コメントアウト
+[www.aocomme.com</amp-fit-text>
+        <p class="contents">を考慮したAPIや先読みについて。
+<code>will-change</code>、CSS Containment、<code>requestIdleCallback</code>、Passive EventListener、<code>&lt;link rel=preload&gt;</code>についての紹介
+
+&lt;h1 class=
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ドキパフォーマンス改善 - 青空コメントアウト
+[www.aocomme.com" href="http://www.aocomme.com/entry/2017/01/18/185753">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/lighterio/exam">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title"> Node.js test framework
+[github.com/light</amp-fit-text>
+        <p class="contents">escribe<code>や</code>it<code>とベンチマーク向けの</code>bench<code>、assertionとして</code>is<code>、モックを行う</code>mock`など持つJavaScriptのテストフレームワーク。
+マルチプロセスでテストを実行できるオプションを持っている
+
+niieani
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title=" Node.js test framework
+[github.com/light" href="https://github.com/lighterio/exam">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/niieani/typescript-vs-flowtype">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">pt-vs-flowtype: Differences between Flowtype and TypeScript 2.1 -- syntax and usability
+[github.com/niiean</amp-fit-text>
+        <p class="contents">比較。
+シンタックスや型定義、それぞれ異なる部分についてなどをまとめたもの
+
+developi
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="pt-vs-flowtype: Differences between Flowtype and TypeScript 2.1 -- syntax and usability
+[github.com/niiean" href="https://github.com/niieani/typescript-vs-flowtype">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/developit/unfetch">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">: Bare minimum fetch polyfill in 500 bytes.
+[github.com/develop</amp-fit-text>
+        <p class="contents">ブラリ。
+
+debitoor/
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title=": Bare minimum fetch polyfill in 500 bytes.
+[github.com/develop" href="https://github.com/developit/unfetch">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/debitoor/dot-prop-immutable">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">immutable: Immutable version of dot-prop with some extensions
+[github.com/debitoor</amp-fit-text>
+        <p class="contents">te操作を行うシンプルなライブラリ
+
+&lt;h1 class=&quot;sit
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="immutable: Immutable version of dot-prop with some extensions
+[github.com/debitoor" href="https://github.com/debitoor/dot-prop-immutable">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.com/Professional-JavaScript-Developers-Matt-Frisbie/dp/1119366445">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ript for Web Developers: Matt Frisbie: 9781119366447: Amazon.com: Books
+[www.amazon.com/Profe</amp-fit-text>
+        <p class="contents">al JavaScript for Web Developersの4版
+
+Security an
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ript for Web Developers: Matt Frisbie: 9781119366447: Amazon.com: Books
+[www.amazon.com/Profe" href="https://www.amazon.com/Professional-JavaScript-Developers-Matt-Frisbie/dp/1119366445">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.oreilly.com/webops-perf/free/security-and-frontend-performance.csp">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">d Performance - O&#039;Reilly Media
+[www.oreilly.com/webop</amp-fit-text>
+        <p class="contents">スとセキュリティについての無料の書籍。
+HSTS、CSP/script要素/iframe、リファラポリシー、link要素、難読化、ServiceWorker、メトリクスなど
+
+O'Reilly Jap
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="d Performance - O&#039;Reilly Media
+[www.oreilly.com/webop" href="http://www.oreilly.com/webops-perf/free/security-and-frontend-performance.csp">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.oreilly.co.jp/books/9784873117881/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">tビギナーズガイド
+[www.oreilly.co.jp/book</amp-fit-text>
+        <p class="contents">Runningの翻訳本
+
+はじめてのCSS設計 フロ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="tビギナーズガイド
+[www.oreilly.co.jp/book" href="http://www.oreilly.co.jp/books/9784873117881/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.co.jp/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AECSS%E8%A8%AD%E8%A8%88-%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%8C%E6%95%99%E3%81%88%E3%82%8B%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%96%E3%83%AB%E3%81%AACSS%E8%A8%AD%E8%A8%88%E6%89%8B%E6%B3%95-%E7%94%B0%E8%BE%BA-%E4%B8%88%E5%A3%AB/dp/4798143154">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">アが教えるメンテナブルなCSS設計手法 | 田辺 丈士, 大江 遼, 藤岡 龍太, 安 光太郎, 株式会社アイ・エム・ジェイ |本 | 通販 | Amazon
+[www.amazon.co.jp/%E3%81</amp-fit-text>
+        <p class="contents">
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="アが教えるメンテナブルなCSS設計手法 | 田辺 丈士, 大江 遼, 藤岡 龍太, 安 光太郎, 株式会社アイ・エム・ジェイ |本 | 通販 | Amazon
+[www.amazon.co.jp/%E3%81" href="https://www.amazon.co.jp/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AECSS%E8%A8%AD%E8%A8%88-%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%8C%E6%95%99%E3%81%88%E3%82%8B%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%96%E3%83%AB%E3%81%AACSS%E8%A8%AD%E8%A8%88%E6%89%8B%E6%B3%95-%E7%94%B0%E8%BE%BA-%E4%B8%88%E5%A3%AB/dp/4798143154">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2015-10-25のJS: ESLint入門、ECMAScriptとは何か?、rollupとES6 modules - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2015/10/25/eslint-ecmascript-rollup/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2015-10-25のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://eslint.org/blog/2015/10/eslint-v1.7.0-released/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ESLint v1.7.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+        <p class="contents">ESLint v1.7.0リリース。
+eslintrcの<code>extends</code>にJavaScriptのファイルパスそのものを書いて設定を継承出来るようになった
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ESLint v1.7.0 released - ESLint - Pluggable JavaScript linter" href="http://eslint.org/blog/2015/10/eslint-v1.7.0-released/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/tmpvar/jsdom/blob/7.0.0/Changelog.md">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">jsdom/Changelog.md at 7.0.0 · tmpvar/jsdom</amp-fit-text>
+        <p class="contents">jsdom 7.0.0リリース。
+Node.js 4.0以降が必要になった。
+XMLHttpRequestの再実装、<code>HTMLTemplateElement.prototype.content</code>の追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jsdom/Changelog.md at 7.0.0 · tmpvar/jsdom" href="https://github.com/tmpvar/jsdom/blob/7.0.0/Changelog.md">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jquery/esprima/blob/2.7.0/ChangeLog">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">esprima/ChangeLog at 2.7.0 · jquery/esprima</amp-fit-text>
+        <p class="contents">esprima 2.7.0リリース。
+<code>esprima.tokenize</code>にdelegatorオプションの追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="esprima/ChangeLog at 2.7.0 · jquery/esprima" href="https://github.com/jquery/esprima/blob/2.7.0/ChangeLog">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/mysticatea/items/f523dab04a25f617c87d">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript - ESLint 最初の一歩 - Qiita</amp-fit-text>
+        <p class="contents">ESLintの使い方、設定方法、ES6関連のルールについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript - ESLint 最初の一歩 - Qiita" href="http://qiita.com/mysticatea/items/f523dab04a25f617c87d">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://efcl.info/2015/10/18/ecmascript-paper/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ECMAScriptの仕様策定に関するカンニングペーパー | Web Scratch</amp-fit-text>
+        <p class="contents">ECMAScriptとは何か?からES2016の策定プロセス、進捗の確認方法、コントリビュートのやり方、TranspilerやPolyfillの役割など仕様策定に関する疑問をまとめたもの
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ECMAScriptの仕様策定に関するカンニングペーパー | Web Scratch" href="http://efcl.info/2015/10/18/ecmascript-paper/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.nczonline.net/blog/2015/10/ecmascript-6-destructuring-gotcha/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ecmascript-6-destructuring-gotcha</amp-fit-text>
+        <p class="contents"><code>let {} = {};</code>がES6でvalidであるというのは混乱を起こすのではという話。
+現在、ECMAScript仕様のIssueとして修正するべきかが議論されている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ecmascript-6-destructuring-gotcha" href="https://www.nczonline.net/blog/2015/10/ecmascript-6-destructuring-gotcha/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.datchley.name/es6-eventemitter/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">EventEmitter in ES6</amp-fit-text>
+        <p class="contents">ES6でシンプルにEventEmitterやObserverを実装しながら、ES6の機能について学ぶ話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="EventEmitter in ES6" href="http://www.datchley.name/es6-eventemitter/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://nolanlawson.com/2015/10/19/the-struggles-of-publishing-a-javascript-library/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The struggles of publishing a JavaScript library | Read the Tea Leaves</amp-fit-text>
+        <p class="contents">bower、npm、jspmに対応したライブラリの公開方法と設定について。
+Browserify、Webpack、rollup.jsでのライブラリのビルドについてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The struggles of publishing a JavaScript library | Read the Tea Leaves" href="http://nolanlawson.com/2015/10/19/the-struggles-of-publishing-a-javascript-library/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.sitepoint.com/experimenting-object-observe-javascript-found-useful/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Experimenting with Object.observe in JavaScript</amp-fit-text>
+        <p class="contents">ES.nextで提案されている<code>Object.observe</code>の現状について。
+ブラウザのサポート状況、Polyfillについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Experimenting with Object.observe in JavaScript" href="http://www.sitepoint.com/experimenting-object-observe-javascript-found-useful/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://strongloop.com/strongblog/moving-toward-express-5/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">StrongLoop | Moving toward Express 5</amp-fit-text>
+        <p class="contents">Express 5αでの変更点についての解説
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="StrongLoop | Moving toward Express 5" href="https://strongloop.com/strongblog/moving-toward-express-5/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/vvakame/items/72d22e33632178f7db24">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">TypeScript 1.6時代の.d.ts管理について意見を述べておく - Qiita</amp-fit-text>
+        <p class="contents">npmパッケージとTypeScriptのd.tsの管理について。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="TypeScript 1.6時代の.d.ts管理について意見を述べておく - Qiita" href="http://qiita.com/vvakame/items/72d22e33632178f7db24">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://a11yproject.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The Accessibility Project</amp-fit-text>
+        <p class="contents">ウェブ開発者向けにアクセシビリティについてまとめているサイト
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The Accessibility Project" href="http://a11yproject.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://rollupjs.org/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">rollup.js</amp-fit-text>
+        <p class="contents">ES6 modulesをBrowserifyなどのようにbundleするツール。
+使用していない関数は無視したり、余計なラップする関数なしに結合が出来る。
+デフォルトではES6のみだがプラグインでCommonJSなども対応する。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="rollup.js" href="http://rollupjs.org/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Rich-Harris/magic-string">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Rich-Harris/magic-string</amp-fit-text>
+        <p class="contents">Source Mapをサポートしてるコード変換ライブラリ。
+文字列の上書き、追加、削除などを文字列操作のように変更を行うことができる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Rich-Harris/magic-string" href="https://github.com/Rich-Harris/magic-string">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://pirosikick.github.io/eslintrc-editor/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">.eslintrc editor</amp-fit-text>
+        <p class="contents">ESLintの設定をGUIでポチポチと作成することが出来るツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title=".eslintrc editor" href="https://pirosikick.github.io/eslintrc-editor/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/cotejp/webmidi">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">cotejp/webmidi</amp-fit-text>
+        <p class="contents">Web MIDI APIをラップしたライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="cotejp/webmidi" href="https://github.com/cotejp/webmidi">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/dleitee/valid.js">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">dleitee/valid.js</amp-fit-text>
+        <p class="contents">String、Number、Date、Boolなどにおけるバリデーションを組み合わせたバリデーション関数を作成できるライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="dleitee/valid.js" href="https://github.com/dleitee/valid.js">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/rodrigogs/kairos">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">rodrigogs/kairos</amp-fit-text>
+        <p class="contents">時間同士の四則演算や比較を行うライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="rodrigogs/kairos" href="https://github.com/rodrigogs/kairos">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://shop.oreilly.com/product/0636920043072.do">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">SVG Text Layout - O&amp;#x27;Reilly Media</amp-fit-text>
+        <p class="contents">SVGにおけるテキストのレイアウトについての書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="SVG Text Layout - O&amp;#x27;Reilly Media" href="http://shop.oreilly.com/product/0636920043072.do">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

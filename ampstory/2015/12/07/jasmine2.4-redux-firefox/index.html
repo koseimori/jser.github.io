@@ -1,0 +1,565 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2015-12-07のJS: Jasmine 2.4.0、Redux入門、Firefox Platform Status - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2015/12/07/jasmine2.4-redux-firefox/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2015-12-07のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://nodejs.org/en/blog/vulnerability/december-2015-security-releases/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">December Security Release Summary | Node.js</amp-fit-text>
+        <p class="contents">Node.jsのセキュリティアップデートとして0.10、0.12、4.x、5.xのアップデートが公開された。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="December Security Release Summary | Node.js" href="https://nodejs.org/en/blog/vulnerability/december-2015-security-releases/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.chromium.org/2015/12/chrome-48-beta-present-to-cast-devices_91.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Chromium Blog: Chrome 48 Beta: Present to Cast, custom notification buttons, and network estimation</amp-fit-text>
+        <p class="contents">Chrome 48 Betaリリース。
+Presentation API、WebRTCがVP9をサポート、<code>AudioNode#connect</code>をサポート、well-known symbolsとして<code>@@toPrimitive</code>のサポートなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chromium Blog: Chrome 48 Beta: Present to Cast, custom notification buttons, and network estimation" href="http://blog.chromium.org/2015/12/chrome-48-beta-present-to-cast-devices_91.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/dekujs/deku/releases/tag/1.0.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release 1.0.0 · dekujs/deku</amp-fit-text>
+        <p class="contents">Virtual DOMの実装を持つReactライクなComponentライブラリであるdeku 1.0.0リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 1.0.0 · dekujs/deku" href="https://github.com/dekujs/deku/releases/tag/1.0.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/tmpvar/jsdom/blob/7.2.0/Changelog.md">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">jsdom/Changelog.md at 7.2.0 · tmpvar/jsdom</amp-fit-text>
+        <p class="contents">jsdom 7.2.0リリース。
+<code>&lt;input&gt;</code>と<code>&lt;textarea&gt;</code>のselection APIがサポートされた
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jsdom/Changelog.md at 7.2.0 · tmpvar/jsdom" href="https://github.com/tmpvar/jsdom/blob/7.2.0/Changelog.md">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/babel/babel/blob/master/CHANGELOG.md#630">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">babel/CHANGELOG.md at master · babel/babel</amp-fit-text>
+        <p class="contents">Babel 6.3.0リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="babel/CHANGELOG.md at master · babel/babel" href="https://github.com/babel/babel/blob/master/CHANGELOG.md#630">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://flowtype.org/blog/2015/12/01/Version-0.19.0.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Flow | Version 0.19.0</amp-fit-text>
+        <p class="contents">FlowType 0.19.0リリース。
+<code>@noflow</code>の追加、宣言のみを集めた<code>.flow</code>ファイルの対応など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Flow | Version 0.19.0" href="http://flowtype.org/blog/2015/12/01/Version-0.19.0.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/tc39/ecma262/releases/tag/es2016-draft-20151201">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release ES2016 Draft 2015-12-01 · tc39/ecma262</amp-fit-text>
+        <p class="contents">ES2016 Draft 2015-12-01リリース。
+<code>Promise.all/race</code>が<code>@@species</code>を参照しないように変更。
+PromiseのUnhandled Rejectionを検知するために必要な仕様がECMAScript側にも追加された
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release ES2016 Draft 2015-12-01 · tc39/ecma262" href="https://github.com/tc39/ecma262/releases/tag/es2016-draft-20151201">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jasmine/jasmine/blob/master/release_notes/2.4.0.md">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">jasmine/2.4.0.md at master · jasmine/jasmine</amp-fit-text>
+        <p class="contents">Jasmine 2.4.0リリース。
+テストがランダムな順番で実行されるように。レポーターにもランダム実行に関する情報が表示されるように。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jasmine/2.4.0.md at master · jasmine/jasmine" href="https://github.com/jasmine/jasmine/blob/master/release_notes/2.4.0.md">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blogs.windows.com/msedgedev/2015/12/05/open-source-chakra-core/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Microsoft Edge’s JavaScript engine to go open-source | Microsoft Edge Dev Blog</amp-fit-text>
+        <p class="contents">MSEdgeのJavaScriptエンジンであるChakraがオープンソースとして2016年1月に公開予定。
+公開するのはコアであるChakraCore部分
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Microsoft Edge’s JavaScript engine to go open-source | Microsoft Edge Dev Blog" href="https://blogs.windows.com/msedgedev/2015/12/05/open-source-chakra-core/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://postd.cc/the-art-of-debug/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">デバッグの技術 | プログラミング | POSTD</amp-fit-text>
+        <p class="contents">デバッグの考え方やアプローチについて。
+Chromeの開発者ツールを使ったデバッグ方法についてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="デバッグの技術 | プログラミング | POSTD" href="http://postd.cc/the-art-of-debug/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/kiita312/items/49a1f03445b19cf407b7">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Redux入門【ダイジェスト版】10分で理解するReduxの基礎 - Qiita</amp-fit-text>
+        <p class="contents">Reduxの構成要素、データフロー、Reduxの3原則について簡潔にまとまってる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Redux入門【ダイジェスト版】10分で理解するReduxの基礎 - Qiita" href="http://qiita.com/kiita312/items/49a1f03445b19cf407b7">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.mmmcorp.co.jp/blog/2015/12/03/vue-with-redux/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Vue.jsにreduxを載せた話 | MMMブログ</amp-fit-text>
+        <p class="contents">Vue.jsとReduxを組み合わせて利用する話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Vue.jsにreduxを載せた話 | MMMブログ" href="http://blog.mmmcorp.co.jp/blog/2015/12/03/vue-with-redux/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://takenspc.hatenablog.com/entry/2015/12/03/235927">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">WHATWG版とW3C版がある仕様たち - Unreviewed</amp-fit-text>
+        <p class="contents">W3CとWHATWGでそれぞれにある仕様の比較。
+W3C版はWHATWG版に追従できていない部分やメンテナンスされていないケースもあるという話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WHATWG版とW3C版がある仕様たち - Unreviewed" href="http://takenspc.hatenablog.com/entry/2015/12/03/235927">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://greenkeeper.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Greenkeeper</amp-fit-text>
+        <p class="contents">npmで依存するライブラリのアップデートがあるなら、更新内容をPull Requestで通知してくれるウェブサービス
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Greenkeeper" href="http://greenkeeper.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://platform-status.mozilla.org/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Firefox Platform Status</amp-fit-text>
+        <p class="contents">Firefoxの機能ごとの実装状況をまとめたステータスページ。
+データはGitHubで管理されている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Firefox Platform Status" href="https://platform-status.mozilla.org/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://flexboxfroggy.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Flexbox Froggy - A game for learning CSS flexbox</amp-fit-text>
+        <p class="contents">CSS Flexboxについて実際の描画結果を見ながら学べるチュートリアル
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Flexbox Froggy - A game for learning CSS flexbox" href="http://flexboxfroggy.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/nathancahill/Split.js">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">nathancahill/Split.js</amp-fit-text>
+        <p class="contents">サイズが可変可能なSplit Viewを作るUIライブラリ。
+要素同士を縦横に分割し、ドラッグでサイズを変更出来る
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="nathancahill/Split.js" href="https://github.com/nathancahill/Split.js">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/vuejs/vuex">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">vuejs/vuex</amp-fit-text>
+        <p class="contents">Vue.js向けのFluxライクなライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="vuejs/vuex" href="https://github.com/vuejs/vuex">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/airbnb/enzyme">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">airbnb/enzyme</amp-fit-text>
+        <p class="contents">React Componentをテストするための補助ライブラリ。
+jsdomを使いレンダリングを再現した状態のテストも行える
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="airbnb/enzyme" href="https://github.com/airbnb/enzyme">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/eslint/typescript-eslint-parser">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">eslint/typescript-eslint-parser</amp-fit-text>
+        <p class="contents">TypeScript ASTをESTree ASTに変換するパーサ。
+ESLintでTypeScriptのコードをLintする目的
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="eslint/typescript-eslint-parser" href="https://github.com/eslint/typescript-eslint-parser">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mozilla/oghliner">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">mozilla/oghliner</amp-fit-text>
+        <p class="contents">GitHub Pagesをオフライン対応するためのテンプレートとデプロイツール。
+Service Workerを使ってリソースをオフラインでも参照出来るようにしている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="mozilla/oghliner" href="https://github.com/mozilla/oghliner">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Jam3/hihat">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Jam3/hihat</amp-fit-text>
+        <p class="contents">Electronを使ってChrome DevToolsを使ったNode REPLやテスト実行等を行えるツール。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Jam3/hihat" href="https://github.com/Jam3/hihat">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/sebmck/lerna">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">sebmck/lerna</amp-fit-text>
+        <p class="contents">Babelのような一つのリポジトリに複数のパッケージがある(monorepo)を扱うためのツール。
+npm installやnpm publishの補助をしてくれる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="sebmck/lerna" href="https://github.com/sebmck/lerna">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webtorrent.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">WebTorrent - Streaming browser torrent client</amp-fit-text>
+        <p class="contents">torrentのストリーミングをWebRTCで行うライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WebTorrent - Streaming browser torrent client" href="https://webtorrent.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://pragprog.com/book/smreactjs/reactive-programming-with-rxjs">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The Pragmatic Bookshelf | Reactive Programming with RxJS</amp-fit-text>
+        <p class="contents">RxJSについての書籍
+Cycle.jsについても書かれている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The Pragmatic Bookshelf | Reactive Programming with RxJS" href="https://pragprog.com/book/smreactjs/reactive-programming-with-rxjs">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

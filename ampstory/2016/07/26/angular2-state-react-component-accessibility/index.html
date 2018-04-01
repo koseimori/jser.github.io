@@ -1,0 +1,478 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2016-07-26のJS: AngularJS 2でのState管理、React Componentパターン、アクセシビリティガイドライン - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2016/07/26/angular2-state-react-component-accessibility/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2016-07-26のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://dojotoolkit.org/blog/dojo-recap-june-2016">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Dojo Recap – June, 2016 | The Dojo Toolkit Blog</amp-fit-text>
+        <p class="contents">Dojo 1.11.2リリース。
+またDojo 2の進捗について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Dojo Recap – June, 2016 | The Dojo Toolkit Blog" href="http://dojotoolkit.org/blog/dojo-recap-june-2016">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jquery/qunit/releases/tag/2.0.1">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release 2.0.1 · jquery/qunit</amp-fit-text>
+        <p class="contents">QUnit 2.0.1リリース。
+Symbolのダンプができるように
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 2.0.1 · jquery/qunit" href="https://github.com/jquery/qunit/releases/tag/2.0.1">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.qt.io/blog/2016/07/18/qt-webbrowser-1-0/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Qt WebBrowser 1.0 - Qt Blog</amp-fit-text>
+        <p class="contents">Qt WebBrowser 1.0リリース。
+Qt WebEngine(Chromium)を使ったブラウザ。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Qt WebBrowser 1.0 - Qt Blog" href="http://blog.qt.io/blog/2016/07/18/qt-webbrowser-1-0/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/6800/release-notes-for-safari-technology-preview-release-9/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release Notes for Safari Technology Preview Release 9 | WebKit</amp-fit-text>
+        <p class="contents">Safari Technology Preview 9リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview Release 9 | WebKit" href="https://webkit.org/blog/6800/release-notes-for-safari-technology-preview-release-9/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://v8project.blogspot.com/2016/07/v8-release-53.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">V8 JavaScript Engine: V8 Release 5.3</amp-fit-text>
+        <p class="contents">V8 5.3リリース。
+Ignition Interpreterの追加、Promiseのパフォーマンス改善、V8 APIの変更など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 JavaScript Engine: V8 Release 5.3" href="http://v8project.blogspot.com/2016/07/v8-release-53.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://rainsoft.io/why-object-literals-in-javascript-are-cool/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Why object literals in JavaScript are cool</amp-fit-text>
+        <p class="contents">JavaScriptのオブジェクトリテラルについて。
+プロパティの定義やES2015のshorthandやcomputed property nameについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Why object literals in JavaScript are cool" href="https://rainsoft.io/why-object-literals-in-javascript-are-cool/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://untangled.io/in-depth-es6-destructuring-with-assembled-avengers/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The Most In-Depth Yet Understandable ES6 Destructuring Tutorial (complete with Assembled Avengers) | Untangled</amp-fit-text>
+        <p class="contents">ES2015のDestructuringの挙動についての記事。
+大量のサンプルと共に複雑なパターンのDestructuringについてを解説してる。
+またDestructuringを応用した使い方についてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The Most In-Depth Yet Understandable ES6 Destructuring Tutorial (complete with Assembled Avengers) | Untangled" href="http://untangled.io/in-depth-es6-destructuring-with-assembled-avengers/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://devbryce.com/use-cases-for-es6-proxies/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">6 compelling use cases for ES6 proxies</amp-fit-text>
+        <p class="contents">Proxy APIのユースケースについて。
+バリデーション、private、ログ、変更禁止、<code>Proxy.revocable</code>について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="6 compelling use cases for ES6 proxies" href="http://devbryce.com/use-cases-for-es6-proxies/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://vsavkin.com/managing-state-in-angular-2-applications-caf78d123d02">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Tackling State — angular2</amp-fit-text>
+        <p class="contents">AngularJS 2とRxJSでのstate管理について。
+Immutable State、ActionによってStateは変更される。
+ApplicationはObservableを受け取りObservableを返す、ApplicationとViewは分離される。
+これらのコンセプトをどのように実現するかについてかかれている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Tackling State — angular2" href="https://vsavkin.com/managing-state-in-angular-2-applications-caf78d123d02">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://krasimirtsonev.com/blog/article/react-js-in-design-patterns">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React.js in patterns</amp-fit-text>
+        <p class="contents">React Componentのパターン。
+コンポーネントの入れ子や<code>this.props.children</code>、propsのやり取り、コンポーネント間のstate管理、DIについてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React.js in patterns" href="http://krasimirtsonev.com/blog/article/react-js-in-design-patterns">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@jrullmann/debugging-the-production-web-d36373b9440">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Debugging the Production Web — Medium</amp-fit-text>
+        <p class="contents">本番のウェブアプリケーションのログについて。
+ブラウザからどのようなログをどのように集めるか、手順をどのように再現するか、DevToolsについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Debugging the Production Web — Medium" href="https://medium.com/@jrullmann/debugging-the-production-web-d36373b9440">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Create Apps with No Configuration | React</amp-fit-text>
+        <p class="contents">設定なしでReactアプリを書き始められるツール。
+<code>npm start</code>でサーバを立てて、<code>npm run build</code>でビルドできる。
+<code>npm run eject</code>でロックインから外れる事ができる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Create Apps with No Configuration | React" href="https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://bitsofco.de/the-service-worker-lifecycle/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The Service Worker Lifecycle</amp-fit-text>
+        <p class="contents">ServiceWorkerのライフサイクルについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The Service Worker Lifecycle" href="https://bitsofco.de/the-service-worker-lifecycle/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://accessibility.voxmedia.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Vox Product Accessibility Guidelines</amp-fit-text>
+        <p class="contents">Vox Mediaのアクセシビリティガイドライン。
+職種ごとにチェックリストが書かれている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Vox Product Accessibility Guidelines" href="http://accessibility.voxmedia.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://objectmodel.js.org/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Object Model</amp-fit-text>
+        <p class="contents">プロパティの型定義したモデルクラスを作れるライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Object Model" href="http://objectmodel.js.org/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/nodeca/pica">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">nodeca/pica: Resize image in browser with high quality and high speed</amp-fit-text>
+        <p class="contents">TypedArray、WebWorker、WebGLを使った画像リサイズライブラリ。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="nodeca/pica: Resize image in browser with high quality and high speed" href="https://github.com/nodeca/pica">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/stefanjudis/forrest">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">stefanjudis/forrest: An npm scripts desktop client</amp-fit-text>
+        <p class="contents">npm run-scriptのGUIクライアント
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="stefanjudis/forrest: An npm scripts desktop client" href="https://github.com/stefanjudis/forrest">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/diegomura/react-log">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">diegomura/react-log: React for the Console</amp-fit-text>
+        <p class="contents">console.logへの出力をJSXで書くことができるReact Component
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="diegomura/react-log: React for the Console" href="https://github.com/diegomura/react-log">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blisk.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Download Blisk - a browser for web developers</amp-fit-text>
+        <p class="contents">開発者向けの機能を持ったChromeベースのブラウザ。
+モバイル向けの機能、自動更新、パフォーマンス やエラーの可視化など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Download Blisk - a browser for web developers" href="https://blisk.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.manning.com/books/web-performance-in-action">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Manning | Web Performance in Action</amp-fit-text>
+        <p class="contents">2017年 春発売。
+ウェブパフォーマンスについての書籍。
+ブラウザでのレンダリング、HTTP/2などについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Manning | Web Performance in Action" href="https://www.manning.com/books/web-performance-in-action">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

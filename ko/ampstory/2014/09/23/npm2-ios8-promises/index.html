@@ -1,0 +1,610 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2014-09-23のJS: npm 2.0.0、iOS8 WKWebView、Node.jsとPromise - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2014/09/23/npm2-ios8-promises/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2014-09-23のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://blog.npmjs.org/post/98131109725/npm-2-0-0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The npm Blog — npm@2.0.0</amp-fit-text>
+        <p class="contents">npm 2.0.0リリース。
+リリースプロセスのドキュメント化、semverの挙動の変更、企業など社内モジュールの管理等に使えるscopeという機能を追加、npm runが引数を取れるようになるなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The npm Blog — npm@2.0.0" href="http://blog.npmjs.org/post/98131109725/npm-2-0-0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blogs.windows.com/buildingapps/2014/09/17/winjs-everywhere/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">WinJS Everywhere</amp-fit-text>
+        <p class="contents">WinJS 3.0リリース。
+クロスプラットフォームのデザイン互換性周りの修正が中心
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WinJS Everywhere" href="http://blogs.windows.com/buildingapps/2014/09/17/winjs-everywhere/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.nodejs.org/2014/09/16/node-v0-10-32-stable/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node v0.10.32 (Stable)</amp-fit-text>
+        <p class="contents">Node v0.10.32 リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v0.10.32 (Stable)" href="http://blog.nodejs.org/2014/09/16/node-v0-10-32-stable/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://facebook.github.io/react/blog/2014/09/16/react-v0.11.2.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React v0.11.2 | React</amp-fit-text>
+        <p class="contents">React v0.11.2リリース。
+dialogとpicture要素のサポート、flowの型チェックツール用のアノテーションを取り除くフラグをjsxコマンドに追加
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React v0.11.2 | React" href="http://facebook.github.io/react/blog/2014/09/16/react-v0.11.2.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.polymer-project.org/releases/2014/09/18/release-0.4.1/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Polymer 0.4.1 Released!</amp-fit-text>
+        <p class="contents">Polymer 0.4.1リリース。
+WAI-ARIAについての<code>core-a11y-keys</code>要素を追加、iOS8のバグに対するworkaroundを追加
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Polymer 0.4.1 Released!" href="http://blog.polymer-project.org/releases/2014/09/18/release-0.4.1/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blogs.msdn.com/b/ie/archive/2014/09/18/updates-to-our-platform-roadmap.aspx">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Updates to our platform roadmap - IEBlog - Site Home - MSDN Blogs</amp-fit-text>
+        <p class="contents">IEの開発中、検討中の機能について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Updates to our platform roadmap - IEBlog - Site Home - MSDN Blogs" href="http://blogs.msdn.com/b/ie/archive/2014/09/18/updates-to-our-platform-roadmap.aspx">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.mobilexweb.com/blog/safari-ios8-iphone6-web-developers-designers">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">iOS 8 and iPhone 6 for web developers and designers: next evolution for Safari and native webapps | Breaking the Mobile Web</amp-fit-text>
+        <p class="contents">iPhone6とiPhone6 plusの仕様やviewportまわりの違いについて。
+また、iOS8 SafariでサポートされたAPIやCSSサポート、minimal-uiの廃止、Safariの追加機能、UIWebViewとWKWebVIewの違い、バグについて詳しくまとめられている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="iOS 8 and iPhone 6 for web developers and designers: next evolution for Safari and native webapps | Breaking the Mobile Web" href="http://www.mobilexweb.com/blog/safari-ios8-iphone6-web-developers-designers">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.sencha.com/blog/apple-shows-love-for-html5-with-ios-8">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Apple Shows Love for HTML5 with iOS 8 | Blog | Sencha</amp-fit-text>
+        <p class="contents">iOS8のSafariでサポートされた新しい機能について。
+また今までのWebViewと新しく追加されたWebKitの機能がちゃんと使えるWKWebViewのパフォーマンスの比較。
+既知のバグについても書かれてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Apple Shows Love for HTML5 with iOS 8 | Blog | Sencha" href="http://www.sencha.com/blog/apple-shows-love-for-html5-with-ios-8">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.otakumode.com/2014/09/17/nodejs-promise/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node.jsエンジニアなら2014年内に知っておきたいPromise入門 | Tokyo Otaku Mode Tech Blog</amp-fit-text>
+        <p class="contents">JavaScript Promiseの基本的な使い方、async.jsを使っていた場合にそれをPromiseに書き換える実装方法について。
+Promiseについてよくまとまってるチュートリアル
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node.jsエンジニアなら2014年内に知っておきたいPromise入門 | Tokyo Otaku Mode Tech Blog" href="http://blog.otakumode.com/2014/09/17/nodejs-promise/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://efcl.info/2014/09/16/promises-spec-ref-list/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript Promiseを使うウェブの仕様を調べてみた | Web Scratch</amp-fit-text>
+        <p class="contents">Promiseの仕様を前提にしてる仕様の一覧。また、仕様をどうやって調べるかについて。W3CやWHATWGの仕様をまとめてダウンロードして検索する方法について書かれてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript Promiseを使うウェブの仕様を調べてみた | Web Scratch" href="http://efcl.info/2014/09/16/promises-spec-ref-list/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.risingstack.com/node-js-best-practices/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node.js Best Practices</amp-fit-text>
+        <p class="contents">Node.jsにおけるコーディングルール的なのとエラーについて。
+callbackのerrorはチェックする事と早期return、Operational errorとProgrammer errorsの違いと対処、npmを使ったWorkflowについて書かれてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node.js Best Practices" href="http://blog.risingstack.com/node-js-best-practices/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.mattgreer.org/articles/traceur-gulp-browserify-es6/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Traceur, Gulp, Browserify and ES6 - Matt Greer</amp-fit-text>
+        <p class="contents">Gulp+TraceurでES6のコードを使う方法と、Browserify + es6ifyでTraceurを使う方法について。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Traceur, Gulp, Browserify and ES6 - Matt Greer" href="http://www.mattgreer.org/articles/traceur-gulp-browserify-es6/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://hail2u.net/blog/webdesign/with-svg.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">透過PNGをSVGを利用して軽くするテクニック - Weblog - Hail2u.net</amp-fit-text>
+        <p class="contents">JPG画像とマスクとなるPNG画像をSVGのmask要素によって合わせる事で擬似アルファチャンネルをやる事について。
+単体の透過PNGよりファイルサイズが軽量に出来る話。
+&lt;a href='http://blog.jackadam.net/2010/alpha-jpegs/'&gt;http://blog.jackadam.net/2010/alpha-jpegs/&lt;/a&gt;
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="透過PNGをSVGを利用して軽くするテクニック - Weblog - Hail2u.net" href="http://hail2u.net/blog/webdesign/with-svg.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://takenspc.hatenablog.com/entry/2014/09/16/152157">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">CSSセレクターマッチングのコスト - Unreviewed</amp-fit-text>
+        <p class="contents">CSSセレクタは要素とセレクタの数だけ判定を行う回数が増えるため、そのコストを減らすアプローチについて。
+また、CSSセレクタのマッチ判定の手順について結合子別に詳しく解説してる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CSSセレクターマッチングのコスト - Unreviewed" href="http://takenspc.hatenablog.com/entry/2014/09/16/152157">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.jetbrains.com/webstorm/2014/09/webstorm-9-eap-138-2406/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">WebStorm 9 EAP, 138.2406: spy-js code completion, CSS3 enhancements, Scratch files and… JSX | JetBrains WebStorm Blog</amp-fit-text>
+        <p class="contents">spy.jsを実行した結果を使ったコード補完が行えるように。また、今までは引数や返り値のみだったが、式にも対応した。
+emacsみたいなScratchファイルの機能を追加、indexingの範囲をデフォルトではnode_modulesまでに限定、JSX(React)のサポート改善等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WebStorm 9 EAP, 138.2406: spy-js code completion, CSS3 enhancements, Scratch files and… JSX | JetBrains WebStorm Blog" href="http://blog.jetbrains.com/webstorm/2014/09/webstorm-9-eap-138-2406/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://dev.mozilla.jp/2014/09/webide-storage-inspector-jquery-events-iframe-switcher-more-firefox-developer-tools-episode-34/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">WebIDE、ストレージインスペクタ、jQuery イベント、iframe 切り替えなど – Firefox 開発ツール エピソード 34 | Mozilla Developer Street (modest)</amp-fit-text>
+        <p class="contents">Firefox 34 で追加されてる開発ツールの機能について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WebIDE、ストレージインスペクタ、jQuery イベント、iframe 切り替えなど – Firefox 開発ツール エピソード 34 | Mozilla Developer Street (modest)" href="https://dev.mozilla.jp/2014/09/webide-storage-inspector-jquery-events-iframe-switcher-more-firefox-developer-tools-episode-34/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://gist.github.com/nikcorg/1fe60d2da6e22653806c">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Slide decks of JSConf 2014</amp-fit-text>
+        <p class="contents">JSConf.eu 2014のスライドまとめ
+&lt;a href='http://2014.jsconf.eu/'&gt;http://2014.jsconf.eu/&lt;/a&gt;
+&lt;a href='https://www.youtube.com/user/jsconfeu/'&gt;https://www.youtube.com/user/jsconfeu/&lt;/a&gt;
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Slide decks of JSConf 2014" href="https://gist.github.com/nikcorg/1fe60d2da6e22653806c">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://webdesign.tutsplus.com/tutorials/a-quick-introduction-to-browsersync--cms-22135">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">A Quick Introduction to BrowserSync - Tuts+ Web Design Tutorial</amp-fit-text>
+        <p class="contents">BrowserSyncについて紹介するスクリーンキャスト
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="A Quick Introduction to BrowserSync - Tuts+ Web Design Tutorial" href="http://webdesign.tutsplus.com/tutorials/a-quick-introduction-to-browsersync--cms-22135">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.slideshare.net/fitc_slideshare/syncingasync">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Syncing Async</amp-fit-text>
+        <p class="contents">非同期処理とPromiseについてのスライド。
+コールバックのネストの問題、PromiseやGeneratorで考える非同期で逐次的な処理について。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Syncing Async" href="http://www.slideshare.net/fitc_slideshare/syncingasync">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.slideshare.net/moscowjs/cors-moscowjs-14">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">CORS для тестирования и для жизни. Константин Якушев. MoscowJS 14</amp-fit-text>
+        <p class="contents">CORSのHTTPヘッダの設定と動作について分かりやすくまとめられてる。
+指定する値の書き方についてが分かりやすい
+CORS in Actionの人。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CORS для тестирования и для жизни. Константин Якушев. MoscowJS 14" href="http://www.slideshare.net/moscowjs/cors-moscowjs-14">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://ja.slideshare.net/ygoto3q/componentization-for-reality">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Componentization for Reality</amp-fit-text>
+        <p class="contents">コンポーネントベースで考えるウェブ開発についてのスライド。
+ディレクトリ単位だとバラけてしまうのでコンポーネント単位でまとめる。
+ジェネレータ、webpack、insertCSS、Angular
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Componentization for Reality" href="http://ja.slideshare.net/ygoto3q/componentization-for-reality">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/wingify/dom-comparator">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">wingify/dom-comparator</amp-fit-text>
+        <p class="contents">2つのDOM文字列を比較した結果を取得するライブラリ。
+CSSやNodeにどういう操作が行われたかの情報が取れる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="wingify/dom-comparator" href="https://github.com/wingify/dom-comparator">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/ConradIrwin/async-profile">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ConradIrwin/async-profile</amp-fit-text>
+        <p class="contents">Node.jsで非同期処理のプロファイルを取るためのライブラリ。
+callback待ちにどれくらいの時間を使ってるかの表示、非同期処理の結果をネスト表示も出来る
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ConradIrwin/async-profile" href="https://github.com/ConradIrwin/async-profile">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/matthew-andrews/denodeify/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">matthew-andrews/denodeify</amp-fit-text>
+        <p class="contents">Node.jsスタイルで書かれた関数(error, response)をPromiseラッパにするライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="matthew-andrews/denodeify" href="https://github.com/matthew-andrews/denodeify/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/deloreanjs/delorean">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">deloreanjs/delorean</amp-fit-text>
+        <p class="contents">Flux patternの実装ライブラリ
+dispatcherとstore、ComponentとしてReactやFlight、Ractiveなどと組み合わせて使うことができる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="deloreanjs/delorean" href="https://github.com/deloreanjs/delorean">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/fat/bean">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">fat/bean</amp-fit-text>
+        <p class="contents">JavaScriptのDOMイベントを簡単に扱える小さなライブラリ。
+on/off/fire/one/cloneが用意されている。cloneではNodeと共にeventをコピーすることができる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="fat/bean" href="https://github.com/fat/bean">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/inikulin/dmn">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">inikulin/dmn</amp-fit-text>
+        <p class="contents">プロジェクトで使ってるファイルから.npmignoreを生成するコマンドラインツール。
+また、インストール済みのnode_modulesから不要なファイルを削除する事も出来る。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="inikulin/dmn" href="https://github.com/inikulin/dmn">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

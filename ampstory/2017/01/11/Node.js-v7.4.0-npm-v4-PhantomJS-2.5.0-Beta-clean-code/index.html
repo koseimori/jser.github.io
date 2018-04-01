@@ -1,0 +1,513 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2017-01-11のJS: Node.js v7.4.0とnpm v4、PhantomJS 2.5.0 Beta、クリーンコード - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2017/01/11/Node.js-v7.4.0-npm-v4-PhantomJS-2.5.0-Beta-clean-code/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2017-01-11のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://medium.com/inferno-js/introducing-inferno-1-0-f3da5c4e773b">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Introducing Inferno 1.0 – inferno_js – Medium</amp-fit-text>
+        <p class="contents">Inferno 1.0リリース。
+Infernoがなぜ作られたのか、今後のロードマップについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introducing Inferno 1.0 – inferno_js – Medium" href="https://medium.com/inferno-js/introducing-inferno-1-0-f3da5c4e773b">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v7.4.0/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node v7.4.0 (Current) | Node.js</amp-fit-text>
+        <p class="contents">Node.js 7.4.0リリース。
+Buffer、<code>EventEmitter.once</code>のパフォーマンス改善など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v7.4.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v7.4.0/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://groups.google.com/d/topic/phantomjs/AefOuwkgBh0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">[Release] PhantomJS 2.5.0 Beta - Google グループ</amp-fit-text>
+        <p class="contents">PhantomJS 2.5.0βリリース。
+QtWebKitがアップデートされES2015のサポート、WebPのサポートなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="[Release] PhantomJS 2.5.0 Beta - Google グループ" href="https://groups.google.com/d/topic/phantomjs/AefOuwkgBh0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developer.microsoft.com/en-us/microsoft-edge/platform/changelog/desktop/15002/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Microsoft Edge build 15002 changelog - Microsoft Edge Development</amp-fit-text>
+        <p class="contents">Windows 10 build 15002リリース。
+MSEdgeでFlashがClick to playに、Web Paymentsの試験的サポート、CSP 2.0、WebVR APIのサポートなど
+また別オリジンにおけるsetTimeout/requestAnimationFrameの呼び出し頻度を抑制するなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Microsoft Edge build 15002 changelog - Microsoft Edge Development" href="https://developer.microsoft.com/en-us/microsoft-edge/platform/changelog/desktop/15002/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://codesi.nz/es6-arrow-functions-in-depth/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ES6 arrow functions in depth</amp-fit-text>
+        <p class="contents">Arrow Functionについて細かいところも含めて、解説してる記事。
+よくある<code>this</code>の動き、暗黙的な<code>return</code>について
+また、<code>new</code>できない点、<code>new.target</code>や<code>arguements</code>を扱えない点についてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ES6 arrow functions in depth" href="https://codesi.nz/es6-arrow-functions-in-depth/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://tylergaw.com/articles/sass-to-postcss">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">From Sass to PostCSS by Tyler Gaw</amp-fit-text>
+        <p class="contents">SassだったものをPostCSSに置き換えるまでの話。
+Sassの構文とPostCSS拡張(cssnext)の比較
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="From Sass to PostCSS by Tyler Gaw" href="https://tylergaw.com/articles/sass-to-postcss">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.2ality.com/2017/01/import-operator.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ES proposal: import()</amp-fit-text>
+        <p class="contents">現在Stage 3のProposalである、<code>import()</code>について。
+dynamic module importsに関する仕様
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ES proposal: import()" href="http://www.2ality.com/2017/01/import-operator.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.risingstack.com/yarn-vs-npm-node-js-package-managers/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Yarn vs npm - The State of Node.js Package Managers | @RisingStack</amp-fit-text>
+        <p class="contents">npm v4とYarnについて。
+npm v4で追加された機能の解説、Yarnの機能やロックファイルについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Yarn vs npm - The State of Node.js Package Managers | @RisingStack" href="http://blog.risingstack.com/yarn-vs-npm-node-js-package-managers/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://birtles.wordpress.com/2017/01/10/web-animation-in-2017/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Web animation in 2017 | Nothing new</amp-fit-text>
+        <p class="contents">Web Animation関連の仕様ステータスについてのまとめ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Web animation in 2017 | Nothing new" href="https://birtles.wordpress.com/2017/01/10/web-animation-in-2017/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hackernoon.com/building-a-custom-tag-input-with-skate-js-fbd4cdf744f">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Building a custom tag input with Skate.js</amp-fit-text>
+        <p class="contents">Web ComponentsフレームワークであるSkate.jsを使ってタグ入力コンポーネントを作る話。
+値、スタイルの定義の仕方などについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Building a custom tag input with Skate.js" href="https://hackernoon.com/building-a-custom-tag-input-with-skate-js-fbd4cdf744f">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/kyoshidajp/items/0ddb156d96bb6337f623">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Flux を使わずに React コンポーネント間のコミュニケーションを行う8つの方法 - Qiita</amp-fit-text>
+        <p class="contents">Reactコンポーネント同士で値の受け渡しなどのパターンについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Flux を使わずに React コンポーネント間のコミュニケーションを行う8つの方法 - Qiita" href="http://qiita.com/kyoshidajp/items/0ddb156d96bb6337f623">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/ryanmcdermott/clean-code-javascript">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ryanmcdermott/clean-code-javascript: Clean Code concepts adapted for JavaScript</amp-fit-text>
+        <p class="contents">クリーンコードをJavaScriptで行うガイドライン。
+読みやすいコードの書き方やオブジェクト指向プログラミング、SOLID、ES2015以降の機能使って分かりやすく書く話など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ryanmcdermott/clean-code-javascript: Clean Code concepts adapted for JavaScript" href="https://github.com/ryanmcdermott/clean-code-javascript">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://tategaki.github.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">縦書きWeb普及委員会</amp-fit-text>
+        <p class="contents">縦書きCSSについての解説サイト
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="縦書きWeb普及委員会" href="http://tategaki.github.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://codemix.github.io/flow-runtime/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Flow Runtime</amp-fit-text>
+        <p class="contents">Flow互換の型チェックを実装したランタイムとBabelプラグイン。
+Flowで書いたコードをランタイムチェックすることができる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Flow Runtime" href="https://codemix.github.io/flow-runtime/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/talyssonoc/structure">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">talyssonoc/structure: A simple schema/attributes library built on top of modern JavaScript</amp-fit-text>
+        <p class="contents">ES2015 classesのモデルに対してスキーマを定義できるライブラリ。
+スキーマを元にバリデーションやシリアライズを行える
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="talyssonoc/structure: A simple schema/attributes library built on top of modern JavaScript" href="https://github.com/talyssonoc/structure">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/wheresrhys/fetch-mock">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">wheresrhys/fetch-mock: Mock http requests made using fetch (or isomorphic-fetch)</amp-fit-text>
+        <p class="contents">Fetch APIのモックライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="wheresrhys/fetch-mock: Mock http requests made using fetch (or isomorphic-fetch)" href="https://github.com/wheresrhys/fetch-mock">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/danculley/real-dom">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">danculley/real-dom: A ~1K non-virtual DOM non-framework framework for simple apps</amp-fit-text>
+        <p class="contents">JSXで書くこともでき、ReduxライクなStateマシンを扱えるDOMコンポーネントライブラリ。
+50行ほどのコードで実装されていてとても小さい。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="danculley/real-dom: A ~1K non-virtual DOM non-framework framework for simple apps" href="https://github.com/danculley/real-dom">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://xvg.now.sh/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">xvg</amp-fit-text>
+        <p class="contents">SVG pathをアウトライン化、アンカーを表示することでSVGをデバッグすることができるChrome拡張
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="xvg" href="https://xvg.now.sh/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodekit.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">NodeKit</amp-fit-text>
+        <p class="contents">Node.jsをiOS/Android/Windowsなどのアプリで組み込んで使うようのフレームワーク。
+JavaScriptのバインディングにJavaScriptCoreやChackraCoreを使う
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="NodeKit" href="https://nodekit.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jlongster/prettier">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">jlongster/prettier: Prettier is an opinionated JavaScript formatter.</amp-fit-text>
+        <p class="contents">折り返し桁数ベースのJavaScript整形ツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jlongster/prettier: Prettier is an opinionated JavaScript formatter." href="https://github.com/jlongster/prettier">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.oreilly.co.jp/books/9784873117836/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">O&amp;#x27;Reilly Japan - 初めてのJavaScript 第3版</amp-fit-text>
+        <p class="contents">2017年1月20日発売
+Learning JavaScriptの翻訳本。
+ES2015+に対応した内容
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="O&amp;#x27;Reilly Japan - 初めてのJavaScript 第3版" href="http://www.oreilly.co.jp/books/9784873117836/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.gitbook.com/book/frontendmasters/front-end-handbook-2017/details">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Front-end Handbook 2017 · GitBook</amp-fit-text>
+        <p class="contents">フロントエンドに関する電子書籍の2017年版
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Front-end Handbook 2017 · GitBook" href="https://www.gitbook.com/book/frontendmasters/front-end-handbook-2017/details">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

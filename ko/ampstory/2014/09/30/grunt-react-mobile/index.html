@@ -1,0 +1,439 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2014-09-30のJS: Gruntの現在と未来、React.js、The Mobile Web Handbook - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2014/09/30/grunt-react-mobile/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2014-09-30のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/yyx990803/vue/releases/tag/0.11.0-rc">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release 0.11.0-rc · yyx990803/vue</amp-fit-text>
+        <p class="contents">Vue.js 0.11.0-rcリリース。
+Breakingな変更も含め多数の変更が予定されてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 0.11.0-rc · yyx990803/vue" href="https://github.com/yyx990803/vue/releases/tag/0.11.0-rc">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://saneyukis.hatenablog.com/entry/2014/09/03/134858">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Virtual DOMのアルゴリズムが知りたくてvirtual-domのコードを読んだ話 - snyk_s log</amp-fit-text>
+        <p class="contents">VirtualDOMの構成要素やdiffのアルゴリズムについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Virtual DOMのアルゴリズムが知りたくてvirtual-domのコードを読んだ話 - snyk_s log" href="http://saneyukis.hatenablog.com/entry/2014/09/03/134858">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/derui@github/items/5233b4ef8fbde1e80d33">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript - BrowserifyからWebpackへの移行時の注意点 - Qiita</amp-fit-text>
+        <p class="contents">Browserifyから見たWebpackのメリットについて。 Browserifyはデフォルトでは1ビルドに1ファイル出力、一方Webpackは最初から複数のファイルを吐き出せる。
+(Browserifyはfactor-bundleなどが必要)
+また、Webpackはデフォルトで賢いビルドをするため高速にビルド出来る。
+(BrowserifyはAdvanced Optionsなどで細かい指定やビルドの工夫が必要)
+どちらもビルド時間の多くをSourceMap出力が占めている傾向がある。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript - BrowserifyからWebpackへの移行時の注意点 - Qiita" href="http://qiita.com/derui@github/items/5233b4ef8fbde1e80d33">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/koba04/get-started-react-dot-js">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Get Started React.js // Speaker Deck</amp-fit-text>
+        <p class="contents">React.jsについて詳しく書かれたスライド。
+JSXの使い方、Viewの構成、ImmutableなPropと状態を表すState、Component同士のやり取りやライフサイクル、CSSやアニメーション、Fluxアーキテクチャ、サーバサイドレンダリングなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Get Started React.js // Speaker Deck" href="https://speakerdeck.com/koba04/get-started-react-dot-js">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://facebook.github.io/react/blog/2014/09/24/testing-flux-applications.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Testing Flux Applications | React</amp-fit-text>
+        <p class="contents">FluxアーキテクチャをJestでテストする話。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Testing Flux Applications | React" href="http://facebook.github.io/react/blog/2014/09/24/testing-flux-applications.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.2ality.com/2014/09/es6-promises-foundations.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ECMAScript 6 promises (1/2): foundations</amp-fit-text>
+        <p class="contents">ES6 Promiseについての連載。
+JavaScriptにおける非同期処理に関連するコールスタック、イベントループ、コールバックについての解説がされている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ECMAScript 6 promises (1/2): foundations" href="http://www.2ality.com/2014/09/es6-promises-foundations.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.sitepoint.com/preparing-ecmascript-6-new-string-methods/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Preparing for ECMAScript 6: New String Methods</amp-fit-text>
+        <p class="contents">ES6で入るString周りのメソッドについての解説
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Preparing for ECMAScript 6: New String Methods" href="http://www.sitepoint.com/preparing-ecmascript-6-new-string-methods/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">async vs defer attributes - Growing with the Web</amp-fit-text>
+        <p class="contents">script要素のasync属性とdefer属性の動作の違いを図解にしたもの
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="async vs defer attributes - Growing with the Web" href="http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://dev.opera.com/articles/better-font-face/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Dev.Opera — Better @font-face with Font Load Events</amp-fit-text>
+        <p class="contents">CSS Font Loadingを使ってウェブフォントを読み込んでから適応して、FOUTを回避する事について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Dev.Opera — Better @font-face with Font Load Events" href="https://dev.opera.com/articles/better-font-face/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://jakearchibald.com/2014/using-serviceworker-today/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Using ServiceWorker in Chrome today - JakeArchibald.com</amp-fit-text>
+        <p class="contents">Chromeでフラグ付きで実装されたService Workerを動かす方法やオフラインキャッシュのデモ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Using ServiceWorker in Chrome today - JakeArchibald.com" href="http://jakearchibald.com/2014/using-serviceworker-today/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://cowboy.github.io/state-of-grunt-fe-summit-2014-talk/#1">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The State of Grunt</amp-fit-text>
+        <p class="contents">Gruntの現状と未来についてのスライド。
+Grunt 0.4ではGulpやBroccoliのプラグインも使えるようにすることやstream/promiseベースのTaskのパイプラインのサポート。
+Grunt/Gulp/Broccoliの目的の違いについてまとめられてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The State of Grunt" href="http://cowboy.github.io/state-of-grunt-fe-summit-2014-talk/#1">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.dropbox.com/s/hjl3cfs36b31jja/guiding-through-the-javascript-frameworks.pdf?dl=0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Dropbox - guiding-through-the-javascript-frameworks.pdf</amp-fit-text>
+        <p class="contents">JavaScriptのAngular、Ember、Backbone、React、Ampersand.jsなどのライブラリの特徴、またそれらを使って何を解決するのかというガイドラインを示すスライド
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Dropbox - guiding-through-the-javascript-frameworks.pdf" href="https://www.dropbox.com/s/hjl3cfs36b31jja/guiding-through-the-javascript-frameworks.pdf?dl=0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/watch?v=27GYm6nRv6E">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">▶ Tale of npm, css and html - YouTube</amp-fit-text>
+        <p class="contents">Browserifyとnpmを使った開発、またBrowserifyのcss版と言えるparcelifyについてのスクリーンキャスト
+&lt;a href='https://github.com/rotundasoftware/parcelify'&gt;https://github.com/rotundasoftware/parcelify&lt;/a&gt;
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="▶ Tale of npm, css and html - YouTube" href="https://www.youtube.com/watch?v=27GYm6nRv6E">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://polygon-planet-log.blogspot.com/2014/09/javascript-online-synchronize-editor.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScriptが実行できるリアルタイムオンラインエディタ作ってみました | 圧縮電子どうのこうの</amp-fit-text>
+        <p class="contents">コラボレーション出来るjsfiddle的なウェブサービス。
+複数人で編集できカーソル位置の可視化、JavaScriptコンソールやHTMLのプレビューなどがある
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScriptが実行できるリアルタイムオンラインエディタ作ってみました | 圧縮電子どうのこうの" href="http://polygon-planet-log.blogspot.com/2014/09/javascript-online-synchronize-editor.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mohayonao/neume.js">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">mohayonao/neume.js · GitHub</amp-fit-text>
+        <p class="contents">Web Audio APIを扱うライブラリ。
+パフォーマンスや試行錯誤がしやすいインタフェースを目的にしている
+&lt;a href='http://mohayonao.hatenablog.com/entry/2014/09/29/123242'&gt;http://mohayonao.hatenablog.com/entry/2014/09/29/123242&lt;/a&gt;
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="mohayonao/neume.js · GitHub" href="https://github.com/mohayonao/neume.js">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.amazon.co.jp/dp/4774167975/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Amazon.co.jp： JavaScriptエンジニア養成読本 [Webアプリ開発の定番構成Backbone.js+CoffeeScript+Gruntを1冊で習得! ] （Software Design plus）: 吾郷 協, 山田 順久, 竹馬 光太郎, 和智 大二郎: 本</amp-fit-text>
+        <p class="contents">2014年10月18日 発売
+JavaScript開発のムック本
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Amazon.co.jp： JavaScriptエンジニア養成読本 [Webアプリ開発の定番構成Backbone.js+CoffeeScript+Gruntを1冊で習得! ] （Software Design plus）: 吾郷 協, 山田 順久, 竹馬 光太郎, 和智 大二郎: 本" href="http://www.amazon.co.jp/dp/4774167975/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://shop.oreilly.com/product/9781939902122.do">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Developing a React.js Edge - O&amp;#x27;Reilly Media</amp-fit-text>
+        <p class="contents">React.jsについての書籍
+&lt;a href='https://github.com/rtfeldman/bleeding-edge-sample-app'&gt;https://github.com/rtfeldman/bleeding-edge-sample-app&lt;/a&gt;
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Developing a React.js Edge - O&amp;#x27;Reilly Media" href="http://shop.oreilly.com/product/9781939902122.do">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.smashingmagazine.com/2014/09/30/mobile-web-handbook-release/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">“There Are More Bugs In Mobile Than... Particles In The Universe!” | Smashing Magazine</amp-fit-text>
+        <p class="contents">PPKによるモバイル周りのJSやCSSのバグや混乱する挙動などについてのガイドラインを提供する本。
+viewportや300msの遅延、ズームの動作、Touch Event、Androidなどのハマりどころについて書かれてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="“There Are More Bugs In Mobile Than... Particles In The Universe!” | Smashing Magazine" href="http://www.smashingmagazine.com/2014/09/30/mobile-web-handbook-release/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

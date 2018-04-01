@@ -1,0 +1,488 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2016-09-12のJS: Polymer 2.0 Preview、Service Worker入門、JSから型定義ファイルの生成 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2016/09/12/polymer-20aservice-workerjs/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2016-09-12のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://www.polymer-project.org/1.0/blog/2016-09-09-polymer-2.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Polymer 2.0 Preview - Polymer Project</amp-fit-text>
+        <p class="contents">Polymer 2.0 Previewリリース。
+Shadow DOM v1、クラスベースで書けるようになるなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Polymer 2.0 Preview - Polymer Project" href="https://www.polymer-project.org/1.0/blog/2016-09-09-polymer-2.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://v8project.blogspot.com/2016/09/v8-release-54.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">V8 JavaScript Engine: V8 Release 5.4</amp-fit-text>
+        <p class="contents">V8 5.4リリース。
+メモリが少ない端末でのメモリ消費量の改善、起動速度の改善など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 JavaScript Engine: V8 Release 5.4" href="http://v8project.blogspot.com/2016/09/v8-release-54.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://emberjs.com/blog/2016/09/08/ember-2-8-and-2-9-beta-released.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Ember.js - Ember.js 2.8 and 2.9 Beta Released</amp-fit-text>
+        <p class="contents">Ember.js 2.8と2.9βリリース
+2.8で<code>Ember.Engine</code> APIを追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Ember.js - Ember.js 2.8 and 2.9 Beta Released" href="http://emberjs.com/blog/2016/09/08/ember-2-8-and-2-9-beta-released.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://facebook.github.io/jest/blog/2016/09/01/jest-15.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Jest 15.0: New Defaults for Jest · Jest</amp-fit-text>
+        <p class="contents">Jest 15.0リリース。
+CLIの表示を改善、Watchコマンドを追加、jest-react-nativeの改善など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Jest 15.0: New Defaults for Jest · Jest" href="http://facebook.github.io/jest/blog/2016/09/01/jest-15.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/facebook/flow/releases/tag/v0.32.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v0.32.0 · facebook/flow</amp-fit-text>
+        <p class="contents">Flow 0.32.0リリース
+<code>{|</code>と<code>|}</code>を使ったexact object typeの追加、<code>flow gen-flow-files</code>コマンドの追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v0.32.0 · facebook/flow" href="https://github.com/facebook/flow/releases/tag/v0.32.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://eslint.org/blog/2016/09/eslint-v3.5.0-released">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ESLint v3.5.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+        <p class="contents">ESLint 3.5.0リリース。
+新しいルールの追加、<code>--fix</code>の対応ルールの追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ESLint v3.5.0 released - ESLint - Pluggable JavaScript linter" href="http://eslint.org/blog/2016/09/eslint-v3.5.0-released">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/ternjs/acorn/releases/tag/4.0.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release Release 4.0.0 · ternjs/acorn</amp-fit-text>
+        <p class="contents">acorn 4.0.0リリース。
+デフォルトの<code>ecmaVersion</code>が<code>7</code>となり、async/awaitの構文をサポートなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Release 4.0.0 · ternjs/acorn" href="https://github.com/ternjs/acorn/releases/tag/4.0.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/ABCanG1015/items/824681cb88676da4f9a8">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ES2015で始めるJavaScript入門 - Qiita</amp-fit-text>
+        <p class="contents">ES2015ベースでJavaScriptについて学ぶレッスン式のチュートリアル
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ES2015で始めるJavaScript入門 - Qiita" href="http://qiita.com/ABCanG1015/items/824681cb88676da4f9a8">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://labe.wp.xdomain.jp/post/567">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">わぁいアリア（WAI-ARIA）大好き | れいぶろぐ</amp-fit-text>
+        <p class="contents">WAI-ARIAはどんなもので何のためにあるのかを分かりやすく解説してる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="わぁいアリア（WAI-ARIA）大好き | れいぶろぐ" href="http://labe.wp.xdomain.jp/post/567">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/fundamentals/primers/service-worker/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Service Worker の紹介 | Web Fundamentals - Google Developers</amp-fit-text>
+        <p class="contents">Service Workerについての紹介記事翻訳
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Service Worker の紹介 | Web Fundamentals - Google Developers" href="https://developers.google.com/web/fundamentals/primers/service-worker/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/y_fujieda/items/f9e765ac9d89ba241154">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Service Workerの基本とそれを使ってできること - Qiita</amp-fit-text>
+        <p class="contents">Service Workerのライフサイクルやどのような事ができるかの紹介記事。
+Cache、Pushについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Service Workerの基本とそれを使ってできること - Qiita" href="http://qiita.com/y_fujieda/items/f9e765ac9d89ba241154">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://joe-re.hatenablog.com/entry/2016/09/06/101529">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">flowtype v0.32.0 changes - Please Drive Faster</amp-fit-text>
+        <p class="contents">JavaScriptファイルからFlowの型定義ファイルを生成する<code>gen-flow-files</code>コマンドについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="flowtype v0.32.0 changes - Please Drive Faster" href="http://joe-re.hatenablog.com/entry/2016/09/06/101529">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://philipwalton.com/articles/untangling-deeply-nested-promise-chains/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Untangling Deeply-Nested Promise Chains — Philip Walton</amp-fit-text>
+        <p class="contents">Promiseでネストが深くなったものを、関数へ分割やasync/awaitを使いネストを浅くリファクタリングする話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Untangling Deeply-Nested Promise Chains — Philip Walton" href="https://philipwalton.com/articles/untangling-deeply-nested-promise-chains/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://iros.github.io/d3-v4-whats-new/#1">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">D3 V4 - What&#039;s new?</amp-fit-text>
+        <p class="contents">D3.js v4についてのスライド。
+モジュール分割、Canvasへの書き出し、分割されたモジュール毎の解説
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="D3 V4 - What&#039;s new?" href="https://iros.github.io/d3-v4-whats-new/#1">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://chromedevtools.github.io/timeline-viewer/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">DevTools Timeline Viewer</amp-fit-text>
+        <p class="contents">Chromeの開発者ツールのTimelineデータを読み込ませて表示できるサイト
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="DevTools Timeline Viewer" href="https://chromedevtools.github.io/timeline-viewer/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Microsoft/dts-gen">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Microsoft/dts-gen: dts-gen creates starter TypeScript definition files for any module or library.</amp-fit-text>
+        <p class="contents">npmパッケージやコードからd.tsを自動生成してくれるツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Microsoft/dts-gen: dts-gen creates starter TypeScript definition files for any module or library." href="https://github.com/Microsoft/dts-gen">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://fusejs.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Fuse.js - JavaScript fuzzy-search library</amp-fit-text>
+        <p class="contents">データからあいまい検索を行えるJavaScriptライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Fuse.js - JavaScript fuzzy-search library" href="http://fusejs.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/ebidel/appmetrics.js">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ebidel/appmetrics.js: A small (1.1kb) library for measuring things in your web app and reporting the results to Google Analytics.</amp-fit-text>
+        <p class="contents">User Timing APIを使って計測したデータをGoogle Analyticsにレポートできるライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ebidel/appmetrics.js: A small (1.1kb) library for measuring things in your web app and reporting the results to Google Analytics." href="https://github.com/ebidel/appmetrics.js">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jgornick/asyncp">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">jgornick/asyncp: Port of the Async.js API to use Promises</amp-fit-text>
+        <p class="contents">async.jsのAPIをPromiseを使って実装したライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jgornick/asyncp: Port of the Async.js API to use Promises" href="https://github.com/jgornick/asyncp">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.com/JavaScript-Toys-T-J-Crowder/dp/1119367956">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript: The New Toys: T. J. Crowder: 9781119367956: Amazon.com: Books</amp-fit-text>
+        <p class="contents">2017年4月10日発売
+ES2015+についての書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript: The New Toys: T. J. Crowder: 9781119367956: Amazon.com: Books" href="https://www.amazon.com/JavaScript-Toys-T-J-Crowder/dp/1119367956">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://gihyo.jp/book/2016/978-4-7741-8411-1">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">改訂新版JavaScript本格入門　～モダンスタイルによる基礎から現場での応用まで：書籍案内｜技術評論社</amp-fit-text>
+        <p class="contents">2016年9月30日発売
+JavaScript本格入門の改訂版
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="改訂新版JavaScript本格入門　～モダンスタイルによる基礎から現場での応用まで：書籍案内｜技術評論社" href="http://gihyo.jp/book/2016/978-4-7741-8411-1">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

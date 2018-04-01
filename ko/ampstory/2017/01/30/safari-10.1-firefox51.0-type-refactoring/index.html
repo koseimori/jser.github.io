@@ -1,0 +1,513 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2017-01-30のJS: Safari 10.1 pre、Firefox51.0、徐々に型を付けてのリファクタリング - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2017/01/30/safari-10.1-firefox51.0-type-refactoring/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2017-01-30のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_1.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Safari 10.1</amp-fit-text>
+        <p class="contents">afari 10.1 プレリリース。
+Fetch API、IndexedDB 2.0、Custom Elements、Pointer Lock/Gamepad API、ES2016,2017のサポートなど。
+また<code>&lt;a&gt;</code>要素の<code>download</code>属性,
+CSS Gridなどのサポート
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Safari 10.1" href="https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_1.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.mozilla.org/en-US/firefox/51.0/releasenotes/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title"># Firefox — Notes (51.0) — Mozilla
+</amp-fit-text>
+        <p class="contents">refox 51.0リリース。
+WebGL 2、IndexedDB 2、XHRの仕様追従、FLAC形式のサポート、<code>DOMImplementation.hasFeature()</code>は常に<code>true</code>を返すように、非標準なAPIを削除など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="# Firefox — Notes (51.0) — Mozilla
+" href="https://www.mozilla.org/en-US/firefox/51.0/releasenotes/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/substack/node-browserify/blob/master/changelog.markdown">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title"> node-browserify/changelog.markdown at master · substack/node-browserify
+[</amp-fit-text>
+        <p class="contents">wserify 14.0.0リリース。
+bufferのpolyfillがアップグレードされ、IE10以下のサポートが終了。
+bufferパッケージがTypedArrayを利用しているため。
+<ul>
+<li></li>
+</ul>
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title=" node-browserify/changelog.markdown at master · substack/node-browserify
+[" href="https://github.com/substack/node-browserify/blob/master/changelog.markdown">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/7354/release-notes-for-safari-technology-preview-22/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release Notes for Safari Technology Preview 22 | WebKit
+[w</amp-fit-text>
+        <p class="contents">ri Technology Preview Release 22リリース。
+<code>scroll-snap-type:proximity</code>のサポート、<code>innerText</code>の仕様追従、<code>URLSearchParams</code>がiterableとなるなど
+--
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 22 | WebKit
+[w" href="https://webkit.org/blog/7354/release-notes-for-safari-technology-preview-22/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.videojs.com/Video-js-6-0-0-RC-0-The-first-RC/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ideo.js 6.0.0-RC.0: The first Release Candidate | Video.js Blog
+[bl</amp-fit-text>
+        <p class="contents">.js v6.0 RCリリース。
+FlashをCoreから取り除き、Reactインスパイアなプラグインアーキテクチャの追加、accessiblityの改善など
+<ul>
+<li>[T</li>
+</ul>
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ideo.js 6.0.0-RC.0: The first Release Candidate | Video.js Blog
+[bl" href="http://blog.videojs.com/Video-js-6-0-0-RC-0-The-first-RC/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.reaktor.com/blog/refactoring-30000-lines-js-types/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">factoring 30000 lines of JS with types - Reaktor.com
+[www</amp-fit-text>
+        <p class="contents">vaScriptをリファクタリングしたアプローチについて。
+逐次的な型付のアプローチについて。
+Flowのweek modeとコメントでの型付けを使った方法と問題点。
+TypeScriptを使った名前空間オブジェクトへのアプローチとメリット/デメリット。
+最終的にTypeScriptを使ったがそのときに遭遇した問題について
+
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="factoring 30000 lines of JS with types - Reaktor.com
+[www" href="https://www.reaktor.com/blog/refactoring-30000-lines-js-types/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2017/01/scrolling-intervention">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ing touch scrolling fast by default  |  Web  |  Google Developers
+[deve</amp-fit-text>
+        <p class="contents">56からtouch eventをlistenすると
+<code>{passive: true}</code>がデフォルトとなる。
+デフォルトでは<code>touchstart</code>の中で<code>event.preventDefault()</code>を呼ぶと無視され警告がコンソールに表示される。
+<ul>
+<li>[Eve</li>
+</ul>
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ing touch scrolling fast by default  |  Web  |  Google Developers
+[deve" href="https://developers.google.com/web/updates/2017/01/scrolling-intervention">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://auth0.com/blog/testing-react-applications-with-jest/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ing React Applications with Jest
+[auth0</amp-fit-text>
+        <p class="contents">Reactのテストについての解説。
+インストールからテストの書き方、モックなどについて書かれている。
+
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ing React Applications with Jest
+[auth0" href="https://auth0.com/blog/testing-react-applications-with-jest/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.2ality.com/2017/01/shared-array-buffer.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">oposal: Shared memory and atomics
+[www.2a</amp-fit-text>
+        <p class="contents">ことが決まったShared memory and atomicsについての解説。
+Shared Array BuffersでWorker(agent)とデータを共有することができる。
+
+
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="oposal: Shared memory and atomics
+[www.2a" href="http://www.2ality.com/2017/01/shared-array-buffer.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@bohou/implement-a-javascript-reactive-programming-library-part-1-f564ac6ad789">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ent a JavaScript reactive programming library — part 1 – Medium
+[medium.</amp-fit-text>
+        <p class="contents">avaScriptライブラリを実装する連載記事。
+<ul>
+<li>[bhou/b</li>
+</ul>
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ent a JavaScript reactive programming library — part 1 – Medium
+[medium." href="https://medium.com/@bohou/implement-a-javascript-reactive-programming-library-part-1-f564ac6ad789">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://daveceddia.com/watch-out-for-undefined-state/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ut for Undefined State
+[davecedd</amp-fit-text>
+        <p class="contents">トでコンポーネント内のstateに依存しているものを、propsへ移動するリファクタリングの例。
+コンポーネントのデフォルトstateはundefinedであるという話
+
+
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ut for Undefined State
+[davecedd" href="https://daveceddia.com/watch-out-for-undefined-state/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://kosamari.com/notes/the-promise-of-a-burger-party">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ise of a Burger Party - Mariko Kosaka
+[kosamari.</amp-fit-text>
+        <p class="contents">ショップを例にして解説している記事。
+図解をしながらPromiseのresolveとrejectの動きについて書かれている
+
+
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ise of a Burger Party - Mariko Kosaka
+[kosamari." href="http://kosamari.com/notes/the-promise-of-a-burger-party">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://paul.kinlan.me/detecting-text-in-an-image/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title"> text in an image on the web in real-time - Tales of a Developer Advocate by Paul Kinlan
+[paul.kinla</amp-fit-text>
+        <p class="contents">ド認識、画像からテキスト認識するブラウザAPIについて
+<ul>
+<li>[Accelerat</li>
+</ul>
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title=" text in an image on the web in real-time - Tales of a Developer Advocate by Paul Kinlan
+[paul.kinla" href="https://paul.kinlan.me/detecting-text-in-an-image/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://bitsofco.de/understanding-the-critical-rendering-path/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ing the Critical Rendering Path
+[bitsofco.de</amp-fit-text>
+        <p class="contents">とは何かという解説。
+ブラウザがどのようなフローでレンダリングまでを行うか。
+また、開発者ツールを使ってレンダリングフローで起きているイベントを見ていく話。
+
+ECM
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ing the Critical Rendering Path
+[bitsofco.de" href="https://bitsofco.de/understanding-the-critical-rendering-path/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://ecmascript-daily.github.io/ecmascript/2017/01/30/ecmascript-proposals-status">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">proposal updates @ 2017-01 | ECMAScript Daily
+[ecmascript-d</amp-fit-text>
+        <p class="contents">ScriptのProposalのStageまとめ。 2017年1月のミーティングで5つのProposalが追加され、Shared memory and atomicsはES2017に入った。
+
+Optim
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="proposal updates @ 2017-01 | ECMAScript Daily
+[ecmascript-d" href="https://ecmascript-daily.github.io/ecmascript/2017/01/30/ecmascript-proposals-status">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://auth0.com/blog/optimizing-react/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">he Performance of Your React Application
+[auth0.com/blo</amp-fit-text>
+        <p class="contents">rf<code>を使いReactコンポーネントのパフォーマンス計測を行う話。 また</code>React.PureComponent<code>を使い</code>shouldComponentUpdate`の判定がきちんと行われるようにしてパフォーマンス改善するという話。
+
+
+&lt;h
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="he Performance of Your React Application
+[auth0.com/blo" href="https://auth0.com/blog/optimizing-react/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/knq/chromedp">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title"> Package chromedp is a faster, simpler way to drive browsers (Chrome, Edge, Safari, Android, etc) without external dependencies (ie, Selenium, PhantomJS, etc).
+[github.com/knq</amp-fit-text>
+        <p class="contents">rotocolを使ったブラウザ操作ツール
+
+&lt;h1 class=
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title=" Package chromedp is a faster, simpler way to drive browsers (Chrome, Edge, Safari, Android, etc) without external dependencies (ie, Selenium, PhantomJS, etc).
+[github.com/knq" href="https://github.com/knq/chromedp">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.manning.com/books/isomorphic-development-with-javascript">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">orphic Development with JavaScript
+[www.manning.com</amp-fit-text>
+        <p class="contents">iptについての書籍。
+ブラウザとNode.jsで共有しながら、ウェブアプリケーションを作る話。
+React + Redux、Angular 2やEmberを題材にしている。
+
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="orphic Development with JavaScript
+[www.manning.com" href="https://www.manning.com/books/isomorphic-development-with-javascript">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

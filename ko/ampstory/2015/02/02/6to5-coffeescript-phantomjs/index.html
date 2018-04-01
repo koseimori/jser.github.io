@@ -1,0 +1,507 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2015-02-02のJS: 6to5 Ver3.0、CoffeeScript 1.9.0、PhantomJS 2.0 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2015/02/02/6to5-coffeescript-phantomjs/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2015-02-02のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React v0.13.0 Beta 1 | React</amp-fit-text>
+        <p class="contents">React 0.13 β1リリース。
+ES6 ClassでReact.Componentを書けるように
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React v0.13.0 Beta 1 | React" href="http://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://6to5.org/blog/2015/01/27/2to3">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">2to3 · 6to5</amp-fit-text>
+        <p class="contents">6to5 3.0リリース。
+コマンドラインオプションに<code>--blacklist</code>と<code>--whitelist</code>の追加、パフォーマンス改善、細かいオプションの変更等。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="2to3 · 6to5" href="https://6to5.org/blog/2015/01/27/2to3">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://coffeescript.org">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">CoffeeScript</amp-fit-text>
+        <p class="contents">CoffeeScript 1.9.0リリース。
+ES6 generatorsのサポート
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CoffeeScript" href="http://coffeescript.org">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.nodejs.org/2015/01/26/node-v0-10-36-stable/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node v0.10.36 (Stable)</amp-fit-text>
+        <p class="contents">Node v0.10.36リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v0.10.36 (Stable)" href="http://blog.nodejs.org/2015/01/26/node-v0-10-36-stable/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://dev.opera.com/blog/opera-27/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Dev.Opera — Opera 27 released</amp-fit-text>
+        <p class="contents">Opera 27(based on Chromium 40)リリース。
+minlength属性、form要素の<code>reportValidity()</code>の実装、CSP Lv2の実装、Service Workers等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Dev.Opera — Opera 27 released" href="https://dev.opera.com/blog/opera-27/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://phantomjs.org/release-2.0.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">PhantomJS 2.0 Release Notes | PhantomJS</amp-fit-text>
+        <p class="contents">ヘッドレスブラウザのPhantomJS 2.0リリース。QtとWebKitのアップデート、CoffeeScriptのデフォルトサポートを廃止
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="PhantomJS 2.0 Release Notes | PhantomJS" href="http://phantomjs.org/release-2.0.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://robots.thoughtbot.com/replace-coffeescript-with-es6">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Replace CoffeeScript with ES6</amp-fit-text>
+        <p class="contents">CoffeeScriptのSyntaxをES6に書き換える方法について
+eventualbuddha/decaffeinateのようなツールではなくて、どういう対応のコードを示しながら解説している。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Replace CoffeeScript with ES6" href="http://robots.thoughtbot.com/replace-coffeescript-with-es6">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.2ality.com/2015/01/es6-strings.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">New string features in ECMAScript 6</amp-fit-text>
+        <p class="contents">ES6で追加されるString系のメソッドについて。
+Template strings、ユニコードコードポイントを正しく扱う方法、追加された便利メソッドについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="New string features in ECMAScript 6" href="http://www.2ality.com/2015/01/es6-strings.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.webkit.org/blog/3457/building-webkit-for-ios-simulator/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Surfin&amp;#x27; Safari - Blog Archive » Building WebKit for iOS Simulator</amp-fit-text>
+        <p class="contents">iOSシミュレータ向けにWebKitをビルド出来るように
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Surfin&amp;#x27; Safari - Blog Archive » Building WebKit for iOS Simulator" href="https://www.webkit.org/blog/3457/building-webkit-for-ios-simulator/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://hacks.mozilla.org/2015/01/canvas-2d-new-docs-path2d-hit-regions/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Canvas 2D: New docs, Path2D objects, hit regions ✩ Mozilla Hacks – the Web developer blog</amp-fit-text>
+        <p class="contents">Canvas 2Dの機能として追加されたPath2Dについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Canvas 2D: New docs, Path2D objects, hit regions ✩ Mozilla Hacks – the Web developer blog" href="http://hacks.mozilla.org/2015/01/canvas-2d-new-docs-path2d-hit-regions/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://azu.github.io/slide/crosushi/shift-ast.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">最近のASTパーサの動き</amp-fit-text>
+        <p class="contents">Esprima/Esprima-FB/espree、Shift AST、acorn/acorn-6to5とかのJS ASTパーサの近況についてのスライド。
+EsprimaがjQuery Foundationに移管した話についてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="最近のASTパーサの動き" href="http://azu.github.io/slide/crosushi/shift-ast.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://conf.reactjs.com/schedule.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React.js Conf | January 28 &amp;amp; 29 2015</amp-fit-text>
+        <p class="contents">React.js Confの動画まとめ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React.js Conf | January 28 &amp;amp; 29 2015" href="http://conf.reactjs.com/schedule.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://egghead.io/lessons/react-react-in-7-minutes">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React in 7 Minutes - React Video Tutorial #free @eggheadio</amp-fit-text>
+        <p class="contents">7分で分かるReact Componentのスクリーンキャスト。
+JSX、Componentのネスト、stateとprops、イベントハンドラについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React in 7 Minutes - React Video Tutorial #free @eggheadio" href="https://egghead.io/lessons/react-react-in-7-minutes">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/MaxArt2501/object-observe">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">MaxArt2501/object-observe</amp-fit-text>
+        <p class="contents">Object.observeの限定的なpolyfill
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="MaxArt2501/object-observe" href="https://github.com/MaxArt2501/object-observe">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.contractsjs.org/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Contracts.js</amp-fit-text>
+        <p class="contents">sweet.jsを使った実行時型チェック的な機能を提供するマクロ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Contracts.js" href="http://www.contractsjs.org/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://arasatasaygin.github.io/is.js/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">is.js - micro check library</amp-fit-text>
+        <p class="contents"><code>is.*</code>というメソッドで色々な種類の値をチェック出来るライブラリ。
+型や正規表現、環境、時間等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="is.js - micro check library" href="http://arasatasaygin.github.io/is.js/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.fluxible.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Fluxible | A Pluggable Container for Isomorphic Flux Applications | Fluxible</amp-fit-text>
+        <p class="contents">Yahoo製のFlux実装ライブラリ。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Fluxible | A Pluggable Container for Isomorphic Flux Applications | Fluxible" href="http://www.fluxible.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://ramdajs.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Ramda Documentation</amp-fit-text>
+        <p class="contents">Underscore.jsやlodashよりも関数型スタイル向けに沿った作りとする事を目的としたライブラリ。
+Immutable、副作用の排除、関数同士を組み合わせしやすいようなインターフェースにしているのが特徴。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Ramda Documentation" href="http://ramdajs.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://martyjs.org/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Home | marty.js</amp-fit-text>
+        <p class="contents">Fluxアーキテクチャ実装のライブラリ。
+基本的なStore、Dispatcher、Actionがあり、追加でConstant値の作成、Storageを指定して管理出来るStateが用意されてる。
+Chromeのデバッグで流れを見られるようになってる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Home | marty.js" href="http://martyjs.org/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/israelidanny/ie8linter">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">israelidanny/ie8linter</amp-fit-text>
+        <p class="contents">IE8でサポートしてないタグやCSSプロパティ等を検出するツール。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="israelidanny/ie8linter" href="https://github.com/israelidanny/ie8linter">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/douglasduteil/isparta">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">douglasduteil/isparta</amp-fit-text>
+        <p class="contents">istanbulと6to5を使ったES6のコードカバレッジツール。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="douglasduteil/isparta" href="https://github.com/douglasduteil/isparta">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/timoxley/pkgfiles">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">timoxley/pkgfiles</amp-fit-text>
+        <p class="contents">npm publishでどのファイルが公開されるのかをチェック出来るツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="timoxley/pkgfiles" href="https://github.com/timoxley/pkgfiles">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

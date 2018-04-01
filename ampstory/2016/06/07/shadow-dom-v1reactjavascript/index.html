@@ -1,0 +1,482 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2016-06-07のJS: Shadow DOM v1、React近況、JavaScriptのプラグイン設計本 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2016/06/07/shadow-dom-v1reactjavascript/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2016-06-07のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://v8project.blogspot.com/2016/06/release-52.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">V8 JavaScript Engine: Release 5.2</amp-fit-text>
+        <p class="contents">V8 5.2リリース。
+Exponentiation operator <code>**</code>のサポート、<code>Array.isArray</code>、<code>in</code> operator、<code>Function#bind</code>のパフォーマンス改善など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 JavaScript Engine: Release 5.2" href="http://v8project.blogspot.com/2016/06/release-52.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://semaphoreci.com/community/tutorials/getting-started-with-tdd-in-react">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Getting Started with TDD in React - Semaphore</amp-fit-text>
+        <p class="contents">Enzymeを使ったReact Componentのテストについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Getting Started with TDD in React - Semaphore" href="https://semaphoreci.com/community/tutorials/getting-started-with-tdd-in-react">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://hayato.io/2016/shadowdomv1/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">What&amp;#x27;s New in Shadow DOM v1 (by examples) — hayato.io</amp-fit-text>
+        <p class="contents">Shadow DOM v0とv1の違いについて。
+@shadow_hayatoさん(仕様策定者)によるコード例を元にした解説。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="What&amp;#x27;s New in Shadow DOM v1 (by examples) — hayato.io" href="http://hayato.io/2016/shadowdomv1/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/devneko/items/51f2e114a7e0b3389435">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Chromeのヘッドレスブラウザがやってくる。というわけで試してみた。 - Qiita</amp-fit-text>
+        <p class="contents">Chromeのヘッドレスブラウザについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chromeのヘッドレスブラウザがやってくる。というわけで試してみた。 - Qiita" href="http://qiita.com/devneko/items/51f2e114a7e0b3389435">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://advancedweb.hu/2016/05/31/infinite-collections-with-es6-generators/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Infinite collections with ES6 generators - Advanced Web Machinery</amp-fit-text>
+        <p class="contents">Iteratorを使った無限リストについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Infinite collections with ES6 generators - Advanced Web Machinery" href="https://advancedweb.hu/2016/05/31/infinite-collections-with-es6-generators/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://formidable.com/blog/2016/06/02/why-we-chose-mobx-over-redux-for-spectacle-editor/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Why we chose MobX over Redux for Spectacle Editor</amp-fit-text>
+        <p class="contents">Reduxとかと同じくアプリケーションのStateを管理するMobXの特徴についての紹介
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Why we chose MobX over Redux for Spectacle Editor" href="http://formidable.com/blog/2016/06/02/why-we-chose-mobx-over-redux-for-spectacle-editor/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.smashingmagazine.com/2016/05/creating-a-living-style-guide-case-study/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Creating A Living Style Guide: A Case Study – Smashing Magazine</amp-fit-text>
+        <p class="contents">スタイルガイドのケーススタディ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Creating A Living Style Guide: A Case Study – Smashing Magazine" href="https://www.smashingmagazine.com/2016/05/creating-a-living-style-guide-case-study/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://csswizardry.com/2016/06/improving-your-css-with-parker/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Improving Your CSS with Parker – CSS Wizardry – CSS, OOCSS, front-end architecture, performance and more, by Harry Roberts</amp-fit-text>
+        <p class="contents">CSSの解析ツールであるParkerについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Improving Your CSS with Parker – CSS Wizardry – CSS, OOCSS, front-end architecture, performance and more, by Harry Roberts" href="http://csswizardry.com/2016/06/improving-your-css-with-parker/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/pirosikick/items/c77db84dbed4c447a6fe">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">webpackのDLLバンドルを使ってビルドを速くする - Qiita</amp-fit-text>
+        <p class="contents">webpackのビルド速度の改善について。
+vendorライブラリだけ別にビルドし読み込んで使うDLLバンドル、<code>cacheDirectory</code>、<code>externals</code>との違いについてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="webpackのDLLバンドルを使ってビルドを速くする - Qiita" href="http://qiita.com/pirosikick/items/c77db84dbed4c447a6fe">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/koba04/the-state-of-react-dot-js-2016">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The state of React.js 2016 // Speaker Deck</amp-fit-text>
+        <p class="contents">Reactの最近の変更や今後の変更、非推奨になる予定の機能についてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The state of React.js 2016 // Speaker Deck" href="https://speakerdeck.com/koba04/the-state-of-react-dot-js-2016">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/channel/UCorlLn2oZfgOJ-FUcF2eZ1A">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ReactEurope 2016 - Day 1 - YouTube</amp-fit-text>
+        <p class="contents">ReactEurope 2016の動画まとめ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ReactEurope 2016 - Day 1 - YouTube" href="https://www.youtube.com/channel/UCorlLn2oZfgOJ-FUcF2eZ1A">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://egghead.io/courses/building-react-applications-with-idiomatic-redux">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Building React Applications with Idiomatic Redux - Course by @dan_abramov @eggheadio</amp-fit-text>
+        <p class="contents">Redux作者によるReduxでアプリケーションを作るスクリーンキャスト
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Building React Applications with Idiomatic Redux - Course by @dan_abramov @eggheadio" href="https://egghead.io/courses/building-react-applications-with-idiomatic-redux">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/kazupon/next-vue-dot-js-2-dot-0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Next Vue.js 2.0 // Speaker Deck</amp-fit-text>
+        <p class="contents">Vue.js 2.0のレンダリングフローについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Next Vue.js 2.0 // Speaker Deck" href="https://speakerdeck.com/kazupon/next-vue-dot-js-2-dot-0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://djcordhose.github.io/flow-vs-typescript/2016_hhjs.html#/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Flow vs TypeScript</amp-fit-text>
+        <p class="contents">TypeScriptとFlowTypeの型指定の比較についてのスライド
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Flow vs TypeScript" href="http://djcordhose.github.io/flow-vs-typescript/2016_hhjs.html#/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hyperdev.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">HyperDev</amp-fit-text>
+        <p class="contents">サーバも書けるJSFiddle的なサービス。
+Node.jsでサーバ側、HTML/CSS/JSなフロントも一緒に書けるエディタサービス
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="HyperDev" href="https://hyperdev.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://jeffcarp.github.io/frontend-hyperpolyglot/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Front-end Hyperpolyglot</amp-fit-text>
+        <p class="contents">React/Angular1,2/Ember/Polymer/Vueのテンプレートの書き方比較
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Front-end Hyperpolyglot" href="http://jeffcarp.github.io/frontend-hyperpolyglot/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/epoberezkin/ajv">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">epoberezkin/ajv: The fastest JSON schema Validator. Supports v5 proposals</amp-fit-text>
+        <p class="contents">JSON Schema validatorライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="epoberezkin/ajv: The fastest JSON schema Validator. Supports v5 proposals" href="https://github.com/epoberezkin/ajv">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/MJB-code6/SkyPort">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">MJB-code6/SkyPort: Add offline functionality to your web app</amp-fit-text>
+        <p class="contents">Service Workerを使ったオフラインモードを実現するライブラリ。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="MJB-code6/SkyPort: Add offline functionality to your web app" href="https://github.com/MJB-code6/SkyPort">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://frend.co/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Frend — A collection of accessible, modern front-end components.</amp-fit-text>
+        <p class="contents">AccessibleなDOM UIを実現するためのJavaScriptライブラリ。CSSフレームワークのように特定のクラスを付けた要素にWAI-ARIAの属性を付加していく。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Frend — A collection of accessible, modern front-end components." href="http://frend.co/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/GoogleChrome/lighthouse">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">GoogleChrome/lighthouse: auditing and performance metrics for Progressive Web Apps</amp-fit-text>
+        <p class="contents">Service Workerを使ってのオフライン対応の有無、Speed IndexなどのロードパフォーマンスなどProgressive Web Appsに関する計測ツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="GoogleChrome/lighthouse: auditing and performance metrics for Progressive Web Apps" href="https://github.com/GoogleChrome/lighthouse">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://efcl.info/2016/06/06/JavaScript-Plugin-Architecture/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript Plugin Architectureというプラグイン設計について学ぶ無料の電子書籍を書いた | Web Scratch</amp-fit-text>
+        <p class="contents">JavaScriptのプラグイン設計のケーススタディ本。
+jQuery、ESLint、Connect、gulp、Reduxなどのプラグインの仕組みを実装しながら学ぶ電子書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript Plugin Architectureというプラグイン設計について学ぶ無料の電子書籍を書いた | Web Scratch" href="http://efcl.info/2016/06/06/JavaScript-Plugin-Architecture/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

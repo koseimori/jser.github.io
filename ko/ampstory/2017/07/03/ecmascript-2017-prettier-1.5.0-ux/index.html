@@ -1,0 +1,493 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2017-07-03のJS: ECMAScript 2017、Prettier 1.5.0、UXのパフォーマンスメトリクス - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2017/07/03/ecmascript-2017-prettier-1.5.0-ux/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2017-07-03のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/prettier/prettier/releases/tag/1.5.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release 1.5.0: GraphQL, CSS-in-JS &amp; JSON · prettier/prettier</amp-fit-text>
+        <p class="contents">prettier 1.5.0リリース。
+GraphQL、CSS in JS、JSONの対応、CSSやTypeScript、JSX周りバグ修正など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 1.5.0: GraphQL, CSS-in-JS &amp; JSON · prettier/prettier" href="https://github.com/prettier/prettier/releases/tag/1.5.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/babel/babylon/releases/tag/v7.0.0-beta.16">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v7.0.0-beta.16 · babel/babylon</amp-fit-text>
+        <p class="contents">Babylon 7.0.0 beta16リリース。
+TypeScriptパーサの追加、BigInt(Stage 2)のサポートなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v7.0.0-beta.16 · babel/babylon" href="https://github.com/babel/babylon/releases/tag/v7.0.0-beta.16">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://ecma-international.org/news/index.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Ecma latest news</amp-fit-text>
+        <p class="contents">&quot;ECMA-262 8th edition - ECMAScript® 2017 Language Specification&quot; ES2017がGAで承認されて正式リリースされた。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Ecma latest news" href="http://ecma-international.org/news/index.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/7760/release-notes-for-safari-technology-preview-34/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release Notes for Safari Technology Preview 34 | WebKit</amp-fit-text>
+        <p class="contents">Safari Technology Preview Release 34リリース。
+<code>RTCRtpTransceiver#addTransceiver</code>をサポートしトラック単位での片方向通信を使えるように、W3C Secure Contextsの実装、SRIを試験的にサポートなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 34 | WebKit" href="https://webkit.org/blog/7760/release-notes-for-safari-technology-preview-34/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2017/06/user-centric-performance-metrics">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Leveraging the Performance Metrics that Most Affect User Experience  |  Web  |  Google Developers</amp-fit-text>
+        <p class="contents">ユーザー体験への影響を見るパフォーマンスのメトリクスについて。
+ロード時間だけでは体験を計測できないため。
+そのため、First Paint/First Meaningful Paing/Time to Interactive/Longtasksを指標にそれぞれ何を意味するかや計測方法について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Leveraging the Performance Metrics that Most Affect User Experience  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2017/06/user-centric-performance-metrics">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/kyoshidajp/items/e3f9be02a7ccd00aa7d7">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Chrome 60 DevTools の新機能/変更点 - Qiita</amp-fit-text>
+        <p class="contents">Chrome 60の開発者ツールの変更点について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chrome 60 DevTools の新機能/変更点 - Qiita" href="http://qiita.com/kyoshidajp/items/e3f9be02a7ccd00aa7d7">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/nytimes/kyt">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">NYTimes/kyt: Starting a new JS app? Build, test and run advanced apps with kyt 🔥</amp-fit-text>
+        <p class="contents">JavaScriptアプリのツールキット。
+Babel/webpack/Jest/Stylelint/ESlint/protoなどのセットアップをまとめて行うツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="NYTimes/kyt: Starting a new JS app? Build, test and run advanced apps with kyt 🔥" href="https://github.com/nytimes/kyt">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2017/06/supercharged-codesplit">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Supercharged Live Stream Blog: Code Splitting  |  Web  |  Google Developers</amp-fit-text>
+        <p class="contents">Code Splittingを行うBabelプラグインを作成するスクリーンキャスト
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Supercharged Live Stream Blog: Code Splitting  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2017/06/supercharged-codesplit">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://eng.uber.com/m-uber/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Building m.uber: Engineering a High-Performance Web App for the Global Market - Uber Engineering Blog</amp-fit-text>
+        <p class="contents">Uberのモバイル向けの最適化について。
+Reactを使っているが、mobileではPreactに置き換えて利用している。
+また、サーバサイドレンダリングや、初期bundleサイズを小さくするためのcode split、依存が小さなJustの利用、SWやIndexedDBを使ったキャッシュなどについて。
+問題を見つけるためのエラーハンドリングについて。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Building m.uber: Engineering a High-Performance Web App for the Global Market - Uber Engineering Blog" href="https://eng.uber.com/m-uber/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://graphql-io.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">GraphQL Network Communication Framework</amp-fit-text>
+        <p class="contents">クライアント &lt;-&gt; サーバのコミュニケーションを行うGraphQLフレームワーク。
+Apollo/WebSocketベース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="GraphQL Network Communication Framework" href="http://graphql-io.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://html.spec.whatwg.org/dev/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">HTML Standard</amp-fit-text>
+        <p class="contents">WHATWG HTML仕様のDeveloper's Edition。
+ブラウザベンダー向けの情報は削除し、ウェブ開発者向けの情報に絞ったHTML仕様。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="HTML Standard" href="https://html.spec.whatwg.org/dev/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/babel/proposals">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">babel/proposals: (WIP) Tracking the status of Babel&#039;s implementation of TC39 proposals</amp-fit-text>
+        <p class="contents">ECMAScript proposalとBabelの実装の対応をまとめたもの
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="babel/proposals: (WIP) Tracking the status of Babel&#039;s implementation of TC39 proposals" href="https://github.com/babel/proposals">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/roman01la/js-memory-usage">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">roman01la/js-memory-usage: Data Structures Memory Usage in JavaScript</amp-fit-text>
+        <p class="contents">JavaScriptのデータ構造別/ライブラリごとのメモリ消費量をまとめたもの。List/Array/Map/SetをJavaScript/ImmutableJS/ClojureScript/GopherJS/Reasonなど色々な実装ごと比較
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="roman01la/js-memory-usage: Data Structures Memory Usage in JavaScript" href="https://github.com/roman01la/js-memory-usage">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/pinterest/esprint">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">pinterest/esprint: Fast eslint runner</amp-fit-text>
+        <p class="contents">ESLintをparallelで実行できるツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="pinterest/esprint: Fast eslint runner" href="https://github.com/pinterest/esprint">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/anvilresearch/webcrypto">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">anvilresearch/webcrypto: W3C Web Cryptography API for Node.js</amp-fit-text>
+        <p class="contents">Node.jsでWeb Cryptography APIに対応するpolyfill(ponyfill)ライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="anvilresearch/webcrypto: W3C Web Cryptography API for Node.js" href="https://github.com/anvilresearch/webcrypto">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/coast-team/netflux">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">coast-team/netflux: JavaScript client and server side transport API based on WebRTC &amp; WebSocket</amp-fit-text>
+        <p class="contents">WebRTC、WebSocketを使ったP2Pライブラリ。
+ブラウザ、Node.jsでデータのやり取りを行える
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="coast-team/netflux: JavaScript client and server side transport API based on WebRTC &amp; WebSocket" href="https://github.com/coast-team/netflux">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/OnetapInc/chromy">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">OnetapInc/chromy: Chromy is a library for operating headless chrome. 🍺🍺🍺</amp-fit-text>
+        <p class="contents">Headless ChromeをNightmare.jsのように操作するAPIを提供するライブラリ。
+Chrome DevTools Protocolを使って処理をやり取りしている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="OnetapInc/chromy: Chromy is a library for operating headless chrome. 🍺🍺🍺" href="https://github.com/OnetapInc/chromy">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/dollarshaveclub/study">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">dollarshaveclub/study: A Simple, progressive, client/server AB testing library ⚡️</amp-fit-text>
+        <p class="contents">A/Bテストティングライブラリ。
+universalで動き、storage driverでデータの保存先を指定できる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="dollarshaveclub/study: A Simple, progressive, client/server AB testing library ⚡️" href="https://github.com/dollarshaveclub/study">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/egoist/dom-dom">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">egoist/dom-dom: JSX to actual DOM.</amp-fit-text>
+        <p class="contents">JSXを<code>document</code> APIを使ってDOMオブジェクトにするライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="egoist/dom-dom: JSX to actual DOM." href="https://github.com/egoist/dom-dom">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/yahoo/mendel">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">yahoo/mendel: Build toolchain for experimentation on isomorphic web applications with tree-inheritance and multivariate support.</amp-fit-text>
+        <p class="contents">コードのフラグではなくルールファイルベースでプロジェクト構造を管理できるツール。
+試験的な機能を取り入れたA/Bテストを管理しやすくするためのフレームワーク。
+フラグ管理は技術的負債となりやすく、持続可能性をYahooで調査した結果作成されたデザイン。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="yahoo/mendel: Build toolchain for experimentation on isomorphic web applications with tree-inheritance and multivariate support." href="https://github.com/yahoo/mendel">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jaredpalmer/formik">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">jaredpalmer/formik: Forms in React, without tears</amp-fit-text>
+        <p class="contents">React向けのフォームライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jaredpalmer/formik: Forms in React, without tears" href="https://github.com/jaredpalmer/formik">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

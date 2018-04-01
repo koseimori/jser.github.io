@@ -1,0 +1,652 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2014-10-06のJS: localForage 1.0.0、Promises API、FluxとReactとBackbone.js - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2014/10/06/promise-flux-react-backbone/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2014-10-06のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/marijnh/acorn/releases/tag/0.9.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release 0.9.0 · marijnh/acorn</amp-fit-text>
+        <p class="contents">JavaScriptパーサのacorn 0.9.0リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 0.9.0 · marijnh/acorn" href="https://github.com/marijnh/acorn/releases/tag/0.9.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/substack/node-browserify/blob/6.0.0/changelog.markdown">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">node-browserify/changelog.markdown at 6.0.0 · substack/node-browserify</amp-fit-text>
+        <p class="contents">Browserify 6.0.0リリース。
+SourceMapのファイルパスがベースURLからの相対パスとなった。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="node-browserify/changelog.markdown at 6.0.0 · substack/node-browserify" href="https://github.com/substack/node-browserify/blob/6.0.0/changelog.markdown">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/yeoman/yo/releases/tag/v1.3.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v1.3.0 - UI Improvements · yeoman/yo</amp-fit-text>
+        <p class="contents">yo v1.3.0リリース。
+コマンドラインUIの改善
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v1.3.0 - UI Improvements · yeoman/yo" href="https://github.com/yeoman/yo/releases/tag/v1.3.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://googledevelopers.blogspot.com/2014/10/promises-in-google-apis-javascript.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Google Developers Blog: Promises in the Google APIs JavaScript Client Library</amp-fit-text>
+        <p class="contents">Google APIのクライアントライブラリがPromise/A+ベースのものとなった
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Google Developers Blog: Promises in the Google APIs JavaScript Client Library" href="http://googledevelopers.blogspot.com/2014/10/promises-in-google-apis-javascript.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mozilla/localForage/releases/tag/1.0.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release Stable API · mozilla/localForage</amp-fit-text>
+        <p class="contents">IndexedDB, WebSQL, localStorageを同じインタフェースで使えるlocalForage 1.0.0リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Stable API · mozilla/localForage" href="https://github.com/mozilla/localForage/releases/tag/1.0.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.gutyan.jp/entry/2014/09/06/MutationObserver">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">【JavaScript】 MutationObserverの使い方 個人的まとめ - はりをきば</amp-fit-text>
+        <p class="contents">MutationObserverの使い方、オプションについての解説
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="【JavaScript】 MutationObserverの使い方 個人的まとめ - はりをきば" href="http://blog.gutyan.jp/entry/2014/09/06/MutationObserver">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.risingstack.com/node-js-security-tips/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node.js Security Tips</amp-fit-text>
+        <p class="contents">Node.jsとセキュリティについて
+eval、strict mode、sudoしない、シェルを叩いてコマンドを実行しない、一時ファイル、XSS、HttpOnly、CSP等の扱いについて書かれている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node.js Security Tips" href="http://blog.risingstack.com/node-js-security-tips/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://efcl.info/2014/10/04/npm2-local-module/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">npm 2.0.0でローカルモジュールを使ってrequire(&amp;#x27;../../../&amp;#x27;)を回避する | Web Scratch</amp-fit-text>
+        <p class="contents">npm 2.0.0からdependenciesにローカルパスを指定出来るようになり、プロジェクトだけで使うUtilsを読み込みやすくなった話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="npm 2.0.0でローカルモジュールを使ってrequire(&amp;#x27;../../../&amp;#x27;)を回避する | Web Scratch" href="http://efcl.info/2014/10/04/npm2-local-module/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://googledevjp.blogspot.com/2014/10/html5rocks.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">HTML5Rocks の日本語記事まとめ - Google Developer Relations Japan Blog</amp-fit-text>
+        <p class="contents">HTML5 Rocksに現在公開されている翻訳記事のまとめ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="HTML5Rocks の日本語記事まとめ - Google Developer Relations Japan Blog" href="http://googledevjp.blogspot.com/2014/10/html5rocks.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.html5rocks.com/ja/tutorials/responsive/picture-element/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">レスポンシブイメージのネイティブサポート - HTML5 Rocks</amp-fit-text>
+        <p class="contents">レスポンシブに画像を扱うpicture要素について。
+media queryでの分岐、srcset属性での解像度対応、読み込む画像の種類によるfallback
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="レスポンシブイメージのネイティブサポート - HTML5 Rocks" href="http://www.html5rocks.com/ja/tutorials/responsive/picture-element/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/viljamis/Molten-Leading">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">viljamis/Molten-Leading</amp-fit-text>
+        <p class="contents">jQueryで実装されてたMolten Leadingのpure JavaScript版。
+line-heightを要素の幅に併せて変更してくれるライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="viljamis/Molten-Leading" href="https://github.com/viljamis/Molten-Leading">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.toptal.com/front-end/simple-data-flow-in-react-applications-using-flux-and-backbone">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React Apps Using Flux and Backbone | Toptal</amp-fit-text>
+        <p class="contents">Fluxアーキテクチャのフローについて。
+DispatcherでイベントとState管理、Store(EventEmitter)がブロードキャストしたイベントをキャッチしてViewをレンダリングするという流れ。
+これをBackbone.jsとReactを使った実装について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React Apps Using Flux and Backbone | Toptal" href="http://www.toptal.com/front-end/simple-data-flow-in-react-applications-using-flux-and-backbone">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.2ality.com/2014/10/es6-promises-api.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ECMAScript 6 promises (2/2): the API</amp-fit-text>
+        <p class="contents">ES6 Promiseについて詳しい解説。基本的な使い方やどのようなフローで動くか、エラーハンドリング、メリット/デメリット、デバッグ、Promiseラッパの書き方、他の機能と強調した書き方についてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ECMAScript 6 promises (2/2): the API" href="http://www.2ality.com/2014/10/es6-promises-api.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://motemen.hatenablog.com/entry/2014/10/01/scrape-by-protractor-webdriverio">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">まだmechanizeで消耗してるの? WebDriverで銀行をスクレイピング（ProtractorとWebdriverIOを例に） - 詩と創作・思索のひろば (Poetry, Writing and Contemplation)</amp-fit-text>
+        <p class="contents">AngularJS向けのE2EテストフレームワークであるProtractorを使ったスクレイピングについて。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="まだmechanizeで消耗してるの? WebDriverで銀行をスクレイピング（ProtractorとWebdriverIOを例に） - 詩と創作・思索のひろば (Poetry, Writing and Contemplation)" href="http://motemen.hatenablog.com/entry/2014/10/01/scrape-by-protractor-webdriverio">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/polarblau/a-primer-on-content-security-policy">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">A primer on Content Security Policy // Speaker Deck</amp-fit-text>
+        <p class="contents">XSSの動く仕組み、そのXSSを防止するためのエスケープや必要な事の多さとその一つとしてのCSPについてのスライド。
+CSPのルールについての紹介
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="A primer on Content Security Policy // Speaker Deck" href="https://speakerdeck.com/polarblau/a-primer-on-content-security-policy">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/helielson/react-a-javascript-library-for-building-user-interfaces">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React - A JavaScript library for building user interfaces // Speaker Deck</amp-fit-text>
+        <p class="contents">React入門的なスライド。
+render、state、componentのライフサイクル、テストについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React - A JavaScript library for building user interfaces // Speaker Deck" href="https://speakerdeck.com/helielson/react-a-javascript-library-for-building-user-interfaces">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/kamilogorek/ampersand-dot-js-minimalistic-approach-to-not-so-minimalistic-problems">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Ampersand.js – Minimalistic Approach to not so minimalistic Problems // Speaker Deck</amp-fit-text>
+        <p class="contents">Ampersand.jsの紹介スライド
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Ampersand.js – Minimalistic Approach to not so minimalistic Problems // Speaker Deck" href="https://speakerdeck.com/kamilogorek/ampersand-dot-js-minimalistic-approach-to-not-so-minimalistic-problems">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/jsist/es6-the-future-is-now">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ES6: the future is now // Speaker Deck</amp-fit-text>
+        <p class="contents">ECMAScriptのタイムライン、ES6の機能紹介のスライド
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ES6: the future is now // Speaker Deck" href="https://speakerdeck.com/jsist/es6-the-future-is-now">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.slideshare.net/SanderMak/typescript-coding-javascript-without-the-pain">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">TypeScript: coding JavaScript without the pain</amp-fit-text>
+        <p class="contents">TypeScriptの特徴について紹介しているスライド
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="TypeScript: coding JavaScript without the pain" href="http://www.slideshare.net/SanderMak/typescript-coding-javascript-without-the-pain">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://slidr.io/klyrr/localize-your-frontend##1">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Localize your frontend // slidr.io</amp-fit-text>
+        <p class="contents">jimdo.com のローカライズについてのスライド。数字フォーマットの問題に対してAngularJS、Closure LibraryやECMA i18n API(とpolyfill)等について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Localize your frontend // slidr.io" href="http://slidr.io/klyrr/localize-your-frontend##1">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/playlist?list=PL37ZVnwpeshF8Sr8JZNFU6boKMmod9YBw">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Reject.JS 2014 - YouTube</amp-fit-text>
+        <p class="contents">Reject.JS 2014 の動画が公開された
+&lt;a href='http://rejectjs.org/speakers/'&gt;http://rejectjs.org/speakers/&lt;/a&gt;
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Reject.JS 2014 - YouTube" href="https://www.youtube.com/playlist?list=PL37ZVnwpeshF8Sr8JZNFU6boKMmod9YBw">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://lafikl.github.io/steady.js/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Steady.js</amp-fit-text>
+        <p class="contents">scrollイベントを扱うライブラリ。
+onscrollをthrottleしたり、topからの位置で反応するイベントをつけたりスクロール周りの処理を扱いやすくしてくれる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Steady.js" href="http://lafikl.github.io/steady.js/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.packtpub.com/application-development/javascript-promises-essentials">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript Promises Essentials | Packt</amp-fit-text>
+        <p class="contents">JavaScript Promiseについての書籍。
+WinJSのPromiseについても扱ってる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript Promises Essentials | Packt" href="https://www.packtpub.com/application-development/javascript-promises-essentials">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://verbnurbs.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">verb - A CAD Library for the Web</amp-fit-text>
+        <p class="contents">CADライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="verb - A CAD Library for the Web" href="http://verbnurbs.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/yahoo/gifshot">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">yahoo/gifshot</amp-fit-text>
+        <p class="contents">複数枚の画像や動画からgifを作成するJavaScriptライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="yahoo/gifshot" href="https://github.com/yahoo/gifshot">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://brick.mozilla.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Mozilla Brick</amp-fit-text>
+        <p class="contents">Web Componentsを使ったUIコンポーネントライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Mozilla Brick" href="http://brick.mozilla.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/shakiba/svgexport">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">shakiba/svgexport</amp-fit-text>
+        <p class="contents">PhantomJSを使ってSVGをPNG/JPEG/PDFなどに変換出来るコマンドラインツール。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="shakiba/svgexport" href="https://github.com/shakiba/svgexport">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://tristanedwards.me/sweetalert">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">SweetAlert</amp-fit-text>
+        <p class="contents">ダイアログUIライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="SweetAlert" href="http://tristanedwards.me/sweetalert">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://shop.oreilly.com/product/9781939902146.do">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Developing a Gulp.js Edge - O&amp;#x27;Reilly Media</amp-fit-text>
+        <p class="contents">JavaScriptのStreamベースのビルドシステムであるGulpについての書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Developing a Gulp.js Edge - O&amp;#x27;Reilly Media" href="http://shop.oreilly.com/product/9781939902146.do">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.amazon.co.jp/dp/B00O4RMZ4O/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Amazon.co.jp: Webアプリ構築のためのAngularJS 電子書籍: 外村 和仁, CodeGrid: Kindleストア</amp-fit-text>
+        <p class="contents">2014年10月6日発売
+&lt;a href='https://app.codegrid.net/'&gt;https://app.codegrid.net/&lt;/a&gt; の攻略！AngularJSの連載を元にした書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Amazon.co.jp: Webアプリ構築のためのAngularJS 電子書籍: 外村 和仁, CodeGrid: Kindleストア" href="http://www.amazon.co.jp/dp/B00O4RMZ4O/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2016-05-30のJS: 初めてのnpm publish、Node.jsでのメモリリークデバッグ - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2016/05/30/npm-publishnodejs/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2016-05-30のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://www.decosoftware.com/may-2016-update">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Deco - React Native IDE</amp-fit-text>
+        <p class="contents">React Native IDEであるDecoがオープンソースとしてリリースされた
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Deco - React Native IDE" href="https://www.decosoftware.com/may-2016-update">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://eslint.org/blog/2016/05/eslint-v2.11.0-released">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ESLint v2.11.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+        <p class="contents">ESLint v2.11.0リリース。
+JSCS互換のルールの追加、<code>obj.hasOwnProperty</code>の利用に関するルールの追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ESLint v2.11.0 released - ESLint - Pluggable JavaScript linter" href="http://eslint.org/blog/2016/05/eslint-v2.11.0-released">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/6415/release-notes-for-safari-technology-preview-5/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release Notes for Safari Technology Preview 5 | WebKit</amp-fit-text>
+        <p class="contents">Safari Technology Preview 5リリース。
+<code>NodeList</code>がiterableに、<code>window.scroll</code>が<code>ScrollToOptions</code>をサポート、sourceMappingURLが相対パスを扱えない問題を修正など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 5 | WebKit" href="https://webkit.org/blog/6415/release-notes-for-safari-technology-preview-5/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://eladnava.com/publishing-your-first-package-to-npm/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Publishing Your First Package to npm</amp-fit-text>
+        <p class="contents">npmでパッケージを公開するまでの流れを書いたチュートリアル
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Publishing Your First Package to npm" href="https://eladnava.com/publishing-your-first-package-to-npm/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.fullstackreact.com/articles/react-tutorial-cloning-yelp/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Fullstack React : React Tutorial: Cloning Yelp</amp-fit-text>
+        <p class="contents">YelpのクローンをReactで作るチュートリアル
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Fullstack React : React Tutorial: Cloning Yelp" href="https://www.fullstackreact.com/articles/react-tutorial-cloning-yelp/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://1000ch.net/posts/2016/intersection-observer-lazyload.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">IntersectionObserverを使ってlazyload-imageを書き直した - 1000ch.net</amp-fit-text>
+        <p class="contents"><code>IntersectionObserver</code>を使った画像の遅延ロードの実装について。
+fallbackはただの<code>&lt;img&gt;</code>として動作する
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="IntersectionObserverを使ってlazyload-imageを書き直した - 1000ch.net" href="https://1000ch.net/posts/2016/intersection-observer-lazyload.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/koukun/items/e64762e407b8dd5e0247">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">[翻訳] Airbnb React/JSX Style Guide - Qiita</amp-fit-text>
+        <p class="contents">Airbnb React/JSXのコーディングスタイルガイドの翻訳
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="[翻訳] Airbnb React/JSX Style Guide - Qiita" href="http://qiita.com/koukun/items/e64762e407b8dd5e0247">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/masakielastic/items/f34f5b297abee0e80ddc">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">RxJS の代わりに xstream を使う - Qiita</amp-fit-text>
+        <p class="contents">RxライクなStreamライブラリであるxstreamについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="RxJS の代わりに xstream を使う - Qiita" href="http://qiita.com/masakielastic/items/f34f5b297abee0e80ddc">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/adwd/redux-introduction">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React/Redux Introduction // Speaker Deck</amp-fit-text>
+        <p class="contents">React/ReduxでTodo的アプリを作る話。
+チュートリアル的な内容のスライド
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React/Redux Introduction // Speaker Deck" href="https://speakerdeck.com/adwd/redux-introduction">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://jlongster.com/Implementing-Stepping-Debugger-JavaScript">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Implementing a Stepping Debugger in JavaScript</amp-fit-text>
+        <p class="contents">JavaScriptをステップ実行できるエディタをどうやって実装するか。
+regeneratorとステートマシーン、コールスタックの実装、ブレークポイントの対応など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Implementing a Stepping Debugger in JavaScript" href="http://jlongster.com/Implementing-Stepping-Debugger-JavaScript">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://robots.thoughtbot.com/testing-your-style-with-eslint-and-mocha">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Testing Your Style With ESLint and Mocha</amp-fit-text>
+        <p class="contents">ESLintをMochaのテストとして動かす話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Testing Your Style With ESLint and Mocha" href="https://robots.thoughtbot.com/testing-your-style-with-eslint-and-mocha">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://akabeko.me/blog/2016/05/cross-conf-env-1-0-release/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">npm-scripts でクロスプラットフォームに環境変数を参照するための npm を作成してみた – アカベコマイリ</amp-fit-text>
+        <p class="contents"><code>package.json</code>の<code>config</code> fieldに環境変数を定義して、それをクロスプラットフォームで利用できるようにするツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="npm-scripts でクロスプラットフォームに環境変数を参照するための npm を作成してみた – アカベコマイリ" href="http://akabeko.me/blog/2016/05/cross-conf-env-1-0-release/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.sitepoint.com/understanding-asts-building-babel-plugin/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Understanding ASTs by Building Your Own Babel Plugin</amp-fit-text>
+        <p class="contents">Babelプラグインを書きながらASTについて学ぶチュートリアル
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Understanding ASTs by Building Your Own Babel Plugin" href="https://www.sitepoint.com/understanding-asts-building-babel-plugin/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.redfin.com/blog/2016/05/announcing-react-server.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Announcing React Server - @Redfin</amp-fit-text>
+        <p class="contents">Reactのサーバサイドレンダリングを行うためのフレームワーク
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing React Server - @Redfin" href="https://www.redfin.com/blog/2016/05/announcing-react-server.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/playlist?list=PL0CdgOSSGlBYnHAl_DZoy9BWvdVQjNKE2">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node Conf London 2016 - YouTube</amp-fit-text>
+        <p class="contents">Node Conf London 2016 の動画まとめ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node Conf London 2016 - YouTube" href="https://www.youtube.com/playlist?list=PL0CdgOSSGlBYnHAl_DZoy9BWvdVQjNKE2">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/user/jsconfuy">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JSConfUY 2016 - YouTube</amp-fit-text>
+        <p class="contents">JSConf Uruguay 2016の動画まとめ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JSConfUY 2016 - YouTube" href="https://www.youtube.com/user/jsconfuy">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/tonyganch/gonzales-pe">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">tonyganch/gonzales-pe: CSS parser with support of preprocessors</amp-fit-text>
+        <p class="contents">CSS Parserライブラリ。
+CSS/less/Sassをサポートしてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="tonyganch/gonzales-pe: CSS parser with support of preprocessors" href="https://github.com/tonyganch/gonzales-pe">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://quorrajs.org/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">QuorraJS</amp-fit-text>
+        <p class="contents">LaravelインスパイアなNode.jsフレームワーク
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="QuorraJS" href="https://quorrajs.org/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://alm.tools/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ALM Tools for TypeScript</amp-fit-text>
+        <p class="contents">ブラウザで動くTypeScriptエディタ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ALM Tools for TypeScript" href="http://alm.tools/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.amazon.co.jp/%E5%88%9D%E3%82%81%E3%81%A6%E3%81%AEThree-js-%E7%AC%AC2%E7%89%88-Jos-Dirksen/dp/4873117704">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">初めてのThree.js 第2版 : Jos Dirksen, あんどうやすし : 本 : Amazon.co.jp</amp-fit-text>
+        <p class="contents">2016年7月25日発売
+Three.js本
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="初めてのThree.js 第2版 : Jos Dirksen, あんどうやすし : 本 : Amazon.co.jp" href="http://www.amazon.co.jp/%E5%88%9D%E3%82%81%E3%81%A6%E3%81%AEThree-js-%E7%AC%AC2%E7%89%88-Jos-Dirksen/dp/4873117704">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

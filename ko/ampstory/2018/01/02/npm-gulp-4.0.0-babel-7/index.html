@@ -1,0 +1,420 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2018-01-02のJS: npmのパッケージ名のルール変更、gulp 4.0.0プレリリース、Babel 7の変更予定 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2018/01/02/npm-gulp-4.0.0-babel-7/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2018-01-02のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://blog.npmjs.org/post/168978377570/new-package-moniker-rules">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The npm Blog — New Package Moniker rules</amp-fit-text>
+        <p class="contents">npmにパッケージをpublishする際のルールが変更された。
+パッケージ名に含まれる<code>.</code>、<code>-</code>、<code>_</code>の違いによる区別をしなくなった。
+<code>react-native</code>と<code>react.native</code>を同じものとして扱い、タイプミスを狙った類似パッケージの公開を防止する目的。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The npm Blog — New Package Moniker rules" href="http://blog.npmjs.org/post/168978377570/new-package-moniker-rules">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@JorgeBucaran/introducing-hyperapp-1-0-dbf4229abfef">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Introducing Hyperapp 1.0 🎉 – Jorge Bucaran – Medium</amp-fit-text>
+        <p class="contents">hyperapp 1.0.0リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introducing Hyperapp 1.0 🎉 – Jorge Bucaran – Medium" href="https://medium.com/@JorgeBucaran/introducing-hyperapp-1-0-dbf4229abfef">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/gulpjs/gulp/releases/tag/v4.0.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v4.0.0 · gulpjs/gulp</amp-fit-text>
+        <p class="contents">gulp 4.0.0プレリリース。
+<code>npm install gulp@next</code>でインストールできるように。
+<code>gulp.reset</code>、<code>gulp.task</code>の第三引数の削除。
+<code>gulp.series</code>と<code>gulp.parallel</code>、<code>gulp.tree</code>、<code>gulp.registry</code>の追加。
+<code>gulp</code>と<code>gulp-cli</code>の分離など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v4.0.0 · gulpjs/gulp" href="https://github.com/gulpjs/gulp/releases/tag/v4.0.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://emberjs.com/blog/2018/01/01/ember-2-18-released.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Ember.js - Ember 2.18 and 3.0 Beta Released</amp-fit-text>
+        <p class="contents">Ember 2.1.8と3.0βリリース。
+Ember 3.0ではIE 9, 10のサポート終了、2.xで非推奨となった機能の削除され、それらは<code>ember-2-legacy</code>アドオンにポートされる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Ember.js - Ember 2.18 and 3.0 Beta Released" href="https://emberjs.com/blog/2018/01/01/ember-2-18-released.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@eliperelman/neutrino-releasing-v8-a643f356f410">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Neutrino: Releasing v8 🎉 – Eli Perelman – Medium</amp-fit-text>
+        <p class="contents">JavaScriptの開発環境セットアップツールのNeutrino v8.0.0リリース。
+モジュールを<code>@neutrinojs</code>のScoped moduleへ移行、<code>@neutrinojs/library</code>などのコアミドルウェアの追加、複数ページのアプリへの対応など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Neutrino: Releasing v8 🎉 – Eli Perelman – Medium" href="https://medium.com/@eliperelman/neutrino-releasing-v8-a643f356f410">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://calendar.perfplanet.com/2017/performance-insurance/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Performance Calendar » Performance insurance</amp-fit-text>
+        <p class="contents">パフォーマンス関係のツール紹介記事。
+ファイルサイズチェック、ファイル分割チェック、LightHouse、モニタリングサービスなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Performance Calendar » Performance insurance" href="https://calendar.perfplanet.com/2017/performance-insurance/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://24ways.org/2017/testing-the-web-platform/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Christmas Gifts for Your Future Self: Testing the Web Platform ◆ 24 ways</amp-fit-text>
+        <p class="contents">ウェブ標準におけるテストについて。
+Web Platform Testsでのテストの見かた、コントリビュート方法やテストの書き方についてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Christmas Gifts for Your Future Self: Testing the Web Platform ◆ 24 ways" href="https://24ways.org/2017/testing-the-web-platform/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://babeljs.io/blog/2017/12/27/nearing-the-7.0-release">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Nearing the 7.0 Release · Babel</amp-fit-text>
+        <p class="contents">Babel 7の変更予定について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Nearing the 7.0 Release · Babel" href="https://babeljs.io/blog/2017/12/27/nearing-the-7.0-release">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.jxck.io/entries/2017-12-30/resize-observer-and-element-query.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ResizeObserver による変更検知と Element Query | blog.jxck.io</amp-fit-text>
+        <p class="contents">ResizeObserverについての解説記事。
+要素のリサイズを監視するObserver API
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ResizeObserver による変更検知と Element Query | blog.jxck.io" href="https://blog.jxck.io/entries/2017-12-30/resize-observer-and-element-query.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://qiita.com/martinheidegger/items/5a5c40770ef6f47a92b2">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Profiling adventure - Qiita</amp-fit-text>
+        <p class="contents">Node.jsで<code>perf_hooks</code>を使ったプロファイル、Node.jsの<code>--prof</code>フラグを使ったより詳細なダンプデータのとり方。
+また<code>--inspect-brk</code>を使いChromeの開発者ツールを使ってのデバッグについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Profiling adventure - Qiita" href="https://qiita.com/martinheidegger/items/5a5c40770ef6f47a92b2">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://nhiroki.jp/2017/12/10/javascript-parallel-processing">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript のスレッド並列実行環境</amp-fit-text>
+        <p class="contents">JavaScriptにおけるスレッド関係の機構について。
+タスクキュー、Web Workerのモデル、スレッド間のメッセージング、データのコピーと移譲(Transferable)、SharedArrayBuffer、Agentの共有メモリモデル。 Worklet/Tasklet、Web Locks、Thread APIについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript のスレッド並列実行環境" href="http://nhiroki.jp/2017/12/10/javascript-parallel-processing">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.usejournal.com/getting-started-with-jest-and-puppeteer-7cf6c59a2cae">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Getting Started with Jest and Puppeteer – Noteworthy — The Journal Blog</amp-fit-text>
+        <p class="contents">JestとPuppeteerを使ったテストの設定や書き方について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Getting Started with Jest and Puppeteer – Noteworthy — The Journal Blog" href="https://blog.usejournal.com/getting-started-with-jest-and-puppeteer-7cf6c59a2cae">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/tbfleming/cib/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">tbfleming/cib: clang running in browser (wasm)</amp-fit-text>
+        <p class="contents"><code>clang</code>と<code>clang-format</code>をJavaScriptにコンパイルし、ブラウザ上で<code>clang</code>を使ってC++をWebAssemblyへコンパイルして実行するデモ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="tbfleming/cib: clang running in browser (wasm)" href="https://github.com/tbfleming/cib/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/anseki/leader-line">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">anseki/leader-line: Draw a leader line in your web page.</amp-fit-text>
+        <p class="contents">指定要素同士を矢印で繋いだり、指定要素への矢印とキャプションを描画できるライブラリ。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="anseki/leader-line: Draw a leader line in your web page." href="https://github.com/anseki/leader-line">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/whoeverest/wsrun">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">whoeverest/wsrun: Command runner for Yarn workspaces. Dependency aware.</amp-fit-text>
+        <p class="contents">Yarn workspace向けのツール。
+lerna runのようにそれぞれのパッケージに対してコマンドを実行できる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="whoeverest/wsrun: Command runner for Yarn workspaces. Dependency aware." href="https://github.com/whoeverest/wsrun">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/keithamus/sort-package-json">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">keithamus/sort-package-json: Sort an Object or package.json based on the well-known package.json keys</amp-fit-text>
+        <p class="contents"><code>package.json</code>のフィールドをソートするツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="keithamus/sort-package-json: Sort an Object or package.json based on the well-known package.json keys" href="https://github.com/keithamus/sort-package-json">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://nhiroki.jp/2017/12/10/javascript-parallel-processing">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript のスレッド並列実行環境</amp-fit-text>
+        <p class="contents">JavaScriptにおけるWebWorkerやSharedWorker、Workletなどのスレッドの仕組みについてや違いについて。
+また検討されているWeb Locks APIやThread APIについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript のスレッド並列実行環境" href="http://nhiroki.jp/2017/12/10/javascript-parallel-processing">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

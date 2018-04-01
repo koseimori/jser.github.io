@@ -1,0 +1,526 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2015-01-06のJS: ESLint 0.11.0、Browserifyとwebpack、TypeScriptの本 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2015/01/06/eslint0.11-browserify-webpack-typescript/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2015-01-06のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://eslint.org/blog/2014/12/eslint-0.11.0-released/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ESLint 0.11.0 released - ESLint</amp-fit-text>
+        <p class="contents">ESLint 0.11.0リリース。
+JavaScriptパーサがesprimaからEspreeへと変更された。
+またES5がデフォルトとなり、ES3のコードとしてLintしたい場合はオプションを変更する必要がある
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ESLint 0.11.0 released - ESLint" href="http://eslint.org/blog/2014/12/eslint-0.11.0-released/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/less/less.js/releases/tag/v2.2.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v2.2.0 · less/less.js</amp-fit-text>
+        <p class="contents">less 2.2.0リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v2.2.0 · less/less.js" href="https://github.com/less/less.js/releases/tag/v2.2.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/sass/libsass/releases/tag/3.1.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release Bulleit Bottle · sass/libsass</amp-fit-text>
+        <p class="contents">libsass 3.1.0リリース。
+<code>@debug</code>、<code>@error</code>等のデバッグ系の実装、<code>random()</code>等の関数の実装や修正など。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Bulleit Bottle · sass/libsass" href="https://github.com/sass/libsass/releases/tag/3.1.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.2ality.com/2015/01/es6-maps-sets.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ECMAScript 6: maps and sets</amp-fit-text>
+        <p class="contents">Map, WeakMap, Set, WeakSetの挙動についての解説。
+それぞれのAPIの解説、WeakMapを使ったプライベートデータ、spread operatorとあわせた使い方等について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ECMAScript 6: maps and sets" href="http://www.2ality.com/2015/01/es6-maps-sets.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://gist.github.com/substack/68f8d502be42d5cd4942">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">browserify for webpack users</amp-fit-text>
+        <p class="contents">Browserifyとwebpackのそれぞれの機能対応について。
+webpackは多くの機能が同梱されているため、その機能に対応するBrowserify pluginの紹介や設計思想の違い等について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="browserify for webpack users" href="https://gist.github.com/substack/68f8d502be42d5cd4942">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.wercker.com/2014/12/23/Testing-in-Node.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Advanced unit testing tools for Node.js</amp-fit-text>
+        <p class="contents">TAP形式とtapeを使ってのNodeのテストについて。
+proxyquireを使ってのStubなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Advanced unit testing tools for Node.js" href="http://blog.wercker.com/2014/12/23/Testing-in-Node.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.d-toybox.com/studio/weblog/show.php?mode=single;id=2015010100">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">KeyboardEvent.keyを利用する前に知っておくべき事 - WebStudio</amp-fit-text>
+        <p class="contents">DOM 3 KeyboardEventについて。
+KeyboardEvent.keyCodeの問題点やKeyboardEvent.keyは入力される文字となり直感的に分かるようになっている点について。
+また、KeyboardEvent.codeはキー自体を示し、クロスブラウザでのキーイベント対応について等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="KeyboardEvent.keyを利用する前に知っておくべき事 - WebStudio" href="http://www.d-toybox.com/studio/weblog/show.php?mode=single;id=2015010100">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.h13i32maru.jp/entry/2015/01/02/225457">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ES6 Generatorを使ってasync/awaitを実装するメモ - maru source</amp-fit-text>
+        <p class="contents">ES6 GeneratorとPromiseを使ってcoライクな実装をするまでをステップ・バイ・ステップで
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ES6 Generatorを使ってasync/awaitを実装するメモ - maru source" href="http://blog.h13i32maru.jp/entry/2015/01/02/225457">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.mgechev.com/2014/12/26/multi-user-video-conference-webrtc-angularjs-yeoman">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Multi-User Video Conference with WebRTC – Minko Gechev&amp;#x27;s blog</amp-fit-text>
+        <p class="contents">AngularJS+WebRTC+socket.ioを使ってビデオチャットを作るチュートリアル。
+Yeomanのジェネレータを使ってAngularJSのコードベースを生成してる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Multi-User Video Conference with WebRTC – Minko Gechev&amp;#x27;s blog" href="http://blog.mgechev.com/2014/12/26/multi-user-video-conference-webrtc-angularjs-yeoman">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.teamtreehouse.com/brief-introduction-svg">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">A Brief Introduction to SVG | Treehouse Blog</amp-fit-text>
+        <p class="contents">SVGとは何かというのが簡単にまとめられたスクリーンキャスト
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="A Brief Introduction to SVG | Treehouse Blog" href="http://blog.teamtreehouse.com/brief-introduction-svg">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.slideshare.net/domenicdenicola/the-jsdom">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The jsdom</amp-fit-text>
+        <p class="contents">jsdomの実装、将来についてのスライド。
+またWebIDLから実装に落としていくツールについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The jsdom" href="http://www.slideshare.net/domenicdenicola/the-jsdom">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://frontenddevweekly.curated.co/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Front-end Dev Weekly</amp-fit-text>
+        <p class="contents">フロントエンド開発のニュース、ツールについての週間のメールマガジン
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Front-end Dev Weekly" href="https://frontenddevweekly.curated.co/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://studiomohawk.us2.list-manage.com/subscribe?u=0c8604ec46b9f779a3f5b6a1c&amp;id=9af01549dd">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Frontend Weekly</amp-fit-text>
+        <p class="contents">フロントエンドに関連する記事、チュートリアル、動画/スライドを紹介する週間のメールマガジン
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Frontend Weekly" href="http://studiomohawk.us2.list-manage.com/subscribe?u=0c8604ec46b9f779a3f5b6a1c&amp;id=9af01549dd">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/fundamentals/performance/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Optimizing Performance — Web Fundamentals</amp-fit-text>
+        <p class="contents">Web Fundamentalsの一部が翻訳されてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Optimizing Performance — Web Fundamentals" href="https://developers.google.com/web/fundamentals/performance/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://benhowdle.im/deSVG/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">deSVG</amp-fit-text>
+        <p class="contents">SVGをインラインに展開してCSSでスタイリング出来るようにするライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="deSVG" href="http://benhowdle.im/deSVG/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mauriciosoares/core.js">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">mauriciosoares/core.js</amp-fit-text>
+        <p class="contents"><code>Core.register</code>で要素指定しその要素に関連する処理を書いたコンポーネントの作成、コンポーネント同士はlistenとnotifyのpub/subでやり取りする事で疎結合な構成を作るライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="mauriciosoares/core.js" href="https://github.com/mauriciosoares/core.js">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/fraction/set-timer">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">fraction/set-timer</amp-fit-text>
+        <p class="contents">setTimeout、setIntervalをラップしたTimer APIライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="fraction/set-timer" href="https://github.com/fraction/set-timer">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/STRML/JSXHint">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">STRML/JSXHint</amp-fit-text>
+        <p class="contents">JSXシンタックスを含んだファイルもLint出来るJSHintラッパツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="STRML/JSXHint" href="https://github.com/STRML/JSXHint">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://bearcatjs.org/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">bearcat</amp-fit-text>
+        <p class="contents">モジュール定義部分をbearcatの書き方にすることで、DI、非同期ロード、AOPに対応出来るライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="bearcat" href="http://bearcatjs.org/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://typescript.ninja/typescript-in-definitelyland/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">型の国のTypeScript</amp-fit-text>
+        <p class="contents">TypeScriptについての書籍
+無料で公開されている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="型の国のTypeScript" href="http://typescript.ninja/typescript-in-definitelyland/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.apress.com/9781484200384">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Pro Express.js</amp-fit-text>
+        <p class="contents">Express.jsについての書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Pro Express.js" href="http://www.apress.com/9781484200384">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://shop.oreilly.com/product/0636920033998.do">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">CSS Refactoring - O&amp;#x27;Reilly Media</amp-fit-text>
+        <p class="contents">2015年3月発売
+CSSのリファクタリング本
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CSS Refactoring - O&amp;#x27;Reilly Media" href="http://shop.oreilly.com/product/0636920033998.do">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://shop.oreilly.com/product/0636920030706.do">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Beautiful JavaScript - O&amp;#x27;Reilly Media</amp-fit-text>
+        <p class="contents">2015年3月発売
+JavaScript全体のエコシステムやどうやって問題にアプローチしていくのかなどについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Beautiful JavaScript - O&amp;#x27;Reilly Media" href="http://shop.oreilly.com/product/0636920030706.do">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

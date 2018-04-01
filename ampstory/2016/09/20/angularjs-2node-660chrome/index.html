@@ -1,0 +1,440 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2016-09-20のJS: AngularJS 2、Node 6.6.0、Chrome 54の開発者ツール - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2016/09/20/angularjs-2node-660chrome/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2016-09-20のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://angularjs.blogspot.com/2016/09/angular2-final.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Angular, version 2: proprioception-reinforcement</amp-fit-text>
+        <p class="contents">AngularJS 2リリース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Angular, version 2: proprioception-reinforcement" href="http://angularjs.blogspot.com/2016/09/angular2-final.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v6.6.0/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node v6.6.0 (Current) | Node.js</amp-fit-text>
+        <p class="contents">Node v6.6.0リリース。
+EventEmitterのmemory leak警告、
+PromiseのUnhandled rejectionの警告が、<code>process.on('warning', (warning) =&gt; { })</code>でキャッチできるように
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v6.6.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v6.6.0/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.jqueryui.com/2016/09/jquery-ui-1-12-1/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">jQuery UI 1.12.1 | jQuery UI Blog</amp-fit-text>
+        <p class="contents">jQuery UI 1.12.1リリース。
+新しいテーマの追加、<code>Checkboxradio　widget</code>の追加、<code>classes</code>オプションの追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jQuery UI 1.12.1 | jQuery UI Blog" href="http://blog.jqueryui.com/2016/09/jquery-ui-1-12-1/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/6937/release-notes-for-safari-technology-preview-release-13/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release Notes for Safari Technology Preview Release 13 | WebKit</amp-fit-text>
+        <p class="contents">Safari Technology Preview Release 13 リリース。
+<code>adoptedCallback</code>のサポート、<code>CSS.escape</code>の実装、クロスオリジンのチェック強化など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview Release 13 | WebKit" href="https://webkit.org/blog/6937/release-notes-for-safari-technology-preview-release-13/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.chromium.org/2016/09/chrome-54-beta-custom-elements-v1.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Chromium Blog: Chrome 54 Beta: Custom Elements V1, BroadcastChannel, and media platform improvements</amp-fit-text>
+        <p class="contents">Chrome 54βリリース。
+Custom Element v1、BroadcastChannelのサポート。
+Resource Timing API のtransferやencoded/decodedのサポート、<code>initTouchEvent</code>の削除など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chromium Blog: Chrome 54 Beta: Custom Elements V1, BroadcastChannel, and media platform improvements" href="http://blog.chromium.org/2016/09/chrome-54-beta-custom-elements-v1.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hacks.mozilla.org/2016/09/introducing-debugger-html/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Introducing debugger.html ★ Mozilla Hacks – the Web developer blog</amp-fit-text>
+        <p class="contents">debugger.htmlというソースパネルライクな新しいデバッガーについて。
+Firefox、Chrome、Node.jsに対応し、Remote Debug Protocolでデータをやり取りする。
+Firefoxの開発者ツールに統合される予定
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introducing debugger.html ★ Mozilla Hacks – the Web developer blog" href="https://hacks.mozilla.org/2016/09/introducing-debugger-html/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2016/09/devtools-digest">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">DevTools Digest, September 2016: Perf Roundup | Web Updates - Google Developers</amp-fit-text>
+        <p class="contents">Chrome 54での開発者ツールについて。
+CPU Throttling、TimelineにNetwork viewの表示、スクロールパフォーマンスのProfile、SourceパネルにTimelineのデータ表示など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="DevTools Digest, September 2016: Perf Roundup | Web Updates - Google Developers" href="https://developers.google.com/web/updates/2016/09/devtools-digest">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.stefankrause.net/wp/?p=316">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JS web frameworks benchmark – Round 4 | Stefan_Krause.blog()</amp-fit-text>
+        <p class="contents">AngularやReactなどのライブラリやフレームワークのベンチマーク比較
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JS web frameworks benchmark – Round 4 | Stefan_Krause.blog()" href="http://www.stefankrause.net/wp/?p=316">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.risingstack.com/node-js-developer-survey-results-2016/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">How Developers use Node.js - Survey Results | @RisingStack</amp-fit-text>
+        <p class="contents">Node.jsを使ったサーバサイド開発についてのアンケート結果
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="How Developers use Node.js - Survey Results | @RisingStack" href="http://blog.risingstack.com/node-js-developer-survey-results-2016/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.aria.ai/post/why-use-flow/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Why Use Flow? · Aria</amp-fit-text>
+        <p class="contents">FlowによるStatic typeについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Why Use Flow? · Aria" href="https://blog.aria.ai/post/why-use-flow/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/watch?v=3pKNRgResq0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The future of ES6 (Jafar Husain) - Full Stack Fest 2016 - YouTube</amp-fit-text>
+        <p class="contents">現在策定中の仕様も含めて非同期処理について。
+Promise、Async/Await。
+PullなAPIとしてGenerator(同期)、AsyncGenerator(Stage 2)。
+PushなAPIとしてObservable(Stage 1)について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The future of ES6 (Jafar Husain) - Full Stack Fest 2016 - YouTube" href="https://www.youtube.com/watch?v=3pKNRgResq0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/lautsevich/pol-zovatiel-skiie-svoistva-kak-osnova-arkhitiektury-css-fronttalks">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Пользовательские свойства как основа архитектуры CSS (FrontTalks) // Speaker Deck</amp-fit-text>
+        <p class="contents">CSS Custom Propertiesについてのスライド。
+Fallback、i18n、CSS Custom Propertiesとcalc、JavaScriptからの利用、@supportsについてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Пользовательские свойства как основа архитектуры CSS (FrontTalks) // Speaker Deck" href="https://speakerdeck.com/lautsevich/pol-zovatiel-skiie-svoistva-kak-osnova-arkhitiektury-css-fronttalks">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://egghead.io/playlists/testing-javascript-with-jest-a36c4074">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Testing JavaScript with Jest - Lesson Playlist @eggheadio</amp-fit-text>
+        <p class="contents">Jestを学ぶスクリーンキャスト
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Testing JavaScript with Jest - Lesson Playlist @eggheadio" href="https://egghead.io/playlists/testing-javascript-with-jest-a36c4074">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://zombiecodekill.com/2016/05/21/building-applications-with-react-and-redux-in-es6/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Building Applications with React and Redux in ES6 | Zombie Code Kill</amp-fit-text>
+        <p class="contents">ReactとReduxの入門講座
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Building Applications with React and Redux in ES6 | Zombie Code Kill" href="https://zombiecodekill.com/2016/05/21/building-applications-with-react-and-redux-in-es6/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://ljwatson.github.io/decks/2016/fromthefront/index.html#cover">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Developer&amp;#x27;s guide to accessibility mechanics — Developer&amp;#x27;s guide to accessibility mechanics</amp-fit-text>
+        <p class="contents">デフォルトの<code>&lt;a&gt;</code>はどういうサポートがあるからaccessibleであるかについてを独自のリンク実装で見ていく話。
+またデフォルトではaccessibleでないツールチップ、タブパネルなどをどう実装するか。
+実際にスクリーンリーダーの音を聞きながら確認できる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Developer&amp;#x27;s guide to accessibility mechanics — Developer&amp;#x27;s guide to accessibility mechanics" href="https://ljwatson.github.io/decks/2016/fromthefront/index.html#cover">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/avocode/combokeys">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">avocode/combokeys: Web browser keyboard shortcuts. CommonJS, NPM.</amp-fit-text>
+        <p class="contents">Mousetrapをforkしたキーボードショートカットライブラリ。
+リファクタリングとdocumentへのlistenがデフォルトではないように変更されている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="avocode/combokeys: Web browser keyboard shortcuts. CommonJS, NPM." href="https://github.com/avocode/combokeys">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/kentcdodds/match-sorter">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">kentcdodds/match-sorter: Simple, expected, and deterministic best-match sorting of an array in JavaScript</amp-fit-text>
+        <p class="contents">オブジェクトの配列から検索するライブラリ。
+指定したキーのみを対象にしたり、検索方法などを指定できる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="kentcdodds/match-sorter: Simple, expected, and deterministic best-match sorting of an array in JavaScript" href="https://github.com/kentcdodds/match-sorter">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://leanpub.com/buildpacman">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">BUILD PACMAN by Jeffrey Biles [Leanpub PDF/iPad/Kindle]</amp-fit-text>
+        <p class="contents">JavaScriptでパックマンを作る書籍。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="BUILD PACMAN by Jeffrey Biles [Leanpub PDF/iPad/Kindle]" href="https://leanpub.com/buildpacman">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

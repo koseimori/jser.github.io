@@ -1,0 +1,491 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2016-11-08のJS: sitespeed.io 4.0、webpack 2 beta入門、JavaScriptスタックチュートリアル - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2016/11/08/sitespeed.io-4.0-webpack-2-beta-javascript/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2016-11-08のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://www.sitespeed.io/sitespeed.io-4.0-is-released/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Welcome sitespeed.io 4.0</amp-fit-text>
+        <p class="contents">Sitespeed.io 4.0リリース。
+Dockerでgrafanaのダッシュボードを含んだセットアップが用意された、Pre/Postスクリプトでログインに対応、プラグイン、HTTP/2、HARファイルの対応改善、モバイル対応など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Welcome sitespeed.io 4.0" href="https://www.sitespeed.io/sitespeed.io-4.0-is-released/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/facebook/flow/releases/tag/v0.34.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v0.34.0 · facebook/flow</amp-fit-text>
+        <p class="contents">FlowType v0.34.0リリース。
+<code>empty</code> typeの追加、AsyncIterationの対応など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v0.34.0 · facebook/flow" href="https://github.com/facebook/flow/releases/tag/v0.34.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.nightly.mozilla.org/2016/11/01/async-await-support-in-firefox/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">async/await support in Firefox | Firefox Nightly News</amp-fit-text>
+        <p class="contents">Firefox Nightlyにasync/awaitが実装された。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="async/await support in Firefox | Firefox Nightly News" href="https://blog.nightly.mozilla.org/2016/11/01/async-await-support-in-firefox/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Getting Started with Webpack 2</amp-fit-text>
+        <p class="contents">webpack 2を使ったビルドの設定について。
+multiple entry、loader、bundleの分割などについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Getting Started with Webpack 2" href="https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://developer.telerik.com/featured/whats-new-whats-changed-bootstrap-4/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">What&amp;#x27;s New and What&amp;#x27;s Changed in Bootstrap 4 -Telerik Developer Network</amp-fit-text>
+        <p class="contents">Bootstrap 4αでの変更点について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="What&amp;#x27;s New and What&amp;#x27;s Changed in Bootstrap 4 -Telerik Developer Network" href="http://developer.telerik.com/featured/whats-new-whats-changed-bootstrap-4/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://d.sunnyone.org/2016/11/vuejs-1x-20.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Vue.js 1.x から 2.0 への移行のポイント | d.sunnyone.org</amp-fit-text>
+        <p class="contents">Vue 1.xから2.0へのマイグレーションについて。
+テンプレートが事前コンパイルされるようになったことでの違いや移行方法、気をつけるポイントについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Vue.js 1.x から 2.0 への移行のポイント | d.sunnyone.org" href="http://d.sunnyone.org/2016/11/vuejs-1x-20.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.mariusschulz.com/2016/10/31/typescript-2-0-read-only-properties">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">TypeScript 2.0: Read-Only Properties | Marius Schulz</amp-fit-text>
+        <p class="contents">TypeScript 2.0の<code>readonly</code>について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="TypeScript 2.0: Read-Only Properties | Marius Schulz" href="https://blog.mariusschulz.com/2016/10/31/typescript-2-0-read-only-properties">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hacks.mozilla.org/2016/11/cooperative-scheduling-with-requestidlecallback/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Cooperative Scheduling with requestIdleCallback ★ Mozilla Hacks – the Web developer blog</amp-fit-text>
+        <p class="contents">Firefox 52で実装される<code>requestIdleCallback</code>についての解説。
+<code>timeRemaining()</code>、<code>timeout</code>オプションやキャンセルした場合についてなど。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Cooperative Scheduling with requestIdleCallback ★ Mozilla Hacks – the Web developer blog" href="https://hacks.mozilla.org/2016/11/cooperative-scheduling-with-requestidlecallback/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2016/10/pointer-events">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Pointing the Way Forward  |  Web  |  Google Developers</amp-fit-text>
+        <p class="contents">Pointer eventsについて。
+PenやTouchなどのイベントモデルを抽象化したもの。
+<code>pointerType</code>でイベントの種類ごと扱う方法、<code>pointercancel</code>や<code>touch-action</code>について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Pointing the Way Forward  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2016/10/pointer-events">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://auth0.com/blog/building-universal-apps-with-nextjs/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Build a Universal JavaScript App with Next.js</amp-fit-text>
+        <p class="contents">Next.jsを使ったアプリケーションを作るチュートリアル。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Build a Universal JavaScript App with Next.js" href="https://auth0.com/blog/building-universal-apps-with-nextjs/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/takahashim/js-stack-from-scratch">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">takahashim/js-stack-from-scratch: Step-by-step tutorial to build a modern JavaScript stack from scratch</amp-fit-text>
+        <p class="contents">JavaScriptのエコシステムや著名なライブラリを使ったチュートリアルの翻訳。
+色々なツールをあわせ使うことを前提に書かれたガイド
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="takahashim/js-stack-from-scratch: Step-by-step tutorial to build a modern JavaScript stack from scratch" href="https://github.com/takahashim/js-stack-from-scratch">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jareware/css-architecture">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">jareware/css-architecture: 8 simple rules for a robust, scalable CSS architecture</amp-fit-text>
+        <p class="contents">8つのルールを元にしたCSSのアーキテクチャ。
+コンポーネントとCSSの関係についてが中心
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jareware/css-architecture: 8 simple rules for a robust, scalable CSS architecture" href="https://github.com/jareware/css-architecture">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/vhf/v8-bailout-reasons">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">vhf/v8-bailout-reasons: A list of Crankshaft bailout reasons with examples</amp-fit-text>
+        <p class="contents">V8のdeoptimizationがなぜ起きるのかについて&quot;Bailout reasons&quot;と共に理由を解説してるリポジトリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="vhf/v8-bailout-reasons: A list of Crankshaft bailout reasons with examples" href="https://github.com/vhf/v8-bailout-reasons">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://turbo.github.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">turbo.js - Easy GPGPU</amp-fit-text>
+        <p class="contents">GLSLを使って演算処理を行うライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="turbo.js - Easy GPGPU" href="https://turbo.github.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/tfennelly/browserify-tree">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">tfennelly/browserify-tree: Generate a Browserify bundle dependency tree for bundled modules</amp-fit-text>
+        <p class="contents">Browserifyでbundleしたファイルの依存ツリーを見ることができるツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="tfennelly/browserify-tree: Generate a Browserify bundle dependency tree for bundled modules" href="https://github.com/tfennelly/browserify-tree">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/naver/egjs">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">naver/egjs: Set of UI interactions, effects and utility components library using jQuery.</amp-fit-text>
+        <p class="contents">jQueryベースのUIインタラクション、エフェクトライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="naver/egjs: Set of UI interactions, effects and utility components library using jQuery." href="https://github.com/naver/egjs">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://grimoire.gl/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Grimoire.js</amp-fit-text>
+        <p class="contents">GOMLというHTMLライクなXMLシンタックスで記述して、WebGLを使った3D表現を行うライブラリ。
+<code>&lt;scene&gt;</code>や<code>&lt;camera&gt;</code>といったノードを組み合わせることで表現する。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Grimoire.js" href="https://grimoire.gl/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://shop.oreilly.com/product/0636920051695.do">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Securing Third-Party Code - O&amp;#x27;Reilly Media</amp-fit-text>
+        <p class="contents">2017年1月発売
+JavaScriptのサードパーティのコードを安全に使う方法についての書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Securing Third-Party Code - O&amp;#x27;Reilly Media" href="http://shop.oreilly.com/product/0636920051695.do">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://shop.oreilly.com/product/0636920046349.do">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Developing SPAs - O&amp;#x27;Reilly Media</amp-fit-text>
+        <p class="contents">2017年1月発売
+.NET開発者向けのSPA本
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Developing SPAs - O&amp;#x27;Reilly Media" href="http://shop.oreilly.com/product/0636920046349.do">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.com/Pro-Angular-2-ADAM-FREEMAN/dp/1484223063">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Pro Angular 2: ADAM FREEMAN: 9781484223062: Amazon.com: Books</amp-fit-text>
+        <p class="contents">2017年5月8日発売
+AngularJS 2についての書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Pro Angular 2: ADAM FREEMAN: 9781484223062: Amazon.com: Books" href="https://www.amazon.com/Pro-Angular-2-ADAM-FREEMAN/dp/1484223063">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.co.jp/Web%E3%83%87%E3%83%99%E3%83%AD%E3%83%83%E3%83%91%E3%83%BC%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AEReact%E9%96%8B%E7%99%BA%E5%85%A5%E9%96%80-JavaScript-UI-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%81%A8%E6%B4%BB%E7%94%A8-%E6%9F%B4%E7%94%B0/dp/4295000337">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">WebデベロッパーのためのReact開発入門 JavaScript UI ライブラリの基本と活用 | 柴田 文彦 |本 | 通販 | Amazon</amp-fit-text>
+        <p class="contents">2016年11月25日発売
+Reactの入門本
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WebデベロッパーのためのReact開発入門 JavaScript UI ライブラリの基本と活用 | 柴田 文彦 |本 | 通販 | Amazon" href="https://www.amazon.co.jp/Web%E3%83%87%E3%83%99%E3%83%AD%E3%83%83%E3%83%91%E3%83%BC%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AEReact%E9%96%8B%E7%99%BA%E5%85%A5%E9%96%80-JavaScript-UI-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%81%A8%E6%B4%BB%E7%94%A8-%E6%9F%B4%E7%94%B0/dp/4295000337">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

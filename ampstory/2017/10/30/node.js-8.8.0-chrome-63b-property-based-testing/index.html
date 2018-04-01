@@ -1,0 +1,553 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2017-10-30のJS: Node.js 8.8.0、Chrome 63β、Property-Based Testing - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2017/10/30/node.js-8.8.0-chrome-63b-property-based-testing/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2017-10-30のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://nodejs.org/en/blog/release/v8.8.0/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node v8.8.0 (Current) | Node.js</amp-fit-text>
+        <p class="contents">Node.js 8.8.0リリース。
+http2モジュールがデフォルトで有効化、モジュールのhookを処理を扱えるコマンドライン引数として<code>--loader</code>の追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v8.8.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v8.8.0/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://v8project.blogspot.com/2017/10/v8-release-63.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">V8 JavaScript Engine: V8 Release 6.3</amp-fit-text>
+        <p class="contents">V8 6.3リリース。
+パフォーマンス改善、<code>import()</code>、<code>Promise#finally</code>、Aynsc iteratorのサポートなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 JavaScript Engine: V8 Release 6.3" href="https://v8project.blogspot.com/2017/10/v8-release-63.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/avajs/ava/releases/tag/v0.23.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release 0.23.0 · avajs/ava</amp-fit-text>
+        <p class="contents">AVA 0.23.0リリース。
+<code>NODE_ENV=test</code>を設定するように、<code>snapshotLocation</code>を<code>pacakge.json</code>に書くことでsnapshotファイルの保存場所を指定できるように
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 0.23.0 · avajs/ava" href="https://github.com/avajs/ava/releases/tag/v0.23.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/fuse-box/fuse-box/releases/tag/v2.4.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release 2.4.0 · fuse-box/fuse-box</amp-fit-text>
+        <p class="contents">FuseBox 2.4.0 リリース。
+Quantum上でのUglify-esのサポート、Vue周りの対応改善、CLIをAPIとして使えるように
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 2.4.0 · fuse-box/fuse-box" href="https://github.com/fuse-box/fuse-box/releases/tag/v2.4.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.chromium.org/2017/10/chrome-63-beta-dynamic-module-imports_27.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Chromium Blog: Chrome 63 Beta: Dynamic module imports, async iterators and generators, Device Memory API, and permissions UI changes</amp-fit-text>
+        <p class="contents">Chrome 63 Betaリリース。
+Dynamic import、Async iterator、Device Memory API、Promise#finallyの実装、プッシュ通知などの許可ダイアログの変更など。
+また、EventTargetの仕様追従、印刷時に<code>beforeprint</code>と<code>afterprint</code>イベントを発火するように、<code>/deep/</code>の削除など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chromium Blog: Chrome 63 Beta: Dynamic module imports, async iterators and generators, Device Memory API, and permissions UI changes" href="https://blog.chromium.org/2017/10/chrome-63-beta-dynamic-module-imports_27.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hacks.mozilla.org/2017/10/saying-goodbye-to-firebug/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Saying Goodbye to Firebug ★ Mozilla Hacks – the Web developer blog</amp-fit-text>
+        <p class="contents">FirebugはFirefox57で開発は終了し、Firefoxの開発者ツールが代替となる。
+FirebugからFirefoxの開発者ツールへのマイグレーションガイドも公開されている。また、Firebugの歴史について。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Saying Goodbye to Firebug ★ Mozilla Hacks – the Web developer blog" href="https://hacks.mozilla.org/2017/10/saying-goodbye-to-firebug/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://tech.plaid.co.jp/js_multi_threading/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">MicrosoftのNapa.jsでJavaScriptをマルチスレッド化する | PLAID engineer blog</amp-fit-text>
+        <p class="contents">マルチプロセスのWorkerを扱うことができるnapajaについて。
+どのようなモチベーションや構造になっているかについて。
+Zoneというワーカーのまとめ役やデータのやり取りの方法についてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="MicrosoftのNapa.jsでJavaScriptをマルチスレッド化する | PLAID engineer blog" href="http://tech.plaid.co.jp/js_multi_threading/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://ayushgp.github.io/html-web-components-using-vanilla-js/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">HTML Web Component using Vanilla JavaScript – Ayush Gupta – Full Stack Web Developer</amp-fit-text>
+        <p class="contents">Web Components入門記事。
+<code>&lt;user-card /&gt;</code>というデータを取得して表示する要素を例にCustom Elementのライフサイクル、template要素、ShadowDOMについて紹介している
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="HTML Web Component using Vanilla JavaScript – Ayush Gupta – Full Stack Web Developer" href="http://ayushgp.github.io/html-web-components-using-vanilla-js/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.sitepen.com/blog/2017/10/26/state-of-modules-in-javascript/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">State of Modules in JavaScript - Blog | SitePen</amp-fit-text>
+        <p class="contents">ES moduleについての解説記事。
+import/exportやdynamic import、Node.jsやwebpackなどのbundlerでの扱いについてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="State of Modules in JavaScript - Blog | SitePen" href="https://www.sitepen.com/blog/2017/10/26/state-of-modules-in-javascript/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@WebReflection/unpopular-metrics-about-js-bundlers-a3c56ea5390d">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Unpopular Metrics about JS Bundlers – Andrea Giammarchi – Medium</amp-fit-text>
+        <p class="contents">小さなbundleツールである<code>asbundle</code>について。 rollupより機能的にも小さくシンプル。ES moduleをbundleするだけのような機能を持っている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Unpopular Metrics about JS Bundlers – Andrea Giammarchi – Medium" href="https://medium.com/@WebReflection/unpopular-metrics-about-js-bundlers-a3c56ea5390d">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://infrequently.org/2017/10/can-you-afford-it-real-world-web-performance-budgets/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Can You Afford It?: Real-world Web Performance Budgets – Infrequently Noted</amp-fit-text>
+        <p class="contents">初回ロードのTime-to-Interactive (TTI)が5秒以下、それ以降は2秒以下というPerformance Budgetsを元にそれを満たすための配分について。
+これ満たすための考え方や技術的な手法、補助するツールなどについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Can You Afford It?: Real-world Web Performance Budgets – Infrequently Noted" href="https://infrequently.org/2017/10/can-you-afford-it-real-world-web-performance-budgets/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.youtube.com/playlist?list=PLNYkxOF6rcICUD5nBfRdAR6Fveosnqa5m">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Chrome Dev Summit 2017 - YouTube</amp-fit-text>
+        <p class="contents">Chrome Dev Summit 2017の動画まとめ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chrome Dev Summit 2017 - YouTube" href="http://www.youtube.com/playlist?list=PLNYkxOF6rcICUD5nBfRdAR6Fveosnqa5m">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.slideshare.net/sakura_pr/vuejstype-script-81228009">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">とにかく楽してVue.jsでTypeScriptを使いたい</amp-fit-text>
+        <p class="contents">Vue 2.5のTypeScriptサポートについてのスライド。
+JavaScriptで書かれたVueアプリケーションをTypeScriptに移行する手順について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="とにかく楽してVue.jsでTypeScriptを使いたい" href="https://www.slideshare.net/sakura_pr/vuejstype-script-81228009">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://slides.com/jenyaterpil/redux-from-twitter-hype-to-production#/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Redux. From twitter hype to production by Jenya Terpil</amp-fit-text>
+        <p class="contents">Reduxの動作フローについてのスライド。
+アニメーション画像によってView-&gt;Action-&gt;Reducer-&gt;Stateの流れについてを可視化している。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Redux. From twitter hype to production by Jenya Terpil" href="http://slides.com/jenyaterpil/redux-from-twitter-hype-to-production#/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.slideshare.net/garbles/propertybased-testing-for-godly-tests">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Property-Based Testing for Godly Tests</amp-fit-text>
+        <p class="contents">Property-Based Testingについてのスライド。
+Example-Based Test、Fizz Test、
+Property-Based Testのカバーできる範囲の違いや特徴について。
+<code>testcheck</code>を使ったテストやFlowの型定義からの自動生成についてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Property-Based Testing for Godly Tests" href="https://www.slideshare.net/garbles/propertybased-testing-for-godly-tests">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/webpackmonitor/webpackmonitor">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">webpackmonitor/webpackmonitor: A tool for monitoring webpack optimization metrics through the development process</amp-fit-text>
+        <p class="contents">webpackのstats.json結果をビジュアライズしてくれるツール。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="webpackmonitor/webpackmonitor: A tool for monitoring webpack optimization metrics through the development process" href="https://github.com/webpackmonitor/webpackmonitor">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.monterail.com/state-of-vuejs-report">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">State of Vue.js Report · Monterail</amp-fit-text>
+        <p class="contents">Vueに関する80ページほどのレポート。Vue自体の状況、アンケートベースのレポート、利用してる企業のケーススタディなどについて書かれている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="State of Vue.js Report · Monterail" href="https://www.monterail.com/state-of-vuejs-report">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://dev-blog.apollodata.com/apollo-client-2-0-5c8d0affcec7">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Apollo Client 2.0 – Apollo GraphQL</amp-fit-text>
+        <p class="contents">Apollo Client 2.0について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Apollo Client 2.0 – Apollo GraphQL" href="https://dev-blog.apollodata.com/apollo-client-2-0-5c8d0affcec7">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/vitalets/websocket-as-promised">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">vitalets/websocket-as-promised: Promise-based API for WebSockets</amp-fit-text>
+        <p class="contents">PromiseベースのWebSocketライブラリ。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="vitalets/websocket-as-promised: Promise-based API for WebSockets" href="https://github.com/vitalets/websocket-as-promised">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/nicojs/node-install-local">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">nicojs/node-install-local: Installs npm/yarn packages locally without symlink. Exactly the same as your production installation, no compromises.</amp-fit-text>
+        <p class="contents">npm5やyarnはローカルのパッケージをsymlinkでインストールしてしまうため、symlinkに対応してないツールなどが動作しなくなる。
+通常のパッケージと同じようにディレクトリにインストールすることができるツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="nicojs/node-install-local: Installs npm/yarn packages locally without symlink. Exactly the same as your production installation, no compromises." href="https://github.com/nicojs/node-install-local">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/softvar/awesome-web-storage">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">softvar/awesome-web-storage: Everything you need to know about Client-side Storage.</amp-fit-text>
+        <p class="contents">Web Storageについてのまとめたドキュメント。
+cookie、localStorage、sessionStorageについての比較、関連ライブラリ、ツールなどについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="softvar/awesome-web-storage: Everything you need to know about Client-side Storage." href="https://github.com/softvar/awesome-web-storage">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/feimosi/frameworks-code-comparison">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">feimosi/frameworks-code-comparison: Code comparison of modern frameworks, based on React, Angular and Vue.js</amp-fit-text>
+        <p class="contents">Angular, React, Vueのコンポーネントで共通して行う処理の扱い方について比較したリポジトリ。
+それぞれのライブラリごとの短い解説とコードスニペットを紹介してる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="feimosi/frameworks-code-comparison: Code comparison of modern frameworks, based on React, Angular and Vue.js" href="https://github.com/feimosi/frameworks-code-comparison">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.com/Angular-Development-Typescript-Yakov-Fain/dp/1617295345">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Angular Development with Typescript: Yakov Fain, Anton Moiseev: 9781617295348: Amazon.com: Books</amp-fit-text>
+        <p class="contents">2018年5月30日発売
+AngularとTypeScriptについての本
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Angular Development with Typescript: Yakov Fain, Anton Moiseev: 9781617295348: Amazon.com: Books" href="https://www.amazon.com/Angular-Development-Typescript-Yakov-Fain/dp/1617295345">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.com/TypeScript-Cookbook-Shiv-Shankar-Kushwaha-ebook/dp/B01CR5GCXY">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Amazon.com: TypeScript 2.0 Cookbook eBook: Shiv Shankar Kushwaha: Kindle Store</amp-fit-text>
+        <p class="contents">2018年8月発売
+TypeScriptクックブック
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Amazon.com: TypeScript 2.0 Cookbook eBook: Shiv Shankar Kushwaha: Kindle Store" href="https://www.amazon.com/TypeScript-Cookbook-Shiv-Shankar-Kushwaha-ebook/dp/B01CR5GCXY">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

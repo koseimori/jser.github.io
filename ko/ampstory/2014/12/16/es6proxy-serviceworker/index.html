@@ -1,0 +1,585 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2014-12-16のJS: ES6 Proxy、Web Components、Service Worker - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2014/12/16/es6proxy-serviceworker/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2014-12-16のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/tmpvar/jsdom/blob/1.5.0/Changelog.md">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">jsdom/Changelog.md at 1.5.0 · tmpvar/jsdom</amp-fit-text>
+        <p class="contents">jsdom 1.5.0リリース。
+console APIの定義を追加
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jsdom/Changelog.md at 1.5.0 · tmpvar/jsdom" href="https://github.com/tmpvar/jsdom/blob/1.5.0/Changelog.md">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://emberjs.com/blog/2014/12/08/ember-1-9-0-released.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Ember.js - Ember.js 1.9.0 and 1.10 Beta Released</amp-fit-text>
+        <p class="contents">Ember.js 1.9.0と1.10βリリース。
+Ember 2.0に向けて1.9では非推奨となった機能があることについて書かれている。
+Handlebars 2.0へのアップデート、streams observationパターンの導入等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Ember.js - Ember.js 1.9.0 and 1.10 Beta Released" href="http://emberjs.com/blog/2014/12/08/ember-1-9-0-released.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mbostock/d3/releases/tag/v3.5.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release 3.5 “Mount Sharp” · mbostock/d3</amp-fit-text>
+        <p class="contents">D3.js 3.5リリース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 3.5 “Mount Sharp” · mbostock/d3" href="https://github.com/mbostock/d3/releases/tag/v3.5.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/sdesalas/trifleJS/releases/tag/v0.4">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release 0.4 · sdesalas/trifleJS</amp-fit-text>
+        <p class="contents">PhantomJSのIE版的なヘッドレスブラウザであるtrifleJS 0.4リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 0.4 · sdesalas/trifleJS" href="https://github.com/sdesalas/trifleJS/releases/tag/v0.4">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts#december_6_2014_draft_rev_29">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">harmony:specification_drafts [ES Wiki]</amp-fit-text>
+        <p class="contents">ECMAscript 6 Draft Rev 29リリース。
+<code>RegExp.prototype.flags</code>の追加、WeakMap/WeakSetから<code>clear</code>メソッドの削除、<code>String.prototype.contains</code>が<code>includes</code>にリネーム
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="harmony:specification_drafts [ES Wiki]" href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts#december_6_2014_draft_rev_29">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://apmblog.compuware.com/2014/12/11/dynatrace-ajax-edition-4-5-last-page-chapter-yet-story-continues/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Dynatrace AJAX Edition 4.5 is here</amp-fit-text>
+        <p class="contents">Dynatrace AJAX Edition 4.5リリース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Dynatrace AJAX Edition 4.5 is here" href="http://apmblog.compuware.com/2014/12/11/dynatrace-ajax-edition-4-5-last-page-chapter-yet-story-continues/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@addyosmani/javascript-application-architecture-on-the-road-to-2015-d8125811101b">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript Application Architecture On The Road To 2015 — Medium</amp-fit-text>
+        <p class="contents">2014年のJavaScript全体のアーキテクチャを振り返り今後どうなるかについての話。
+データバインディング、Immutable、Virtual DOM、Web Components、Component同士のメッセージング、ES6とBrowserify、オフラインファースト等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript Application Architecture On The Road To 2015 — Medium" href="https://medium.com/@addyosmani/javascript-application-architecture-on-the-road-to-2015-d8125811101b">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.oimou.com/javascript-advent-calendar-2014-6ri-mu-navigator-onlinemaniatukusu2589ed73/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">[JavaScript Advent Calendar 2014 No.6] navigator.onLine in Blink</amp-fit-text>
+        <p class="contents">navigator.onLineがどのように実装されているかをBlink/Chromeのソースコードから追っていく話。
+ブラウザのソースコードを見ていく方法について実例での参考になりそう
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="[JavaScript Advent Calendar 2014 No.6] navigator.onLine in Blink" href="http://blog.oimou.com/javascript-advent-calendar-2014-6ri-mu-navigator-onlinemaniatukusu2589ed73/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">How to Use npm as a Build Tool</amp-fit-text>
+        <p class="contents">npm run-scriptをビルドツールとして使う話
+クロスプラットフォーム向けにrmの代わりにrimrafモジュールを使ったり、タスクのグループ化やhookについて書かれている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="How to Use npm as a Build Tool" href="http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.2ality.com/2014/12/es6-proxies.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Meta programming with ECMAScript 6 proxies</amp-fit-text>
+        <p class="contents">ES6のProxyについて詳しい解説。
+メタプログラミングとは何か、Proxyはどのように動くのか、ユースケース、Proxyかどうかの判定方法、PropertyDescriptorとあわせた場合の挙動、Reflect APIについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Meta programming with ECMAScript 6 proxies" href="http://www.2ality.com/2014/12/es6-proxies.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.h2.dion.ne.jp/~defghi/snapsvg/snapsvg.xhtml">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Snap.svgの使い方まとめ</amp-fit-text>
+        <p class="contents">Snap.svgについての詳しい解説、チュートリアル。
+目的や基本的な使い方から応用、Raphaël.jsとの違いなどよくまとまってる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Snap.svgの使い方まとめ" href="http://www.h2.dion.ne.jp/~defghi/snapsvg/snapsvg.xhtml">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://2ndidea.com/svg/optimize-svg-with-svgo/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">SVGOを使ったSVGの軽量化方法（アニメーションさせるときの注意とか）｜2.IDEA</amp-fit-text>
+        <p class="contents">SVGの最適化を行うSVGOの使い方について。
+それぞれのプラグインについて解説されてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="SVGOを使ったSVGの軽量化方法（アニメーションさせるときの注意とか）｜2.IDEA" href="http://2ndidea.com/svg/optimize-svg-with-svgo/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://developer.telerik.com/featured/polyfilling-doesnt-difficult/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Polyfilling Doesn&amp;#x27;t Have to be Difficult -Telerik Developer Network</amp-fit-text>
+        <p class="contents">polyfillとはどういうものか、実際に<code>Number.isInteger()</code>や<code>placeholder</code>属性を実装しながら学ぶチュートリアル
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Polyfilling Doesn&amp;#x27;t Have to be Difficult -Telerik Developer Network" href="http://developer.telerik.com/featured/polyfilling-doesnt-difficult/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.h2.dion.ne.jp/~defghi/webc/webc.htm">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Web Componentsの基本的な使い方・まとめ</amp-fit-text>
+        <p class="contents">Web Componentsの構成要素、それぞれの機能について詳しく解説されてる。
+template要素、HTML Imports、Shadow DOM、Custom Elementsについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Web Componentsの基本的な使い方・まとめ" href="http://www.h2.dion.ne.jp/~defghi/webc/webc.htm">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://gihyo.jp/dev/serial/01/emberjs">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">実践入門 Ember.js：連載｜gihyo.jp … 技術評論社</amp-fit-text>
+        <p class="contents">Ember.jsについての連載
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="実践入門 Ember.js：連載｜gihyo.jp … 技術評論社" href="http://gihyo.jp/dev/serial/01/emberjs">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.kaoriya.net/blog/2014/12/13/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Ractive.js の紹介 — KaoriYa</amp-fit-text>
+        <p class="contents">簡単なTODOアプリを使ったRactive.jsの紹介。
+mustache拡張なテンプレートとイベント、データバインディングについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Ractive.js の紹介 — KaoriYa" href="http://www.kaoriya.net/blog/2014/12/13/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/kinu/items/2abd61b4390f9bbaffc9">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript - Chrome 40 で今すぐ ServiceWorker を試す - Qiita</amp-fit-text>
+        <p class="contents">Service Workerを使ったオフライン処理、スクリプトの登録、更新方法、FetchやCache APIについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript - Chrome 40 で今すぐ ServiceWorker を試す - Qiita" href="http://qiita.com/kinu/items/2abd61b4390f9bbaffc9">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://jakearchibald.com/2014/offline-cookbook/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The offline cookbook - JakeArchibald.com</amp-fit-text>
+        <p class="contents">Service Workerを使った典型的なパターンの紹介。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The offline cookbook - JakeArchibald.com" href="http://jakearchibald.com/2014/offline-cookbook/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.risingstack.com/on-third-party-javascript-in-production/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">On Third-Party JavaScript - In Production Case-Study</amp-fit-text>
+        <p class="contents">サードパーティJavaScriptのケーススタディから学べる事について。
+Mixpanel、Disqusからサイズやキャッシュ、どういう初期化経路を踏むかなどについて書かれている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="On Third-Party JavaScript - In Production Case-Study" href="http://blog.risingstack.com/on-third-party-javascript-in-production/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hacks.mozilla.org/2014/12/introducing-the-javascript-internationalization-api/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Introducing the JavaScript Internationalization API ✩ Mozilla Hacks – the Web developer blog</amp-fit-text>
+        <p class="contents">ECMA i18n APIの使い方について。
+元々localeCompareやtoLocaleStringといったものがあったがローカライズには不十分であり、その部分にECMA i18n APIを使える。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introducing the JavaScript Internationalization API ✩ Mozilla Hacks – the Web developer blog" href="https://hacks.mozilla.org/2014/12/introducing-the-javascript-internationalization-api/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://papaparse.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Papa Parse - Powerful CSV parser for Javascript</amp-fit-text>
+        <p class="contents">CSVパーサーライブラリ。
+CSVをJSONに変換、WebWorkerを使っての並列処理、ダウンロードしながらのパース等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Papa Parse - Powerful CSV parser for Javascript" href="http://papaparse.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/gcanti/uvdom">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">gcanti/uvdom</amp-fit-text>
+        <p class="contents">Virtual DOMを持っているライブラリ(React、virtual-dom等)向けに、それぞれ変換出来る抽象レイヤーの実装。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="gcanti/uvdom" href="https://github.com/gcanti/uvdom">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://github.hubspot.com/offline/docs/welcome/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Offline.js – Handle your users losing their internet connection like a pro</amp-fit-text>
+        <p class="contents">オフラインかどうかを検知して通知出来るライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Offline.js – Handle your users losing their internet connection like a pro" href="http://github.hubspot.com/offline/docs/welcome/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://mikemcl.github.io/decimal.js/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">decimal.js API</amp-fit-text>
+        <p class="contents">Decimalを扱うライブラリ。
+小数点同士の演算、丸め込みの挙動の指定等、フォーマットを指定しての出力等が出来る
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="decimal.js API" href="http://mikemcl.github.io/decimal.js/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.amazon.co.jp/dp/4798139807?tag=amazon0abac-22">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Amazon: TypeScript実践プログラミング (Programmer&amp;#x27;s SELECTION): スティーブ・フェントン, 鈴木 幸敏, 株式会社クイープ</amp-fit-text>
+        <p class="contents">2015年1月23日 発売
+Pro TypeScriptの翻訳本
+http://www.apress.com/9781430267911
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Amazon: TypeScript実践プログラミング (Programmer&amp;#x27;s SELECTION): スティーブ・フェントン, 鈴木 幸敏, 株式会社クイープ" href="http://www.amazon.co.jp/dp/4798139807?tag=amazon0abac-22">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://shop.oreilly.com/product/0636920030485.do">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">WebSocket - O&amp;#x27;Reilly Media</amp-fit-text>
+        <p class="contents">WebSocketについての書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WebSocket - O&amp;#x27;Reilly Media" href="http://shop.oreilly.com/product/0636920030485.do">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

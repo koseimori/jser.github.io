@@ -1,0 +1,475 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2014-08-04のJS: traceur-compiler入門、Eloquent JavaScript第二版 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2014/08/04/traceur-eloquentjavascript/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2014-08-04のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://www.scala-js.org/news/2014/07/30/announcing-scalajs-0.5.3/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Announcing Scala.js 0.5.3</amp-fit-text>
+        <p class="contents">Scala.js 0.5.3 リリース。
+パフォーマンスの改善
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing Scala.js 0.5.3" href="http://www.scala-js.org/news/2014/07/30/announcing-scalajs-0.5.3/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.nodejs.org/2014/07/31/v8-memory-corruption-stack-overflow/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">V8 Memory Corruption and Stack Overflow (fixed in Node v0.8.28 and v0.10.30)</amp-fit-text>
+        <p class="contents">Node 0.10.xと0.8.xのsecurity fix.
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 Memory Corruption and Stack Overflow (fixed in Node v0.8.28 and v0.10.30)" href="http://blog.nodejs.org/2014/07/31/v8-memory-corruption-stack-overflow/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://vuejs.org/2014/07/29/vue-next/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Vue.js 0.10.6, and what&amp;#x27;s next - vue.js</amp-fit-text>
+        <p class="contents">Vue.js 0.10.6リリース。
+Vue-nextについても書かれている。
+スクラッチで書きなおしている理由として、デザインの問題とコードの質の改善を上げてる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Vue.js 0.10.6, and what&amp;#x27;s next - vue.js" href="http://vuejs.org/2014/07/29/vue-next/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.brackets.io/2014/08/01/brackets-0-42-release-themes/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Brackets 0.42 Release (Themes!) – Brackets Blog</amp-fit-text>
+        <p class="contents">Brackets 0.42リリース。
+言語切替とテーマのサポート
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Brackets 0.42 Release (Themes!) – Brackets Blog" href="http://blog.brackets.io/2014/08/01/brackets-0-42-release-themes/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://ariya.ofilabs.com/2014/08/javascript-and-v8-turbofan.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript and V8 TurboFan</amp-fit-text>
+        <p class="contents">V8にlandedしたばかりの新しいOptimizing compilerであるTurboFanについての解説。
+Crankshaftの後任的なものでまだ開発が始まったばかり
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript and V8 TurboFan" href="http://ariya.ofilabs.com/2014/08/javascript-and-v8-turbofan.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.sitepoint.com/3-new-javascript-apis-may-want-follow/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">3 New JavaScript APIs You May Want to Follow</amp-fit-text>
+        <p class="contents">最近ドラフトがリリースされたWeb Alarms API, Presentation API, Standby APIについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="3 New JavaScript APIs You May Want to Follow" href="http://www.sitepoint.com/3-new-javascript-apis-may-want-follow/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hacks.mozilla.org/2014/07/event-listeners-popup-media-sidebar-cubic-bezier-editor-more-firefox-developer-tools-episode-33/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Event listeners popup, @media sidebar, Cubic bezier editor + more – Firefox Developer Tools Episode 33 ✩ Mozilla Hacks – the Web developer blog</amp-fit-text>
+        <p class="contents">Firefox33に入る開発者ツールの機能紹介。
+DOMから関連するイベントリスナーの表示、media queryのルール表示、イージングエディタ、コマンドの追加、min.jsをデバッグの対象外にする機能等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Event listeners popup, @media sidebar, Cubic bezier editor + more – Firefox Developer Tools Episode 33 ✩ Mozilla Hacks – the Web developer blog" href="https://hacks.mozilla.org/2014/07/event-listeners-popup-media-sidebar-cubic-bezier-editor-more-firefox-developer-tools-episode-33/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.2ality.com/2014/08/es6-today.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Using ECMAScript 6 today</amp-fit-text>
+        <p class="contents">今日から使えるES6について。
+ES6の機能のハイライトやライブラリやツール、Traceur等のTranspilerについて。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Using ECMAScript 6 today" href="http://www.2ality.com/2014/08/es6-today.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://yosuke-furukawa.hatenablog.com/entry/2014/07/31/093041">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">traceur-compiler 入門 - from scratch</amp-fit-text>
+        <p class="contents">traceur-compilerについての解説。
+ES6のコードをES5で実行出来るように変換(要runtime)、対応してるES6の構文、ExperimentalなES7の機能、メリット・デメリット、類似ツールについて。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="traceur-compiler 入門 - from scratch" href="http://yosuke-furukawa.hatenablog.com/entry/2014/07/31/093041">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.iwege.com/posts/atom-shell-vs-node-webkit.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Atom Shell vs Node-Webkit - 牛角堂</amp-fit-text>
+        <p class="contents">Atom Shellとnode-webkitの比較(中国語)
+entry-pointの違い、Chromiumアップデートの対応(ビルドシステム)、マルチコンテキスト、プロセス分離とコミュニケーション、パッケージ管理などについてよくまとまってる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Atom Shell vs Node-Webkit - 牛角堂" href="http://blog.iwege.com/posts/atom-shell-vs-node-webkit.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://mozintern.wordpress.com/2014/07/31/ecmascript-6-template-strings-2/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">EcmaScript 6 Template Strings | mozintern</amp-fit-text>
+        <p class="contents">Firefox34あたりで入るTemplate Stringsについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="EcmaScript 6 Template Strings | mozintern" href="http://mozintern.wordpress.com/2014/07/31/ecmascript-6-template-strings-2/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.slideshare.net/itokami1123/angularjs-34533999">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">AngularJS入門の巻</amp-fit-text>
+        <p class="contents">AngularJSのデータバインディング、モジュール、スコープとデータの反映についてのスライド。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="AngularJS入門の巻" href="http://www.slideshare.net/itokami1123/angularjs-34533999">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://csstriggers.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">CSS Triggers...</amp-fit-text>
+        <p class="contents">CSSプロパティ別にreflowやrepaintの発生、Compositeが可能かどうかが一覧出来る。
+Chrome DevToolsで調べた結果を元にしてる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CSS Triggers..." href="http://csstriggers.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Opinionated AngularJS styleguide for teams</amp-fit-text>
+        <p class="contents">AngularJSのコーディングスタイルガイド。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Opinionated AngularJS styleguide for teams" href="http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://commits.peter.sh/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Highlights from recent Chromium, Blink, Skia and v8 commits</amp-fit-text>
+        <p class="contents">Chromium,Blink,Skia,V8のコミットハイライトをまとめてるpeterさんのサイト。
+RSSも追加された
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Highlights from recent Chromium, Blink, Skia and v8 commits" href="http://commits.peter.sh/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/flerro/jop">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">flerro/jop</amp-fit-text>
+        <p class="contents">Node.js製のJSONを扱うコマンドラインツール。
+整形表示、データのフィルタリング、カウント、グループング、変換等。jq的なツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="flerro/jop" href="https://github.com/flerro/jop">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/facebook/immutable-js">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">facebook/immutable-js</amp-fit-text>
+        <p class="contents">immutableなVector、Map、Set等を提供してくれるライブラリ。
+それぞれ同名のオブジェクトと同じメソッドを提供してくれるのと、遅延シーケンスに対応してる。
+ES6で書かれていて、変換したものを配布している。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="facebook/immutable-js" href="https://github.com/facebook/immutable-js">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://mattandre.ws/2014/08/small-beautiful-dom-delegation/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">DOM Event Delegation without jQuery | Matt Andrews</amp-fit-text>
+        <p class="contents">依存がないシンプルなDOM delegateライブラリ。
+elementを取って、そこに対してイベントを設定出来る
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="DOM Event Delegation without jQuery | Matt Andrews" href="https://mattandre.ws/2014/08/small-beautiful-dom-delegation/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://eloquentjavascript.net/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Eloquent JavaScript</amp-fit-text>
+        <p class="contents">Eloquent JavaScript第二版がリリースされた
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Eloquent JavaScript" href="http://eloquentjavascript.net/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.amazon.co.jp/dp/479813712X?tag=amazon0abac-22">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Amazon: 入門Backbone.js (Programmer&amp;#x27;s SELECTION): James Sugrue</amp-fit-text>
+        <p class="contents">2014年8月29日発売
+&lt;a href='http://www.apress.com/9781430263340'&gt;http://www.apress.com/9781430263340&lt;/a&gt; の翻訳本
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Amazon: 入門Backbone.js (Programmer&amp;#x27;s SELECTION): James Sugrue" href="http://www.amazon.co.jp/dp/479813712X?tag=amazon0abac-22">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

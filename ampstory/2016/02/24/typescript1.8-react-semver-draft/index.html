@@ -1,0 +1,512 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2016-02-24のJS: TypeScript 1.8、Reactのバージョニング、Draft.js - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2016/02/24/typescript1.8-react-semver-draft/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2016-02-24のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://nodejs.org/en/blog/release/v5.7.0/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node v5.7.0 (Stable) | Node.js</amp-fit-text>
+        <p class="contents">Node.js 5.7.0リリース。
+<code>Buffer#fill</code>が<code>encoding</code>引数をサポート、<code>spawn()</code>が<code>shell</code>オプションをサポートするなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v5.7.0 (Stable) | Node.js" href="https://nodejs.org/en/blog/release/v5.7.0/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.jquery.com/2016/02/22/jquery-1-12-1-and-2-2-1-released/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">jQuery 1.12.1 and 2.2.1 Released | Official jQuery Blog</amp-fit-text>
+        <p class="contents">jQuery 1.12.1と2.2.1リリース
+<code>.position()</code>のバグを修正
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jQuery 1.12.1 and 2.2.1 Released | Official jQuery Blog" href="http://blog.jquery.com/2016/02/22/jquery-1-12-1-and-2-2-1-released/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blogs.msdn.microsoft.com/typescript/2016/02/22/announcing-typescript-1-8-2/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Announcing TypeScript 1.8 | TypeScript</amp-fit-text>
+        <p class="contents">TypeScript 1.8リリース。
+String Literal Typesのサポート、コントロールフローを解析しUnreachableなコードを検出するなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing TypeScript 1.8 | TypeScript" href="https://blogs.msdn.microsoft.com/typescript/2016/02/22/announcing-typescript-1-8-2/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://eslint.org/blog/2016/02/eslint-v2.2.0-released">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ESLint v2.2.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+        <p class="contents">ESLint 2.2.0リリース
+<code>// eslint-disable-next-line</code>のサポート
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ESLint v2.2.0 released - ESLint - Pluggable JavaScript linter" href="http://eslint.org/blog/2016/02/eslint-v2.2.0-released">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/tc39/ecma262/releases/tag/es2016-draft-20160215">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release ES2016 Draft 2016-02-15 · tc39/ecma262</amp-fit-text>
+        <p class="contents">ES2016 Draft 2016-02-15リリース。
+exponentiation operatorの追加、<code>Object.prototype</code>はimmutableに、Unicode 8.0へアップデート、<code>[[Enumerate]]</code>と<code>Reflect.enumerate</code>の削除など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release ES2016 Draft 2016-02-15 · tc39/ecma262" href="https://github.com/tc39/ecma262/releases/tag/es2016-draft-20160215">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jscs-dev/node-jscs/releases/tag/v2.10.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v2.10.0 · jscs-dev/node-jscs</amp-fit-text>
+        <p class="contents">JSCS 2.10.0リリース。
+<code>disallowSpacesInsideTemplateStringPlaceholders</code>、<code>requireImportsAlphabetized</code>の追加
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v2.10.0 · jscs-dev/node-jscs" href="https://github.com/jscs-dev/node-jscs/releases/tag/v2.10.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://facebook.github.io/react/blog/2016/02/19/new-versioning-scheme.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">New Versioning Scheme | React</amp-fit-text>
+        <p class="contents">Reactの次期バージョンは15.0.0としてリリース予定。
+Semver的なバージョニングに合わせるため。また、React ComponentにおけるReactの依存バージョンの書き方についても解説されてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="New Versioning Scheme | React" href="http://facebook.github.io/react/blog/2016/02/19/new-versioning-scheme.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/making-internets/why-using-chain-is-a-mistake-9bc1f80d51ba">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Why using &amp;#x60;_.chain&amp;#x60; is a mistake. — Making Internets — Medium</amp-fit-text>
+        <p class="contents">lodashの<code>_.chanin</code>は拡張が難しい、lodashに含めることでbundleサイズが大きいという問題がある。
+4.1から<code>lodash/fp</code>にfunctionalな関数が用意されており、同等の表現はより小さなbundleサイズで実現できるという話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Why using &amp;#x60;_.chain&amp;#x60; is a mistake. — Making Internets — Medium" href="https://medium.com/making-internets/why-using-chain-is-a-mistake-9bc1f80d51ba">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://googledevjp.blogspot.com/2016/02/draft-devtools.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">DevTools へのセキュリティ パネル導入について - Google Developers Japan</amp-fit-text>
+        <p class="contents">Chrome開発者ツールに&quot;Security&quot;パネルが追加された。
+TLS証明書、Mixed Contentなどを確認出来る
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="DevTools へのセキュリティ パネル導入について - Google Developers Japan" href="http://googledevjp.blogspot.com/2016/02/draft-devtools.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://gist.github.com/dakaraphi/6a87168db66fd8f032d2">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript Safe Navigation</amp-fit-text>
+        <p class="contents">ProxyとSymbolを使って <code>?.</code> 的なプロパティチェインを繋げるように書く実装。
+<code>safe(o).isNull.next.next.$</code> のように書ける
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript Safe Navigation" href="https://gist.github.com/dakaraphi/6a87168db66fd8f032d2">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://aerotwist.com/blog/the-hack-is-back/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Aerotwist - The Hack is Back!</amp-fit-text>
+        <p class="contents"><code>createImageBitmap</code>とWebWorkerを使うことで、画像のデコード処理を別スレッドで行う方法について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Aerotwist - The Hack is Back!" href="https://aerotwist.com/blog/the-hack-is-back/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/blog/2112-delivering-octicons-with-svg">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Delivering Octicons with SVG</amp-fit-text>
+        <p class="contents">GitHubはアイコンフォントをやめて、SVGを使ったアイコンを利用するように切り替えた。
+SVGをアイコンとして埋め込む方法、パフォーマンス、欠点や落とし穴について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Delivering Octicons with SVG" href="https://github.com/blog/2112-delivering-octicons-with-svg">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/momdo/talk/blob/master/webtalk_2016-02-20.pdf">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">talk/webtalk_2016-02-20.pdf at master · momdo/talk</amp-fit-text>
+        <p class="contents">ウェブの仕様は継続的に更新されているという話。
+WHATWG HTMLから見るW3C HTML、CSS SnapshotはCSS WGが安定していると認識したものを記述しているという話について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="talk/webtalk_2016-02-20.pdf at master · momdo/talk" href="https://github.com/momdo/talk/blob/master/webtalk_2016-02-20.pdf">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://googledevjp.blogspot.com/2016/02/google-udacity-javascript-promise.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Google と Udacity による JavaScript Promise オンライン コースのご紹介 - Google Developers Japan</amp-fit-text>
+        <p class="contents">Promiseに関するオンラインコース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Google と Udacity による JavaScript Promise オンライン コースのご紹介 - Google Developers Japan" href="http://googledevjp.blogspot.com/2016/02/google-udacity-javascript-promise.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.npmdiscover.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">npm Discover · see what everyone else is using</amp-fit-text>
+        <p class="contents">特定のnpmパッケージとよく一緒に使われているものを一覧表示してくれるサイト。
+「<code>react</code>と一緒に使われているツールやライブラリが何か」という事を検索できる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="npm Discover · see what everyone else is using" href="http://www.npmdiscover.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/trueadm/inferno">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">trueadm/inferno: An extremely fast, isomorphic JavaScript library for building modern user interfaces</amp-fit-text>
+        <p class="contents">ReactライクなVirtual DOMライブラリ。
+テンプレートからVirtual DOM Elementを作る段階で、静的/動的なのかを調べている。
+これにより実行時にはdiff/patchを行わないフラグメントを作ることでパフォーマンスの向上を狙っている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="trueadm/inferno: An extremely fast, isomorphic JavaScript library for building modern user interfaces" href="https://github.com/trueadm/inferno">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/ziyasal/scientist.js">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ziyasal/scientist.js: A JavaScript interpretation of the Ruby library Scientist, a library for carefully refactoring critical paths.</amp-fit-text>
+        <p class="contents">リファクタリングを補助するRubyライブラリであるscienceのJavaScript版
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ziyasal/scientist.js: A JavaScript interpretation of the Ruby library Scientist, a library for carefully refactoring critical paths." href="https://github.com/ziyasal/scientist.js">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/dthree/cash">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">dthree/cash: Cross-platform Linux commands in pure ES6</amp-fit-text>
+        <p class="contents">JavaScriptで書かれたLinuxコマンド集。
+クロスプラットフォームで動く<code>mv</code>や<code>cp</code>といった単体のコマンドとしてもインストールできる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="dthree/cash: Cross-platform Linux commands in pure ES6" href="https://github.com/dthree/cash">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://facebook.github.io/draft-js/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Draft.js | Rich Text Editor Framework for React</amp-fit-text>
+        <p class="contents">Facebook Notesやmessengerで使われてるReactのリッチエディタフレームワーク。
+immutable-jsを利用している
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Draft.js | Rich Text Editor Framework for React" href="https://facebook.github.io/draft-js/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/ProjectSeptemberInc/gl-react">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ProjectSeptemberInc/gl-react: OpenGL / WebGL bindings for React to implement complex effects over images and content, in the descriptive VDOM paradigm</amp-fit-text>
+        <p class="contents">OpenGL / WebGLを使ったReact Componentライブラリ。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ProjectSeptemberInc/gl-react: OpenGL / WebGL bindings for React to implement complex effects over images and content, in the descriptive VDOM paradigm" href="https://github.com/ProjectSeptemberInc/gl-react">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.happylearnjavascripttutorial.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Happy Learn JavaScript Tutorial</amp-fit-text>
+        <p class="contents">JavaScript楽しく学ぶ目的の書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Happy Learn JavaScript Tutorial" href="http://www.happylearnjavascripttutorial.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://leanpub.com/javascriptmancy-mastering-arcane-art-of-writing-awesome-javascript-for-csharp-developers">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript-mancy by Jaime González García [PDF/iPad/Kindle]</amp-fit-text>
+        <p class="contents">C#開発者向けJavaScript本
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript-mancy by Jaime González García [PDF/iPad/Kindle]" href="https://leanpub.com/javascriptmancy-mastering-arcane-art-of-writing-awesome-javascript-for-csharp-developers">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2015-11-16のJS: ECMAScript 2016(ES7)って何、WindowsでのNode.js入門 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2015/11/16/ecmascript-7-ms-node-js/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2015-11-16のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/babel/babel/blob/master/CHANGELOG.md#614">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">babel/CHANGELOG.md at master · babel/babel</amp-fit-text>
+        <p class="contents">Babel 6.1.4リリース。
+<code>babel/register</code>が<code>babel-register</code>というパッケージに分離、ブラウザ向けの<code>babel-browser</code>パッケージの追加、バグ修正など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="babel/CHANGELOG.md at master · babel/babel" href="https://github.com/babel/babel/blob/master/CHANGELOG.md#614">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.2ality.com/2015/11/tc39-process.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">What’s in ECMAScript 2016 (ES7)?</amp-fit-text>
+        <p class="contents">ECMAScriptに関する用語解説やES.nextにおける策定プロセスの解説。
+また“ES7 features”のような紹介は間違っているかもしれないという話や現状の策定状況についてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="What’s in ECMAScript 2016 (ES7)?" href="http://www.2ality.com/2015/11/tc39-process.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://casualjavascript.com/javascript/es6/haskell/native/implementation/2015/11/12/haskell-in-es6-part-1.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Haskell in ES6: Part 1- casual javascript</amp-fit-text>
+        <p class="contents">JavaScriptでHaskellの関数を実装していく話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Haskell in ES6: Part 1- casual javascript" href="http://casualjavascript.com/javascript/es6/haskell/native/implementation/2015/11/12/haskell-in-es6-part-1.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@bojzi/anatomy-of-a-large-angular-application-f098e5e36994">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Anatomy of a large Angular application — Medium</amp-fit-text>
+        <p class="contents">大きなAngularJSアプリの構造について。
+TypeScriptで書いてBrowserifyでビルド、コードの構造のレイヤー分けやデータフローなどの設計について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Anatomy of a large Angular application — Medium" href="https://medium.com/@bojzi/anatomy-of-a-large-angular-application-f098e5e36994">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Microsoft/nodejs-guidelines">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Microsoft/nodejs-guidelines</amp-fit-text>
+        <p class="contents">Windows向けのNode.js入門的なガイドライン
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Microsoft/nodejs-guidelines" href="https://github.com/Microsoft/nodejs-guidelines">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/KeitaMoromizato/js-study-front-test">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">KeitaMoromizato/js-study-front-test</amp-fit-text>
+        <p class="contents">Node.jsでのテストとKarmaなどを使ったブラウザテストの違いや仕組みについて。
+実際に試せるサンプルと共に紹介されているので分かりやすい。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="KeitaMoromizato/js-study-front-test" href="https://github.com/KeitaMoromizato/js-study-front-test">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.kinoma.com/2015/10/es6_support/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Kinoma now shipping JavaScript 6th Edition (ES6) support | Kinoma Notes - Blog of Kinoma team</amp-fit-text>
+        <p class="contents">KinomaのIoTデバイス向けのJavaScriptエンジンXS6がES6 Compat tableで96％の実装率を持っているという話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Kinoma now shipping JavaScript 6th Edition (ES6) support | Kinoma Notes - Blog of Kinoma team" href="http://blog.kinoma.com/2015/10/es6_support/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.slideshare.net/teppeis/es6-in-practice">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ES6 in Practice</amp-fit-text>
+        <p class="contents">ECMAScriptの策定プロセスやES6 Modulesについてのスライド。
+ES6 Modulesのメリット、現状の問題について書かれている。
+現状では構文とセマンティクスのみが決定している。
+読み込み方などについて、BabelなどのTranspilerは独自の解釈があることについての問題提起
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ES6 in Practice" href="http://www.slideshare.net/teppeis/es6-in-practice">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://docs.google.com/document/d/1BtfsTBVt7KZekH69dCXK0nOCn-W_kkv23lqjqTJ_sYY/edit#heading=h.rx77pwie3tnj">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">BlinkOn 5 One Pager - Google ドキュメント</amp-fit-text>
+        <p class="contents">BlinkOn 5のスライドと動画まとめ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="BlinkOn 5 One Pager - Google ドキュメント" href="https://docs.google.com/document/d/1BtfsTBVt7KZekH69dCXK0nOCn-W_kkv23lqjqTJ_sYY/edit#heading=h.rx77pwie3tnj">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://docs.google.com/presentation/d/1liKVavDBbcg0w8izutvVopCWKGu5M7EJPvst1JlpN_s/present#slide=id.p">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Porting C/C++ to Web - Google スライド</amp-fit-text>
+        <p class="contents">ブラウザのプラグイン(ネイティブコード)とJavaScriptについてのスライド。
+C/C++をemscriptenで変換する方法やasm.js、wasmについての解説。
+またそれぞれの現段階での実行速度について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Porting C/C++ to Web - Google スライド" href="https://docs.google.com/presentation/d/1liKVavDBbcg0w8izutvVopCWKGu5M7EJPvst1JlpN_s/present#slide=id.p">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://people.mozilla.org/~bbirtles/pres/201511-astro-animation/#/title-screen">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">鉄腕アニメーション</amp-fit-text>
+        <p class="contents">Web Animationについてのスライド
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="鉄腕アニメーション" href="http://people.mozilla.org/~bbirtles/pres/201511-astro-animation/#/title-screen">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://viewsourceconf.org/schedule/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Schedule - View Source</amp-fit-text>
+        <p class="contents">ViewSource Conferenceの動画とスライドまとめ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Schedule - View Source" href="https://viewsourceconf.org/schedule/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/watch?v=9U4_hlnaFEE">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Jeff Morrison - Flow or how I learned to stop worrying and typecheck my React code - YouTube</amp-fit-text>
+        <p class="contents">ReactとFlowTypeを使った開発についての動画
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Jeff Morrison - Flow or how I learned to stop worrying and typecheck my React code - YouTube" href="https://www.youtube.com/watch?v=9U4_hlnaFEE">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jaredreich/notie.js">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">jaredreich/notie.js</amp-fit-text>
+        <p class="contents">依存がないNotification UIライブラリ。
+画面上部に被さる形の通知UI
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jaredreich/notie.js" href="https://github.com/jaredreich/notie.js">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/danvk/source-map-explorer">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">danvk/source-map-explorer · GitHub</amp-fit-text>
+        <p class="contents">Source Mapから利用情報を可視化してファイルサイズやサイズの割合などを調べるツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="danvk/source-map-explorer · GitHub" href="https://github.com/danvk/source-map-explorer">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mweststrate/mobservable">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">mweststrate/mobservable</amp-fit-text>
+        <p class="contents">配列やオブジェクトなどをラップして変更監視が出来るライブラリ。
+getterとsetterを使い変更を監視するためプロパティの代入による変更を通知出来る
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="mweststrate/mobservable" href="https://github.com/mweststrate/mobservable">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://shop.oreilly.com/product/0636920043676.do">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Client-Side Data Storage - O&amp;#x27;Reilly Media</amp-fit-text>
+        <p class="contents">2016年1月発売
+クライアントサイドのストレージについての書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Client-Side Data Storage - O&amp;#x27;Reilly Media" href="http://shop.oreilly.com/product/0636920043676.do">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

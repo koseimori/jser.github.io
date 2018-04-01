@@ -1,0 +1,508 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2016-08-02のJS: Mocha 3.0、React 15.3.0、ECMAScript Proposalの進捗 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2016/08/01/mocha-30react-1530ecmascript-proposal/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2016-08-02のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://blog.durandal.io/2016/07/27/aurelia-1-0-is-here/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Aurelia 1.0 is Here!!!</amp-fit-text>
+        <p class="contents">Aurelia 1.0リリース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Aurelia 1.0 is Here!!!" href="http://blog.durandal.io/2016/07/27/aurelia-1-0-is-here/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://emberjs.com/blog/2016/07/25/ember-2-7-and-2-8-beta-released.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Ember.js - Ember.js 2.7 and 2.8 Beta Released</amp-fit-text>
+        <p class="contents">Ember.js 2.7と2.8 Betaリリース。
+Ember 2.8では<code>Ember.Engine</code>、<code>Array#includes</code>のpolyfill、<code>Ember.String.isHTMLSafe</code>などが追加される
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Ember.js - Ember.js 2.7 and 2.8 Beta Released" href="http://emberjs.com/blog/2016/07/25/ember-2-7-and-2-8-beta-released.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mochajs/mocha/blob/master/CHANGELOG.md#300--2016-07-31">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">mocha/CHANGELOG.md at master · mochajs/mocha</amp-fit-text>
+        <p class="contents">Mocha 3.0.0リリース。 非同期テスト時に<code>done()</code>の実装とPromiseを返すとエラーになる、<code>--grep</code>で正規表現リテラル的な文字列が指定可能に、<code>describe.only</code>の動作を改善など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="mocha/CHANGELOG.md at master · mochajs/mocha" href="https://github.com/mochajs/mocha/blob/master/CHANGELOG.md#300--2016-07-31">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://facebook.github.io/jest/blog/2016/07/27/jest-14.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Jest 14.0: React Tree Snapshot Testing · Jest</amp-fit-text>
+        <p class="contents">Jest 14.0リリース。
+React Componentのsnapshot testing、React Nativeサポートなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Jest 14.0: React Tree Snapshot Testing · Jest" href="http://facebook.github.io/jest/blog/2016/07/27/jest-14.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/facebook/react/releases/tag/v15.3.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v15.3.0 · facebook/react</amp-fit-text>
+        <p class="contents">React 15.3.0リリース。
+<code>React.PureComponent</code>の追加、propTypesのバリデーション改善、テスト向けの<code>react-test-renderer</code>を公開など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v15.3.0 · facebook/react" href="https://github.com/facebook/react/releases/tag/v15.3.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://eslint.org/blog/2016/07/eslint-v3.2.0-released">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ESLint v3.2.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+        <p class="contents">ESLint v3.2.0リリース。
+<code>no-tab</code>ルールの追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ESLint v3.2.0 released - ESLint - Pluggable JavaScript linter" href="http://eslint.org/blog/2016/07/eslint-v3.2.0-released">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/babel/babel/releases/tag/v6.12.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v6.12.0 · babel/babel</amp-fit-text>
+        <p class="contents">Babel v6.12.0リリース。
+<code>babel-plugin-transform-runtime</code>に<code>helpers: false</code>を追加。
+<code>babel-plugin-transform-es2015-modules-umd</code>に<code>exactGlobals</code>オプションを追加など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v6.12.0 · babel/babel" href="https://github.com/babel/babel/releases/tag/v6.12.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://ecmascript-daily.github.io/2016/07/30/last-minutes-proposals-changes">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ECMAScript proposal updates @ 2016-07 | ECMAScript Daily</amp-fit-text>
+        <p class="contents">2016年7月のミーティングのProposal statusの変化まとめ。
+Async/Awaitとtrailing function commasがstage 4になった
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ECMAScript proposal updates @ 2016-07 | ECMAScript Daily" href="https://ecmascript-daily.github.io/2016/07/30/last-minutes-proposals-changes">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.zachleat.com/web/comprehensive-webfonts/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">A Comprehensive Guide to Font Loading Strategies—zachleat.com</amp-fit-text>
+        <p class="contents">Font Loadingの手法やそれぞれの良いところ、良くないところについてのまとめ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="A Comprehensive Guide to Font Loading Strategies—zachleat.com" href="https://www.zachleat.com/web/comprehensive-webfonts/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://thereignn.ghost.io/a-step-by-step-tdd-approach-on-testing-react-components-using-enzyme/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">A step-by-step TDD approach on testing React components using Enzyme</amp-fit-text>
+        <p class="contents">Enzymeを使ったReact ComponentのTDDについて。
+React Componentをテスト駆動で開発するチュートリアル
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="A step-by-step TDD approach on testing React components using Enzyme" href="http://thereignn.ghost.io/a-step-by-step-tdd-approach-on-testing-react-components-using-enzyme/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.webreflection.co.uk/blog/2016/07/31/taming-raf-and-rick">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Taming requestAnimationFrame and requestIdleCallback</amp-fit-text>
+        <p class="contents">requestAnimationFrame/requestIdleCallbackなどのスケジューリングを行うライブラリについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Taming requestAnimationFrame and requestIdleCallback" href="https://www.webreflection.co.uk/blog/2016/07/31/taming-raf-and-rick">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/damele0n/items/71352757d0e6fdf5b184">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">CSS: will-change指定時の挙動, パフォーマンスへの影響と考察 - Qiita</amp-fit-text>
+        <p class="contents">CSSの<code>will-change</code>の効果の検証とブラウザの実装(ソースコード)について。
+指定した値毎の挙動についてなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CSS: will-change指定時の挙動, パフォーマンスへの影響と考察 - Qiita" href="http://qiita.com/damele0n/items/71352757d0e6fdf5b184">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://havelog.ayumusato.com/develop/javascript/e717-react_v15_upgrade.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React v0.14.x から v15.2.x へのアップデート録 ::ハブろぐ</amp-fit-text>
+        <p class="contents">React 0.14.xから15.2へのアップデートした際に出る警告と対処法について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React v0.14.x から v15.2.x へのアップデート録 ::ハブろぐ" href="https://havelog.ayumusato.com/develop/javascript/e717-react_v15_upgrade.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://teropa.info/blog/2016/07/28/javascript-systems-music.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript Systems Music</amp-fit-text>
+        <p class="contents">JavaScriptでSystems Music
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript Systems Music" href="http://teropa.info/blog/2016/07/28/javascript-systems-music.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://docs.google.com/presentation/d/16MpK3I2LZz47QdLg3uMNkCC3PqmM0znXF3-FdCEpics/mobilepresent#slide=id.p">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Vue.js @ Laracon - Google スライド</amp-fit-text>
+        <p class="contents">Vue.js 2.0のコンセプトについてのスライド
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Vue.js @ Laracon - Google スライド" href="https://docs.google.com/presentation/d/16MpK3I2LZz47QdLg3uMNkCC3PqmM0znXF3-FdCEpics/mobilepresent#slide=id.p">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/freddyrangel/async-redux-module-1">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Async Redux Module 1 // Speaker Deck</amp-fit-text>
+        <p class="contents">Reduxでの非同期についてのスライド集。
+そもそも動きから、middleware、thunk、sagaについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Async Redux Module 1 // Speaker Deck" href="https://speakerdeck.com/freddyrangel/async-redux-module-1">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://courses.angularclass.com/courses/modern-javascript">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Modern Javascript | AngularClass</amp-fit-text>
+        <p class="contents">JavaScriptについての動画講座。
+ES5の復習からES6の新しい機能、TypeScript、npm、webpackについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Modern Javascript | AngularClass" href="http://courses.angularclass.com/courses/modern-javascript">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://vuex.vuejs.org/ja/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">はじめに | 目次</amp-fit-text>
+        <p class="contents">Vuexについてのドキュメント訳
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="はじめに | 目次" href="http://vuex.vuejs.org/ja/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://codecept.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">CodeceptJS</amp-fit-text>
+        <p class="contents">PHPのCodeceptionインスパイアなJavaScriptテストフレームワーク。
+シナリオテストのハイレベルAPIで、Protractorなど他のtest runnerの中でも動かせる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CodeceptJS" href="http://codecept.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/rkendall/reffix">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">rkendall/reffix: The Reference Fixer for analyzing and fixing broken path references in files.</amp-fit-text>
+        <p class="contents">JavaScriptのrequireやimportのパス、HTMLのimgやscriptのパスのチェックと修正ができるツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="rkendall/reffix: The Reference Fixer for analyzing and fixing broken path references in files." href="https://github.com/rkendall/reffix">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mgol/check-dependencies">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">mgol/check-dependencies: Checks if currently installed npm dependencies are installed in the exact same versions that are specified in package.json</amp-fit-text>
+        <p class="contents">npmでインストールしているバージョンとpacakge.jsonのバージョンが同一なのかをチェックできるライブラリとCLI
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="mgol/check-dependencies: Checks if currently installed npm dependencies are installed in the exact same versions that are specified in package.json" href="https://github.com/mgol/check-dependencies">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.com/Front-End-Web-Development-Ranch-Guide/dp/0134433947">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Front-End Web Development: The Big Nerd Ranch Guide: Chris Aquino, Todd Gandee: 9780134433943: Amazon.com: Books</amp-fit-text>
+        <p class="contents">2016年8月11日発売
+Ember.jsを使ったウェブアプリについての書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Front-End Web Development: The Big Nerd Ranch Guide: Chris Aquino, Todd Gandee: 9780134433943: Amazon.com: Books" href="https://www.amazon.com/Front-End-Web-Development-Ranch-Guide/dp/0134433947">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

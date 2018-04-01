@@ -1,0 +1,648 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2014-09-01のJS: Underscore 1.7.0、Browserify入門、Gravit - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2014/09/01/underscore-browserify-Gravit/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2014-09-01のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://www.sencha.com/blog/announcing-sencha-touch-2-4/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Announcing Sencha Touch 2.4 | Blog | Sencha</amp-fit-text>
+        <p class="contents">Sencha Touch 2.4リリース。
+BlackBerry 10のサポート強化とtoast コンポーネントの追加
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing Sencha Touch 2.4 | Blog | Sencha" href="http://www.sencha.com/blog/announcing-sencha-touch-2-4/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://underscorejs.org/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Underscore.js</amp-fit-text>
+        <p class="contents">Underscore 1.7.0 リリース。
+Arrayのネイティブ関数では無く独自の実装を使うように変更し高速化、<code>_.iteratee</code>がカスタマイズ可能に、<code>_.before</code>のメソッド追加、<code>_.extend</code>の挙動がES6 <code>Object.assign</code>にあわせた形へ変更するなど。
+&quot;Sparse&quot; arrays、extend、union、template等破壊的な変更も多く含まれている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Underscore.js" href="http://underscorejs.org/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://coffeescript.org">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">CoffeeScript</amp-fit-text>
+        <p class="contents">CoffeeScript 1.8.0リリース。
+sourcemapのファイル名が.js.mapに変更、CLIの改善、<code>require(&quot;coffee-script/repl&quot;)</code>をrequire出来るように
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CoffeeScript" href="http://coffeescript.org">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts#august_24_2014_draft_rev_27">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">harmony:specification_drafts [ES Wiki]</amp-fit-text>
+        <p class="contents">ECMAScript 6 Draft Rev 27リリース。
+Array/generator comprehensionsの削除、Array.prototype.sortの実装依存についての明文化等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="harmony:specification_drafts [ES Wiki]" href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts#august_24_2014_draft_rev_27">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://news.dartlang.org/2014/08/dart-16-adds-support-for-deferred.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Dart News &amp;amp; Updates: Dart 1.6 adds support for deferred loading</amp-fit-text>
+        <p class="contents">Dart 1.6リリース。
+loadLibraryというDeferred loadingを提供するlibraryが入った。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Dart News &amp;amp; Updates: Dart 1.6 adds support for deferred loading" href="http://news.dartlang.org/2014/08/dart-16-adds-support-for-deferred.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://mootools.net/blog/2014/08/29/mootools-1-5-1-release/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">MooTools - 1.5.1 is out!</amp-fit-text>
+        <p class="contents">MooTools 1.5.1リリース。
+パッケージ周りの改善
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="MooTools - 1.5.1 is out!" href="http://mootools.net/blog/2014/08/29/mootools-1-5-1-release/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jscs-dev/node-jscs/releases/tag/v1.6.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release 1.6.0 · jscs-dev/node-jscs</amp-fit-text>
+        <p class="contents">コードスタイルチェックツールのjscs 1.6.0リリース。
+Googleプリセットの改善やバグ修正等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 1.6.0 · jscs-dev/node-jscs" href="https://github.com/jscs-dev/node-jscs/releases/tag/v1.6.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://emberjs.com/blog/2014/08/23/ember-1-7-0-released.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Ember.js - Ember 1.7.0 and 1.8 Beta Released</amp-fit-text>
+        <p class="contents">Ember 1.7.0 と 1.8 Betaリリース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Ember.js - Ember 1.7.0 and 1.8 Beta Released" href="http://emberjs.com/blog/2014/08/23/ember-1-7-0-released.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.chromium.org/2014/08/chrome-38-beta-new-primitives-for-next.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Chromium Blog: Chrome 38 Beta: New primitives for the next-generation web</amp-fit-text>
+        <p class="contents">Chrome 38βリリース。
+picture要素、Map/Set、<code>for...of</code>、Symbol、Math周りの追加。
+Network Information API、 Screen Orientation API、Encoding APIでXHRでバイナリを取得しながらデコードが出来るようになるなど。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chromium Blog: Chrome 38 Beta: New primitives for the next-generation web" href="http://blog.chromium.org/2014/08/chrome-38-beta-new-primitives-for-next.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.meteor.com/blog/2014/08/26/meteor-090-new-packaging-system">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Introducing Meteor 0.9.0 and the official Meteor packaging system</amp-fit-text>
+        <p class="contents">Meteor 0.9.0リリース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introducing Meteor 0.9.0 and the official Meteor packaging system" href="https://www.meteor.com/blog/2014/08/26/meteor-090-new-packaging-system">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://yahooeng.tumblr.com/post/96098168666/important-announcement-regarding-yui">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Important Announcement Regarding YUI | Yahoo Engineering</amp-fit-text>
+        <p class="contents">YUIは新規開発を終了し、今後はYahoo内部向けの修正に留めるとの事。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Important Announcement Regarding YUI | Yahoo Engineering" href="http://yahooeng.tumblr.com/post/96098168666/important-announcement-regarding-yui">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://mathiasbynens.be/notes/es6-unicode-regex">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Unicode-aware regular expressions in ES6 · Mathias Bynens</amp-fit-text>
+        <p class="contents">ES6で導入された正規表現の<code>u</code>フラグについての解説とES5でも使えるようにするtranspilerについて。
+正規表現でユニコード文字を正しく扱うためのフラグ。
+ES5やES6でのユニコード文字の扱いについては以下のスライドと動画で詳しく解説されてる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Unicode-aware regular expressions in ES6 · Mathias Bynens" href="https://mathiasbynens.be/notes/es6-unicode-regex">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://efcl.info/2014/08/28/mercury/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Virtual DOMを持つMV*ライブラリのmercuryについて | Web Scratch</amp-fit-text>
+        <p class="contents">mercuryのModel(State)、View(Virtual DOM)、Controller(Event)について。
+モジュールを組み合わせた構造と関数型プログラミング的なアプローチがベースのライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Virtual DOMを持つMV*ライブラリのmercuryについて | Web Scratch" href="http://efcl.info/2014/08/28/mercury/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.ponyfoo.com/2014/08/25/a-gentle-browserify-walkthrough">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">A Gentle Browserify Walkthrough - Pony Foo</amp-fit-text>
+        <p class="contents">Browserifyについての丁寧なチュートリアル。
+CommonJSとは何か、Browserifyの基本的な使い方、利点としてnpmのモジュールが使える点やCJS以外のモジュールをbrowserify-shimで扱う事について等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="A Gentle Browserify Walkthrough - Pony Foo" href="http://blog.ponyfoo.com/2014/08/25/a-gentle-browserify-walkthrough">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@tomchentw/why-webpack-is-awesome-9691044b6b8e">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Journey from browserify to webpack — Medium</amp-fit-text>
+        <p class="contents">webpackを使ったビルドについて。 Browserifyとの比較
+webpackがデフォルトでwebpack-dev-serverや差分コンパイル、bower統合、js以外を読み込めるloaderを持ってる点について書かれている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Journey from browserify to webpack — Medium" href="https://medium.com/@tomchentw/why-webpack-is-awesome-9691044b6b8e">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://rreverser.com/aster-ast-based-code-builder/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">aster</amp-fit-text>
+        <p class="contents">JavaScript ASTを処理するビルドツール。
+GruntやGulp等はtaskごとにパースと生成を繰り返すため非効率な部分がある。
+asterはASTに対して変換の処理をパイプラインで行うため無駄な処理が減る。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="aster" href="http://rreverser.com/aster-ast-based-code-builder/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://forwardjs.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Forward JS</amp-fit-text>
+        <p class="contents">Forward JSの動画が公開されている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Forward JS" href="http://forwardjs.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/addyosmani/javascript-memory-management-masterclass">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JavaScript Memory Management Masterclass // Speaker Deck</amp-fit-text>
+        <p class="contents">JavaScriptでのメモリリークとそもそも何故起きるのかについてのスライド。
+DOM leakやV8のメモリ管理の方法、世代別GC、DevToolsを使っての見つけ方、Performance Toolsの使い方についてなどかなり詳しく紹介されている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript Memory Management Masterclass // Speaker Deck" href="https://speakerdeck.com/addyosmani/javascript-memory-management-masterclass">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.casperbox.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Run CasperJS scripts online - CasperBox</amp-fit-text>
+        <p class="contents">CasperJSのコードをオンラインで書いて実行、REST APIとAPIを使って実行出来るライブラリを提供してるサービス
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Run CasperJS scripts online - CasperBox" href="https://www.casperbox.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mathiasbynens/regexpu">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">mathiasbynens/regexpu</amp-fit-text>
+        <p class="contents">ES6の正規表現の<code>u</code>フラグをES5でも使えるように変換するtranspiler
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="mathiasbynens/regexpu" href="https://github.com/mathiasbynens/regexpu">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://gionkunz.github.io/chartist-js/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Chartist - Simple responsive charts</amp-fit-text>
+        <p class="contents">SVGベースのレスポンシブなグラフライブラリ。
+media queriesを使って指定
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chartist - Simple responsive charts" href="http://gionkunz.github.io/chartist-js/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/twistdigital/es6-promisify">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">twistdigital/es6-promisify</amp-fit-text>
+        <p class="contents">nodeスタイルのコールバックを受け取る関数のPromiseラッパーを作るモジュール。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="twistdigital/es6-promisify" href="https://github.com/twistdigital/es6-promisify">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://gravit.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Gravit – unlock your design potential.</amp-fit-text>
+        <p class="contents">Illustratorライクなデザインツール。
+ドローやレイヤー等の機能を持ってる
+ブラウザで動かすこともできるオープンソースなアプリ。
+&lt;a href='https://github.com/quasado/gravit'&gt;https://github.com/quasado/gravit&lt;/a&gt;
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Gravit – unlock your design potential." href="http://gravit.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://leaningtech.com/cheerp/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Cheerp homepage</amp-fit-text>
+        <p class="contents">C++からJavaScriptのコードへのコードコンパイラ。
+LLVMを使用、DOM等扱うC++のラッパライブラリ的なのを持っている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Cheerp homepage" href="http://leaningtech.com/cheerp/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.oreilly.co.jp/books/9784873116921/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">O&amp;#x27;Reilly Japan - モダンWeb</amp-fit-text>
+        <p class="contents">2014年09月10日 発売
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="O&amp;#x27;Reilly Japan - モダンWeb" href="http://www.oreilly.co.jp/books/9784873116921/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://gihyo.jp/book/2014/978-4-7741-6711-4">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">大規模開発でも小規模開発でも使える TypeScript実践入門：書籍案内｜技術評論社</amp-fit-text>
+        <p class="contents">2014年9月12日発売
+TypeScriptについての書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="大規模開発でも小規模開発でも使える TypeScript実践入門：書籍案内｜技術評論社" href="http://gihyo.jp/book/2014/978-4-7741-6711-4">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.pragprog.com/book/csdart1/dart-1-for-everyone">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The Pragmatic Bookshelf | Dart 1 for Everyone</amp-fit-text>
+        <p class="contents">2014年10月10日発売
+Google Dartについての書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The Pragmatic Bookshelf | Dart 1 for Everyone" href="https://www.pragprog.com/book/csdart1/dart-1-for-everyone">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.manning.com/jongboom/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Manning: Firefox OS in Action</amp-fit-text>
+        <p class="contents">2015年春発売
+Firefox OS本
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Manning: Firefox OS in Action" href="http://www.manning.com/jongboom/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.amazon.co.jp/dp/4798135461?tag=amazon0abac-22">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Amazon: JavaScript逆引きレシピ jQuery対応</amp-fit-text>
+        <p class="contents">2014年8月29日発売
+電子版も同時リリース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Amazon: JavaScript逆引きレシピ jQuery対応" href="http://www.amazon.co.jp/dp/4798135461?tag=amazon0abac-22">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2014-12-30のJS: jsdom 2.0.0、6to5 2.0.0、HTMLBars - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2014/12/30/jsdom-6to5-htmlbars/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2014-12-30のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://blog.nodejs.org/2014/12/23/node-v0-10-35-stable/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node v0.10.35 (Stable)</amp-fit-text>
+        <p class="contents">Node v0.10.35リリース。
+http://d.hatena.ne.jp/jovi0608/20141222/1419265270 の修正が入った
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v0.10.35 (Stable)" href="http://blog.nodejs.org/2014/12/23/node-v0-10-35-stable/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://emberjs.com/blog/2014/12/23/ember-1-9-1-released.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Ember.js - Ember.js 1.9.1 Released</amp-fit-text>
+        <p class="contents">Ember.js 1.9.1 リリース。
+Handlebarsテンプレートはタグのエスケープは自動でやるが、属性値にjavascript:等を指定した場合にXSSとなる可能性があったため自動的にエスケープされるように変更された
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Ember.js - Ember.js 1.9.1 Released" href="http://emberjs.com/blog/2014/12/23/ember-1-9-1-released.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/eslint/espree/releases/tag/v1.5.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release v1.5.0 · eslint/espree</amp-fit-text>
+        <p class="contents">esprima forkのespree 1.5.0リリース。
+JSXのパースをサポート
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v1.5.0 · eslint/espree" href="https://github.com/eslint/espree/releases/tag/v1.5.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/tmpvar/jsdom/blob/2.0.0/Changelog.md">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">jsdom/Changelog.md at 2.0.0 · tmpvar/jsdom</amp-fit-text>
+        <p class="contents">jsdom 2.0.0リリース。
+リファクタリング、内部構造を大きく変えていくリリース。
+<code>levels</code>という概念を捨ててLiving Standard Modelに従うように。
+非標準なAPIを標準化されたものへ変更など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jsdom/Changelog.md at 2.0.0 · tmpvar/jsdom" href="https://github.com/tmpvar/jsdom/blob/2.0.0/Changelog.md">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/6to5/6to5/blob/master/CHANGELOG.md#200">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">6to5/CHANGELOG.md at master · 6to5/6to5</amp-fit-text>
+        <p class="contents">ES6のコードをES5に変換する6to5 2.0.0リリース。
+FlowTypeのサポート、polyfill等をcore-jsに変更、Performanceの改善、<code>6to5/register</code>に<code>cache</code>オプションの追加等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="6to5/CHANGELOG.md at master · 6to5/6to5" href="https://github.com/6to5/6to5/blob/master/CHANGELOG.md#200">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.brackets.io/2014/12/18/brackets-1-1-and-extract-for-brackets-0-6-now-available/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Brackets Blog - The Free, Open Source Code Editor for the Web</amp-fit-text>
+        <p class="contents">Brackets 1.1リリース。
+クロスブラウザのLive Previewを実験的にサポート。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Brackets Blog - The Free, Open Source Code Editor for the Web" href="http://blog.brackets.io/2014/12/18/brackets-1-1-and-extract-for-brackets-0-6-now-available/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://engineering.shapesecurity.com/2014/12/announcing-shift-javascript-ast.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Shape Security Labs: Announcing the Shift JavaScript AST Specification</amp-fit-text>
+        <p class="contents">SpiderMonkey ASTは内部表現として始まったので、ツールから扱いにくい部分やES6のサポートの問題がでてきた。 &quot;Shift&quot;プロジェクトではそのASTの仕様策定、パーサ、ジェネレータ、バリデータ、SpiderMonkey ASTからの変換ツール、Javaの実装などが公開されている。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Shape Security Labs: Announcing the Shift JavaScript AST Specification" href="http://engineering.shapesecurity.com/2014/12/announcing-shift-javascript-ast.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://calendar.perfplanet.com/2014/fast-forward-performance-the-future-looks-bright/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Performance Calendar » Fast-Forward Performance – The Future Looks Bright</amp-fit-text>
+        <p class="contents">パフォーマンス改善に役立つAPI、測定をするためのAPIのまとめ。
+ブラウザのサポート状態について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Performance Calendar » Fast-Forward Performance – The Future Looks Bright" href="http://calendar.perfplanet.com/2014/fast-forward-performance-the-future-looks-bright/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://colintoh.com/blog/htmlbars">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">HTMLBars - A Feature-by-Feature Review | colintoh.com</amp-fit-text>
+        <p class="contents">Emberが採用するHTMLBarsについて。
+以前のEmberのレンダリングはHandlebarsをそのまま使っていたため
+
+テンプレート -&gt; AST -&gt; HTML String -&gt; DOM
+
+というレンダリングのフローとなっていて遅かった。
+HTMLBarsはHandlebarsのテンプレート記法を使うのは同様だが、上記のフローを以下のように行える。
+
+テンプレート (HTMLBarsがコンパイル)-&gt; JavaScript関数(DOM API) -&gt; DOM
+
+このようなフローとなった理由や仕組みについて書かれている。
+内部的にはHTMLBars ASTというものがあるが、レンダリングのフローではコンパイル結果の関数を使うので、HTML Stringのパースがなくなる点が大きな違い。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="HTMLBars - A Feature-by-Feature Review | colintoh.com" href="http://colintoh.com/blog/htmlbars">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.2ality.com/2014/12/es6-symbols.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Symbols in ECMAScript 6</amp-fit-text>
+        <p class="contents">ES6のSymbolsについて。
+Symbolの使い方、const Symbol()でのユニーク値としての利用、WeakMapと合わせてのプライベート値、メタ値との利用、iframe、なぜ文字列じゃなくてSymbolなのかについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Symbols in ECMAScript 6" href="http://www.2ality.com/2014/12/es6-symbols.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://t32k.me/mol/log/style-class-conference/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Smashing Magazineのパフォーマンス改善ケースが凄まじい件 — MOL</amp-fit-text>
+        <p class="contents">Smashing Magazineのパフォーマンス改善について。
+Critical Rendering Pathの最適化、パフォーマンス改善の指標をSpeed Index &lt;= 1000としている点について等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Smashing Magazineのパフォーマンス改善ケースが凄まじい件 — MOL" href="http://t32k.me/mol/log/style-class-conference/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.risingstack.com/functional-reactive-programming-with-the-power-of-nodejs-streams/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Functional Reactive Programming with the Power of Node.js Streams</amp-fit-text>
+        <p class="contents">NodeのStreamとFRPの導入的な記事。
+リアクティブプログラミングはどのようなケースで有用なのか、FRPのライブラリとしてRxJSやBacon等が既にある。
+またNodeのStreamとの互換性を高めたHighland.jsというライブラリの紹介記事
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Functional Reactive Programming with the Power of Node.js Streams" href="http://blog.risingstack.com/functional-reactive-programming-with-the-power-of-nodejs-streams/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://aurelio.audero.it/blog/2014/10/18/state-web-notifications-api/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The state of the Web Notifications API - Aurelio De Rosa blog</amp-fit-text>
+        <p class="contents">Web Notifications APIの<code>events</code>周りの仕様がW3CとWHATWGで異なるが、それぞれのブラウザの実装はどうなっているかについて。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The state of the Web Notifications API - Aurelio De Rosa blog" href="http://aurelio.audero.it/blog/2014/10/18/state-web-notifications-api/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://rxaviers.github.io/javascript-globalization/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Javascript-globalization by rxaviers</amp-fit-text>
+        <p class="contents">ECMA i18n APIやFormatJS等の国際化ライブラリなどの特徴や機能比較のまとめ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Javascript-globalization by rxaviers" href="http://rxaviers.github.io/javascript-globalization/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.slideshare.net/VOYAGE_GROUP/flux-react">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Flux react現状確認会</amp-fit-text>
+        <p class="contents">FluxとReactについてのスライド。
+アーキテクチャ = オブザーバパターン、データの一方通行性、メリット・デメリット、ViewライブラリとしてReactを選んだ理由について。
+実際にFlux的にやっての本家との違いについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Flux react現状確認会" href="http://www.slideshare.net/VOYAGE_GROUP/flux-react">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://googledevjp.blogspot.com/2014/12/chrome.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Chrome 関連の動画に日本語字幕が付きました - Google Developer Japan Blog</amp-fit-text>
+        <p class="contents">I/O Bytes 2014のChrome関係の動画に日本語字幕がついた
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chrome 関連の動画に日本語字幕が付きました - Google Developer Japan Blog" href="http://googledevjp.blogspot.com/2014/12/chrome.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://jsverify.github.io/#jsverify">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">JSVerify — property based testing for JavaScript. Like QuickCheck.</amp-fit-text>
+        <p class="contents">QuickCheckを行うライブラリ。
+MochaやJasmineとの連携も用意されている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JSVerify — property based testing for JavaScript. Like QuickCheck." href="http://jsverify.github.io/#jsverify">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/azu/textlint">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">azu/textlint</amp-fit-text>
+        <p class="contents">テキストやMarkdownをLintするツール。
+ESLintのようにルールをJavaScriptで書いて拡張出来る。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="azu/textlint" href="https://github.com/azu/textlint">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mapbox/pbf">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">mapbox/pbf</amp-fit-text>
+        <p class="contents">ファイルサイズの小さいprotocol buffersの実装ライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="mapbox/pbf" href="https://github.com/mapbox/pbf">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://shop.oreilly.com/product/0636920035367.do">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Knockout.js - O&amp;#x27;Reilly Media</amp-fit-text>
+        <p class="contents">Knockout.jsについての書籍
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Knockout.js - O&amp;#x27;Reilly Media" href="http://shop.oreilly.com/product/0636920035367.do">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

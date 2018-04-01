@@ -1,0 +1,413 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2017-01-04のJS: PostCSS概要、Chrome開発者ツール、FuseBox - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2017/01/04/postcss-chrome-fusebox/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2017-01-04のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://www.bitovi.com/blog/stealjs-1.0-release">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">StealJS 1.0 Release</amp-fit-text>
+        <p class="contents">開発時は動的なモジュールローダで、本番時はsteal-toolsでのproduction buildでbundleできるStealJS 1.0リリース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="StealJS 1.0 Release" href="https://www.bitovi.com/blog/stealjs-1.0-release">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.jscrambler.com/optimizing-page-speeds-with-lazyloading/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Optimizing Page Speeds With Lazyloading | Jscrambler Blog</amp-fit-text>
+        <p class="contents">AngularのルーティングとコンポーネントのLazyLoadについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Optimizing Page Speeds With Lazyloading | Jscrambler Blog" href="https://blog.jscrambler.com/optimizing-page-speeds-with-lazyloading/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webpack.js.org/guides/lazy-load-react/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Lazy Loading - React</amp-fit-text>
+        <p class="contents">webpack2を使ったReactコンポーネントのLazyLoad方法についてのドキュメント
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Lazy Loading - React" href="https://webpack.js.org/guides/lazy-load-react/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://joe-re.hatenablog.com/entry/2016/12/29/204917">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">FlowtypeでFluxアーキテクチャに型付けをするという発表をした - Please Drive Faster</amp-fit-text>
+        <p class="contents">FlowTypeを使ってFluxアーキテクチャのパターンに型を付ける話
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="FlowtypeでFluxアーキテクチャに型付けをするという発表をした - Please Drive Faster" href="http://joe-re.hatenablog.com/entry/2016/12/29/204917">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.risingstack.com/node-js-interview-questions-and-answers-2017/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Node.js Interview Questions and Answers (2017 Edition) | @RisingStack</amp-fit-text>
+        <p class="contents">Node.jsにおいて良くある質問とその答えについてをQ&amp;A形式で書かれたもの。
+コーディングスタイル、よくある書き間違い、セキュリティ、タイミング攻撃などについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node.js Interview Questions and Answers (2017 Edition) | @RisingStack" href="http://blog.risingstack.com/node-js-interview-questions-and-answers-2017/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://tylermcginnis.com/react-interview-questions/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React Interview Questions</amp-fit-text>
+        <p class="contents">Reactについての疑問をQ&amp;A形式で書かれた記事。
+Classで書くコンポーネントと関数として書くコンポーネントの違い、<code>refs</code>とは何か、<code>key</code>属性はなぜ大事なのか、コンポーネントパターンなど
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React Interview Questions" href="https://tylermcginnis.com/react-interview-questions/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@matuzo/writing-html-with-accessibility-in-mind-a62026493412">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Writing HTML with accessibility in mind – Medium</amp-fit-text>
+        <p class="contents">HTMLとアクセシビリティ(スクリーンリーダー)について
+<code>lang</code>属性、<code>alt</code>属性、<code>&lt;buton&gt;</code>要素、landmarksについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Writing HTML with accessibility in mind – Medium" href="https://medium.com/@matuzo/writing-html-with-accessibility-in-mind-a62026493412">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://qiita.com/morishitter/items/4a04eb144abf49f41d7d">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">PostCSS まとめ - Qiita</amp-fit-text>
+        <p class="contents">PostCSSの概要と特徴、作られたモチベーションについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="PostCSS まとめ - Qiita" href="http://qiita.com/morishitter/items/4a04eb144abf49f41d7d">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.smashingmagazine.com/2016/12/front-end-performance-checklist-2017-pdf-pages/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Front-End Performance Checklist 2017 (PDF, Apple Pages) – Smashing Magazine</amp-fit-text>
+        <p class="contents">ウェブフロントエンドのパフォーマンスチェックリスト。
+ファイルサイズ、配信方法、レンダリング、モニタリング、テスト方法などについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Front-End Performance Checklist 2017 (PDF, Apple Pages) – Smashing Magazine" href="https://www.smashingmagazine.com/2016/12/front-end-performance-checklist-2017-pdf-pages/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.zsoltnagy.eu/the-reflect-api-of-es6/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The Reflect API of ES6 – Zsolt Nagy</amp-fit-text>
+        <p class="contents">Reflect APIについての紹介記事
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The Reflect API of ES6 – Zsolt Nagy" href="http://www.zsoltnagy.eu/the-reflect-api-of-es6/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://birtles.wordpress.com/2016/12/27/mozanime-in-2016/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">MozAnime in 2016 | Nothing new</amp-fit-text>
+        <p class="contents">2016年におけるFirefoxのWeb Animations対応やデバッグ機能の更新点について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="MozAnime in 2016 | Nothing new" href="https://birtles.wordpress.com/2016/12/27/mozanime-in-2016/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://umaar.github.io/devtools-optimise-your-web-development-workflow-2016/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Optimise your web development workflow 2016</amp-fit-text>
+        <p class="contents">Chromeの開発者ツールについてのスライド。
+主にCSS、アクセシビリティ、パフォーマンスについて豊富なGIFアニメーションと共に紹介している。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Optimise your web development workflow 2016" href="https://umaar.github.io/devtools-optimise-your-web-development-workflow-2016/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://fuse-box.org/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Fuse-Box bundler / API Reference</amp-fit-text>
+        <p class="contents">webpack/Browserifyのようなbundler、JSPM/SystemJSのようなloaderを機能を持つツール。
+変換結果の依存関係とキャッシュをすることで高速な変換ができる。
+プラグインで対応する変換を拡張できる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Fuse-Box bundler / API Reference" href="http://fuse-box.org/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Gothdo/range">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Gothdo/range: A JavaScript implementation of the Python&amp;#x27;s range() function.</amp-fit-text>
+        <p class="contents">Pythonの<code>range()</code>のJavaScript実装ライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Gothdo/range: A JavaScript implementation of the Python&amp;#x27;s range() function." href="https://github.com/Gothdo/range">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/andywer/leakage">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">andywer/leakage: 🐛 Memory leak testing for node.</amp-fit-text>
+        <p class="contents">Node.jsでメモリリークのテストを書くことができるライブラリ。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="andywer/leakage: 🐛 Memory leak testing for node." href="https://github.com/andywer/leakage">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/nolanlawson/marky">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">nolanlawson/marky: High-resolution JavaScript timer based on performance.mark() and measure()</amp-fit-text>
+        <p class="contents">User Timing API(<code>performance.mark</code>と<code>performance.measure</code>)ベースの処理時間計測ライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="nolanlawson/marky: High-resolution JavaScript timer based on performance.mark() and measure()" href="https://github.com/nolanlawson/marky">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/maniart/diffyjs">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">maniart/diffyjs: A dependency-free motion detection library for the browser</amp-fit-text>
+        <p class="contents"><code>MediaDevices.getUserMedia()</code>を使って取得した画像から、フレームごとの動きのdiffを取得できるライブラリ。
+motion detectionライブラリ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="maniart/diffyjs: A dependency-free motion detection library for the browser" href="https://github.com/maniart/diffyjs">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

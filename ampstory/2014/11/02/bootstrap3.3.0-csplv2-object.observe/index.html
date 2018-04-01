@@ -1,0 +1,538 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2014-11-02のJS: Bootstrap 3.3.0、CSP Lv.2、Object.observe()の未来 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2014/11/02/bootstrap3.3.0-csplv2-object.observe/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2014-11-02のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://www.w3.org/2014/10/html5-rec.html.ja">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">HTML5勧告–オープン・ウェブ・プラットフォームの重要なマイルストーンを達成</amp-fit-text>
+        <p class="contents">W3C HTML5が勧告された
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="HTML5勧告–オープン・ウェブ・プラットフォームの重要なマイルストーンを達成" href="http://www.w3.org/2014/10/html5-rec.html.ja">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.getbootstrap.com/2014/10/29/bootstrap-3-3-0-released/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Bootstrap 3.3.0 released · Bootstrap Blog</amp-fit-text>
+        <p class="contents">Bootstrap 3.3.0リリース。
+HTML lintをするbootlintや4.0についても書かれている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Bootstrap 3.3.0 released · Bootstrap Blog" href="http://blog.getbootstrap.com/2014/10/29/bootstrap-3-3-0-released/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.meteor.com/blog/2014/10/28/meteor-1-0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Meteor</amp-fit-text>
+        <p class="contents">Meteor 1.0リリース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Meteor" href="https://www.meteor.com/blog/2014/10/28/meteor-1-0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://facebook.github.io/react/blog/2014/10/28/react-v0.12.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">React v0.12 | React</amp-fit-text>
+        <p class="contents">React 0.12正式リリース。
+用語やAPIの変更、JSXの変更、ChromeのDevTools拡張の改善、ライセンスがApache 2から修正BSDに変更
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React v0.12 | React" href="http://facebook.github.io/react/blog/2014/10/28/react-v0.12.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jshint/jshint/releases/tag/2.5.7">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release JSHint 2.5.7 · jshint/jshint</amp-fit-text>
+        <p class="contents">JSHint 2.5.7リリース。
+ES6のSymbol、Reflect、System、ComputedPropertyNamesに対応等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release JSHint 2.5.7 · jshint/jshint" href="https://github.com/jshint/jshint/releases/tag/2.5.7">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://socket.io/blog/socket-io-1-2-0/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Socket.IO — Socket.IO 1.2.0</amp-fit-text>
+        <p class="contents">Socket.IO 1.2.0リリース。
+サーバとクライアントのバグ修正。
+IE10みたいにXDRとXHR Lv2がある場合はXHRを優先するように、PhantomJSのサポート等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Socket.IO — Socket.IO 1.2.0" href="http://socket.io/blog/socket-io-1-2-0/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/cjohansen/Sinon.JS/blob/v1.11.1/Changelog.txt">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Sinon.JS/Changelog.txt at v1.11.1 · cjohansen/Sinon.JS</amp-fit-text>
+        <p class="contents">Sinon.JS 1.11.0リリース。
+AMDサポートの改善、xhrに<code>.response</code>プロパティの追加、バグ修正
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Sinon.JS/Changelog.txt at v1.11.1 · cjohansen/Sinon.JS" href="https://github.com/cjohansen/Sinon.JS/blob/v1.11.1/Changelog.txt">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Reactive-Extensions/RxJS/releases/tag/v2.3.12">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release RxJS Version 2.3 · Reactive-Extensions/RxJS</amp-fit-text>
+        <p class="contents">RxJS 2.3リリース。
+Promise、Generatorのサポート。
+またES6以降のArray.fromといったメソッドと同等の機能の提供など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release RxJS Version 2.3 · Reactive-Extensions/RxJS" href="https://github.com/Reactive-Extensions/RxJS/releases/tag/v2.3.12">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/sass/libsass/releases/tag/3.0.1">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release Son of Dragon · sass/libsass</amp-fit-text>
+        <p class="contents">libsass 3.0.1リリース
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Son of Dragon · sass/libsass" href="https://github.com/sass/libsass/releases/tag/3.0.1">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.jetbrains.com/webstorm/2014/10/spy-js-2-0-new-level-of-javascript-tracing/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Spy-js 2.0: New level of JavaScript tracing | JetBrains WebStorm Blog</amp-fit-text>
+        <p class="contents">WebStorm 9のspy-js 2.0について。
+実行時の結果からコードの補完候補の追加、breakpointを貼らなくてもinspectionで変数の中身を見られるように、Node.jsサポート、トレース結果の共有、ES6サポート等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Spy-js 2.0: New level of JavaScript tracing | JetBrains WebStorm Blog" href="http://blog.jetbrains.com/webstorm/2014/10/spy-js-2-0-new-level-of-javascript-tracing/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://scotch.io/tutorials/javascript/getting-to-know-flux-the-react-js-architecture">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Getting To Know Flux, the React.js Architecture ♥ Scotch</amp-fit-text>
+        <p class="contents">Fluxアーキテクチャについて分かりやすく解説されてる。
+Storeが複数ある場合にwatiForを使って依存関係を解決する方法やどのようなフローで処理を行うかを図を用いて分かりやすくまとめている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Getting To Know Flux, the React.js Architecture ♥ Scotch" href="http://scotch.io/tutorials/javascript/getting-to-know-flux-the-react-js-architecture">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://js-next.hatenablog.com/entry/2014/11/01/034607">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Class構文が実装された - JS.next</amp-fit-text>
+        <p class="contents">ES6のclass syntaxについて。
+prototypeの糖衣構文であることや継承、匿名クラス、class内はstrict modeになる点について書かれている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Class構文が実装された - JS.next" href="http://js-next.hatenablog.com/entry/2014/11/01/034607">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://davidwalsh.name/for-and-against-let">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">For and against &amp;#x27;let&amp;#x27;</amp-fit-text>
+        <p class="contents">ES6の<code>let</code>について詳しく書かれてる。
+letによるブロックスコープや使い方について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="For and against &amp;#x27;let&amp;#x27;" href="http://davidwalsh.name/for-and-against-let">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hacks.mozilla.org/2014/10/introducing-simd-js/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Introducing SIMD.js ✩ Mozilla Hacks – the Web developer blog</amp-fit-text>
+        <p class="contents">SIMD APIについて。 SIMDとは何か、polyfillのSIMD.jsについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introducing SIMD.js ✩ Mozilla Hacks – the Web developer blog" href="https://hacks.mozilla.org/2014/10/introducing-simd-js/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.keithcirkel.co.uk/why-we-should-stop-using-grunt/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Why we should stop using Grunt &amp;amp; Gulp</amp-fit-text>
+        <p class="contents">GruntやGulpのようなTask Runnerではなく、npm runを使う話。
+Task Runnerはそれ自体のアップデート変更や別の選択肢が出てきた時のコストやpluginの挙動の不満等からnpm runで行う事について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Why we should stop using Grunt &amp;amp; Gulp" href="http://blog.keithcirkel.co.uk/why-we-should-stop-using-grunt/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.polymer-project.org/articles/spa.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Building single page apps using web components - Polymer</amp-fit-text>
+        <p class="contents">Web Componentsを使ってシングルページアプリケーションを作るチュートリアル
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Building single page apps using web components - Polymer" href="https://www.polymer-project.org/articles/spa.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@jico/the-fine-art-of-javascript-error-tracking-bc031f24c659">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">The Fine Art of JavaScript Error Tracking — Medium</amp-fit-text>
+        <p class="contents">JavaScriptのエラーレポートを集めるサービスについて。
+またエラーレポートはノイズにも成り得る。Sentryでは重要と思われるエラーを優先的表示やどのブラウザなのかについて表示してくれる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The Fine Art of JavaScript Error Tracking — Medium" href="https://medium.com/@jico/the-fine-art-of-javascript-error-tracking-bc031f24c659">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://ja.slideshare.net/yagihashoo/csp-lv2">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">CSP Lv.2の話</amp-fit-text>
+        <p class="contents">CSP Level2の機能についての紹介スライド。
+Path matching、Nonce source、Source hash、frame-ancestors、referrer、sandbox等についてよくまとまっている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CSP Lv.2の話" href="http://ja.slideshare.net/yagihashoo/csp-lv2">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://staltz.com/mvi-freaklies/#/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Model-View-Intent and the Virtual DOM</amp-fit-text>
+        <p class="contents">Reactiveなパターンについてのスライド。
+MVCが絡み合って複雑になるのをイベントバスを使ってどう解決するか。
+Model、View(Virtual DOM)、Intentでのアーキテクチャについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Model-View-Intent and the Virtual DOM" href="http://staltz.com/mvi-freaklies/#/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://markdalgleish.github.io/presentation-a-state-of-change-object-observe/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">A State of Change — On the future of Object.observe</amp-fit-text>
+        <p class="contents">Object.observeについてのスライド。
+Object.observeはオブジェクトの変更を監視できるが、Imuutabilityとは逆の事になってしまう。
+Immutableなしくみを提供するmori等のライブラリや同様にDOMでもStatelessなDOMを提供するReactやVirtual DOMがある。
+現在のシンプルなバインディングはMutableデータをStateful DOMへ結びつける。
+未来のレンダリングはImmutableデータをStateless DOMにする?
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="A State of Change — On the future of Object.observe" href="https://markdalgleish.github.io/presentation-a-state-of-change-object-observe/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://people.mozilla.org/~bbirtles/pres/html5j-2014/#/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ブラウザーに優しくて、アニメーションを滑らかに</amp-fit-text>
+        <p class="contents">Web Animationについてのスライド。
+どのようなフローでスタイルが決定され、レンダリングが行われているか。
+またどうすれば、レンダリングやレイアウトのコストを減らせるかについて等の最適化について。
+レイヤーや<code>will-change</code>などについても触れている
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ブラウザーに優しくて、アニメーションを滑らかに" href="http://people.mozilla.org/~bbirtles/pres/html5j-2014/#/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jwerle/w625">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">jwerle/w625</amp-fit-text>
+        <p class="contents">6to5を使ってES6で書けるREPLの実装。
+特定のウェブサイトに繋いで、コンソール的に使うことも出来る
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jwerle/w625" href="https://github.com/jwerle/w625">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Zolmeister/promiz">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Zolmeister/promiz</amp-fit-text>
+        <p class="contents">ES6 Promisesのpolyfill。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Zolmeister/promiz" href="https://github.com/Zolmeister/promiz">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

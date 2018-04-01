@@ -1,0 +1,566 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2015-01-28のJS: Vivaldi、lodash 3.0.0、JavaScriptテスト概要 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2015/01/28/vivaldi-lodash3-js-tests/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        p.contents {
+            overflow:hidden;    
+        }
+        
+        q {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .cover-img{
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title{
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2015-01-28のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://vivaldi.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Vivaldi - A new browser for our friends</amp-fit-text>
+        <p class="contents">元Opera CEOが始めたブラウザ。
+Chromium(Blink)をベースにしていて、UIにReact等ウェブの技術を使用している。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Vivaldi - A new browser for our friends" href="https://vivaldi.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.chromium.org/2015/01/chrome-41-beta-new-es6-features-and.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Chromium Blog: Chrome 41 Beta: New ES6 Features and Improved DevTools for Service Workers and Web Animations</amp-fit-text>
+        <p class="contents">Chrome 41βリリース。
+ES6 Template Literals、Web Animationsのデバッグ機能、image-rendering: pixelatedのサポート等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chromium Blog: Chrome 41 Beta: New ES6 Features and Improved DevTools for Service Workers and Web Animations" href="http://blog.chromium.org/2015/01/chrome-41-beta-new-es6-features-and.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/groupon-testium/testium/releases/tag/v2.5.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release 2.5.0 · groupon-testium/testium</amp-fit-text>
+        <p class="contents">Integration Testフレームワークのtestium 2.5.0リリース。
+日本語などの入力ができない問題の修正やエラー表示の改善、<code>Element.prototype.getElement</code>の実装など
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 2.5.0 · groupon-testium/testium" href="https://github.com/groupon-testium/testium/releases/tag/v2.5.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/lodash/lodash/releases/tag/3.0.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release 3.0.0 · lodash/lodash</amp-fit-text>
+        <p class="contents">lodash v3.0.0リリース。
+String関係のメソッドの追加、関数型スタイルで使いやすいメソッドの追加、個々のモジュールとして入れた時の依存関係をシンプルに、パフォーマンスの改善、lazy chainingの導入等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 3.0.0 · lodash/lodash" href="https://github.com/lodash/lodash/releases/tag/3.0.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jshint/jshint/releases/tag/2.6.0">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Release JSHint 2.6.0 · jshint/jshint</amp-fit-text>
+        <p class="contents">JSHint 2.6.0リリース。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release JSHint 2.6.0 · jshint/jshint" href="https://github.com/jshint/jshint/releases/tag/2.6.0">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://eslint.org/blog/2015/01/eslint-0.13.0-released/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ESLint 0.13.0 released - ESLint</amp-fit-text>
+        <p class="contents">ESLint 0.13.0リリース。
+Template strings、デフォルトパラメータ等のES6サポート改善、ブロックスコープの挙動を修正等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ESLint 0.13.0 released - ESLint" href="http://eslint.org/blog/2015/01/eslint-0.13.0-released/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://efcl.info/2015/01/24/testium-e2e-refactoring/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">テストできないコードをE2Eテストを使ってリファクタリングしよう | Web Scratch</amp-fit-text>
+        <p class="contents">E2EテストフレームワークのTestiumの紹介とリファクタリングについて。
+Mocha+Testium+power-assertでユニットテストと同じようにE2Eテストを書くための設定やサンプル
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="テストできないコードをE2Eテストを使ってリファクタリングしよう | Web Scratch" href="http://efcl.info/2015/01/24/testium-e2e-refactoring/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.gospodarets.com/fetch_in_action">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Fetch API in action</amp-fit-text>
+        <p class="contents">Fetch APIについての紹介。
+レスポンスのステータスコード、レスポンスのJSONパース、タイムアウトの問題、使い方、polyfillについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Fetch API in action" href="http://blog.gospodarets.com/fetch_in_action">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.2ality.com/2015/01/es6-destructuring.html">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Destructuring and parameter handling in ECMAScript 6</amp-fit-text>
+        <p class="contents">ES6のDestructuring(分割代入、構造化代入)と引数時の扱いについて。
+またSpread operatorを使った値の展開についても書かれてる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Destructuring and parameter handling in ECMAScript 6" href="http://www.2ality.com/2015/01/es6-destructuring.html">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://davidwalsh.name/fix-javascript-errors">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Strange JavaScript Errors and How to Fix Them</amp-fit-text>
+        <p class="contents">JavaScriptのエラーメッセージとそれがどのようなときに起きてるエラーなのか、また修正方法について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Strange JavaScript Errors and How to Fix Them" href="http://davidwalsh.name/fix-javascript-errors">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/addyosmani/es6-equivalents-in-es5">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">addyosmani/es6-equivalents-in-es5</amp-fit-text>
+        <p class="contents">ES6で書かれたものとES5で同等の事を行うコードを並べて、ES6の機能について紹介
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="addyosmani/es6-equivalents-in-es5" href="https://github.com/addyosmani/es6-equivalents-in-es5">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://updates.html5rocks.com/2015/01/ES6-Template-Strings">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Getting Literal With ES6 Template Strings</amp-fit-text>
+        <p class="contents">ES6 Template Stringsについての解説
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Getting Literal With ES6 Template Strings" href="http://updates.html5rocks.com/2015/01/ES6-Template-Strings">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://hyper-text.org/archives/2015/01/full_time_ssl_website_quick_start.shtml">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">5分でわかる正しい Web サイト常時 SSL 化のための基礎知識 | WWW WATCH</amp-fit-text>
+        <p class="contents">SSLの効果 - メリットとデメリット、SSL証明書の種類と取得方法、外部リソースの読み込みとMixed Content、HTTPSに接続を強制する方法 - HSTS、リダイレクト、CookieのSecure属性などについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="5分でわかる正しい Web サイト常時 SSL 化のための基礎知識 | WWW WATCH" href="http://hyper-text.org/archives/2015/01/full_time_ssl_website_quick_start.shtml">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.geedew.com/2014/12/26/es6-module-gotchas/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">ES6 Module Gotchas | geedew</amp-fit-text>
+        <p class="contents">ES6 modulesのアンチパターンについて。
+静的なものを扱うデザインであるという話、オブジェクトをexportした場合の問題、副作用を目的としたモジュールの読込方法、export defaultを出来るだけ使うべき等
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ES6 Module Gotchas | geedew" href="http://www.geedew.com/2014/12/26/es6-module-gotchas/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.valhead.com/2015/01/06/quick-tip-chrome-animation-controls/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">New animation controls in Chrome Canary | Val Head - Designer</amp-fit-text>
+        <p class="contents">ChromeのCSS animationのデバッグ機能についての紹介
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="New animation controls in Chrome Canary | Val Head - Designer" href="http://www.valhead.com/2015/01/06/quick-tip-chrome-animation-controls/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://updates.html5rocks.com/2015/01/virtual-viewport">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">What the Virtual Viewport?</amp-fit-text>
+        <p class="contents">Chrome 39と40でviewportの仕組みが変わった。
+40からLayout ViewportとVisual Viewportに分かれて処理されるようになった。(IEと同様)
+ズーム時にposition: fixedな要素等の動作の違いがでる。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="What the Virtual Viewport?" href="http://updates.html5rocks.com/2015/01/virtual-viewport">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://developer.telerik.com/featured/journey-client-side-testing-javascript/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">A Journey Through Client-Side Testing with JavaScript -Telerik Developer Network</amp-fit-text>
+        <p class="contents">JavaScriptのテスト全体について書かれた記事。
+テストフレームワーク、Assertionライブラリ、Test Runnerなどテストを構成する要素。
+mocha-phantom、karma、DalekJS、Atomusでの実行方法について
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="A Journey Through Client-Side Testing with JavaScript -Telerik Developer Network" href="http://developer.telerik.com/featured/journey-client-side-testing-javascript/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/geekingfrog/functional-programming-in-javascript-intro">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Functional programming in javascript (intro) // Speaker Deck</amp-fit-text>
+        <p class="contents">JavaScriptと関数型プログラミングについてのスライド。
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Functional programming in javascript (intro) // Speaker Deck" href="https://speakerdeck.com/geekingfrog/functional-programming-in-javascript-intro">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://www.slideshare.net/mlca11y/web-components-43883982">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Web Componentsのアクセシビリティ</amp-fit-text>
+        <p class="contents">Web Componentsとアクセシビリティについてのスライド。
+既存要素があるケースと独自要素の場合はWAI-ARIAを使うことについて
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Web Componentsのアクセシビリティ" href="http://www.slideshare.net/mlca11y/web-components-43883982">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://demo.agektmr.com/flexbox/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">CSS Flexbox Please!</amp-fit-text>
+        <p class="contents">CSS Flexboxのプロパティをその場で変更したりして動作を試せるデモページ
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CSS Flexbox Please!" href="http://demo.agektmr.com/flexbox/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://dietjs.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Diet.js</amp-fit-text>
+        <p class="contents">Node.jsのウェブアプリケーションフレームワーク
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Diet.js" href="http://dietjs.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/yoshuawuyts/promise-each">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">yoshuawuyts/promise-each</amp-fit-text>
+        <p class="contents">Promiseと組み合わせて使えるeach、every、filter、map、reduce、some等の関数をそれぞれモジュール化したもの
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="yoshuawuyts/promise-each" href="https://github.com/yoshuawuyts/promise-each">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://aurelia.io/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Home | Aurelia</amp-fit-text>
+        <p class="contents">Durandalの次世代となるJavaScriptフレームワーク。 ES6(or AltJS) + jspm、two-way binding、DI、ルーティング等を盛り込んだフレームワーク。
+元AngularJSチームの人が開発してる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Home | Aurelia" href="http://aurelia.io/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/shiwano/typhen">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">shiwano/typhen</amp-fit-text>
+        <p class="contents">d.tsからJSON Schemaを作ったり、Handlebarsを使ったテンプレートでコードやドキュメントを出力できるツール
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="shiwano/typhen" href="https://github.com/shiwano/typhen">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://wallabyjs.com/">
+    <amp-story-grid-layer template="vertical">
+        <amp-fit-text width="200"
+                      height="120"
+                      layout="responsive"
+                      max-font-size="28"
+                      class="item-title">Wallaby - intelligent test runner for JavaScript</amp-fit-text>
+        <p class="contents">JetBrains IDE等と統合して使えるTest Runner。
+Mocha、QUnit、Jasmine等が使えて、コードカバレッジをエディタ上に表示、テストケースを一部だけ実行などが出来る。
+spy-jsの人が作ってる
+</p>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Wallaby - intelligent test runner for JavaScript" href="http://wallabyjs.com/">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
