@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,15 +98,17 @@
     
 <amp-story-page id="https://nodejs.org/en/blog/release/v6.0.0/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Node v6.0.0 (Current) | Node.js</amp-fit-text>
-        <p class="contents">Node.js 6.0.0(LTS)リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v6.0.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 6.0.0(LTS)リリース。
 v8のアップデートを含むため、Native addonは<code>npm rebuid</code>での再ビルドが必要。
 Buffer APIが新しくなり、古いAPIは非推奨へ、<code>worker.suicide</code>は<code>worker.exitedAfterDisconnect</code>に変更、<code>querystring.parse()</code>が返すオブジェクトは<code>Object.prototype</code>を継承しないようになるなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -117,15 +120,17 @@ Buffer APIが新しくなり、古いAPIは非推奨へ、<code>worker.suicide</
 
 <amp-story-page id="http://blog.chromium.org/2016/04/chrome-51-beta-credential-management.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Chromium Blog: Chrome 51 Beta: Credential Management API and reducing the overhead of offscreen rendering</amp-fit-text>
-        <p class="contents">Chrome 51 Betaリリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Chromium Blog: Chrome 51 Beta: Credential Management API and reducing the overhead of offscreen rendering</amp-fit-text>
+            <p class="item-contents">Chrome 51 Betaリリース。
 Credential Management APIのサポート。
 offscreenの場合、crosss originのframeにおいては<code>requestAnimationFrame()</code>が呼ばれないように、Intersection Observer 、<code>passive</code>イベントオプション、V8 5.1へのアップデートなど。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -137,14 +142,16 @@ offscreenの場合、crosss originのframeにおいては<code>requestAnimationF
 
 <amp-story-page id="https://github.com/babel/babel/releases/tag/v6.8.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release v6.8.0 · babel/babel</amp-fit-text>
-        <p class="contents">Babel v6.8.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v6.8.0 · babel/babel</amp-fit-text>
+            <p class="item-contents">Babel v6.8.0リリース。
 Babel自体がBabel 6でTranspileするようになり、runtimeが5に依存していた問題が修正された
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -156,14 +163,16 @@ Babel自体がBabel 6でTranspileするようになり、runtimeが5に依存し
 
 <amp-story-page id="https://github.com/github/fetch/releases/tag/v1.0.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release Fetch 1.0.0 · github/fetch</amp-fit-text>
-        <p class="contents">Fetch APIのpolyfillであるGitHub Fetch 1.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Fetch 1.0.0 · github/fetch</amp-fit-text>
+            <p class="item-contents">Fetch APIのpolyfillであるGitHub Fetch 1.0.0リリース。
 IE9のサポートを終了、<code>timeout</code>イベントをハンドルするように、<code>URLSearchParams</code>のサポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -175,15 +184,17 @@ IE9のサポートを終了、<code>timeout</code>イベントをハンドルす
 
 <amp-story-page id="http://eslint.org/blog/2016/04/eslint-v2.9.0-released">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ESLint v2.9.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
-        <p class="contents">ESLint v2.9.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint v2.9.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+            <p class="item-contents">ESLint v2.9.0リリース。
 Autofix <code>--fix</code> オプションの改善。
 今までは一度のパスで適応できないものは諦めていたが、複数回のパスで修正を適応を試みるようになった。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -195,13 +206,15 @@ Autofix <code>--fix</code> オプションの改善。
 
 <amp-story-page id="https://github.com/laurentj/slimerjs/releases/tag/0.10.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release SlimerJS 0.10.0 · laurentj/slimerjs</amp-fit-text>
-        <p class="contents">Firefox版のPhantomJS APIの互換実装であるSlimerJS 0.10.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release SlimerJS 0.10.0 · laurentj/slimerjs</amp-fit-text>
+            <p class="item-contents">Firefox版のPhantomJS APIの互換実装であるSlimerJS 0.10.0リリース。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -213,15 +226,17 @@ Autofix <code>--fix</code> オプションの改善。
 
 <amp-story-page id="https://webkit.org/blog/6143/release-notes-for-safari-technology-preview-3/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release Notes for Safari Technology Preview 3 | WebKit</amp-fit-text>
-        <p class="contents">Safari Technology Preview 3リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 3 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview 3リリース。
 <code>Symbol.isConcatSpreadable</code>などのwell-known Symbol実装の追加、
 <code>:host()</code>擬似クラス、IndexedDBが<code>Blob</code>をサポート、<code>Crypto</code>、CSP周りの仕様準拠度の向上など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -233,14 +248,16 @@ Autofix <code>--fix</code> オプションの改善。
 
 <amp-story-page id="https://developer.mozilla.org/en-US/docs/Mozilla/Performance/Scroll-linked_effects">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Scroll-linked effects - Mozilla | MDN</amp-fit-text>
-        <p class="contents"><code>onscroll</code>にhookして同期的に位置を変更する処理に対しては警告メッセージが出るようになった。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Scroll-linked effects - Mozilla | MDN</amp-fit-text>
+            <p class="item-contents"><code>onscroll</code>にhookして同期的に位置を変更する処理に対しては警告メッセージが出るようになった。
 その場合の対処法についてのドキュメント
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -252,14 +269,16 @@ Autofix <code>--fix</code> オプションの改善。
 
 <amp-story-page id="https://medium.com/the-vue-point/announcing-vue-js-2-0-8af1bde7ab9">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Announcing Vue.js 2.0 — The Vue Point — Medium</amp-fit-text>
-        <p class="contents">Vue.js 2.0のパブリックプレビュー版リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing Vue.js 2.0 — The Vue Point — Medium</amp-fit-text>
+            <p class="item-contents">Vue.js 2.0のパブリックプレビュー版リリース。
 SnabbdomベースのVirtua lDOM実装の追加など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -271,14 +290,16 @@ SnabbdomベースのVirtua lDOM実装の追加など
 
 <amp-story-page id="https://webkit.org/blog/6131/updating-our-prefixing-policy/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Updating Our Prefixing Policy | WebKit</amp-fit-text>
-        <p class="contents">Safari/WebKitは新しい機能などは今後Vendor prefixではなく、フラグのON/OFFを追加していくようにするポリシーの変更について。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Updating Our Prefixing Policy | WebKit</amp-fit-text>
+            <p class="item-contents">Safari/WebKitは新しい機能などは今後Vendor prefixではなく、フラグのON/OFFを追加していくようにするポリシーの変更について。
 <code>-webkit-</code> prefixがあまりに使われてしまい、後方互換性のためにprefixが標準仕様となってしまった歴史などもあるため
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -290,13 +311,15 @@ SnabbdomベースのVirtua lDOM実装の追加など
 
 <amp-story-page id="https://reactjsnews.com/how-to-make-your-react-apps-10x-faster">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">How to Make Your React Apps 15x Faster – ReactJS News</amp-fit-text>
-        <p class="contents">Reactはデバッグ向けのコードが大量に入っているため、production(<code>NODE_ENV=production</code>)ビルドや機械的に最適化できるBabelプラグインを導入するだけでも速度が大分変わるという話
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">How to Make Your React Apps 15x Faster – ReactJS News</amp-fit-text>
+            <p class="item-contents">Reactはデバッグ向けのコードが大量に入っているため、production(<code>NODE_ENV=production</code>)ビルドや機械的に最適化できるBabelプラグインを導入するだけでも速度が大分変わるという話
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -308,15 +331,17 @@ SnabbdomベースのVirtua lDOM実装の追加など
 
 <amp-story-page id="http://v8project.blogspot.com/2016/04/es6-es7-and-beyond.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">V8 JavaScript Engine: ES6, ES7, and beyond</amp-fit-text>
-        <p class="contents">V8が既存のウェブとの互換性を持ちつつ次期ECMAScriptの仕様を実装しているかのプロセスについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">V8 JavaScript Engine: ES6, ES7, and beyond</amp-fit-text>
+            <p class="item-contents">V8が既存のウェブとの互換性を持ちつつ次期ECMAScriptの仕様を実装しているかのプロセスについて。
 ES6の実装が完了する前にドラフトバージョンを実装することで見つけられる後方互換性の問題がある話。
 またECMAScriptという複雑な言語仕様のtest suiteであるtest262について。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -328,13 +353,15 @@ ES6の実装が完了する前にドラフトバージョンを実装するこ�
 
 <amp-story-page id="http://efcl.info/2016/05/02/npm-package-mixed-multiple-versions-demo/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">npmで同じライブラリの複数バージョンをインストールして使う方法 | Web Scratch</amp-fit-text>
-        <p class="contents">一つのプロジェクト内に同名ライブラリの複数バージョンをインストールして扱う方法について
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">npmで同じライブラリの複数バージョンをインストールして使う方法 | Web Scratch</amp-fit-text>
+            <p class="item-contents">一つのプロジェクト内に同名ライブラリの複数バージョンをインストールして扱う方法について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -346,14 +373,16 @@ ES6の実装が完了する前にドラフトバージョンを実装するこ�
 
 <amp-story-page id="http://www.barbarianmeetscoding.com/blog/2016/04/27/a-look-at-es6-maps">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">A look at ES6 Maps - Barbarian Meets Coding</amp-fit-text>
-        <p class="contents">ES6 Mapについての解説。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">A look at ES6 Maps - Barbarian Meets Coding</amp-fit-text>
+            <p class="item-contents">ES6 Mapについての解説。
 データ構造としてのMap、Iterableについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -365,13 +394,15 @@ ES6の実装が完了する前にドラフトバージョンを実装するこ�
 
 <amp-story-page id="https://medium.com/airbnb-engineering/turbocharged-javascript-refactoring-with-codemods-b0cae8b326b9">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Turbocharged JavaScript refactoring with codemods — Airbnb Engineering &amp;amp; Data Science — Medium</amp-fit-text>
-        <p class="contents">codemodを使ったリファクタリングについて
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Turbocharged JavaScript refactoring with codemods — Airbnb Engineering &amp;amp; Data Science — Medium</amp-fit-text>
+            <p class="item-contents">codemodを使ったリファクタリングについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -383,14 +414,16 @@ ES6の実装が完了する前にドラフトバージョンを実装するこ�
 
 <amp-story-page id="http://azu.github.io/slide/2016/child_process_sushi/almin-javascript-architecture.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Almin.js | JavaScriptアーキテクチャ</amp-fit-text>
-        <p class="contents">Almin.jsの設計の概念的な話やパターンについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Almin.js | JavaScriptアーキテクチャ</amp-fit-text>
+            <p class="item-contents">Almin.jsの設計の概念的な話やパターンについて。
 FluxやCQRSといったパターンにおいて、ドメインモデルをどうやったら考えて実装できるようになるかという話。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -402,13 +435,15 @@ FluxやCQRSといったパターンにおいて、ドメインモデルをどう
 
 <amp-story-page id="http://una.im/diffee/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Diffee Checker</amp-fit-text>
-        <p class="contents">CSS blend modesを使いiframe同士の描画結果の差分を表示するデモ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Diffee Checker</amp-fit-text>
+            <p class="item-contents">CSS blend modesを使いiframe同士の描画結果の差分を表示するデモ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -420,14 +455,16 @@ FluxやCQRSといったパターンにおいて、ドメインモデルをどう
 
 <amp-story-page id="https://github.com/Galooshi/import-js">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Galooshi/import-js: A tool to simplify importing JS modules</amp-fit-text>
-        <p class="contents">指定した関数名から、該当するモジュールのimport文を自動的に探索して追加できるツール。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Galooshi/import-js: A tool to simplify importing JS modules</amp-fit-text>
+            <p class="item-contents">指定した関数名から、該当するモジュールのimport文を自動的に探索して追加できるツール。
 各種エディタ連携などもある
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -439,13 +476,15 @@ FluxやCQRSといったパターンにおいて、ドメインモデルをどう
 
 <amp-story-page id="https://github.com/ericholiveira/studio">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ericholiveira/studio: A nodejs framework to create decoupled and scalable applications</amp-fit-text>
-        <p class="contents">ActorモデルインスパイアなNode.jsのフレームワーク
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ericholiveira/studio: A nodejs framework to create decoupled and scalable applications</amp-fit-text>
+            <p class="item-contents">ActorモデルインスパイアなNode.jsのフレームワーク
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -457,13 +496,15 @@ FluxやCQRSといったパターンにおいて、ドメインモデルをどう
 
 <amp-story-page id="https://github.com/flickr/yakbak">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">flickr/yakbak: Record and playback HTTP responses</amp-fit-text>
-        <p class="contents">ProxyとしてHTTPリクエストとレスポンスを記録し、リプレイしたレスポンスを返すことができるNode.jsライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">flickr/yakbak: Record and playback HTTP responses</amp-fit-text>
+            <p class="item-contents">ProxyとしてHTTPリクエストとレスポンスを記録し、リプレイしたレスポンスを返すことができるNode.jsライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -475,14 +516,16 @@ FluxやCQRSといったパターンにおいて、ドメインモデルをどう
 
 <amp-story-page id="https://github.com/jeromeetienne/babel-plugin-jsdoced">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">jeromeetienne/babel-plugin-jsdoced: babel plugin which use jsdoc to implement strong typing in javascript</amp-fit-text>
-        <p class="contents">jsdoced.jsを使いJSDocからランタイムassertを追加するBabelプラグイン。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">jeromeetienne/babel-plugin-jsdoced: babel plugin which use jsdoc to implement strong typing in javascript</amp-fit-text>
+            <p class="item-contents">jsdoced.jsを使いJSDocからランタイムassertを追加するBabelプラグイン。
 jsdoc-to-assertと似てるが、返り値のチェックやProxy APIを使ってプロパティの代入もチェックしている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

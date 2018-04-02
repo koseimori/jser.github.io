@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,14 +98,16 @@
     
 <amp-story-page id="http://v8project.blogspot.com/2015/07/v8-45-release.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">V8 JavaScript Engine: V8 4.5 release</amp-fit-text>
-        <p class="contents">V8 4.5(Chrome 45)リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">V8 JavaScript Engine: V8 4.5 release</amp-fit-text>
+            <p class="item-contents">V8 4.5(Chrome 45)リリース。
 Arrow Function、Array/TypedArrayのメソッド追加、Object.assign、最適化コンパイラのTurboFan、V8 APIの変更など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -116,14 +119,16 @@ Arrow Function、Array/TypedArrayのメソッド追加、Object.assign、最適�
 
 <amp-story-page id="http://eslint.org/blog/2015/07/eslint-1.0.0-rc-1-released">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ESLint 1.0.0-rc-1 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
-        <p class="contents">ESLint 1.0.0-rc-1リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint 1.0.0-rc-1 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+            <p class="item-contents">ESLint 1.0.0-rc-1リリース。
 <code>--reset</code>がデフォルトになり、ES6の対応改善、新しいルールの追加など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -135,14 +140,16 @@ Arrow Function、Array/TypedArrayのメソッド追加、Object.assign、最適�
 
 <amp-story-page id="http://blogs.msdn.com/b/typescript/archive/2015/07/20/announcing-typescript-1-5.aspx">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Announcing TypeScript 1.5 - TypeScript - Site Home - MSDN Blogs</amp-fit-text>
-        <p class="contents">TypeScript 1.5リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing TypeScript 1.5 - TypeScript - Site Home - MSDN Blogs</amp-fit-text>
+            <p class="item-contents">TypeScript 1.5リリース。
 modulesやdestructuring等ES6の対応改善、tsconfig.jsonによるプロジェクト設定、Decoratorを<code>--experimentalDecorators</code>フラグで試験的サポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -154,15 +161,17 @@ modulesやdestructuring等ES6の対応改善、tsconfig.jsonによるプロジ�
 
 <amp-story-page id="https://github.com/substack/node-browserify/blob/master/changelog.markdown#1100">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">node-browserify/changelog.markdown at master · substack/node-browserify</amp-fit-text>
-        <p class="contents">Browserify 11.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">node-browserify/changelog.markdown at master · substack/node-browserify</amp-fit-text>
+            <p class="item-contents">Browserify 11.0.0リリース。
 ブラウザ向けの<code>stream</code>として使うreadable-streamをアップデートしStreams3ベースに変更。
 ブラウザ向け<code>http</code>モジュールをFetch APIをベースとしたstream-httpへ変更しstreamをサポートできるように
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -174,15 +183,17 @@ modulesやdestructuring等ES6の対応改善、tsconfig.jsonによるプロジ�
 
 <amp-story-page id="http://blogs.windows.com/msedgedev/2015/07/14/bringing-componentization-to-the-web-an-overview-of-web-components/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Bringing componentization to the web: An overview of Web Components | Microsoft Edge Dev Blog</amp-fit-text>
-        <p class="contents">Web Componentsについての詳しい解説。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Bringing componentization to the web: An overview of Web Components | Microsoft Edge Dev Blog</amp-fit-text>
+            <p class="item-contents">Web Componentsについての詳しい解説。
 何を目的にしているか、関連するコンポーネント実装の歴史。
 CSSスタイルのisolation、スタイルのスコープ、Global object isolation、iframeには欠けている部分についてなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -194,13 +205,15 @@ CSSスタイルのisolation、スタイルのスコープ、Global object isolat
 
 <amp-story-page id="http://socket.io/blog/socket.io-p2p/#">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Socket.IO — Socket.IO P2P</amp-fit-text>
-        <p class="contents">Socket.IOからWebRTCを利用してP2Pでの通信を行えるように
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Socket.IO — Socket.IO P2P</amp-fit-text>
+            <p class="item-contents">Socket.IOからWebRTCを利用してP2Pでの通信を行えるように
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -212,13 +225,15 @@ CSSスタイルのisolation、スタイルのスコープ、Global object isolat
 
 <amp-story-page id="http://antjanus.com/blog/web-development-tutorials/front-end-development/comprehensive-beginners-guide-to-reactjs/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Comprehensive Beginner&amp;#x27;s Guide To ReactJS - AntJanus</amp-fit-text>
-        <p class="contents">AngularJSユーザ向けのReact入門ガイド
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Comprehensive Beginner&amp;#x27;s Guide To ReactJS - AntJanus</amp-fit-text>
+            <p class="item-contents">AngularJSユーザ向けのReact入門ガイド
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -230,13 +245,15 @@ CSSスタイルのisolation、スタイルのスコープ、Global object isolat
 
 <amp-story-page id="http://code.tutsplus.com/tutorials/how-to-debug-javascript-remotely-with-vorlonjs--cms-24343">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">How to Debug JavaScript Remotely With Vorlon.js - Tuts+ Code Tutorial</amp-fit-text>
-        <p class="contents">Vorlon.jsを使ったJavaScriptのリモートデバッグについて
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">How to Debug JavaScript Remotely With Vorlon.js - Tuts+ Code Tutorial</amp-fit-text>
+            <p class="item-contents">Vorlon.jsを使ったJavaScriptのリモートデバッグについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -248,15 +265,17 @@ CSSスタイルのisolation、スタイルのスコープ、Global object isolat
 
 <amp-story-page id="https://hacks.mozilla.org/2015/07/es6-in-depth-proxies-and-reflect/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ES6 In Depth: Proxies ✩ Mozilla Hacks – the Web developer blog</amp-fit-text>
-        <p class="contents">Proxy APIについての解説。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ES6 In Depth: Proxies ✩ Mozilla Hacks – the Web developer blog</amp-fit-text>
+            <p class="item-contents">Proxy APIについての解説。
 Proxyで扱える14コのhandler、Proxyの使いどころ、Revocable proxiesについてなど。
 &quot;オブジェクトはプロパティのコレクションである&quot;といえるかどうかの話
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -268,14 +287,16 @@ Proxyで扱える14コのhandler、Proxyの使いどころ、Revocable proxies�
 
 <amp-story-page id="https://strongloop.com/strongblog/introduction-to-es6-iterators/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">StrongLoop | An Introduction to JavaScript ES6 Iterators</amp-fit-text>
-        <p class="contents">ES6 Iteratorについての解説。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">StrongLoop | An Introduction to JavaScript ES6 Iterators</amp-fit-text>
+            <p class="item-contents">ES6 Iteratorについての解説。
 for-ofとfor-inの違い、Symbol.iteratorを使って定義する方法とそれを利用する方法について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -287,13 +308,15 @@ for-ofとfor-inの違い、Symbol.iteratorを使って定義する方法とそ�
 
 <amp-story-page id="https://github.com/azu/browser-javascript-resource">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">azu/browser-javascript-resource</amp-fit-text>
-        <p class="contents">IEやFirefoxなどブラウザごとのリリースノートや更新履歴、実装状況、バグレポートの方法などをまとめたもの
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">azu/browser-javascript-resource</amp-fit-text>
+            <p class="item-contents">IEやFirefoxなどブラウザごとのリリースノートや更新履歴、実装状況、バグレポートの方法などをまとめたもの
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -305,13 +328,15 @@ for-ofとfor-inの違い、Symbol.iteratorを使って定義する方法とそ�
 
 <amp-story-page id="http://blog.yuhiisk.com/archive/2015/07/14/sass-built-in-functions.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">知らないと損するSassの組み込み関数徹底解剖 | Yuhiisk</amp-fit-text>
-        <p class="contents">Sassの関数まとめ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">知らないと損するSassの組み込み関数徹底解剖 | Yuhiisk</amp-fit-text>
+            <p class="item-contents">Sassの関数まとめ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -323,15 +348,17 @@ for-ofとfor-inの違い、Symbol.iteratorを使って定義する方法とそ�
 
 <amp-story-page id="http://blog.mgechev.com/2015/07/18/flux-in-depth-store-network-communication-services">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Flux in Depth. Store and Network Communication. – Minko Gechev&amp;#x27;s blog</amp-fit-text>
-        <p class="contents">Fluxからネットワークを含めたデータフローについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Flux in Depth. Store and Network Communication. – Minko Gechev&amp;#x27;s blog</amp-fit-text>
+            <p class="item-contents">Fluxからネットワークを含めたデータフローについて。
 Store -&gt; View、View -&gt; Storeまでの流れ、モデルとStateの分離。
 Network -&gt; UI、UI -&gt; Networkのパターンについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -343,13 +370,15 @@ Network -&gt; UI、UI -&gt; Networkのパターンについて
 
 <amp-story-page id="https://www.youtube.com/watch?v=n1cKlKM3jYI">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">An Introduction to Browser Rendering - YouTube</amp-fit-text>
-        <p class="contents">ブラウザのレンダリングフローについてのスクリーンキャスト
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">An Introduction to Browser Rendering - YouTube</amp-fit-text>
+            <p class="item-contents">ブラウザのレンダリングフローについてのスクリーンキャスト
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -361,14 +390,16 @@ Network -&gt; UI、UI -&gt; Networkのパターンについて
 
 <amp-story-page id="https://github.com/nikgraf/belle/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">nikgraf/belle</amp-fit-text>
-        <p class="contents">React Componentとして使えるUI集。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">nikgraf/belle</amp-fit-text>
+            <p class="item-contents">React Componentとして使えるUI集。
 外からJSを経由してコンポーネントに対してスタイルを設定出来るようになっている。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -380,14 +411,16 @@ Network -&gt; UI、UI -&gt; Networkのパターンについて
 
 <amp-story-page id="https://github.com/ipselon/react-ui-builder">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ipselon/react-ui-builder</amp-fit-text>
-        <p class="contents">React ComponentをGUIで配置したり、配置したものからReactのコードを吐き出したりして、GUIでコードを編集、プレビューなど出来るツール。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ipselon/react-ui-builder</amp-fit-text>
+            <p class="item-contents">React ComponentをGUIで配置したり、配置したものからReactのコードを吐き出したりして、GUIでコードを編集、プレビューなど出来るツール。
 ツール自体がReactとProxyからできていて面白い
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -399,13 +432,15 @@ Network -&gt; UI、UI -&gt; Networkのパターンについて
 
 <amp-story-page id="https://github.com/DrBoolean/mostly-adequate-guide">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">DrBoolean/mostly-adequate-guide</amp-fit-text>
-        <p class="contents">JavaScriptでの関数型プログラミングについての無料の書籍
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">DrBoolean/mostly-adequate-guide</amp-fit-text>
+            <p class="item-contents">JavaScriptでの関数型プログラミングについての無料の書籍
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -417,13 +452,15 @@ Network -&gt; UI、UI -&gt; Networkのパターンについて
 
 <amp-story-page id="http://shop.oreilly.com/product/9781783282258.do">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">JavaScript Regular Expressions - O&amp;#x27;Reilly Media</amp-fit-text>
-        <p class="contents">JavaScriptの正規表現についての書籍
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScript Regular Expressions - O&amp;#x27;Reilly Media</amp-fit-text>
+            <p class="item-contents">JavaScriptの正規表現についての書籍
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

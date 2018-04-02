@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,17 +98,19 @@
     
 <amp-story-page id="https://facebook.github.io/react/blog/2017/09/26/react-v16.0.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">React v16.0 - React Blog</amp-fit-text>
-        <p class="contents">React 16.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React v16.0 - React Blog</amp-fit-text>
+            <p class="item-contents">React 16.0リリース。
 15.6.2と共にMITライセンスへ変更された。
 APIの基本的な互換は持ちつつコアを書き変え(Fiber)、
 <code>render</code>がフラグメントや文字列を返せるように、コンポーネントのエラーハンドリングの改善、<code>ReactDOM.createPortal</code>の追加、SSRの改善など。
 <code>Map</code>/<code>Set</code>/<code>requestAnimationFrame</code>に依存する。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -119,14 +122,16 @@ APIの基本的な互換は持ちつつコアを書き変え(Fiber)、
 
 <amp-story-page id="https://nodejs.org/en/blog/release/v8.6.0/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Node v8.6.0 (Current) | Node.js</amp-fit-text>
-        <p class="contents">Node.js v8.6.0リリース
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v8.6.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js v8.6.0リリース
 N-APIがフラグなしで利用できるようになるなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -138,14 +143,16 @@ N-APIがフラグなしで利用できるようになるなど
 
 <amp-story-page id="https://github.com/facebook/flow/releases/tag/v0.56.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release v0.56.0 · facebook/flow</amp-fit-text>
-        <p class="contents">Flow 0.56.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v0.56.0 · facebook/flow</amp-fit-text>
+            <p class="item-contents">Flow 0.56.0リリース。
 <code>$Rest</code> typeの追加、<code>Object.create(null)</code>のような<code>null</code>プロトタイプのサポート、<code>__proto__</code>のサポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -157,13 +164,15 @@ N-APIがフラグなしで利用できるようになるなど
 
 <amp-story-page id="https://nodejs.org/en/blog/vulnerability/september-2017-path-validation/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Path validation vulnerability, September 2017 | Node.js</amp-fit-text>
-        <p class="contents">Node.js 8.5.0にはpathの<code>..</code>の扱いに脆弱性があるため8.6.0で修正されたリリースがされている。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Path validation vulnerability, September 2017 | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 8.5.0にはpathの<code>..</code>の扱いに脆弱性があるため8.6.0で修正されたリリースがされている。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -175,15 +184,17 @@ N-APIがフラグなしで利用できるようになるなど
 
 <amp-story-page id="https://www.mozilla.org/en-US/firefox/56.0/releasenotes/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Firefox — Notes (56.0) — Mozilla</amp-fit-text>
-        <p class="contents">Firefox 56リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Firefox — Notes (56.0) — Mozilla</amp-fit-text>
+            <p class="item-contents">Firefox 56リリース。
 CSS Grid DevToolsの追加、<code>&lt;link rel=&quot;preload&quot;&gt;</code>のサポート、Intl APIがAndroid版で有効化。
 <code>setTimeout(fn, 0)</code>の仕様に合わせて4msに変更など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -195,13 +206,15 @@ CSS Grid DevToolsの追加、<code>&lt;link rel=&quot;preload&quot;&gt;</code>�
 
 <amp-story-page id="http://blog.koba04.com/post/2017/09/27/react-v16-changes/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">React v16 changes - blog.koba04.com</amp-fit-text>
-        <p class="contents">React 16の変更点について
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React v16 changes - blog.koba04.com</amp-fit-text>
+            <p class="item-contents">React 16の変更点について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -213,14 +226,16 @@ CSS Grid DevToolsの追加、<code>&lt;link rel=&quot;preload&quot;&gt;</code>�
 
 <amp-story-page id="https://medium.com/@zandaqo/javascript-c-modern-ways-to-use-c-in-javascript-projects-a19003c5a9ff">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">JavaScript ♥ C++: Modern Ways to Use C++ in JavaScript Projects</amp-fit-text>
-        <p class="contents">C++で書かれたコードをNode.jsで扱う方法について。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScript ♥ C++: Modern Ways to Use C++ in JavaScript Projects</amp-fit-text>
+            <p class="item-contents">C++で書かれたコードをNode.jsで扱う方法について。
 N-APIを使ったネイティブモジュールとWebAssemblyを使った方法について。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -232,14 +247,16 @@ N-APIを使ったネイティブモジュールとWebAssemblyを使った方法�
 
 <amp-story-page id="https://developers.google.com/web/updates/2017/09/abortable-fetch">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Abortable fetch  |  Web  |  Google Developers</amp-fit-text>
-        <p class="contents">Fetch APIなどでリクエストのキャンセルを行う<code>AbortController</code>と<code>AbortSignal</code>について。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Abortable fetch  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">Fetch APIなどでリクエストのキャンセルを行う<code>AbortController</code>と<code>AbortSignal</code>について。
 <code>fetch(url, { signal })</code>のようにFetch APIに渡す使い方やAPIの歴史的経緯についてなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -251,13 +268,15 @@ N-APIを使ったネイティブモジュールとWebAssemblyを使った方法�
 
 <amp-story-page id="https://blog.cloudboost.io/lets-build-a-pokedex-with-react-part-1-e1ba0b9387a7">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Let’s Build a Pokedex with React: Part 1 – CloudBoost</amp-fit-text>
-        <p class="contents">Reactを使ってPokedexというサイトをつくっていく連載記事。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Let’s Build a Pokedex with React: Part 1 – CloudBoost</amp-fit-text>
+            <p class="item-contents">Reactを使ってPokedexというサイトをつくっていく連載記事。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -269,14 +288,16 @@ N-APIを使ったネイティブモジュールとWebAssemblyを使った方法�
 
 <amp-story-page id="https://auth0.com/blog/nextjs-3-release-what-is-new/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Next.js 3.0 Release: What&#039;s New?</amp-fit-text>
-        <p class="contents">Next.js 3.0の変更点についての解説。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Next.js 3.0 Release: What&#039;s New?</amp-fit-text>
+            <p class="item-contents">Next.js 3.0の変更点についての解説。
 Dynamic Import/Dynacmic Loading Component、Static Export、エラーメッセージ表示の改善、起動速度の改善など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -288,14 +309,16 @@ Dynamic Import/Dynacmic Loading Component、Static Export、エラーメッセ�
 
 <amp-story-page id="https://medium.freecodecamp.org/how-to-write-reliable-browser-tests-using-selenium-and-node-js-c3fdafdca2a9">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">How to write reliable browser tests using Selenium and Node.js</amp-fit-text>
-        <p class="contents">Seleniumを扱う時なぜ<code>sleep</code>を避けるべきかについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">How to write reliable browser tests using Selenium and Node.js</amp-fit-text>
+            <p class="item-contents">Seleniumを扱う時なぜ<code>sleep</code>を避けるべきかについて。
 Node.jsのselenium-webdriverを例に紹介してる。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -307,14 +330,16 @@ Node.jsのselenium-webdriverを例に紹介してる。
 
 <amp-story-page id="https://bower.io/blog/2017/how-to-drop-bower-support/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">How to drop Bower support? · Bower blog</amp-fit-text>
-        <p class="contents">ライブラリの開発者はどのようにBowerサポートを終了するべきかについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">How to drop Bower support? · Bower blog</amp-fit-text>
+            <p class="item-contents">ライブラリの開発者はどのようにBowerサポートを終了するべきかについて。
 リポジトリからbower.jsonなど関連ファイルを削除し、majorアップデートを行い、<code>bower unregister</code>はしないことについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -326,13 +351,15 @@ Node.jsのselenium-webdriverを例に紹介してる。
 
 <amp-story-page id="https://medium.com/webpack/webpack-dev-server-middleware-security-issues-1489d950874a">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">webpack-dev-server/middleware security issues – webpack – Medium</amp-fit-text>
-        <p class="contents">webpack-dev-serverにいくつか脆弱性があるため1.xと2.xそれぞれsecurity fixのリリースが行われた。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">webpack-dev-server/middleware security issues – webpack – Medium</amp-fit-text>
+            <p class="item-contents">webpack-dev-serverにいくつか脆弱性があるため1.xと2.xそれぞれsecurity fixのリリースが行われた。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -344,13 +371,15 @@ Node.jsのselenium-webdriverを例に紹介してる。
 
 <amp-story-page id="https://ecmascript-daily.github.io/ecmascript/2017/10/02/ecmascript-proposal-updates-2017-09">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ECMAScript proposal updates @ 2017-09 | ECMAScript Daily</amp-fit-text>
-        <p class="contents">2017-09に行われたTC39ミーティング結果のProposal変更まとめ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ECMAScript proposal updates @ 2017-09 | ECMAScript Daily</amp-fit-text>
+            <p class="item-contents">2017-09に行われたTC39ミーティング結果のProposal変更まとめ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -362,14 +391,16 @@ Node.jsのselenium-webdriverを例に紹介してる。
 
 <amp-story-page id="https://mozilladevelopers.github.io/playground/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">CSS Grid PlayGround | Terminology | Mozilla</amp-fit-text>
-        <p class="contents">CSS Gridの解説サイト。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">CSS Grid PlayGround | Terminology | Mozilla</amp-fit-text>
+            <p class="item-contents">CSS Gridの解説サイト。
 CSS Gridの用語や基本的な使い方、Firefoxの開発者ツールでのデバッグ、<code>fr</code>という単位、Template Area、Named Lineなどについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -381,14 +412,16 @@ CSS Gridの用語や基本的な使い方、Firefoxの開発者ツールでの�
 
 <amp-story-page id="https://github.com/cherow/cherow">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">cherow/cherow: A fast, Typescript-based Javascript parser</amp-fit-text>
-        <p class="contents">TypeScriptで書かれたJavaScriptパーサ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">cherow/cherow: A fast, Typescript-based Javascript parser</amp-fit-text>
+            <p class="item-contents">TypeScriptで書かれたJavaScriptパーサ。
 ESTree互換のASTを生成し、ES.nextなProposal仕様もサポートしている。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -400,13 +433,15 @@ ESTree互換のASTを生成し、ES.nextなProposal仕様もサポートして�
 
 <amp-story-page id="https://github.com/roman01la/closure-compiler-handbook">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">roman01la/closure-compiler-handbook: How to use Google&#039;s Closure Compiler</amp-fit-text>
-        <p class="contents">Closure Compilerの使い方について書かれたハンドブック
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">roman01la/closure-compiler-handbook: How to use Google&#039;s Closure Compiler</amp-fit-text>
+            <p class="item-contents">Closure Compilerの使い方について書かれたハンドブック
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -418,13 +453,15 @@ ESTree互換のASTを生成し、ES.nextなProposal仕様もサポートして�
 
 <amp-story-page id="https://github.com/Shopify/draggable">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Shopify/draggable: The JavaScript Drag &amp; Drop library your grandparents warned you about.</amp-fit-text>
-        <p class="contents">D&amp;Dライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Shopify/draggable: The JavaScript Drag &amp; Drop library your grandparents warned you about.</amp-fit-text>
+            <p class="item-contents">D&amp;Dライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -436,13 +473,15 @@ ESTree互換のASTを生成し、ES.nextなProposal仕様もサポートして�
 
 <amp-story-page id="http://strudeljs.org/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Strudel.js | Lightweight component framework</amp-fit-text>
-        <p class="contents">AngularのようなDecoratorを使ったコンポーネントライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Strudel.js | Lightweight component framework</amp-fit-text>
+            <p class="item-contents">AngularのようなDecoratorを使ったコンポーネントライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -454,16 +493,18 @@ ESTree互換のASTを生成し、ES.nextなProposal仕様もサポートして�
 
 <amp-story-page id="https://images.guide/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Essential Image Optimization</amp-fit-text>
-        <p class="contents">ウェブサイトにおける画像の最適化についての書籍。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Essential Image Optimization</amp-fit-text>
+            <p class="item-contents">ウェブサイトにおける画像の最適化についての書籍。
 どのようなフォーマットを選び、サイズとパフォーマンスへの影響について。
 各フォーマットやエンコーダーの最適化手法、ブラウザのデコード時間や最適化手法、モニタリングツールなどについて
 JPEG、PNG、WebP、GIF/Videoの比較、SVG
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,14 +98,16 @@
     
 <amp-story-page id="http://backbonejs.org/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Backbone.js</amp-fit-text>
-        <p class="contents">Backbone. 1.3.2リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Backbone.js</amp-fit-text>
+            <p class="item-contents">Backbone. 1.3.2リリース。
 <code>findIndex</code>、<code>findLastIndex</code>の追加、<code>component.json</code>のサポートを終了
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -116,13 +119,15 @@
 
 <amp-story-page id="https://github.com/mozilla/sweet.js/releases/tag/v1.0.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release v1.0.0 · mozilla/sweet.js</amp-fit-text>
-        <p class="contents">JavaScriptにhygienic macrosを導入するsweet.js 1.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v1.0.0 · mozilla/sweet.js</amp-fit-text>
+            <p class="item-contents">JavaScriptにhygienic macrosを導入するsweet.js 1.0.0リリース。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -134,14 +139,16 @@
 
 <amp-story-page id="http://eslint.org/blog/2016/03/eslint-v2.5.0-released">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ESLint v2.5.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
-        <p class="contents">ESLint 2.5.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint v2.5.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+            <p class="item-contents">ESLint 2.5.0リリース。
 依存してるライブラリもESLintのパッケージに含めて配布できる<code>bundledDependencies</code>を利用するように、ルールの追加/修正など。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -153,14 +160,16 @@
 
 <amp-story-page id="https://developer.apple.com/library/mac/releasenotes/General/WhatsNewInSafari/Articles/Safari_9_1.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Safari 9.1</amp-fit-text>
-        <p class="contents">Safari 9.1の変更点について。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Safari 9.1</amp-fit-text>
+            <p class="item-contents">Safari 9.1の変更点について。
 <code>&lt;picture&gt;</code>要素のサポート、Web Inspectorの改善、Fast Tap、Canvasが<code>imageSmoothingQuality</code>プロパティ、CSS Custom Propertiesのサポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -172,15 +181,17 @@
 
 <amp-story-page id="https://webkit.org/blog/5989/css-variables-in-webkit/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">CSS Variables in WebKit | WebKit</amp-fit-text>
-        <p class="contents">Safari 9.1でサポートされたCSS Custom Propertiesについての解説
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">CSS Variables in WebKit | WebKit</amp-fit-text>
+            <p class="item-contents">Safari 9.1でサポートされたCSS Custom Propertiesについての解説
 <code>--name</code>で変数を定義し、CSS内から<code>var(--name)</code>で参照できる。
 JavaScriptからも<code>getPropertyValue/setProperty</code>で読み書きができる
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -192,14 +203,16 @@ JavaScriptからも<code>getPropertyValue/setProperty</code>で読み書きが�
 
 <amp-story-page id="http://www.mobilexweb.com/blog/safari-on-ios-9-3-picture-shrink-fit-iphone-se">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Safari on iOS 9.3, Responsive Images, iPhone SE, shrink-to-fit and other new APIs | Breaking the Mobile Web</amp-fit-text>
-        <p class="contents">iOS 9.3のSafariについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Safari on iOS 9.3, Responsive Images, iPhone SE, shrink-to-fit and other new APIs | Breaking the Mobile Web</amp-fit-text>
+            <p class="item-contents">iOS 9.3のSafariについて。
 <code>&lt;picture&gt;</code>、Fast Tap、CSS Custom Properties、ダイアログの変更、<code>shrink-to-fit</code>、Remote Inspectorなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -211,14 +224,16 @@ JavaScriptからも<code>getPropertyValue/setProperty</code>で読み書きが�
 
 <amp-story-page id="http://efcl.info/2016/03/25/jsdoc-to-assert/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">JSDocをランタイムassertに変換するBabelプラグインを書いた | Web Scratch</amp-fit-text>
-        <p class="contents">JSDocをassertに変換するBabelプラグインについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JSDocをランタイムassertに変換するBabelプラグインを書いた | Web Scratch</amp-fit-text>
+            <p class="item-contents">JSDocをassertに変換するBabelプラグインについて。
 JSDocの型をランタイムassertにすることで、定義されてる型と実際の値が一致しているかを検証できる
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -230,13 +245,15 @@ JSDocの型をランタイムassertにすることで、定義されてる型と
 
 <amp-story-page id="http://robdodson.me/shadow-dom-css-cheat-sheet/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Shadow DOM CSS Cheat Sheet</amp-fit-text>
-        <p class="contents">Shadown DOMのCSS(<code>:host</code>など)、CSS Custom Properties(<code>--var</code>)についてのチートシート
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Shadow DOM CSS Cheat Sheet</amp-fit-text>
+            <p class="item-contents">Shadown DOMのCSS(<code>:host</code>など)、CSS Custom Properties(<code>--var</code>)についてのチートシート
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -248,13 +265,15 @@ JSDocの型をランタイムassertにすることで、定義されてる型と
 
 <amp-story-page id="https://ecmascript-daily.github.io/pages/status-of-static-typing-in-ecmascript/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Status of Static Typing in ECMAScript | ECMAScript Daily</amp-fit-text>
-        <p class="contents">ECMAScriptにおける静的型関連Proposalのステータスまとめ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Status of Static Typing in ECMAScript | ECMAScript Daily</amp-fit-text>
+            <p class="item-contents">ECMAScriptにおける静的型関連Proposalのステータスまとめ。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -266,14 +285,16 @@ JSDocの型をランタイムassertにすることで、定義されてる型と
 
 <amp-story-page id="https://k94n.com/gordux-js-the-redux-pattern-in-vanilla-js">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Gordux.js - The redux pattern in vanilla.js</amp-fit-text>
-        <p class="contents">Reduxのようなデータフローを素のJavaScriptで実装してみるという話。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Gordux.js - The redux pattern in vanilla.js</amp-fit-text>
+            <p class="item-contents">Reduxのようなデータフローを素のJavaScriptで実装してみるという話。
 EventにはCustom Eventを使ってPub/Subを行っている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -285,14 +306,16 @@ EventにはCustom Eventを使ってPub/Subを行っている
 
 <amp-story-page id="http://benmccormick.org/2016/03/07/the-sad-state-of-the-backbone-ecosystem/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">The Sad State of the Backbone Ecosystem</amp-fit-text>
-        <p class="contents">Backbone.jsのエコシステムのアクティビティについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">The Sad State of the Backbone Ecosystem</amp-fit-text>
+            <p class="item-contents">Backbone.jsのエコシステムのアクティビティについて。
 Backbone.js本体やMarionette、関連するライブラリの状況についてまとめてる
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -304,13 +327,15 @@ Backbone.js本体やMarionette、関連するライブラリの状況につい�
 
 <amp-story-page id="https://github.com/benoitvallon/computer-science-in-javascript">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">GitHub - benoitvallon/computer-science-in-javascript: Computer science reimplemented in JavaScript</amp-fit-text>
-        <p class="contents">JavaScriptでデータ構造やソートアルゴリズムの実装例
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">GitHub - benoitvallon/computer-science-in-javascript: Computer science reimplemented in JavaScript</amp-fit-text>
+            <p class="item-contents">JavaScriptでデータ構造やソートアルゴリズムの実装例
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -322,14 +347,16 @@ Backbone.js本体やMarionette、関連するライブラリの状況につい�
 
 <amp-story-page id="http://www.sitepoint.com/sinon-tutorial-javascript-testing-mocks-spies-stubs/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Sinon Tutorial: JavaScript Testing with Mocks, Spies &amp;amp; Stubs</amp-fit-text>
-        <p class="contents">Sinon.jsを使ったテストについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Sinon Tutorial: JavaScript Testing with Mocks, Spies &amp;amp; Stubs</amp-fit-text>
+            <p class="item-contents">Sinon.jsを使ったテストについて。
 Sinon.jsのmock, stub, spyについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -341,13 +368,15 @@ Sinon.jsのmock, stub, spyについて
 
 <amp-story-page id="http://www.2ality.com/2016/03/promise-rejections-vs-exceptions.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Promise-based functions should not throw exceptions</amp-fit-text>
-        <p class="contents">Promiseをベースとしてるasync/awaitを見据えながら、Promiseを返す関数は例外を投げないで<code>reject</code>したPromiseオブジェクトを返すべきという話
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Promise-based functions should not throw exceptions</amp-fit-text>
+            <p class="item-contents">Promiseをベースとしてるasync/awaitを見据えながら、Promiseを返す関数は例外を投げないで<code>reject</code>したPromiseオブジェクトを返すべきという話
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -359,13 +388,15 @@ Sinon.jsのmock, stub, spyについて
 
 <amp-story-page id="http://qiita.com/nyamogera/items/b83833d1e15a55d0bb66">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ng-japan 2016 セッション資料まとめ - Qiita</amp-fit-text>
-        <p class="contents">ng-japan 2016の動画とスライドまとめ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ng-japan 2016 セッション資料まとめ - Qiita</amp-fit-text>
+            <p class="item-contents">ng-japan 2016の動画とスライドまとめ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -377,13 +408,15 @@ Sinon.jsのmock, stub, spyについて
 
 <amp-story-page id="http://markdalgleish.github.io/presentation-the-case-for-css-modules/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">The Case for CSS Modules</amp-fit-text>
-        <p class="contents">CSS Modulesについてのスライド
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">The Case for CSS Modules</amp-fit-text>
+            <p class="item-contents">CSS Modulesについてのスライド
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -395,14 +428,16 @@ Sinon.jsのmock, stub, spyについて
 
 <amp-story-page id="https://www.youtube.com/watch?v=QtgR94Q2pt4">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Fluent Conf 2016: Jeremy Fairbank - The rise of async JavaScript - YouTube</amp-fit-text>
-        <p class="contents">async/awaitがどのように動くのかをPromiseをベースとして解説してる。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Fluent Conf 2016: Jeremy Fairbank - The rise of async JavaScript - YouTube</amp-fit-text>
+            <p class="item-contents">async/awaitがどのように動くのかをPromiseをベースとして解説してる。
 エラーハンドリングの動作やasync functionがどのように動くのかを見ていく話
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -414,13 +449,15 @@ Sinon.jsのmock, stub, spyについて
 
 <amp-story-page id="https://w3c.github.io/perf-timing-primer/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">A Primer for Web Performance Timing APIs</amp-fit-text>
-        <p class="contents">Web Performance Timing APIの概要をまとめたドキュメント
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">A Primer for Web Performance Timing APIs</amp-fit-text>
+            <p class="item-contents">Web Performance Timing APIの概要をまとめたドキュメント
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -432,14 +469,16 @@ Sinon.jsのmock, stub, spyについて
 
 <amp-story-page id="http://www.webpackbin.com/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">WebpackBin</amp-fit-text>
-        <p class="contents">http://requirebin.com/ のwebpack版。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">WebpackBin</amp-fit-text>
+            <p class="item-contents">http://requirebin.com/ のwebpack版。
 HTML/CSS/JavaScriptを書いて公開出来るサービス
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -451,13 +490,15 @@ HTML/CSS/JavaScriptを書いて公開出来るサービス
 
 <amp-story-page id="https://github.com/ozkxr/match">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">GitHub - ozkxr/match: An JavaScript library to test JSON with some nice features.</amp-fit-text>
-        <p class="contents">JSONなどのオブジェクトに対してpredicate関数の結果を使ったmatchライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">GitHub - ozkxr/match: An JavaScript library to test JSON with some nice features.</amp-fit-text>
+            <p class="item-contents">JSONなどのオブジェクトに対してpredicate関数の結果を使ったmatchライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -469,14 +510,16 @@ HTML/CSS/JavaScriptを書いて公開出来るサービス
 
 <amp-story-page id="https://github.com/tusharmath/funjector">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">tusharmath/funjector: Dependency injection for functional paradigm</amp-fit-text>
-        <p class="contents">関数に対するDIライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">tusharmath/funjector: Dependency injection for functional paradigm</amp-fit-text>
+            <p class="item-contents">関数に対するDIライブラリ。
 部分適応した関数を作り、それに対してinjectできる仕組みを提供する
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -488,13 +531,15 @@ HTML/CSS/JavaScriptを書いて公開出来るサービス
 
 <amp-story-page id="https://github.com/pmdartus/snapline">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">pmdartus/snapline: Unleash your screenshots stored in Chrome Devtool timeline files</amp-fit-text>
-        <p class="contents">Chrome開発者ツールのタイムラインをGIFアニメーション画像に変換出来るツール
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">pmdartus/snapline: Unleash your screenshots stored in Chrome Devtool timeline files</amp-fit-text>
+            <p class="item-contents">Chrome開発者ツールのタイムラインをGIFアニメーション画像に変換出来るツール
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -506,13 +551,15 @@ HTML/CSS/JavaScriptを書いて公開出来るサービス
 
 <amp-story-page id="https://leanpub.com/vuejs/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Majesty Of… by Alex Kyriakidis et al. [Leanpub PDF/iPad/Kindle]</amp-fit-text>
-        <p class="contents">Vue.jsについての書籍
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Majesty Of… by Alex Kyriakidis et al. [Leanpub PDF/iPad/Kindle]</amp-fit-text>
+            <p class="item-contents">Vue.jsについての書籍
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

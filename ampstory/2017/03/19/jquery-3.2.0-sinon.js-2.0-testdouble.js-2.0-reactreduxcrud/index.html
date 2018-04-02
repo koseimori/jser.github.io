@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,15 +98,17 @@
     
 <amp-story-page id="http://sinonjs.org/releases/v2.0.0/migrating-to-2.0/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Migrating to v2.0</amp-fit-text>
-        <p class="contents">inon.js 2.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Migrating to v2.0</amp-fit-text>
+            <p class="item-contents">inon.js 2.0リリース。
 <code>sinon.log</code>や<code>sinon.logError</code>は削除、<code>sinon.test</code>と<code>sinon.testCase</code>がコアから削除され別モジュールへ分離。
 Internalなメソッドが非推奨になるなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -117,15 +120,17 @@ Internalなメソッドが非推奨になるなど
 
 <amp-story-page id="https://blog.jquery.com/2017/03/16/jquery-3-2-0-is-out/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title"># jQuery 3.2.0 Is Out! | Official jQuery Blog
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title"># jQuery 3.2.0 Is Out! | Official jQuery Blog
 </amp-fit-text>
-        <p class="contents">uery 3.2.0リリース。
+            <p class="item-contents">uery 3.2.0リリース。
 <code>$.css</code>がCSS Custom Propertyをサポート、transformされた要素の<code>.width()</code>、<code>.height()</code>の値がおかしい問題を修正、<code>&lt;template&gt;</code>要素をサポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -138,18 +143,20 @@ Internalなメソッドが非推奨になるなど
 
 <amp-story-page id="https://github.com/ReactTraining/react-router/releases/tag/react-router%404.0.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title"> Release react-router@4.0.0: Publish · ReactTraining/react-router
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title"> Release react-router@4.0.0: Publish · ReactTraining/react-router
 [</amp-fit-text>
-        <p class="contents">ct Router 4.0.0リリース。
+            <p class="item-contents">ct Router 4.0.0リリース。
 書き直されたバージョンであり、既存のものとは互換性がないためマイグレーションガイドは用意されていない。
 <ul>
 <li></li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -162,18 +169,20 @@ Internalなメソッドが非推奨になるなど
 
 <amp-story-page id="https://github.com/facebook/flow/releases/tag/v0.42.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release v0.42.0 · facebook/flow
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v0.42.0 · facebook/flow
 [g</amp-fit-text>
-        <p class="contents">0.42.0リリース。
+            <p class="item-contents">0.42.0リリース。
 Object type spread <code>type TypeB = { ...TypeA }</code> の追加。<code>flow ide</code>コマンドの追加など
 <ul>
 <li></li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -186,18 +195,20 @@ Object type spread <code>type TypeB = { ...TypeA }</code> の追加。<code>flow
 
 <amp-story-page id="http://eslint.org/blog/2017/03/eslint-v3.18.0-released">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">SLint v3.18.0 released - ESLint - Pluggable JavaScript linter
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">SLint v3.18.0 released - ESLint - Pluggable JavaScript linter
 [es</amp-fit-text>
-        <p class="contents">t 3.18.0リリース。
+            <p class="item-contents">t 3.18.0リリース。
 esqueryベースのASTセレクタに対応しルール内でセレクタを指定できるようになるなど
 <ul>
 <li>[</li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -210,16 +221,18 @@ esqueryベースのASTセレクタに対応しルール内でセレクタを指�
 
 <amp-story-page id="https://medium.com/dev-channel/testing-service-workers-318d7b016b19">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">sting Service Workers – Dev Channel – Medium
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">sting Service Workers – Dev Channel – Medium
 [med</amp-fit-text>
-        <p class="contents">eWorkerのスクリプトに対するユニットテストについて。
+            <p class="item-contents">eWorkerのスクリプトに対するユニットテストについて。
 Tests in SW、イベントのエミュレート、Push Eventのテストについてなど
 
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -232,16 +245,18 @@ Tests in SW、イベントのエミュレート、Push Eventのテストにつ�
 
 <amp-story-page id="https://aloerina01.github.io/javascript/2017/03/14/1.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title"> Proxy をつかって堅牢なオブジェクトをつくるTips
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title"> Proxy をつかって堅牢なオブジェクトをつくるTips
 [aloe</amp-fit-text>
-        <p class="contents">Proxyを使ったImmutableやSingletonなどを例にした、オブジェクトの拡張方法について。
+            <p class="item-contents">Proxyを使ったImmutableやSingletonなどを例にした、オブジェクトの拡張方法について。
 ProxyのtrapやReflect APIについて
 
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -254,15 +269,17 @@ ProxyのtrapやReflect APIについて
 
 <amp-story-page id="http://labotech.dmm.com/entry/2017/03/07/180449">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">meでReactコンポーネントのテストを書こう - DMM.comラボエンジニアブログ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">meでReactコンポーネントのテストを書こう - DMM.comラボエンジニアブログ
 [labot</amp-fit-text>
-        <p class="contents">ったReactコンポーネントのテスト方法について
+            <p class="item-contents">ったReactコンポーネントのテスト方法について
 
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -275,17 +292,19 @@ ProxyのtrapやReflect APIについて
 
 <amp-story-page id="https://developers.google.com/web/updates/2017/03/background_tabs">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">round Tabs in Chrome 57  |  Web  |  Google Developers
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">round Tabs in Chrome 57  |  Web  |  Google Developers
 [develo</amp-fit-text>
-        <p class="contents">クグラウンドタブにおける制限について。
+            <p class="item-contents">クグラウンドタブにおける制限について。
 Chrome 57からは、timerやrequestAnimationFrameに加えて、budget-basedの制限が加わる。
 バックグラウンドにいるかはPage visibility APIで判定できる。 テスト時などは<code>--disable-background-timer-throttling</code>のフラグで無効化できる。
 
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -298,17 +317,19 @@ Chrome 57からは、timerやrequestAnimationFrameに加えて、budget-basedの
 
 <amp-story-page id="http://efcl.info/2017/03/17/almin-introduction/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Fluxアーキテクチャをやってみる | Web Scratch
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Fluxアーキテクチャをやってみる | Web Scratch
 [efcl.in</amp-fit-text>
-        <p class="contents">ウンターアプリを書きながら、どのようにFlux的な一方通行のデータフローを行うかについての記事。
+            <p class="item-contents">ウンターアプリを書きながら、どのようにFlux的な一方通行のデータフローを行うかについての記事。
 開発用のロガーやブラウザ拡張との連携について
 
 
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -321,16 +342,18 @@ Chrome 57からは、timerやrequestAnimationFrameに加えて、budget-basedの
 
 <amp-story-page id="https://medium.com/@asolove/preact-internals-1-the-easy-parts-3a081fa36205">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">internals #1: the easy parts – Medium
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">internals #1: the easy parts – Medium
 [medium.c</amp-fit-text>
-        <p class="contents">についての連載記事
+            <p class="item-contents">についての連載記事
 
 
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -343,16 +366,18 @@ Chrome 57からは、timerやrequestAnimationFrameに加えて、budget-basedの
 
 <amp-story-page id="https://medium.com/dev-channel/progressive-web-app-libraries-in-production-b52cad37d34">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ive Web App Libraries in Production – Dev Channel – Medium
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ive Web App Libraries in Production – Dev Channel – Medium
 [medium.co</amp-fit-text>
-        <p class="contents">rを使ったキャッシュ周りなどを導入するツールであるsw-precache、 sw-toolbox、offline-analyticsの紹介記事
+            <p class="item-contents">rを使ったキャッシュ周りなどを導入するツールであるsw-precache、 sw-toolbox、offline-analyticsの紹介記事
 
 
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -365,16 +390,18 @@ Chrome 57からは、timerやrequestAnimationFrameに加えて、budget-basedの
 
 <amp-story-page id="http://qiita.com/m_yama6/items/573247b12ff0bc4e5d3c">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ux+Express+MongoDBでものすごくシンプルなCRUDアプリをつくる - Qiita
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ux+Express+MongoDBでものすごくシンプルなCRUDアプリをつくる - Qiita
 [qiita.com/</amp-fit-text>
-        <p class="contents">-app`を使いReact+Reduxのセットアップを行いフロントを書き、Express+MongoDB+mongooseでバックエンドを書いていくチュートリアル記事。 フロントエンドとバックエンドの接続部分も丁寧にかかれている。
+            <p class="item-contents">-app`を使いReact+Reduxのセットアップを行いフロントを書き、Express+MongoDB+mongooseでバックエンドを書いていくチュートリアル記事。 フロントエンドとバックエンドの接続部分も丁寧にかかれている。
 
 T
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -387,17 +414,19 @@ T
 
 <amp-story-page id="http://blog.testdouble.com/posts/2017-03-13-testdouble-2.0.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">e | Our Thinking | testdouble.js 2.0
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">e | Our Thinking | testdouble.js 2.0
 [blog.testdo</amp-fit-text>
-        <p class="contents">stdouble.js 2.0リリース。 <code>td.object</code>ではES2015 Proxyを使い存在しないプロパティなどのアクセスもキャッチ出来るようになるなど、非同期stubのサポート、<code>td.verify</code>の改善など
+            <p class="item-contents">stdouble.js 2.0リリース。 <code>td.object</code>ではES2015 Proxyを使い存在しないプロパティなどのアクセスもキャッチ出来るようになるなど、非同期stubのサポート、<code>td.verify</code>の改善など
 <ul>
 <li>[Test Doub</li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -410,16 +439,18 @@ T
 
 <amp-story-page id="https://kitak.github.io/slides/170316-vue-meetup/#">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ue.js - 算出プロパティはどうやって動いているか
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ue.js - 算出プロパティはどうやって動いているか
 [kitak.github</amp-fit-text>
-        <p class="contents">propertyの変更検知の仕組みについてのスライド
+            <p class="item-contents">propertyの変更検知の仕組みについてのスライド
 
 Rea
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -432,17 +463,19 @@ Rea
 
 <amp-story-page id="http://www.youtube.com/playlist?list=PLb0IAmt7-GS3fZ46IGFirdqKTIxlws7e0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">017 - YouTube
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">017 - YouTube
 [www.youtube.c</amp-fit-text>
-        <p class="contents">動画が公開された
+            <p class="item-contents">動画が公開された
 <ul>
 <li>[React Conf</li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -455,18 +488,20 @@ Rea
 
 <amp-story-page id="http://vulcanjs.org/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title"> full-stack React+GraphQL framework
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title"> full-stack React+GraphQL framework
 [vulcanjs.org/]</amp-fit-text>
-        <p class="contents">タックフレームワーク。
+            <p class="item-contents">タックフレームワーク。
 元々React+MeteorのTelscopeだったもの。
 <ul>
 <li>[Vulcan: A Ne</li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -479,16 +514,18 @@ Rea
 
 <amp-story-page id="https://github.com/rstacruz/webpack-tricks">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ck-tricks: Tips and tricks in using Webpack
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ck-tricks: Tips and tricks in using Webpack
 [github.com/rsta</amp-fit-text>
-        <p class="contents">の削減やビルドの設定、開発向け/本番向けの設定などのTipsをまとめたドキュメント
+            <p class="item-contents">の削減やビルドの設定、開発向け/本番向けの設定などのTipsをまとめたドキュメント
 
 &lt;h1 class=
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -501,17 +538,19 @@ Rea
 
 <amp-story-page id="https://github.com/thejameskyle/react-loadable">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">act-loadable: A higher order component for loading components with promises.
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">act-loadable: A higher order component for loading components with promises.
 [github.com/theja</amp-fit-text>
-        <p class="contents">数のReactコンポーネント。 Promiseが解決されるまでのローディングやエラー表示を行う
+            <p class="item-contents">数のReactコンポーネント。 Promiseが解決されるまでのローディングやエラー表示を行う
 <ul>
 <li>[Introducing Re</li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -524,17 +563,19 @@ Rea
 
 <amp-story-page id="https://github.com/smelukov/webpack-runtime-analyzer">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">-runtime-analyzer: Webpack 1.x/2.x plugin for analyzing internal processes, state and structure of bundles.
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">-runtime-analyzer: Webpack 1.x/2.x plugin for analyzing internal processes, state and structure of bundles.
 [github.com/smeluk</amp-fit-text>
-        <p class="contents">ateや構造をビジュアライズするwebpack plugin。
+            <p class="item-contents">ateや構造をビジュアライズするwebpack plugin。
 モジュール、依存関係グラフ、ファイルサイズなど
 
 FranckFr
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -547,16 +588,18 @@ FranckFr
 
 <amp-story-page id="https://github.com/FranckFreiburger/module-invalidate">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">module-invalidate: Invalidate node.js modules loaded through require()
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">module-invalidate: Invalidate node.js modules loaded through require()
 [github.com/FranckF</amp-fit-text>
-        <p class="contents">んだキャッシュを無効化したり、モジュール側で無効化することを宣言できるモジュール
+            <p class="item-contents">んだキャッシュを無効化したり、モジュール側で無効化することを宣言できるモジュール
 
 &lt;h1 class=&quot;si
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -569,15 +612,17 @@ FranckFr
 
 <amp-story-page id="http://shop.oreilly.com/product/0636920045335.do">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">&#039;Reilly Media
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">&#039;Reilly Media
 [shop.oreilly.com/pr</amp-fit-text>
-        <p class="contents">--
+            <p class="item-contents">--
 徹底マスター Jav
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -590,18 +635,20 @@ FranckFr
 
 <amp-story-page id="https://www.amazon.co.jp/dp/B06XNQCW7B">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">科書　プログラミングの教養から、言語仕様、開発技法までが正しく身につく | 磯 博 | インターネット・Web開発 | Kindleストア | Amazon
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">科書　プログラミングの教養から、言語仕様、開発技法までが正しく身につく | 磯 博 | インターネット・Web開発 | Kindleストア | Amazon
 [www.amazon.co.jp/dp/</amp-fit-text>
-        <p class="contents">ての書籍。
+            <p class="item-contents">ての書籍。
 ES2015に対応している内容
 <ul>
 <li>[SBクリエイティブ:徹底マスター J</li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

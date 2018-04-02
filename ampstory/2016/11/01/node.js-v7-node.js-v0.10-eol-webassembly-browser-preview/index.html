@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,14 +98,16 @@
     
 <amp-story-page id="https://nodejs.org/en/blog/release/v7.0.0/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Node v7.0.0 (Current) | Node.js</amp-fit-text>
-        <p class="contents">Node v7.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v7.0.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node v7.0.0リリース。
 V8のアップデート、WHATWG URL Parserの試験的サポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -116,14 +119,16 @@ V8のアップデート、WHATWG URL Parserの試験的サポートなど
 
 <amp-story-page id="https://babeljs.io/blog/2016/10/24/6.18.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">6.18.0 Released · Babel</amp-fit-text>
-        <p class="contents">Babel v6.18.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">6.18.0 Released · Babel</amp-fit-text>
+            <p class="item-contents">Babel v6.18.0リリース。
 <code>import()</code>のinitialサポート、<code>helper-builder-react-jsx</code>に<code>useBuiltIns</code>オプションの追加など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -135,14 +140,16 @@ V8のアップデート、WHATWG URL Parserの試験的サポートなど
 
 <amp-story-page id="https://webkit.org/blog/7030/release-notes-for-safari-technology-preview-16/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release Notes for Safari Technology Preview 16 | WebKit</amp-fit-text>
-        <p class="contents">Safari Technology Preview Release 16リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 16 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview Release 16リリース。
 URLのパースがウェブ標準により準拠するように、Gamepad APIのサポート、<code>Intl.getCanonicalLocales</code>のサポート、ES2016のnon-simple parametersにおけるearly errorに対応など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -154,14 +161,16 @@ URLのパースがウェブ標準により準拠するように、Gamepad APIの
 
 <amp-story-page id="http://eslint.org/blog/2016/10/eslint-v3.9.0-released">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ESLint v3.9.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
-        <p class="contents">ESLint v3.9.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint v3.9.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+            <p class="item-contents">ESLint v3.9.0リリース。
 <code>codeframe</code> formatterの追加、カスタムパーサがルール向けに情報を提供するオブジェクト(<code>context.parserServices</code>)を定義できるようになるなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -173,13 +182,15 @@ URLのパースがウェブ標準により準拠するように、Gamepad APIの
 
 <amp-story-page id="https://www.sitepoint.com/redux-without-react-state-management-vanilla-javascript/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Redux without React — State Management in Vanilla JavaScript</amp-fit-text>
-        <p class="contents">Reactは使わずにReduxを扱ってみる話
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Redux without React — State Management in Vanilla JavaScript</amp-fit-text>
+            <p class="item-contents">Reactは使わずにReduxを扱ってみる話
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -191,13 +202,15 @@ URLのパースがウェブ標準により準拠するように、Gamepad APIの
 
 <amp-story-page id="https://medium.com/good-eggs-product/visual-debugging-with-es6-and-node-js-44631b3b040f">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Visual Debugging with ES6 and Node.js – Good Eggs Product – Medium</amp-fit-text>
-        <p class="contents">Node.jsとBabelを組み合わせた場合のGUIデバッグ方法について
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Visual Debugging with ES6 and Node.js – Good Eggs Product – Medium</amp-fit-text>
+            <p class="item-contents">Node.jsとBabelを組み合わせた場合のGUIデバッグ方法について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -209,13 +222,15 @@ URLのパースがウェブ標準により準拠するように、Gamepad APIの
 
 <amp-story-page id="http://v8project.blogspot.com/2016/10/webassembly-browser-preview.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">V8 JavaScript Engine: WebAssembly Browser Preview</amp-fit-text>
-        <p class="contents">Chromeがフラグ付きでWebAssernblyを実験的にサポート。フィードバックを募集している。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">V8 JavaScript Engine: WebAssembly Browser Preview</amp-fit-text>
+            <p class="item-contents">Chromeがフラグ付きでWebAssernblyを実験的にサポート。フィードバックを募集している。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -227,14 +242,16 @@ URLのパースがウェブ標準により準拠するように、Gamepad APIの
 
 <amp-story-page id="https://medium.com/@sandeep.scet/different-ways-to-debug-javascript-code-579e7f58cf10">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Different ways to debug JavaScript code – Medium</amp-fit-text>
-        <p class="contents">JavaScriptのデバッグ手法について。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Different ways to debug JavaScript code – Medium</amp-fit-text>
+            <p class="item-contents">JavaScriptのデバッグ手法について。
 alert、console、breakpoint、<code>debugger;</code>、<code>debug</code>、<code>monitor</code>などのAPIや方法について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -246,13 +263,15 @@ alert、console、breakpoint、<code>debugger;</code>、<code>debug</code>、<co
 
 <amp-story-page id="https://blog.jxck.io/entries/2016-10-27/whatwg-url.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Node v7 で入った WHATWG URL 実装について | blog.jxck.io</amp-fit-text>
-        <p class="contents">Node.js v7で試験的に実装されたWHATWG URLについて
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v7 で入った WHATWG URL 実装について | blog.jxck.io</amp-fit-text>
+            <p class="item-contents">Node.js v7で試験的に実装されたWHATWG URLについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -264,14 +283,16 @@ alert、console、breakpoint、<code>debugger;</code>、<code>debug</code>、<co
 
 <amp-story-page id="https://zeit.co/blog/next">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ZEIT – Next.js</amp-fit-text>
-        <p class="contents">Reactを使ったサーバサイドレンダリング向けのフレームワーク。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ZEIT – Next.js</amp-fit-text>
+            <p class="item-contents">Reactを使ったサーバサイドレンダリング向けのフレームワーク。
 CSS in JS、Head、ルーティングや開発ツールがセットになっている。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -283,13 +304,15 @@ CSS in JS、Head、ルーティングや開発ツールがセットになって�
 
 <amp-story-page id="http://www.slideshare.net/grgur/webpack-react-performance-in-16-steps">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Webpack &amp;amp; React Performance in 16+ Steps</amp-fit-text>
-        <p class="contents">webpackとReactでパフォーマンスやサイズなど気をつける点についてのスライド
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Webpack &amp;amp; React Performance in 16+ Steps</amp-fit-text>
+            <p class="item-contents">webpackとReactでパフォーマンスやサイズなど気をつける点についてのスライド
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -301,13 +324,15 @@ CSS in JS、Head、ルーティングや開発ツールがセットになって�
 
 <amp-story-page id="https://github.com/timarney/react-faq">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">timarney/react-faq: A collection of links to help answer your questions about React.js</amp-fit-text>
-        <p class="contents">Reactに関するFAQをまとめたページ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">timarney/react-faq: A collection of links to help answer your questions about React.js</amp-fit-text>
+            <p class="item-contents">Reactに関するFAQをまとめたページ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -319,14 +344,16 @@ CSS in JS、Head、ルーティングや開発ツールがセットになって�
 
 <amp-story-page id="https://developers.google.com/web/fundamentals/performance/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Performance  |  Web  |  Google Developers</amp-fit-text>
-        <p class="contents">ウェブサイトのパフォーマンス改善についてのドキュメント。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Performance  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">ウェブサイトのパフォーマンス改善についてのドキュメント。
 クリティカルレンダリングパスの改善やネットワーク、アニメーションなど色々なパフォーマンスについての記事がまとめられている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -338,15 +365,17 @@ CSS in JS、Head、ルーティングや開発ツールがセットになって�
 
 <amp-story-page id="https://developer.mozilla.org/ja/docs/Tools/Performance">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">パフォーマンス - 開発ツール | MDN</amp-fit-text>
-        <p class="contents">Firefoxの開発者ツールのリファレンスページ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">パフォーマンス - 開発ツール | MDN</amp-fit-text>
+            <p class="item-contents">Firefoxの開発者ツールのリファレンスページ。
 基本的な使い方やツールの見方について。
 またカクカクなCSSアニメーション、UIスレッドをブロックしてしまうJSの問題などのシナリオ元にした改善方法についても書かれている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -358,13 +387,15 @@ CSS in JS、Head、ルーティングや開発ツールがセットになって�
 
 <amp-story-page id="https://github.com/pelotoncycle/resize-observer">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">pelotoncycle/resize-observer</amp-fit-text>
-        <p class="contents">Resize Observerのpolyfill
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">pelotoncycle/resize-observer</amp-fit-text>
+            <p class="item-contents">Resize Observerのpolyfill
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -376,14 +407,16 @@ CSS in JS、Head、ルーティングや開発ツールがセットになって�
 
 <amp-story-page id="https://github.com/Raynos/jsig">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Raynos/jsig: From scratch type-checker</amp-fit-text>
-        <p class="contents">JSDocのような型アノテーションコメントと型推論から静的な型チェックを行うツール。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Raynos/jsig: From scratch type-checker</amp-fit-text>
+            <p class="item-contents">JSDocのような型アノテーションコメントと型推論から静的な型チェックを行うツール。
 FlowTypeとは異なりES5に焦点をおいてる事と曖昧さを許容しない作り
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -395,14 +428,16 @@ FlowTypeとは異なりES5に焦点をおいてる事と曖昧さを許容しな
 
 <amp-story-page id="https://github.com/taichi/ci-yarn-upgrade">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">taichi/ci-yarn-upgrade: Keep NPM dependencies up-to-date with CI, providing version-to-version diff for each library</amp-fit-text>
-        <p class="contents">yarnを使ってpackage.jsonの依存モジュールを更新するPRを出す事ができるツール。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">taichi/ci-yarn-upgrade: Keep NPM dependencies up-to-date with CI, providing version-to-version diff for each library</amp-fit-text>
+            <p class="item-contents">yarnを使ってpackage.jsonの依存モジュールを更新するPRを出す事ができるツール。
 また更新するモジュールの一覧を取得する事もできる
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -414,13 +449,15 @@ FlowTypeとは異なりES5に焦点をおいてる事と曖昧さを許容しな
 
 <amp-story-page id="https://github.com/azu/ui-event-observer">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">azu/ui-event-observer: Provide performant way to subscribe to browser UI Events.</amp-fit-text>
-        <p class="contents">同じ要素への同じイベントの複数の<code>addEventListener</code>を1つにまとめて扱うことができるライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">azu/ui-event-observer: Provide performant way to subscribe to browser UI Events.</amp-fit-text>
+            <p class="item-contents">同じ要素への同じイベントの複数の<code>addEventListener</code>を1つにまとめて扱うことができるライブラリ。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -432,13 +469,15 @@ FlowTypeとは異なりES5に焦点をおいてる事と曖昧さを許容しな
 
 <amp-story-page id="https://mjavascript.com/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Modular JavaScript Book Series</amp-fit-text>
-        <p class="contents">クラウドファンディングで開始されたJavaScriptの書籍シリーズ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Modular JavaScript Book Series</amp-fit-text>
+            <p class="item-contents">クラウドファンディングで開始されたJavaScriptの書籍シリーズ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -450,14 +489,16 @@ FlowTypeとは異なりES5に焦点をおいてる事と曖昧さを許容しな
 
 <amp-story-page id="https://www.amazon.co.jp/%E9%96%A2%E6%95%B0%E5%9E%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E5%9F%BA%E7%A4%8E-JavaScript%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E5%AD%A6%E3%81%B6-%E7%AB%8B%E5%B7%9D%E5%AF%9F%E7%90%86/dp/4865940596">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">関数型プログラミングの基礎 JavaScriptを使って学ぶ : 立川察理, 長瀬嘉秀 : 本 : Amazon.co.jp</amp-fit-text>
-        <p class="contents">2016年10月29日発売
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">関数型プログラミングの基礎 JavaScriptを使って学ぶ : 立川察理, 長瀬嘉秀 : 本 : Amazon.co.jp</amp-fit-text>
+            <p class="item-contents">2016年10月29日発売
 JavaScriptでの関数型プログラミングについての書籍
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

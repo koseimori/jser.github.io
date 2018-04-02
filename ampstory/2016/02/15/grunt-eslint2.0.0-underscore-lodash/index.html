@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,15 +98,17 @@
     
 <amp-story-page id="https://github.com/zloirock/core-js/releases/tag/v2.1.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release 2.1.0 - 2016.02.09 · zloirock/core-js</amp-fit-text>
-        <p class="contents">core-js 2.1.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 2.1.0 - 2016.02.09 · zloirock/core-js</amp-fit-text>
+            <p class="item-contents">core-js 2.1.0リリース。
 ES5 polyfillの分離。
 <code>Reflect.enumerate</code>の削除、Metadata Reflection APIの追加など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -117,14 +120,16 @@ ES5 polyfillの分離。
 
 <amp-story-page id="https://nodejs.org/en/blog/vulnerability/february-2016-security-releases/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">February 2016 Security Release Summary | Node.js</amp-fit-text>
-        <p class="contents">Node.jsのセキュリティアップデート。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">February 2016 Security Release Summary | Node.js</amp-fit-text>
+            <p class="item-contents">Node.jsのセキュリティアップデート。
 0.1x、4.x、5.xのアップデートがそれぞれ公開されている。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -136,14 +141,16 @@ ES5 polyfillの分離。
 
 <amp-story-page id="http://gruntjs.com/blog/2016-02-11-grunt-1.0.0-rc1-released">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Grunt 1.0.0 rc1 released - Grunt: The JavaScript Task Runner</amp-fit-text>
-        <p class="contents">Grunt 1.0.0 RC1リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Grunt 1.0.0 rc1 released - Grunt: The JavaScript Task Runner</amp-fit-text>
+            <p class="item-contents">Grunt 1.0.0 RC1リリース。
 メジャーアップデートとなるため<code>peerDependencies</code>についての注意、<code>grant</code>モジュールにCLIが含まれるように、依存モジュールのアップデートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -155,14 +162,16 @@ ES5 polyfillの分離。
 
 <amp-story-page id="http://eslint.org/blog/2016/02/eslint-v2.0.0-released">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ESLint v2.0.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
-        <p class="contents">ESLint 2.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint v2.0.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+            <p class="item-contents">ESLint 2.0.0リリース。
 <code>eslint --init</code>で既存コードから判定して利用するルールの設定を作為する機能の追加、<code>eslint:recommended</code>のアップデート、既存ルールの挙動変更やオプションの非互換な変更など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -174,13 +183,15 @@ ES5 polyfillの分離。
 
 <amp-story-page id="https://strongloop.com/strongblog/a-new-day-for-express/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">StrongLoop | A New Day for Express!</amp-fit-text>
-        <p class="contents">expressがNode.js FoundationのTop-Level Projectとなり、strongloop(IBM)から  https://github.com/expressjs へ移管された。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">StrongLoop | A New Day for Express!</amp-fit-text>
+            <p class="item-contents">expressがNode.js FoundationのTop-Level Projectとなり、strongloop(IBM)から  https://github.com/expressjs へ移管された。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -192,13 +203,15 @@ ES5 polyfillの分離。
 
 <amp-story-page id="http://dev.edenspiekermann.com/2016/02/11/introducing-accessible-modal-dialog/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Introducing the Accessible Modal Dialog</amp-fit-text>
-        <p class="contents">AccessibleなモーダルUIライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Introducing the Accessible Modal Dialog</amp-fit-text>
+            <p class="item-contents">AccessibleなモーダルUIライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -210,13 +223,15 @@ ES5 polyfillの分離。
 
 <amp-story-page id="https://github.com/timaschew/postcss-compare-packs">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">timaschew/postcss-compare-packs: compare most popular postcss packs like cssnext, rucksack and precss</amp-fit-text>
-        <p class="contents">cssnext、rucksack、precssなどのPostCSSパックの比較
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">timaschew/postcss-compare-packs: compare most popular postcss packs like cssnext, rucksack and precss</amp-fit-text>
+            <p class="item-contents">cssnext、rucksack、precssなどのPostCSSパックの比較
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -228,13 +243,15 @@ ES5 polyfillの分離。
 
 <amp-story-page id="http://efcl.info/2016/02/12/tc39-meeting-notes/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ECMAScript, TC39 Meeting Notesの読み方と修正方法 | Web Scratch</amp-fit-text>
-        <p class="contents">ECMA TC39ミーティングノートの読み方とこのミーティングノートにはどういうことが書かれているのかについて
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ECMAScript, TC39 Meeting Notesの読み方と修正方法 | Web Scratch</amp-fit-text>
+            <p class="item-contents">ECMA TC39ミーティングノートの読み方とこのミーティングノートにはどういうことが書かれているのかについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -246,13 +263,15 @@ ES5 polyfillの分離。
 
 <amp-story-page id="https://github.com/cht8687/You-Dont-Need-Lodash-Underscore">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">cht8687/You-Dont-Need-Lodash-Underscore: Lists of Javascript methods which you can use natively</amp-fit-text>
-        <p class="contents">underscore/lodashのメソッドをネイティブで同じ表現をする書き方について
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">cht8687/You-Dont-Need-Lodash-Underscore: Lists of Javascript methods which you can use natively</amp-fit-text>
+            <p class="item-contents">underscore/lodashのメソッドをネイティブで同じ表現をする書き方について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -264,15 +283,17 @@ ES5 polyfillの分離。
 
 <amp-story-page id="https://groups.google.com/forum/#!msg/strengthen-js/ojj3TDxbHpQ/5ENNAiUzEgAJ">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">An update on strong mode - Google グループ</amp-fit-text>
-        <p class="contents">V8のstrong modeの実装ステータスや結果について。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">An update on strong mode - Google グループ</amp-fit-text>
+            <p class="item-contents">V8のstrong modeの実装ステータスや結果について。
 性能が想定よりでなかった、ES6の仕様に性能のブロッカーがある。複雑になりすぎるなど。
 そのため次期V8ではstrong modeのサポートは削除予定
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -284,13 +305,15 @@ ES5 polyfillの分離。
 
 <amp-story-page id="https://github.com/web-perf/react-worker-dom">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">web-perf/react-worker-dom: Experiments to see the advantages of using Web Workers to Render React Virtual DOM</amp-fit-text>
-        <p class="contents">ReactをWebWorkerで動かす実装とデモ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">web-perf/react-worker-dom: Experiments to see the advantages of using Web Workers to Render React Virtual DOM</amp-fit-text>
+            <p class="item-contents">ReactをWebWorkerで動かす実装とデモ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -302,14 +325,16 @@ ES5 polyfillの分離。
 
 <amp-story-page id="https://github.com/AriaFallah/WebpackTutorial">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">AriaFallah/WebpackTutorial: A simple webpack tutorial</amp-fit-text>
-        <p class="contents">webpackのチュートリアル。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">AriaFallah/WebpackTutorial: A simple webpack tutorial</amp-fit-text>
+            <p class="item-contents">webpackのチュートリアル。
 色々なパターンについて設定やなぜそう書くのかについて書かれてる
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -321,13 +346,15 @@ ES5 polyfillの分離。
 
 <amp-story-page id="http://reactjsnewsletter.com/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">React Newsletter</amp-fit-text>
-        <p class="contents">ReactのWeeklyメールマガジン
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React Newsletter</amp-fit-text>
+            <p class="item-contents">ReactのWeeklyメールマガジン
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -339,13 +366,15 @@ ES5 polyfillの分離。
 
 <amp-story-page id="https://github.com/marten-de-vries/kneden">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">marten-de-vries/kneden: Transpile ES7 async/await to vanilla ES6 Promise chains: a Babel plugin</amp-fit-text>
-        <p class="contents">async/awaitをPromiseを使ったreadableなコードへ変換する目的のBabelプラグイン
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">marten-de-vries/kneden: Transpile ES7 async/await to vanilla ES6 Promise chains: a Babel plugin</amp-fit-text>
+            <p class="item-contents">async/awaitをPromiseを使ったreadableなコードへ変換する目的のBabelプラグイン
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -357,13 +386,15 @@ ES5 polyfillの分離。
 
 <amp-story-page id="https://github.com/ruyadorno/ntl">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ruyadorno/ntl: Npm Task List: Interactive cli menu to list/run npm tasks</amp-fit-text>
-        <p class="contents">npm run-scriptをインタラクティブに選択肢て実行出来るツール
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ruyadorno/ntl: Npm Task List: Interactive cli menu to list/run npm tasks</amp-fit-text>
+            <p class="item-contents">npm run-scriptをインタラクティブに選択肢て実行出来るツール
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -375,13 +406,15 @@ ES5 polyfillの分離。
 
 <amp-story-page id="https://leanpub.com/jsglossary">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">JavaScript glossary… by Andrea Giammarchi [PDF/iPad/Kindle]</amp-fit-text>
-        <p class="contents">JavaScriptを使った開発に出てくる用語を解説することを目的とした書籍
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScript glossary… by Andrea Giammarchi [PDF/iPad/Kindle]</amp-fit-text>
+            <p class="item-contents">JavaScriptを使った開発に出てくる用語を解説することを目的とした書籍
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

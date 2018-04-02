@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,16 +98,18 @@
     
 <amp-story-page id="https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_1.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Safari 10.1</amp-fit-text>
-        <p class="contents">afari 10.1 プレリリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Safari 10.1</amp-fit-text>
+            <p class="item-contents">afari 10.1 プレリリース。
 Fetch API、IndexedDB 2.0、Custom Elements、Pointer Lock/Gamepad API、ES2016,2017のサポートなど。
 また<code>&lt;a&gt;</code>要素の<code>download</code>属性,
 CSS Gridなどのサポート
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -118,15 +121,17 @@ CSS Gridなどのサポート
 
 <amp-story-page id="https://www.mozilla.org/en-US/firefox/51.0/releasenotes/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title"># Firefox — Notes (51.0) — Mozilla
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title"># Firefox — Notes (51.0) — Mozilla
 </amp-fit-text>
-        <p class="contents">refox 51.0リリース。
+            <p class="item-contents">refox 51.0リリース。
 WebGL 2、IndexedDB 2、XHRの仕様追従、FLAC形式のサポート、<code>DOMImplementation.hasFeature()</code>は常に<code>true</code>を返すように、非標準なAPIを削除など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -139,19 +144,21 @@ WebGL 2、IndexedDB 2、XHRの仕様追従、FLAC形式のサポート、<code>D
 
 <amp-story-page id="https://github.com/substack/node-browserify/blob/master/changelog.markdown">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title"> node-browserify/changelog.markdown at master · substack/node-browserify
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title"> node-browserify/changelog.markdown at master · substack/node-browserify
 [</amp-fit-text>
-        <p class="contents">wserify 14.0.0リリース。
+            <p class="item-contents">wserify 14.0.0リリース。
 bufferのpolyfillがアップグレードされ、IE10以下のサポートが終了。
 bufferパッケージがTypedArrayを利用しているため。
 <ul>
 <li></li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -164,16 +171,18 @@ bufferパッケージがTypedArrayを利用しているため。
 
 <amp-story-page id="https://webkit.org/blog/7354/release-notes-for-safari-technology-preview-22/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release Notes for Safari Technology Preview 22 | WebKit
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 22 | WebKit
 [w</amp-fit-text>
-        <p class="contents">ri Technology Preview Release 22リリース。
+            <p class="item-contents">ri Technology Preview Release 22リリース。
 <code>scroll-snap-type:proximity</code>のサポート、<code>innerText</code>の仕様追従、<code>URLSearchParams</code>がiterableとなるなど
 --
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -186,18 +195,20 @@ bufferパッケージがTypedArrayを利用しているため。
 
 <amp-story-page id="http://blog.videojs.com/Video-js-6-0-0-RC-0-The-first-RC/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ideo.js 6.0.0-RC.0: The first Release Candidate | Video.js Blog
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ideo.js 6.0.0-RC.0: The first Release Candidate | Video.js Blog
 [bl</amp-fit-text>
-        <p class="contents">.js v6.0 RCリリース。
+            <p class="item-contents">.js v6.0 RCリリース。
 FlashをCoreから取り除き、Reactインスパイアなプラグインアーキテクチャの追加、accessiblityの改善など
 <ul>
 <li>[T</li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -210,19 +221,21 @@ FlashをCoreから取り除き、Reactインスパイアなプラグインアー
 
 <amp-story-page id="https://www.reaktor.com/blog/refactoring-30000-lines-js-types/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">factoring 30000 lines of JS with types - Reaktor.com
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">factoring 30000 lines of JS with types - Reaktor.com
 [www</amp-fit-text>
-        <p class="contents">vaScriptをリファクタリングしたアプローチについて。
+            <p class="item-contents">vaScriptをリファクタリングしたアプローチについて。
 逐次的な型付のアプローチについて。
 Flowのweek modeとコメントでの型付けを使った方法と問題点。
 TypeScriptを使った名前空間オブジェクトへのアプローチとメリット/デメリット。
 最終的にTypeScriptを使ったがそのときに遭遇した問題について
 
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -235,19 +248,21 @@ TypeScriptを使った名前空間オブジェクトへのアプローチとメ�
 
 <amp-story-page id="https://developers.google.com/web/updates/2017/01/scrolling-intervention">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ing touch scrolling fast by default  |  Web  |  Google Developers
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ing touch scrolling fast by default  |  Web  |  Google Developers
 [deve</amp-fit-text>
-        <p class="contents">56からtouch eventをlistenすると
+            <p class="item-contents">56からtouch eventをlistenすると
 <code>{passive: true}</code>がデフォルトとなる。
 デフォルトでは<code>touchstart</code>の中で<code>event.preventDefault()</code>を呼ぶと無視され警告がコンソールに表示される。
 <ul>
 <li>[Eve</li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -260,16 +275,18 @@ TypeScriptを使った名前空間オブジェクトへのアプローチとメ�
 
 <amp-story-page id="https://auth0.com/blog/testing-react-applications-with-jest/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ing React Applications with Jest
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ing React Applications with Jest
 [auth0</amp-fit-text>
-        <p class="contents">Reactのテストについての解説。
+            <p class="item-contents">Reactのテストについての解説。
 インストールからテストの書き方、モックなどについて書かれている。
 
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -282,17 +299,19 @@ TypeScriptを使った名前空間オブジェクトへのアプローチとメ�
 
 <amp-story-page id="http://www.2ality.com/2017/01/shared-array-buffer.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">oposal: Shared memory and atomics
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">oposal: Shared memory and atomics
 [www.2a</amp-fit-text>
-        <p class="contents">ことが決まったShared memory and atomicsについての解説。
+            <p class="item-contents">ことが決まったShared memory and atomicsについての解説。
 Shared Array BuffersでWorker(agent)とデータを共有することができる。
 
 
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -305,17 +324,19 @@ Shared Array BuffersでWorker(agent)とデータを共有することができ�
 
 <amp-story-page id="https://medium.com/@bohou/implement-a-javascript-reactive-programming-library-part-1-f564ac6ad789">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ent a JavaScript reactive programming library — part 1 – Medium
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ent a JavaScript reactive programming library — part 1 – Medium
 [medium.</amp-fit-text>
-        <p class="contents">avaScriptライブラリを実装する連載記事。
+            <p class="item-contents">avaScriptライブラリを実装する連載記事。
 <ul>
 <li>[bhou/b</li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -328,17 +349,19 @@ Shared Array BuffersでWorker(agent)とデータを共有することができ�
 
 <amp-story-page id="https://daveceddia.com/watch-out-for-undefined-state/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ut for Undefined State
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ut for Undefined State
 [davecedd</amp-fit-text>
-        <p class="contents">トでコンポーネント内のstateに依存しているものを、propsへ移動するリファクタリングの例。
+            <p class="item-contents">トでコンポーネント内のstateに依存しているものを、propsへ移動するリファクタリングの例。
 コンポーネントのデフォルトstateはundefinedであるという話
 
 
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -351,17 +374,19 @@ Shared Array BuffersでWorker(agent)とデータを共有することができ�
 
 <amp-story-page id="http://kosamari.com/notes/the-promise-of-a-burger-party">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ise of a Burger Party - Mariko Kosaka
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ise of a Burger Party - Mariko Kosaka
 [kosamari.</amp-fit-text>
-        <p class="contents">ショップを例にして解説している記事。
+            <p class="item-contents">ショップを例にして解説している記事。
 図解をしながらPromiseのresolveとrejectの動きについて書かれている
 
 
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -374,17 +399,19 @@ Shared Array BuffersでWorker(agent)とデータを共有することができ�
 
 <amp-story-page id="https://paul.kinlan.me/detecting-text-in-an-image/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title"> text in an image on the web in real-time - Tales of a Developer Advocate by Paul Kinlan
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title"> text in an image on the web in real-time - Tales of a Developer Advocate by Paul Kinlan
 [paul.kinla</amp-fit-text>
-        <p class="contents">ド認識、画像からテキスト認識するブラウザAPIについて
+            <p class="item-contents">ド認識、画像からテキスト認識するブラウザAPIについて
 <ul>
 <li>[Accelerat</li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -397,18 +424,20 @@ Shared Array BuffersでWorker(agent)とデータを共有することができ�
 
 <amp-story-page id="https://bitsofco.de/understanding-the-critical-rendering-path/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ing the Critical Rendering Path
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ing the Critical Rendering Path
 [bitsofco.de</amp-fit-text>
-        <p class="contents">とは何かという解説。
+            <p class="item-contents">とは何かという解説。
 ブラウザがどのようなフローでレンダリングまでを行うか。
 また、開発者ツールを使ってレンダリングフローで起きているイベントを見ていく話。
 
 ECM
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -421,16 +450,18 @@ ECM
 
 <amp-story-page id="https://ecmascript-daily.github.io/ecmascript/2017/01/30/ecmascript-proposals-status">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">proposal updates @ 2017-01 | ECMAScript Daily
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">proposal updates @ 2017-01 | ECMAScript Daily
 [ecmascript-d</amp-fit-text>
-        <p class="contents">ScriptのProposalのStageまとめ。 2017年1月のミーティングで5つのProposalが追加され、Shared memory and atomicsはES2017に入った。
+            <p class="item-contents">ScriptのProposalのStageまとめ。 2017年1月のミーティングで5つのProposalが追加され、Shared memory and atomicsはES2017に入った。
 
 Optim
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -443,17 +474,19 @@ Optim
 
 <amp-story-page id="https://auth0.com/blog/optimizing-react/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">he Performance of Your React Application
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">he Performance of Your React Application
 [auth0.com/blo</amp-fit-text>
-        <p class="contents">rf<code>を使いReactコンポーネントのパフォーマンス計測を行う話。 また</code>React.PureComponent<code>を使い</code>shouldComponentUpdate`の判定がきちんと行われるようにしてパフォーマンス改善するという話。
+            <p class="item-contents">rf<code>を使いReactコンポーネントのパフォーマンス計測を行う話。 また</code>React.PureComponent<code>を使い</code>shouldComponentUpdate`の判定がきちんと行われるようにしてパフォーマンス改善するという話。
 
 
 &lt;h
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -466,16 +499,18 @@ Optim
 
 <amp-story-page id="https://github.com/knq/chromedp">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title"> Package chromedp is a faster, simpler way to drive browsers (Chrome, Edge, Safari, Android, etc) without external dependencies (ie, Selenium, PhantomJS, etc).
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title"> Package chromedp is a faster, simpler way to drive browsers (Chrome, Edge, Safari, Android, etc) without external dependencies (ie, Selenium, PhantomJS, etc).
 [github.com/knq</amp-fit-text>
-        <p class="contents">rotocolを使ったブラウザ操作ツール
+            <p class="item-contents">rotocolを使ったブラウザ操作ツール
 
 &lt;h1 class=
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -488,17 +523,19 @@ Optim
 
 <amp-story-page id="https://www.manning.com/books/isomorphic-development-with-javascript">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">orphic Development with JavaScript
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">orphic Development with JavaScript
 [www.manning.com</amp-fit-text>
-        <p class="contents">iptについての書籍。
+            <p class="item-contents">iptについての書籍。
 ブラウザとNode.jsで共有しながら、ウェブアプリケーションを作る話。
 React + Redux、Angular 2やEmberを題材にしている。
 
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

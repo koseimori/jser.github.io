@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,15 +98,17 @@
     
 <amp-story-page id="https://nodejs.org/en/blog/release/v8.0.0/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Node v8.0.0 (Current) | Node.js</amp-fit-text>
-        <p class="contents">Node.js 8.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v8.0.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 8.0.0リリース。
 npm 5.0.0、V8 5.8、N-API(Node.js API)、<code>async_hooks</code>、WHATWG URLを正式サポート、<code>Buffer</code>コンストラクタのzero-filledをデフォルト化、<code>util.promisify</code>の追加、Node.jsが生成するErrorに<code>code</code>がつくように。
 また<code>--debug</code>が廃止され<code>--inspect</code>でデバッガーと連携できるようになるなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -117,14 +120,16 @@ npm 5.0.0、V8 5.8、N-API(Node.js API)、<code>async_hooks</code>、WHATWG URL�
 
 <amp-story-page id="https://github.com/npm/npm/blob/v5.0.1/CHANGELOG.md">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">npm/CHANGELOG.md at v5.0.1 · npm/npm</amp-fit-text>
-        <p class="contents">npm 5.0.1リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">npm/CHANGELOG.md at v5.0.1 · npm/npm</amp-fit-text>
+            <p class="item-contents">npm 5.0.1リリース。
 5.0.0のバグ修正が中心。余計なassertionを削除してインストール速度の改善など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -136,14 +141,16 @@ npm 5.0.0、V8 5.8、N-API(Node.js API)、<code>async_hooks</code>、WHATWG URL�
 
 <amp-story-page id="https://webkit.org/blog/7622/release-notes-for-safari-technology-preview-31/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release Notes for Safari Technology Preview 31 | WebKit</amp-fit-text>
-        <p class="contents">Safari Technology Preview Release 31リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 31 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview Release 31リリース。
 <code>preload</code>で<code>as</code>や<code>type</code>属性のサポート、Access-Control-Allow-Originのエラーメッセージを改善など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -155,13 +162,15 @@ npm 5.0.0、V8 5.8、N-API(Node.js API)、<code>async_hooks</code>、WHATWG URL�
 
 <amp-story-page id="https://medium.com/@nodejs/n-api-next-generation-node-js-apis-for-native-modules-169af5235b06">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">N-API: Next generation Node.js APIs for native modules</amp-fit-text>
-        <p class="contents">Node.js 8.0.0で導入されたN-APIについて。 いままでネイティブモジュールを書く際にNANなどもあったが、それはV8に依存していたためAPI/ABI stabilityに問題があった。 N-APIではABI-stableな中間レイヤーを入れる。これによりNode-ChacraCoreなどでも互換APIが整備されている
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">N-API: Next generation Node.js APIs for native modules</amp-fit-text>
+            <p class="item-contents">Node.js 8.0.0で導入されたN-APIについて。 いままでネイティブモジュールを書く際にNANなどもあったが、それはV8に依存していたためAPI/ABI stabilityに問題があった。 N-APIではABI-stableな中間レイヤーを入れる。これによりNode-ChacraCoreなどでも互換APIが整備されている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -173,13 +182,15 @@ npm 5.0.0、V8 5.8、N-API(Node.js API)、<code>async_hooks</code>、WHATWG URL�
 
 <amp-story-page id="https://github.com/npm/npm/releases/tag/v5.0.2">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release v5.0.2 · npm/npm</amp-fit-text>
-        <p class="contents">npm 5.0.2リリース。 <code>npm i -g npmc</code>でnpmのcanary版がインストールできるように。 インストールの出力結果の改善など
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v5.0.2 · npm/npm</amp-fit-text>
+            <p class="item-contents">npm 5.0.2リリース。 <code>npm i -g npmc</code>でnpmのcanary版がインストールできるように。 インストールの出力結果の改善など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -191,14 +202,16 @@ npm 5.0.0、V8 5.8、N-API(Node.js API)、<code>async_hooks</code>、WHATWG URL�
 
 <amp-story-page id="https://blog.meteor.com/announcing-meteor-1-5-b82be66571bb">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Announcing Meteor 1.5 – Meteor Blog</amp-fit-text>
-        <p class="contents">Meteor 1.5リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing Meteor 1.5 – Meteor Blog</amp-fit-text>
+            <p class="item-contents">Meteor 1.5リリース。
 Code splitting、Dynamic import、bundle解析ツールの追加など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -210,14 +223,16 @@ Code splitting、Dynamic import、bundle解析ツールの追加など
 
 <amp-story-page id="https://medium.com/olricdigital/introduction-to-state-management-in-angular-v2-ef6f5144bade">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Introduction to State Management in Angular v2+ – OlricDigital – Medium</amp-fit-text>
-        <p class="contents">Angularでのステート管理について。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Introduction to State Management in Angular v2+ – OlricDigital – Medium</amp-fit-text>
+            <p class="item-contents">Angularでのステート管理について。
 <code>@ngrx/store</code>を使ったステート管理の解説
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -229,13 +244,15 @@ Code splitting、Dynamic import、bundle解析ツールの追加など
 
 <amp-story-page id="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">HTTP/2 push is tougher than I thought - JakeArchibald.com</amp-fit-text>
-        <p class="contents">HTTP/2 Server Pushに関するブラウザごとの挙動についてのまとめ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">HTTP/2 push is tougher than I thought - JakeArchibald.com</amp-fit-text>
+            <p class="item-contents">HTTP/2 Server Pushに関するブラウザごとの挙動についてのまとめ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -247,13 +264,15 @@ Code splitting、Dynamic import、bundle解析ツールの追加など
 
 <amp-story-page id="https://medium.com/@CWMma/whats-new-for-streams-in-node-8-736d431083df">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Whats new for streams in Node 8 – Calvin Metcalf – Medium</amp-fit-text>
-        <p class="contents">Node.js 8.0.0でStreamに追加された<code>destroy</code>について
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Whats new for streams in Node 8 – Calvin Metcalf – Medium</amp-fit-text>
+            <p class="item-contents">Node.js 8.0.0でStreamに追加された<code>destroy</code>について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -265,13 +284,15 @@ Code splitting、Dynamic import、bundle解析ツールの追加など
 
 <amp-story-page id="https://www.sitepoint.com/redux-vs-mobx-which-is-best/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Redux vs MobX: Which Is Best for Your Project? — SitePoint</amp-fit-text>
-        <p class="contents">ReduxとMobXの比較。 それぞれの特徴や書き方の違いなどについて雑感が書かれている
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Redux vs MobX: Which Is Best for Your Project? — SitePoint</amp-fit-text>
+            <p class="item-contents">ReduxとMobXの比較。 それぞれの特徴や書き方の違いなどについて雑感が書かれている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -283,15 +304,17 @@ Code splitting、Dynamic import、bundle解析ツールの追加など
 
 <amp-story-page id="https://ebaytech.berlin/into-the-great-unknown-migrating-from-mocha-to-jest-3baced083c7e">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Into the Great Unknown — Migrating from Mocha to Jest</amp-fit-text>
-        <p class="contents">MochaからJestへテストを移行した話。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Into the Great Unknown — Migrating from Mocha to Jest</amp-fit-text>
+            <p class="item-contents">MochaからJestへテストを移行した話。
 codemodを使ったマイグレーション、js以外を読み込んでいた時のhook処理、ESLintの設定など。
 また複雑なテストやchaiの拡張を使っている場合に自動で移行できないケースについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -303,14 +326,16 @@ codemodを使ったマイグレーション、js以外を読み込んでいた�
 
 <amp-story-page id="https://medium.com/storybookjs/announcing-storybook-3-0-329748b8f4cd">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Announcing Storybook 3.0 – Storybook – Medium</amp-fit-text>
-        <p class="contents">Reactのコンポーネント開発環境ツールであるStorybook 3.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing Storybook 3.0 – Storybook – Medium</amp-fit-text>
+            <p class="item-contents">Reactのコンポーネント開発環境ツールであるStorybook 3.0リリース。
 開発の主体がKadiraからコミュニティへ、webpack 2の対応、スナップショットテストを行う<code>storyshots</code>のサポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -322,14 +347,16 @@ codemodを使ったマイグレーション、js以外を読み込んでいた�
 
 <amp-story-page id="https://bitjourney.kibe.la/shared/entries/5c77844d-9856-4f1c-b689-44b1ee3d450a">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">RailsエンジニアがReactを始めてSSRとReduxとTypeScriptを導入するまで | bitjourney Kibela</amp-fit-text>
-        <p class="contents">Railsの環境にReact+Reduxとサーバサイドレンダリングを導入するまでの話。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">RailsエンジニアがReactを始めてSSRとReduxとTypeScriptを導入するまで | bitjourney Kibela</amp-fit-text>
+            <p class="item-contents">Railsの環境にReact+Reduxとサーバサイドレンダリングを導入するまでの話。
 後からTypeScriptを導入した流れについて。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -341,13 +368,15 @@ codemodを使ったマイグレーション、js以外を読み込んでいた�
 
 <amp-story-page id="https://wasmdash.appspot.com/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">WebAssembly and Friends Roadmap</amp-fit-text>
-        <p class="contents">Chromeのwasm関係のロードマップ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">WebAssembly and Friends Roadmap</amp-fit-text>
+            <p class="item-contents">Chromeのwasm関係のロードマップ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -359,14 +388,16 @@ codemodを使ったマイグレーション、js以外を読み込んでいた�
 
 <amp-story-page id="https://mil-tokyo.github.io/webdnn/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">MIL WebDNN</amp-fit-text>
-        <p class="contents">WebGPU、WebAssembly、JavaScriptのFallbackを持ったディープニューラルネットワーク(DNN)の実行環境の実装。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">MIL WebDNN</amp-fit-text>
+            <p class="item-contents">WebGPU、WebAssembly、JavaScriptのFallbackを持ったディープニューラルネットワーク(DNN)の実行環境の実装。
 ブラウザ上で高速に処理することが目的。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -378,13 +409,15 @@ codemodを使ったマイグレーション、js以外を読み込んでいた�
 
 <amp-story-page id="https://github.com/picodom/picodom">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">picodom/picodom: 1kb Virtual DOM builder and patch algorithm.</amp-fit-text>
-        <p class="contents">小さなVirtual DOM実装ライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">picodom/picodom: 1kb Virtual DOM builder and patch algorithm.</amp-fit-text>
+            <p class="item-contents">小さなVirtual DOM実装ライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -396,13 +429,15 @@ codemodを使ったマイグレーション、js以外を読み込んでいた�
 
 <amp-story-page id="http://achrafkassioui.com/birdview/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Birdview</amp-fit-text>
-        <p class="contents">サイト全体を俯瞰する表示に切り替えることができるライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Birdview</amp-fit-text>
+            <p class="item-contents">サイト全体を俯瞰する表示に切り替えることができるライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -414,14 +449,16 @@ codemodを使ったマイグレーション、js以外を読み込んでいた�
 
 <amp-story-page id="https://www.oreilly.co.jp/books/9784873118062/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">O&#039;Reilly Japan - サーバーレスシングルページアプリケーション</amp-fit-text>
-        <p class="contents">2017年06月23日発売
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">O&#039;Reilly Japan - サーバーレスシングルページアプリケーション</amp-fit-text>
+            <p class="item-contents">2017年06月23日発売
 aws lambdaなど使ったサーバレスのSPAについての書籍
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -433,14 +470,16 @@ aws lambdaなど使ったサーバレスのSPAについての書籍
 
 <amp-story-page id="https://www.amazon.co.jp/%E5%9F%BA%E7%A4%8E%E3%81%8B%E3%82%89%E3%82%8F%E3%81%8B%E3%82%8B-Elm-%E9%B3%A5%E5%B1%85-%E9%99%BD%E4%BB%8B/dp/4863542224">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">基礎からわかる Elm | 鳥居 陽介 |本 | 通販 | Amazon</amp-fit-text>
-        <p class="contents">2017年7月14日発売
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">基礎からわかる Elm | 鳥居 陽介 |本 | 通販 | Amazon</amp-fit-text>
+            <p class="item-contents">2017年7月14日発売
 Elmについての書籍
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -452,14 +491,16 @@ Elmについての書籍
 
 <amp-story-page id="https://www.amazon.com/Get-Programming-JavaScript-Next-ECMAScript/dp/1617294209">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Get Programming with JavaScript Next: New features of ECMAScript 2015, 2016, and beyond: J. D. Isaacks: 9781617294204: Amazon.com: Books</amp-fit-text>
-        <p class="contents">2017年12月30日発売
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Get Programming with JavaScript Next: New features of ECMAScript 2015, 2016, and beyond: J. D. Isaacks: 9781617294204: Amazon.com: Books</amp-fit-text>
+            <p class="item-contents">2017年12月30日発売
 ES2015以降について扱う書籍
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

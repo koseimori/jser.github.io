@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,14 +98,16 @@
     
 <amp-story-page id="http://www.mozilla.jp/firefox/41.0/releasenotes/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Firefox 41.0 リリースノート</amp-fit-text>
-        <p class="contents">Firefox 41.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Firefox 41.0 リリースノート</amp-fit-text>
+            <p class="item-contents">Firefox 41.0リリース。
 縦書きレイアウトの機能がデフォルトで有効に、<code>Symbol.species</code>、<code>new.target</code>のサポート、Web Workerの中でNotifications APIなどが利用できるようになるなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -116,14 +119,16 @@
 
 <amp-story-page id="https://nodejs.org/en/blog/release/v4.1.0/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Node v4.1.0 (Stable) | Node.js</amp-fit-text>
-        <p class="contents">Node.js v4.1.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v4.1.0 (Stable) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js v4.1.0リリース。
 Buffer作成の改善、fs.WriteStreamの書き込み速度の改善など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -135,14 +140,16 @@ Buffer作成の改善、fs.WriteStreamの書き込み速度の改善など
 
 <amp-story-page id="http://blog.npmjs.org/post/129378362260/npm-weekly-29-npm-3-out-of-beta-nick-out-of-the">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">The npm Blog — npm weekly #29: npm 3 out of beta, Nick out of the...</amp-fit-text>
-        <p class="contents">npm 3.xがlatestとしてリリースされた。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">The npm Blog — npm weekly #29: npm 3 out of beta, Nick out of the...</amp-fit-text>
+            <p class="item-contents">npm 3.xがlatestとしてリリースされた。
 <code>npm install -g npm</code>でnpm 3.xがインストールされるようになった
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -154,14 +161,16 @@ Buffer作成の改善、fs.WriteStreamの書き込み速度の改善など
 
 <amp-story-page id="http://blogs.msdn.com/b/typescript/archive/2015/09/16/announcing-typescript-1-6.aspx">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Announcing TypeScript 1.6 - TypeScript - Site Home - MSDN Blogs</amp-fit-text>
-        <p class="contents">TypeScript 1.6リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing TypeScript 1.6 - TypeScript - Site Home - MSDN Blogs</amp-fit-text>
+            <p class="item-contents">TypeScript 1.6リリース。
 JSX(TSX)、Class expressions、User defined type guards、Intersection types、Abstract classes、モジュール解決アルゴリズムの改善など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -173,13 +182,15 @@ JSX(TSX)、Class expressions、User defined type guards、Intersection types、A
 
 <amp-story-page id="https://github.com/bosonic/bosonic/releases/tag/v1.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release 1.0 · bosonic/bosonic</amp-fit-text>
-        <p class="contents">Web Componentsを扱うライブラリであるBosonic 1.0リリース
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 1.0 · bosonic/bosonic</amp-fit-text>
+            <p class="item-contents">Web Componentsを扱うライブラリであるBosonic 1.0リリース
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -191,14 +202,16 @@ JSX(TSX)、Class expressions、User defined type guards、Intersection types、A
 
 <amp-story-page id="http://blog.stevenlevithan.com/archives/xregexp-3-0-0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Flagrant Badassery » XRegExp 3.0.0!</amp-fit-text>
-        <p class="contents">正規表現の拡張ライブラリであるXRegExp 3.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Flagrant Badassery » XRegExp 3.0.0!</amp-fit-text>
+            <p class="item-contents">正規表現の拡張ライブラリであるXRegExp 3.0.0リリース。
 Unicode周りのサポート改善、<code>A</code>(astral)フラグの追加、ES6に追従した変更など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -210,13 +223,15 @@ Unicode周りのサポート改善、<code>A</code>(astral)フラグの追加、
 
 <amp-story-page id="https://github.com/ReactiveX/RxJS/blob/5.0.0-alpha.1/CHANGELOG.md">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">RxJS/CHANGELOG.md at 5.0.0-alpha.1 · ReactiveX/RxJS</amp-fit-text>
-        <p class="contents">ReactiveX/RxJS 5.0.0αリリース
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">RxJS/CHANGELOG.md at 5.0.0-alpha.1 · ReactiveX/RxJS</amp-fit-text>
+            <p class="item-contents">ReactiveX/RxJS 5.0.0αリリース
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -228,14 +243,16 @@ Unicode周りのサポート改善、<code>A</code>(astral)フラグの追加、
 
 <amp-story-page id="https://dev.modern.ie/platform/changelog/desktop/10547/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">リリース バージョン 10547 : Microsoft Edge Dev</amp-fit-text>
-        <p class="contents">MSEdge Build 10547リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">リリース バージョン 10547 : Microsoft Edge Dev</amp-fit-text>
+            <p class="item-contents">MSEdge Build 10547リリース。
 <code>&lt;template&gt;</code>、<code>&lt;picture&gt;</code>の追加、<code>&lt;a download&gt;</code>の対応、SVGで外部コンテンツのロード、フラグ付きでAsync Function、<code>**</code>演算子の対応など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -247,14 +264,16 @@ Unicode周りのサポート改善、<code>A</code>(astral)フラグの追加、
 
 <amp-story-page id="http://eslint.org/blog/2015/09/eslint-v1.5.0-released/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ESLint v1.5.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
-        <p class="contents">ESLint v1.5.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint v1.5.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+            <p class="item-contents">ESLint v1.5.0リリース。
 <code>--fix</code>に対応するルールの追加、<code>--debug</code>フラグの追加など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -266,14 +285,16 @@ Unicode周りのサポート改善、<code>A</code>(astral)フラグの追加、
 
 <amp-story-page id="https://github.com/tc39/ecma262/releases/tag/es2016-draft-1">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release ES2016 Draft 1 · tc39/ecma262</amp-fit-text>
-        <p class="contents">ES2016 Draft 1リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release ES2016 Draft 1 · tc39/ecma262</amp-fit-text>
+            <p class="item-contents">ES2016 Draft 1リリース。
 仕様書がWordからEcmarkupで書かれるようになり、GitHubでリリースされた。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -285,13 +306,15 @@ Unicode周りのサポート改善、<code>A</code>(astral)フラグの追加、
 
 <amp-story-page id="http://blog.koba04.com/post/2015/09/22/react-js-v014-changes/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">React.js v0.14 changes - blog.koba04.com</amp-fit-text>
-        <p class="contents">React 0.14の変更点について
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React.js v0.14 changes - blog.koba04.com</amp-fit-text>
+            <p class="item-contents">React 0.14の変更点について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -303,14 +326,16 @@ Unicode周りのサポート改善、<code>A</code>(astral)フラグの追加、
 
 <amp-story-page id="http://www.sitepoint.com/pointer-events-will-make-cross-browsers-touch-support-easy/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Pointer Events Will Make Cross-Browser Touch Support Easy</amp-fit-text>
-        <p class="contents">Pointer Eventsのコンセプト、実際にどう使うかについての解説記事。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Pointer Events Will Make Cross-Browser Touch Support Easy</amp-fit-text>
+            <p class="item-contents">Pointer Eventsのコンセプト、実際にどう使うかについての解説記事。
 feature detectionの方法、ジェスチャーを扱うMSGesture objectについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -322,14 +347,16 @@ feature detectionの方法、ジェスチャーを扱うMSGesture objectにつ�
 
 <amp-story-page id="https://doc.esdoc.org/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ESDoc Hosting Service - hosts documentation for JavaScript(ES6) with ESDoc</amp-fit-text>
-        <p class="contents">ESDocで書かれたドキュメントをホスティングするサービス。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESDoc Hosting Service - hosts documentation for JavaScript(ES6) with ESDoc</amp-fit-text>
+            <p class="item-contents">ESDocで書かれたドキュメントをホスティングするサービス。
 GitHubリポジトリのURLを登録するとESDocによるドキュメントが生成される。<code>esdoc.json</code>の設定ファイルがない場合も自動的に<code>src/</code>のコードを元に生成される。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -341,14 +368,16 @@ GitHubリポジトリのURLを登録するとESDocによるドキュメントが
 
 <amp-story-page id="https://github.com/mantoni/eslint_d.js">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">mantoni/eslint_d.js</amp-fit-text>
-        <p class="contents">ESLintをサーバとして立ててLintを行うツール。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">mantoni/eslint_d.js</amp-fit-text>
+            <p class="item-contents">ESLintをサーバとして立ててLintを行うツール。
 初回起動のオーバーヘッドがなくなるので高速に実行出来る
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -360,13 +389,15 @@ GitHubリポジトリのURLを登録するとESDocによるドキュメントが
 
 <amp-story-page id="https://github.com/ConquestArrow/dtsmake">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ConquestArrow/dtsmake · GitHub</amp-fit-text>
-        <p class="contents">JavaScriptを与えるとd.tsを生成するツール
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ConquestArrow/dtsmake · GitHub</amp-fit-text>
+            <p class="item-contents">JavaScriptを与えるとd.tsを生成するツール
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -378,13 +409,15 @@ GitHubリポジトリのURLを登録するとESDocによるドキュメントが
 
 <amp-story-page id="https://github.com/fireball-x/editor-framework">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">fireball-x/editor-framework</amp-fit-text>
-        <p class="contents">ElectronとPolymerをベースとしたエディタ向けのフレームワーク
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">fireball-x/editor-framework</amp-fit-text>
+            <p class="item-contents">ElectronとPolymerをベースとしたエディタ向けのフレームワーク
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -396,13 +429,15 @@ GitHubリポジトリのURLを登録するとESDocによるドキュメントが
 
 <amp-story-page id="http://sassdoc.com/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release the docs!</amp-fit-text>
-        <p class="contents">コメントでアノテーションを書いたSassのコードからドキュメントを生成するツール
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release the docs!</amp-fit-text>
+            <p class="item-contents">コメントでアノテーションを書いたSassのコードからドキュメントを生成するツール
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -414,13 +449,15 @@ GitHubリポジトリのURLを登録するとESDocによるドキュメントが
 
 <amp-story-page id="http://www.amazon.co.jp/dp/B014MS5XWK?tag=amazon0abac-22">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Amazon: 速習ECMAScript6: 次世代の標準JavaScriptを今すぐマスター！ [Kindle版]: 山田祥寛</amp-fit-text>
-        <p class="contents">ES6についてのKindle本
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Amazon: 速習ECMAScript6: 次世代の標準JavaScriptを今すぐマスター！ [Kindle版]: 山田祥寛</amp-fit-text>
+            <p class="item-contents">ES6についてのKindle本
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -432,14 +469,16 @@ GitHubリポジトリのURLを登録するとESDocによるドキュメントが
 
 <amp-story-page id="http://www.amazon.com/dp/1491932937/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Building Isomorphic JavaScript Apps: From Concept to Implementation to Real-World Solutions: Jason Strimpel, Maxime Najim: 9781491932933: Amazon.com: Books</amp-fit-text>
-        <p class="contents">2016年4月30日発売
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Building Isomorphic JavaScript Apps: From Concept to Implementation to Real-World Solutions: Jason Strimpel, Maxime Najim: 9781491932933: Amazon.com: Books</amp-fit-text>
+            <p class="item-contents">2016年4月30日発売
 IsomorphicについてのO'Reilly本
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

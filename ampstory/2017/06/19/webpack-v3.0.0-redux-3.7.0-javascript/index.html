@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,15 +98,17 @@
     
 <amp-story-page id="https://blogs.msdn.microsoft.com/typescript/2017/06/12/announcing-typescript-2-4-rc/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Announcing TypeScript 2.4 RC | TypeScript</amp-fit-text>
-        <p class="contents">TypeScript 2.4 RCリリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing TypeScript 2.4 RC | TypeScript</amp-fit-text>
+            <p class="item-contents">TypeScript 2.4 RCリリース。
 Dynamic import、Promiseなどのgeneric type同士の扱いが厳密に、すべてがオプショナルなI/F(weak types)のチェックを厳密化。
 String Enumのサポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -117,14 +120,16 @@ String Enumのサポートなど
 
 <amp-story-page id="https://nodejs.org/en/blog/release/v8.1.0/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Node v8.1.0 (Current) | Node.js</amp-fit-text>
-        <p class="contents">Node.js 8.1.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v8.1.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 8.1.0リリース。
 npm 5.0.3へアップデート、<code>--inspect=0</code>でランダムポートができるように。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -136,14 +141,16 @@ npm 5.0.3へアップデート、<code>--inspect=0</code>でランダムポー�
 
 <amp-story-page id="https://www.mozilla.org/en-US/firefox/54.0/releasenotes/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Firefox — Notes (54.0) — Mozilla</amp-fit-text>
-        <p class="contents">Firefox 54.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Firefox — Notes (54.0) — Mozilla</amp-fit-text>
+            <p class="item-contents">Firefox 54.0リリース。
 マルチプロセス化(e10s)、<code>URL.toJSON</code>の実装、<code>URLSearchParams</code>が<code>USVString</code>を受け入れるように、<code>event.timeStamp</code>が高精度に、ホスト名のないURL(<code>http://</code>のみなど)は不正な値として扱われるように
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -155,15 +162,17 @@ npm 5.0.3へアップデート、<code>--inspect=0</code>でランダムポー�
 
 <amp-story-page id="https://blog.chromium.org/2017/06/chrome-60-beta-paint-timing-api-css.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Chromium Blog: Chrome 60 Beta: Paint Timing API, CSS font-display, and Credential Management API improvements</amp-fit-text>
-        <p class="contents">Chrome 60βリリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Chromium Blog: Chrome 60 Beta: Paint Timing API, CSS font-display, and Credential Management API improvements</amp-fit-text>
+            <p class="item-contents">Chrome 60βリリース。
 Paint Timing API、CSS font-display、Object rest/spread propertiesのサポート。
 また、Payment Request APIをデスクトップ版もサポートするなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -175,14 +184,16 @@ Paint Timing API、CSS font-display、Object rest/spread propertiesのサポー�
 
 <amp-story-page id="https://github.com/chaijs/chai/releases/tag/4.0.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release 4.0.0 / 2017-05-26 · chaijs/chai</amp-fit-text>
-        <p class="contents">Chai 4.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 4.0.0 / 2017-05-26 · chaijs/chai</amp-fit-text>
+            <p class="item-contents">Chai 4.0.0リリース。
 Node.js 0.12のサポート終了、<code>Map</code>、<code>Set</code>の対応、<code>deep</code>の挙動を変更、ES6 Proxyを使ったundefined safeなチェインの実装など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -194,13 +205,15 @@ Node.js 0.12のサポート終了、<code>Map</code>、<code>Set</code>の対応
 
 <amp-story-page id="https://github.com/reactjs/redux/releases/tag/v3.7.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release v3.7.0 · reactjs/redux</amp-fit-text>
-        <p class="contents">Redux 3.7.0リリース。 RollupでbundleしたUMDバンドルを配布するように。 余計な関数コールが減るためファイルサイズなどが改善される。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v3.7.0 · reactjs/redux</amp-fit-text>
+            <p class="item-contents">Redux 3.7.0リリース。 RollupでbundleしたUMDバンドルを配布するように。 余計な関数コールが減るためファイルサイズなどが改善される。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -212,14 +225,16 @@ Node.js 0.12のサポート終了、<code>Map</code>、<code>Set</code>の対応
 
 <amp-story-page id="https://github.com/ReactiveX/rxjs/blob/6.0.0-alpha.0/CHANGELOG.md">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">rxjs/CHANGELOG.md at 6.0.0-alpha.0 · ReactiveX/rxjs</amp-fit-text>
-        <p class="contents">RxJS 6.0.0-alpha.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">rxjs/CHANGELOG.md at 6.0.0-alpha.0 · ReactiveX/rxjs</amp-fit-text>
+            <p class="item-contents">RxJS 6.0.0-alpha.0リリース。
 <code>find</code>、<code>buffer</code>、<code>first</code>などの変更が含まれる
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -231,14 +246,16 @@ Node.js 0.12のサポート終了、<code>Map</code>、<code>Set</code>の対応
 
 <amp-story-page id="https://github.com/webpack/webpack/releases/tag/v3.0.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release v3.0.0 · webpack/webpack</amp-fit-text>
-        <p class="contents">webpack 3.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v3.0.0 · webpack/webpack</amp-fit-text>
+            <p class="item-contents">webpack 3.0.0リリース。
 Scope Hoisting (<code>webpack.optimize.ModuleConcatenationPlugin</code>)の追加、<code>node: false</code>でnode関係の機能をまとめて無効化できるように、Source Map周りの変更など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -250,14 +267,16 @@ Scope Hoisting (<code>webpack.optimize.ModuleConcatenationPlugin</code>)の追�
 
 <amp-story-page id="http://angularjs.blogspot.com/2017/06/angular-42-now-available.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Angular: Angular 4.2 Now Available</amp-fit-text>
-        <p class="contents">Angular 4.2リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Angular: Angular 4.2 Now Available</amp-fit-text>
+            <p class="item-contents">Angular 4.2リリース。
 angular.ioのサイトが刷新された。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -269,14 +288,16 @@ angular.ioのサイトが刷新された。
 
 <amp-story-page id="https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Auto-Play Policy Changes for macOS | WebKit</amp-fit-text>
-        <p class="contents">Mac Safariもmobile safariなどと同様にMediaElementの自動再生がユーザー起因でないといけなくする変更。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Auto-Play Policy Changes for macOS | WebKit</amp-fit-text>
+            <p class="item-contents">Mac Safariもmobile safariなどと同様にMediaElementの自動再生がユーザー起因でないといけなくする変更。
 play()がPromiseを返し、失敗の場合はrejectされる。 Video/Audio/サイト毎に許可が決まるので、複数の要素を作るのではなく一つのsrcを変更して使うことを推奨してる。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -288,14 +309,16 @@ play()がPromiseを返し、失敗の場合はrejectされる。 Video/Audio/サ
 
 <amp-story-page id="https://medium.com/@yoshuawuyts/choo-architecture-performance-f6f0c44e8a6a">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Choo, architecture &amp; performance – Yoshua Wuyts – Medium</amp-fit-text>
-        <p class="contents">ウェブフロントを作成する小さなフレームワークであるChooのアーキテクチャについての解説。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Choo, architecture &amp; performance – Yoshua Wuyts – Medium</amp-fit-text>
+            <p class="item-contents">ウェブフロントを作成する小さなフレームワークであるChooのアーキテクチャについての解説。
 Chooを構成する小さなライブラリやなぜそれを選択しているかやパフォーマンスについての記事
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -307,13 +330,15 @@ Chooを構成する小さなライブラリやなぜそれを選択している�
 
 <amp-story-page id="https://blog.mariusschulz.com/2017/06/16/typescript-2-3-type-checking-javascript-files-with-checkjs">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">TypeScript 2.3: Type-Checking JavaScript Files with --checkJs | Marius Schulz</amp-fit-text>
-        <p class="contents">TypeScriptの<code>--checkJs</code>でのJavaScriptからTypeScriptへのマイグレーション手法について。 ホワイトリスト、ブラックリストそれぞれのアプローチ方法について
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">TypeScript 2.3: Type-Checking JavaScript Files with --checkJs | Marius Schulz</amp-fit-text>
+            <p class="item-contents">TypeScriptの<code>--checkJs</code>でのJavaScriptからTypeScriptへのマイグレーション手法について。 ホワイトリスト、ブラックリストそれぞれのアプローチ方法について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -325,13 +350,15 @@ Chooを構成する小さなライブラリやなぜそれを選択している�
 
 <amp-story-page id="https://css-tricks.com/handling-long-unexpected-content-css/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Handling Long and Unexpected Content in CSS | CSS-Tricks</amp-fit-text>
-        <p class="contents">長いコンテンツ(文章)などによる意図しないはみ出しやレイアウト崩れ、表示被りをどう対処するかについてのパターン
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Handling Long and Unexpected Content in CSS | CSS-Tricks</amp-fit-text>
+            <p class="item-contents">長いコンテンツ(文章)などによる意図しないはみ出しやレイアウト崩れ、表示被りをどう対処するかについてのパターン
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -343,13 +370,15 @@ Chooを構成する小さなライブラリやなぜそれを選択している�
 
 <amp-story-page id="http://qiita.com/goto63/items/362cef58e16198e20f56">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ng-japan 2017 セッション資料の一覧 - Qiita</amp-fit-text>
-        <p class="contents">ng-japan 2017の発表動画、スライドまとめ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ng-japan 2017 セッション資料の一覧 - Qiita</amp-fit-text>
+            <p class="item-contents">ng-japan 2017の発表動画、スライドまとめ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -361,13 +390,15 @@ Chooを構成する小さなライブラリやなぜそれを選択している�
 
 <amp-story-page id="https://egghead.io/courses/up-and-running-with-preact">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Up and running with Preact - Course by @shaneosbourne @eggheadio</amp-fit-text>
-        <p class="contents">Preactについてのスクリーンキャスト
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Up and running with Preact - Course by @shaneosbourne @eggheadio</amp-fit-text>
+            <p class="item-contents">Preactについてのスクリーンキャスト
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -379,14 +410,16 @@ Chooを構成する小さなライブラリやなぜそれを選択している�
 
 <amp-story-page id="https://mythbusters.js.org/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">JS MythBusters, A JavaScript optimization handbook from a high level point of view.</amp-fit-text>
-        <p class="contents">JavaScriptの最適化ハンドブック。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JS MythBusters, A JavaScript optimization handbook from a high level point of view.</amp-fit-text>
+            <p class="item-contents">JavaScriptの最適化ハンドブック。
 V8の最適化手法についてやアルゴリズム的な最適化、よくある最適化についての解説などがまとまっている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -398,14 +431,16 @@ V8の最適化手法についてやアルゴリズム的な最適化、よくあ
 
 <amp-story-page id="https://521dimensions.com/open-source/amplitudejs">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">AmplitudeJS: The HTML Audio Player For The Modern Era</amp-fit-text>
-        <p class="contents">Web Audio APIを使った依存のない音楽プレイヤーライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">AmplitudeJS: The HTML Audio Player For The Modern Era</amp-fit-text>
+            <p class="item-contents">Web Audio APIを使った依存のない音楽プレイヤーライブラリ。
 音楽、プレイリストのデータを設定することで再生プレイヤーを作れる。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -417,13 +452,15 @@ V8の最適化手法についてやアルゴリズム的な最適化、よくあ
 
 <amp-story-page id="https://github.com/Angelmmiguel/svgi">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Angelmmiguel/svgi: 🔎 The SVG inspection tool</amp-fit-text>
-        <p class="contents">SVG inspectionツール。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Angelmmiguel/svgi: 🔎 The SVG inspection tool</amp-fit-text>
+            <p class="item-contents">SVG inspectionツール。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -435,13 +472,15 @@ V8の最適化手法についてやアルゴリズム的な最適化、よくあ
 
 <amp-story-page id="https://github.com/25th-floor/spected">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">25th-floor/spected: Validation library</amp-fit-text>
-        <p class="contents">オブジェクトに対するバリデーションルールを作成して、バリデーションを行うライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">25th-floor/spected: Validation library</amp-fit-text>
+            <p class="item-contents">オブジェクトに対するバリデーションルールを作成して、バリデーションを行うライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

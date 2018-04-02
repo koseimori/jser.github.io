@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,14 +98,16 @@
     
 <amp-story-page id="https://nodejs.org/en/blog/release/v8.8.0/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Node v8.8.0 (Current) | Node.js</amp-fit-text>
-        <p class="contents">Node.js 8.8.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v8.8.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 8.8.0リリース。
 http2モジュールがデフォルトで有効化、モジュールのhookを処理を扱えるコマンドライン引数として<code>--loader</code>の追加など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -116,14 +119,16 @@ http2モジュールがデフォルトで有効化、モジュールのhookを�
 
 <amp-story-page id="https://v8project.blogspot.com/2017/10/v8-release-63.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">V8 JavaScript Engine: V8 Release 6.3</amp-fit-text>
-        <p class="contents">V8 6.3リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">V8 JavaScript Engine: V8 Release 6.3</amp-fit-text>
+            <p class="item-contents">V8 6.3リリース。
 パフォーマンス改善、<code>import()</code>、<code>Promise#finally</code>、Aynsc iteratorのサポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -135,14 +140,16 @@ http2モジュールがデフォルトで有効化、モジュールのhookを�
 
 <amp-story-page id="https://github.com/avajs/ava/releases/tag/v0.23.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release 0.23.0 · avajs/ava</amp-fit-text>
-        <p class="contents">AVA 0.23.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 0.23.0 · avajs/ava</amp-fit-text>
+            <p class="item-contents">AVA 0.23.0リリース。
 <code>NODE_ENV=test</code>を設定するように、<code>snapshotLocation</code>を<code>pacakge.json</code>に書くことでsnapshotファイルの保存場所を指定できるように
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -154,14 +161,16 @@ http2モジュールがデフォルトで有効化、モジュールのhookを�
 
 <amp-story-page id="https://github.com/fuse-box/fuse-box/releases/tag/v2.4.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release 2.4.0 · fuse-box/fuse-box</amp-fit-text>
-        <p class="contents">FuseBox 2.4.0 リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 2.4.0 · fuse-box/fuse-box</amp-fit-text>
+            <p class="item-contents">FuseBox 2.4.0 リリース。
 Quantum上でのUglify-esのサポート、Vue周りの対応改善、CLIをAPIとして使えるように
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -173,15 +182,17 @@ Quantum上でのUglify-esのサポート、Vue周りの対応改善、CLIをAPI�
 
 <amp-story-page id="https://blog.chromium.org/2017/10/chrome-63-beta-dynamic-module-imports_27.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Chromium Blog: Chrome 63 Beta: Dynamic module imports, async iterators and generators, Device Memory API, and permissions UI changes</amp-fit-text>
-        <p class="contents">Chrome 63 Betaリリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Chromium Blog: Chrome 63 Beta: Dynamic module imports, async iterators and generators, Device Memory API, and permissions UI changes</amp-fit-text>
+            <p class="item-contents">Chrome 63 Betaリリース。
 Dynamic import、Async iterator、Device Memory API、Promise#finallyの実装、プッシュ通知などの許可ダイアログの変更など。
 また、EventTargetの仕様追従、印刷時に<code>beforeprint</code>と<code>afterprint</code>イベントを発火するように、<code>/deep/</code>の削除など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -193,14 +204,16 @@ Dynamic import、Async iterator、Device Memory API、Promise#finallyの実装�
 
 <amp-story-page id="https://hacks.mozilla.org/2017/10/saying-goodbye-to-firebug/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Saying Goodbye to Firebug ★ Mozilla Hacks – the Web developer blog</amp-fit-text>
-        <p class="contents">FirebugはFirefox57で開発は終了し、Firefoxの開発者ツールが代替となる。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Saying Goodbye to Firebug ★ Mozilla Hacks – the Web developer blog</amp-fit-text>
+            <p class="item-contents">FirebugはFirefox57で開発は終了し、Firefoxの開発者ツールが代替となる。
 FirebugからFirefoxの開発者ツールへのマイグレーションガイドも公開されている。また、Firebugの歴史について。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -212,15 +225,17 @@ FirebugからFirefoxの開発者ツールへのマイグレーションガイド
 
 <amp-story-page id="http://tech.plaid.co.jp/js_multi_threading/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">MicrosoftのNapa.jsでJavaScriptをマルチスレッド化する | PLAID engineer blog</amp-fit-text>
-        <p class="contents">マルチプロセスのWorkerを扱うことができるnapajaについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">MicrosoftのNapa.jsでJavaScriptをマルチスレッド化する | PLAID engineer blog</amp-fit-text>
+            <p class="item-contents">マルチプロセスのWorkerを扱うことができるnapajaについて。
 どのようなモチベーションや構造になっているかについて。
 Zoneというワーカーのまとめ役やデータのやり取りの方法についてなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -232,14 +247,16 @@ Zoneというワーカーのまとめ役やデータのやり取りの方法に�
 
 <amp-story-page id="http://ayushgp.github.io/html-web-components-using-vanilla-js/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">HTML Web Component using Vanilla JavaScript – Ayush Gupta – Full Stack Web Developer</amp-fit-text>
-        <p class="contents">Web Components入門記事。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">HTML Web Component using Vanilla JavaScript – Ayush Gupta – Full Stack Web Developer</amp-fit-text>
+            <p class="item-contents">Web Components入門記事。
 <code>&lt;user-card /&gt;</code>というデータを取得して表示する要素を例にCustom Elementのライフサイクル、template要素、ShadowDOMについて紹介している
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -251,14 +268,16 @@ Zoneというワーカーのまとめ役やデータのやり取りの方法に�
 
 <amp-story-page id="https://www.sitepen.com/blog/2017/10/26/state-of-modules-in-javascript/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">State of Modules in JavaScript - Blog | SitePen</amp-fit-text>
-        <p class="contents">ES moduleについての解説記事。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">State of Modules in JavaScript - Blog | SitePen</amp-fit-text>
+            <p class="item-contents">ES moduleについての解説記事。
 import/exportやdynamic import、Node.jsやwebpackなどのbundlerでの扱いについてなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -270,13 +289,15 @@ import/exportやdynamic import、Node.jsやwebpackなどのbundlerでの扱い�
 
 <amp-story-page id="https://medium.com/@WebReflection/unpopular-metrics-about-js-bundlers-a3c56ea5390d">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Unpopular Metrics about JS Bundlers – Andrea Giammarchi – Medium</amp-fit-text>
-        <p class="contents">小さなbundleツールである<code>asbundle</code>について。 rollupより機能的にも小さくシンプル。ES moduleをbundleするだけのような機能を持っている
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Unpopular Metrics about JS Bundlers – Andrea Giammarchi – Medium</amp-fit-text>
+            <p class="item-contents">小さなbundleツールである<code>asbundle</code>について。 rollupより機能的にも小さくシンプル。ES moduleをbundleするだけのような機能を持っている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -288,14 +309,16 @@ import/exportやdynamic import、Node.jsやwebpackなどのbundlerでの扱い�
 
 <amp-story-page id="https://infrequently.org/2017/10/can-you-afford-it-real-world-web-performance-budgets/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Can You Afford It?: Real-world Web Performance Budgets – Infrequently Noted</amp-fit-text>
-        <p class="contents">初回ロードのTime-to-Interactive (TTI)が5秒以下、それ以降は2秒以下というPerformance Budgetsを元にそれを満たすための配分について。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Can You Afford It?: Real-world Web Performance Budgets – Infrequently Noted</amp-fit-text>
+            <p class="item-contents">初回ロードのTime-to-Interactive (TTI)が5秒以下、それ以降は2秒以下というPerformance Budgetsを元にそれを満たすための配分について。
 これ満たすための考え方や技術的な手法、補助するツールなどについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -307,13 +330,15 @@ import/exportやdynamic import、Node.jsやwebpackなどのbundlerでの扱い�
 
 <amp-story-page id="http://www.youtube.com/playlist?list=PLNYkxOF6rcICUD5nBfRdAR6Fveosnqa5m">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Chrome Dev Summit 2017 - YouTube</amp-fit-text>
-        <p class="contents">Chrome Dev Summit 2017の動画まとめ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Chrome Dev Summit 2017 - YouTube</amp-fit-text>
+            <p class="item-contents">Chrome Dev Summit 2017の動画まとめ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -325,14 +350,16 @@ import/exportやdynamic import、Node.jsやwebpackなどのbundlerでの扱い�
 
 <amp-story-page id="https://www.slideshare.net/sakura_pr/vuejstype-script-81228009">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">とにかく楽してVue.jsでTypeScriptを使いたい</amp-fit-text>
-        <p class="contents">Vue 2.5のTypeScriptサポートについてのスライド。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">とにかく楽してVue.jsでTypeScriptを使いたい</amp-fit-text>
+            <p class="item-contents">Vue 2.5のTypeScriptサポートについてのスライド。
 JavaScriptで書かれたVueアプリケーションをTypeScriptに移行する手順について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -344,14 +371,16 @@ JavaScriptで書かれたVueアプリケーションをTypeScriptに移行する
 
 <amp-story-page id="http://slides.com/jenyaterpil/redux-from-twitter-hype-to-production#/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Redux. From twitter hype to production by Jenya Terpil</amp-fit-text>
-        <p class="contents">Reduxの動作フローについてのスライド。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Redux. From twitter hype to production by Jenya Terpil</amp-fit-text>
+            <p class="item-contents">Reduxの動作フローについてのスライド。
 アニメーション画像によってView-&gt;Action-&gt;Reducer-&gt;Stateの流れについてを可視化している。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -363,16 +392,18 @@ JavaScriptで書かれたVueアプリケーションをTypeScriptに移行する
 
 <amp-story-page id="https://www.slideshare.net/garbles/propertybased-testing-for-godly-tests">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Property-Based Testing for Godly Tests</amp-fit-text>
-        <p class="contents">Property-Based Testingについてのスライド。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Property-Based Testing for Godly Tests</amp-fit-text>
+            <p class="item-contents">Property-Based Testingについてのスライド。
 Example-Based Test、Fizz Test、
 Property-Based Testのカバーできる範囲の違いや特徴について。
 <code>testcheck</code>を使ったテストやFlowの型定義からの自動生成についてなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -384,13 +415,15 @@ Property-Based Testのカバーできる範囲の違いや特徴について。
 
 <amp-story-page id="https://github.com/webpackmonitor/webpackmonitor">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">webpackmonitor/webpackmonitor: A tool for monitoring webpack optimization metrics through the development process</amp-fit-text>
-        <p class="contents">webpackのstats.json結果をビジュアライズしてくれるツール。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">webpackmonitor/webpackmonitor: A tool for monitoring webpack optimization metrics through the development process</amp-fit-text>
+            <p class="item-contents">webpackのstats.json結果をビジュアライズしてくれるツール。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -402,13 +435,15 @@ Property-Based Testのカバーできる範囲の違いや特徴について。
 
 <amp-story-page id="https://www.monterail.com/state-of-vuejs-report">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">State of Vue.js Report · Monterail</amp-fit-text>
-        <p class="contents">Vueに関する80ページほどのレポート。Vue自体の状況、アンケートベースのレポート、利用してる企業のケーススタディなどについて書かれている
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">State of Vue.js Report · Monterail</amp-fit-text>
+            <p class="item-contents">Vueに関する80ページほどのレポート。Vue自体の状況、アンケートベースのレポート、利用してる企業のケーススタディなどについて書かれている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -420,13 +455,15 @@ Property-Based Testのカバーできる範囲の違いや特徴について。
 
 <amp-story-page id="https://dev-blog.apollodata.com/apollo-client-2-0-5c8d0affcec7">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Apollo Client 2.0 – Apollo GraphQL</amp-fit-text>
-        <p class="contents">Apollo Client 2.0について
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Apollo Client 2.0 – Apollo GraphQL</amp-fit-text>
+            <p class="item-contents">Apollo Client 2.0について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -438,13 +475,15 @@ Property-Based Testのカバーできる範囲の違いや特徴について。
 
 <amp-story-page id="https://github.com/vitalets/websocket-as-promised">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">vitalets/websocket-as-promised: Promise-based API for WebSockets</amp-fit-text>
-        <p class="contents">PromiseベースのWebSocketライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">vitalets/websocket-as-promised: Promise-based API for WebSockets</amp-fit-text>
+            <p class="item-contents">PromiseベースのWebSocketライブラリ。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -456,14 +495,16 @@ Property-Based Testのカバーできる範囲の違いや特徴について。
 
 <amp-story-page id="https://github.com/nicojs/node-install-local">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">nicojs/node-install-local: Installs npm/yarn packages locally without symlink. Exactly the same as your production installation, no compromises.</amp-fit-text>
-        <p class="contents">npm5やyarnはローカルのパッケージをsymlinkでインストールしてしまうため、symlinkに対応してないツールなどが動作しなくなる。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">nicojs/node-install-local: Installs npm/yarn packages locally without symlink. Exactly the same as your production installation, no compromises.</amp-fit-text>
+            <p class="item-contents">npm5やyarnはローカルのパッケージをsymlinkでインストールしてしまうため、symlinkに対応してないツールなどが動作しなくなる。
 通常のパッケージと同じようにディレクトリにインストールすることができるツール
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -475,14 +516,16 @@ Property-Based Testのカバーできる範囲の違いや特徴について。
 
 <amp-story-page id="https://github.com/softvar/awesome-web-storage">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">softvar/awesome-web-storage: Everything you need to know about Client-side Storage.</amp-fit-text>
-        <p class="contents">Web Storageについてのまとめたドキュメント。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">softvar/awesome-web-storage: Everything you need to know about Client-side Storage.</amp-fit-text>
+            <p class="item-contents">Web Storageについてのまとめたドキュメント。
 cookie、localStorage、sessionStorageについての比較、関連ライブラリ、ツールなどについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -494,14 +537,16 @@ cookie、localStorage、sessionStorageについての比較、関連ライブラ
 
 <amp-story-page id="https://github.com/feimosi/frameworks-code-comparison">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">feimosi/frameworks-code-comparison: Code comparison of modern frameworks, based on React, Angular and Vue.js</amp-fit-text>
-        <p class="contents">Angular, React, Vueのコンポーネントで共通して行う処理の扱い方について比較したリポジトリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">feimosi/frameworks-code-comparison: Code comparison of modern frameworks, based on React, Angular and Vue.js</amp-fit-text>
+            <p class="item-contents">Angular, React, Vueのコンポーネントで共通して行う処理の扱い方について比較したリポジトリ。
 それぞれのライブラリごとの短い解説とコードスニペットを紹介してる。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -513,14 +558,16 @@ cookie、localStorage、sessionStorageについての比較、関連ライブラ
 
 <amp-story-page id="https://www.amazon.com/Angular-Development-Typescript-Yakov-Fain/dp/1617295345">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Angular Development with Typescript: Yakov Fain, Anton Moiseev: 9781617295348: Amazon.com: Books</amp-fit-text>
-        <p class="contents">2018年5月30日発売
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Angular Development with Typescript: Yakov Fain, Anton Moiseev: 9781617295348: Amazon.com: Books</amp-fit-text>
+            <p class="item-contents">2018年5月30日発売
 AngularとTypeScriptについての本
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -532,14 +579,16 @@ AngularとTypeScriptについての本
 
 <amp-story-page id="https://www.amazon.com/TypeScript-Cookbook-Shiv-Shankar-Kushwaha-ebook/dp/B01CR5GCXY">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Amazon.com: TypeScript 2.0 Cookbook eBook: Shiv Shankar Kushwaha: Kindle Store</amp-fit-text>
-        <p class="contents">2018年8月発売
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Amazon.com: TypeScript 2.0 Cookbook eBook: Shiv Shankar Kushwaha: Kindle Store</amp-fit-text>
+            <p class="item-contents">2018年8月発売
 TypeScriptクックブック
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

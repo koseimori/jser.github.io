@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,14 +98,16 @@
     
 <amp-story-page id="http://eslint.org/blog/2015/04/eslint-0.19.0-released">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ESLint 0.19.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
-        <p class="contents">ESLint 0.19.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint 0.19.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+            <p class="item-contents">ESLint 0.19.0リリース。
 ASTのコミュニティ標準であるESTreeの仕様への追従が中心。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -116,14 +119,16 @@ ASTのコミュニティ標準であるESTreeの仕様への追従が中心。
 
 <amp-story-page id="https://github.com/babel/babel/blob/master/CHANGELOG.md#510">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">babel/CHANGELOG.md at master · babel/babel</amp-fit-text>
-        <p class="contents">Babel 5.1.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">babel/CHANGELOG.md at master · babel/babel</amp-fit-text>
+            <p class="item-contents">Babel 5.1.0リリース。
 trailing-function-commasのサポート、オブジェクトリテラルのメソッドに対するdecoratorsのサポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -135,14 +140,16 @@ trailing-function-commasのサポート、オブジェクトリテラルのメ�
 
 <amp-story-page id="http://blog.npmjs.org/post/116379479775/npm-private-modules-are-here">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">The npm Blog — npm private modules are here!</amp-fit-text>
-        <p class="contents">npmのprivate modulesがオープン。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">The npm Blog — npm private modules are here!</amp-fit-text>
+            <p class="item-contents">npmのprivate modulesがオープン。
 npmjsにscoped modulesをpublishすることが出来るようになり、それらのモジュールをprivateで利用できる$7/monthのサービス
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -154,14 +161,16 @@ npmjsにscoped modulesをpublishすることが出来るようになり、それ
 
 <amp-story-page id="http://mattdesl.svbtle.com/rapid-prototyping">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Rapid Prototyping in JavaScript</amp-fit-text>
-        <p class="contents">Browserify、wzrd、budoを使ったプロトタイピングについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Rapid Prototyping in JavaScript</amp-fit-text>
+            <p class="item-contents">Browserify、wzrd、budoを使ったプロトタイピングについて。
 ブラウザのリロードなしで変更を反映出来るHot Reloadingが出来るbudoをローカルサーバにして開発する流れ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -173,13 +182,15 @@ npmjsにscoped modulesをpublishすることが出来るようになり、それ
 
 <amp-story-page id="https://developer.mozilla.org/ja/docs/Tools/Debugger/How_to/Debug_eval_sources">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">eval ソースをデバッグする - 開発ツール | MDN</amp-fit-text>
-        <p class="contents">FirefoxやChromeの開発者ツールはevalやnew Function経由で実行されるコードに//# sourceURL=my-foo.js のような識別子があると通常のスクリプトと同等に扱えるので、ブレークポイントなどが可能になる。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">eval ソースをデバッグする - 開発ツール | MDN</amp-fit-text>
+            <p class="item-contents">FirefoxやChromeの開発者ツールはevalやnew Function経由で実行されるコードに//# sourceURL=my-foo.js のような識別子があると通常のスクリプトと同等に扱えるので、ブレークポイントなどが可能になる。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -191,14 +202,16 @@ npmjsにscoped modulesをpublishすることが出来るようになり、それ
 
 <amp-story-page id="http://ejohn.org/blog/annotated-version-of-the-original-jquery-release/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">John Resig - Annotated Version of the Original jQuery Release</amp-fit-text>
-        <p class="contents">jQuery作者によるjQueryの初期バージョンのコードにコメントをしたものが公開されてる。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">John Resig - Annotated Version of the Original jQuery Release</amp-fit-text>
+            <p class="item-contents">jQuery作者によるjQueryの初期バージョンのコードにコメントをしたものが公開されてる。
 メソッドチェインの仕組み、CSSセレクタとなるもの、文字列からのDOM要素作成など多くのライブラリに影響を与えたものがどういう考えで作られたのかが書かれていて面白い
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -210,13 +223,15 @@ npmjsにscoped modulesをpublishすることが出来るようになり、それ
 
 <amp-story-page id="http://davidwalsh.name/measuring-performance">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Measuring Performance</amp-fit-text>
-        <p class="contents">Navigation Timing API、Resource Timing APIといったパフォーマンス測定のためのブラウザAPIやWebPageTestなどの計測ツールやネットワーク環境のテストについての紹介
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Measuring Performance</amp-fit-text>
+            <p class="item-contents">Navigation Timing API、Resource Timing APIといったパフォーマンス測定のためのブラウザAPIやWebPageTestなどの計測ツールやネットワーク環境のテストについての紹介
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -228,13 +243,15 @@ npmjsにscoped modulesをpublishすることが出来るようになり、それ
 
 <amp-story-page id="http://www.2ality.com/2015/04/deploying-es6.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Deploying ECMAScript 6</amp-fit-text>
-        <p class="contents">ES6関係のツール、試し方の簡潔なまとめ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Deploying ECMAScript 6</amp-fit-text>
+            <p class="item-contents">ES6関係のツール、試し方の簡潔なまとめ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -246,14 +263,16 @@ npmjsにscoped modulesをpublishすることが出来るようになり、それ
 
 <amp-story-page id="http://qiita.com/TypoScript/items/ae07b7fe5d5d8d526110">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Timer APIs(Date.getTime, Date.now, performance.now, setTimeout, setInterval, requestAnimationFrame, setImmediate) with Canvas Animation - Qiita</amp-fit-text>
-        <p class="contents">JavaScriptの時刻を取得するAPIについて詳しい記事。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Timer APIs(Date.getTime, Date.now, performance.now, setTimeout, setInterval, requestAnimationFrame, setImmediate) with Canvas Animation - Qiita</amp-fit-text>
+            <p class="item-contents">JavaScriptの時刻を取得するAPIについて詳しい記事。
 タイマーの分解能やベースクロックという考え方について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -265,13 +284,15 @@ npmjsにscoped modulesをpublishすることが出来るようになり、それ
 
 <amp-story-page id="http://www.isaacsukin.com/news/2015/01/detailed-explanation-javascript-game-loops-and-timing">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">A Detailed Explanation of JavaScript Game Loops and Timing | Isaac Sukin</amp-fit-text>
-        <p class="contents">JavaScriptで正しいメインループを実装するにはどうするかについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">A Detailed Explanation of JavaScript Game Loops and Timing | Isaac Sukin</amp-fit-text>
+            <p class="item-contents">JavaScriptで正しいメインループを実装するにはどうするかについて。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -283,13 +304,15 @@ npmjsにscoped modulesをpublishすることが出来るようになり、それ
 
 <amp-story-page id="http://qiita.com/hiruberuto/items/f1e048fc9a8ca51eddb2">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">関数型なAltJS、PureScriptの入門書を邦訳しました。 - Qiita</amp-fit-text>
-        <p class="contents">PureScriptの入門書の翻訳
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">関数型なAltJS、PureScriptの入門書を邦訳しました。 - Qiita</amp-fit-text>
+            <p class="item-contents">PureScriptの入門書の翻訳
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -301,13 +324,15 @@ npmjsにscoped modulesをpublishすることが出来るようになり、それ
 
 <amp-story-page id="http://browser.hatenablog.com/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Browser</amp-fit-text>
-        <p class="contents">IEやSpartan等の情報を追ってるブログ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Browser</amp-fit-text>
+            <p class="item-contents">IEやSpartan等の情報を追ってるブログ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -319,14 +344,16 @@ npmjsにscoped modulesをpublishすることが出来るようになり、それ
 
 <amp-story-page id="https://github.com/alfredkam/yakojs">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">alfredkam/yakojs</amp-fit-text>
-        <p class="contents">DOM-lessなグラフライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">alfredkam/yakojs</amp-fit-text>
+            <p class="item-contents">DOM-lessなグラフライブラリ。
 SVGグラフを吐き出せるようにすることでサーバサイドでも同じ出力結果を出せるようにする目的
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -338,13 +365,15 @@ SVGグラフを吐き出せるようにすることでサーバサイドでも�
 
 <amp-story-page id="https://www.muicss.com/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">MUI - Material Design CSS Framework</amp-fit-text>
-        <p class="contents">Material Design guidelinesに則ったデザインをするためのフレームワーク
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">MUI - Material Design CSS Framework</amp-fit-text>
+            <p class="item-contents">Material Design guidelinesに則ったデザインをするためのフレームワーク
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -356,14 +385,16 @@ SVGグラフを吐き出せるようにすることでサーバサイドでも�
 
 <amp-story-page id="https://github.com/yahoo/blink-diff">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">yahoo/blink-diff</amp-fit-text>
-        <p class="contents">画像を比較してその差を出したり、一致するかをテストできるJavaScriptライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">yahoo/blink-diff</amp-fit-text>
+            <p class="item-contents">画像を比較してその差を出したり、一致するかをテストできるJavaScriptライブラリ。
 どれくらいの差を許すか等も設定できる
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -375,13 +406,15 @@ SVGグラフを吐き出せるようにすることでサーバサイドでも�
 
 <amp-story-page id="https://github.com/cburgmer/csscritic">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">cburgmer/csscritic</amp-fit-text>
-        <p class="contents">CSSのレグレッションテストフレームワーク
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">cburgmer/csscritic</amp-fit-text>
+            <p class="item-contents">CSSのレグレッションテストフレームワーク
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -393,14 +426,16 @@ SVGグラフを吐き出せるようにすることでサーバサイドでも�
 
 <amp-story-page id="https://github.com/mojo-js/obj-stream">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">mojo-js/obj-stream</amp-fit-text>
-        <p class="contents">Stream的なAPIを持ったライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">mojo-js/obj-stream</amp-fit-text>
+            <p class="item-contents">Stream的なAPIを持ったライブラリ。
 オブジェクトをStreamに流すことができ、EventEmitterを使ったStream的なものなのでブラウザでも動作する
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -412,14 +447,16 @@ SVGグラフを吐き出せるようにすることでサーバサイドでも�
 
 <amp-story-page id="http://webrxjs.org/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">WebRx - Dynamic JavaScript User-Interfaces with ReactiveX</amp-fit-text>
-        <p class="contents">RxJSを使ったMVVMフレームワーク。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">WebRx - Dynamic JavaScript User-Interfaces with ReactiveX</amp-fit-text>
+            <p class="item-contents">RxJSを使ったMVVMフレームワーク。
 AngularやKnockoutJSからインスパイアしている部分がある。TypeScriptで書かれている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -431,14 +468,16 @@ AngularやKnockoutJSからインスパイアしている部分がある。TypeSc
 
 <amp-story-page id="https://github.com/mattdesl/budo">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">mattdesl/budo</amp-fit-text>
-        <p class="contents">Live Reloadする開発用のローカルサーバ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">mattdesl/budo</amp-fit-text>
+            <p class="item-contents">Live Reloadする開発用のローカルサーバ。
 https://github.com/caspervonb/amok のように、ブラウザの更新なしで変更を反映するHot Reloadingを行う拡張も持っている。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -450,14 +489,16 @@ https://github.com/caspervonb/amok のように、ブラウザの更新なしで
 
 <amp-story-page id="http://www.rq.crockford.com/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">RQ</amp-fit-text>
-        <p class="contents">Douglas Crockford製のPromiseハンドリングライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">RQ</amp-fit-text>
+            <p class="item-contents">Douglas Crockford製のPromiseハンドリングライブラリ。
 sequence、parallel、race、fallbackなどの複数のPromiseの流れを扱うライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,14 +98,16 @@
     
 <amp-story-page id="http://yeoman.io/blog/hello-generator-1.0.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Say allo&amp;#x27; to yeoman-generator 1.0 | Yeoman</amp-fit-text>
-        <p class="contents">Yeoman-generator 1.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Say allo&amp;#x27; to yeoman-generator 1.0 | Yeoman</amp-fit-text>
+            <p class="item-contents">Yeoman-generator 1.0リリース。
 <code>composeWith</code>のAPIを簡略化、Yarnサポート、deprecatedなAPIを削除など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -116,14 +119,16 @@
 
 <amp-story-page id="https://github.com/Microsoft/ChakraCore/wiki/Release-Notes#v140">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release Notes · Microsoft/ChakraCore Wiki</amp-fit-text>
-        <p class="contents">ChakraCore 1.4リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes · Microsoft/ChakraCore Wiki</amp-fit-text>
+            <p class="item-contents">ChakraCore 1.4リリース。
 JITがLinuxやmacOSでも有効化、async/awaitをデフォルトで有効化、SharedArrayBufferを実験的にサポート、wasmの実験的サポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -135,14 +140,16 @@ JITがLinuxやmacOSでも有効化、async/awaitをデフォルトで有効化�
 
 <amp-story-page id="https://webkit.org/blog/7120/release-notes-for-safari-technology-preview-20/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release Notes for Safari Technology Preview 20 | WebKit</amp-fit-text>
-        <p class="contents">Safari Technology Preview Release 20リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 20 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview Release 20リリース。
 Visual Viewport、SharedArrayBufferを有効化、<code>block-all-mixed-content</code>の追加、BlinkからportしたCSSパーサを使うようになるなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -154,14 +161,16 @@ Visual Viewport、SharedArrayBufferを有効化、<code>block-all-mixed-content<
 
 <amp-story-page id="https://github.com/canjs/canjs/releases/tag/v3.0.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release 3rd Mutation · canjs/canjs</amp-fit-text>
-        <p class="contents">CanJS 3.0リリース
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 3rd Mutation · canjs/canjs</amp-fit-text>
+            <p class="item-contents">CanJS 3.0リリース
 コードは<code>can-*</code>からなるモジュールに分割され、<code>.attr()</code>の代わりに<code>DefineMap</code>の導入など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -173,13 +182,15 @@ Visual Viewport、SharedArrayBufferを有効化、<code>block-all-mixed-content<
 
 <amp-story-page id="https://ecmascript-daily.github.io/ecmascript/2016/12/22/ecmascript-proposals">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ECMAScript proposal updates @ 2016-11 | ECMAScript Daily</amp-fit-text>
-        <p class="contents">2016年11月のTC39ミーティングでのProposalのStage変動をまとめたもの
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ECMAScript proposal updates @ 2016-11 | ECMAScript Daily</amp-fit-text>
+            <p class="item-contents">2016年11月のTC39ミーティングでのProposalのStage変動をまとめたもの
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -191,15 +202,17 @@ Visual Viewport、SharedArrayBufferを有効化、<code>block-all-mixed-content<
 
 <amp-story-page id="http://qiita.com/Mizunashi_Mana/items/872354cd7bf25090932f">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Stream API入門 - Qiita</amp-fit-text>
-        <p class="contents">Node.jsのStream APIについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Stream API入門 - Qiita</amp-fit-text>
+            <p class="item-contents">Node.jsのStream APIについて。
 非同期処理のコールバック、Promise、async/await、generatorを踏まえてのStreamについての解説。
 Write/Read/Duplex、Stream処理が得意とすること、<code>objectMode</code>についてなど幅広く解説されてる
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -211,13 +224,15 @@ Write/Read/Duplex、Stream処理が得意とすること、<code>objectMode</cod
 
 <amp-story-page id="https://24ways.org/2016/css-writing-modes/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">CSS Writing Modes ◆ 24 ways</amp-fit-text>
-        <p class="contents">CSSの<code>writing-mode</code>プロパティについての解説
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">CSS Writing Modes ◆ 24 ways</amp-fit-text>
+            <p class="item-contents">CSSの<code>writing-mode</code>プロパティについての解説
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -229,14 +244,16 @@ Write/Read/Duplex、Stream処理が得意とすること、<code>objectMode</cod
 
 <amp-story-page id="http://blog.kazupon.jp/post/154903508388/vuejs-2016-closing-and-future">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">かずぽんブログ • Vue.js 2016年まとめ &amp;amp; 今後</amp-fit-text>
-        <p class="contents">2016年のVue.jsの変化について。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">かずぽんブログ • Vue.js 2016年まとめ &amp;amp; 今後</amp-fit-text>
+            <p class="item-contents">2016年のVue.jsの変化について。
 Vue.js 2.0、コミュニティ、エコシステム、利用範囲や今後について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -248,14 +265,16 @@ Vue.js 2.0、コミュニティ、エコシステム、利用範囲や今後に�
 
 <amp-story-page id="https://hacks.mozilla.org/2016/12/firebug-lives-on-in-firefox-devtools/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Firebug lives on in Firefox DevTools ★ Mozilla Hacks – the Web developer blog</amp-fit-text>
-        <p class="contents">Firebugは開発終了したが、多くの機能はFirefoxの開発者ツールに引き継がれている/引き継ぐ予定があるという話。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Firebug lives on in Firefox DevTools ★ Mozilla Hacks – the Web developer blog</amp-fit-text>
+            <p class="item-contents">Firebugは開発終了したが、多くの機能はFirefoxの開発者ツールに引き継がれている/引き継ぐ予定があるという話。
 またFirebugはマルチプロセス対応を念頭に開発されたものではなかったため、Firebugを拡張するよりも、Firefoxの開発者ツールを拡張していく方が良いという決定がされた。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -267,13 +286,15 @@ Vue.js 2.0、コミュニティ、エコシステム、利用範囲や今後に�
 
 <amp-story-page id="https://havelog.ayumusato.com/develop/a11y/e732-a11y_checking_automate.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Web アクセシビリティ向け Node.js 製の自動チェックツールや DevTools 用の拡張機能など ::ハブろぐ</amp-fit-text>
-        <p class="contents">Webアクセシビリティの自動チェックツールや補助ツールの紹介。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Web アクセシビリティ向け Node.js 製の自動チェックツールや DevTools 用の拡張機能など ::ハブろぐ</amp-fit-text>
+            <p class="item-contents">Webアクセシビリティの自動チェックツールや補助ツールの紹介。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -285,14 +306,16 @@ Vue.js 2.0、コミュニティ、エコシステム、利用範囲や今後に�
 
 <amp-story-page id="http://blog.anatoo.jp/entry/2016/12/09/201511">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">JavaScriptのUIライブラリはどうあるべきかという話とOnsen UIのアーキテクチャ - id:anatooのブログ</amp-fit-text>
-        <p class="contents">特定のUIフレームワークに依存されないUIフレームワークの基盤をどのように作るかという話。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScriptのUIライブラリはどうあるべきかという話とOnsen UIのアーキテクチャ - id:anatooのブログ</amp-fit-text>
+            <p class="item-contents">特定のUIフレームワークに依存されないUIフレームワークの基盤をどのように作るかという話。
 CSS Components層、Web Components層、フレームワークバインディング層のレイヤー分けについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -304,13 +327,15 @@ CSS Components層、Web Components層、フレームワークバインディン�
 
 <amp-story-page id="http://qiita.com/narirou/items/738a0fe6656d0f905e28">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ServiceWorker内にExpressサーバーを立てる - Qiita</amp-fit-text>
-        <p class="contents">express-serviceがどのようにして実際のNode.jsで動くExpressのコードをServiceWorkerの中でも擬似的に動かしているのかについての解説
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ServiceWorker内にExpressサーバーを立てる - Qiita</amp-fit-text>
+            <p class="item-contents">express-serviceがどのようにして実際のNode.jsで動くExpressのコードをServiceWorkerの中でも擬似的に動かしているのかについての解説
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -322,13 +347,15 @@ CSS Components層、Web Components層、フレームワークバインディン�
 
 <amp-story-page id="https://developer.mozilla.org/en-US/docs/Learn/Accessibility">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Accessibility - Learn web development | MDN</amp-fit-text>
-        <p class="contents">アクセシビリティについてのガイド
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Accessibility - Learn web development | MDN</amp-fit-text>
+            <p class="item-contents">アクセシビリティについてのガイド
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -340,14 +367,16 @@ CSS Components層、Web Components層、フレームワークバインディン�
 
 <amp-story-page id="https://speedtracker.org/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">SpeedTracker</amp-fit-text>
-        <p class="contents">個人向けに使うCalibreやSpeedCurveのような継続的なパフォーマンス計測サービス。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">SpeedTracker</amp-fit-text>
+            <p class="item-contents">個人向けに使うCalibreやSpeedCurveのような継続的なパフォーマンス計測サービス。
 WebPageTestで取った結果をGitHubリポジトリにJekyllで動くようにデータをpushしてくれる。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -359,14 +388,16 @@ WebPageTestで取った結果をGitHubリポジトリにJekyllで動くように
 
 <amp-story-page id="http://qiita.com/shibukawa/items/c2298b21b4629941b230">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Mithril、Vue.jsの仮想DOM用のi18nライブラリ作った - Qiita</amp-fit-text>
-        <p class="contents">Node.jsでもブラウザでも動作するi18nライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Mithril、Vue.jsの仮想DOM用のi18nライブラリ作った - Qiita</amp-fit-text>
+            <p class="item-contents">Node.jsでもブラウザでも動作するi18nライブラリ。
 プレースホルダ、複数形、コンテキスト、<code>data-i18n</code>属性に対する翻訳する機能を持つ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -378,13 +409,15 @@ WebPageTestで取った結果をGitHubリポジトリにJekyllで動くように
 
 <amp-story-page id="https://github.com/devongovett/regexgen">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">devongovett/regexgen: Generate regular expressions that match a set of strings</amp-fit-text>
-        <p class="contents">複数の文字列を渡して、それにマッチする正規表現を作るライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">devongovett/regexgen: Generate regular expressions that match a set of strings</amp-fit-text>
+            <p class="item-contents">複数の文字列を渡して、それにマッチする正規表現を作るライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -396,14 +429,16 @@ WebPageTestで取った結果をGitHubリポジトリにJekyllで動くように
 
 <amp-story-page id="https://github.com/javascript-obfuscator/javascript-obfuscator">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">javascript-obfuscator/javascript-obfuscator: JavaScript obfuscator for Node.js</amp-fit-text>
-        <p class="contents">JavaScriptの難読化ツール/ライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">javascript-obfuscator/javascript-obfuscator: JavaScript obfuscator for Node.js</amp-fit-text>
+            <p class="item-contents">JavaScriptの難読化ツール/ライブラリ。
 ES2015+のコードを扱うことができ、Source Mapにも対応している
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -415,14 +450,16 @@ ES2015+のコードを扱うことができ、Source Mapにも対応している
 
 <amp-story-page id="https://github.com/amilajack/eslint-plugin-compat">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">amilajack/eslint-plugin-compat: Browser and ES spec compatibility assertion with ESLint</amp-fit-text>
-        <p class="contents">AutoPrefixerのように想定ブラウザを記述し、そのブラウザで動かないAPIを使ってないかをチェックするESLintルール。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">amilajack/eslint-plugin-compat: Browser and ES spec compatibility assertion with ESLint</amp-fit-text>
+            <p class="item-contents">AutoPrefixerのように想定ブラウザを記述し、そのブラウザで動かないAPIを使ってないかをチェックするESLintルール。
 caniuseやcompat tableのデータを使う
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

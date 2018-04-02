@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,14 +98,16 @@
     
 <amp-story-page id="http://blog.nodejs.org/2014/12/23/node-v0-10-35-stable/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Node v0.10.35 (Stable)</amp-fit-text>
-        <p class="contents">Node v0.10.35リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v0.10.35 (Stable)</amp-fit-text>
+            <p class="item-contents">Node v0.10.35リリース。
 http://d.hatena.ne.jp/jovi0608/20141222/1419265270 の修正が入った
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -116,14 +119,16 @@ http://d.hatena.ne.jp/jovi0608/20141222/1419265270 の修正が入った
 
 <amp-story-page id="http://emberjs.com/blog/2014/12/23/ember-1-9-1-released.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Ember.js - Ember.js 1.9.1 Released</amp-fit-text>
-        <p class="contents">Ember.js 1.9.1 リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Ember.js - Ember.js 1.9.1 Released</amp-fit-text>
+            <p class="item-contents">Ember.js 1.9.1 リリース。
 Handlebarsテンプレートはタグのエスケープは自動でやるが、属性値にjavascript:等を指定した場合にXSSとなる可能性があったため自動的にエスケープされるように変更された
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -135,14 +140,16 @@ Handlebarsテンプレートはタグのエスケープは自動でやるが、�
 
 <amp-story-page id="https://github.com/eslint/espree/releases/tag/v1.5.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release v1.5.0 · eslint/espree</amp-fit-text>
-        <p class="contents">esprima forkのespree 1.5.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v1.5.0 · eslint/espree</amp-fit-text>
+            <p class="item-contents">esprima forkのespree 1.5.0リリース。
 JSXのパースをサポート
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -154,16 +161,18 @@ JSXのパースをサポート
 
 <amp-story-page id="https://github.com/tmpvar/jsdom/blob/2.0.0/Changelog.md">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">jsdom/Changelog.md at 2.0.0 · tmpvar/jsdom</amp-fit-text>
-        <p class="contents">jsdom 2.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">jsdom/Changelog.md at 2.0.0 · tmpvar/jsdom</amp-fit-text>
+            <p class="item-contents">jsdom 2.0.0リリース。
 リファクタリング、内部構造を大きく変えていくリリース。
 <code>levels</code>という概念を捨ててLiving Standard Modelに従うように。
 非標準なAPIを標準化されたものへ変更など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -175,14 +184,16 @@ JSXのパースをサポート
 
 <amp-story-page id="https://github.com/6to5/6to5/blob/master/CHANGELOG.md#200">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">6to5/CHANGELOG.md at master · 6to5/6to5</amp-fit-text>
-        <p class="contents">ES6のコードをES5に変換する6to5 2.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">6to5/CHANGELOG.md at master · 6to5/6to5</amp-fit-text>
+            <p class="item-contents">ES6のコードをES5に変換する6to5 2.0.0リリース。
 FlowTypeのサポート、polyfill等をcore-jsに変更、Performanceの改善、<code>6to5/register</code>に<code>cache</code>オプションの追加等
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -194,14 +205,16 @@ FlowTypeのサポート、polyfill等をcore-jsに変更、Performanceの改善�
 
 <amp-story-page id="http://blog.brackets.io/2014/12/18/brackets-1-1-and-extract-for-brackets-0-6-now-available/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Brackets Blog - The Free, Open Source Code Editor for the Web</amp-fit-text>
-        <p class="contents">Brackets 1.1リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Brackets Blog - The Free, Open Source Code Editor for the Web</amp-fit-text>
+            <p class="item-contents">Brackets 1.1リリース。
 クロスブラウザのLive Previewを実験的にサポート。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -213,13 +226,15 @@ FlowTypeのサポート、polyfill等をcore-jsに変更、Performanceの改善�
 
 <amp-story-page id="http://engineering.shapesecurity.com/2014/12/announcing-shift-javascript-ast.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Shape Security Labs: Announcing the Shift JavaScript AST Specification</amp-fit-text>
-        <p class="contents">SpiderMonkey ASTは内部表現として始まったので、ツールから扱いにくい部分やES6のサポートの問題がでてきた。 &quot;Shift&quot;プロジェクトではそのASTの仕様策定、パーサ、ジェネレータ、バリデータ、SpiderMonkey ASTからの変換ツール、Javaの実装などが公開されている。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Shape Security Labs: Announcing the Shift JavaScript AST Specification</amp-fit-text>
+            <p class="item-contents">SpiderMonkey ASTは内部表現として始まったので、ツールから扱いにくい部分やES6のサポートの問題がでてきた。 &quot;Shift&quot;プロジェクトではそのASTの仕様策定、パーサ、ジェネレータ、バリデータ、SpiderMonkey ASTからの変換ツール、Javaの実装などが公開されている。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -231,14 +246,16 @@ FlowTypeのサポート、polyfill等をcore-jsに変更、Performanceの改善�
 
 <amp-story-page id="http://calendar.perfplanet.com/2014/fast-forward-performance-the-future-looks-bright/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Performance Calendar » Fast-Forward Performance – The Future Looks Bright</amp-fit-text>
-        <p class="contents">パフォーマンス改善に役立つAPI、測定をするためのAPIのまとめ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Performance Calendar » Fast-Forward Performance – The Future Looks Bright</amp-fit-text>
+            <p class="item-contents">パフォーマンス改善に役立つAPI、測定をするためのAPIのまとめ。
 ブラウザのサポート状態について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -250,12 +267,13 @@ FlowTypeのサポート、polyfill等をcore-jsに変更、Performanceの改善�
 
 <amp-story-page id="http://colintoh.com/blog/htmlbars">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">HTMLBars - A Feature-by-Feature Review | colintoh.com</amp-fit-text>
-        <p class="contents">Emberが採用するHTMLBarsについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">HTMLBars - A Feature-by-Feature Review | colintoh.com</amp-fit-text>
+            <p class="item-contents">Emberが採用するHTMLBarsについて。
 以前のEmberのレンダリングはHandlebarsをそのまま使っていたため
 
 テンプレート -&gt; AST -&gt; HTML String -&gt; DOM
@@ -268,6 +286,7 @@ HTMLBarsはHandlebarsのテンプレート記法を使うのは同様だが、�
 このようなフローとなった理由や仕組みについて書かれている。
 内部的にはHTMLBars ASTというものがあるが、レンダリングのフローではコンパイル結果の関数を使うので、HTML Stringのパースがなくなる点が大きな違い。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -279,14 +298,16 @@ HTMLBarsはHandlebarsのテンプレート記法を使うのは同様だが、�
 
 <amp-story-page id="http://www.2ality.com/2014/12/es6-symbols.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Symbols in ECMAScript 6</amp-fit-text>
-        <p class="contents">ES6のSymbolsについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Symbols in ECMAScript 6</amp-fit-text>
+            <p class="item-contents">ES6のSymbolsについて。
 Symbolの使い方、const Symbol()でのユニーク値としての利用、WeakMapと合わせてのプライベート値、メタ値との利用、iframe、なぜ文字列じゃなくてSymbolなのかについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -298,14 +319,16 @@ Symbolの使い方、const Symbol()でのユニーク値としての利用、Wea
 
 <amp-story-page id="http://t32k.me/mol/log/style-class-conference/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Smashing Magazineのパフォーマンス改善ケースが凄まじい件 — MOL</amp-fit-text>
-        <p class="contents">Smashing Magazineのパフォーマンス改善について。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Smashing Magazineのパフォーマンス改善ケースが凄まじい件 — MOL</amp-fit-text>
+            <p class="item-contents">Smashing Magazineのパフォーマンス改善について。
 Critical Rendering Pathの最適化、パフォーマンス改善の指標をSpeed Index &lt;= 1000としている点について等
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -317,15 +340,17 @@ Critical Rendering Pathの最適化、パフォーマンス改善の指標をSpe
 
 <amp-story-page id="http://blog.risingstack.com/functional-reactive-programming-with-the-power-of-nodejs-streams/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Functional Reactive Programming with the Power of Node.js Streams</amp-fit-text>
-        <p class="contents">NodeのStreamとFRPの導入的な記事。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Functional Reactive Programming with the Power of Node.js Streams</amp-fit-text>
+            <p class="item-contents">NodeのStreamとFRPの導入的な記事。
 リアクティブプログラミングはどのようなケースで有用なのか、FRPのライブラリとしてRxJSやBacon等が既にある。
 またNodeのStreamとの互換性を高めたHighland.jsというライブラリの紹介記事
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -337,13 +362,15 @@ Critical Rendering Pathの最適化、パフォーマンス改善の指標をSpe
 
 <amp-story-page id="http://aurelio.audero.it/blog/2014/10/18/state-web-notifications-api/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">The state of the Web Notifications API - Aurelio De Rosa blog</amp-fit-text>
-        <p class="contents">Web Notifications APIの<code>events</code>周りの仕様がW3CとWHATWGで異なるが、それぞれのブラウザの実装はどうなっているかについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">The state of the Web Notifications API - Aurelio De Rosa blog</amp-fit-text>
+            <p class="item-contents">Web Notifications APIの<code>events</code>周りの仕様がW3CとWHATWGで異なるが、それぞれのブラウザの実装はどうなっているかについて。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -355,13 +382,15 @@ Critical Rendering Pathの最適化、パフォーマンス改善の指標をSpe
 
 <amp-story-page id="http://rxaviers.github.io/javascript-globalization/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Javascript-globalization by rxaviers</amp-fit-text>
-        <p class="contents">ECMA i18n APIやFormatJS等の国際化ライブラリなどの特徴や機能比較のまとめ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Javascript-globalization by rxaviers</amp-fit-text>
+            <p class="item-contents">ECMA i18n APIやFormatJS等の国際化ライブラリなどの特徴や機能比較のまとめ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -373,15 +402,17 @@ Critical Rendering Pathの最適化、パフォーマンス改善の指標をSpe
 
 <amp-story-page id="http://www.slideshare.net/VOYAGE_GROUP/flux-react">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Flux react現状確認会</amp-fit-text>
-        <p class="contents">FluxとReactについてのスライド。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Flux react現状確認会</amp-fit-text>
+            <p class="item-contents">FluxとReactについてのスライド。
 アーキテクチャ = オブザーバパターン、データの一方通行性、メリット・デメリット、ViewライブラリとしてReactを選んだ理由について。
 実際にFlux的にやっての本家との違いについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -393,13 +424,15 @@ Critical Rendering Pathの最適化、パフォーマンス改善の指標をSpe
 
 <amp-story-page id="http://googledevjp.blogspot.com/2014/12/chrome.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Chrome 関連の動画に日本語字幕が付きました - Google Developer Japan Blog</amp-fit-text>
-        <p class="contents">I/O Bytes 2014のChrome関係の動画に日本語字幕がついた
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Chrome 関連の動画に日本語字幕が付きました - Google Developer Japan Blog</amp-fit-text>
+            <p class="item-contents">I/O Bytes 2014のChrome関係の動画に日本語字幕がついた
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -411,14 +444,16 @@ Critical Rendering Pathの最適化、パフォーマンス改善の指標をSpe
 
 <amp-story-page id="http://jsverify.github.io/#jsverify">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">JSVerify — property based testing for JavaScript. Like QuickCheck.</amp-fit-text>
-        <p class="contents">QuickCheckを行うライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JSVerify — property based testing for JavaScript. Like QuickCheck.</amp-fit-text>
+            <p class="item-contents">QuickCheckを行うライブラリ。
 MochaやJasmineとの連携も用意されている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -430,14 +465,16 @@ MochaやJasmineとの連携も用意されている
 
 <amp-story-page id="https://github.com/azu/textlint">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">azu/textlint</amp-fit-text>
-        <p class="contents">テキストやMarkdownをLintするツール。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">azu/textlint</amp-fit-text>
+            <p class="item-contents">テキストやMarkdownをLintするツール。
 ESLintのようにルールをJavaScriptで書いて拡張出来る。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -449,13 +486,15 @@ ESLintのようにルールをJavaScriptで書いて拡張出来る。
 
 <amp-story-page id="https://github.com/mapbox/pbf">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">mapbox/pbf</amp-fit-text>
-        <p class="contents">ファイルサイズの小さいprotocol buffersの実装ライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">mapbox/pbf</amp-fit-text>
+            <p class="item-contents">ファイルサイズの小さいprotocol buffersの実装ライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -467,13 +506,15 @@ ESLintのようにルールをJavaScriptで書いて拡張出来る。
 
 <amp-story-page id="http://shop.oreilly.com/product/0636920035367.do">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Knockout.js - O&amp;#x27;Reilly Media</amp-fit-text>
-        <p class="contents">Knockout.jsについての書籍
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Knockout.js - O&amp;#x27;Reilly Media</amp-fit-text>
+            <p class="item-contents">Knockout.jsについての書籍
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

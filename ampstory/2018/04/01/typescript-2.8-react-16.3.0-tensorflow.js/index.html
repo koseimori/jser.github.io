@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,15 +98,17 @@
     
 <amp-story-page id="https://reactjs.org/blog/2018/03/29/react-v-16-3.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">React v16.3.0: New lifecycles and context API - React Blog</amp-fit-text>
-        <p class="contents">React v16.3.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React v16.3.0: New lifecycles and context API - React Blog</amp-fit-text>
+            <p class="item-contents">React v16.3.0リリース。
 新しいContext APIの追加、<code>createRef</code>メソッドの追加、<code>forwardRef</code>メソッドの追加。
 コンポーネントライフサイクルイベントの変更と追加、<code>StrictMode</code>コンポーネントの追加など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -117,12 +120,13 @@
 
 <amp-story-page id="https://nodejs.org/en/blog/vulnerability/march-2018-security-releases/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">March 2018 Security Releases | Node.js</amp-fit-text>
-        <p class="contents">Node.jsのセキュリティアップデートとして、それぞれのLTSと開発バージョンのアップデートが公開された
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">March 2018 Security Releases | Node.js</amp-fit-text>
+            <p class="item-contents">Node.jsのセキュリティアップデートとして、それぞれのLTSと開発バージョンのアップデートが公開された
 <ul>
 <li>Node.js 9.10.0</li>
 <li>Node.js 8.11.0 (LTS &quot;Carbon&quot;)</li>
@@ -130,6 +134,7 @@
 <li>Node.js 4.9.0 (LTS &quot;Argon&quot;)</li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -141,16 +146,18 @@
 
 <amp-story-page id="https://v8project.blogspot.com/2018/03/v8-release-66.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">V8 JavaScript Engine: V8 release v6.6</amp-fit-text>
-        <p class="contents">V8 v6.6(Chrome 66)リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">V8 JavaScript Engine: V8 release v6.6</amp-fit-text>
+            <p class="item-contents">V8 v6.6(Chrome 66)リリース。
 ECMAScript Proposalの対応として<code>Function#toString()</code>の仕様追従、JSがJSONのsupersetとなる仕様追従。
 また<code>catch</code>構文のパラメータを省略に対応、<code>String#trimStart</code>や<code>String#trimEnd</code>の実装など。
 Background compilationの対応やAsync、Arrayのパフォーマンス改善など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -162,14 +169,16 @@ Background compilationの対応やAsync、Arrayのパフォーマンス改善な
 
 <amp-story-page id="https://zeit.co/blog/next5-1">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ZEIT – Next.js 5.1: Faster Page Resolution, Environment Config &amp; More</amp-fit-text>
-        <p class="contents">Next.js 5.1リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ZEIT – Next.js 5.1: Faster Page Resolution, Environment Config &amp; More</amp-fit-text>
+            <p class="item-contents">Next.js 5.1リリース。
 ページロードの速度改善、設定を定義できる<code>publicRuntimeConfig</code>と<code>serverRuntimeConfig</code>を追加、エラーハンドリングの改善など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -181,14 +190,16 @@ Background compilationの対応やAsync、Arrayのパフォーマンス改善な
 
 <amp-story-page id="https://github.com/storybooks/storybook/releases/tag/v3.4.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release v3.4.0 · storybooks/storybook</amp-fit-text>
-        <p class="contents">Storybook 3.4.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v3.4.0 · storybooks/storybook</amp-fit-text>
+            <p class="item-contents">Storybook 3.4.0リリース。
 Polymer 2サポート、AngularとVueのstoryshotサポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -200,14 +211,16 @@ Polymer 2サポート、AngularとVueのstoryshotサポートなど
 
 <amp-story-page id="https://github.com/power-assert-js/power-assert/blob/v1.5.0/CHANGELOG.md">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">power-assert/CHANGELOG.md at v1.5.0 · power-assert-js/power-assert</amp-fit-text>
-        <p class="contents">power-assert 1.5.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">power-assert/CHANGELOG.md at v1.5.0 · power-assert-js/power-assert</amp-fit-text>
+            <p class="item-contents">power-assert 1.5.0リリース。
 Node.js 9.9.0で追加された<code>assert</code>のstrict modeをサポート
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -219,14 +232,16 @@ Node.js 9.9.0で追加された<code>assert</code>のstrict modeをサポート
 
 <amp-story-page id="https://medium.com/@devongovett/parcel-v1-7-0-9aac0c505837">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">📦 Parcel v1.7.0: – devongovett – Medium</amp-fit-text>
-        <p class="contents">Parcel v1.7.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">📦 Parcel v1.7.0: – devongovett – Medium</amp-fit-text>
+            <p class="item-contents">Parcel v1.7.0リリース。
 <code>.vue</code>とPugのサポート、出力するファイルにハッシュ値を付与するように、absolute pathとtilde(<code>~</code>) pathのサポート、必要な依存を自動的にインストールするようになるなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -238,14 +253,16 @@ Node.js 9.9.0で追加された<code>assert</code>のstrict modeをサポート
 
 <amp-story-page id="http://sass.logdown.com/posts/7045860-dart-sass-100-is-released">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Dart Sass 1.0.0 is Released « Sass Blog</amp-fit-text>
-        <p class="contents">Dart Sass 1.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Dart Sass 1.0.0 is Released « Sass Blog</amp-fit-text>
+            <p class="item-contents">Dart Sass 1.0リリース。
 Ruby Sassについてはメンテナンスモードとなる。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -257,14 +274,16 @@ Ruby Sassについてはメンテナンスモードとなる。
 
 <amp-story-page id="https://eslint.org/blog/2018/03/eslint-v5.0.0-alpha.0-released">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ESLint v5.0.0-alpha.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
-        <p class="contents">ESLint 5.0.0αリリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint v5.0.0-alpha.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+            <p class="item-contents">ESLint 5.0.0αリリース。
 予定される破壊的な変更についてはマイグレーションガイドで解説されている。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -276,13 +295,15 @@ Ruby Sassについてはメンテナンスモードとなる。
 
 <amp-story-page id="https://blogs.msdn.microsoft.com/typescript/2018/03/27/announcing-typescript-2-8/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Announcing TypeScript 2.8 | TypeScript</amp-fit-text>
-        <p class="contents">TypeScript 2.8リリース。 Conditional Types、d.tsのみの出力に対応、<code>@jsx</code> pragmaコメントのサポート、mapped type modifierの<code>+</code>、<code>-</code>のサポートなど
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing TypeScript 2.8 | TypeScript</amp-fit-text>
+            <p class="item-contents">TypeScript 2.8リリース。 Conditional Types、d.tsのみの出力に対応、<code>@jsx</code> pragmaコメントのサポート、mapped type modifierの<code>+</code>、<code>-</code>のサポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -294,13 +315,15 @@ Ruby Sassについてはメンテナンスモードとなる。
 
 <amp-story-page id="http://blog.wnotes.net/blog/article/server-side-benchmark-using-server-timing-api">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Server Timing APIを使ってサーバーサイドのベンチマークを手軽にやる | ブログ :: Web notes.log</amp-fit-text>
-        <p class="contents">Server Timinig APIを使いサーバサイドのリクエストごとのベンチマークをとり、Chromeの開発者ツールに表示するライブラリについて
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Server Timing APIを使ってサーバーサイドのベンチマークを手軽にやる | ブログ :: Web notes.log</amp-fit-text>
+            <p class="item-contents">Server Timinig APIを使いサーバサイドのリクエストごとのベンチマークをとり、Chromeの開発者ツールに表示するライブラリについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -312,15 +335,17 @@ Ruby Sassについてはメンテナンスモードとなる。
 
 <amp-story-page id="https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Update on Async Rendering - React Blog</amp-fit-text>
-        <p class="contents">非同期レンダリングのためのライフサイクルイベントの追加と変更について。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Update on Async Rendering - React Blog</amp-fit-text>
+            <p class="item-contents">非同期レンダリングのためのライフサイクルイベントの追加と変更について。
 16.3でイベントの追加、16.xで古いイベントに警告を表示、17.0で古いイベントを廃止。
 また追加された<code>getDerivedStateFromProps</code>と<code>getSnapshotBeforeUpdate</code>についての解説
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -332,14 +357,16 @@ Ruby Sassについてはメンテナンスモードとなる。
 
 <amp-story-page id="https://developers.google.com/web/updates/2018/03/cssom">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Working with the new CSS Typed Object Model  |  Web  |  Google Developers</amp-fit-text>
-        <p class="contents">CSS Typed OMについての解説。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Working with the new CSS Typed Object Model  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">CSS Typed OMについての解説。
 すでにある<code>style</code>プロパティと新しく追加された<code>attributeStyleMap</code>の違いや、CSS Typed OMで追加されたAPIのメリットや実際の使い方について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -351,13 +378,15 @@ Ruby Sassについてはメンテナンスモードとなる。
 
 <amp-story-page id="https://github.com/WebAssembly/esm-integration">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">WebAssembly/esm-integration: ECMAScript module integration</amp-fit-text>
-        <p class="contents">ES Module Integration Proposal for WebAssembly
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">WebAssembly/esm-integration: ECMAScript module integration</amp-fit-text>
+            <p class="item-contents">ES Module Integration Proposal for WebAssembly
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -369,13 +398,15 @@ Ruby Sassについてはメンテナンスモードとなる。
 
 <amp-story-page id="https://bitsofco.de/how-display-contents-works/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">How display: contents; Works</amp-fit-text>
-        <p class="contents"><code>display: contents;</code> の解説
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">How display: contents; Works</amp-fit-text>
+            <p class="item-contents"><code>display: contents;</code> の解説
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -387,14 +418,16 @@ Ruby Sassについてはメンテナンスモードとなる。
 
 <amp-story-page id="https://github.com/CondeNast/perf-timeline-cli">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">CondeNast/perf-timeline-cli: Generate Chrome Performance Timelines via a command line interface</amp-fit-text>
-        <p class="contents">Chrome開発者ツールのPerformanceパネルの情報を取得するCLIツール。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">CondeNast/perf-timeline-cli: Generate Chrome Performance Timelines via a command line interface</amp-fit-text>
+            <p class="item-contents">Chrome開発者ツールのPerformanceパネルの情報を取得するCLIツール。
 Puppeteerを使ってアクセスした結果を取得する
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -406,13 +439,15 @@ Puppeteerを使ってアクセスした結果を取得する
 
 <amp-story-page id="https://jgthms.com/javascript-in-14-minutes/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">JavaScript in 14 minutes by Jeremy Thomas</amp-fit-text>
-        <p class="contents">ブラウザの開発者ツールで実行しながら学べるJavaScriptチュートリアル
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScript in 14 minutes by Jeremy Thomas</amp-fit-text>
+            <p class="item-contents">ブラウザの開発者ツールで実行しながら学べるJavaScriptチュートリアル
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -424,13 +459,15 @@ Puppeteerを使ってアクセスした結果を取得する
 
 <amp-story-page id="https://github.com/cmseaton42/task-easy">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">cmseaton42/task-easy: A simple, customizable, and lightweight priority queue for promises.</amp-fit-text>
-        <p class="contents">Promiseスケジュールライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">cmseaton42/task-easy: A simple, customizable, and lightweight priority queue for promises.</amp-fit-text>
+            <p class="item-contents">Promiseスケジュールライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -442,14 +479,16 @@ Puppeteerを使ってアクセスした結果を取得する
 
 <amp-story-page id="https://github.com/asfktz/Awaity.js">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">asfktz/Awaity.js: A functional, lightweight alternative to bluebird.js, built with async / await in mind.</amp-fit-text>
-        <p class="contents">async/awaitベースのコレクション系ライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">asfktz/Awaity.js: A functional, lightweight alternative to bluebird.js, built with async / await in mind.</amp-fit-text>
+            <p class="item-contents">async/awaitベースのコレクション系ライブラリ
 map、filter、reduceなどのPromiseに対するコレクション操作を提供するライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -461,13 +500,15 @@ map、filter、reduceなどのPromiseに対するコレクション操作を提�
 
 <amp-story-page id="https://github.com/jacobbogers/libRmath.js">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">jacobbogers/libRmath.js: Javascript Pure Implementation of Statistical R &quot;core&quot; numerical libRmath.so</amp-fit-text>
-        <p class="contents">Rの<code>math</code>をJavaScriptにポートしたライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">jacobbogers/libRmath.js: Javascript Pure Implementation of Statistical R &quot;core&quot; numerical libRmath.so</amp-fit-text>
+            <p class="item-contents">Rの<code>math</code>をJavaScriptにポートしたライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -479,14 +520,16 @@ map、filter、reduceなどのPromiseに対するコレクション操作を提�
 
 <amp-story-page id="https://js.tensorflow.org/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">TensorFlow.js</amp-fit-text>
-        <p class="contents">tensorflowのJavaScript版。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">TensorFlow.js</amp-fit-text>
+            <p class="item-contents">tensorflowのJavaScript版。
 WebGLを使った機械学習を行え、既存の学習モデルはconverterで変換し利用できる。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -498,13 +541,15 @@ WebGLを使った機械学習を行え、既存の学習モデルはconverterで
 
 <amp-story-page id="https://github.com/jaywcjlove/hotkeys">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">jaywcjlove/hotkeys: ➷ A robust Javascript library for capturing keyboard input. It has no dependencies.</amp-fit-text>
-        <p class="contents">ショートカットキー管理ライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">jaywcjlove/hotkeys: ➷ A robust Javascript library for capturing keyboard input. It has no dependencies.</amp-fit-text>
+            <p class="item-contents">ショートカットキー管理ライブラリ。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -516,13 +561,15 @@ WebGLを使った機械学習を行え、既存の学習モデルはconverterで
 
 <amp-story-page id="https://book.mynavi.jp/ec/products/detail/id=88735">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">React開発　現場の教科書 | マイナビブックス</amp-fit-text>
-        <p class="contents">ReactとAtomic Designについての書籍
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React開発　現場の教科書 | マイナビブックス</amp-fit-text>
+            <p class="item-contents">ReactとAtomic Designについての書籍
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -534,14 +581,16 @@ WebGLを使った機械学習を行え、既存の学習モデルはconverterで
 
 <amp-story-page id="http://shop.oreilly.com/product/0636920146353.do">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">CSS Pocket Reference, 5th Edition - O&#039;Reilly Media</amp-fit-text>
-        <p class="contents">2018年4月発売。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">CSS Pocket Reference, 5th Edition - O&#039;Reilly Media</amp-fit-text>
+            <p class="item-contents">2018年4月発売。
 CSSリファレンス本
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

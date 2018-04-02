@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,15 +98,17 @@
     
 <amp-story-page id="https://webkit.org/blog/7516/release-notes-for-safari-technology-preview-28/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release Notes for Safari Technology Preview 28 | WebKit</amp-fit-text>
-        <p class="contents">Safari Technology Preview Release 28リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 28 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview Release 28リリース。
 バックグラウンドタブの処理を抑制、クロスオリジン iframeの<code>requestAnimationFrame</code>を30fpsに制限するなど。
 WebCryptoでAES-CTRをサポート
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -117,15 +120,17 @@ WebCryptoでAES-CTRをサポート
 
 <amp-story-page id="https://www.mozilla.org/en-US/firefox/53.0/releasenotes/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Firefox — Notes (53.0) — Mozilla</amp-fit-text>
-        <p class="contents">Firefox 53.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Firefox — Notes (53.0) — Mozilla</amp-fit-text>
+            <p class="item-contents">Firefox 53.0リリース。
 ES2015のFunction.nameの仕様追従
 <code>var f = function() {};f.name; // &quot;f&quot;</code>、<code>auxclick</code>イベントの対応、<code>display: flow-root</code>の対応など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -137,14 +142,16 @@ ES2015のFunction.nameの仕様追従
 
 <amp-story-page id="https://developers.google.com/web/updates/2017/04/nic58">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">New in Chrome 58  |  Web  |  Google Developers</amp-fit-text>
-        <p class="contents">Chrome 58リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">New in Chrome 58  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">Chrome 58リリース。
 IndexedDB 2.0、<code>display: flow-root</code>のサポートなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -156,15 +163,17 @@ IndexedDB 2.0、<code>display: flow-root</code>のサポートなど
 
 <amp-story-page id="https://github.com/tmpvar/jsdom/blob/10.0.0/Changelog.md">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">jsdom/Changelog.md at 10.0.0 · tmpvar/jsdom</amp-fit-text>
-        <p class="contents">jsdom 10.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">jsdom/Changelog.md at 10.0.0 · tmpvar/jsdom</amp-fit-text>
+            <p class="item-contents">jsdom 10.0.0リリース。
 Node.js &lt;=5のサポートを終了、基本的な使い方を変更(<code>new JSDOM(html)</code>など)、<code>Script</code>の追加。
 <code>omitJsdomErrors</code>を<code>omitJSDOMErrors</code>へリネーム、<code>dir</code>の対応改善、<code>window.postMessage()</code>のoriginチェックを修正など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -176,13 +185,15 @@ Node.js &lt;=5のサポートを終了、基本的な使い方を変更(<code>ne
 
 <amp-story-page id="https://jakearchibald.com/2017/async-iterators-and-generators/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Async iterators and generators - JakeArchibald.com</amp-fit-text>
-        <p class="contents">Async iteratorについての解説
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Async iterators and generators - JakeArchibald.com</amp-fit-text>
+            <p class="item-contents">Async iteratorについての解説
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -194,14 +205,16 @@ Node.js &lt;=5のサポートを終了、基本的な使い方を変更(<code>ne
 
 <amp-story-page id="https://medium.freecodecamp.com/vue-js-introduction-for-people-who-know-just-enough-jquery-to-get-by-eab5aa193d77">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">A Vue.js introduction for people who know just enough jQuery to get by</amp-fit-text>
-        <p class="contents">Vue.jsを使ってTwitterの投稿画面のようなダイアログ表示を作成するチュートリアル。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">A Vue.js introduction for people who know just enough jQuery to get by</amp-fit-text>
+            <p class="item-contents">Vue.jsを使ってTwitterの投稿画面のようなダイアログ表示を作成するチュートリアル。
 機能毎に実装を進めていて、データバインディングやメソッドの呼び出し、アニメーションなどについて解説してる。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -213,14 +226,16 @@ Node.js &lt;=5のサポートを終了、基本的な使い方を変更(<code>ne
 
 <amp-story-page id="https://developers.cyberagent.co.jp/blog/archives/6057/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">FRESH! Web パフォーマンス改善 〜クライアントサイド編〜 | CyberAgent Developers Blog | サイバーエージェント デベロッパーズブログ</amp-fit-text>
-        <p class="contents">パフォーマンス改善についての解説記事。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">FRESH! Web パフォーマンス改善 〜クライアントサイド編〜 | CyberAgent Developers Blog | サイバーエージェント デベロッパーズブログ</amp-fit-text>
+            <p class="item-contents">パフォーマンス改善についての解説記事。
 Service Workerを使ったキャッシュ、Intersection Observerを使ったlazy load、SVGスプライトをやめて個別にSVGを読み込むなど。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -232,13 +247,15 @@ Service Workerを使ったキャッシュ、Intersection Observerを使ったlaz
 
 <amp-story-page id="http://qiita.com/clockmaker/items/50c3a9772e36a95ae500">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">脱jQueryのためにしたこと - Qiita</amp-fit-text>
-        <p class="contents">jQueryで書かれたサイトを標準のAPIやVue.jsを使って書き換えていく話
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">脱jQueryのためにしたこと - Qiita</amp-fit-text>
+            <p class="item-contents">jQueryで書かれたサイトを標準のAPIやVue.jsを使って書き換えていく話
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -250,14 +267,16 @@ Service Workerを使ったキャッシュ、Intersection Observerを使ったlaz
 
 <amp-story-page id="https://blog.hichroma.com/visual-testing-the-pragmatic-way-to-test-uis-18c8da617ecf">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Visual Testing — the pragmatic way to test UIs – Chroma</amp-fit-text>
-        <p class="contents">コンポーネントのビジュアルテストについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Visual Testing — the pragmatic way to test UIs – Chroma</amp-fit-text>
+            <p class="item-contents">コンポーネントのビジュアルテストについて。
 スナップショットテスト、ReactStoryBookなどを使ったUI component explorersのアプローチなどについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -269,13 +288,15 @@ Service Workerを使ったキャッシュ、Intersection Observerを使ったlaz
 
 <amp-story-page id="https://medium.freecodecamp.com/how-to-build-a-math-expression-tokenizer-using-javascript-3638d4e5fbe9">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">How to build a math expression tokenizer using JavaScript (or any other language)</amp-fit-text>
-        <p class="contents">JavaScriptでトークナイザーを書いていくチュートリアル
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">How to build a math expression tokenizer using JavaScript (or any other language)</amp-fit-text>
+            <p class="item-contents">JavaScriptでトークナイザーを書いていくチュートリアル
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -287,13 +308,15 @@ Service Workerを使ったキャッシュ、Intersection Observerを使ったlaz
 
 <amp-story-page id="https://www.sitepoint.com/javascript-testing-tool-showdown-sinon-js-vs-testdouble-js/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">JavaScript Testing Tool Showdown: Sinon.js vs testdouble.js — SitePoint</amp-fit-text>
-        <p class="contents">Sinon.jsとtestdouble.jsの比較記事
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScript Testing Tool Showdown: Sinon.js vs testdouble.js — SitePoint</amp-fit-text>
+            <p class="item-contents">Sinon.jsとtestdouble.jsの比較記事
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -305,15 +328,17 @@ Service Workerを使ったキャッシュ、Intersection Observerを使ったlaz
 
 <amp-story-page id="http://blog.koba04.com/post/2017/04/25/a-state-of-react-fiber/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">React Fiber現状確認 - blog.koba04.com</amp-fit-text>
-        <p class="contents">React v16から入る予定のFiberアーキテクチャについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React Fiber現状確認 - blog.koba04.com</amp-fit-text>
+            <p class="item-contents">React v16から入る予定のFiberアーキテクチャについて。
 ReactコアのReconciliationを置き換えるもので、今までは作業単位が1つのツリーだったものを、Filberという作業単位で行うようにする仕組みの解説。
 また、v16以降に入るError Boundaryなどの変更について。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -325,14 +350,16 @@ ReactコアのReconciliationを置き換えるもので、今までは作業単�
 
 <amp-story-page id="http://slides.com/birtles/browser-animation-2017">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Browser animation in 2017 by birtles</amp-fit-text>
-        <p class="contents">CSS Animations/Web Animationsについてのスライド。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Browser animation in 2017 by birtles</amp-fit-text>
+            <p class="item-contents">CSS Animations/Web Animationsについてのスライド。
 Web Animations APIやフレームアニメーションについて、またその実装状況にについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -344,15 +371,17 @@ Web Animations APIやフレームアニメーションについて、またそ�
 
 <amp-story-page id="https://abouthiroppy.github.io/slides/node8/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">abouthiroppy/node8</amp-fit-text>
-        <p class="contents">5月30日にリリース予定のNode.js 8.0.0についてのスライド。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">abouthiroppy/node8</amp-fit-text>
+            <p class="item-contents">5月30日にリリース予定のNode.js 8.0.0についてのスライド。
 Node.js 8.0.0ではV8の新しいコンパイラパイプラインが入る予定。
 またNode.js 7.x ~ 8.0.0で入る予定の変更点について。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -364,13 +393,15 @@ Node.js 8.0.0ではV8の新しいコンパイラパイプラインが入る予�
 
 <amp-story-page id="https://github.com/ericvicenti/intro-to-react">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ericvicenti/intro-to-react: A Hands-On Walkthrough of your first React Web App</amp-fit-text>
-        <p class="contents">Reactについて学ぶワークショップの資料と動画
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ericvicenti/intro-to-react: A Hands-On Walkthrough of your first React Web App</amp-fit-text>
+            <p class="item-contents">Reactについて学ぶワークショップの資料と動画
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -382,13 +413,15 @@ Node.js 8.0.0ではV8の新しいコンパイラパイプラインが入る予�
 
 <amp-story-page id="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Get Started With Analyzing Runtime Performance  |  Web  |  Google Developers</amp-fit-text>
-        <p class="contents">Chromeの開発者ツールを使ったパフォーマンス解析のチュートリアル
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Get Started With Analyzing Runtime Performance  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">Chromeの開発者ツールを使ったパフォーマンス解析のチュートリアル
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -400,13 +433,15 @@ Node.js 8.0.0ではV8の新しいコンパイラパイプラインが入る予�
 
 <amp-story-page id="http://waic.jp/docs/WCAG-TECHS/Overview.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">WCAG 2.0 達成方法集</amp-fit-text>
-        <p class="contents">Techniques for WCAG 2.0の翻訳
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">WCAG 2.0 達成方法集</amp-fit-text>
+            <p class="item-contents">Techniques for WCAG 2.0の翻訳
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -418,14 +453,16 @@ Node.js 8.0.0ではV8の新しいコンパイラパイプラインが入る予�
 
 <amp-story-page id="https://medium.com/@skylernelson_64801/state-architecture-patterns-in-react-a-review-df02c1e193c6">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">State Architecture Patterns in React: A Review – Skyler Nelson – Medium</amp-fit-text>
-        <p class="contents">Reactでよく見るステート管理パターンについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">State Architecture Patterns in React: A Review – Skyler Nelson – Medium</amp-fit-text>
+            <p class="item-contents">Reactでよく見るステート管理パターンについて。
 ナイーブな階層構造、上から下へStateを渡すTop-Heavy Architecture(Central State)、Pub/Subなどについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -437,15 +474,17 @@ Node.js 8.0.0ではV8の新しいコンパイラパイプラインが入る予�
 
 <amp-story-page id="https://wildlyinaccurate.com/introducing-a-faster-bbc-news-front-page">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Introducing a faster BBC News front page | Wildly Inaccurate</amp-fit-text>
-        <p class="contents">BBC Newsのパフォーマンス改善について。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Introducing a faster BBC News front page | Wildly Inaccurate</amp-fit-text>
+            <p class="item-contents">BBC Newsのパフォーマンス改善について。
 SpeedCurveを使って計測を行い、画像遅延ロード、Reactをサーバサイドレンダリングのみに利用してる。
 まだ改善の1段階で、Reactをブラウザ側で動かしたときにモバイルだと重たい問題などが課題となってる(そのためサーバサイドレンダリングのみになっている)
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -457,14 +496,16 @@ SpeedCurveを使って計測を行い、画像遅延ロード、Reactをサー�
 
 <amp-story-page id="https://github.com/chadhietala/babel-plugin-debug-macros/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">chadhietala/babel-plugin-debug-macros</amp-fit-text>
-        <p class="contents">Babelを使ったHygenic Macroのプラグイン。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">chadhietala/babel-plugin-debug-macros</amp-fit-text>
+            <p class="item-contents">Babelを使ったHygenic Macroのプラグイン。
 assertやdeprecate、warning、feature flagなどのマクロ化したもの
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -476,13 +517,15 @@ assertやdeprecate、warning、feature flagなどのマクロ化したもの
 
 <amp-story-page id="https://github.com/aweary/tinytime">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">aweary/tinytime: A straightforward time and time formatter in &lt;1kb</amp-fit-text>
-        <p class="contents">小さなstrtime的なライブラリ。 時間フォーマット
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">aweary/tinytime: A straightforward time and time formatter in &lt;1kb</amp-fit-text>
+            <p class="item-contents">小さなstrtime的なライブラリ。 時間フォーマット
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

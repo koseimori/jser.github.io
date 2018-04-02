@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,14 +98,16 @@
     
 <amp-story-page id="http://vuejs.org/2015/10/26/1.0.0-release/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Vue.js 1.0.0 Released - vue.js</amp-fit-text>
-        <p class="contents">Vue.js 1.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Vue.js 1.0.0 Released - vue.js</amp-fit-text>
+            <p class="item-contents">Vue.js 1.0.0リリース。
 テンプレートの改善、非推奨なAPIを削除、初期表示の速度改善など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -116,17 +119,19 @@
 
 <amp-story-page id="https://babeljs.io/blog/2015/10/29/6.0.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">6.0.0 Released · Babel</amp-fit-text>
-        <p class="contents">Babel 6.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">6.0.0 Released · Babel</amp-fit-text>
+            <p class="item-contents">Babel 6.0.0リリース。
 まだ関連プラグインが追いついていないため扱いに注意。
 Babelの内部的に使っていたモジュールがそれぞれパッケージとして利用できるようになった。
 プラグインがオプトインとなり、同時にプラグインプリセットが用意された。
 また変換の速度改善やプラグインのAPI変更が行われている。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -138,14 +143,16 @@ Babelの内部的に使っていたモジュールがそれぞれパッケージ
 
 <amp-story-page id="https://nodejs.org/en/blog/release/v5.0.0/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Node v5.0.0 (Stable) | Node.js</amp-fit-text>
-        <p class="contents">Node.js 5.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v5.0.0 (Stable) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 5.0.0リリース。
 <code>fs.readFile</code>がfile descriptorをサポート、npm 3.xがデフォルトへと変更、ALPNサポート、<code>util.inherits</code>がES6 Classesからも継承できるようになるなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -157,14 +164,16 @@ Babelの内部的に使っていたモジュールがそれぞれパッケージ
 
 <amp-story-page id="http://bluebirdjs.com/docs/new-in-bluebird-3.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">New in bluebird 3.0 | bluebird</amp-fit-text>
-        <p class="contents">Promiseライブラリであるbluebird 3.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">New in bluebird 3.0 | bluebird</amp-fit-text>
+            <p class="item-contents">Promiseライブラリであるbluebird 3.0リリース。
 Cancellation APIのデザインを変更、 Promisificationの挙動を変更、<code>Promise.config</code>で警告についてを設定可能になるなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -176,14 +185,16 @@ Cancellation APIのデザインを変更、 Promisificationの挙動を変更、
 
 <amp-story-page id="https://dev.opera.com/blog/opera-33/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Dev.Opera — Opera 33 released</amp-fit-text>
-        <p class="contents">Opera 33リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Dev.Opera — Opera 33 released</amp-fit-text>
+            <p class="item-contents">Opera 33リリース。
 <code>&lt;link rel=preconnect&gt;</code>、ES6 <code>new.target</code>、spread operator、DOMException、<code>CSS.escape</code>、HTTP Client Hintsなどのサポート
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -195,14 +206,16 @@ Cancellation APIのデザインを変更、 Promisificationの挙動を変更、
 
 <amp-story-page id="https://github.com/jquery/qunit/releases/tag/1.20.0">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Release 1.20.0 · jquery/qunit</amp-fit-text>
-        <p class="contents">QUnit 1.20.0リリース
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 1.20.0 · jquery/qunit</amp-fit-text>
+            <p class="item-contents">QUnit 1.20.0リリース
 <code>assert.raises()</code>の追加、<code>Symbol</code>の比較をサポート、<code>QUnit.module</code>のネストに対応するなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -214,15 +227,17 @@ Cancellation APIのデザインを変更、 Promisificationの挙動を変更、
 
 <amp-story-page id="https://github.com/substack/node-browserify/blob/master/changelog.markdown#1200">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">node-browserify/changelog.markdown at master · substack/node-browserify</amp-fit-text>
-        <p class="contents">Browserify 12.0.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">node-browserify/changelog.markdown at master · substack/node-browserify</amp-fit-text>
+            <p class="item-contents">Browserify 12.0.0リリース。
 Node.js 4.xが対象となり、0.8はサポートから外れた。
 Source Mapで日本語などが化けないように、シンボリックリンクされたモジュールは変換の対象外へと変更など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -234,14 +249,16 @@ Source Mapで日本語などが化けないように、シンボリックリン�
 
 <amp-story-page id="http://eslint.org/blog/2015/10/eslint-v1.8.0-released/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ESLint v1.8.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
-        <p class="contents">ESLint v1.8.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint v1.8.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+            <p class="item-contents">ESLint v1.8.0リリース。
 <code>--cache</code>でキャッシュを作るファイル・ディレクトリを指定できるように
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -253,13 +270,15 @@ Source Mapで日本語などが化けないように、シンボリックリン�
 
 <amp-story-page id="http://blog.evanyou.me/2015/10/25/vuejs-re-introduction/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Vue.js: a (re)introduction</amp-fit-text>
-        <p class="contents">Vue.js 1.0.0がリリースされたため、Vue.jsについて改めて紹介する記事
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Vue.js: a (re)introduction</amp-fit-text>
+            <p class="item-contents">Vue.js 1.0.0がリリースされたため、Vue.jsについて改めて紹介する記事
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -271,14 +290,16 @@ Source Mapで日本語などが化けないように、シンボリックリン�
 
 <amp-story-page id="https://gist.github.com/mitsuruog/fc48397a8e80f051a145">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">express実践入門</amp-fit-text>
-        <p class="contents">expressの入門記事
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">express実践入門</amp-fit-text>
+            <p class="item-contents">expressの入門記事
 基本的な使い方、ミドルウェア、プロジェクト構造、テンプレート、エラーハンドリング、ログの取り方などについて書かれている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -290,14 +311,16 @@ Source Mapで日本語などが化けないように、シンボリックリン�
 
 <amp-story-page id="http://blog.bitovi.com/donejs-release/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Bitovi.com | DoneJS Release</amp-fit-text>
-        <p class="contents">JavaScriptMVCの後継であるDoneJSリリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Bitovi.com | DoneJS Release</amp-fit-text>
+            <p class="item-contents">JavaScriptMVCの後継であるDoneJSリリース。
 DoneJSの特徴について紹介されてる
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -309,15 +332,17 @@ DoneJSの特徴について紹介されてる
 
 <amp-story-page id="https://hacks.mozilla.org/2015/10/firebug-devtools-integration/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Firebug &amp;amp; DevTools Integration ★ Mozilla Hacks – the Web developer blog</amp-fit-text>
-        <p class="contents">FirebugとFirefox開発者ツールについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Firebug &amp;amp; DevTools Integration ★ Mozilla Hacks – the Web developer blog</amp-fit-text>
+            <p class="item-contents">FirebugとFirefox開発者ツールについて。
 Firebug 3ではFirefox開発者ツール上で動くものとなる。
 HAR exportやServer側からconsole APIを利用できるChrome Loggerのプロトコルに対応するなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -329,15 +354,17 @@ HAR exportやServer側からconsole APIを利用できるChrome Loggerのプロ�
 
 <amp-story-page id="http://swizec.com/blog/reactflux-can-do-in-just-137-lines-what-jquery-can-do-in-10/swizec/6740">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">React+Flux can do in just 137 lines what jQuery can do in 10 | A geek with a hat</amp-fit-text>
-        <p class="contents">メールを出すだけの機能を作るのにjQueryだと10行、React+Fluxだと137行となった。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React+Flux can do in just 137 lines what jQuery can do in 10 | A geek with a hat</amp-fit-text>
+            <p class="item-contents">メールを出すだけの機能を作るのにjQueryだと10行、React+Fluxだと137行となった。
 行数で見ると無駄に見えるが、
 Fluxはパターンであるため他の人が見た時に理解がしやすかったり、新しい機能を追加しやすいなどの違いがあるという話。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -349,14 +376,16 @@ Fluxはパターンであるため他の人が見た時に理解がしやすか�
 
 <amp-story-page id="http://tagtree.io/es7-async-await">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ES7: Async await</amp-fit-text>
-        <p class="contents">async/awaitについてのスクリーンキャスト。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ES7: Async await</amp-fit-text>
+            <p class="item-contents">async/awaitについてのスクリーンキャスト。
 PromiseでGitHub APIを叩くものを書いて、それをasync/awaitに書き換えながら紹介している
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -368,14 +397,16 @@ PromiseでGitHub APIを叩くものを書いて、それをasync/awaitに書き�
 
 <amp-story-page id="http://amasad.me/2015/10/31/javascript-async-functions-for-easier-concurrent-programming/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Easier Concurrent Programming in JavaScript with Async Functions</amp-fit-text>
-        <p class="contents">自動販売機的なプログラミングを題材とした、非同期処理とレースコンディションについて
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Easier Concurrent Programming in JavaScript with Async Functions</amp-fit-text>
+            <p class="item-contents">自動販売機的なプログラミングを題材とした、非同期処理とレースコンディションについて
 ステートマシンベースのもの、Promiseキューとasync/awaitを使ったものをそれぞれ見ていく話
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -387,14 +418,16 @@ PromiseでGitHub APIを叩くものを書いて、それをasync/awaitに書き�
 
 <amp-story-page id="http://www.slideshare.net/nazone/vuejs-54412741">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Vue.js入門</amp-fit-text>
-        <p class="contents">Vue.jsについてのスライド
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Vue.js入門</amp-fit-text>
+            <p class="item-contents">Vue.jsについてのスライド
 1.0での変更点や基本的な使い方について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -406,13 +439,15 @@ PromiseでGitHub APIを叩くものを書いて、それをasync/awaitに書き�
 
 <amp-story-page id="http://reactcheatsheet.com/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">React Cheat Sheet</amp-fit-text>
-        <p class="contents">ReactのAPIから該当ドキュメントへ移動出来るチートシート
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React Cheat Sheet</amp-fit-text>
+            <p class="item-contents">ReactのAPIから該当ドキュメントへ移動出来るチートシート
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -424,14 +459,16 @@ PromiseでGitHub APIを叩くものを書いて、それをasync/awaitに書き�
 
 <amp-story-page id="https://github.com/codemix/fast.js">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">codemix/fast.js</amp-fit-text>
-        <p class="contents">ArrayやStringなどのネイティブメソッドと似たような処理を実装し直してるライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">codemix/fast.js</amp-fit-text>
+            <p class="item-contents">ArrayやStringなどのネイティブメソッドと似たような処理を実装し直してるライブラリ。
 100％の互換性ではなくエッジケースへの対応などは落とすことで速度を稼いでいる
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -443,13 +480,15 @@ PromiseでGitHub APIを叩くものを書いて、それをasync/awaitに書き�
 
 <amp-story-page id="https://github.com/samccone/drool">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">samccone/drool</amp-fit-text>
-        <p class="contents">ChromeDriver(via selenium)を使ってメモリリークが起きてないかを自動チェックするためのツール。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">samccone/drool</amp-fit-text>
+            <p class="item-contents">ChromeDriver(via selenium)を使ってメモリリークが起きてないかを自動チェックするためのツール。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -461,13 +500,15 @@ PromiseでGitHub APIを叩くものを書いて、それをasync/awaitに書き�
 
 <amp-story-page id="http://www.oreilly.com/web-platform/free/why-isomorphic-javascript.csp">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Why Isomorphic JavaScript? - O&amp;#x27;Reilly Media</amp-fit-text>
-        <p class="contents">Isomorphicについての薄い電子書籍
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Why Isomorphic JavaScript? - O&amp;#x27;Reilly Media</amp-fit-text>
+            <p class="item-contents">Isomorphicについての薄い電子書籍
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -479,14 +520,16 @@ PromiseでGitHub APIを叩くものを書いて、それをasync/awaitに書き�
 
 <amp-story-page id="http://shop.oreilly.com/product/0636920035534.do">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Learning JavaScript, 3rd Edition - O&amp;#x27;Reilly Media</amp-fit-text>
-        <p class="contents">2016年1月発売
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Learning JavaScript, 3rd Edition - O&amp;#x27;Reilly Media</amp-fit-text>
+            <p class="item-contents">2016年1月発売
 初めてのJavaScript 第3版
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

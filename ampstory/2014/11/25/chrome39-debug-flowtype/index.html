@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,14 +98,16 @@
     
 <amp-story-page id="http://blog.chromium.org/2014/10/chrome-39-beta-js-generators-animation.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Chromium Blog: Chrome 39 Beta: JS Generators, Animation Playback Control, and the WebApp Manifest</amp-fit-text>
-        <p class="contents">Chrome 39リリース。(Stableのリリースノートはこちら)
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Chromium Blog: Chrome 39 Beta: JS Generators, Animation Playback Control, and the WebApp Manifest</amp-fit-text>
+            <p class="item-contents">Chrome 39リリース。(Stableのリリースノートはこちら)
 Generatorがデフォルトで有効、Web Animationの<code>play()</code>や<code>pause()</code>のサポート、 Web Application Manifest、 Beacon API のサポート
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -116,14 +119,16 @@ Generatorがデフォルトで有効、Web Animationの<code>play()</code>や<co
 
 <amp-story-page id="http://updates.html5rocks.com/2014/10/Send-beacon-data-in-Chrome-39">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Send beacon data in Chrome 39</amp-fit-text>
-        <p class="contents">Chrome 39でBeacon APIが入った。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Send beacon data in Chrome 39</amp-fit-text>
+            <p class="item-contents">Chrome 39でBeacon APIが入った。
 Beacon APIを使えばクリックしてページ移動するときのクリックのログも非同期でちゃんと送ることが出来る。(単純なXHRだと送り終わる前に遷移してしまう)
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -135,14 +140,16 @@ Beacon APIを使えばクリックしてページ移動するときのクリッ�
 
 <amp-story-page id="http://code.tutsplus.com/tutorials/modern-debugging-experience-part-2--cms-22584">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Modern Debugging Experience: Part 2 - Tuts+ Code Tutorial</amp-fit-text>
-        <p class="contents">開発者ツールを使ったデバッグ方法のTips。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Modern Debugging Experience: Part 2 - Tuts+ Code Tutorial</amp-fit-text>
+            <p class="item-contents">開発者ツールを使ったデバッグ方法のTips。
 <code>debugger</code>ステートメント、コールスタック、getter/setter/Object.observe等を使ったアクセス時にBreakさせる方法やWatch Expression、イベントリスナーのデバッグ等について書かれている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -154,14 +161,16 @@ Beacon APIを使えばクリックしてページ移動するときのクリッ�
 
 <amp-story-page id="https://remysharp.com/2014/11/19/my-five-promise-patterns">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">My five promise patterns</amp-fit-text>
-        <p class="contents">Promiseパターンについて
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">My five promise patterns</amp-fit-text>
+            <p class="item-contents">Promiseパターンについて
 Node.jsスタイルの高階関数をPromiseを返すようにするdenodeify、<code>bind</code>による引数の固定、コールバックとの併用、<code>reject</code>ではなく常にthrowする、処理の終わりでいつも<code>catch</code>する
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -173,13 +182,15 @@ Node.jsスタイルの高階関数をPromiseを返すようにするdenodeify、
 
 <amp-story-page id="http://eng.rightscale.com/2014/07/18/quick-check-js.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Property testing in JavaScript with quick_check.js - RightScale Engineering Blog</amp-fit-text>
-        <p class="contents">JavaScriptのQuickCheck実装である quick_check.js について
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Property testing in JavaScript with quick_check.js - RightScale Engineering Blog</amp-fit-text>
+            <p class="item-contents">JavaScriptのQuickCheck実装である quick_check.js について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -191,13 +202,15 @@ Node.jsスタイルの高階関数をPromiseを返すようにするdenodeify、
 
 <amp-story-page id="https://github.com/uxebu/mocha-sinon-traceur-example">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">uxebu/mocha-sinon-traceur-example</amp-fit-text>
-        <p class="contents">ES6でテストを書いてTDDするサンプルプロジェクト
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">uxebu/mocha-sinon-traceur-example</amp-fit-text>
+            <p class="item-contents">ES6でテストを書いてTDDするサンプルプロジェクト
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -209,13 +222,15 @@ Node.jsスタイルの高階関数をPromiseを返すようにするdenodeify、
 
 <amp-story-page id="https://www.youtube.com/user/nodevember/feed">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Nodevember - YouTube</amp-fit-text>
-        <p class="contents">http://nodevember.org/ の動画が公開されている
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Nodevember - YouTube</amp-fit-text>
+            <p class="item-contents">http://nodevember.org/ の動画が公開されている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -227,13 +242,15 @@ Node.jsスタイルの高階関数をPromiseを返すようにするdenodeify、
 
 <amp-story-page id="https://www.youtube.com/watch?v=uZgAq1CZ1N8">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Real World React - YouTube</amp-fit-text>
-        <p class="contents">ReactのComponentの作り方やテストについて詳しい発表
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Real World React - YouTube</amp-fit-text>
+            <p class="item-contents">ReactのComponentの作り方やテストについて詳しい発表
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -245,14 +262,16 @@ Node.jsスタイルの高階関数をPromiseを返すようにするdenodeify、
 
 <amp-story-page id="http://www.slideshare.net/ickatanet/dom-performance-jsnext-bulgaria">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">DOM Performance (JSNext Bulgaria)</amp-fit-text>
-        <p class="contents">DOM操作のパフォーマンスTips的なスライド。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">DOM Performance (JSNext Bulgaria)</amp-fit-text>
+            <p class="item-contents">DOM操作のパフォーマンスTips的なスライド。
 Event Delegate、Style操作、DOM Nodeの作成(clone、DocumentFragment)、DOM Nodeの削除について。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -264,13 +283,15 @@ Event Delegate、Style操作、DOM Nodeの作成(clone、DocumentFragment)、DOM
 
 <amp-story-page id="http://knowthen.com/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">KnowThen – Screencasts For Developers</amp-fit-text>
-        <p class="contents">JavaScriptについてのスクリーンキャストをするサイト
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">KnowThen – Screencasts For Developers</amp-fit-text>
+            <p class="item-contents">JavaScriptについてのスクリーンキャストをするサイト
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -282,13 +303,15 @@ Event Delegate、Style操作、DOM Nodeの作成(clone、DocumentFragment)、DOM
 
 <amp-story-page id="https://github.com/newton-software/devil">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">newton-software/devil</amp-fit-text>
-        <p class="contents">node-inspectorのようにGUIでNode.jsアプリのデバッグを行う事が出来るツール。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">newton-software/devil</amp-fit-text>
+            <p class="item-contents">node-inspectorのようにGUIでNode.jsアプリのデバッグを行う事が出来るツール。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -300,15 +323,17 @@ Event Delegate、Style操作、DOM Nodeの作成(clone、DocumentFragment)、DOM
 
 <amp-story-page id="http://flowtype.org/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Flow | A static type checker for JavaScript</amp-fit-text>
-        <p class="contents">Facebookの静的型チェックツール。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Flow | A static type checker for JavaScript</amp-fit-text>
+            <p class="item-contents">Facebookの静的型チェックツール。
 OCamlで書かれていて、TypeScriptと大体互換性のある型定義を行える。
 サーバとして動かす事もできる。HHVM/Hackみたいなインクリメンタルな型付けを行える
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -320,13 +345,15 @@ OCamlで書かれていて、TypeScriptと大体互換性のある型定義を�
 
 <amp-story-page id="https://github.com/axemclion/protractor-perf">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">axemclion/protractor-perf</amp-fit-text>
-        <p class="contents">Protractorのパフォーマンス測定版のようなツール
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">axemclion/protractor-perf</amp-fit-text>
+            <p class="item-contents">Protractorのパフォーマンス測定版のようなツール
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -338,13 +365,15 @@ OCamlで書かれていて、TypeScriptと大体互換性のある型定義を�
 
 <amp-story-page id="https://github.com/inikulin/ineed">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">inikulin/ineed</amp-fit-text>
-        <p class="contents">HTMLのスクレイピング、変換処理(Reprocessing)を行えるNode.jsモジュール
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">inikulin/ineed</amp-fit-text>
+            <p class="item-contents">HTMLのスクレイピング、変換処理(Reprocessing)を行えるNode.jsモジュール
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -356,13 +385,15 @@ OCamlで書かれていて、TypeScriptと大体互換性のある型定義を�
 
 <amp-story-page id="https://github.com/jas-/secStore.js">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">jas-/secStore.js</amp-fit-text>
-        <p class="contents">localStorage/sessionStorage/Cookieで暗号化をサポートするラッパーライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">jas-/secStore.js</amp-fit-text>
+            <p class="item-contents">localStorage/sessionStorage/Cookieで暗号化をサポートするラッパーライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -374,13 +405,15 @@ OCamlで書かれていて、TypeScriptと大体互換性のある型定義を�
 
 <amp-story-page id="https://github.com/janmonschke/Web-Audio-Editor">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">janmonschke/Web-Audio-Editor</amp-fit-text>
-        <p class="contents">ウェブベースのWeb Audio Editor
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">janmonschke/Web-Audio-Editor</amp-fit-text>
+            <p class="item-contents">ウェブベースのWeb Audio Editor
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -392,14 +425,16 @@ OCamlで書かれていて、TypeScriptと大体互換性のある型定義を�
 
 <amp-story-page id="https://github.com/SpoonX/useuses">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">SpoonX/useuses</amp-fit-text>
-        <p class="contents"><code>@uses</code>アノテーションコメントでそのJSファイルが依存するファイルパスを記述して使うモジュール管理ルール、ビルドツール
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">SpoonX/useuses</amp-fit-text>
+            <p class="item-contents"><code>@uses</code>アノテーションコメントでそのJSファイルが依存するファイルパスを記述して使うモジュール管理ルール、ビルドツール
 concatする程度にはシンプルで、CommonJSのような強い依存関係ではなく、単純にコメントを追加するだけなので余計にファイルは必要ない。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -411,14 +446,16 @@ concatする程度にはシンプルで、CommonJSのような強い依存関係
 
 <amp-story-page id="https://github.com/techlayer/espresso.js">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">techlayer/espresso.js</amp-fit-text>
-        <p class="contents">BackboneとReactをインスパイアしたMV*ライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">techlayer/espresso.js</amp-fit-text>
+            <p class="item-contents">BackboneとReactをインスパイアしたMV*ライブラリ。
 Fluxのデータフローを一方向にするアイデアをBackboneに持ってきた感じのライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -430,13 +467,15 @@ Fluxのデータフローを一方向にするアイデアをBackboneに持っ�
 
 <amp-story-page id="https://leanpub.com/discoverangularjs">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Discover AngularJS by Adam Burak [Leanpub PDF/iPad/Kindle]</amp-fit-text>
-        <p class="contents">AngularJSチュートリアル本
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Discover AngularJS by Adam Burak [Leanpub PDF/iPad/Kindle]</amp-fit-text>
+            <p class="item-contents">AngularJSチュートリアル本
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">

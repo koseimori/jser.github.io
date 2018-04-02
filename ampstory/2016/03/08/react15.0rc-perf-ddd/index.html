@@ -26,21 +26,22 @@
 
         p {
             font-weight: normal;
-            font-size: 1.3em;
+            font-size: 1.1em;
             line-height: 1.5em;
             color: #000;
         }
 
-        p.contents {
-            overflow:hidden;    
+        .item {
+            
         }
-        
+       
         q {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1em;
+            color: #333;
         }
 
-        .cover-img{
+        .cover-img {
             background: #2a8d9b;
         }
         
@@ -56,7 +57,7 @@
             color: #fff;
         }
         
-        .item-title{
+        .item-title {
         
         }
 
@@ -71,7 +72,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin: 8px;
+            margin: 24px 32px;
             padding: 4px;
             color: #2a8d9b;
             border: 2px solid #2a8d9b;
@@ -97,16 +98,18 @@
     
 <amp-story-page id="https://facebook.github.io/react/blog/2016/03/07/react-v15-rc1.html">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">React v15.0 Release Candidate | React</amp-fit-text>
-        <p class="contents">React v15.0 RC1リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React v15.0 Release Candidate | React</amp-fit-text>
+            <p class="item-contents">React v15.0 RC1リリース。
 <code>data-reactid</code>がクライアントサイドのレンダリングではなくなる、<code>null</code>をコメントとしてレンダリングするようになる。
 また非推奨となっていたメソッドが<code>react</code>と<code>react-dom</code>それぞれから削除された。
 また、警告メッセージの改善などが行われている。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -118,14 +121,16 @@
 
 <amp-story-page id="http://eslint.org/blog/2016/03/eslint-v2.3.0-released">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ESLint v2.3.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
-        <p class="contents">ESLint v2.3.0リリース。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint v2.3.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+            <p class="item-contents">ESLint v2.3.0リリース。
 ルールのoff/wan/errorを0,1,2という数字ではなく文字列で指定出来るように、ES2016で追加される<code>**</code>の対応など
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -137,13 +142,15 @@
 
 <amp-story-page id="http://benchling.engineering/performance-engineering-with-react/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Performance Engineering with React</amp-fit-text>
-        <p class="contents">Reactにおけるパフォーマンス調査の手法やどのようにボトルネックを見つけるかについて
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Performance Engineering with React</amp-fit-text>
+            <p class="item-contents">Reactにおけるパフォーマンス調査の手法やどのようにボトルネックを見つけるかについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -155,14 +162,16 @@
 
 <amp-story-page id="http://terkel.github.io/why-im-excited-about-native-css-variables/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">僕がネイティブな CSS 変数にわくわくする理由</amp-fit-text>
-        <p class="contents">CSS Custom Propertyについて書かれた&quot;Why I'm Excited About Native CSS Variables&quot;の翻訳。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">僕がネイティブな CSS 変数にわくわくする理由</amp-fit-text>
+            <p class="item-contents">CSS Custom Propertyについて書かれた&quot;Why I'm Excited About Native CSS Variables&quot;の翻訳。
 コンポーネント名接頭辞にした変数名を使うという命名規則についてなど
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -174,12 +183,13 @@
 
 <amp-story-page id="http://nolanlawson.com/2016/02/29/high-performance-web-worker-messages/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">High-performance Web Worker messages | Read the Tea Leaves</amp-fit-text>
-        <p class="contents">単純なデータ転送についてのWeb Workerのパフォーマンステスト。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">High-performance Web Worker messages | Read the Tea Leaves</amp-fit-text>
+            <p class="item-contents">単純なデータ転送についてのWeb Workerのパフォーマンステスト。
 <ul>
 <li>
 <code>JSON.stringify()</code>/<code>JSON.parse()</code>の利用
@@ -199,6 +209,7 @@ Fast legoization | Better world by better software
 </li>
 </ul>
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -210,13 +221,15 @@ Fast legoization | Better world by better software
 
 <amp-story-page id="https://glebbahmutov.com/blog/fast-legoization/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Fast legoization | Better world by better software</amp-fit-text>
-        <p class="contents">Web Workerを使って画像データを効率よく処理するテクニックについて
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Fast legoization | Better world by better software</amp-fit-text>
+            <p class="item-contents">Web Workerを使って画像データを効率よく処理するテクニックについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -228,13 +241,15 @@ Fast legoization | Better world by better software
 
 <amp-story-page id="http://qiita.com/alucky0707/items/697598e49ff56191c139">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">なぜ絵文字を含む文字を1文字ずつに分けるのにArray.fromだけで十分なのか？ - Qiita</amp-fit-text>
-        <p class="contents"><code>split(&quot;&quot;)</code>だと絵文字などでサロゲートペアの問題が起きるため、ES6で追加された<code>Array.from</code>などを使うことで正しく扱えるという話
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">なぜ絵文字を含む文字を1文字ずつに分けるのにArray.fromだけで十分なのか？ - Qiita</amp-fit-text>
+            <p class="item-contents"><code>split(&quot;&quot;)</code>だと絵文字などでサロゲートペアの問題が起きるため、ES6で追加された<code>Array.from</code>などを使うことで正しく扱えるという話
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -246,13 +261,15 @@ Fast legoization | Better world by better software
 
 <amp-story-page id="http://efcl.info/2016/03/06/ast-first-step/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">JavaScript ASTを始める最初の一歩 | Web Scratch</amp-fit-text>
-        <p class="contents">JavaScriptのASTを扱ったツールを書きたい人が最初に把握しておくといい部分についてのまとめ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScript ASTを始める最初の一歩 | Web Scratch</amp-fit-text>
+            <p class="item-contents">JavaScriptのASTを扱ったツールを書きたい人が最初に把握しておくといい部分についてのまとめ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -264,13 +281,15 @@ Fast legoization | Better world by better software
 
 <amp-story-page id="http://blog.benoitvallon.com/data-structures-in-javascript/data-structures-in-javascript/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Data structures in JavaScript - Ben&amp;#x27;s Blog</amp-fit-text>
-        <p class="contents">JavaScriptでデータ構造やアルゴリズムについて学ぶシリーズ記事
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Data structures in JavaScript - Ben&amp;#x27;s Blog</amp-fit-text>
+            <p class="item-contents">JavaScriptでデータ構造やアルゴリズムについて学ぶシリーズ記事
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -282,13 +301,15 @@ Fast legoization | Better world by better software
 
 <amp-story-page id="https://hacks.mozilla.org/2016/03/introducing-the-webvr-1-0-api-proposal/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Introducing the WebVR 1.0 API Proposal ★ Mozilla Hacks – the Web developer blog</amp-fit-text>
-        <p class="contents">WebVR 1.0 APIについての解説記事
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Introducing the WebVR 1.0 API Proposal ★ Mozilla Hacks – the Web developer blog</amp-fit-text>
+            <p class="item-contents">WebVR 1.0 APIについての解説記事
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -300,13 +321,15 @@ Fast legoization | Better world by better software
 
 <amp-story-page id="http://saneyukis.hatenablog.com/entry/2016/03/04/030337">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">ECMA262のIteration protocolsで遅延評価するIteratorを作る - snyk_s log</amp-fit-text>
-        <p class="contents">ECMAScriptの<code>Symbol.iterator</code>を使い遅延評価出来るコレクション処理を行うという話
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ECMA262のIteration protocolsで遅延評価するIteratorを作る - snyk_s log</amp-fit-text>
+            <p class="item-contents">ECMAScriptの<code>Symbol.iterator</code>を使い遅延評価出来るコレクション処理を行うという話
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -318,13 +341,15 @@ Fast legoization | Better world by better software
 
 <amp-story-page id="https://medium.com/@roman01la/understanding-transducers-in-javascript-3500d3bd9624">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Understanding Transducers in JavaScript — Medium</amp-fit-text>
-        <p class="contents">Transformer protocolを実装したコレクション処理を実装することで、一度の処理で同時に複数の変換を行うことが出来るようにする仕組みであるTransducersについて
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Understanding Transducers in JavaScript — Medium</amp-fit-text>
+            <p class="item-contents">Transformer protocolを実装したコレクション処理を実装することで、一度の処理で同時に複数の変換を行うことが出来るようにする仕組みであるTransducersについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -336,14 +361,16 @@ Fast legoization | Better world by better software
 
 <amp-story-page id="https://github.com/matthewmueller/28kb-react-redux-routing">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">matthewmueller/28kb-react-redux-routing: React + Redux + Routing Stack for just 28kb</amp-fit-text>
-        <p class="contents">React + Redux + ルーティングというよくある構成を28kbで実現するというコンセプトリポジトリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">matthewmueller/28kb-react-redux-routing: React + Redux + Routing Stack for just 28kb</amp-fit-text>
+            <p class="item-contents">React + Redux + ルーティングというよくある構成を28kbで実現するというコンセプトリポジトリ。
 Reactの代わりにPreact、Reduxの代わりにラップしたSocrates、ルーティングはenroute + Reduxミドルウェアを使っている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -355,14 +382,16 @@ Reactの代わりにPreact、Reduxの代わりにラップしたSocrates、ル�
 
 <amp-story-page id="https://speakerdeck.com/armorik83/da-xing-hurontoendokai-fa-niokerutypescripttoddd">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">大型フロントエンド開発におけるTypeScriptとDDD // Speaker Deck</amp-fit-text>
-        <p class="contents">大規模なクライアントサイドを書く場合の構造やテスト、環境についてのスライド。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">大型フロントエンド開発におけるTypeScriptとDDD // Speaker Deck</amp-fit-text>
+            <p class="item-contents">大規模なクライアントサイドを書く場合の構造やテスト、環境についてのスライド。
 TypeScriptでちゃんとしたドメインモデルを構築し、Viewのレイヤーとの分離を図る仕組みの作り方について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -374,15 +403,17 @@ TypeScriptでちゃんとしたドメインモデルを構築し、Viewのレイ
 
 <amp-story-page id="https://www.youtube.com/watch?v=kDARP5QZ6nU&amp;list=PLb0IAmt7-GS0M8Q95RIc2lOM6nc77q1IY&amp;index=28">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">React.js Conf 2016 - Steve McGuire - Performance Without Compromise - YouTube</amp-fit-text>
-        <p class="contents">Netflixのクライアントサイドのアーキテクチャについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React.js Conf 2016 - Steve McGuire - Performance Without Compromise - YouTube</amp-fit-text>
+            <p class="item-contents">Netflixのクライアントサイドのアーキテクチャについて。
 mixinじゃなくて高階関数でレイヤーを表現、宣言的にするためのルールとしての&quot;No refs&quot;。
 またパフォーマンス面では、Transducersの話、静的なpropと動的なpropは分けることでの最適化についてなど。
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -394,14 +425,16 @@ mixinじゃなくて高階関数でレイヤーを表現、宣言的にするた
 
 <amp-story-page id="https://speakerdeck.com/fand/designing-in-react-why-and-how">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Designing in React: Why and How // Speaker Deck</amp-fit-text>
-        <p class="contents">React語圏でどういう試みがあって何を解決しようとしてたかという話
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Designing in React: Why and How // Speaker Deck</amp-fit-text>
+            <p class="item-contents">React語圏でどういう試みがあって何を解決しようとしてたかという話
 CSS、アニメーションについて
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -413,14 +446,16 @@ CSS、アニメーションについて
 
 <amp-story-page id="https://speakerdeck.com/jmblog/gulp-the-good-parts">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">gulp: The Good Parts // Speaker Deck</amp-fit-text>
-        <p class="contents">gulpのプラクティスについて。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">gulp: The Good Parts // Speaker Deck</amp-fit-text>
+            <p class="item-contents">gulpのプラクティスについて。
 タスクの分割、設定の外部ファイル化、v4を見据えたタスクの書き方、v4の変更点について
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -432,13 +467,15 @@ CSS、アニメーションについて
 
 <amp-story-page id="https://code-cartoons.com/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Code Cartoons — Medium</amp-fit-text>
-        <p class="contents">Cartoonsで学ぶFlux、Redux、Relayなどのデータコントロールフロー
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Code Cartoons — Medium</amp-fit-text>
+            <p class="item-contents">Cartoonsで学ぶFlux、Redux、Relayなどのデータコントロールフロー
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -450,15 +487,17 @@ CSS、アニメーションについて
 
 <amp-story-page id="http://jxnblk.com/rebass/">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Rebass</amp-fit-text>
-        <p class="contents">Reactを使ったUIライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Rebass</amp-fit-text>
+            <p class="item-contents">Reactを使ったUIライブラリ。
 ステートレスコンポーネントとして実装されている。
 コンポーネントづくりの参考になりそう
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -470,14 +509,16 @@ CSS、アニメーションについて
 
 <amp-story-page id="https://github.com/tryolabs/fetch-it">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">tryolabs/fetch-it: An enhanced HTTP client based on fetch.</amp-fit-text>
-        <p class="contents">Fetch APIをベースにしたHTTPクライアントライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">tryolabs/fetch-it: An enhanced HTTP client based on fetch.</amp-fit-text>
+            <p class="item-contents">Fetch APIをベースにしたHTTPクライアントライブラリ。
 middlewareで処理を追加できる仕組みを持っている
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -489,13 +530,15 @@ middlewareで処理を追加できる仕組みを持っている
 
 <amp-story-page id="https://github.com/cognitect-labs/transducers-js">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">cognitect-labs/transducers-js: Transducers for JavaScript</amp-fit-text>
-        <p class="contents">Transformer protocolを実装したコレクション処理を実装することで、一度の処理で同時に複数の変換を行うことが出来るようにする仕組みとライブラリ
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">cognitect-labs/transducers-js: Transducers for JavaScript</amp-fit-text>
+            <p class="item-contents">Transformer protocolを実装したコレクション処理を実装することで、一度の処理で同時に複数の変換を行うことが出来るようにする仕組みとライブラリ
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -507,14 +550,16 @@ middlewareで処理を追加できる仕組みを持っている
 
 <amp-story-page id="https://github.com/uber-common/react-vis">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">uber-common/react-vis</amp-fit-text>
-        <p class="contents">Uberのグラフやビジュアライズ系のReact Componentライブラリ。
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">uber-common/react-vis</amp-fit-text>
+            <p class="item-contents">Uberのグラフやビジュアライズ系のReact Componentライブラリ。
 棒グラフ、折れ線グラフ、円グラフ、テーブル、ツリーマップなど色々な表現が用意されてる
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
@@ -526,13 +571,15 @@ middlewareで処理を追加できる仕組みを持っている
 
 <amp-story-page id="https://leanpub.com/browserify">
     <amp-story-grid-layer template="vertical">
-        <amp-fit-text width="200"
-                      height="120"
-                      layout="responsive"
-                      max-font-size="28"
-                      class="item-title">Quick Browserify by Sandeep Kumar Patel [Leanpub PDF/iPad/Kindle]</amp-fit-text>
-        <p class="contents">Browserifyについての書籍
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Quick Browserify by Sandeep Kumar Patel [Leanpub PDF/iPad/Kindle]</amp-fit-text>
+            <p class="item-contents">Browserifyについての書籍
 </p>
+        </div>
     </amp-story-grid-layer>
     <amp-story-cta-layer>
         <div class="cta-layer-inner">
