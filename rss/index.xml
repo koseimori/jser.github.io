@@ -5,9 +5,308 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 14 Apr 2018 18:34:02 +0900</pubDate>
-    <lastBuildDate>Sat, 14 Apr 2018 18:34:02 +0900</lastBuildDate>
+    <pubDate>Tue, 17 Apr 2018 11:30:32 +0900</pubDate>
+    <lastBuildDate>Tue, 17 Apr 2018 11:30:32 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2018-04-17のJS: Safari 11.1の新しい機能、Chrome 67開発者ツール、Webdash</title>
+        <description>&lt;p&gt;JSer.info #379 - &lt;a href=&quot;https://webkit.org/blog/8216/new-webkit-features-in-safari-11-1/&quot;&gt;New WebKit Features in Safari 11.1 | WebKit&lt;/a&gt;という記事では、&lt;a href=&quot;https://developer.apple.com/library/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_11_1.html&quot; title=&quot;Safari 11.1&quot;&gt;Safari 11.1&lt;/a&gt;で追加された新しい機能の概要がまとめられています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Service Worker API&lt;/li&gt;
+&lt;li&gt;Payment Request API for Apple Pay&lt;/li&gt;
+&lt;li&gt;Directory Upload &amp;amp; Clipboard API Updates&lt;/li&gt;
+&lt;li&gt;Beacon API&lt;/li&gt;
+&lt;li&gt;Video as Image Assets&lt;/li&gt;
+&lt;li&gt;CSS &lt;code&gt;font-display&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;HTML Image Decoding(&lt;code&gt;decoding&lt;/code&gt;属性)&lt;/li&gt;
+&lt;li&gt;Passive Event Listeners&lt;/li&gt;
+&lt;li&gt;Storage Access API&lt;/li&gt;
+&lt;li&gt;Subresource Integrity&lt;/li&gt;
+&lt;li&gt;WebDriver&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;など大きな機能追加があるので興味がある人は見てみると良さそうです。&lt;/p&gt;
+
+&lt;p&gt;また、Safari 11のTechnology PreviewではUA文字列を固定される変更が行われていました。&lt;br&gt;
+しかし正式リリースする際にはUA文字列固定は取りやめになったことについてが次の記事で紹介されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://myakura.hatenablog.com/entry/2018/04/16/083000&quot;&gt;SafariのUA文字列が固定されて固定されなくなったおはなし - fragmentary&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/04/devtools&quot;&gt;What&amp;#39;s New In DevTools (Chrome 67)  |  Web  |  Google Developers&lt;/a&gt;という記事ではChrome 67(2018年6月リリース予定)の開発者ツールの変更点がまとめられています。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/02/meltdown-spectre&quot;&gt;Meltdown/Spectre&lt;/a&gt;でのサイドチャネル攻撃の対策として導入された&lt;a href=&quot;https://www.chromium.org/Home/chromium-security/site-isolation&quot;&gt;Site Isolation&lt;/a&gt;に対応した変更が含まれています。&lt;br&gt;
+異なるプロセスのサンドボックスでJavaScriptなどが実行されるため、パフォーマンスパネルなども分離されたサンドボックス毎の記録を取れるようになっています。&lt;/p&gt;
+
+&lt;p&gt;加えてネットワークパネルの検索改善、リクエストを&lt;code&gt;fetch&lt;/code&gt; APIのコードとしてコピーできるように、Auditパネルの改善、無限ループを停止できるなどの変更が含まれています。&lt;/p&gt;
+
+&lt;p&gt;また、&lt;a href=&quot;https://blog.nightly.mozilla.org/2018/04/10/improving-devtools-performance-one-iteration-at-a-time/&quot;&gt;Improving DevTools’ performance, one iteration at a time – Firefox Nightly News&lt;/a&gt;という記事ではFirefox 60(&lt;a href=&quot;https://wiki.mozilla.org/RapidRelease/Calendar#Future_branch_dates&quot;&gt;2018年5月8日&lt;/a&gt;リリース予定)の開発者ツールのパフォーマンス改善について書かれています。&lt;br&gt;
+InspectorでのCSSルール変更時の描画速度改善、大量の&lt;code&gt;console.log&lt;/code&gt;を表示時のパフォーマンスを改善など開発者ツール自体のパフォーマンス改善が行われています。&lt;/p&gt;
+
+&lt;p&gt;加えて、現在Firefox Nightlyで開発者ツールにAccessibility Inspectorが実装されていることが&lt;a href=&quot;https://www.marcozehe.de/2018/04/11/introducing-the-accessibility-inspector-in-the-firefox-developer-tools/&quot;&gt;Introducing the Accessibility Inspector in the Firefox Developer Tools – Marco&amp;#39;s Accessibility Blog&lt;/a&gt;という記事で紹介されています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;prettier-1-12-fixes-features-and-formatting-oh-my-prettier&quot;&gt;Prettier 1.12: Fixes, Features, and Formatting, Oh My! · Prettier&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://prettier.io/blog/2018/04/11/1.12.0.html&quot; title=&quot;Prettier 1.12: Fixes, Features, and Formatting, Oh My! · Prettier&quot;&gt;prettier.io/blog/2018/04/11/1.12.0.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Prettier 1.12リリース。&lt;br&gt;
+JavaScript、Markdown、GraphQLのサポート改善など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-webkit-features-in-safari-11-1-webkit&quot;&gt;New WebKit Features in Safari 11.1 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8216/new-webkit-features-in-safari-11-1/&quot; title=&quot;New WebKit Features in Safari 11.1 | WebKit&quot;&gt;webkit.org/blog/8216/new-webkit-features-in-safari-11-1/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari 11.1の変更点や追加された機能についての開設。&lt;br&gt;
+Service Worker、Payment Request API、Clipboard API、Passive Event Listeners、&lt;del&gt;Offscreen Canvas&lt;/del&gt;など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ember-js-ember-3-1-and-3-2-beta-released&quot;&gt;Ember.js - Ember 3.1 and 3.2 Beta Released&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://emberjs.com/blog/2018/04/13/ember-3-1-released.html&quot; title=&quot;Ember.js - Ember 3.1 and 3.2 Beta Released&quot;&gt;emberjs.com/blog/2018/04/13/ember-3-1-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Ember 3.1リリース。&lt;br&gt;
+Computed Propertiesがgetter/setterになり古い方法は非推奨となった。&lt;br&gt;
+&lt;code&gt;@ember/optional-features&lt;/code&gt;がリリースされ、ember-cli経由でEmber自体のBreaking Changeをフラグ管理ができるようになるなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v0-70-0-facebook-flow&quot;&gt;Release v0.70.0 · facebook/flow&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/flow/releases/tag/v0.70.0&quot; title=&quot;Release v0.70.0 · facebook/flow&quot;&gt;github.com/facebook/flow/releases/tag/v0.70.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Flow 0.70.0リリース。&lt;br&gt;
+React 16.3(&lt;code&gt;createContext&lt;/code&gt;、&lt;code&gt;createRef&lt;/code&gt;)の対応、&lt;code&gt;--json-version 2&lt;/code&gt;の出力結果に破壊的な変更など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-8-3-benigno-numine-postcss-autoprefixer&quot;&gt;Release 8.3 “Benigno Numine” · postcss/autoprefixer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/postcss/autoprefixer/releases/tag/8.3.0&quot; title=&quot;Release 8.3 “Benigno Numine” · postcss/autoprefixer&quot;&gt;github.com/postcss/autoprefixer/releases/tag/8.3.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Autoprefixer 8.3.0リリース。&lt;br&gt;
+&lt;code&gt;grid-template&lt;/code&gt;と&lt;code&gt;@media&lt;/code&gt;の組み合わせをサポート&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;zzarcon-default-passive-events-makes-passive-true-by-default-when-eventlisteneroptions-are-supported&quot;&gt;zzarcon/default-passive-events: Makes {passive: true} by default when EventListenerOptions are supported&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/zzarcon/default-passive-events&quot; title=&quot;zzarcon/default-passive-events: Makes \{passive: true\} by default when EventListenerOptions are supported&quot;&gt;github.com/zzarcon/default-passive-events&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Passive Event Listenersをデフォルトで有効化するように&lt;code&gt;EventTarget.prototype.addEventListener&lt;/code&gt;の処理を上書きするライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;improving-devtools-performance-one-iteration-at-a-time-firefox-nightly-news&quot;&gt;Improving DevTools’ performance, one iteration at a time – Firefox Nightly News&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.nightly.mozilla.org/2018/04/10/improving-devtools-performance-one-iteration-at-a-time/&quot; title=&quot;Improving DevTools’ performance, one iteration at a time – Firefox Nightly News&quot;&gt;blog.nightly.mozilla.org/2018/04/10/improving-devtools-performance-one-iteration-at-a-time/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Firefox 60での開発者ツールのパフォーマンス改善について。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;whats-new-in-devtools-chrome-67-web-google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 67)  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/04/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 67)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/04/devtools&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 67の開発者ツールの変更点について。&lt;br&gt;
+ネットワークパネルの検索改善、リクエストを&lt;code&gt;fetch&lt;/code&gt; APIのコードとしてコピーできるように、Auditパネルの改善、無限ループを停止できるように。&lt;br&gt;
+また、メモリパネル、パフォーマンスパネルでSite Isolationを適応時のプロセス分離に対応など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introducing-the-accessibility-inspector-in-the-firefox-developer-tools-marcos-accessibility-blog&quot;&gt;Introducing the Accessibility Inspector in the Firefox Developer Tools – Marco&amp;#39;s Accessibility Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.marcozehe.de/2018/04/11/introducing-the-accessibility-inspector-in-the-firefox-developer-tools/&quot; title=&quot;Introducing the Accessibility Inspector in the Firefox Developer Tools – Marco&amp;#39;s Accessibility Blog&quot;&gt;www.marcozehe.de/2018/04/11/introducing-the-accessibility-inspector-in-the-firefox-developer-tools/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;FirefoxのNightlyビルドで開発者ツールにアクセシビリティパネルが追加されたことについて。&lt;br&gt;
+DOMツリーのアクセシビリティについてをデバッグする機能について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;whats-new-in-angular-6-walking-tree-technologies-walking-tree-technologies&quot;&gt;Whats New in Angular 6 ?Walking Tree Technologies | Walking Tree Technologies&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://walkingtree.tech/whats-new-angular-6/&quot; title=&quot;Whats New in Angular 6 ?Walking Tree Technologies | Walking Tree Technologies&quot;&gt;walkingtree.tech/whats-new-angular-6/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;現在RC版が公開されているAngular 6の変更点の概要&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;safari-ua-fragmentary&quot;&gt;SafariのUA文字列が固定されて固定されなくなったおはなし - fragmentary&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://myakura.hatenablog.com/entry/2018/04/16/083000&quot; title=&quot;SafariのUA文字列が固定されて固定されなくなったおはなし - fragmentary&quot;&gt;myakura.hatenablog.com/entry/2018/04/16/083000&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari TP 46でUA文字列固定化は一度導入されたが、固定を取りやめることになった経緯について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;pwa-web-scratch&quot;&gt;モバイル/オフラインでも動作するはてなブックマーク検索のPWAを作った | Web Scratch&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://efcl.info/2018/04/16/hatebupwa/&quot; title=&quot;モバイル/オフラインでも動作するはてなブックマーク検索のPWAを作った | Web Scratch&quot;&gt;efcl.info/2018/04/16/hatebupwa/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;almin&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DDD&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;https://hatebupwa.netlify.com/ の技術スタックについて。&lt;br&gt;
+WebWorkerを使った別スレッドでのフィルタリング処理、Servie Workerでのキャッシュ、React ContextとAlmin、domainのシリアライズと永続化についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;automatic-progressive-web-apps-using-angular-service-worker-by-maxim-salnikov&quot;&gt;Automatic Progressive Web Apps using Angular Service Worker by Maxim Salnikov&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://slides.com/webmax/ngsw-ijs-2018#/&quot; title=&quot;Automatic Progressive Web Apps using Angular Service Worker by Maxim Salnikov&quot;&gt;slides.com/webmax/ngsw-ijs-2018#/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;AngularとPWAについてのスライド。&lt;br&gt;
+Angular CLIでの開発方法、NGSW、Service Workerのバージョン管理や登録を解除するスイッチの導入などについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;vuepress&quot;&gt;VuePress&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://vuepress.vuejs.org/&quot; title=&quot;VuePress&quot;&gt;vuepress.vuejs.org/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vue.jsを使った静的サイトツール。&lt;br&gt;
+docusaurusのようにビルトインの機能があり、Vueを使ったテンプレートのカスタマイズができるツール&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;sneak-peek-at-webassembly-studio-mozilla-hacks-the-web-developer-blog&quot;&gt;Sneak Peek at WebAssembly Studio – Mozilla Hacks – the Web developer blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2018/04/sneak-peek-at-webassembly-studio/&quot; title=&quot;Sneak Peek at WebAssembly Studio – Mozilla Hacks – the Web developer blog&quot;&gt;hacks.mozilla.org/2018/04/sneak-peek-at-webassembly-studio/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;editor&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ブラウザ上でC/C++/RustのコードをWebSeemblyにコンパイルして実行できる開発環境のWebAssembly.Studioがβ公開された&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webassembly.studio/&quot; title=&quot;WebAssembly Studio&quot;&gt;WebAssembly Studio&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webdash-the-customizable-web-dashboard&quot;&gt;Webdash | The customizable web dashboard&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webdash.xyz/&quot; title=&quot;Webdash | The customizable web dashboard&quot;&gt;webdash.xyz/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;project&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ウェブプロジェクトに関するダッシュボードツール。&lt;br&gt;
+パッケージの可視化、npm scriptをボタンで実行、Performance Budgetの表示、Workbox連携などを行う。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;sarahdayan-dinero-js-an-immutable-library-to-create-calculate-and-format-monetary-values&quot;&gt;sarahdayan/dinero.js: 💸 An immutable library to create, calculate and format monetary values.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sarahdayan/dinero.js&quot; title=&quot;sarahdayan/dinero.js: 💸 An immutable library to create, calculate and format monetary values.&quot;&gt;github.com/sarahdayan/dinero.js&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;通貨の計算を扱うライブラリ。&lt;br&gt;
+Immutableなデータとして通貨と金額を扱い、また浮動小数点数の問題を回避した計算するメソッドを提供する。&lt;br&gt;
+フォーマットには&lt;code&gt;Number.prototype.toLocaleString&lt;/code&gt;を利用している。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://frontstuff.io/how-to-handle-monetary-values-in-javascript&quot; title=&quot;How to Handle Monetary Values in JavaScript | frontstuff&quot;&gt;How to Handle Monetary Values in JavaScript | frontstuff&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;glidejs-glide-a-dependency-free-javascript-es6-slider-and-carousel-it-s-lightweight-flexible-and-fast-designed-to-slide-no-less-no-more&quot;&gt;glidejs/glide: A dependency-free JavaScript ES6 slider and carousel. It’s lightweight, flexible and fast. Designed to slide. No less, no more&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/glidejs/glide&quot; title=&quot;glidejs/glide: A dependency-free JavaScript ES6 slider and carousel. It’s lightweight, flexible and fast. Designed to slide. No less, no more&quot;&gt;github.com/glidejs/glide&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;依存がないカヌーセル/スライダーUIライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;vue-js-mio-amazon&quot;&gt;基礎から学ぶ Vue.js | mio |本 | 通販 | Amazon&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4863542453/&quot; title=&quot;基礎から学ぶ Vue.js | mio |本 | 通販 | Amazon&quot;&gt;www.amazon.co.jp/dp/4863542453/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2018年5月29日発売。&lt;br&gt;
+リファレンス形式のVue.jsについての書籍&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ecmascript-cookbook-packt-books&quot;&gt;ECMAScript Cookbook | PACKT Books&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.packtpub.com/web-development/ecmascript-cookbook&quot; title=&quot;ECMAScript Cookbook | PACKT Books&quot;&gt;www.packtpub.com/web-development/ecmascript-cookbook&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ECMAScript 2015以降のコードについて扱うクックブック&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/PacktPublishing/ECMAScript-Cookbook&quot; title=&quot;PacktPublishing/ECMAScript-Cookbook: ECMAScript Cookbook, Published By Packt&quot;&gt;PacktPublishing/ECMAScript-Cookbook: ECMAScript Cookbook, Published By Packt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introduction-front-end-developer-handbook-2018&quot;&gt;Introduction · Front-End Developer Handbook 2018&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://frontendmasters.com/books/front-end-handbook/2018/&quot; title=&quot;Introduction · Front-End Developer Handbook 2018&quot;&gt;frontendmasters.com/books/front-end-handbook/2018/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Front-End Developer Handbook 2018が公開された&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 17 Apr 2018 10:52:52 +0900</pubDate>
+        <link>https://jser.info/2018/04/17/safari-11.1-chrome-67-webdash/</link>
+        <guid isPermaLink="true">https://jser.info/2018/04/17/safari-11.1-chrome-67-webdash/</guid>
+        
+        <category>Safari</category>
+        
+        <category>Chrome</category>
+        
+        <category>DevTools</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2018-04-10のJS: PWA on iOS &amp; Windows Store、dom-testing-library</title>
@@ -2560,294 +2859,6 @@ YAML Frontmatterでメタデータの定義、ejsでテンプレートの記述�
         <category>Safari</category>
         
         <category>book</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-02-05のJS: AVA 1.0.0β、TypeScript 2.7、MDNのブラウザ互換性情報</title>
-        <description>&lt;p&gt;JSer.info #369 - テストフレームワークの&lt;a href=&quot;https://github.com/avajs/ava&quot; title=&quot;AVA&quot;&gt;AVA&lt;/a&gt; 1.0.0βが公開されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v1.0.0-beta.1&quot; title=&quot;Release 1.0.0-beta.1 · avajs/ava&quot;&gt;Release 1.0.0-beta.1 · avajs/ava&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Babel 7βを利用するようになり、その影響で&lt;code&gt;powerAssert&lt;/code&gt;など既存の変換オプションなどが変更されています。&lt;br&gt;
-&lt;code&gt;babel&lt;/code&gt;と&lt;code&gt;compileEnhancements&lt;/code&gt;オプションで統一的に管理されるようになっていて、どちらも&lt;code&gt;false&lt;/code&gt;にすればBabelを使った変換を一切行わないようになりました。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ava&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;babel&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;compileEnhancements&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/avajs/ava/issues/1556&quot; title=&quot;No transpile option · Issue #1556 · avajs/ava&quot;&gt;No transpile option · Issue #1556 · avajs/ava&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また、&lt;code&gt;test&lt;/code&gt;関数がテストタイトルとなるものが必須となり、次のように名前のない関数だけを渡した&lt;code&gt;test&lt;/code&gt;は利用できなくなりました。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// エラー&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;AVA 1.0.0βは&lt;code&gt;ava@next&lt;/code&gt;で試すことができます。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;npm install ava@next
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;hr&gt;
-
-&lt;p&gt;TypeScript 2.7がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2018/01/31/announcing-typescript-2-7/&quot; title=&quot;Announcing TypeScript 2.7 | TypeScript&quot;&gt;Announcing TypeScript 2.7 | TypeScript&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;strict&lt;/code&gt;の挙動にクラスのフィールドの初期化チェックを厳密に行う&lt;code&gt;strictPropertyInitialization&lt;/code&gt;の追加やDefinite assignment assertions(&lt;code&gt;!&lt;/code&gt;)の追加、&lt;code&gt;--esModuleInterop&lt;/code&gt;を追加しdefault exportするcommonjsとのinteropの改善などが行われています。&lt;/p&gt;
-
-&lt;p&gt;詳しくは次の記事で解説されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/3a1e628e53a5dd99dfe0&quot; title=&quot;TypeScript 2.7.1 変更点 - Qiita&quot;&gt;TypeScript 2.7.1 変更点 - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2018/02/mdn-browser-compatibility-data/&quot; title=&quot;MDN browser compatibility data: Taking the guesswork out of web compatibility – Mozilla Hacks – the Web developer blog&quot;&gt;MDN browser compatibility data: Taking the guesswork out of web compatibility – Mozilla Hacks – the Web developer blog&lt;/a&gt;という記事ではMDNが表示しているブラウザの互換性データについて書かれています。&lt;/p&gt;
-
-&lt;p&gt;MDNの機能のリファレンスページにはその機能をサポートしてるブラウザやバージョンの一覧が表示されています。&lt;br&gt;
-このデータは&lt;a href=&quot;https://www.npmjs.com/package/mdn-browser-compat-data&quot; title=&quot;mdn-browser-compat-data&quot;&gt;mdn-browser-compat-data&lt;/a&gt;というnpmパッケージからも利用できるようになっています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mdn/browser-compat-data&quot; title=&quot;mdn/browser-compat-data: This repository contains compatibility data for Web technologies as displayed on MDN&quot;&gt;mdn/browser-compat-data: This repository contains compatibility data for Web technologies as displayed on MDN&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;データを管理するGitHubリポジトリ&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;この記事ではこれらのデータを活用方法などについて紹介しています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v9-5-0-current-node-js&quot;&gt;Node v9.5.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v9.5.0/&quot; title=&quot;Node v9.5.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v9.5.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node v9.5.0リリース。&lt;br&gt;
-&lt;code&gt;performance.clearEntries(name)&lt;/code&gt;のサポート、&lt;code&gt;cluster.settings&lt;/code&gt;に&lt;code&gt;cwd&lt;/code&gt;オプションの追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-typescript-2-7-typescript&quot;&gt;Announcing TypeScript 2.7 | TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2018/01/31/announcing-typescript-2-7/&quot; title=&quot;Announcing TypeScript 2.7 | TypeScript&quot;&gt;blogs.msdn.microsoft.com/typescript/2018/01/31/announcing-typescript-2-7/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 2.7リリース。&lt;br&gt;
-クラスプロパティのStrictオプションの追加、Definite assignment assertions(&lt;code&gt;!&lt;/code&gt;)の追加、&lt;code&gt;--esModuleInterop&lt;/code&gt;を追加しdefault exportするcommonjsとのinteropの改善。&lt;br&gt;
-Tuple、&lt;code&gt;in&lt;/code&gt;、&lt;code&gt;instanceof&lt;/code&gt;、オブジェクトリテラルの型改善など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/3a1e628e53a5dd99dfe0&quot; title=&quot;TypeScript 2.7.1 変更点 - Qiita&quot;&gt;TypeScript 2.7.1 変更点 - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-1-0-0-beta-1-avajs-ava&quot;&gt;Release 1.0.0-beta.1 · avajs/ava&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v1.0.0-beta.1&quot; title=&quot;Release 1.0.0-beta.1 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v1.0.0-beta.1&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AVA 1.0.0β1リリース。&lt;br&gt;
-Babel 7βを利用するように、&lt;code&gt;test&lt;/code&gt;がテストタイトルを必須に、&lt;code&gt;powerAssert&lt;/code&gt;の無効オプションは、&lt;code&gt;babel&lt;/code&gt;と&lt;code&gt;compileEnhancements&lt;/code&gt;オプションで管理されるように変更など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/avajs/ava/issues/1556&quot; title=&quot;No transpile option · Issue #1556 · avajs/ava&quot;&gt;No transpile option · Issue #1556 · avajs/ava&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;v8-javascript-engine-v8-release-v6-5&quot;&gt;V8 JavaScript Engine: V8 release v6.5&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://v8project.blogspot.com/2018/02/v8-release-65.html&quot; title=&quot;V8 JavaScript Engine: V8 release v6.5&quot;&gt;v8project.blogspot.com/2018/02/v8-release-65.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;V8 6.5リリース。&lt;br&gt;
-Unstruted code modeがデフォルトで有効化、WebAssemblyのStreaming compilationのサポート、Arrayメソッドの改善、疎の配列の改善など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/v8/v8/wiki/Untrusted-code-mitigations&quot; title=&quot;Untrusted code mitigations · v8/v8 Wiki&quot;&gt;Untrusted code mitigations · v8/v8 Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;bootstrap-4-0-release-what-s-new&quot;&gt;Bootstrap 4.0 Release: What’s New?&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://auth0.com/blog/whats-new-in-bootstrap4/&quot; title=&quot;Bootstrap 4.0 Release: What’s New?&quot;&gt;auth0.com/blog/whats-new-in-bootstrap4/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;BootStrap 4.0の変更点についての解説。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;stimulus-1-0-a-modest-javascript-framework-for-the-html-you-already-have&quot;&gt;Stimulus 1.0: A modest JavaScript framework for the HTML you already have&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://m.signalvnoise.com/stimulus-1-0-a-modest-javascript-framework-for-the-html-you-already-have-f04307009130&quot; title=&quot;Stimulus 1.0: A modest JavaScript framework for the HTML you already have&quot;&gt;m.signalvnoise.com/stimulus-1-0-a-modest-javascript-framework-for-the-html-you-already-have-f04307009130&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Stimulus 1.0リリース。&lt;br&gt;
-RailsのTurbolinksと共存して動作できるJavaScriptフレームワーク。&lt;br&gt;
-HTMLなテンプレートとJavaScriptなコントローラーを組み合わせてアプリケーションを作る。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;automatic-visual-diffing-with-puppeteer-monica-dinculescu&quot;&gt;Automatic visual diffing with Puppeteer – Monica Dinculescu&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://meowni.ca/posts/2017-puppeteer-tests/&quot; title=&quot;Automatic visual diffing with Puppeteer – Monica Dinculescu&quot;&gt;meowni.ca/posts/2017-puppeteer-tests/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Puppeteerを使ったVisual Diffテストについて。&lt;br&gt;
-スクリーンショットをPixelmatchで比較し、画像のDiffを元にテストする話&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introducing-react-easy-state-risingstack&quot;&gt;Introducing React Easy State | @RisingStack&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.risingstack.com/introducing-react-easy-state/&quot; title=&quot;Introducing React Easy State | @RisingStack&quot;&gt;blog.risingstack.com/introducing-react-easy-state/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ES Proxyを使ったステート管理ライブラリについて&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/solkimicreb/react-easy-state&quot; title=&quot;solkimicreb/react-easy-state: Simple React state management. Made with ❤️ and ES6 Proxies.&quot;&gt;solkimicreb/react-easy-state: Simple React state management. Made with ❤️ and ES6 Proxies.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;debugging-javascript-with-a-real-debugger-you-did-not-know-you-already-have-smashing-magazine&quot;&gt;Debugging JavaScript With A Real Debugger You Did Not Know You Already Have — Smashing Magazine&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2018/02/javascript-firefox-debugger/&quot; title=&quot;Debugging JavaScript With A Real Debugger You Did Not Know You Already Have — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2018/02/javascript-firefox-debugger/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefoxの開発者ツールの紹介と&lt;code&gt;debugger.html&lt;/code&gt;について。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jest-web-scratch&quot;&gt;Jestなどを使わずにスナップショットテストを書く | Web Scratch&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://efcl.info/2018/02/02/snapshot-test/&quot; title=&quot;Jestなどを使わずにスナップショットテストを書く | Web Scratch&quot;&gt;efcl.info/2018/02/02/snapshot-test/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;特別なライブラリを使わずにスナップショットテストを実装する方法について。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;testing-your-npm-package-before-releasing-it-using-verdaccio-ngrok&quot;&gt;Testing your npm package before releasing it using Verdaccio + ngrok&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.strapi.io/testing-npm-package-before-releasing-it-using-verdaccio-and-ngrok/&quot; title=&quot;Testing your npm package before releasing it using Verdaccio + ngrok&quot;&gt;blog.strapi.io/testing-npm-package-before-releasing-it-using-verdaccio-and-ngrok/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npmパッケージをpublishする前にテスト方法について。&lt;br&gt;
-Private npm registryであるVerdaccioにpublishして、localhostトンネルであるngrokを使ってテストするという話&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;debugging-css-performance-with-chrome-s-profiling-tools-ada-developers-academy&quot;&gt;Debugging CSS Performance with Chrome’s Profiling Tools - Ada Developers Academy&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://adadevacademy.tumblr.com/post/170121818942/debugging-css-performance-with-chromes-profiling&quot; title=&quot;Debugging CSS Performance with Chrome’s Profiling Tools - Ada Developers Academy&quot;&gt;adadevacademy.tumblr.com/post/170121818942/debugging-css-performance-with-chromes-profiling&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSSのパフォーマンス問題について。&lt;br&gt;
-Reactの問題かと疑って色々試した結果、CSSのレンダリングの問題であったケースについて。&lt;br&gt;
-インラインCSS、gradientを直すことで改善されたが、開発者ツールではこの問題がどう見えていたかについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introducing-node-clinic-a-performance-toolkit-for-node-js-developers-nearform&quot;&gt;Introducing Node Clinic - A performance toolkit for Node.js developers | nearForm&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.nearform.com/blog/introducing-node-clinic-a-performance-toolkit-for-node-js-developers/&quot; title=&quot;Introducing Node Clinic - A performance toolkit for Node.js developers | nearForm&quot;&gt;www.nearform.com/blog/introducing-node-clinic-a-performance-toolkit-for-node-js-developers/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsアプリのパフォーマンスモニタリングツールであるClinicについて。&lt;br&gt;
-ダッシュボードでCPU、メモリ、イベントループの遅延などを見ることができる&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nearform/node-clinic&quot; title=&quot;nearform/node-clinic: Clinic diagnoses your Node.js performance issues&quot;&gt;nearform/node-clinic: Clinic diagnoses your Node.js performance issues&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;how-javascript-works-the-building-blocks-of-web-workers-5-cases-when-you-should-use-them&quot;&gt;How JavaScript works: The building blocks of Web Workers + 5 cases when you should use them&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.sessionstack.com/how-javascript-works-the-building-blocks-of-web-workers-5-cases-when-you-should-use-them-a547c0757f6a&quot; title=&quot;How JavaScript works: The building blocks of Web Workers + 5 cases when you should use them&quot;&gt;blog.sessionstack.com/how-javascript-works-the-building-blocks-of-web-workers-5-cases-when-you-should-use-them-a547c0757f6a&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebWorkerの使い方やユースケースについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;mdn-browser-compatibility-data-taking-the-guesswork-out-of-web-compatibility-mozilla-hacks-the-web-developer-blog&quot;&gt;MDN browser compatibility data: Taking the guesswork out of web compatibility – Mozilla Hacks – the Web developer blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2018/02/mdn-browser-compatibility-data/&quot; title=&quot;MDN browser compatibility data: Taking the guesswork out of web compatibility – Mozilla Hacks – the Web developer blog&quot;&gt;hacks.mozilla.org/2018/02/mdn-browser-compatibility-data/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;mdn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MDNが利用してるブラウザのサポート状況をまとめたデータがnpmパッケージとして利用できるようになった。&lt;br&gt;
-このデータの使い方やサイトのサポートブラウザの可視化する拡張などについて&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/mdn-browser-compat-data&quot; title=&quot;mdn-browser-compat-data&quot;&gt;mdn-browser-compat-data&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/compat-report/&quot; title=&quot;Compat Report – Add-ons for Firefox&quot;&gt;Compat Report – Add-ons for Firefox&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;thejameskyle-glow-make-your-flow-errors-glow&quot;&gt;thejameskyle/glow: Make your Flow errors GLOW&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/thejameskyle/glow&quot; title=&quot;thejameskyle/glow: Make your Flow errors GLOW&quot;&gt;github.com/thejameskyle/glow&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;FlowのエラーをCodeFrameにして表示、Watchモード、globで対象のフィルターを行えるツール&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;fullhuman-purgecss-remove-unused-css&quot;&gt;FullHuman/purgecss: Remove unused css&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/FullHuman/purgecss&quot; title=&quot;FullHuman/purgecss: Remove unused css&quot;&gt;github.com/FullHuman/purgecss&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;使ってないCSSを削除するツール。&lt;br&gt;
-コンテンツ(HTML、JSなど)とCSSを渡し、不要となったCSSを削除できる。&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Mon, 05 Feb 2018 20:07:52 +0900</pubDate>
-        <link>https://jser.info/2018/02/05/ava-1.0.0b-typescript-2.7-mdn/</link>
-        <guid isPermaLink="true">https://jser.info/2018/02/05/ava-1.0.0b-typescript-2.7-mdn/</guid>
-        
-        <category>ava</category>
-        
-        <category>TypeScript</category>
-        
-        <category>mdn</category>
-        
-        <category>npm</category>
         
         
         <category>JSer</category>
