@@ -5,9 +5,293 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 16 May 2018 15:37:11 +0900</pubDate>
-    <lastBuildDate>Wed, 16 May 2018 15:37:11 +0900</lastBuildDate>
+    <pubDate>Tue, 22 May 2018 10:46:17 +0900</pubDate>
+    <lastBuildDate>Tue, 22 May 2018 10:46:17 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2018-05-22のJS: Firefox 61の開発者ツール、Next.js 6、Data-Forge</title>
+        <description>&lt;p&gt;JSer.info #384 - &lt;a href=&quot;https://hacks.mozilla.org/2018/05/new-in-firefox-61-developer-edition/&quot;&gt;New in Firefox 61: Developer Edition – Mozilla Hacks – the Web developer blog&lt;/a&gt;という記事ではFirefox 61の変更点について紹介されています。&lt;/p&gt;
+
+&lt;p&gt;Source Mapの対応改善、HARファイルのimport/export、パネルの入れ替えのサポート、アクセシビリティインスペクタの追加などが行われています。&lt;/p&gt;
+
+&lt;p&gt;Source Mapの対応改善について詳しくは次の記事で紹介されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2018/05/debugging-modern-web-applications/&quot;&gt;Debugging Modern Web Applications – Mozilla Hacks – the Web developer blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Reactを使ったフレームワークであるNext.js 6がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://zeit.co/blog/next6&quot;&gt;ZEIT – Next.js 6 and Nextjs.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/releases/tag/6.0.0&quot;&gt;Release 6.0.0 · zeit/next.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;_app.js&lt;/code&gt;でデフォルトの&lt;code&gt;App&lt;/code&gt;の挙動を拡張できるようになりました。&lt;br&gt;
+Babel 7(RC)にアップデートされ、これにより&lt;a href=&quot;https://github.com/babel/babel/tree/master/packages/babel-preset-typescript&quot;&gt;&lt;code&gt;@babel/preset-typescript&lt;/code&gt;&lt;/a&gt;を使ってTypeScriptをサポートする例などが紹介されています。&lt;/p&gt;
+
+&lt;p&gt;Babelがアップデートされたことにより&lt;code&gt;.babelrc&lt;/code&gt;で拡張している場合は&lt;a href=&quot;https://github.com/babel/babel-upgrade&quot;&gt;babel-upgrade&lt;/a&gt;などを使いBabel関係のアップデートも必要となる場合があります。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/issues/4239&quot;&gt;migration from 5 to 6 · Issue #4239 · zeit/next.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、&lt;a href=&quot;https://learnnextjs.com&quot;&gt;https://learnnextjs.com&lt;/a&gt;のドキュメントが&lt;a href=&quot;https://nextjs.org/learn/&quot;&gt;Getting Started - Learn Next.js&lt;/a&gt;にマージされています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;データ処理ライブラリの&lt;a href=&quot;http://www.data-forge-js.com/&quot;&gt;Data-Forge&lt;/a&gt;が公開されました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.data-forge-js.com/&quot;&gt;Data-Forge&lt;/a&gt;はCSVやJSONなどのデータの読み込み、加工、集約、整形などを行えます。&lt;br&gt;
+読み込んだデータは一度&lt;a href=&quot;https://github.com/data-forge/data-forge-ts/blob/master/docs/concepts.md#dataframe&quot;&gt;DataFrame&lt;/a&gt;に変換され、DataFrameに対してデータ処理を行う形になっていて&lt;a href=&quot;https://github.com/pandas-dev/pandas&quot;&gt;pandas&lt;/a&gt;をインスパイアしています。&lt;/p&gt;
+
+&lt;p&gt;また、これらのデータ処理をメソッドチェーンで書くようになっていて、内部的には&lt;a href=&quot;https://github.com/data-forge/data-forge-ts/blob/master/docs/concepts.md#iterable--iterator&quot;&gt;Iterable / Iterator&lt;/a&gt;で処理されます。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;dataForge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readFileSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'input.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// Read input file.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parseCSV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;                         &lt;span class=&quot;c1&quot;&gt;// Parse CSV data to a dataframe.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parseInts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Column2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Column3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Parse from strings to integers.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parseDates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Column4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;// Parse from strings to date objects.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dropSeries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Column5&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;// Don't want column 5.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;where&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;predicate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// Filter out rows that you don't want.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// Apply transformation to each row.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;asCSV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;                            &lt;span class=&quot;c1&quot;&gt;// Write out data file in CSV (or other) format.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;writeFileSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'output.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// Write output file.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;同じ作者によってJavaScriptによるデータラングリングについての書籍も書かれているようです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.manning.com/books/data-wrangling-with-javascript?a_aid=datawranglingwithjavascript&amp;a_bid=acc654f9&quot;&gt;Manning | Data Wrangling with JavaScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-in-firefox-61-developer-edition-mozilla-hacks-the-web-developer-blog&quot;&gt;New in Firefox 61: Developer Edition – Mozilla Hacks – the Web developer blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2018/05/new-in-firefox-61-developer-edition/&quot; title=&quot;New in Firefox 61: Developer Edition – Mozilla Hacks – the Web developer blog&quot;&gt;hacks.mozilla.org/2018/05/new-in-firefox-61-developer-edition/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Firefox 61 Developer Editionの変更点について。&lt;br&gt;
+開発者ツールの改善、Source Mapの対応改善、HARファイルのimport/export、アクセシビリティインスペクタの追加など。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;testcafe-v0-20-0-released-testcafe&quot;&gt;TestCafe v0.20.0 Released | TestCafe&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://devexpress.github.io/testcafe/blog/testcafe-v0-20-0-released.html&quot; title=&quot;TestCafe v0.20.0 Released | TestCafe&quot;&gt;devexpress.github.io/testcafe/blog/testcafe-v0-20-0-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TestCafe v0.20.0リリース。&lt;br&gt;
+HTTPリクエスト、レスポンスのhookを行えるように。&lt;br&gt;
+proxyを無視できるパターンを指定できるようになるなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-typescript-2-9-rc-typescript&quot;&gt;Announcing TypeScript 2.9 RC | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2018/05/16/announcing-typescript-2-9-rc/&quot; title=&quot;Announcing TypeScript 2.9 RC | TypeScript&quot;&gt;blogs.msdn.microsoft.com/typescript/2018/05/16/announcing-typescript-2-9-rc/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 2.9 RCリリース。&lt;br&gt;
+&lt;code&gt;keyof&lt;/code&gt;がSymbolとnumberに対応、&lt;code&gt;import(path)&lt;/code&gt; typeのサポート、&lt;code&gt;import.meta&lt;/code&gt;のサポート、JSXのgenericsをサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;saadq-lynt-a-zero-config-javascript-linter-with-support-for-typescript-flow-and-react&quot;&gt;saadq/lynt: ✨ A zero config JavaScript linter with support for Typescript, Flow, and React.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/saadq/lynt&quot; title=&quot;saadq/lynt: ✨ A zero config JavaScript linter with support for Typescript, Flow, and React.&quot;&gt;github.com/saadq/lynt&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;設定なしに使えることを目的としたLintツール。&lt;br&gt;
+ESLintやTSLintを使いopinionatedなLintを行う。&lt;br&gt;
+スタイルに関するルールは含めずにエラーに関するものだけに限定している。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;zeit-next-js-6-and-nextjs-org&quot;&gt;ZEIT – Next.js 6 and Nextjs.org&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://zeit.co/blog/next6&quot; title=&quot;ZEIT – Next.js 6 and Nextjs.org&quot;&gt;zeit.co/blog/next6&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Next.js 6リリース。&lt;br&gt;
+&lt;code&gt;_app.js&lt;/code&gt;でアプリのライフサイクルなどに対して拡張できるように、Babel 7(RC)にアップデート、&lt;code&gt;@babel/preset-typescript&lt;/code&gt;を使ってTypeScriptをサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v5-2-0-mochajs-mocha&quot;&gt;Release v5.2.0 · mochajs/mocha&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/mochajs/mocha/releases/tag/v5.2.0&quot; title=&quot;Release v5.2.0 · mochajs/mocha&quot;&gt;github.com/mochajs/mocha/releases/tag/v5.2.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Mocha 5.2.0リリース。&lt;br&gt;
+&lt;code&gt;mocha.opts&lt;/code&gt;にコメントがかけるように、APIドキュメントの更新など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://mochajs.org/api/&quot; title=&quot;Home - Documentation&quot;&gt;Home - Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-3-0-0-beta-1-2018-05-20-zloirock-core-js&quot;&gt;Release 3.0.0-beta.1 - 2018.05.20 · zloirock/core-js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/zloirock/core-js/releases/tag/v3.0.0-beta.1&quot; title=&quot;Release 3.0.0-beta.1 - 2018.05.20 · zloirock/core-js&quot;&gt;github.com/zloirock/core-js/releases/tag/v3.0.0-beta.1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;polyfill&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;core-js 3.0.0 β1リリース。&lt;br&gt;
+Proposalである&lt;code&gt;Object.fromEntries&lt;/code&gt;、&lt;code&gt;Map&lt;/code&gt;や&lt;code&gt;Set&lt;/code&gt;のコレクションメソッドの実装など。&lt;br&gt;
+あわせてwithdrawされたProposalの実装を削除。&lt;br&gt;
+またいくつかのブラウザバージョンでのバグに対処など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zloirock/core-js/pull/325&quot; title=&quot;core-js@3 by zloirock · Pull Request #325 · zloirock/core-js&quot;&gt;core-js@3 by zloirock · Pull Request #325 · zloirock/core-js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;chromium-blog-evolving-chromes-security-indicators&quot;&gt;Chromium Blog: Evolving Chrome&amp;#39;s security indicators&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.chromium.org/2018/05/evolving-chromes-security-indicators.html&quot; title=&quot;Chromium Blog: Evolving Chrome&amp;#39;s security indicators&quot;&gt;blog.chromium.org/2018/05/evolving-chromes-security-indicators.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTPS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ChromeのHTTPSとHTTPのURLバーの表示の変更予定について。&lt;br&gt;
+HTTPSはデフォルトになっていくため&amp;quot;Secure&amp;quot;ラベルを外していき、&lt;br&gt;
+HTTPの方が例外的なものとして&amp;quot;Not Secure&amp;quot;というラベルをつけるという方針について。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;storybook-vs-styleguidist-chroma&quot;&gt;Storybook vs Styleguidist – Chroma&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.hichroma.com/storybook-vs-styleguidist-2bd93d6dcc06&quot; title=&quot;Storybook vs Styleguidist – Chroma&quot;&gt;blog.hichroma.com/storybook-vs-styleguidist-2bd93d6dcc06&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;StorybookとStyleguidistの違い、どのようなときに使うのかについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;type-safe-object-merging-in-typescript-2-8&quot;&gt;Type-Safe Object Merging in TypeScript 2.8&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://spin.atomicobject.com/2018/05/14/type-safe-object-merging-2-8/&quot; title=&quot;Type-Safe Object Merging in TypeScript 2.8&quot;&gt;spin.atomicobject.com/2018/05/14/type-safe-object-merging-2-8/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 2.8のConditional Typeを使ったType Safeなオブジェクトマージについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;native-javascript-modules-by-serg-hospodarets&quot;&gt;Native JavaScript modules by Serg Hospodarets&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://slides.com/malyw/native-js-modules#/&quot; title=&quot;Native JavaScript modules by Serg Hospodarets&quot;&gt;slides.com/malyw/native-js-modules#/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ES modulesについてのスライド。&lt;br&gt;
+AMD、CommonJSなどとの比較、&lt;code&gt;&amp;lt;script type=module&amp;gt;&lt;/code&gt;がDeferred by defaultであることやmoduleの動作について。&lt;br&gt;
+また循環参照の対応、パスの扱い、Dynamic import、パフォーマンスやテストなどについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;sloria-local-repl-project-specific-configuration-for-the-node-js-repl&quot;&gt;sloria/local-repl: 🐚 Project-specific configuration for the Node.js REPL&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sloria/local-repl&quot; title=&quot;sloria/local-repl: 🐚 Project-specific configuration for the Node.js REPL&quot;&gt;github.com/sloria/local-repl&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsでプロジェクト毎にaliasや依存などを指定できるREPL&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;home&quot;&gt;home&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://layerjs.org/&quot; title=&quot;home&quot;&gt;layerjs.org/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;animation&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Stage&lt;/code&gt;と&lt;code&gt;Frame&lt;/code&gt;の属性を付けた要素を元にレイヤーを作り、トランジションなどの遷移アニメーションを表現するライブラリ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;planttheidea-fast-copy-a-blazing-fast-deep-object-copier&quot;&gt;planttheidea/fast-copy: A blazing fast deep object copier&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/planttheidea/fast-copy&quot; title=&quot;planttheidea/fast-copy: A blazing fast deep object copier&quot;&gt;github.com/planttheidea/fast-copy&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;オブジェクトのdeep copyを行うライブラリ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;data-forge&quot;&gt;Data-Forge&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.data-forge-js.com/&quot; title=&quot;Data-Forge&quot;&gt;www.data-forge-js.com/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSVやJSONなどのデータの読み込み、加工、集約、整形などを行うライブラリ。&lt;br&gt;
+LINQとPandasをインスパイアして作成されていて、メソッドチェーン(内部的にIterator)で処理を書ける。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.manning.com/books/data-wrangling-with-javascript?a_aid=datawranglingwithjavascript&amp;a_bid=acc654f9&quot; title=&quot;Manning | Data Wrangling with JavaScript&quot;&gt;Manning | Data Wrangling with JavaScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;rsuite-rsuite-a-suite-of-react-components&quot;&gt;rsuite/rsuite: A suite of React components .&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rsuite/rsuite&quot; title=&quot;rsuite/rsuite: A suite of React components .&quot;&gt;github.com/rsuite/rsuite&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Reactを使ったUIコンポーネント集ライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;manning-data-wrangling-with-javascript&quot;&gt;Manning | Data Wrangling with JavaScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.manning.com/books/data-wrangling-with-javascript?a_aid=datawranglingwithjavascript&amp;a_bid=acc654f9&quot; title=&quot;Manning | Data Wrangling with JavaScript&quot;&gt;www.manning.com/books/data-wrangling-with-javascript?a_aid&amp;#x3D;datawranglingwithjavascript&amp;amp;a_bid&amp;#x3D;acc654f9&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptを使ったデータラングリング(データ処理)についての書籍&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;pro-vue-js-2-adam-freeman-9781484238042-amazon-com-books&quot;&gt;Pro Vue.js 2: Adam Freeman: 9781484238042: Amazon.com: Books&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/dp/1484238044/&quot; title=&quot;Pro Vue.js 2: Adam Freeman: 9781484238042: Amazon.com: Books&quot;&gt;www.amazon.com/dp/1484238044/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2019年1月17日発売&lt;br&gt;
+Vueについての書籍&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 22 May 2018 08:42:56 +0900</pubDate>
+        <link>https://jser.info/2018/05/22/firefox-61next.js-6data-forge/</link>
+        <guid isPermaLink="true">https://jser.info/2018/05/22/firefox-61next.js-6data-forge/</guid>
+        
+        <category>firefox</category>
+        
+        <category>Next.js</category>
+        
+        <category>data</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2018-05-15のJS: フロントエンドツールアンケート結果、Firefox 60、Lighthouse 3.0β</title>
@@ -2604,288 +2888,6 @@ CDN上でService Workerと同じようなAPIで処理を書くことができる
         <category>firefox</category>
         
         <category>ECMAScript</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-03-13のJS: MobX 4.0.0、PreactとGlimmerのパフォーマンス比較実験</title>
-        <description>&lt;p&gt;JSer.info #374 - &lt;a href=&quot;https://github.com/mobxjs/mobx&quot; title=&quot;MobX&quot;&gt;MobX&lt;/a&gt; 4.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@mweststrate/mobx-4-better-simpler-faster-smaller-c1fbc08008da&quot;&gt;MobX 4: Better, simpler, faster, smaller – Michel Weststrate – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mobxjs/mobx/blob/master/CHANGELOG.md#400&quot;&gt;mobx/CHANGELOG.md at master · mobxjs/mobx&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Decorator proposal(&lt;code&gt;@decorator&lt;/code&gt;)を使わずにObservableオブジェクトを作成する&lt;code&gt;decorate&lt;/code&gt;関数の追加、&lt;a href=&quot;https://mobx.js.org/refguide/object-api.html&quot; title=&quot;Object api | MobX&quot;&gt;Object api&lt;/a&gt;の追加、&lt;code&gt;when&lt;/code&gt;や&lt;code&gt;flow&lt;/code&gt;のような非同期サポートの補助する関数の追加などが行われています。&lt;/p&gt;
-
-&lt;p&gt;破壊的な変更として&lt;code&gt;shareGlobalState&lt;/code&gt;の削除、observable mapに&lt;code&gt;Map&lt;/code&gt;を使うように、&lt;code&gt;extras&lt;/code&gt;関係のAPIのリネーム、&lt;code&gt;mobx&lt;/code&gt;モジュールがdefault exportをしなくなるなどが行われています。&lt;br&gt;
-次のページにマイグレーションガイドが公開されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mobxjs/mobx/wiki/Migrating-from-mobx-3-to-mobx-4&quot; title=&quot;Migrating from mobx 3 to mobx 4 · mobxjs/mobx Wiki&quot;&gt;Migrating from mobx 3 to mobx 4 · mobxjs/mobx Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また、現在開発中の&lt;a href=&quot;https://github.com/mobxjs/mobx/pull/1380&quot;&gt;MobX 5(15?)&lt;/a&gt;ではObservableにES Proxyを使ったものを予定しているようです。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mobxjs/mobx/issues/1390&quot; title=&quot;Road to MobX 5 · Issue #1390 · mobxjs/mobx&quot;&gt;Road to MobX 5 · Issue #1390 · mobxjs/mobx&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://engineering.linkedin.com/blog/2018/03/how-we-built-the-same-app-twice-with-preact-and-glimmerjs&quot; title=&quot;Lighter than Lightweight: How We Built the Same App Twice with Preact and Glimmer.js | LinkedIn Engineering&quot;&gt;Lighter than Lightweight: How We Built the Same App Twice with Preact and Glimmer.js | LinkedIn Engineering&lt;/a&gt;という記事では、同じアプリをPreactとGlimmer.jsで実装し、ページロードに関するパフォーマンスの比較実験をした結果について書かれています。&lt;br&gt;
-それぞれのアプリでページ表示に関する値を指標として比較した時に、極端な差はでませんでした。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://havelog.ayumusato.com/develop/performance/e744-performance_metrics.html&quot; title=&quot;Web クライアントサイドのパフォーマンスメトリクス — Speed Index、Paint Timing、TTI etc... ::ハブろぐ&quot;&gt;Web クライアントサイドのパフォーマンスメトリクス — Speed Index、Paint Timing、TTI etc... ::ハブろぐ&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;First Meaningful PaintやTime to Interactiveについての解説&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Preact(3kb)とGlimmer.js(30kb)ではファイルサイズに差がありますが、その差がそのままページの表示時間に出てないことについて書かれています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;donejs-2-0-released&quot;&gt;DoneJS 2.0 Released&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.bitovi.com/blog/donejs-2.0&quot; title=&quot;DoneJS 2.0 Released&quot;&gt;www.bitovi.com/blog/donejs-2.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;DoneJS 2.0リリース。&lt;br&gt;
-CanJS 4.0に対応、CIやデプロイの設定を&lt;code&gt;donejs add&lt;/code&gt;で行えるように、&lt;code&gt;donejs upgrade&lt;/code&gt;でマイグレーションができるようになっている。&lt;br&gt;
-HTTP/2 pushを使ったインクリメンタルレンダリングの対応改善など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.bitovi.com/streamable&quot; title=&quot;Create Streamable, High-Performance Web Applications&quot;&gt;Create Streamable, High-Performance Web Applications&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;we-have-released-version-3-0-of-openpgpjs-an-open-source-openpgp-library-protonmail-blog&quot;&gt;We have released version 3.0 of OpenPGPjs, an open source OpenPGP library - ProtonMail Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://protonmail.com/blog/openpgpjs-3-release/&quot; title=&quot;We have released version 3.0 of OpenPGPjs, an open source OpenPGP library - ProtonMail Blog&quot;&gt;protonmail.com/blog/openpgpjs-3-release/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;OpenPGPの実装であるOpenPGP.js 3.0リリース&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-65-web-google-developers&quot;&gt;New in Chrome 65  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/03/nic65&quot; title=&quot;New in Chrome 65  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/03/nic65&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 65の変更点について。&lt;br&gt;
-CSS Paint API、Server Tming API、&lt;code&gt;display: contents&lt;/code&gt;の対応、Feature Policyの対応など。&lt;br&gt;
-また&lt;code&gt;document.all&lt;/code&gt;が上書きできなくなるようになるなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#browsers.chrome.desktop%3D65&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/02/chrome-65-beta-css-paint-api-and.html&quot; title=&quot;Chromium Blog: Chrome 65 Beta: CSS Paint API and the ServerTiming API&quot;&gt;Chromium Blog: Chrome 65 Beta: CSS Paint API and the ServerTiming API&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;mobx-4-better-simpler-faster-smaller-michel-weststrate-medium&quot;&gt;MobX 4: Better, simpler, faster, smaller – Michel Weststrate – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@mweststrate/mobx-4-better-simpler-faster-smaller-c1fbc08008da&quot; title=&quot;MobX 4: Better, simpler, faster, smaller – Michel Weststrate – Medium&quot;&gt;medium.com/@mweststrate/mobx-4-better-simpler-faster-smaller-c1fbc08008da&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MobX 4リリース。&lt;br&gt;
-Decorator proposal(&lt;code&gt;@decorator&lt;/code&gt;)を使わずに同じことをする&lt;code&gt;decorate&lt;/code&gt;関数の追加、コレクション向けのUtility APIを追加、&lt;code&gt;when&lt;/code&gt;の追加など。&lt;br&gt;
-また&lt;code&gt;shareGlobalState&lt;/code&gt;の削除、APIのリネーム、default exportをしないようにするなどの破壊的変更が行われている。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mobxjs/mobx/wiki/Migrating-from-mobx-3-to-mobx-4&quot; title=&quot;Migrating from mobx 3 to mobx 4 · mobxjs/mobx Wiki&quot;&gt;Migrating from mobx 3 to mobx 4 · mobxjs/mobx Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mobxjs/mobx/blob/master/CHANGELOG.md#400&quot; title=&quot;mobx/CHANGELOG.md at master · mobxjs/mobx&quot;&gt;mobx/CHANGELOG.md at master · mobxjs/mobx&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-futura-sass-libsass&quot;&gt;Release Futura · sass/libsass&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/sass/libsass/releases/tag/3.5.0&quot; title=&quot;Release Futura · sass/libsass&quot;&gt;github.com/sass/libsass/releases/tag/3.5.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Sass&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;libsass 3.5リリース。 引数のtrailing commasサポート、&lt;code&gt;content-exists&lt;/code&gt;関数のサポート、CSSのCustom Property、&lt;code&gt;var()&lt;/code&gt;のサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;an-imperative-guide-to-forms-in-react-logrocket&quot;&gt;An imperative guide to forms in React – LogRocket&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.logrocket.com/an-imperative-guide-to-forms-in-react-927d9670170a&quot; title=&quot;An imperative guide to forms in React – LogRocket&quot;&gt;blog.logrocket.com/an-imperative-guide-to-forms-in-react-927d9670170a&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Reactを使ったフォームの扱いについての記事。&lt;br&gt;
-Formikを使ったフォームの作成などについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;emscripting-a-c-library-to-wasm-web-google-developers&quot;&gt;Emscripting a C library to Wasm  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/03/emscripting-a-c-library&quot; title=&quot;Emscripting a C library to Wasm  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/03/emscripting-a-c-library&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Emscriptenを使いCのコードをWebAssemblyにして実行するチュートリアル。&lt;br&gt;
-libwebpをwasmにコンパイルする話&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;feature-policy-permission-delegation-blog-jxck-io&quot;&gt;Feature Policy による Permission Delegation | blog.jxck.io&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.jxck.io/entries/2018-03-08/feature-policy-permission-delegation.html&quot; title=&quot;Feature Policy による Permission Delegation | blog.jxck.io&quot;&gt;blog.jxck.io/entries/2018-03-08/feature-policy-permission-delegation.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;iframe sandbox、CSP、Feature Policyの役割について。&lt;br&gt;
-&lt;code&gt;sandbox&lt;/code&gt;はホワイリトストでの機能制限、CSPはブラックリストでの機能制限、Feature Policyは権限の設定をオリジンに対して行う。&lt;br&gt;
-また&lt;code&gt;sandbox&lt;/code&gt;とFeature Policyの機能重複はしないことについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;web-workers-to-the-rescue-rastislav-svarba-medium&quot;&gt;Web Workers to the rescue – Rastislav Svarba – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://rast.io/web-workers-rescue&quot; title=&quot;Web Workers to the rescue – Rastislav Svarba – Medium&quot;&gt;rast.io/web-workers-rescue&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Web Workerを使った処理の移譲のコストと効果についての記事。&lt;br&gt;
-データの取得と処理をWorkerに移動した場合の処理時間とWorkerへのデータ受け渡しのコストについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-npm-blog-introducing-npm-ci-for-faster-more-reliable&quot;&gt;The npm Blog — Introducing `npm ci` for faster, more reliable...&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable&quot; title=&quot;The npm Blog — Introducing \`npm ci\` for faster, more reliable...&quot;&gt;blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;pacakge-lock.json&lt;/code&gt;から常にクリーンインストールする&lt;code&gt;npm ci&lt;/code&gt;について。 現在の存在する&lt;code&gt;node_modules&lt;/code&gt;ディレクトリを削除し、&lt;code&gt;pacakge-lock.json&lt;/code&gt;を元にインストールする。 キャッシュを使わないCI環境向けのインストールコマンド。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/mstssk/items/8759c71f328cab802670&quot; title=&quot;npm ciを使おう あるいはより速く - Qiita&quot;&gt;npm ciを使おう あるいはより速く - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;lighter-than-lightweight-how-we-built-the-same-app-twice-with-preact-and-glimmer-js-linkedin-engineering&quot;&gt;Lighter than Lightweight: How We Built the Same App Twice with Preact and Glimmer.js | LinkedIn Engineering&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://engineering.linkedin.com/blog/2018/03/how-we-built-the-same-app-twice-with-preact-and-glimmerjs&quot; title=&quot;Lighter than Lightweight: How We Built the Same App Twice with Preact and Glimmer.js | LinkedIn Engineering&quot;&gt;engineering.linkedin.com/blog/2018/03/how-we-built-the-same-app-twice-with-preact-and-glimmerjs&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;同じアプリをPreactとGlimmer.jsで実装し、ページロードに関するパフォーマンスの比較実験をした結果について。&lt;br&gt;
-ファイルサイズは重要であるが、ファイルサイズがすべてを決めるわけではないという点について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;andrew-r-frontend-case-studies-a-curated-list-of-technical-talks-and-articles-about-real-world-enterprise-frontend-development&quot;&gt;andrew--r/frontend-case-studies: 💼 A curated list of technical talks and articles about real-world enterprise frontend development&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/andrew--r/frontend-case-studies&quot; title=&quot;andrew--r/frontend-case-studies: 💼 A curated list of technical talks and articles about real-world enterprise frontend development&quot;&gt;github.com/andrew--r/frontend-case-studies&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;企業&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;まとめ&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;フロントエンドのケーススタディのまとめ。&lt;br&gt;
-色々な企業の事例が書かれている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;30-seconds-of-css&quot;&gt;30 Seconds of CSS&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://atomiks.github.io/30-seconds-of-css/&quot; title=&quot;30 Seconds of CSS&quot;&gt;atomiks.github.io/30-seconds-of-css/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSSのスニペットとその解説をまとめたもの。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;boxy-svg-editor&quot;&gt;Boxy SVG Editor&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://boxy-svg.com/&quot; title=&quot;Boxy SVG Editor&quot;&gt;boxy-svg.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;editor&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;software&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;SVGエディタアプリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;pshihn-workly-a-really-simple-way-to-move-a-stand-alone-function-class-to-a-web-worker&quot;&gt;pshihn/workly: A really simple way to move a stand-alone function/class to a web worker. 🏋️‍♀️→ 😄&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/pshihn/workly&quot; title=&quot;pshihn/workly: A really simple way to move a stand-alone function/class to a web worker. 🏋️‍♀️→ 😄&quot;&gt;github.com/pshihn/workly&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ProxyとWebWorkerを使い既存の関数やクラスをWorkerで処理するライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;midwayjs-pandora-a-manageable-measurable-and-traceable-node-js-application-manager-represented-by-alibaba-powered-by-typescript&quot;&gt;midwayjs/pandora: A Manageable, Measurable and Traceable Node.js Application Manager represented by Alibaba powered by TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/midwayjs/pandora&quot; title=&quot;midwayjs/pandora: A Manageable, Measurable and Traceable Node.js Application Manager represented by Alibaba powered by TypeScript&quot;&gt;github.com/midwayjs/pandora&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Alibaba製のNode.jsアプリケーションの管理ツール。&lt;br&gt;
-アプリケーションプロセスの管理、計測、監視、トラブルシューティングのためのデバッグの仕組みなどが持っている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;run&quot;&gt;Run&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://run.tools/&quot; title=&quot;Run&quot;&gt;run.tools/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js製のデプロイツール。&lt;br&gt;
-&amp;quot;Resource&amp;quot;という単位で設定を行い、S3へデプロイといったことを行える。&lt;br&gt;
-Resourceは自分で作成することができ、どのようなオプションを受け取るかやオプションを受け取って処理を記述できる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://run.tools/docs/reference/resources&quot; title=&quot;Resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;zipson-json-parse-and-stringify-with-compression&quot;&gt;zipson | JSON parse and stringify with compression&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jgranstrom.github.io/zipson/&quot; title=&quot;zipson | JSON parse and stringify with compression&quot;&gt;jgranstrom.github.io/zipson/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JSON&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;JSON.stringify&lt;/code&gt;/&lt;code&gt;JSON.parse&lt;/code&gt;の代替ライブラリ。&lt;br&gt;
-データの圧縮やStreamingのサポートを目的にしている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;rough-js&quot;&gt;Rough.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://roughjs.com/&quot; title=&quot;Rough.js&quot;&gt;roughjs.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;手書き風の線を描くCanvasライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 13 Mar 2018 10:26:18 +0900</pubDate>
-        <link>https://jser.info/2018/03/13/preactglimmer/</link>
-        <guid isPermaLink="true">https://jser.info/2018/03/13/preactglimmer/</guid>
-        
-        <category>MobX</category>
-        
-        <category>Preact</category>
-        
-        <category>glimmer</category>
         
         
         <category>JSer</category>
