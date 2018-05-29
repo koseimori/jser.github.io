@@ -1,0 +1,604 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2018-05-29のJS: React v16.4.0、Chrome 68の開発者ツール、自分で作るbundler - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2018/05/29/react-v16.4.0chrome-68bundler/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2018-05-29のJS: React v16.4.0、Chrome 68の開発者ツール、自分で作るbundler"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2018-05-29のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://reactjs.org/blog/2018/05/23/react-v-16-4.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React v16.4.0: Pointer Events - React Blog</amp-fit-text>
+            <p class="item-contents">React 16.4リリース。
+<code>getDerivedStateFromProps</code>のバグ修正、Pointer Eventsのサポート。
+試験的に<code>&lt;Profiler /&gt;</code>のサポート、また実験的実装だったReact Call Returnを削除など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React v16.4.0: Pointer Events - React Blog" href="https://reactjs.org/blog/2018/05/23/react-v-16-4.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jsdom/jsdom/blob/11.11.0/Changelog.md">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">jsdom/Changelog.md at 11.11.0 · jsdom/jsdom</amp-fit-text>
+            <p class="item-contents">jsdom 11.11.0リリース。
+<code>Node#getRootNode</code>メソッドの追加、<code>whatwg-url</code>のアップデートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jsdom/Changelog.md at 11.11.0 · jsdom/jsdom" href="https://github.com/jsdom/jsdom/blob/11.11.0/Changelog.md" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v10.2.0/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v10.2.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 10.2.0リリース。
+<code>assert.throws</code>の第2引数のバリデーションオブジェクトに正規表現を指定できるように。
+Core APIのモジュールがnamed exportされるようになりES moduleからはnamed importできるようになるなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v10.2.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v10.2.0/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://ecmascript-daily.github.io/ecmascript/2018/05/28/ecmascript-proposal-updates">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ECMAScript proposal updates at 2018-05 | ECMAScript Daily</amp-fit-text>
+            <p class="item-contents">2018年5月に行われたTC39ミーティング結果のECMAScript ProposalのStatus変更点まとめ。
+Optional <code>catch</code>、JSON supersetがStage 4となった。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ECMAScript proposal updates at 2018-05 | ECMAScript Daily" href="https://ecmascript-daily.github.io/ecmascript/2018/05/28/ecmascript-proposal-updates" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://prettier.io/blog/2018/05/27/1.13.0.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Prettier 1.13: Conquering the web! · Prettier</amp-fit-text>
+            <p class="item-contents">Prettier 1.13リリース。
+ブラウザで動作するように、TypeScritp 2.9のサポート。
+<code>JSON.stringify</code>スタイルのフォーマットをサポートし<code>pacakge.json</code>とnpm/yarnとの整形の互換性を向上など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Prettier 1.13: Conquering the web! · Prettier" href="https://prettier.io/blog/2018/05/27/1.13.0.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/webpack/webpack/releases/tag/v4.10.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v4.10.0 · webpack/webpack</amp-fit-text>
+            <p class="item-contents">webpack v4.10.0リリース。
+WebAssemblyのTree SHakingをサポート(Dead Code Eliminationは未実装)、wasmのruntimeのファイルサイズを軽量化など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v4.10.0 · webpack/webpack" href="https://github.com/webpack/webpack/releases/tag/v4.10.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://sbfl.net/blog/2018/05/26/javascript-streams-api/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScriptのStreams APIで細切れのデータを読み書きする</amp-fit-text>
+            <p class="item-contents">WHATWG Stream APIについて。
+Readable Stream、TransformStream、WritableStreamの使い方や繋げ方について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScriptのStreams APIで細切れのデータを読み書きする" href="https://sbfl.net/blog/2018/05/26/javascript-streams-api/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2018/05/devtools">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">What&#039;s New In DevTools (Chrome 68)  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">Chrome 68の開発者ツールの変更点について。
+Eaget Evaluation、補完の改善、Lighthouse 3.0への更新、&quot;Add property path watch&quot;の追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="What&#039;s New In DevTools (Chrome 68)  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2018/05/devtools" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://blog.nkzn.info/entry/2018/05/26/020312">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Web最新技術がてんこ盛りのreact-native-domから目が離せない - ナカザンドットネット</amp-fit-text>
+            <p class="item-contents">React Native DOMというReact NativeをWebにPortするライブラリについての解説。
+どのような仕組みでReact NativeのものをWebにPortしているかについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Web最新技術がてんこ盛りのreact-native-domから目が離せない - ナカザンドットネット" href="http://blog.nkzn.info/entry/2018/05/26/020312" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.lullabot.com/articles/drupal-javascript-initiative-the-road-to-a-modern-administration-ui">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Drupal JavaScript Initiative: The Road to a Modern Administration UI | Lullabot</amp-fit-text>
+            <p class="item-contents">DrupalはjQueryをコアに採用していたが、モダンなJavaScriptの仕組みを取り込むためにReactを採用することにした。
+この決定をするために管理画面のプロトタイプを作成し、どのようなことを学び、課題を見つけたかについて。またフォームの問題についてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Drupal JavaScript Initiative: The Road to a Modern Administration UI | Lullabot" href="https://www.lullabot.com/articles/drupal-javascript-initiative-the-road-to-a-modern-administration-ui" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://asnokaze.hatenablog.com/entry/2018/05/28/210830">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ブラウザのネットワークエラーをレポートさせるNetwork Error Loggingが来た - ASnoKaze blog</amp-fit-text>
+            <p class="item-contents">Chrome開発版で実装されたNetwork Error Loggingについて。
+ネットワークエラーが発生したときに指定したエンドポイントでレポートを送ることができる仕組み。
+DNSやTCP、TLSなどについてのエラーをクライアントから送信できる
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ブラウザのネットワークエラーをレポートさせるNetwork Error Loggingが来た - ASnoKaze blog" href="https://asnokaze.hatenablog.com/entry/2018/05/28/210830" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/playlist?list=PLCC436JpVnK3xH_ArpIjdkYDGwWNkVa73">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ReactEurope 2018 - Day 1 - YouTube - YouTube</amp-fit-text>
+            <p class="item-contents">ReactEurope 2018の動画まとめ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ReactEurope 2018 - Day 1 - YouTube - YouTube" href="https://www.youtube.com/playlist?list=PLCC436JpVnK3xH_ArpIjdkYDGwWNkVa73" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.slideshare.net/MasahikoJinno2/pwa-beginners-4-a2hsv2">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">PWA Beginners 勉強会 #4 A2HSのちょっと深い話v2</amp-fit-text>
+            <p class="item-contents">Add to HomeScreenについてのスライド。
+対応方法、App Install Bannersの制御やユースケースについて。
+またAndroid/Chromeでの動作とiOS/Safariでの動作の違いなどについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="PWA Beginners 勉強会 #4 A2HSのちょっと深い話v2" href="https://www.slideshare.net/MasahikoJinno2/pwa-beginners-4-a2hsv2" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/playlist?list=PLZ66c9_z3umNSrKSb5cmpxdXZcIPNvKGw">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Assert(js) Conf 2018 - YouTube - YouTube</amp-fit-text>
+            <p class="item-contents">Assert(JS)カンファレンスの動画まとめ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Assert(js) Conf 2018 - YouTube - YouTube" href="https://www.youtube.com/playlist?list=PLZ66c9_z3umNSrKSb5cmpxdXZcIPNvKGw" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://openameba.github.io/a11y-guidelines/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Ameba Accessibility Guidelines</amp-fit-text>
+            <p class="item-contents">Amebaのアクセシビリティガイドライン。
+項目ごとにWCAG 2.0との対応項目、悪い実装例、良い実装例が書かれている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Ameba Accessibility Guidelines" href="https://openameba.github.io/a11y-guidelines/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/popcodeorg/popcode">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">popcodeorg/popcode: An HTML/CSS/JavaScript editor for use in the classroom</amp-fit-text>
+            <p class="item-contents">JSFiddleのようなエディタ環境ウェブアプリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="popcodeorg/popcode: An HTML/CSS/JavaScript editor for use in the classroom" href="https://github.com/popcodeorg/popcode" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/GoogleChromeLabs/audioworklet-polyfill">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">GoogleChromeLabs/audioworklet-polyfill: 🔊 Polyfill AudioWorklet using the legacy ScriptProcessor API.</amp-fit-text>
+            <p class="item-contents">AudioWorkletのpolyfill
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="GoogleChromeLabs/audioworklet-polyfill: 🔊 Polyfill AudioWorklet using the legacy ScriptProcessor API." href="https://github.com/GoogleChromeLabs/audioworklet-polyfill" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://lusaxweb.github.io/vuesax/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Vuesax</amp-fit-text>
+            <p class="item-contents">VueコンポーネントのUIフレームワーク
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Vuesax" href="https://lusaxweb.github.io/vuesax/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://wiredjs.com/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Wired Elements</amp-fit-text>
+            <p class="item-contents">Web Componentsとして実装されている手書き風のUIコンポーネントライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Wired Elements" href="https://wiredjs.com/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/trekhleb/javascript-algorithms">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">trekhleb/javascript-algorithms: Algorithms and data structures implemented in JavaScript with explanations and links to further readings</amp-fit-text>
+            <p class="item-contents">JavaScriptで様々なデータ構造/探索アルゴリズムを実装しているリポジトリ。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="trekhleb/javascript-algorithms: Algorithms and data structures implemented in JavaScript with explanations and links to further readings" href="https://github.com/trekhleb/javascript-algorithms" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/vladocar/flexy">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">vladocar/flexy: Flexy is minimal CSS framework made with Flex</amp-fit-text>
+            <p class="item-contents">Flexboxを使った小さなレイアウトフレームワーク。
+カラムレイアウトをクラス名で指定できる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="vladocar/flexy: Flexy is minimal CSS framework made with Flex" href="https://github.com/vladocar/flexy" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/ronami/minipack">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ronami/minipack: 📦 A simplified example of a modern module bundler written in JavaScript</amp-fit-text>
+            <p class="item-contents">JavaScriptパーサを使った小さなbundlerの実装サンプル。
+どのようにbundlerを実装するかがコメント付きで紹介されている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ronami/minipack: 📦 A simplified example of a modern module bundler written in JavaScript" href="https://github.com/ronami/minipack" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/xtuc/webassemblyjs">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">xtuc/webassemblyjs: Toolchain for WebAssembly</amp-fit-text>
+            <p class="item-contents">WebAssemblyのAST Toolchain。 Parser、Traverser、Printer、AST編集のヘルパー、整形ツールなどを揃えたmonorepo
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="xtuc/webassemblyjs: Toolchain for WebAssembly" href="https://github.com/xtuc/webassemblyjs" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://efcl.info/2018/05/25/js-primer-offline/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">js-primer(JavaScript入門本)がオフラインで読めるようになりました | Web Scratch</amp-fit-text>
+            <p class="item-contents">js-primerがworkboxを使ってオフラインでも読めるようになった。 同じオフラインでもpdfやepubと違って内容が更新されれば、自動的に最新版を見られる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="js-primer(JavaScript入門本)がオフラインで読めるようになりました | Web Scratch" href="https://efcl.info/2018/05/25/js-primer-offline/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
