@@ -215,17 +215,17 @@
 
 <hr>
 
-<p><a href="https://github.com/alangpierce/sucrase">sucrase</a>というTypeScript、Flow、JSXと一部のES.nextの機能の変換に限定したTranspilerが公開されています。</p>
+<p><a href="https://github.com/alangpierce/sucrase">sucrase</a>というTypeScript、Flow、JSXと一部のES.nextの機能の変換に限定したTranspilerが公開されています。Babelとは異なりES2015+をES5へ変換するのではなく、ES2015+がそのまま実行できる環境向けにモジュールやTypeScript、Flow、JSXなどを高速にJavaScriptへ変換することが目的となっています。</p>
 
 <ul>
-<li>Online playground: <a href="https://sucrase.io/">Sucrase</a></li>
+<li>website: <a href="https://sucrase.io/">https://sucrase.io/</a></li>
 </ul>
 
 <p>Babelのパーサをforkしたものを利用していて、TypeScriptなども<a href="https://github.com/babel/babel/tree/master/packages/babel-preset-typescript">@babel/preset-typescript</a>のように型情報を外してJavaScriptに変換できます。<br>
 （型チェックはおこないません）</p>
 
 <p><a href="https://github.com/alangpierce/sucrase#motivation">Motivation</a>にも書かれているように、Babelとは異なりASTまでは生成せずtokenレベルでのコード変換を行います。<br>
-そのため、BabelのようなASTプラグインはサポートしていませんが、実行ステップが少なくなるため高速な変換を行えます。</p>
+そのため、BabelのようなASTプラグインはサポートしていませんが、変換ステップが少なくなるため高速な変換を行えます。</p>
 
 <ul>
 <li>Babel: Source -&gt; Token -&gt; AST -&gt; Transform -&gt; AST -&gt; Source</li>
