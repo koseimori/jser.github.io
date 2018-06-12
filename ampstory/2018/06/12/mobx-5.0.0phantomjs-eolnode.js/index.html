@@ -1,0 +1,521 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2018-06-12のJS: MobX 5.0.0、PhantomJS EOL、Node.jsにおける設計ミス - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2018/06/12/mobx-5.0.0phantomjs-eolnode.js/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2018-06-12のJS: MobX 5.0.0、PhantomJS EOL、Node.jsにおける設計ミス"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2018-06-12のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://webkit.org/blog/8327/safari-technology-preview-58-with-safari-12-features-is-now-available/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Safari Technology Preview 58, with Safari 12 Features, is Now Available | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview Release 58リリース。
+Safari 12相当の機能が含まれている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Safari Technology Preview 58, with Safari 12 Features, is Now Available | WebKit" href="https://webkit.org/blog/8327/safari-technology-preview-58-with-safari-12-features-is-now-available/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/npm/npm/releases/tag/v6.1.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v6.1.0 · npm/npm</amp-fit-text>
+            <p class="item-contents">npm 6.1.0リリース。
+<code>npm audit fix</code>の追加、<code>npm init &lt;pkg&gt;</code>がgit urlをサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v6.1.0 · npm/npm" href="https://github.com/npm/npm/releases/tag/v6.1.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.chromium.org/2018/06/chrome-68-beta-add-to-home-screen.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Chromium Blog: Chrome 68 Beta: add to home screen, payment handler, page lifecycle</amp-fit-text>
+            <p class="item-contents">Chroem 68βリリース。
+Payment Handler API、Page Lifecycle API、<code>customElements.upgrade()</code>、 Keyboard lock APIのサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chromium Blog: Chrome 68 Beta: add to home screen, payment handler, page lifecycle" href="https://blog.chromium.org/2018/06/chrome-68-beta-add-to-home-screen.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mobxjs/mobx/blob/master/CHANGELOG.md#500">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">mobx/CHANGELOG.md at master · mobxjs/mobx</amp-fit-text>
+            <p class="item-contents">MobX 5.0.0リリース。
+Observableに<code>Proxy</code>を利用するようになり、IEなどProxyがない環境は非サポートに。
+また、公開されるパッケージのコード自体もES2015となった。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="mobx/CHANGELOG.md at master · mobxjs/mobx" href="https://github.com/mobxjs/mobx/blob/master/CHANGELOG.md#500" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/infernojs/inferno/releases/tag/v5.1.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Inferno v5.1.0 · infernojs/inferno</amp-fit-text>
+            <p class="item-contents">Inferno v5.1.0 リリース。
+<code>Inferno-devtools</code>の書き直しなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Inferno v5.1.0 · infernojs/inferno" href="https://github.com/infernojs/inferno/releases/tag/v5.1.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://yarnpkg.com/blog/2018/06/04/yarn-import-package-lock/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Yarn import now uses package-lock.json | Yarn Blog</amp-fit-text>
+            <p class="item-contents">yarn 1.7.0で<code>package-lock.json</code>を<code>yarn.lock</code>としてimportできるようになった。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Yarn import now uses package-lock.json | Yarn Blog" href="https://yarnpkg.com/blog/2018/06/04/yarn-import-package-lock/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">You Probably Don&#039;t Need Derived State - React Blog</amp-fit-text>
+            <p class="item-contents">React 16.3で導入された<code>getDerivedStateFromProps</code>のケーススタディ。
+<code>getDerivedStateFromProps</code>はpropsの変化を元にstateを更新するために利用する。どのような時に利用するべきか、しないべきかについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="You Probably Don&#039;t Need Derived State - React Blog" href="https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://texta.pixta.jp/entry/2018/06/07/120000">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Flow から TypeScript に移行しました - てくすた</amp-fit-text>
+            <p class="item-contents">FlowからTypeScriptへの移行について。
+移行の理由、移行の手順やツールの組み合わせについてなどについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Flow から TypeScript に移行しました - てくすた" href="http://texta.pixta.jp/entry/2018/06/07/120000" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Assessing Loading Performance in Real Life with Navigation and Resource Timing  |  Web Fundamentals  |  Google Developers</amp-fit-text>
+            <p class="item-contents">Navigation TimingとResource Timingについて。
+それぞれのAPIの使い方や取得できるデータの意味、クロスオリジンのリソースの<code>Timing-Allow-Origin</code>ヘッダによる対応。
+またRUMのデータとして集める場合のデータの送信方法として<code>navigation.sendBeacon</code>の使い方やfailbackについてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Assessing Loading Performance in Real Life with Navigation and Resource Timing  |  Web Fundamentals  |  Google Developers" href="https://developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://glitter-style.jp/labo/web-resource/master-the-pjax/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">これからpjaxを使う人に知っておいてほしいこと – Design Report – デザインレポート</amp-fit-text>
+            <p class="item-contents">pjaxについての連載記事。
+pjaxの動作原理や利点、代表的な実装方法、利用する際の注意点、イベント管理、メモリリークの問題など、設計について書かれている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="これからpjaxを使う人に知っておいてほしいこと – Design Report – デザインレポート" href="https://glitter-style.jp/labo/web-resource/master-the-pjax/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://efcl.info/2018/06/11/almin-0.17/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Almin 0.17リリース – executeの型付け、新しいReact Contextのサポート | Web Scratch</amp-fit-text>
+            <p class="item-contents">Almin 0.17リリース。
+TypeScriptで<code>execute</code>の引数の型チェックができるように、React Context APIを使ったモジュールの公開、ファイルサイズの削減など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Almin 0.17リリース – executeの型付け、新しいReact Contextのサポート | Web Scratch" href="https://efcl.info/2018/06/11/almin-0.17/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://moox.io/blog/deprecating-cssnext/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Deprecating cssnext</amp-fit-text>
+            <p class="item-contents"><code>cssnext</code>がdeprecatedとなり、<code>postcss-preset-env</code>の利用が推奨されるようになった。
+マイグレーション方法や違いについてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Deprecating cssnext" href="https://moox.io/blog/deprecating-cssnext/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.kabuku.co.jp/developers/tree-shaking-in-2018">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">2018 年の tree shaking | 株式会社カブク</amp-fit-text>
+            <p class="item-contents">Tree Shakingと呼ばれるビルドの最適化がどのように行われるかについて。 webpackにおいてES modulesで書いてもTree Shankingされない場合について。 またRxJsでの例など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="2018 年の tree shaking | 株式会社カブク" href="https://www.kabuku.co.jp/developers/tree-shaking-in-2018" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://jser.info/2018/06/11/phantomjs-ended/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">PhantomJSの開発が終了しリポジトリがアーカイブ化された - JSer.info</amp-fit-text>
+            <p class="item-contents">PhantomJSのリポジトリがArchieved(read-only)になり正式に開発が終了となった。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="PhantomJSの開発が終了しリポジトリがアーカイブ化された - JSer.info" href="https://jser.info/2018/06/11/phantomjs-ended/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/watch?v=M3BM9TB-8yA&amp;feature=youtu.be">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018 - YouTube</amp-fit-text>
+            <p class="item-contents">Node.jsの作成者であるryによるNode.js初期のデザインミスついての発表。
+またTypeScriptのruntimeとして作成してるDenoの紹介。
+Denoのゴールはsandbox firstのセキュリティ、モジュールシステムの簡素化、ブラウザとの互換性など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018 - YouTube" href="https://www.youtube.com/watch?v=M3BM9TB-8yA&amp;feature=youtu.be" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/playlist?list=PL37ZVnwpeshG2YXJkun_lyNTtM-Qb3MKa">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JSConf EU 2018 - YouTube - YouTube</amp-fit-text>
+            <p class="item-contents">JSConf EU 2018の動画まとめ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JSConf EU 2018 - YouTube - YouTube" href="https://www.youtube.com/playlist?list=PL37ZVnwpeshG2YXJkun_lyNTtM-Qb3MKa" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/WaldoJeffers/conductor">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">WaldoJeffers/conductor: Mix both synchronous and asynchronous code without hassle</amp-fit-text>
+            <p class="item-contents">syncとasyncな処理を同様のコードフローで扱うためのUtilityライブラリ。
+map、componse、pluckなど LodashやRamdaによく似たAPIを持つライブラリ。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WaldoJeffers/conductor: Mix both synchronous and asynchronous code without hassle" href="https://github.com/WaldoJeffers/conductor" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/garris/BackstopJS">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">garris/BackstopJS: Catch CSS curve balls.</amp-fit-text>
+            <p class="item-contents">CSSのリグレッションテストツール。
+ヘッドレスブラウザでレンダリングして、描画結果の違いをテストできる
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="garris/BackstopJS: Catch CSS curve balls." href="https://github.com/garris/BackstopJS" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://chrisnoring.gitbooks.io/react/content/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Introduction · React</amp-fit-text>
+            <p class="item-contents">ReaactやRedux、MobXなどについての電子書籍
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introduction · React" href="https://chrisnoring.gitbooks.io/react/content/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://graphql.guide/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">The GraphQL Guide</amp-fit-text>
+            <p class="item-contents">GraphQLについての書籍
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The GraphQL Guide" href="https://graphql.guide/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

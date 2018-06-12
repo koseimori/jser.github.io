@@ -5,9 +5,320 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 12 Jun 2018 10:23:36 +0900</pubDate>
-    <lastBuildDate>Tue, 12 Jun 2018 10:23:36 +0900</lastBuildDate>
+    <pubDate>Tue, 12 Jun 2018 10:33:12 +0900</pubDate>
+    <lastBuildDate>Tue, 12 Jun 2018 10:33:12 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2018-06-12のJS: MobX 5.0.0、PhantomJS EOL、Node.jsにおける設計ミス</title>
+        <description>&lt;p&gt;JSer.info #387 - ステート管理ライブラリのMobX 5.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mobxjs/mobx/blob/master/CHANGELOG.md#500&quot;&gt;mobx/CHANGELOG.md at master · mobxjs/mobx&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;MobX 5.0.0ではObservableの実装にデフォルトでES &lt;code&gt;Proxy&lt;/code&gt;が利用されるようになりました。&lt;br&gt;
+これによりgetterではできなかった、宣言時になかったプロパティを動的に追加した場合も検知できるようになっています。&lt;br&gt;
+詳しくは次の記事でも解説されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://lealog.hateblo.jp/entry/2018/06/08/105219&quot;&gt;MobX 5.0.0 について - console.lealog();&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また&lt;code&gt;Proxy&lt;/code&gt;をサポートしてないブラウザ(IE)はサポート対象外となり、npmで配布されるパッケージもES2015のコードベースで配布されるようになっています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Proxy&quot;&gt;Proxy - JavaScript | MDN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;IEなどでも利用したい場合は&lt;a href=&quot;https://medium.com/@mweststrate/mobx-4-better-simpler-faster-smaller-c1fbc08008da&quot;&gt;MobX 4&lt;/a&gt;を利用することが推奨されています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;QtWebKitベースのヘッドレスブラウザである&lt;a href=&quot;http://phantomjs.org/&quot;&gt;PhantomJS&lt;/a&gt;のリポジトリがアーカイブ化されました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ariya/phantomjs&quot;&gt;&lt;img src=&quot;https://jser.info/uploads/media/2018/06/11-1528724137.png&quot; alt=&quot;ariya/phantomjs&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ariya/phantomjs&quot;&gt;ariya/phantomjs: Scriptable Headless Browser&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ariya/phantomjs/issues/15344&quot;&gt;Archiving the project: suspending the development · Issue #15344 · ariya/phantomjs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Securityリリースの予定なども特にないことから事実上のEOL(End Of Life)になっています。&lt;/p&gt;
+
+&lt;p&gt;次の記事で詳細を書いています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jser.info/2018/06/11/phantomjs-ended/&quot;&gt;PhantomJSの開発が終了しリポジトリがアーカイブ化された - JSer.info&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=M3BM9TB-8yA&amp;feature=youtu.be&quot;&gt;10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018 - YouTube&lt;/a&gt;という発表ではNode.jsのオリジナルの作者である&lt;a href=&quot;https://github.com/ry&quot;&gt;@ry (Ryan Dahl)&lt;/a&gt;によるNode.js初期におけるデザインミスついての発表がされています。&lt;br&gt;
+また現在開発中のTypeScriptのruntimeとして作成してる&lt;a href=&quot;https://github.com/ry/deno&quot;&gt;eno&lt;br&gt;
+&lt;/a&gt;の紹介も行われています。&lt;br&gt;
+Denoのゴールはsandbox firstのセキュリティ、モジュールシステムの簡素化、ブラウザとの互換性などがあげられています。&lt;/p&gt;
+
+&lt;p&gt;次の記事で補足も合わせた抜粋訳が公開されているので見てみるといいかもしれません。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://yosuke-furukawa.hatenablog.com/entry/2018/06/07/080335&quot;&gt;Node.js における設計ミス By Ryan Dahl - from scratch&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;safari-technology-preview-58-with-safari-12-features-is-now-available-webkit&quot;&gt;Safari Technology Preview 58, with Safari 12 Features, is Now Available | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8327/safari-technology-preview-58-with-safari-12-features-is-now-available/&quot; title=&quot;Safari Technology Preview 58, with Safari 12 Features, is Now Available | WebKit&quot;&gt;webkit.org/blog/8327/safari-technology-preview-58-with-safari-12-features-is-now-available/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview Release 58リリース。&lt;br&gt;
+Safari 12相当の機能が含まれている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/safari/whats-new/&quot; title=&quot;What’s New in Safari - Apple Developer&quot;&gt;What’s New in Safari - Apple Developer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v6-1-0-npm-npm&quot;&gt;Release v6.1.0 · npm/npm&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/npm/npm/releases/tag/v6.1.0&quot; title=&quot;Release v6.1.0 · npm/npm&quot;&gt;github.com/npm/npm/releases/tag/v6.1.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm 6.1.0リリース。&lt;br&gt;
+&lt;code&gt;npm audit fix&lt;/code&gt;の追加、&lt;code&gt;npm init &amp;lt;pkg&amp;gt;&lt;/code&gt;がgit urlをサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;chromium-blog-chrome-68-beta-add-to-home-screen-payment-handler-page-lifecycle&quot;&gt;Chromium Blog: Chrome 68 Beta: add to home screen, payment handler, page lifecycle&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.chromium.org/2018/06/chrome-68-beta-add-to-home-screen.html&quot; title=&quot;Chromium Blog: Chrome 68 Beta: add to home screen, payment handler, page lifecycle&quot;&gt;blog.chromium.org/2018/06/chrome-68-beta-add-to-home-screen.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chroem 68βリリース。&lt;br&gt;
+Payment Handler API、Page Lifecycle API、&lt;code&gt;customElements.upgrade()&lt;/code&gt;、 Keyboard lock APIのサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;mobx-changelog-md-at-master-mobxjs-mobx&quot;&gt;mobx/CHANGELOG.md at master · mobxjs/mobx&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/mobxjs/mobx/blob/master/CHANGELOG.md#500&quot; title=&quot;mobx/CHANGELOG.md at master · mobxjs/mobx&quot;&gt;github.com/mobxjs/mobx/blob/master/CHANGELOG.md#500&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;MobX 5.0.0リリース。&lt;br&gt;
+Observableに&lt;code&gt;Proxy&lt;/code&gt;を利用するようになり、IEなどProxyがない環境は非サポートに。&lt;br&gt;
+また、公開されるパッケージのコード自体もES2015となった。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-inferno-v5-1-0-infernojs-inferno&quot;&gt;Release Inferno v5.1.0 · infernojs/inferno&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/infernojs/inferno/releases/tag/v5.1.0&quot; title=&quot;Release Inferno v5.1.0 · infernojs/inferno&quot;&gt;github.com/infernojs/inferno/releases/tag/v5.1.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Inferno v5.1.0 リリース。&lt;br&gt;
+&lt;code&gt;Inferno-devtools&lt;/code&gt;の書き直しなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;yarn-import-now-uses-package-lock-json-yarn-blog&quot;&gt;Yarn import now uses package-lock.json | Yarn Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://yarnpkg.com/blog/2018/06/04/yarn-import-package-lock/&quot; title=&quot;Yarn import now uses package-lock.json | Yarn Blog&quot;&gt;yarnpkg.com/blog/2018/06/04/yarn-import-package-lock/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;yarn 1.7.0で&lt;code&gt;package-lock.json&lt;/code&gt;を&lt;code&gt;yarn.lock&lt;/code&gt;としてimportできるようになった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/yarn/issues/5654&quot; title=&quot;Competing lockfiles create poor UX · Issue #5654 · yarnpkg/yarn&quot;&gt;Competing lockfiles create poor UX · Issue #5654 · yarnpkg/yarn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;you-probably-dont-need-derived-state-react-blog&quot;&gt;You Probably Don&amp;#39;t Need Derived State - React Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html&quot; title=&quot;You Probably Don&amp;#39;t Need Derived State - React Blog&quot;&gt;reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React 16.3で導入された&lt;code&gt;getDerivedStateFromProps&lt;/code&gt;のケーススタディ。&lt;br&gt;
+&lt;code&gt;getDerivedStateFromProps&lt;/code&gt;はpropsの変化を元にstateを更新するために利用する。どのような時に利用するべきか、しないべきかについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;flow-typescript&quot;&gt;Flow から TypeScript に移行しました - てくすた&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://texta.pixta.jp/entry/2018/06/07/120000&quot; title=&quot;Flow から TypeScript に移行しました - てくすた&quot;&gt;texta.pixta.jp/entry/2018/06/07/120000&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;FlowからTypeScriptへの移行について。&lt;br&gt;
+移行の理由、移行の手順やツールの組み合わせについてなどについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;assessing-loading-performance-in-real-life-with-navigation-and-resource-timing-web-fundamentals-google-developers&quot;&gt;Assessing Loading Performance in Real Life with Navigation and Resource Timing  |  Web Fundamentals  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/&quot; title=&quot;Assessing Loading Performance in Real Life with Navigation and Resource Timing  |  Web Fundamentals  |  Google Developers&quot;&gt;developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Navigation TimingとResource Timingについて。&lt;br&gt;
+それぞれのAPIの使い方や取得できるデータの意味、クロスオリジンのリソースの&lt;code&gt;Timing-Allow-Origin&lt;/code&gt;ヘッダによる対応。&lt;br&gt;
+またRUMのデータとして集める場合のデータの送信方法として&lt;code&gt;navigation.sendBeacon&lt;/code&gt;の使い方やfailbackについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;pjax-design-report&quot;&gt;これからpjaxを使う人に知っておいてほしいこと – Design Report – デザインレポート&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://glitter-style.jp/labo/web-resource/master-the-pjax/&quot; title=&quot;これからpjaxを使う人に知っておいてほしいこと – Design Report – デザインレポート&quot;&gt;glitter-style.jp/labo/web-resource/master-the-pjax/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ajax&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;pjaxについての連載記事。&lt;br&gt;
+pjaxの動作原理や利点、代表的な実装方法、利用する際の注意点、イベント管理、メモリリークの問題など、設計について書かれている&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;almin-0-17-execute-react-context-web-scratch&quot;&gt;Almin 0.17リリース – executeの型付け、新しいReact Contextのサポート | Web Scratch&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://efcl.info/2018/06/11/almin-0.17/&quot; title=&quot;Almin 0.17リリース – executeの型付け、新しいReact Contextのサポート | Web Scratch&quot;&gt;efcl.info/2018/06/11/almin-0.17/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;almin&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Almin 0.17リリース。&lt;br&gt;
+TypeScriptで&lt;code&gt;execute&lt;/code&gt;の引数の型チェックができるように、React Context APIを使ったモジュールの公開、ファイルサイズの削減など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;deprecating-cssnext&quot;&gt;Deprecating cssnext&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://moox.io/blog/deprecating-cssnext/&quot; title=&quot;Deprecating cssnext&quot;&gt;moox.io/blog/deprecating-cssnext/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;PostCSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;cssnext&lt;/code&gt;がdeprecatedとなり、&lt;code&gt;postcss-preset-env&lt;/code&gt;の利用が推奨されるようになった。&lt;br&gt;
+マイグレーション方法や違いについてなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://preset-env.cssdb.org/&quot; title=&quot;postcss-preset-env&quot;&gt;postcss-preset-env&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/csstools/postcss-preset-env/issues/32&quot; title=&quot;A notice to cssnext users · Issue #32 · csstools/postcss-preset-env&quot;&gt;A notice to cssnext users · Issue #32 · csstools/postcss-preset-env&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;2018-tree-shaking&quot;&gt;2018 年の tree shaking | 株式会社カブク&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.kabuku.co.jp/developers/tree-shaking-in-2018&quot; title=&quot;2018 年の tree shaking | 株式会社カブク&quot;&gt;www.kabuku.co.jp/developers/tree-shaking-in-2018&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Tree Shakingと呼ばれるビルドの最適化がどのように行われるかについて。 webpackにおいてES modulesで書いてもTree Shankingされない場合について。 またRxJsでの例など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;phantomjs-jser-info&quot;&gt;PhantomJSの開発が終了しリポジトリがアーカイブ化された - JSer.info&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jser.info/2018/06/11/phantomjs-ended/&quot; title=&quot;PhantomJSの開発が終了しリポジトリがアーカイブ化された - JSer.info&quot;&gt;jser.info/2018/06/11/phantomjs-ended/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;PhantomJSのリポジトリがArchieved(read-only)になり正式に開発が終了となった。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;10-things-i-regret-about-node-js-ryan-dahl-jsconf-eu-2018-youtube&quot;&gt;10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018 - YouTube&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=M3BM9TB-8yA&amp;feature=youtu.be&quot; title=&quot;10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018 - YouTube&quot;&gt;www.youtube.com/watch?v&amp;#x3D;M3BM9TB-8yA&amp;amp;feature&amp;#x3D;youtu.be&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsの作成者であるryによるNode.js初期のデザインミスついての発表。&lt;br&gt;
+またTypeScriptのruntimeとして作成してるDenoの紹介。&lt;br&gt;
+Denoのゴールはsandbox firstのセキュリティ、モジュールシステムの簡素化、ブラウザとの互換性など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://yosuke-furukawa.hatenablog.com/entry/2018/06/07/080335&quot; title=&quot;Node.js における設計ミス By Ryan Dahl - from scratch&quot;&gt;Node.js における設計ミス By Ryan Dahl - from scratch&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jsconf-eu-2018-youtube-youtube&quot;&gt;JSConf EU 2018 - YouTube - YouTube&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PL37ZVnwpeshG2YXJkun_lyNTtM-Qb3MKa&quot; title=&quot;JSConf EU 2018 - YouTube - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PL37ZVnwpeshG2YXJkun_lyNTtM-Qb3MKa&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;イベント&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JSConf EU 2018の動画まとめ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;waldojeffers-conductor-mix-both-synchronous-and-asynchronous-code-without-hassle&quot;&gt;WaldoJeffers/conductor: Mix both synchronous and asynchronous code without hassle&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/WaldoJeffers/conductor&quot; title=&quot;WaldoJeffers/conductor: Mix both synchronous and asynchronous code without hassle&quot;&gt;github.com/WaldoJeffers/conductor&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;syncとasyncな処理を同様のコードフローで扱うためのUtilityライブラリ。&lt;br&gt;
+map、componse、pluckなど LodashやRamdaによく似たAPIを持つライブラリ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@achille.urbain/why-im-building-conductor-fa780da821cd&quot; title=&quot;Why I’m building Conductor – Achille Urbain – Medium&quot;&gt;Why I’m building Conductor – Achille Urbain – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;garris-backstopjs-catch-css-curve-balls&quot;&gt;garris/BackstopJS: Catch CSS curve balls.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/garris/BackstopJS&quot; title=&quot;garris/BackstopJS: Catch CSS curve balls.&quot;&gt;github.com/garris/BackstopJS&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSSのリグレッションテストツール。&lt;br&gt;
+ヘッドレスブラウザでレンダリングして、描画結果の違いをテストできる&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introduction-react&quot;&gt;Introduction · React&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://chrisnoring.gitbooks.io/react/content/&quot; title=&quot;Introduction · React&quot;&gt;chrisnoring.gitbooks.io/react/content/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ReaactやRedux、MobXなどについての電子書籍&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-graphql-guide&quot;&gt;The GraphQL Guide&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://graphql.guide/&quot; title=&quot;The GraphQL Guide&quot;&gt;graphql.guide/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;GraphQLについての書籍&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 12 Jun 2018 10:00:43 +0900</pubDate>
+        <link>https://jser.info/2018/06/12/mobx-5.0.0phantomjs-eolnode.js/</link>
+        <guid isPermaLink="true">https://jser.info/2018/06/12/mobx-5.0.0phantomjs-eolnode.js/</guid>
+        
+        <category>mobx</category>
+        
+        <category>phantomjs</category>
+        
+        <category>Node.js</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>PhantomJSの開発が終了しリポジトリがアーカイブ化された</title>
@@ -2421,248 +2732,6 @@ Immutableなデータとして通貨と金額を扱い、また浮動小数点�
         <category>Chrome</category>
         
         <category>DevTools</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-04-10のJS: PWA on iOS &amp; Windows Store、dom-testing-library</title>
-        <description>&lt;p&gt;JSer.info #378 - &lt;a href=&quot;https://medium.com/@firt/progressive-web-apps-on-ios-are-here-d00430dee3a7&quot;&gt;Progressive Web Apps on iOS are here 🚀 – Maximiliano Firtman – Medium&lt;/a&gt;という記事では、iOS 11.3/Safari 11.1でサポートされたService Workerなどいわゆる&lt;a href=&quot;https://developers.google.com/web/progressive-web-apps/&quot;&gt;Progressive Web Apps &lt;/a&gt;(PWA)の対応について書かれています。&lt;/p&gt;
-
-&lt;p&gt;ホームスクリーンアプリとしての動作や&lt;a href=&quot;https://developer.apple.com/safari/technology-preview/&quot;&gt;Safari Technology Preview&lt;/a&gt;を使ったService Workerのデバッグ方法について紹介しています。加えて、iOSのネイティブアプリと違いやAndroid/ChromeのPWAとの違いなどについても書かれています。&lt;/p&gt;
-
-&lt;p&gt;また&lt;a href=&quot;https://www.windowscentral.com/first-batch-windows-10-progressive-web-apps-here&quot;&gt;First Windows 10 Progressive Web Apps (PWA) published by Microsoft hit the Store | Windows Central&lt;/a&gt;という記事では、Windows 10 Spring Creators Update(Windows 10 build 1803)のプレビュー版のWindows StoreにPWAなアプリケーションが掲載されるようになったことが書かれています。&lt;/p&gt;
-
-&lt;p&gt;Windows StoreでのPWAについては次の記事で解説されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2018/02/06/welcoming-progressive-web-apps-edge-windows-10/#0eVsoxrHYlso6vcS.97&quot;&gt;Welcoming Progressive Web Apps to Microsoft Edge and Windows 10 - Microsoft Edge Dev BlogMicrosoft Edge Dev Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/kentcdodds/dom-testing-library&quot;&gt;kentcdodds/dom-testing-library: 🐙 Simple and complete DOM testing utilities that encourage good testing practices.&lt;/a&gt;というDOM要素をテストするためのライブラリが公開されています。&lt;br&gt;
-テストの際によく利用するテキストを含む要素を選択する&lt;code&gt;getByText&lt;/code&gt;関数や&lt;code&gt;data-testid&lt;/code&gt;属性を元に要素を選択する&lt;code&gt;getByTestId&lt;/code&gt;関数などを提供するライブラリとなっています。&lt;/p&gt;
-
-&lt;p&gt;著名なViewライブラリ向けのバインディングも用意されていて&lt;a href=&quot;https://github.com/kentcdodds/react-testing-library&quot;&gt;react-testing-library&lt;br&gt;
-&lt;/a&gt;、&lt;a href=&quot;https://github.com/dfcook/vue-testing-library&quot;&gt;vue-testing-library&lt;br&gt;
-&lt;/a&gt;などがあります。&lt;/p&gt;
-
-&lt;p&gt;詳しくは作者により次の記事で解説されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.kentcdodds.com/introducing-the-react-testing-library-e3a274307e65&quot;&gt;Introducing the react-testing-library 🐐 – kentcdodds&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;axe-3-0-has-arrived-here-s-what-you-need-to-know-deque&quot;&gt;Axe 3.0 has arrived — here’s what you need to know - Deque&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.deque.com/blog/axe-3-0-has-arrived/&quot; title=&quot;Axe 3.0 has arrived — here’s what you need to know - Deque&quot;&gt;www.deque.com/blog/axe-3-0-has-arrived/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Axe 3.0リリース。&lt;br&gt;
-Shadow DOMのサポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/dequelabs/axe-core/releases/tag/v3.0.0&quot; title=&quot;Release 3.0.0 · dequelabs/axe-core&quot;&gt;Release 3.0.0 · dequelabs/axe-core&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;first-windows-10-progressive-web-apps-pwa-published-by-microsoft-hit-the-store-windows-central&quot;&gt;First Windows 10 Progressive Web Apps (PWA) published by Microsoft hit the Store | Windows Central&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.windowscentral.com/first-batch-windows-10-progressive-web-apps-here&quot; title=&quot;First Windows 10 Progressive Web Apps (PWA) published by Microsoft hit the Store | Windows Central&quot;&gt;www.windowscentral.com/first-batch-windows-10-progressive-web-apps-here&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Microsoft StoreにPWAアプリが公開されるようになった&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;sails-changelog-md-at-v1-0-0-balderdashy-sails&quot;&gt;sails/CHANGELOG.md at v1.0.0 · balderdashy/sails&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/balderdashy/sails/blob/v1.0.0/CHANGELOG.md&quot; title=&quot;sails/CHANGELOG.md at v1.0.0 · balderdashy/sails&quot;&gt;github.com/balderdashy/sails/blob/v1.0.0/CHANGELOG.md&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsのウェブアプリケーションフレームワークであるSails.js 1.0リリース。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-v16-3-changes-blog-koba04-com&quot;&gt;React v16.3 changes - blog.koba04.com&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.koba04.com/post/2018/04/04/react-v163-changes/&quot; title=&quot;React v16.3 changes - blog.koba04.com&quot;&gt;blog.koba04.com/post/2018/04/04/react-v163-changes/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React 16.3の変更点について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;lazy-loading-images-and-video-web-fundamentals-google-developers&quot;&gt;Lazy Loading Images and Video  |  Web Fundamentals  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/&quot; title=&quot;Lazy Loading Images and Video  |  Web Fundamentals  |  Google Developers&quot;&gt;developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;画像や動画の遅延ロードについて。&lt;br&gt;
-画像の遅延ロードとしてIntersection Observerを使った方法、CSSを使った方法について。&lt;br&gt;
-動画とGIFのロード、遅延ロードを補助するライブラリ、ロードに失敗した時のFallbackなどについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;headless-chrome-an-answer-to-server-side-rendering-js-sites-tools-for-web-developers-google-developers&quot;&gt;Headless Chrome: an answer to server-side rendering JS sites  |  Tools for Web Developers  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/tools/puppeteer/articles/ssr&quot; title=&quot;Headless Chrome: an answer to server-side rendering JS sites  |  Tools for Web Developers  |  Google Developers&quot;&gt;developers.google.com/web/tools/puppeteer/articles/ssr&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Headless Chromeを使ったサーバーサイドレンダリングについてのチュートリアル。&lt;br&gt;
-どのように実装するか、最適化について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;godaddy-open-source-center-isomorphic-asset-system-for-react-and-react-native&quot;&gt;GoDaddy Open Source Center - Isomorphic Asset System for React and React-Native&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://godaddy.github.io/2018/04/04/isomorphic-asset-system-for-react-and-react-native/&quot; title=&quot;GoDaddy Open Source Center - Isomorphic Asset System for React and React-Native&quot;&gt;godaddy.github.io/2018/04/04/isomorphic-asset-system-for-react-and-react-native/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;SVGのアセットを管理するツール、React/React Nativeコンポーネント、webpack loaderなどについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;strategies-for-service-worker-caching-for-progressive-web-apps&quot;&gt;Strategies for Service Worker Caching for Progressive Web Apps&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.hasura.io/strategies-for-service-worker-caching-d66f3c828433&quot; title=&quot;Strategies for Service Worker Caching for Progressive Web Apps&quot;&gt;blog.hasura.io/strategies-for-service-worker-caching-d66f3c828433&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Service Workerのキャッシュの仕組みとキャッシュの問題があるケースについて。&lt;br&gt;
-壊れたデプロイを行った時の問題、&lt;code&gt;service-worker.js&lt;/code&gt;ファイル自体をキャッシュした時の問題、キャッシュすべきでないレスポンスなどについて。&lt;br&gt;
-また&lt;code&gt;create-react-app&lt;/code&gt;の事例や&lt;code&gt;Clear-Site-Data&lt;/code&gt;ヘッダについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;progressive-web-apps-on-ios-are-here-maximiliano-firtman-medium&quot;&gt;Progressive Web Apps on iOS are here 🚀 – Maximiliano Firtman – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@firt/progressive-web-apps-on-ios-are-here-d00430dee3a7&quot; title=&quot;Progressive Web Apps on iOS are here 🚀 – Maximiliano Firtman – Medium&quot;&gt;medium.com/@firt/progressive-web-apps-on-ios-are-here-d00430dee3a7&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ios&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;iOS 11.3でサポートされたService WorkerなどのPWAに関する機能について。&lt;br&gt;
-ネイティブアプリと比較した場合の制限やChrome/Androidとの違いなどについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;transform-your-codebase-using-codemods-nec-is&quot;&gt;Transform your codebase using codemods | nec.is&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nec.is/writing/transform-your-codebase-using-codemods/&quot; title=&quot;Transform your codebase using codemods | nec.is&quot;&gt;nec.is/writing/transform-your-codebase-using-codemods/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;AST&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;jscodeshiftを使ったJavaScriptのコード変換についての記事。&lt;br&gt;
-どのようにJavaScriptのコードを扱うのか、ASTについて、jscodeshiftのAPIについて紹介している&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introducing-the-payment-request-api-for-apple-pay-webkit&quot;&gt;Introducing the Payment Request API for Apple Pay | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8182/introducing-the-payment-request-api-for-apple-pay/&quot; title=&quot;Introducing the Payment Request API for Apple Pay | WebKit&quot;&gt;webkit.org/blog/8182/introducing-the-payment-request-api-for-apple-pay/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari 11.1のPayment Request APIでApple Payを利用する方法についての解説記事。&lt;br&gt;
-&lt;code&gt;-webkit-appearance: -apple-pay-button;&amp;quot;&lt;/code&gt;のスタイルを指定するだけでAppley Payボタンを表示できる。&lt;br&gt;
-またPayment Request APIの使い方について。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;understanding-javascript-proxies-by-examining-on-change-library&quot;&gt;Understanding JavaScript Proxies by Examining on-change Library&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://codeburst.io/understanding-javascript-proxies-by-examining-on-change-library-f252eddf76c2&quot; title=&quot;Understanding JavaScript Proxies by Examining on-change Library&quot;&gt;codeburst.io/understanding-javascript-proxies-by-examining-on-change-library-f252eddf76c2&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proxy&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;プロパティの変更検知をES Proxyで実装しながら、Proxyについて紹介している記事&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;browser-automated-tests-speaker-deck&quot;&gt;Browser Automated Tests // Speaker Deck&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/derekb/browser-automated-tests&quot; title=&quot;Browser Automated Tests // Speaker Deck&quot;&gt;speakerdeck.com/derekb/browser-automated-tests&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;puppeteerとmochaを使った自動テストについてのスライド。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-lifecycle-methods-diagram&quot;&gt;React lifecycle methods diagram&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/&quot; title=&quot;React lifecycle methods diagram&quot;&gt;projects.wojtekmaj.pl/react-lifecycle-methods-diagram/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React 16.3以降を含むReactのライフサイクルの図&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;kentcdodds-dom-testing-library-simple-and-complete-dom-testing-utilities-that-encourage-good-testing-practices&quot;&gt;kentcdodds/dom-testing-library: 🐙 Simple and complete DOM testing utilities that encourage good testing practices.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/kentcdodds/dom-testing-library&quot; title=&quot;kentcdodds/dom-testing-library: 🐙 Simple and complete DOM testing utilities that encourage good testing practices.&quot;&gt;github.com/kentcdodds/dom-testing-library&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;DOM要素をテストするMatcherライブラリ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.kentcdodds.com/introducing-the-react-testing-library-e3a274307e65&quot; title=&quot;Introducing the react-testing-library 🐐 – kentcdodds&quot;&gt;Introducing the react-testing-library 🐐 – kentcdodds&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;kwolfy-webworker-promise-promise-based-wrapper-for-webworkers&quot;&gt;kwolfy/webworker-promise: Promise based wrapper for webworkers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/kwolfy/webworker-promise&quot; title=&quot;kwolfy/webworker-promise: Promise based wrapper for webworkers&quot;&gt;github.com/kwolfy/webworker-promise&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebWorkerを扱うライブラリ。&lt;br&gt;
-EventEmitterライクなイベントの仕組みとPromiseを使った非同期処理、Worker poolの仕組みなどを持っている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;avwo-whistle-http-https-websocket-debugging-proxy&quot;&gt;avwo/whistle: HTTP, HTTPS, WebSocket debugging proxy&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/avwo/whistle&quot; title=&quot;avwo/whistle: HTTP, HTTPS, WebSocket debugging proxy&quot;&gt;github.com/avwo/whistle&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proxy&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsで書かれたHTTP/HTTPS/WebSocketsのデバッグProxy&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 10 Apr 2018 10:35:23 +0900</pubDate>
-        <link>https://jser.info/2018/04/10/pwa-on-ios-and-windows-store-dom-testing-library/</link>
-        <guid isPermaLink="true">https://jser.info/2018/04/10/pwa-on-ios-and-windows-store-dom-testing-library/</guid>
-        
-        <category>PWA</category>
-        
-        <category>iOS</category>
-        
-        <category>windows</category>
-        
-        <category>dom</category>
-        
-        <category>tests</category>
         
         
         <category>JSer</category>
