@@ -1,0 +1,459 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2018-06-19のJS: Parcel v1.9.0、puppeteer 1.5.0、JavaScript modulesの今後 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2018/06/19/parcel-v1.9.0puppeteer-1.5.0javascript-modules/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2018-06-19のJS: Parcel v1.9.0、puppeteer 1.5.0、JavaScript modulesの今後"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2018-06-19のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://medium.com/@devongovett/parcel-v1-9-0-tree-shaking-2x-faster-watcher-and-more-87f2e1a70f79">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">📦 Parcel v1.9.0 — Tree Shaking, 2x faster watcher, and more! 🚀</amp-fit-text>
+            <p class="item-contents">Parcel v1.9.0リリース。
+Tree Shakingの実装、<code>sideEffects</code>のサポート、ファイル監視の改善、Sassの<code>~/</code> importのサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="📦 Parcel v1.9.0 — Tree Shaking, 2x faster watcher, and more! 🚀" href="https://medium.com/@devongovett/parcel-v1-9-0-tree-shaking-2x-faster-watcher-and-more-87f2e1a70f79" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/GoogleChrome/puppeteer/releases/tag/v1.5.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v1.5.0 · GoogleChrome/puppeteer</amp-fit-text>
+            <p class="item-contents">Puppeteer v1.5.0リリース。
+<code>BrowserContext</code>が追加され複数の独立したブラウザセッションを扱えるように、<code>Worker</code>クラスの追加、公式サイトが<code>pptr.dev</code>となるなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v1.5.0 · GoogleChrome/puppeteer" href="https://github.com/GoogleChrome/puppeteer/releases/tag/v1.5.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.greenkeeper.io/announcing-greenkeeper-3-1504f5113998">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing: Greenkeeper 3 – Greenkeeper Blog</amp-fit-text>
+            <p class="item-contents">依存パッケージの管理サービスであるGreenkeeper 3リリース。
+monorepoのサポート、<code>greenkeeper.json</code>の設定ファイルをサポート、コミットメッセージのカスタマイズができるようになるなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing: Greenkeeper 3 – Greenkeeper Blog" href="https://blog.greenkeeper.io/announcing-greenkeeper-3-1504f5113998" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://qiita.com/terrierscript/items/a9826bc58d550d1b2764">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">素のJavaScriptプロジェクトにtsconfig.jsonを置いといてVSCodeの便利さを享受する - Qiita</amp-fit-text>
+            <p class="item-contents">TypeScritptをJavaScript/JSDocの型チェックツールとして利用する方法について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="素のJavaScriptプロジェクトにtsconfig.jsonを置いといてVSCodeの便利さを享受する - Qiita" href="https://qiita.com/terrierscript/items/a9826bc58d550d1b2764" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.smashingmagazine.com/2018/06/nodejs-tools-techniques-performance-servers/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Keeping Node.js Fast: Tools, Techniques, And Tips For Making High-Performance Node.js Servers — Smashing Magazine</amp-fit-text>
+            <p class="item-contents">Node.jsサーバの<code>autocannon</code>を使ったベンチマーク、パフォーマンスのボトルネック調査、メモリリークの調査や改善などについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Keeping Node.js Fast: Tools, Techniques, And Tips For Making High-Performance Node.js Servers — Smashing Magazine" href="https://www.smashingmagazine.com/2018/06/nodejs-tools-techniques-performance-servers/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@brunn/detecting-autofilled-fields-in-javascript-aed598d25da7">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Detecting autofilled fields in Javascript – Tommy Brunn – Medium</amp-fit-text>
+            <p class="item-contents">フォームのautofillを検知する方法について。
+autofillにCSS animationをつけて、<code>animtaionstart</code>で発生を検知する方法について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Detecting autofilled fields in Javascript – Tommy Brunn – Medium" href="https://medium.com/@brunn/detecting-autofilled-fields-in-javascript-aed598d25da7" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://netbasal.com/introducing-akita-a-new-state-management-pattern-for-angular-applications-f2f0fab5a8">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">🚀 Introducing Akita: A New State Management Pattern for Angular Applications</amp-fit-text>
+            <p class="item-contents">Angular向けのステート管理ライブラリであるAkitaについての記事。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="🚀 Introducing Akita: A New State Management Pattern for Angular Applications" href="https://netbasal.com/introducing-akita-a-new-state-management-pattern-for-angular-applications-f2f0fab5a8" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://mathiasbynens.be/notes/shapes-ics">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScript engine fundamentals: Shapes and Inline Caches · Mathias Bynens</amp-fit-text>
+            <p class="item-contents">JavaScriptエンジンがどのようにJavaScriptのコードを処理しているかについての解説。
+それぞれのブラウザがもつJavaScript VMにおける最適化のパイプライン処理について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript engine fundamentals: Shapes and Inline Caches · Mathias Bynens" href="https://mathiasbynens.be/notes/shapes-ics" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://qiita.com/massie_g/items/3ee11c105b4458686bc1">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node.jsでつくるNode.js - もくじ - Qiita</amp-fit-text>
+            <p class="item-contents">JavaScriptでJavaScriptのサブセットを作る話。
+「RubyでつくるRuby ゼロから学びなおすプログラミング言語入門」のNode.jsでの実装について。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node.jsでつくるNode.js - もくじ - Qiita" href="https://qiita.com/massie_g/items/3ee11c105b4458686bc1" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://css-tricks.com/understanding-the-almighty-reducer/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Understanding the Almighty Reducer | CSS-Tricks</amp-fit-text>
+            <p class="item-contents"><code>Array.prototype.reduce</code>についての記事。
+<code>reduce</code>メソッドの動作イメージや、動きについて動画を混じえて解説している。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Understanding the Almighty Reducer | CSS-Tricks" href="https://css-tricks.com/understanding-the-almighty-reducer/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/fundamentals/primers/modules">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Using JavaScript modules on the web  |  Web Fundamentals  |  Google Developers</amp-fit-text>
+            <p class="item-contents">JavaScriptモジュールの挙動や実装についての記事。
+ブラウザでのscriptとmoduleの挙動の違い、Dynamic importと<code>import.meta</code>について。
+また、bundleした場合とのパフォーマンスの差や小さくexportしたモジュールの方が有利な点やHTTP/2とPreload。
+Chromeで検討が進められてるWeb Packaging、Layered API、Workerとの連携などについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Using JavaScript modules on the web  |  Web Fundamentals  |  Google Developers" href="https://developers.google.com/web/fundamentals/primers/modules" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://codezine.jp/article/corner/688">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">基礎からはじめるReact入門連載一覧：CodeZine（コードジン）</amp-fit-text>
+            <p class="item-contents">React入門に関する連載記事。
+Reactの基礎からRedux、Storybookなど外部ライブラリなどについて扱っている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="基礎からはじめるReact入門連載一覧：CodeZine（コードジン）" href="https://codezine.jp/article/corner/688" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://ada.is/blog/2018/06/15/isomorphic-es-modules/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Isomorphic ES Modules - The blog of Ada Rose Cannon</amp-fit-text>
+            <p class="item-contents">ES module形式で配布されているHyperHTMLを使ってブラウザとNode.jsで同じライブラリをそのまま<code>import</code>してウェブアプリを作成する話。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Isomorphic ES Modules - The blog of Ada Rose Cannon" href="https://ada.is/blog/2018/06/15/isomorphic-es-modules/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Netflix/pollyjs">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Netflix/pollyjs: Record, Replay, and Stub HTTP Interactions.</amp-fit-text>
+            <p class="item-contents">HTTPリクエスト/レスポンスの記録、再生を行うJavaScriptライブラリとNode.jsサーバ。
+またHTTPリクエストのインターセプトして任意のレスポンスを返せる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Netflix/pollyjs: Record, Replay, and Stub HTTP Interactions." href="https://github.com/Netflix/pollyjs" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/snipsco/yett">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">snipsco/yett: 🔐A small webpage library to control the execution of (third party) scripts</amp-fit-text>
+            <p class="item-contents">JavaScriptの読み込みをブラックリストで管理するライブラリ。
+<code>MutationObserver</code>や<code>document.create</code>をhookし、指定URLのJavaScriptを読み込みをブロックできる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="snipsco/yett: 🔐A small webpage library to control the execution of (third party) scripts" href="https://github.com/snipsco/yett" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/ecrmnn/collect.js">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ecrmnn/collect.js: 💎 Convenient and dependency free wrapper for working with arrays and objects</amp-fit-text>
+            <p class="item-contents">配列やオブジェクトに対するユーティリティ関数のライブラリ。
+Laravelが持つCollectionsをJavaScriptにportしたもの
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ecrmnn/collect.js: 💎 Convenient and dependency free wrapper for working with arrays and objects" href="https://github.com/ecrmnn/collect.js" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.co.jp/dp/B07DR76HSG/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">スラスラ読める JavaScriptふりがなプログラミング | 及川卓也, リブロワークス | 工学 | Kindleストア | Amazon</amp-fit-text>
+            <p class="item-contents">2018年6月22日発売
+JavaScriptのコードにルビでふりがなをつけて解説する書籍。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="スラスラ読める JavaScriptふりがなプログラミング | 及川卓也, リブロワークス | 工学 | Kindleストア | Amazon" href="https://www.amazon.co.jp/dp/B07DR76HSG/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
