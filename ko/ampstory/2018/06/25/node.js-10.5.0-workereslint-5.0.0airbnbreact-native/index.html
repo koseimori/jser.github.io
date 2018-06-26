@@ -1,0 +1,458 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2018-06-25のJS: Node.js 10.5.0 Workerサポート、ESLint 5.0.0、AirbnbとReact Native - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2018/06/25/node.js-10.5.0-workereslint-5.0.0airbnbreact-native/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2018-06-25のJS: Node.js 10.5.0 Workerサポート、ESLint 5.0.0、AirbnbとReact Native"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2018-06-25のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://v8project.blogspot.com/2018/06/v8-release-68.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">V8 JavaScript Engine: V8 release v6.8</amp-fit-text>
+            <p class="item-contents">V8 v6.8リリース。
+関数自身が外の関数の不要な情報を持っていたのをリファクタリングしてメモリの改善。
+<code>Object.assign</code>をC++からJSの実装に変更してパフォーマンス改善、<code>TypedArray.prototype.sort</code>のパフォーマンス改善など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 JavaScript Engine: V8 release v6.8" href="https://v8project.blogspot.com/2018/06/v8-release-68.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v10.5.0/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v10.5.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 10.5.0リリース。
+<code>fs.stat</code>などがBigIntをサポート、<code>--experimental-worker</code>のフラグ付きでWorkerのサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v10.5.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v10.5.0/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/8332/release-notes-for-safari-technology-preview-59/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 59 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview 59リリース。
+ITP 2.0への更新、Web Animationsのデフォルト有効化。
+ES Proposalの<code>Symbol.prototype.description</code>のサポート、BitIntの実装など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 59 | WebKit" href="https://webkit.org/blog/8332/release-notes-for-safari-technology-preview-59/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://eslint.org/blog/2018/06/eslint-v5.0.0-released">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint v5.0.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+            <p class="item-contents">ESLint 5.0.0リリース。
+Node.js 4のサポート終了、<code>eslint:recommended</code>の更新、ルールのデフォルトオプションの変更、Lint対象がないときにfatal errorとなるように。
+プラグイン周りの変更など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ESLint v5.0.0 released - ESLint - Pluggable JavaScript linter" href="https://eslint.org/blog/2018/06/eslint-v5.0.0-released" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://godaddy.github.io/2018/06/12/announcing-winston-3/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing winston@3.0.0! — GoDaddy Open Source Center</amp-fit-text>
+            <p class="item-contents">winston 3.0.0リリース。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing winston@3.0.0! — GoDaddy Open Source Center" href="https://godaddy.github.io/2018/06/12/announcing-winston-3/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/airbnb-engineering/react-native-at-airbnb-f95aa460be1c">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React Native at Airbnb – Airbnb Engineering &amp; Data Science – Medium</amp-fit-text>
+            <p class="item-contents">AirbnbでのReact Nativeについて。
+React Nativeの技術的解説、上手くいった点、上手くいかなかった点。
+クロスプラットフォームアプリ開発の技術的/組織的な難しさなどから、当初の目標を達成できないためAirbnbではReact Nativeからネイティブに移行するという話。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React Native at Airbnb – Airbnb Engineering &amp; Data Science – Medium" href="https://medium.com/airbnb-engineering/react-native-at-airbnb-f95aa460be1c" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developer.medley.jp/entry/2018/06/22/130000">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">社内勉強会TechLunchで&quot;JavaScript ASTことはじめ&quot;という発表をしました - Medley Developer Blog</amp-fit-text>
+            <p class="item-contents">JavaScriptのASTやAST Explorerの使い方について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="社内勉強会TechLunchで&quot;JavaScript ASTことはじめ&quot;という発表をしました - Medley Developer Blog" href="https://developer.medley.jp/entry/2018/06/22/130000" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@rickhanlonii/understanding-jest-mocks-f0046c68e53c">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Understanding Jest Mocks – Rick Hanlon II – Medium</amp-fit-text>
+            <p class="item-contents">jestのmock機能について解析。
+<code>jest.mock</code>、<code>jest.spy</code>などについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Understanding Jest Mocks – Rick Hanlon II – Medium" href="https://medium.com/@rickhanlonii/understanding-jest-mocks-f0046c68e53c" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/stereobooster/react-ideal-image/blob/master/introduction.md">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">react-ideal-image/introduction.md at master · stereobooster/react-ideal-image</amp-fit-text>
+            <p class="item-contents">react-ideal-imageの画像表示の実装について。
+Lazy Loading、プレースホルダー、LQIP、レスポンシブ、アダプティブな表示方法について解説している。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="react-ideal-image/introduction.md at master · stereobooster/react-ideal-image" href="https://github.com/stereobooster/react-ideal-image/blob/master/introduction.md" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/benschwarz/the-critical-request">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">The Critical Request - Speaker Deck</amp-fit-text>
+            <p class="item-contents">First Meaningful Paintまでに必要なリソースへのリクエストと優先度についてのスライド。
+preloadなどによるwebfontの読み込み改善について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The Critical Request - Speaker Deck" href="https://speakerdeck.com/benschwarz/the-critical-request" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.slideshare.net/teppeis/automated-dependency-updates-with-renovate-102769685">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Automated Dependency Updates with Renovate</amp-fit-text>
+            <p class="item-contents">リポジトリが依存するパッケージのバージョン更新をRenovateを使って自動化することについてのスライド。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Automated Dependency Updates with Renovate" href="https://www.slideshare.net/teppeis/automated-dependency-updates-with-renovate-102769685" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/gregonnet/platform">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Redux Refactoring Patterns with @ngrx/platform - Speaker Deck</amp-fit-text>
+            <p class="item-contents">ngrxについてのスライド。
+Reduxのパターン、switch-caseのパターンとFactoryパターン、どのようにStateを扱うかについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Redux Refactoring Patterns with @ngrx/platform - Speaker Deck" href="https://speakerdeck.com/gregonnet/platform" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developer.mozilla.org/en-US/Apps/Progressive">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Progressive web apps - App Center | MDN</amp-fit-text>
+            <p class="item-contents">MDNのPWAチュートリアルガイド
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Progressive web apps - App Center | MDN" href="https://developer.mozilla.org/en-US/Apps/Progressive" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Microsoft/license-checker-webpack-plugin">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Microsoft/license-checker-webpack-plugin: Webpack plugin that verifies licenses of all external dependencies in a compilation, and outputs them to a file.</amp-fit-text>
+            <p class="item-contents">利用してるライブラリのライセンスチェックやまとめたライセンスファイルを生成するwebpackプラグイン
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Microsoft/license-checker-webpack-plugin: Webpack plugin that verifies licenses of all external dependencies in a compilation, and outputs them to a file." href="https://github.com/Microsoft/license-checker-webpack-plugin" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Simonwep/pickr">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Simonwep/pickr: Flat, simple and hackable Color-Picker. No dependencies, no jQuery. Compatible with all CSS Frameworks e.g. Bootstrap, Materialize.</amp-fit-text>
+            <p class="item-contents">依存のないカラーピッカーライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Simonwep/pickr: Flat, simple and hackable Color-Picker. No dependencies, no jQuery. Compatible with all CSS Frameworks e.g. Bootstrap, Materialize." href="https://github.com/Simonwep/pickr" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.com/dp/B07D6LQNK3/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Amazon.com: Mastering JavaScript Design Patterns - Third Edition: Create scalable and reliable applications with advanced JavaScript Design Patterns using reliable code. eBook: Tomas Corral: Kindle Store</amp-fit-text>
+            <p class="item-contents">2019年1月9日発売
+Mastering JavaScript Design Patternsの第3版
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Amazon.com: Mastering JavaScript Design Patterns - Third Edition: Create scalable and reliable applications with advanced JavaScript Design Patterns using reliable code. eBook: Tomas Corral: Kindle Store" href="https://www.amazon.com/dp/B07D6LQNK3/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.co.jp/dp/4802611242/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">動かしながらさくっと身につく 今こそホンキで覚えるJavaScript\[JS/ES2016対応\] | 狩野 祐東 |本 | 通販 | Amazon</amp-fit-text>
+            <p class="item-contents">2018年7月17日発売
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="動かしながらさくっと身につく 今こそホンキで覚えるJavaScript\[JS/ES2016対応\] | 狩野 祐東 |本 | 通販 | Amazon" href="https://www.amazon.co.jp/dp/4802611242/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
