@@ -5,9 +5,270 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 10 Jul 2018 13:38:42 +0900</pubDate>
-    <lastBuildDate>Tue, 10 Jul 2018 13:38:42 +0900</lastBuildDate>
+    <pubDate>Tue, 17 Jul 2018 12:07:05 +0900</pubDate>
+    <lastBuildDate>Tue, 17 Jul 2018 12:07:05 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2018-07-17のJS: TypeScript 3.0.0、ウイルスとnpmパッケージ、Property based testing</title>
+        <description>&lt;p&gt;JSer.info #392 - TypeScript 3.0 RCが公開されています。&lt;br&gt;
+TypeScriptは&lt;a href=&quot;https://semver.org/&quot;&gt;Semantic Versioning&lt;/a&gt;ではないため、いわゆるメジャーアップデートとは違いますが、monorepoなど大きなリポジトリ向けの変更が入っています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2018/07/12/announcing-typescript-3-0-rc/&quot;&gt;Announcing TypeScript 3.0 RC | TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/57a0559c45b88b2ae168&quot;&gt;TypeScript 3.0.0-RC 変更点 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Breaking-Changes#typescript-30&quot;&gt;Breaking Changes · Microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Project Referencesによりmonorepo内の別パッケージの型定義を参照できるようになり、Build modeによって関連するパッケージのインクリメンタルビルドできます。&lt;br&gt;
+今までも&lt;a href=&quot;https://github.com/Quramy/lerna-yarn-workspaces-example&quot;&gt;&lt;code&gt;paths&lt;/code&gt;&lt;/a&gt;を使ってmonorepo内の別パッケージのソースコード(&lt;code&gt;.ts&lt;/code&gt;)を直接参照できていましたが、&lt;a href=&quot;https://github.com/textlint/textlint/issues/440&quot;&gt;module resolution&lt;/a&gt;や&lt;code&gt;outDir&lt;/code&gt;に必要ないものまで含まれるなどの問題がありました。&lt;/p&gt;
+
+&lt;p&gt;TypeScript 3.0ではこれらの問題を解決するメタIssueがあり、フィードバックを募集しています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/issues/25600&quot;&gt;tsc --build / Project References Feedback &amp;amp; Discussion · Issue #25600 · Microsoft/TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;またTuple型の改善、&lt;code&gt;unknown&lt;/code&gt;型の追加、Reactのdefault propsの型チェックのサポートなどが行われています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;2018年7月12日の18:00〜22:00（JST）に&lt;code&gt;eslint-scope@3.7.2&lt;/code&gt;または&lt;code&gt;eslint-config-eslint@5.0.2&lt;/code&gt;を含むパッケージをインストールすると&lt;code&gt;.npmrc&lt;/code&gt;を盗み取られるウイルス入りのパッケージが公開されていたインシデントがありました。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;eslint-scope@3.x&lt;/code&gt;に依存していたパッケージには&lt;code&gt;webpack&lt;/code&gt;、&lt;code&gt;eslint@4&lt;/code&gt;、&lt;code&gt;babel-eslint&lt;/code&gt;などがあり影響範囲が広がりました。&lt;/p&gt;
+
+&lt;p&gt;より正確な時間や影響範囲については次の記事を参照してください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes&quot; title=&quot;Postmortem for Malicious Packages Published on July 12th, 2018 - ESLint - Pluggable JavaScript linter&quot;&gt;Postmortem for Malicious Packages Published on July 12th, 2018 - ESLint - Pluggable JavaScript linter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/0141657e4478d9cf4614&quot; title=&quot;2018/07/12 に発生したセキュリティ インシデント (eslint-scope@3.7.2) について - Qiita&quot;&gt;2018/07/12 に発生したセキュリティ インシデント (eslint-scope@3.7.2) について - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;npmによれば4,500のnpmアカウントがこの問題の影響を受けたと推測されており、またこの問題の後にすべてのユーザーのnpmのアクセストークンを無効化しています。そのため、ほとんどのユーザーはもう一度&lt;code&gt;npm login&lt;/code&gt;などをしてアクセストークンを再発行する必要があります。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.npmjs.org/post/175824896885/incident-report-npm-inc-operations-incident-of&quot;&gt;The npm Blog — Incident report: npm, Inc. operations incident of...&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;現在は問題のパッケージ（&lt;code&gt;eslint-scope@3.7.2&lt;/code&gt;と&lt;code&gt;eslint-config-eslint@5.0.2&lt;/code&gt;）はunpublishされているため、インストールする可能性はほぼありません。しかし、npmのregistryには&lt;a href=&quot;https://www.jfrog.com/confluence/display/RTF/Npm+Registry&quot;&gt;Artifactory&lt;/a&gt;などのミラーを利用しているユーザーもいるため、ミラーのregistryには残っている可能性もあるので確認してください。仮に実行した場合でも&lt;a href=&quot;https://gist.github.com/hzoo/51cb84afdc50b14bffa6c6dc49826b3e&quot;&gt;eslint-scope attack&lt;/a&gt;で解説されているように、実際の攻撃スクリプトがすでに利用できないため影響はほぼありません。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes&quot;&gt;Postmortem for Malicious Packages Published on July 12th, 2018 - ESLint - Pluggable JavaScript linter&lt;/a&gt;の記事では、パッケージのメンテナー側の対策として2要素認証をする、パスワードを使い回さないなどの対策などについて書かれています。&lt;br&gt;
+またパッケージの利用する側の対策として&lt;code&gt;pacakge-lock.json&lt;/code&gt;や&lt;code&gt;yarn.lock&lt;/code&gt;などでパッケージのバージョンをロックして今回の問題のようなパッケージは自動的には入らないようにするといったことについて書かれています。&lt;/p&gt;
+
+&lt;p&gt;今回の攻撃に使われたパッケージのインストール時に&lt;code&gt;postinstall&lt;/code&gt;のhookで悪意あるコードを実行するという手法は以前も同様の問題が報告されていました。この問題の対策の一環として&lt;a href=&quot;https://blog.npmjs.org/post/166039777883/protect-your-npm-account-with-two-factor&quot;&gt;read-only tokenや2要素認証&lt;/a&gt;が導入されていました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.npmjs.org/post/141702881055/package-install-scripts-vulnerability&quot;&gt;The npm Blog — Package install scripts vulnerability&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;npmの2要素認証はユーザー単位であるため、メンテナーが複数人いる場合は全員が2要素認証を有効化していないと、パッケージ自体は攻撃の影響を受ける可能性があります。&lt;br&gt;
+そのため今回の問題をうけてnpmでは、ユーザーではなくパッケージごとに2要素認証を設定可能にすることやTime-limited tokensについての提案などが行われています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.npmjs.org/post/175861857230/two-factor-authentication-protection-for-packages&quot;&gt;The npm Blog — Two-factor authentication protection for packages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://npm.community/t/time-limited-tokens/502&quot;&gt;Time-limited tokens - 💡 ideas - npm forum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-npm-blog-v6-2-0&quot;&gt;The npm Blog — v6.2.0&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.npmjs.org/post/175871462900/v620&quot; title=&quot;The npm Blog — v6.2.0&quot;&gt;blog.npmjs.org/post/175871462900/v620&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm 6.2.0リリース。&lt;br&gt;
+&lt;code&gt;npm audit&lt;/code&gt;にawkなどでパースしやすい&lt;code&gt;--parseable&lt;/code&gt;オプションの追加、&lt;code&gt;sign-git-commit&lt;/code&gt;の設定を追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-typescript-3-0-rc-typescript&quot;&gt;Announcing TypeScript 3.0 RC | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2018/07/12/announcing-typescript-3-0-rc/&quot; title=&quot;Announcing TypeScript 3.0 RC | TypeScript&quot;&gt;blogs.msdn.microsoft.com/typescript/2018/07/12/announcing-typescript-3-0-rc/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 3.0 RCリリース。&lt;br&gt;
+monorepo向けのサポートがメイン。&lt;br&gt;
+Project Referencesによりmonorepo内の別パッケージの型定義を参照できるようになり、Build modeによって関連するパッケージのビルドをインクリメンタルに行える。&lt;br&gt;
+tuples型の改善、&lt;code&gt;unknown&lt;/code&gt;型の追加、Reactのdefault propsのサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/57a0559c45b88b2ae168&quot; title=&quot;TypeScript 3.0.0-RC 変更点 - Qiita&quot;&gt;TypeScript 3.0.0-RC 変更点 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v1-6-0-googlechrome-puppeteer&quot;&gt;Release v1.6.0 · GoogleChrome/puppeteer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/puppeteer/releases/tag/v1.6.0&quot; title=&quot;Release v1.6.0 · GoogleChrome/puppeteer&quot;&gt;github.com/GoogleChrome/puppeteer/releases/tag/v1.6.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Puppeteer v1.6.0リリース。&lt;br&gt;
+&lt;code&gt;page.waitForRequest&lt;/code&gt;と&lt;code&gt;page.waitForResponse&lt;/code&gt;のサポート。&lt;br&gt;
+要素が現在のviewportに表示されているかを判定する&lt;code&gt;elementHandle.isIntersectingViewport&lt;/code&gt;の追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-9-0-a-mari-usque-ad-mare-postcss-autoprefixer&quot;&gt;Release 9.0 “A Mari Usque Ad Mare” · postcss/autoprefixer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/postcss/autoprefixer/releases/tag/9.0.0&quot; title=&quot;Release 9.0 “A Mari Usque Ad Mare” · postcss/autoprefixer&quot;&gt;github.com/postcss/autoprefixer/releases/tag/9.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Autoprefixer 9.0、Browserslist 4.0、PostCSS 7.0.0リリース。&lt;br&gt;
+Node.js 4のサポート終了など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;postmortem-for-malicious-packages-published-on-july-12th-2018-eslint-pluggable-javascript-linter&quot;&gt;Postmortem for Malicious Packages Published on July 12th, 2018 - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes&quot; title=&quot;Postmortem for Malicious Packages Published on July 12th, 2018 - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.npmrc&lt;/code&gt;の内容を盗み取る&lt;code&gt;eslint-scope@3.7.2&lt;/code&gt;と&lt;code&gt;eslint-config-eslint@5.0.2&lt;/code&gt;が公開された問題についてのレポート。&lt;br&gt;
+パスワードリスト攻撃で取られてたアカウントのtokenから直接publishされ、その後npm incによって全ユーザーのtokenがリセットされた。&lt;br&gt;
+攻撃手法や対策について&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.npmjs.org/post/175824896885/incident-report-npm-inc-operations-incident-of&quot; title=&quot;The npm Blog — Incident report: npm, Inc. operations incident of...&quot;&gt;The npm Blog — Incident report: npm, Inc. operations incident of...&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/0141657e4478d9cf4614&quot; title=&quot;2018/07/12 に発生したセキュリティ インシデント (eslint-scope@3.7.2) について - Qiita&quot;&gt;2018/07/12 に発生したセキュリティ インシデント (eslint-scope@3.7.2) について - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;site-isolation-for-web-developers-web-google-developers&quot;&gt;Site Isolation for web developers  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/07/site-isolation&quot; title=&quot;Site Isolation for web developers  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/07/site-isolation&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 67でデフォルト有効化されたSite Isolationについて。&lt;br&gt;
+レンダラープロセスを分離することで、サイドチャネル攻撃やオリジン超えの攻撃によって機密情報が盗まれるのを防止する。&lt;br&gt;
+CORB、iframeなどにおけるloadとunloadにおける挙動の違いなどについて&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://security.googleblog.com/2018/07/mitigating-spectre-with-site-isolation.html&quot; title=&quot;Google Online Security Blog: Mitigating Spectre with Site Isolation in Chrome&quot;&gt;Google Online Security Blog: Mitigating Spectre with Site Isolation in Chrome&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-css-paint-api-css-tricks&quot;&gt;The CSS Paint API | CSS-Tricks&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://css-tricks.com/the-css-paint-api/&quot; title=&quot;The CSS Paint API | CSS-Tricks&quot;&gt;css-tricks.com/the-css-paint-api/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSS Paint APIについての記事。&lt;br&gt;
+新しいShapeの追加、カスタムプロパティとの連携方法について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;life-of-a-pixel-2018-google&quot;&gt;Life of a Pixel 2018 - Google スライド&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.google.com/presentation/d/1boPxbgNrTU0ddsc144rcXayGA_WF53k96imRH8Mp34Y/mobilepresent#slide=id.p&quot; title=&quot;Life of a Pixel 2018 - Google スライド&quot;&gt;docs.google.com/presentation/d/1boPxbgNrTU0ddsc144rcXayGA_WF53k96imRH8Mp34Y/mobilepresent#slide&amp;#x3D;id.p&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chromeのレンダリングの仕組みについてのスライド。&lt;br&gt;
+DOM、Style、Layout、Paint、Rasterization。&lt;br&gt;
+変更があったときに再レンダリングやCompositingなどの処理の流れなどについて。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;vue-js-cheat-sheet&quot;&gt;Vue.js Cheat Sheet&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://flaviocopes.com/vue-cheat-sheet/&quot; title=&quot;Vue.js Cheat Sheet&quot;&gt;flaviocopes.com/vue-cheat-sheet/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;チートシート&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vueチートシート&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;browsh&quot;&gt;Browsh&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.brow.sh/&quot; title=&quot;Browsh&quot;&gt;www.brow.sh/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Firefoxをバックエンド(WebExtensions)に使ったテキストブラウザ。&lt;br&gt;
+CSSやWebGL、画像や動画などの描画結果をテキストベースで閲覧できる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;dubzzz-fast-check-property-based-testing-framework-for-javascript-like-quickcheck-written-in-typescript&quot;&gt;dubzzz/fast-check: Property based testing framework for JavaScript (like QuickCheck) written in TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/dubzzz/fast-check&quot; title=&quot;dubzzz/fast-check: Property based testing framework for JavaScript (like QuickCheck) written in TypeScript&quot;&gt;github.com/dubzzz/fast-check&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Property based testingを行うテストライブラリ。&lt;br&gt;
+値のパターンや組み合わせを定義してランダムな値を生成してテストできる。&lt;br&gt;
+またテストが失敗した際には&lt;code&gt;seed&lt;/code&gt;値を使って同じ組み合わせを再現してテストできる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;joshwcomeau-guppy&quot;&gt;joshwcomeau/guppy&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/joshwcomeau/guppy&quot; title=&quot;joshwcomeau/guppy&quot;&gt;github.com/joshwcomeau/guppy&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;GUI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;software&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React向けのアプリケーション管理、タスク実行を行えるGUIアプリ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;teadjs-tead-lighting-the-way-to-simpler-testing&quot;&gt;teadjs/tead: Lighting the way to simpler testing&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/teadjs/tead&quot; title=&quot;teadjs/tead: Lighting the way to simpler testing&quot;&gt;github.com/teadjs/tead&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;シンプルなテストフレームワーク。&lt;br&gt;
+&lt;code&gt;[actual, expected]&lt;/code&gt;の組み合わせを返すだけでテストできる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;programming-typescript-making-your-javascript-applications-scale-boris-cherny-9781492037651-amazon-com-books&quot;&gt;Programming TypeScript: Making Your JavaScript Applications Scale: Boris Cherny: 9781492037651: Amazon.com: Books&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/dp/1492037656/&quot; title=&quot;Programming TypeScript: Making Your JavaScript Applications Scale: Boris Cherny: 9781492037651: Amazon.com: Books&quot;&gt;www.amazon.com/dp/1492037656/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2019年4月4日発売&lt;br&gt;
+TypeScriptでのアプリケーション開発についての書籍&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 17 Jul 2018 11:20:17 +0900</pubDate>
+        <link>https://jser.info/2018/07/17/typescript-3.0.0npmproperty-based-testing/</link>
+        <guid isPermaLink="true">https://jser.info/2018/07/17/typescript-3.0.0npmproperty-based-testing/</guid>
+        
+        <category>TypeScript</category>
+        
+        <category>eslint</category>
+        
+        <category>npmjs</category>
+        
+        <category>testing</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2018-07-10のJS: Jest 23.3.0 インラインスナップショット、npm.community</title>
@@ -2375,284 +2636,6 @@ Vueについての書籍&lt;/p&gt;
         <category>Next.js</category>
         
         <category>data</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-05-15のJS: フロントエンドツールアンケート結果、Firefox 60、Lighthouse 3.0β</title>
-        <description>&lt;p&gt;JSer.info #383 - フロントエンドツールアンケート2018の結果が公開されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://ashleynolan.co.uk/blog/frontend-tooling-survey-2018-results&quot;&gt;The Front-End Tooling Survey 2018 - Results - AshleyNolan.co.uk - Blog and Portfolio for Ashley Nolan&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;JavaScriptやCSSに関するツールやライブラリなどについてのアンケート結果をまとめたもので、&lt;a href=&quot;https://ashleynolan.co.uk/blog/frontend-tooling-survey-2016-results&quot;&gt;前回の結果&lt;/a&gt;からの変化などについても掲載されています。&lt;/p&gt;
-
-&lt;p&gt;利用言語、ライブラリ、Lint、テスト、bundlerなどについて項目ごとのアンケート結果が公開されているので見てみると良さそうです。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Firefox 60.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/60.0/releasenotes/&quot;&gt;Firefox — Notes (60.0) — Mozilla&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2018/05/firefox-60-modules-and-more/&quot; title=&quot;Firefox 60 – Modules and More – Mozilla Hacks – the Web developer blog&quot;&gt;Firefox 60 – Modules and More – Mozilla Hacks – the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ja/Firefox/Releases/60&quot; title=&quot;Firefox 60 for developers - Mozilla | MDN&quot;&gt;Firefox 60 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ES Modulesの有効化、&lt;a href=&quot;https://blog.mozilla.org/security/2018/04/24/same-site-cookies-in-firefox-60/&quot;&gt;Same-Site Cookies&lt;/a&gt;のサポート、&lt;code&gt;Array#values&lt;/code&gt;の有効化、Web Authentication APIのサポート、WebVR APIがmacOSで有効化などが行われています。&lt;/p&gt;
-
-&lt;p&gt;ES ModulesはこれでIEを除くメジャーブラウザでサポートされたことになりました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://caniuse.com/#feat=es6-module&quot;&gt;JavaScript modules via script tag&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また、&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/enterprise/&quot;&gt;Firefox Quantum for Enterprise&lt;/a&gt;と名がついたエンタープライズ向けのESR(Extended Support Release)版もFirefox 60がベースとなっています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/mozilla-tech/open-for-business-firefox-quantum-is-ready-for-it-622c74fe13fe&quot;&gt;Open for business: Firefox Quantum is ready for IT – Mozilla Tech – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Lighthouse 3.0がプレリリースされ新しい機能について解説されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/05/lighthouse3&quot;&gt;Announcing Lighthouse 3.0  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;レポートUIの変更、First Contentful Paintの追加、RTTのコスト表示の追加など。&lt;br&gt;
-その他の変更点として、スコアのWeightの変更、First InteractiveをFirst CPU Idleに名前の変更など指標が変更されています。&lt;/p&gt;
-
-&lt;p&gt;また、LightHouseの記録下内容をPerformanceタブで見るView Traceなどといった機能も追加されています。&lt;br&gt;
-この機能については次の発表動画でデモがおこなわれています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=mfuE53x4b3k&quot;&gt;What&amp;#39;s new in Chrome DevTools (Google I/O &amp;#39;18) - YouTube&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Google I/Oの発表でもLighthouseを扱った内容は多いのであわせて見るとよさそうです。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLNYkxOF6rcIC4NQeXpdAy0RbOACI66Hvf&quot;&gt;Chrome and Web at Google I/O 2018 - YouTube - YouTube&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v10-1-0-current-node-js&quot;&gt;Node v10.1.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v10.1.0/&quot; title=&quot;Node v10.1.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v10.1.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node v10.1.0リリース。&lt;br&gt;
-&lt;code&gt;require(&amp;quot;fs/promises&amp;quot;)&lt;/code&gt;が&lt;code&gt;require(&amp;quot;fs&amp;quot;).promises&lt;/code&gt;に変更、&lt;code&gt;request.aborted&lt;/code&gt;プロパティの追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;firefox-notes-60-0-mozilla&quot;&gt;Firefox — Notes (60.0) — Mozilla&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/60.0/releasenotes/&quot; title=&quot;Firefox — Notes (60.0) — Mozilla&quot;&gt;www.mozilla.org/en-US/firefox/60.0/releasenotes/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 60.0リリース。&lt;br&gt;
-ES Modulesの有効化、&lt;code&gt;Array#values&lt;/code&gt;の有効化、Web Authentication APIのサポート、WebVR APIがmacOSで有効化。&lt;br&gt;
-またESRのバージョンが60へ更新など。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2018/05/firefox-60-modules-and-more/&quot; title=&quot;Firefox 60 – Modules and More – Mozilla Hacks – the Web developer blog&quot;&gt;Firefox 60 – Modules and More – Mozilla Hacks – the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ja/Firefox/Releases/60&quot; title=&quot;Firefox 60 for developers - Mozilla | MDN&quot;&gt;Firefox 60 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;video-js-7-is-here-video-js-blog&quot;&gt;Video.js 7 is here! 🎉 | Video.js Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.videojs.com/video-js-7-is-here/&quot; title=&quot;Video.js 7 is here! 🎉 | Video.js Blog&quot;&gt;blog.videojs.com/video-js-7-is-here/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Video.js 7リリース。&lt;br&gt;
-Video.js HTTP Streaming (VHS)プラグインでHLSとDASHを試験的にサポート。&lt;br&gt;
-古いブラウザサポートのコードを削除、オプトアウトだったGoogle Analyticsの収集を終了など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v1-0-0-webpack-contrib-webpack-serve&quot;&gt;Release v1.0.0 · webpack-contrib/webpack-serve&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/webpack-contrib/webpack-serve/releases/tag/v1.0.0&quot; title=&quot;Release v1.0.0 · webpack-contrib/webpack-serve&quot;&gt;github.com/webpack-contrib/webpack-serve/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpack-serve 1.0.0リリース。&lt;br&gt;
-&lt;code&gt;webpack-dev-server&lt;/code&gt;の後継となるwebpack向けの開発サーバ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v0-72-0-facebook-flow&quot;&gt;Release v0.72.0 · facebook/flow&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/flow/releases/tag/v0.72.0&quot; title=&quot;Release v0.72.0 · facebook/flow&quot;&gt;github.com/facebook/flow/releases/tag/v0.72.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;flow 0.72.0リリース。&lt;br&gt;
-&lt;code&gt;$Either&amp;lt;T&amp;gt;&lt;/code&gt;, &lt;code&gt;$All&amp;lt;T&amp;gt;&lt;/code&gt;, &lt;code&gt;$Type&amp;lt;T&amp;gt;&lt;/code&gt;の廃止。&lt;br&gt;
-Language Server Protocolの改善、Stage 1のnullish coalescingをサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-front-end-tooling-survey-2018-results-ashleynolan-co-uk-blog-and-portfolio-for-ashley-nolan&quot;&gt;The Front-End Tooling Survey 2018 - Results - AshleyNolan.co.uk - Blog and Portfolio for Ashley Nolan&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://ashleynolan.co.uk/blog/frontend-tooling-survey-2018-results&quot; title=&quot;The Front-End Tooling Survey 2018 - Results - AshleyNolan.co.uk - Blog and Portfolio for Ashley Nolan&quot;&gt;ashleynolan.co.uk/blog/frontend-tooling-survey-2018-results&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;アンケート&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScript、CSS、ツールなどについての開発者アンケート。 利用言語、ライブラリ、Lint、テスト、bundlerなどについて項目ごとのアンケート結果が公開されている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;using-lighthouse-to-improve-page-load-performance-web-google-developers&quot;&gt;Using Lighthouse To Improve Page Load Performance  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/05/lighthouse&quot; title=&quot;Using Lighthouse To Improve Page Load Performance  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/05/lighthouse&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Lighthouseによって検出できるページロードパフォーマンスの問題について。&lt;br&gt;
-preloadした方がいいリソースの表示、JavaScriptのパースと実装の時間表示、リダイレクト検出、利用してないコード量の表示、preconnectによるRTTのコストの削減予測など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-npm-blog-npm-audit-identify-and-fix-insecure&quot;&gt;The npm Blog — `npm audit`: identify and fix insecure...&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.npmjs.org/post/173719309445/npm-audit-identify-and-fix-insecure&quot; title=&quot;The npm Blog — \`npm audit\`: identify and fix insecure...&quot;&gt;blog.npmjs.org/post/173719309445/npm-audit-identify-and-fix-insecure&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npm 6で入ったセキュリティチェックをする&lt;code&gt;npm audit&lt;/code&gt;コマンドについての解説&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introducing-the-microsoft-edge-devtools-protocol-microsoft-edge-dev-blogmicrosoft-edge-dev-blog&quot;&gt;Introducing the Microsoft Edge DevTools Protocol - Microsoft Edge Dev BlogMicrosoft Edge Dev Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2018/05/11/introducing-edge-devtools-protocol/#0b7zCRAl1ApIqZ6D.97&quot; title=&quot;Introducing the Microsoft Edge DevTools Protocol - Microsoft Edge Dev BlogMicrosoft Edge Dev Blog&quot;&gt;blogs.windows.com/msedgedev/2018/05/11/introducing-edge-devtools-protocol/#0b7zCRAl1ApIqZ6D.97&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;リモートデバッグができるMicrosoft Edge DevTools Protocolの解説。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;pwa-llumino-pwa&quot;&gt;実践PWA：光る電卓「Llumino PWA」の開発と技術解説 - ここぽんのーと&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cocopon.me/blog/2018/05/pwa-llumino-dev/&quot; title=&quot;実践PWA：光る電卓「Llumino PWA」の開発と技術解説 - ここぽんのーと&quot;&gt;cocopon.me/blog/2018/05/pwa-llumino-dev/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ネイティブアプリだったものをPWAで再現する話。&lt;br&gt;
-CSSアニメーション、Service Worker、Web App Manifest、インタラクションについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-lighthouse-3-0-web-google-developers&quot;&gt;Announcing Lighthouse 3.0  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/05/lighthouse3&quot; title=&quot;Announcing Lighthouse 3.0  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/05/lighthouse3&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Lighthouse 3.0プレリリース。 レポートUIの変更、それぞれのスコアのWeightの変更、First Contentful Paintの追加、RTTのコスト表示の追加など。 その他の変更点としてFirst InteractiveをFirst CPU Idleに名前の変更など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;google-i-o-2018-all-sessions-youtube-youtube&quot;&gt;Google I/O 2018 - All Sessions - YouTube - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/playlist?list=PLOU2XLYxmsIInFRc3M44HUTQc3b_YJ4-Y&quot; title=&quot;Google I/O 2018 - All Sessions - YouTube - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PLOU2XLYxmsIInFRc3M44HUTQc3b_YJ4-Y&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Google I/O 2018の動画まとめ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;tsconf-2018-youtube-youtube&quot;&gt;TSConf 2018 - YouTube - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PL2z7rCjEG2ksF0rJ8Qwp1y5eTjqiPIRfT&quot; title=&quot;TSConf 2018 - YouTube - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PL2z7rCjEG2ksF0rJ8Qwp1y5eTjqiPIRfT&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;イベント&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TSConf 2018の動画まとめ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://tsconf.io/&quot; title=&quot;TSConf 2018 | Seattle&quot;&gt;TSConf 2018 | Seattle&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;whats-new-in-chrome-devtools-google-i-o-18-youtube&quot;&gt;What&amp;#39;s new in Chrome DevTools (Google I/O &amp;#39;18) - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=mfuE53x4b3k&amp;feature=youtu.be&quot; title=&quot;What&amp;#39;s new in Chrome DevTools (Google I/O &amp;#39;18) - YouTube&quot;&gt;www.youtube.com/watch?v&amp;#x3D;mfuE53x4b3k&amp;amp;feature&amp;#x3D;youtu.be&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chromeの開発者ツールの新しい機能について。&lt;br&gt;
-非同期処理やWorkerでのブレークポイントの改善、検索機能の改善、LightHouseのアップデートとView Traceのデモ、コンソールのEaget Evaluationのデモなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jspm-io-native-es-modules-cdn&quot;&gt;jspm.io - Native ES Modules CDN&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jspm.io/&quot; title=&quot;jspm.io - Native ES Modules CDN&quot;&gt;jspm.io/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npmモジュールをES moduleとしてロードできるようにしてくれるCDNサービス。&lt;br&gt;
-CommonJSなモジュールはES moduleとして読み込めるように変換される。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;isomorphic-git-isomorphic-git-a-pure-javascript-implementation-of-git-for-node-and-browsers&quot;&gt;isomorphic-git/isomorphic-git: A pure JavaScript implementation of git for node and browsers!&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/isomorphic-git/isomorphic-git&quot; title=&quot;isomorphic-git/isomorphic-git: A pure JavaScript implementation of git for node and browsers!&quot;&gt;github.com/isomorphic-git/isomorphic-git&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Pure JavaScriptなGitの実装ライブラリ。&lt;br&gt;
-Node.jsとブラウザで動作する&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;nest-a-progressive-node-js-web-framework&quot;&gt;Nest - A progressive Node.js web framework&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nestjs.com/&quot; title=&quot;Nest - A progressive Node.js web framework&quot;&gt;nestjs.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsのウェブフレームワーク。&lt;br&gt;
-TypeScriptで書かれていて、AngularのようにDecoratorを使った宣言的な記述を行う。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jorgebucaran-classcat-javascript-function-for-conditionally-concatenating-css-classes&quot;&gt;jorgebucaran/classcat: JavaScript function for conditionally concatenating CSS classes.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jorgebucaran/classcat&quot; title=&quot;jorgebucaran/classcat: JavaScript function for conditionally concatenating CSS classes.&quot;&gt;github.com/jorgebucaran/classcat&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSSのクラス名文字列を結合したり、条件付きで消したりするライブラリ。&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 15 May 2018 10:33:11 +0900</pubDate>
-        <link>https://jser.info/2018/05/15/frontend-tooling-firefox-60-lighthouse-3.0b/</link>
-        <guid isPermaLink="true">https://jser.info/2018/05/15/frontend-tooling-firefox-60-lighthouse-3.0b/</guid>
-        
-        <category>frontend</category>
-        
-        <category>firefox</category>
-        
-        <category>Lighthouse</category>
         
         
         <category>JSer</category>
