@@ -33,7 +33,7 @@
     
     
     
-    <link rel="canonical" href="https://jser.info/2018/07/17/typescript-3.0.0npmproperty-based-testing/">
+    <link rel="canonical" href="https://jser.info/2018/07/17/typescript-3.0.0-rcnpmproperty-based-testing/">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jser.info/rss/">
     <link rel="apple-touch-icon" sizes="57x57" href="/public/img/favicon/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/public/img/favicon/apple-touch-icon-60x60.png">
@@ -62,7 +62,7 @@
 
 <meta property="og:title" content="2018-07-17のJS: TypeScript 3.0.0 RC、ウイルスとnpmパッケージ、Property based testing">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://jser.info/2018/07/17/typescript-3.0.0npmproperty-based-testing/">
+<meta property="og:url" content="https://jser.info/2018/07/17/typescript-3.0.0-rcnpmproperty-based-testing/">
 <meta property="og:image" content="https://jser.info/media/logo.png">
 
 <meta property="og:description" content="JSer.info #392 - TypeScript 3.0 RCが公開されています。TypeScriptはSemantic Versioningではないため、いわゆるメジャーアップデートとは違いますが、monorepoなど大きなリポジトリ向けの変更が入っています。">
@@ -127,8 +127,8 @@
     <h2 class="site-description">JavaScriptの最新情報を紹介する週刊ブログ</h2>
     <nav class="lang-menu">
         <ul>
-            <li><a href="/" data-alt-href="/2018/07/17/typescript-3.0.0npmproperty-based-testing/">日本語</a></li>
-            <li><a href="/ko/" data-alt-href="/ko/2018/07/17/typescript-3.0.0npmproperty-based-testing/">한국어</a></li>
+            <li><a href="/" data-alt-href="/2018/07/17/typescript-3.0.0-rcnpmproperty-based-testing/">日本語</a></li>
+            <li><a href="/ko/" data-alt-href="/ko/2018/07/17/typescript-3.0.0-rcnpmproperty-based-testing/">한국어</a></li>
         </ul>
         
         <div>
@@ -145,15 +145,15 @@
             <div class="post">
     <header>
         <div class="post-header">
-            <h1><a href="/2018/07/17/typescript-3.0.0npmproperty-based-testing/">2018-07-17のJS: TypeScript 3.0.0 RC、ウイルスとnpmパッケージ、Property based testing</a></h1>
+            <h1><a href="/2018/07/17/typescript-3.0.0-rcnpmproperty-based-testing/">2018-07-17のJS: TypeScript 3.0.0 RC、ウイルスとnpmパッケージ、Property based testing</a></h1>
 
             <div class="pre-post-toolbar">
                 <span class="post-date">2018年07月17日</span>
                 
                 <span class="svg-icon"><img src="/public/svg/github.svg"/></span>
-                <a class="btn edit-on-github" href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2018/2018-07-17-typescript-3.0.0npmproperty-based-testing.md"><span class="edit-on-github-label"></span>Edit on GitHub</a>
+                <a class="btn edit-on-github" href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2018/2018-07-17-typescript-3.0.0-rcnpmproperty-based-testing.md"><span class="edit-on-github-label"></span>Edit on GitHub</a>
                 <span class="svg-icon"><img src="/public/svg/git.svg"/></span>
-                <a class="btn revision-on-github" href="https://github.com/jser/jser.github.io/commits/develop/_i18n/ja/_posts/2018/2018-07-17-typescript-3.0.0npmproperty-based-testing.md"><span class="revision-on-github-label"></span>編集履歴を見る</a>
+                <a class="btn revision-on-github" href="https://github.com/jser/jser.github.io/commits/develop/_i18n/ja/_posts/2018/2018-07-17-typescript-3.0.0-rcnpmproperty-based-testing.md"><span class="revision-on-github-label"></span>編集履歴を見る</a>
             </div>
 
         </div>
@@ -173,13 +173,13 @@
     </li>
     <!-- Hatena -->
     <li>
-        <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-url="https://jser.info/2018/07/17/typescript-3.0.0npmproperty-based-testing/">
+        <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-url="https://jser.info/2018/07/17/typescript-3.0.0-rcnpmproperty-based-testing/">
             <img src="https://b.st-hatena.com/images/entry-button/button-only.gif" alt="はてなブックマークに追加" width="20" height="20" style="border: none">
         </a>
     </li>
     <!-- Pocket -->
     <li>
-        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/2018/07/17/typescript-3.0.0npmproperty-based-testing/"
+        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/2018/07/17/typescript-3.0.0-rcnpmproperty-based-testing/"
             data-pocket-count="horizontal" data-pocket-align="left">Pocket</a>
     </li>
 </ul>
@@ -205,7 +205,7 @@ TypeScriptは<a href="https://semver.org/">Semantic Versioning</a>ではない�
 <li><a href="https://github.com/Microsoft/TypeScript/issues/25600">tsc --build / Project References Feedback &amp; Discussion · Issue #25600 · Microsoft/TypeScript</a></li>
 </ul>
 
-<p>またTuple型の改善、<code>unknown</code>型の追加、Reactのdefault propsの型チェックのサポートなどが行われています。</p>
+<p>その他にもTuple型の改善、<code>unknown</code>型の追加、Reactのdefault propsの型チェックのサポートなどが行われています。</p>
 
 <hr>
 
@@ -434,7 +434,7 @@ TypeScriptでのアプリケーション開発についての書籍</p>
     <div class="post-post-toolbar">
         <span class="svg-icon"><img src="/public/svg/github.svg"/></span>
         <a class="btn edit-on-github"
-           href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2018/2018-07-17-typescript-3.0.0npmproperty-based-testing.md"><span
+           href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2018/2018-07-17-typescript-3.0.0-rcnpmproperty-based-testing.md"><span
                 class="edit-on-github-label"></span>この記事へ修正リクエストをする</a>
         
         <nav>
@@ -476,13 +476,13 @@ TypeScriptでのアプリケーション開発についての書籍</p>
     </li>
     <!-- Hatena -->
     <li>
-        <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-url="https://jser.info/2018/07/17/typescript-3.0.0npmproperty-based-testing/">
+        <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-url="https://jser.info/2018/07/17/typescript-3.0.0-rcnpmproperty-based-testing/">
             <img src="https://b.st-hatena.com/images/entry-button/button-only.gif" alt="はてなブックマークに追加" width="20" height="20" style="border: none">
         </a>
     </li>
     <!-- Pocket -->
     <li>
-        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/2018/07/17/typescript-3.0.0npmproperty-based-testing/"
+        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/2018/07/17/typescript-3.0.0-rcnpmproperty-based-testing/"
             data-pocket-count="horizontal" data-pocket-align="left">Pocket</a>
     </li>
 </ul>
@@ -562,7 +562,7 @@ TypeScriptでのアプリケーション開発についての書籍</p>
             <ul>
                 
                 
-                <li><a class="page-link" href="/2018/07/17/typescript-3.0.0npmproperty-based-testing/">2018-07-17のJS: TypeScript 3.0.0 RC、ウイルスとnpmパッケージ、Property based testing</a></li>
+                <li><a class="page-link" href="/2018/07/17/typescript-3.0.0-rcnpmproperty-based-testing/">2018-07-17のJS: TypeScript 3.0.0 RC、ウイルスとnpmパッケージ、Property based testing</a></li>
                 
                 
                 
