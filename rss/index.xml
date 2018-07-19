@@ -5,8 +5,8 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 17 Jul 2018 12:34:47 +0900</pubDate>
-    <lastBuildDate>Tue, 17 Jul 2018 12:34:47 +0900</lastBuildDate>
+    <pubDate>Thu, 19 Jul 2018 09:49:14 +0900</pubDate>
+    <lastBuildDate>Thu, 19 Jul 2018 09:49:14 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -50,10 +50,10 @@ TypeScriptは&lt;a href=&quot;https://semver.org/&quot;&gt;Semantic Versioning&l
 &lt;li&gt;&lt;a href=&quot;https://blog.npmjs.org/post/175824896885/incident-report-npm-inc-operations-incident-of&quot;&gt;The npm Blog — Incident report: npm, Inc. operations incident of...&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;現在は問題のパッケージ（&lt;code&gt;eslint-scope@3.7.2&lt;/code&gt;と&lt;code&gt;eslint-config-eslint@5.0.2&lt;/code&gt;）はunpublishされているため、インストールする可能性はほぼありません。しかし、npmのregistryには&lt;a href=&quot;https://www.jfrog.com/confluence/display/RTF/Npm+Registry&quot;&gt;Artifactory&lt;/a&gt;などのミラーを利用しているユーザーもいるため、ミラーのregistryには残っている可能性もあるので確認してください。仮に実行した場合でも&lt;a href=&quot;https://gist.github.com/hzoo/51cb84afdc50b14bffa6c6dc49826b3e&quot;&gt;eslint-scope attack&lt;/a&gt;で解説されているように、実際の攻撃スクリプトがすでに利用できないため影響はほぼありません。&lt;/p&gt;
+&lt;p&gt;問題のパッケージ（&lt;code&gt;eslint-scope@3.7.2&lt;/code&gt;と&lt;code&gt;eslint-config-eslint@5.0.2&lt;/code&gt;）は既にunpublishされているため、インストールする可能性はほぼありません。しかし、npmのregistryには&lt;a href=&quot;https://www.jfrog.com/confluence/display/RTF/Npm+Registry&quot;&gt;Artifactory&lt;/a&gt;などのミラーを利用しているユーザーもいるため、ミラーのregistryには残っている可能性もあるので確認してください。仮に実行した場合でも&lt;a href=&quot;https://gist.github.com/hzoo/51cb84afdc50b14bffa6c6dc49826b3e&quot;&gt;eslint-scope attack&lt;/a&gt;で解説されているように、実際の攻撃スクリプトがすでに利用できないため影響はほぼありません。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes&quot;&gt;Postmortem for Malicious Packages Published on July 12th, 2018 - ESLint - Pluggable JavaScript linter&lt;/a&gt;の記事では、パッケージのメンテナー側の対策として2要素認証をする、パスワードを使い回さないなどの対策などについて書かれています。&lt;br&gt;
-またパッケージの利用する側の対策として&lt;code&gt;pacakge-lock.json&lt;/code&gt;や&lt;code&gt;yarn.lock&lt;/code&gt;などでパッケージのバージョンをロックして今回の問題のようなパッケージは自動的には入らないようにするといったことについて書かれています。&lt;/p&gt;
+またパッケージの利用する側の対策として&lt;code&gt;pacakge-lock.json&lt;/code&gt;や&lt;code&gt;yarn.lock&lt;/code&gt;などでパッケージのバージョンをロックして今回の問題のようなパッケージを自動的には入らないようにするといったことについて書かれています。&lt;/p&gt;
 
 &lt;p&gt;今回の攻撃に使われたパッケージのインストール時に&lt;code&gt;postinstall&lt;/code&gt;のhookで悪意あるコードを実行するという手法は以前も同様の問題が報告されていました。この問題の対策の一環として&lt;a href=&quot;https://blog.npmjs.org/post/166039777883/protect-your-npm-account-with-two-factor&quot;&gt;read-only tokenや2要素認証&lt;/a&gt;が導入されていました。&lt;/p&gt;
 

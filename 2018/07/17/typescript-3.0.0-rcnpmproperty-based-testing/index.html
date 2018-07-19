@@ -226,10 +226,10 @@ TypeScriptは<a href="https://semver.org/">Semantic Versioning</a>ではない�
 <li><a href="https://blog.npmjs.org/post/175824896885/incident-report-npm-inc-operations-incident-of">The npm Blog — Incident report: npm, Inc. operations incident of...</a></li>
 </ul>
 
-<p>現在は問題のパッケージ（<code>eslint-scope@3.7.2</code>と<code>eslint-config-eslint@5.0.2</code>）はunpublishされているため、インストールする可能性はほぼありません。しかし、npmのregistryには<a href="https://www.jfrog.com/confluence/display/RTF/Npm+Registry">Artifactory</a>などのミラーを利用しているユーザーもいるため、ミラーのregistryには残っている可能性もあるので確認してください。仮に実行した場合でも<a href="https://gist.github.com/hzoo/51cb84afdc50b14bffa6c6dc49826b3e">eslint-scope attack</a>で解説されているように、実際の攻撃スクリプトがすでに利用できないため影響はほぼありません。</p>
+<p>問題のパッケージ（<code>eslint-scope@3.7.2</code>と<code>eslint-config-eslint@5.0.2</code>）は既にunpublishされているため、インストールする可能性はほぼありません。しかし、npmのregistryには<a href="https://www.jfrog.com/confluence/display/RTF/Npm+Registry">Artifactory</a>などのミラーを利用しているユーザーもいるため、ミラーのregistryには残っている可能性もあるので確認してください。仮に実行した場合でも<a href="https://gist.github.com/hzoo/51cb84afdc50b14bffa6c6dc49826b3e">eslint-scope attack</a>で解説されているように、実際の攻撃スクリプトがすでに利用できないため影響はほぼありません。</p>
 
 <p><a href="https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes">Postmortem for Malicious Packages Published on July 12th, 2018 - ESLint - Pluggable JavaScript linter</a>の記事では、パッケージのメンテナー側の対策として2要素認証をする、パスワードを使い回さないなどの対策などについて書かれています。<br>
-またパッケージの利用する側の対策として<code>pacakge-lock.json</code>や<code>yarn.lock</code>などでパッケージのバージョンをロックして今回の問題のようなパッケージは自動的には入らないようにするといったことについて書かれています。</p>
+またパッケージの利用する側の対策として<code>pacakge-lock.json</code>や<code>yarn.lock</code>などでパッケージのバージョンをロックして今回の問題のようなパッケージを自動的には入らないようにするといったことについて書かれています。</p>
 
 <p>今回の攻撃に使われたパッケージのインストール時に<code>postinstall</code>のhookで悪意あるコードを実行するという手法は以前も同様の問題が報告されていました。この問題の対策の一環として<a href="https://blog.npmjs.org/post/166039777883/protect-your-npm-account-with-two-factor">read-only tokenや2要素認証</a>が導入されていました。</p>
 
