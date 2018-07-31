@@ -5,9 +5,256 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 24 Jul 2018 10:24:03 +0900</pubDate>
-    <lastBuildDate>Tue, 24 Jul 2018 10:24:03 +0900</lastBuildDate>
+    <pubDate>Tue, 31 Jul 2018 10:48:38 +0900</pubDate>
+    <lastBuildDate>Tue, 31 Jul 2018 10:48:38 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2018-07-31のJS: TypeScript 3.0、Chrome 68、Vueの内部技術</title>
+        <description>&lt;p&gt;JSer.info #394 - TypeScript 3.0が正式にリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2018/07/30/announcing-typescript-3-0/&quot;&gt;Announcing TypeScript 3.0 | TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/What&amp;#x27;s-new-in-TypeScript#typescript-30&quot;&gt;What&amp;#39;s new in TypeScript · Microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Breaking-Changes#typescript-30&quot;&gt;Breaking Changes · Microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;monorepoなどで複数パッケージ間のビルド関係などを扱うProject referencesの追加、Generic rest parametersのサポート、Tuple型の改善、&lt;code&gt;unknown&lt;/code&gt;型の追加、Reactの&lt;code&gt;defaultProps&lt;/code&gt;の型のサポートなどが行われています。&lt;/p&gt;
+
+&lt;p&gt;次の記事でも具体的な動作について説明されているので合わせてみてみるといいかもしれません。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/57a0559c45b88b2ae168&quot;&gt;TypeScript 3.0.0-RC 変更点 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Chrome 68がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/07/nic68&quot;&gt;New in Chrome 68  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://chromereleases.googleblog.com/2018/07/stable-channel-update-for-desktop.html&quot; title=&quot;Chrome Releases: Stable Channel Update for Desktop&quot;&gt;Chrome Releases: Stable Channel Update for Desktop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/06/chrome-68-beta-add-to-home-screen.html&quot; title=&quot;Chromium Blog: Chrome 68 Beta: add to home screen, payment handler, page lifecycle&quot;&gt;Chromium Blog: Chrome 68 Beta: add to home screen, payment handler, page lifecycle&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#browsers.chrome.desktop%3D68&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Chrome 68から&lt;code&gt;http://&lt;/code&gt;なサイトの場合にアドレスバーには&amp;quot;Not Secure&amp;quot;（保護されていない通信）の表示がでるようになりました。&lt;br&gt;
+逆に&lt;code&gt;https://&lt;/code&gt;のアドレスバーの表示が控えめになっていくなど、徐々にHTTPSがデフォルトとなるような表示に変化していく予定です。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://security.googleblog.com/2018/02/a-secure-web-is-here-to-stay.html&quot;&gt;Google Online Security Blog: A secure web is here to stay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/05/evolving-chromes-security-indicators.html&quot;&gt;Chromium Blog: Evolving Chrome&amp;#39;s security indicators&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、Chrome 68ではPage Lifecycle APIのサポート、&lt;code&gt;customElements.upgrade()&lt;/code&gt;のサポート、Service WorkerにおけるHTTPキャッシュのデフォルトの挙動を変更などが行われています。&lt;/p&gt;
+
+&lt;p&gt;Page Lifecycle API、&lt;code&gt;fetch&lt;/code&gt; APIの&lt;a href=&quot;https://fetch.spec.whatwg.org/#keep-alive-flag&quot;&gt;&lt;code&gt;keepalive&lt;/code&gt;&lt;/a&gt;オプション、&lt;code&gt;navigator.sendBeacon&lt;/code&gt;などが揃ってきたこともあり、将来的にChromeではページを閉じる際に同期的なXHRでログを送信できなくする予定があります。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/LnqwTCiT9Gs/tO0IBO4PAwAJ&quot;&gt;Intent to Implement &amp;amp; Ship: Disallow Sync XHR in Page Dismissal - Google グループ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/07/page-lifecycle-api&quot;&gt;Page Lifecycle API  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2018/07/logging-activity-web-beacon-api/&quot;&gt;Logging Activity With The Web Beacon API — Smashing Magazine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://hcysun.me/vue-design/&quot;&gt;Vue技术内幕&lt;/a&gt;というサイトではVue.js本体のコード解説をしています。&lt;br&gt;
+中国語で書かれていてまだ書き途中の部分もありますが、ディレクトリ構造、オプションや初期化処理、リアクティブシステムの実装、テンプレートのパースとコンパイルの仕組み、Virtual DOMについてなどに書かれています。&lt;/p&gt;
+
+&lt;p&gt;コード解説なのでコードの動きを中心に解説されていて、特にテンプレートの処理周りの解説はかなり細かい印象です。&lt;br&gt;
+Vue.jsのコード自体に興味がある人は読んでみると面白いかもしれません。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;prettier-1-14-yaml-support-prettier&quot;&gt;Prettier 1.14: YAML Support · Prettier&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://prettier.io/blog/2018/07/29/1.14.0.html&quot; title=&quot;Prettier 1.14: YAML Support · Prettier&quot;&gt;prettier.io/blog/2018/07/29/1.14.0.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Prettier 1.14リリース。&lt;br&gt;
+YAMLのサポート、Front matterをサポート、&lt;code&gt;requirePragma&lt;/code&gt;と&lt;code&gt;requirePragma&lt;/code&gt;を各言語でサポート、CJK処理を改善してパフォーマンスの改善など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;angular-v6-1-now-available-typescript-2-9-scroll-positioning-and-more&quot;&gt;Angular v6.1 Now Available — TypeScript 2.9, Scroll Positioning, and more&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.angular.io/angular-v6-1-now-available-typescript-2-9-scroll-positioning-and-more-9f1c03007bb6&quot; title=&quot;Angular v6.1 Now Available — TypeScript 2.9, Scroll Positioning, and more&quot;&gt;blog.angular.io/angular-v6-1-now-available-typescript-2-9-scroll-positioning-and-more-9f1c03007bb6&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Angular v6.1リリース。&lt;br&gt;
+ルーターの&lt;code&gt;scrollPositionRestoration&lt;/code&gt;オプションでスクロール位置の保存に対応、TypeScript 2.9サポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-the-ionic-4-beta-the-official-ionic-blog&quot;&gt;Announcing the Ionic 4 Beta | The Official Ionic Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.ionicframework.com/announcing-ionic-4-beta/&quot; title=&quot;Announcing the Ionic 4 Beta | The Official Ionic Blog&quot;&gt;blog.ionicframework.com/announcing-ionic-4-beta/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;クロスプラットフォームアプリ開発フレームワークのIonic 4 Betaリリース。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-typescript-3-0-typescript&quot;&gt;Announcing TypeScript 3.0 | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2018/07/30/announcing-typescript-3-0/&quot; title=&quot;Announcing TypeScript 3.0 | TypeScript&quot;&gt;blogs.msdn.microsoft.com/typescript/2018/07/30/announcing-typescript-3-0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 3.0リリース。&lt;br&gt;
+Project references、可変長引数にGenerics型パラメータを適応できるように、Tuple型の改善、&lt;code&gt;unknown&lt;/code&gt;型の追加、Reactの&lt;code&gt;defaultProps&lt;/code&gt;の型のサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/57a0559c45b88b2ae168&quot; title=&quot;TypeScript 3.0.0-RC 変更点 - Qiita&quot;&gt;TypeScript 3.0.0-RC 変更点 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-in-chrome-68-web-google-developers&quot;&gt;New in Chrome 68  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/07/nic68&quot; title=&quot;New in Chrome 68  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/07/nic68&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 68リリース。&lt;br&gt;
+HTTPなサイトにはNot Secureの表示がでるように。&lt;br&gt;
+Page Lifecycle APIのサポート、&lt;code&gt;customElements.upgrade()&lt;/code&gt;のサポート、Service WorkerにおけるHTTPキャッシュのデフォルトの挙動を変更など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://chromereleases.googleblog.com/2018/07/stable-channel-update-for-desktop.html&quot; title=&quot;Chrome Releases: Stable Channel Update for Desktop&quot;&gt;Chrome Releases: Stable Channel Update for Desktop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/06/chrome-68-beta-add-to-home-screen.html&quot; title=&quot;Chromium Blog: Chrome 68 Beta: add to home screen, payment handler, page lifecycle&quot;&gt;Chromium Blog: Chrome 68 Beta: add to home screen, payment handler, page lifecycle&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/06/fresher-sw&quot; title=&quot;Fresher service workers, by default  |  Web  |  Google Developers&quot;&gt;Fresher service workers, by default  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;page-lifecycle-api-web-google-developers&quot;&gt;Page Lifecycle API  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/07/page-lifecycle-api&quot; title=&quot;Page Lifecycle API  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/07/page-lifecycle-api&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Page Lifecycle APIについての解説。&lt;br&gt;
+ウェブページにライフサイクルの概念を導入する。&lt;code&gt;visibilitychange&lt;/code&gt;など既存のイベントや新しく追加された&lt;code&gt;freeze&lt;/code&gt;、&lt;code&gt;resume&lt;/code&gt;などイベントの紹介、ライフサイクルにおけるStateについてを解説している。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-one-year-pwa-retrospective-pinterest-engineering-medium&quot;&gt;A one year PWA retrospective – Pinterest Engineering – Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@Pinterest_Engineering/a-one-year-pwa-retrospective-f4a2f4129e05&quot; title=&quot;A one year PWA retrospective – Pinterest Engineering – Medium&quot;&gt;medium.com/@Pinterest_Engineering/a-one-year-pwa-retrospective-f4a2f4129e05&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;PinterestのモバイルサイトのPWA化についてのタイムライン。&lt;br&gt;
+ログインユーザーからログアウトユーザーへの適応、GestaltとUIレイアウト、bundleサイズについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;time-travel-md&quot;&gt;time-travel.md&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com/jasonLaster/1e220992c294a571dd9b59abd084ccf2&quot; title=&quot;time-travel.md&quot;&gt;gist.github.com/jasonLaster/1e220992c294a571dd9b59abd084ccf2&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;FirefoxのNightlyに入ったWebReplayの使い方や機能について。 一連の操作や状態を保存してブレークポイントからの状態をもどしていったり、リプレイできるデバッグ機能。バグの再現とデバッグなどに利用できる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;redux-vs-the-react-context-api&quot;&gt;Redux vs. The React Context API&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://daveceddia.com/context-api-vs-redux/&quot; title=&quot;Redux vs. The React Context API&quot;&gt;daveceddia.com/context-api-vs-redux/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Contextの使い方や動作についての解説。Reduxでのステート管理との違いやContextはReduxを置き換えるものではない点についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;removing-babels-stage-presets-babel&quot;&gt;Removing Babel&amp;#39;s Stage Presets · Babel&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://babeljs.io/blog/2018/07/27/removing-babels-stage-presets&quot; title=&quot;Removing Babel&amp;#39;s Stage Presets · Babel&quot;&gt;babeljs.io/blog/2018/07/27/removing-babels-stage-presets&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Babel 7では&lt;code&gt;babel-preset-stage-0&lt;/code&gt;のようなStage Presetを公開しないことについて。&lt;br&gt;
+Stage Presetを削除することにした背景やProposalへのフィードバックについて。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;logging-activity-with-the-web-beacon-api-smashing-magazine&quot;&gt;Logging Activity With The Web Beacon API — Smashing Magazine&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2018/07/logging-activity-web-beacon-api/&quot; title=&quot;Logging Activity With The Web Beacon API — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2018/07/logging-activity-web-beacon-api/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;navigator.sendBeacon&lt;/code&gt;を使ってページを離脱する前にログを送信する方法について。&lt;br&gt;
+またGDPRやDNTの対応について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;thedaviddias-front-end-performance-checklist-the-only-front-end-performance-checklist-that-runs-faster-than-the-others&quot;&gt;thedaviddias/Front-End-Performance-Checklist: 🎮 The only Front-End Performance Checklist that runs faster than the others&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/thedaviddias/Front-End-Performance-Checklist&quot; title=&quot;thedaviddias/Front-End-Performance-Checklist: 🎮 The only Front-End Performance Checklist that runs faster than the others&quot;&gt;github.com/thedaviddias/Front-End-Performance-Checklist&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;フロントエンドのパフォーマンスチェックリスト&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;perf-tools-performance-at-master-artifact-project-perf-tools&quot;&gt;perf-tools/performance at master · artifact-project/perf-tools&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/artifact-project/perf-tools/tree/master/performance&quot; title=&quot;perf-tools/performance at master · artifact-project/perf-tools&quot;&gt;github.com/artifact-project/perf-tools/tree/master/performance&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;User Timing APIのpolyfillライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;cozmo-jsqr-a-pure-javascript-qr-code-reading-library-this-library-takes-in-raw-images-and-will-locate-extract-and-parse-any-qr-code-found-within&quot;&gt;cozmo/jsQR: A pure javascript QR code reading library. This library takes in raw images and will locate, extract and parse any QR code found within.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/cozmo/jsQR&quot; title=&quot;cozmo/jsQR: A pure javascript QR code reading library. This library takes in raw images and will locate, extract and parse any QR code found within.&quot;&gt;github.com/cozmo/jsQR&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;依存がないQRコードリーダライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;vue&quot;&gt;Vue技术内幕&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://hcysun.me/vue-design/&quot; title=&quot;Vue技术内幕&quot;&gt;hcysun.me/vue-design/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ebook&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vue.jsのソースコードを解説する電子書籍。&lt;br&gt;
+ディレクトリ構造、オプションや初期化処理、リアクティブシステムの実装、テンプレートのパースとジェネレートの仕組み、Virtual DOMについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 31 Jul 2018 09:34:34 +0900</pubDate>
+        <link>https://jser.info/2018/07/31/typescript-3.0chrome-68vue/</link>
+        <guid isPermaLink="true">https://jser.info/2018/07/31/typescript-3.0chrome-68vue/</guid>
+        
+        <category>typescript</category>
+        
+        <category>chrome</category>
+        
+        <category>Vue</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2018-07-24のJS: Monthly Webの作り方、普通のHTMLの書き方</title>
@@ -2258,337 +2505,6 @@ Vue.jsのテスト本。&lt;/p&gt;
         <category>babel</category>
         
         <category>transpiler</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-05-29のJS: React v16.4.0、Chrome 68の開発者ツール、自分で作るbundler</title>
-        <description>&lt;p&gt;JSer.info #385 - React 16.4.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://reactjs.org/blog/2018/05/23/react-v-16-4.html&quot;&gt;React v16.4.0: Pointer Events - React Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;React 16.4.0ではPointer Eventsがサポートされ&lt;code&gt;onPointerDown&lt;/code&gt;属性でハンドラを追加できるようになっています。また&lt;a href=&quot;https://reactjs.org/blog/2018/03/29/react-v-16-3.html&quot;&gt;React v16.3.0&lt;/a&gt;で追加された&lt;code&gt;getDerivedStateFromProps&lt;/code&gt;の挙動が修正されています。&lt;br&gt;
-&lt;code&gt;getDerivedStateFromProps&lt;/code&gt;は多くのアプリでは必要ないものだとして、今後フォローアップ記事を掲載する予定とのことです。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/05/devtools&quot;&gt;What&amp;#39;s New In DevTools (Chrome 68)  |  Web  |  Google Developers&lt;/a&gt;という記事ではChrome 68(開発版)での開発者ツールの変更点についてまとめられています。&lt;/p&gt;
-
-&lt;p&gt;コンソールで入力中に実行結果を表示できる&lt;br&gt;
-Eaget Evaluationの実装、補完の改善、Lighthouse 3.0への更新、&amp;quot;Add property path watch&amp;quot;の追加などがおこなわれています。&lt;/p&gt;
-
-&lt;p&gt;次のGoogle I/Oの動画でも紹介されています。&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/mfuE53x4b3k&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;次のリポジトリではJavaScriptのモジュールを１つのファイルに結合するbundlerをどうやって作るかについて紹介されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/ronami/minipack&quot;&gt;ronami/minipack: 📦 A simplified example of a modern module bundler written in JavaScript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://slides.com/ronenamiel/build-your-own-bundler-10-13#/&quot;&gt;Build your own bundler by Ronen Amiel&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/ronami/minipack&quot;&gt;Minipack&lt;/a&gt;はBabelのASTパーサを使った300行程度のbundlerの実装となっています。&lt;br&gt;
-それぞれの処理にコメントで解説が書かれているのでbundlerの仕組みに興味がある人は読んでみるとよいかもしれません。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-v16-4-0-pointer-events-react-blog&quot;&gt;React v16.4.0: Pointer Events - React Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://reactjs.org/blog/2018/05/23/react-v-16-4.html&quot; title=&quot;React v16.4.0: Pointer Events - React Blog&quot;&gt;reactjs.org/blog/2018/05/23/react-v-16-4.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React 16.4リリース。&lt;br&gt;
-&lt;code&gt;getDerivedStateFromProps&lt;/code&gt;のバグ修正、Pointer Eventsのサポート。&lt;br&gt;
-試験的に&lt;code&gt;&amp;lt;Profiler /&amp;gt;&lt;/code&gt;のサポート、また実験的実装だったReact Call Returnを削除など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jsdom-changelog-md-at-11-11-0-jsdom-jsdom&quot;&gt;jsdom/Changelog.md at 11.11.0 · jsdom/jsdom&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jsdom/jsdom/blob/11.11.0/Changelog.md&quot; title=&quot;jsdom/Changelog.md at 11.11.0 · jsdom/jsdom&quot;&gt;github.com/jsdom/jsdom/blob/11.11.0/Changelog.md&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;jsdom 11.11.0リリース。&lt;br&gt;
-&lt;code&gt;Node#getRootNode&lt;/code&gt;メソッドの追加、&lt;code&gt;whatwg-url&lt;/code&gt;のアップデートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v10-2-0-current-node-js&quot;&gt;Node v10.2.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v10.2.0/&quot; title=&quot;Node v10.2.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v10.2.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 10.2.0リリース。&lt;br&gt;
-&lt;code&gt;assert.throws&lt;/code&gt;の第2引数のバリデーションオブジェクトに正規表現を指定できるように。&lt;br&gt;
-Core APIのモジュールがnamed exportされるようになりES moduleからはnamed importできるようになるなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ecmascript-proposal-updates-at-2018-05-ecmascript-daily&quot;&gt;ECMAScript proposal updates at 2018-05 | ECMAScript Daily&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://ecmascript-daily.github.io/ecmascript/2018/05/28/ecmascript-proposal-updates&quot; title=&quot;ECMAScript proposal updates at 2018-05 | ECMAScript Daily&quot;&gt;ecmascript-daily.github.io/ecmascript/2018/05/28/ecmascript-proposal-updates&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proposal&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2018年5月に行われたTC39ミーティング結果のECMAScript ProposalのStatus変更点まとめ。&lt;br&gt;
-Optional &lt;code&gt;catch&lt;/code&gt;、JSON supersetがStage 4となった。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;prettier-1-13-conquering-the-web-prettier&quot;&gt;Prettier 1.13: Conquering the web! · Prettier&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://prettier.io/blog/2018/05/27/1.13.0.html&quot; title=&quot;Prettier 1.13: Conquering the web! · Prettier&quot;&gt;prettier.io/blog/2018/05/27/1.13.0.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Prettier 1.13リリース。&lt;br&gt;
-ブラウザで動作するように、TypeScritp 2.9のサポート。&lt;br&gt;
-&lt;code&gt;JSON.stringify&lt;/code&gt;スタイルのフォーマットをサポートし&lt;code&gt;pacakge.json&lt;/code&gt;とnpm/yarnとの整形の互換性を向上など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v4-10-0-webpack-webpack&quot;&gt;Release v4.10.0 · webpack/webpack&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/webpack/webpack/releases/tag/v4.10.0&quot; title=&quot;Release v4.10.0 · webpack/webpack&quot;&gt;github.com/webpack/webpack/releases/tag/v4.10.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpack v4.10.0リリース。&lt;br&gt;
-WebAssemblyのTree Shakingをサポート(Dead Code Eliminationは未実装)、wasmのruntimeのファイルサイズを軽量化など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript-streams-api&quot;&gt;JavaScriptのStreams APIで細切れのデータを読み書きする&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://sbfl.net/blog/2018/05/26/javascript-streams-api/&quot; title=&quot;JavaScriptのStreams APIで細切れのデータを読み書きする&quot;&gt;sbfl.net/blog/2018/05/26/javascript-streams-api/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;stream&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WHATWG Stream APIについて。&lt;br&gt;
-Readable Stream、TransformStream、WritableStreamの使い方や繋げ方について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;whats-new-in-devtools-chrome-68-web-google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 68)  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/05/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 68)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/05/devtools&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 68の開発者ツールの変更点について。&lt;br&gt;
-Eaget Evaluation、補完の改善、Lighthouse 3.0への更新、&amp;quot;Add property path watch&amp;quot;の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;web-react-native-dom&quot;&gt;Web最新技術がてんこ盛りのreact-native-domから目が離せない - ナカザンドットネット&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.nkzn.info/entry/2018/05/26/020312&quot; title=&quot;Web最新技術がてんこ盛りのreact-native-domから目が離せない - ナカザンドットネット&quot;&gt;blog.nkzn.info/entry/2018/05/26/020312&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React Native DOMというReact NativeをWebにPortするライブラリについての解説。&lt;br&gt;
-どのような仕組みでReact NativeのものをWebにPortしているかについて&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/vincentriemer/react-native-dom&quot; title=&quot;vincentriemer/react-native-dom: An experimental, comprehensive port of React Native to the web.&quot;&gt;vincentriemer/react-native-dom: An experimental, comprehensive port of React Native to the web.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;drupal-javascript-initiative-the-road-to-a-modern-administration-ui-lullabot&quot;&gt;Drupal JavaScript Initiative: The Road to a Modern Administration UI | Lullabot&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.lullabot.com/articles/drupal-javascript-initiative-the-road-to-a-modern-administration-ui&quot; title=&quot;Drupal JavaScript Initiative: The Road to a Modern Administration UI | Lullabot&quot;&gt;www.lullabot.com/articles/drupal-javascript-initiative-the-road-to-a-modern-administration-ui&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CMS&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;DrupalはjQueryをコアに採用していたが、モダンなJavaScriptの仕組みを取り込むためにReactを採用することにした。&lt;br&gt;
-この決定をするために管理画面のプロトタイプを作成し、どのようなことを学び、課題を見つけたかについて。またフォームの問題についてなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/jsdrupal/drupal-admin-ui&quot; title=&quot;jsdrupal/drupal-admin-ui: v fancy ⬅️✌️➡️&quot;&gt;jsdrupal/drupal-admin-ui: v fancy ⬅️✌️➡️&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;network-error-logging-asnokaze-blog&quot;&gt;ブラウザのネットワークエラーをレポートさせるNetwork Error Loggingが来た - ASnoKaze blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://asnokaze.hatenablog.com/entry/2018/05/28/210830&quot; title=&quot;ブラウザのネットワークエラーをレポートさせるNetwork Error Loggingが来た - ASnoKaze blog&quot;&gt;asnokaze.hatenablog.com/entry/2018/05/28/210830&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;network&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome開発版で実装されたNetwork Error Loggingについて。&lt;br&gt;
-ネットワークエラーが発生したときに指定したエンドポイントでレポートを送ることができる仕組み。&lt;br&gt;
-DNSやTCP、TLSなどについてのエラーをクライアントから送信できる&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;reacteurope-2018-day-1-youtube-youtube&quot;&gt;ReactEurope 2018 - Day 1 - YouTube - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLCC436JpVnK3xH_ArpIjdkYDGwWNkVa73&quot; title=&quot;ReactEurope 2018 - Day 1 - YouTube - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PLCC436JpVnK3xH_ArpIjdkYDGwWNkVa73&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;イベント&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ReactEurope 2018の動画まとめ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLCC436JpVnK1X7atG6EIz467Evs4TMX_5&quot; title=&quot;ReactEurope 2018 - Day 2 - YouTube - YouTube&quot;&gt;ReactEurope 2018 - Day 2 - YouTube - YouTube&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;pwa-beginners-4-a2hs-v2&quot;&gt;PWA Beginners 勉強会 #4 A2HSのちょっと深い話v2&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.slideshare.net/MasahikoJinno2/pwa-beginners-4-a2hsv2&quot; title=&quot;PWA Beginners 勉強会 #4 A2HSのちょっと深い話v2&quot;&gt;www.slideshare.net/MasahikoJinno2/pwa-beginners-4-a2hsv2&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ios&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Android&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Add to HomeScreenについてのスライド。&lt;br&gt;
-対応方法、App Install Bannersの制御やユースケースについて。&lt;br&gt;
-またAndroid/Chromeでの動作とiOS/Safariでの動作の違いなどについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;assert-js-conf-2018-youtube-youtube&quot;&gt;Assert(js) Conf 2018 - YouTube - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLZ66c9_z3umNSrKSb5cmpxdXZcIPNvKGw&quot; title=&quot;Assert(js) Conf 2018 - YouTube - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PLZ66c9_z3umNSrKSb5cmpxdXZcIPNvKGw&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Assert(JS)カンファレンスの動画まとめ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.assertjs.com/&quot; title=&quot;Assert(js)&quot;&gt;Assert(js)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ameba-accessibility-guidelines&quot;&gt;Ameba Accessibility Guidelines&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://openameba.github.io/a11y-guidelines/&quot; title=&quot;Ameba Accessibility Guidelines&quot;&gt;openameba.github.io/a11y-guidelines/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Amebaのアクセシビリティガイドライン。&lt;br&gt;
-項目ごとにWCAG 2.0との対応項目、悪い実装例、良い実装例が書かれている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;popcodeorg-popcode-an-html-css-javascript-editor-for-use-in-the-classroom&quot;&gt;popcodeorg/popcode: An HTML/CSS/JavaScript editor for use in the classroom&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/popcodeorg/popcode&quot; title=&quot;popcodeorg/popcode: An HTML/CSS/JavaScript editor for use in the classroom&quot;&gt;github.com/popcodeorg/popcode&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;editor&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JSFiddleのようなエディタ環境ウェブアプリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;googlechromelabs-audioworklet-polyfill-polyfill-audioworklet-using-the-legacy-scriptprocessor-api&quot;&gt;GoogleChromeLabs/audioworklet-polyfill: 🔊 Polyfill AudioWorklet using the legacy ScriptProcessor API.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChromeLabs/audioworklet-polyfill&quot; title=&quot;GoogleChromeLabs/audioworklet-polyfill: 🔊 Polyfill AudioWorklet using the legacy ScriptProcessor API.&quot;&gt;github.com/GoogleChromeLabs/audioworklet-polyfill&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;audio&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AudioWorkletのpolyfill&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;vuesax&quot;&gt;Vuesax&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://lusaxweb.github.io/vuesax/&quot; title=&quot;Vuesax&quot;&gt;lusaxweb.github.io/vuesax/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;VueコンポーネントのUIフレームワーク&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;wired-elements&quot;&gt;Wired Elements&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://wiredjs.com/&quot; title=&quot;Wired Elements&quot;&gt;wiredjs.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Web Componentsとして実装されている手書き風のUIコンポーネントライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;trekhleb-javascript-algorithms-algorithms-and-data-structures-implemented-in-javascript-with-explanations-and-links-to-further-readings&quot;&gt;trekhleb/javascript-algorithms: Algorithms and data structures implemented in JavaScript with explanations and links to further readings&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/trekhleb/javascript-algorithms&quot; title=&quot;trekhleb/javascript-algorithms: Algorithms and data structures implemented in JavaScript with explanations and links to further readings&quot;&gt;github.com/trekhleb/javascript-algorithms&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;algorithm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptで様々なデータ構造/探索アルゴリズムを実装しているリポジトリ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;vladocar-flexy-flexy-is-minimal-css-framework-made-with-flex&quot;&gt;vladocar/flexy: Flexy is minimal CSS framework made with Flex&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/vladocar/flexy&quot; title=&quot;vladocar/flexy: Flexy is minimal CSS framework made with Flex&quot;&gt;github.com/vladocar/flexy&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Flexboxを使った小さなレイアウトフレームワーク。&lt;br&gt;
-カラムレイアウトをクラス名で指定できる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ronami-minipack-a-simplified-example-of-a-modern-module-bundler-written-in-javascript&quot;&gt;ronami/minipack: 📦 A simplified example of a modern module bundler written in JavaScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/ronami/minipack&quot; title=&quot;ronami/minipack: 📦 A simplified example of a modern module bundler written in JavaScript&quot;&gt;github.com/ronami/minipack&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;AST&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;example&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptパーサを使った小さなbundlerの実装サンプル。&lt;br&gt;
-どのようにbundlerを実装するかがコメント付きで紹介されている。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://slides.com/ronenamiel/build-your-own-bundler-10-13#/&quot; title=&quot;Build your own bundler by Ronen Amiel&quot;&gt;Build your own bundler by Ronen Amiel&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;xtuc-webassemblyjs-toolchain-for-webassembly&quot;&gt;xtuc/webassemblyjs: Toolchain for WebAssembly&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/xtuc/webassemblyjs&quot; title=&quot;xtuc/webassemblyjs: Toolchain for WebAssembly&quot;&gt;github.com/xtuc/webassemblyjs&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;AST&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebAssemblyのAST Toolchain。 Parser、Traverser、Printer、AST編集のヘルパー、整形ツールなどを揃えたmonorepo&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;js-primer-javascript-web-scratch&quot;&gt;js-primer(JavaScript入門本)がオフラインで読めるようになりました | Web Scratch&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://efcl.info/2018/05/25/js-primer-offline/&quot; title=&quot;js-primer(JavaScript入門本)がオフラインで読めるようになりました | Web Scratch&quot;&gt;efcl.info/2018/05/25/js-primer-offline/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;js-primerがworkboxを使ってオフラインでも読めるようになった。 同じオフラインでもpdfやepubと違って内容が更新されれば、自動的に最新版を見られる。&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 29 May 2018 10:42:22 +0900</pubDate>
-        <link>https://jser.info/2018/05/29/react-v16.4.0chrome-68bundler/</link>
-        <guid isPermaLink="true">https://jser.info/2018/05/29/react-v16.4.0chrome-68bundler/</guid>
-        
-        <category>React</category>
-        
-        <category>Chrome</category>
-        
-        <category>bundler</category>
         
         
         <category>JSer</category>
