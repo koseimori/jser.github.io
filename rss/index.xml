@@ -5,9 +5,314 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 04 Sep 2018 13:03:24 +0900</pubDate>
-    <lastBuildDate>Tue, 04 Sep 2018 13:03:24 +0900</lastBuildDate>
+    <pubDate>Tue, 11 Sep 2018 11:41:34 +0900</pubDate>
+    <lastBuildDate>Tue, 11 Sep 2018 11:41:34 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2018-09-11のJS: Firefox 62.0、whatwg-fetch 3.0.0、Removing jQuery from GitHub.com</title>
+        <description>&lt;p&gt;JSer.info #400 - Firefox 62.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/62.0/releasenotes/&quot;&gt;Firefox 62.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/62&quot;&gt;Firefox 62 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.com/en-CA/versions/62/&quot;&gt;Firefox 62 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- textlint-disable --&gt;
+
+&lt;p&gt;開発者ツールでは&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_CSS_shapes&quot;&gt;Shape Path Editor&lt;/a&gt;の追加、&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Examine_grid_layouts&quot;&gt;CSS Grid Inspector&lt;/a&gt;や&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector&quot;&gt;Accessibility inspector&lt;/a&gt;の改善、&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors&quot;&gt;CORSエラーのドキュメント&lt;/a&gt;へのリンクがコンソールへ表示されるようになっています。&lt;/p&gt;
+
+&lt;!-- textlint-enable --&gt;
+
+&lt;p&gt;またCSS CSS Variable Fontsのサポート、&lt;code&gt;Array#flat&lt;/code&gt;と&lt;code&gt;Array#flatMap&lt;/code&gt;をデフォルト有効化、&lt;code&gt;import.meta&lt;/code&gt;のサポート、WebDriver APIの更新などが行われています。&lt;/p&gt;
+
+&lt;p&gt;CSS周りの更新についてはMozillaのJen Simmonsが次のPodcastで話しているので、合わせて聞いてみるといいかもしれません。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://shoptalkshow.com/episodes/328-jen-simmons-intrinsic-web-design/&quot;&gt;328: Jen Simmons and Intrinsic Web Design - ShopTalk&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/API/Fetch_API&quot;&gt;Fetch API&lt;/a&gt;のpolyfillライブラリである&lt;code&gt;whatwg-fetch&lt;/code&gt; 3.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/github/fetch/releases/tag/v3.0.0&quot;&gt;Release fetch 3.0.0 · github/fetch&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;今までは&lt;code&gt;export&lt;/code&gt;されていなかった&lt;code&gt;Headers&lt;/code&gt;、&lt;code&gt;Request&lt;/code&gt;、&lt;code&gt;Response&lt;/code&gt;が参照できるように修正されています。&lt;/p&gt;
+
+&lt;p&gt;すでにメジャーブラウザの&lt;code&gt;fetch&lt;/code&gt;実装では&lt;code&gt;credentials&lt;/code&gt;が&lt;code&gt;omit&lt;/code&gt;から&lt;code&gt;same-origin&lt;/code&gt;に変更されていますが、polyfillもこの変更の追従するように変更されました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/whatwg/fetch/pull/585&quot;&gt;Make fetch() use &amp;quot;same-origin&amp;quot; credentials by default by annevk · Pull Request #585 · whatwg/fetch&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、Fetch APIをキャンセルするための&lt;code&gt;signal&lt;/code&gt;オプションに対応しています。&lt;br&gt;
+&lt;code&gt;signal&lt;/code&gt;に渡す&lt;code&gt;AbortController&lt;/code&gt;に関してはFetchのpolyfillではなく、&lt;code&gt;AbortController&lt;/code&gt;の&lt;a href=&quot;https://github.com/mo/abortcontroller-polyfill/&quot;&gt;abortcontroller-polyfill&lt;/a&gt;を使うことになっています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/github/fetch/pull/572&quot;&gt;Added AbortController polyfill by coldhamix · Pull Request #572 · github/fetch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/github/fetch#aborting-requests&quot;&gt;Aborting requests&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://githubengineering.com/removing-jquery-from-github-frontend/&quot;&gt;Removing jQuery from GitHub.com frontend | GitHub Engineering&lt;/a&gt;という記事ではGitHub.comでjQueryをウェブ標準のAPIをベースにどう置き換えていったかについて書かれています。&lt;/p&gt;
+
+&lt;p&gt;jQueryの機能はウェブ標準のAPIに置き換えることでMDNといったドキュメントをベースに開発できることやjQuery特有の動作を解消できることがあげられています。&lt;/p&gt;
+
+&lt;p&gt;どのようにjQueryを外していったかについては、コードで使われてる&lt;code&gt;jQuery&lt;/code&gt;のメトリクスをとり可視化、ESLintを使ってjQueryの利用をCIでチェック、Polyfillを使うなど置き換えていった方針についてもかかれています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;part-2a003bb4b350ea2b&quot;&gt;お知らせ&lt;/h2&gt;
+
+&lt;p&gt;今回で400回目のJSer.infoです。&lt;/p&gt;
+
+&lt;p&gt;400回記念イベントを2018年9月22日(土)に開催するので興味がある人は参照してみてください。&lt;br&gt;
+既に定員になっていますが、当日来れない人もいると思うので参加したい人はとりあえず申し込んでおくといいかもしれません。(入場に必要なIDを送る必要があるので直前より事前に登録しておくといいです)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jser.connpass.com/event/100092/&quot; title=&quot;JSer.info 400回記念イベント - connpass&quot;&gt;JSer.info 400回記念イベント - connpass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jser.info/2018/08/31/jser-400-event-announce/&quot; title=&quot;2018年9月22日(土)に JSer.info 400回目記念イベントを開催します - JSer.info&quot;&gt;2018年9月22日(土)に JSer.info 400回目記念イベントを開催します - JSer.info&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;どうしても参加したい人は&lt;a href=&quot;https://twitter.com/azu_re&quot;&gt;@azu_re&lt;/a&gt;にご相談ください。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-in-chrome-69-web-google-developers&quot;&gt;New in Chrome 69  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/09/nic69&quot; title=&quot;New in Chrome 69  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/09/nic69&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 69リリース。&lt;br&gt;
+CSS Scroll Snap、CSS &lt;code&gt;env&lt;/code&gt;とDisplay cutouts、Web Locks API、OffscreenCanvasのサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/08/chrome-69-beta-av1-video-decoder-css.html&quot; title=&quot;Chromium Blog: Chrome 69 Beta: CSS tricks, and more&quot;&gt;Chromium Blog: Chrome 69 Beta: CSS tricks, and more&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#browsers.chrome.desktop%3D69&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v10-10-0-current-node-js&quot;&gt;Node v10.10.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v10.10.0/&quot; title=&quot;Node v10.10.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v10.10.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 10.10.0リリース&lt;br&gt;
+&lt;code&gt;fs&lt;/code&gt;モジュールが&lt;code&gt;TypedArray&lt;/code&gt;と&lt;code&gt;DataView&lt;/code&gt;をサポート、&lt;code&gt;http2&lt;/code&gt;モジュールがexperimentalではなくなった。&lt;br&gt;
+また&lt;code&gt;vm.compileFunction&lt;/code&gt;の追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-fetch-3-0-0-github-fetch&quot;&gt;Release fetch 3.0.0 · github/fetch&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/github/fetch/releases/tag/v3.0.0&quot; title=&quot;Release fetch 3.0.0 · github/fetch&quot;&gt;github.com/github/fetch/releases/tag/v3.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Fetch&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;polyfill&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Fetch polyfill 3.0.0リリース。&lt;br&gt;
+&lt;code&gt;credentials&lt;/code&gt;のデフォルト値を&lt;code&gt;same-origin&lt;/code&gt;に変更、&lt;code&gt;Request&lt;/code&gt;をキャンセルするための&lt;code&gt;signal&lt;/code&gt;をサポート、仕様の追従など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v16-5-0-facebook-react&quot;&gt;Release v16.5.0 · facebook/react&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/react/releases/tag/v16.5.0&quot; title=&quot;Release v16.5.0 · facebook/react&quot;&gt;github.com/facebook/react/releases/tag/v16.5.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React 16.5.0リリース。&lt;br&gt;
+React DevTools Profilerのサポート、&lt;code&gt;onAuxClick&lt;/code&gt;のサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;firefox-62-0-see-all-new-features-updates-and-fixes&quot;&gt;Firefox 62.0, See All New Features, Updates and Fixes&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/62.0/releasenotes/&quot; title=&quot;Firefox 62.0, See All New Features, Updates and Fixes&quot;&gt;www.mozilla.org/en-US/firefox/62.0/releasenotes/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Firefox 62.0リリース。&lt;br&gt;
+開発者ツールでShape Path Editorの追加、CORSエラー表示の改善。&lt;br&gt;
+&lt;code&gt;Array#flat&lt;/code&gt;と&lt;code&gt;Array#flatMap&lt;/code&gt;をデフォルト有効化、&lt;code&gt;import.meta&lt;/code&gt;のサポート、WebDriver APIの更新など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/62&quot; title=&quot;Firefox 62 for developers - Mozilla | MDN&quot;&gt;Firefox 62 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;web-performance-review-trademe-wildly-inaccurate&quot;&gt;Web performance review: TradeMe | Wildly Inaccurate&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wildlyinaccurate.com/web-performance-review-trademe/&quot; title=&quot;Web performance review: TradeMe | Wildly Inaccurate&quot;&gt;wildlyinaccurate.com/web-performance-review-trademe/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;SpeedCurveで計測しながら、ページの表示のパフォーマンスを改善する話。&lt;br&gt;
+何がボトルネックであるかを調べて、Hero Elementであるトップ画像の表示を早く表示するかについて。&lt;br&gt;
+また改善後もperformance budgetsをもとに修正し続けることについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-reporting-api-web-google-developers&quot;&gt;The Reporting API  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/09/reportingapi&quot; title=&quot;The Reporting API  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/09/reportingapi&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Reporting APIについて。&lt;br&gt;
+指定したURLに対してCSP違反、Feature Policy違反、deprecationｍネットワークエラーなどのレポートを送信できる。&lt;br&gt;
+またレポートが送信されたかをデバッグする方法について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;developer-tools-support-for-web-components-in-firefox-63-firefox-nightly-news&quot;&gt;Developer Tools support for Web Components in Firefox 63 – Firefox Nightly News&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.nightly.mozilla.org/2018/09/06/developer-tools-support-for-web-components-in-firefox-63/&quot; title=&quot;Developer Tools support for Web Components in Firefox 63 – Firefox Nightly News&quot;&gt;blog.nightly.mozilla.org/2018/09/06/developer-tools-support-for-web-components-in-firefox-63/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Firefox 63でWeb Componentsがデフォルトで有効化され開発者ツールも&lt;code&gt;&amp;lt;template&amp;gt;&lt;/code&gt;要素やShadow DOMなどに対応する&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;removing-jquery-from-github-com-frontend-github-engineering&quot;&gt;Removing jQuery from GitHub.com frontend | GitHub Engineering&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://githubengineering.com/removing-jquery-from-github-frontend/&quot; title=&quot;Removing jQuery from GitHub.com frontend | GitHub Engineering&quot;&gt;githubengineering.com/removing-jquery-from-github-frontend/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;github&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;GitHubがjQueryの依存を外すまでの話。&lt;br&gt;
+jQueryの機能はウェブ標準で代替できるものが増え、また一部のjQueryのメソッドチェーンには意図通りではない挙動があった。&lt;br&gt;
+コードで使われてる&lt;code&gt;jQuery&lt;/code&gt;のメトリクスをとり可視化、ESLintを使ってjQueryの利用をCIでチェック、Polyfillを使うなどしてウェブ標準の実装に置き換えていった話。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dgraham/eslint-plugin-jquery#readme&quot; title=&quot;dgraham/eslint-plugin-jquery: Disallow jQuery functions with native equivalents.&quot;&gt;dgraham/eslint-plugin-jquery: Disallow jQuery functions with native equivalents.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;asynchronous-access-to-http-cookies-web-google-developers&quot;&gt;Asynchronous Access to HTTP Cookies  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/09/asynchronous-access-to-http-cookies&quot; title=&quot;Asynchronous Access to HTTP Cookies  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/09/asynchronous-access-to-http-cookies&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 69でOrigin Trialを開始した Cookie Store APIについて。&lt;br&gt;
+&lt;code&gt;document.cookie&lt;/code&gt; APIとは異なり非同期処理として扱え、値の変更も監視できる。&lt;br&gt;
+またServie Workerからも利用できるようになっている&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;inside-look-at-modern-web-browser-part-1-web-google-developers&quot;&gt;Inside look at modern web browser (part 1)  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/09/inside-browser-part1&quot; title=&quot;Inside look at modern web browser (part 1)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/09/inside-browser-part1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chromeのプロセスについての連載。&lt;br&gt;
+どのようにプロセス分離されているか、ページナビゲーションからの各処理の流れなどについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-tour-of-javascript-timers-on-the-web-read-the-tea-leaves&quot;&gt;A tour of JavaScript timers on the web | Read the Tea Leaves&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nolanlawson.com/2018/09/01/a-tour-of-javascript-timers-on-the-web/&quot; title=&quot;A tour of JavaScript timers on the web | Read the Tea Leaves&quot;&gt;nolanlawson.com/2018/09/01/a-tour-of-javascript-timers-on-the-web/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptのタイマー処理についての解説。&lt;br&gt;
+microtask、&lt;code&gt;setTimeout&lt;/code&gt;/&lt;code&gt;setInterval&lt;/code&gt;、&lt;br&gt;
+&lt;code&gt;setImmediate&lt;/code&gt;、&lt;br&gt;
+&lt;code&gt;requestAnimationFrame&lt;/code&gt;、&lt;code&gt;requestIdleCallback&lt;/code&gt;について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;typescript-with-babel-a-beautiful-marriage-dailyjs-medium&quot;&gt;TypeScript with Babel: A Beautiful Marriage – DailyJS – Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/dailyjs/typescript-babel-ce24f724398&quot; title=&quot;TypeScript with Babel: A Beautiful Marriage – DailyJS – Medium&quot;&gt;medium.com/dailyjs/typescript-babel-ce24f724398&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Babel 7の&lt;code&gt;@babel/preset-typescript&lt;/code&gt;でサポートされたTypeScriptのコードコンパイルについて。&lt;br&gt;
+ユースケースや&lt;code&gt;.ts&lt;/code&gt;をBabelでコンパイルして&lt;code&gt;tsc&lt;/code&gt;で型チェックをする例などについて。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;lusakasa-sqorn-a-javascript-library-for-building-sql-queries&quot;&gt;lusakasa/sqorn: A Javascript library for building SQL queries&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/lusakasa/sqorn&quot; title=&quot;lusakasa/sqorn: A Javascript library for building SQL queries&quot;&gt;github.com/lusakasa/sqorn&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;SQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Tagged Template Literalを使ったSQLクエリビルダー&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;nuxt-js-vue-js-amazon&quot;&gt;Nuxt.jsビギナーズガイド―Vue.js ベースのフレームワークによるシングルページアプリケーション開発 | 花谷 拓磨 |本 | 通販 | Amazon&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4863542569/&quot; title=&quot;Nuxt.jsビギナーズガイド―Vue.js ベースのフレームワークによるシングルページアプリケーション開発 | 花谷 拓磨 |本 | 通販 | Amazon&quot;&gt;www.amazon.co.jp/dp/4863542569/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2018年10月19日発売&lt;br&gt;
+Nuxt.jsについての書籍&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;practical-react-native-build-two-full-projects-and-one-full-game-using-react-native-frank-zammetti-9781484239384-amazon-com-books&quot;&gt;Practical React Native: Build Two Full Projects and One Full Game using React Native: Frank Zammetti: 9781484239384: Amazon.com: Books&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/dp/1484239385/&quot; title=&quot;Practical React Native: Build Two Full Projects and One Full Game using React Native: Frank Zammetti: 9781484239384: Amazon.com: Books&quot;&gt;www.amazon.com/dp/1484239385/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2019年3月10日発売&lt;br&gt;
+React Nativeについての書籍&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;browsers-devices-and-fonts-a-designers-guide-to-fonts-and-how-they-function-on-the-web-gary-rozanc-9781138612310-amazon-com-books&quot;&gt;Browsers, Devices, and Fonts: A Designer&amp;#39;s Guide to Fonts and How They Function on the Web: Gary Rozanc: 9781138612310: Amazon.com: Books&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/dp/1138612316/&quot; title=&quot;Browsers, Devices, and Fonts: A Designer&amp;#39;s Guide to Fonts and How They Function on the Web: Gary Rozanc: 9781138612310: Amazon.com: Books&quot;&gt;www.amazon.com/dp/1138612316/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;web&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;desin&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;fonts&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2018年12月8日発売&lt;br&gt;
+ウェブタイポグラフィについての書籍。&lt;br&gt;
+Web Fontsとデザインについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jump-start-vue-js-nilson-jacques-9781925836097-amazon-com-books&quot;&gt;Jump Start Vue.js: Nilson Jacques: 9781925836097: Amazon.com: Books&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/dp/1925836096/&quot; title=&quot;Jump Start Vue.js: Nilson Jacques: 9781925836097: Amazon.com: Books&quot;&gt;www.amazon.com/dp/1925836096/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2019年2月25日発売&lt;br&gt;
+Vue、Vuex、Nuxt.jsについて簡潔に紹介する書籍&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 11 Sep 2018 11:04:31 +0900</pubDate>
+        <link>https://jser.info/2018/09/11/firefox-62.0whatwg-fetch-3.0.0removing-jquery-from-github.com/</link>
+        <guid isPermaLink="true">https://jser.info/2018/09/11/firefox-62.0whatwg-fetch-3.0.0removing-jquery-from-github.com/</guid>
+        
+        <category>Firefox</category>
+        
+        <category>GitHub</category>
+        
+        <category>jQuery</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2018-09-04のJS: Browser Interoperability、Mobile Form Design、400回記念イベントページ公開</title>
@@ -2225,238 +2530,6 @@ TypeScriptでのアプリケーション開発についての書籍&lt;/p&gt;
         <category>npmjs</category>
         
         <category>testing</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-07-10のJS: Jest 23.3.0 インラインスナップショット、npm.community</title>
-        <description>&lt;p&gt;JSer.info #391 - テストフレームワークのJest 23.3.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/jest/blob/v23.3.0/CHANGELOG.md&quot;&gt;jest/CHANGELOG.md at v23.3.0 · facebook/jest&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Jest 23.3.0では&lt;code&gt;toMatchInlineSnapshot&lt;/code&gt;と&lt;code&gt;toThrowErrorMatchingInlineSnapshot&lt;/code&gt;が追加されています。&lt;br&gt;
-いままでの&lt;a href=&quot;https://jestjs.io/docs/snapshot-testing.html&quot;&gt;スナップショットテスト&lt;/a&gt;は、スナップショットを外部ファイルとして保存していましたが、このInlineSnapshotはテストを実行するとテストコードを書き換えてコード内にスナップショットを保存します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/98d26f2884ec3280f89c2402ed2a397bd96709e3/68747470733a2f2f692e696d6775722e636f6d2f563651565934332e676966&quot; alt=&quot;`expect(x).toMatchInlineSnapshot()`&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;このInlineSnapshotは&lt;a href=&quot;https://prettier.io/&quot;&gt;Prettier&lt;/a&gt;で整形されるのが前提となっているのため、プロジェクトにはprettierの依存が必要となっています。&lt;br&gt;
-また、JavaScript以外にもTypeScriptでも動作するようになっています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/jest/pull/6380&quot;&gt;[RFC] Inline Snapshots by azz · Pull Request #6380 · facebook/jest&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.npmjs.org/post/175587538995/announcing-npmcommunity&quot;&gt;The npm Blog — Announcing npm.community&lt;/a&gt;という記事では今後のnpmのIssueの扱い方について書かれています。&lt;/p&gt;
-
-&lt;p&gt;今までは&lt;a href=&quot;https://github.com/npm/npm&quot;&gt;npm/npm&lt;/a&gt;などのIssueに問題を報告されていましたが、今後は&lt;a href=&quot;https://npm.community/&quot;&gt;npm.community&lt;/a&gt;というフォーラムでIssueを取り扱うことについて書かれています。&lt;br&gt;
-そのため、Pull Requestはリポジトリに対して行いますが、Issueはフォーラムの特定のカテゴリに投稿することが推奨されています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;お知らせ&lt;/p&gt;
-
-&lt;p&gt;そろそろ400回目が近づいてきたので、400回記念イベントのIssueを立てました。&lt;br&gt;
-まだ何をするかやどこでするかも決まっていませんが、意見があればIssue、&lt;a href=&quot;https://twitter.com/search?f=realtime&amp;q=%20%23jserinfo&quot;&gt;Twitter#jserinfo&lt;/a&gt;、&lt;a href=&quot;https://gitter.im/jser/jser.info?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&quot;&gt;&lt;img src=&quot;https://badges.gitter.im/jser/jser.info.svg&quot; alt=&quot;Gitter&quot;&gt;&lt;/a&gt;などにどうぞ。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/jser/jser.info/issues/102&quot;&gt;JSer.info 400回記念イベント · Issue #102 · jser/jser.info&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ember-js-ember-3-2-released&quot;&gt;Ember.js - Ember 3.2 Released&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://emberjs.com/blog/2018/06/29/ember-3-2-released.html&quot; title=&quot;Ember.js - Ember 3.2 Released&quot;&gt;emberjs.com/blog/2018/06/29/ember-3-2-released.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Ember 3.2リリース。&lt;br&gt;
-テンプレートに&lt;code&gt;let&lt;/code&gt;ヘルパーの追加、&lt;code&gt;Ember.Logger&lt;/code&gt;などが非推奨に&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jest-changelog-md-at-v23-3-0-facebook-jest&quot;&gt;jest/CHANGELOG.md at v23.3.0 · facebook/jest&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/jest/blob/v23.3.0/CHANGELOG.md&quot; title=&quot;jest/CHANGELOG.md at v23.3.0 · facebook/jest&quot;&gt;github.com/facebook/jest/blob/v23.3.0/CHANGELOG.md&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Jest 23.3.0リリース。&lt;br&gt;
-インラインでスナップショットテストをする&lt;code&gt;toMatchInlineSnapshot&lt;/code&gt;と&lt;code&gt;toThrowErrorMatchingInlineSnapshot&lt;/code&gt;の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v10-6-0-current-node-js&quot;&gt;Node v10.6.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v10.6.0/&quot; title=&quot;Node v10.6.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v10.6.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 10.6.0リリース。&lt;br&gt;
-&lt;code&gt;require(&amp;#39;dns&amp;#39;).promises&lt;/code&gt;の追加、&lt;code&gt;Atomics.wake&lt;/code&gt;を&lt;code&gt;Atomics.notify&lt;/code&gt;にリネームするECMAScriptの仕様追従など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-npm-blog-announcing-npm-community&quot;&gt;The npm Blog — Announcing npm.community&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.npmjs.org/post/175587538995/announcing-npmcommunity&quot; title=&quot;The npm Blog — Announcing npm.community&quot;&gt;blog.npmjs.org/post/175587538995/announcing-npmcommunity&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;community&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npmに関するIssueはDiscourse(npm.community)で扱うようにするという話。&lt;br&gt;
-既存のnpmリポジトリに立てられたIssueはアーカイブ化され、新規のIssueはnpm.communityの特定のカテゴリで扱うようになる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://npm.community/&quot; title=&quot;npm forum&quot;&gt;npm forum&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;eslint-v5-1-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v5.1.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2018/07/eslint-v5.1.0-released&quot; title=&quot;ESLint v5.1.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2018/07/eslint-v5.1.0-released&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ESLint 5.1.0リリース。&lt;br&gt;
-&lt;code&gt;no-catch-shadow&lt;/code&gt;はdeprecatedとなり、代わりに&lt;code&gt;no-shadow&lt;/code&gt;の利用を推奨している。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;official-google-webmaster-central-blog-using-page-speed-in-mobile-search-ranking&quot;&gt;Official Google Webmaster Central Blog: Using page speed in mobile search ranking&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html&quot; title=&quot;Official Google Webmaster Central Blog: Using page speed in mobile search ranking&quot;&gt;webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;SEO&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Googleのモバイル検索で&amp;quot;Speed Update&amp;quot;が有効化された。&lt;br&gt;
-表示が遅いサイトは表示ランキングに影響する仕組み。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/tools/chrome-user-experience-report/&quot; title=&quot;Chrome User Experience Report  |  Tools for Web Developers  |  Google Developers&quot;&gt;Chrome User Experience Report  |  Tools for Web Developers  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;tips&quot;&gt;フロントエンドの「想定外」に対応する考え方とTipsいくつか | ダーシマ・ヱンヂニヤリング&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://necomesi.jp/blog/tsmd/posts/229&quot; title=&quot;フロントエンドの「想定外」に対応する考え方とTipsいくつか | ダーシマ・ヱンヂニヤリング&quot;&gt;necomesi.jp/blog/tsmd/posts/229&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ブラウザの設定により使わない機能を考慮したデザインについて。&lt;br&gt;
-デフォルトフォント、Adblock、拡張機能、JavaScriptの無効化、Cookieの無効化/プライベートモードに対する対応などについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;what-is-redux-a-designer-s-guide-smashing-magazine&quot;&gt;What Is Redux: A Designer’s Guide — Smashing Magazine&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2018/07/redux-designers-guide/&quot; title=&quot;What Is Redux: A Designer’s Guide — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2018/07/redux-designers-guide/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Designer向けのReduxとはどういうもの？という解説。&lt;br&gt;
-データ受け取りどのようにコンポーネントの表示に反映させるかやデータ(State)変更、Optimistic UIなどについて図とともに概念を説明している&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;face-api-js-javascript-api-for-face-recognition-in-the-browser-with-tensorflow-js&quot;&gt;face-api.js — JavaScript API for Face Recognition in the Browser with tensorflow.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://itnext.io/face-api-js-javascript-api-for-face-recognition-in-the-browser-with-tensorflow-js-bcc2a6c4cf07&quot; title=&quot;face-api.js — JavaScript API for Face Recognition in the Browser with tensorflow.js&quot;&gt;itnext.io/face-api-js-javascript-api-for-face-recognition-in-the-browser-with-tensorflow-js-bcc2a6c4cf07&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;tensorflow.jsベースの顔検出/認識ライブラリであるface-api.jsについての記事。Face DetectionとFace Recognitionの実装方法や使い方についての解説&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/justadudewhohacks/face-api.js&quot; title=&quot;justadudewhohacks/face-api.js: JavaScript API for face detection and face recognition in the browser with tensorflow.js&quot;&gt;justadudewhohacks/face-api.js: JavaScript API for face detection and face recognition in the browser with tensorflow.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;optimization-auditing-a-deep-dive-into-chromes-dev-console-sitepoint&quot;&gt;Optimization Auditing: A Deep Dive into Chrome&amp;#39;s Dev Console — SitePoint&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.sitepoint.com/optimization-auditing-a-deep-dive-into-chromes-dev-console/&quot; title=&quot;Optimization Auditing: A Deep Dive into Chrome&amp;#39;s Dev Console — SitePoint&quot;&gt;www.sitepoint.com/optimization-auditing-a-deep-dive-into-chromes-dev-console/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chromeの開発者ツールの機能についての解説。&lt;br&gt;
-コンソールやパフォーマンスなどのツールについてスクリーンショットとともに紹介している。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;an-adventure-in-sparse-arrays&quot;&gt;An adventure in sparse arrays&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://remysharp.com/2018/06/26/an-adventure-in-sparse-arrays&quot; title=&quot;An adventure in sparse arrays&quot;&gt;remysharp.com/2018/06/26/an-adventure-in-sparse-arrays&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptの配列におけるsparse array(疎の配列)についての記事。 配列に穴があるときに、ループやメソッドなど列挙する際の扱いなどについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;seva-zaikov-node-js-repl-in-depth&quot;&gt;Seva Zaikov - Node.js REPL in Depth&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.bloomca.me/2018/07/09/nodejs-repl-in-depth.html&quot; title=&quot;Seva Zaikov - Node.js REPL in Depth&quot;&gt;blog.bloomca.me/2018/07/09/nodejs-repl-in-depth.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsのREPLについての記事。&lt;br&gt;
-REPLで利用できる特別なコマンド、自動的に使えるモジュールやモジュールとして&lt;code&gt;repl&lt;/code&gt;を使う方法についてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;justadudewhohacks-face-api-js-javascript-api-for-face-detection-and-face-recognition-in-the-browser-with-tensorflow-js&quot;&gt;justadudewhohacks/face-api.js: JavaScript API for face detection and face recognition in the browser with tensorflow.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/justadudewhohacks/face-api.js&quot; title=&quot;justadudewhohacks/face-api.js: JavaScript API for face detection and face recognition in the browser with tensorflow.js&quot;&gt;github.com/justadudewhohacks/face-api.js&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;MachineLearning&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;tensorflow.jsを使った顔検出/認識ライブラリ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;microstates-microstates-js-composable-state-primitives-for-javascript&quot;&gt;microstates/microstates.js: Composable State Primitives for JavaScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/microstates/microstates.js&quot; title=&quot;microstates/microstates.js: Composable State Primitives for JavaScript&quot;&gt;github.com/microstates/microstates.js&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Immutableなオブジェクトをデータ型とオブジェクトの指定をして作成するライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;retejs-rete-javascript-framework-for-visual-programming-and-creating-node-editor&quot;&gt;retejs/rete: JavaScript framework for visual programming and creating node editor&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/retejs/rete&quot; title=&quot;retejs/rete: JavaScript framework for visual programming and creating node editor&quot;&gt;github.com/retejs/rete&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;program&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ビジュアルプログラミングのためのフレームワーク。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jamiemccrindle-axax-async-iterator-extensions-for-javascript-e-g-map-reduce-filter-flatmap-etc&quot;&gt;jamiemccrindle/axax: Async Iterator Extensions for JavaScript e.g. map, reduce, filter, flatMap, etc.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jamiemccrindle/axax&quot; title=&quot;jamiemccrindle/axax: Async Iterator Extensions for JavaScript e.g. map, reduce, filter, flatMap, etc.&quot;&gt;github.com/jamiemccrindle/axax&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Async Iteratorを使った&lt;code&gt;map&lt;/code&gt;、&lt;code&gt;reduce&lt;/code&gt;、&lt;code&gt;filter&lt;/code&gt;、&lt;code&gt;flatMap&lt;/code&gt;、&lt;code&gt;pipe&lt;/code&gt;などの実装ライブラリ。&lt;br&gt;
-RxJSやコレクション系ライブラリと似たメソッドを提供するライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 10 Jul 2018 10:59:55 +0900</pubDate>
-        <link>https://jser.info/2018/07/10/jest-23.3.0-npm.community/</link>
-        <guid isPermaLink="true">https://jser.info/2018/07/10/jest-23.3.0-npm.community/</guid>
-        
-        <category>jest</category>
-        
-        <category>npm</category>
         
         
         <category>JSer</category>
