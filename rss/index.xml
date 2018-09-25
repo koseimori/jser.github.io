@@ -5,9 +5,290 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 25 Sep 2018 10:37:02 +0900</pubDate>
-    <lastBuildDate>Tue, 25 Sep 2018 10:37:02 +0900</lastBuildDate>
+    <pubDate>Tue, 25 Sep 2018 10:40:33 +0900</pubDate>
+    <lastBuildDate>Tue, 25 Sep 2018 10:40:33 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2018-09-25のJS: Gatsby 2.0.0、Nuxt.js 2.0、Next.js 7、Idle Until Urgent</title>
+        <description>&lt;p&gt;JSer.info #402 - Reactを使った静的サイトジェネレータであるGatsby 2.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/blog/2018-09-17-gatsby-v2/?no-cache=1&quot;&gt;Announcing Gatsby 2.0.0 🎉🎉🎉 | GatsbyJS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Runtimeのサイズを削減、React 16、webpack 4、Babel 7に対応。&lt;br&gt;
+アクセシビリティの改善のために&lt;code&gt;react-router&lt;/code&gt;から&lt;code&gt;@reach/router&lt;/code&gt;に変更。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gatsbyjs/gatsby/issues/5656&quot;&gt;Investigate using Reach Router · Issue #5656 · gatsbyjs/gatsby&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;layout&lt;/code&gt;コンポーネントを&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-layout/&quot;&gt;gatsby-plugin-layout&lt;/a&gt;へ移動するといった変更も行われています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Nuxt.js 2.0(Vueベース)とNext.js 7(Reactベース)がそれぞれリリースされています。&lt;/p&gt;
+
+&lt;p&gt;Nuxt.js:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.0.0&quot; title=&quot;Release v2.0.0 · nuxt/nuxt.js&quot;&gt;Release v2.0.0 · nuxt/nuxt.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@nuxt_js/nuxt-js-2-0-webpack-4-esm-modules-create-nuxt-app-and-more-6936ce80d94c&quot; title=&quot;Nuxt.js 2.0: Webpack 4, ESM Modules, create-nuxt-app and more! 💫&quot;&gt;Nuxt.js 2.0: Webpack 4, ESM Modules, create-nuxt-app and more! 💫&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://studio-andy.hatenablog.com/entry/nuxt-v2&quot; title=&quot;Nuxt.js v2.0.0がリリースされたので触ってみた【変更点まとめ】 - Studio Andy&quot;&gt;Nuxt.js v2.0.0がリリースされたので触ってみた【変更点まとめ】 - Studio Andy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Next.js:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nextjs.org/blog/next-7/&quot; title=&quot;Next.js 7 - Next.js Blog&quot;&gt;Next.js 7 - Next.js Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/releases/tag/7.0.0&quot; title=&quot;Release 7.0.0 · zeit/next.js&quot;&gt;Release 7.0.0 · zeit/next.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;どちらのフレームワークもBabel 7、webpack 4を使うように変更されています。&lt;/p&gt;
+
+&lt;p&gt;Nuxt.js 2.0では独自の&lt;code&gt;vendor&lt;/code&gt;オプションは廃止され、webpack側の仕組みを使うような方針になっています。またあわせて&lt;a href=&quot;https://github.com/nuxt-community/create-nuxt-app&quot;&gt;create-nuxt-app&lt;/a&gt;というCLIも公開されています。&lt;/p&gt;
+
+&lt;p&gt;Next.js 7.0.0では&lt;a href=&quot;https://github.com/zeit/styled-jsx/releases/tag/v3.0.0&quot;&gt;styled-jsx v3.0.0&lt;/a&gt;への更新やCSSに対するDynamic Importの対応しています。またデフォルトでは&lt;code&gt;import()&lt;/code&gt;に対しては勝手にchunkに分解するなどの動作はやめ、&lt;code&gt;next/dynamic&lt;/code&gt;を使った時に処理するように統一されました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://philipwalton.com/articles/idle-until-urgent/&quot;&gt;Idle Until Urgent — Philip Walton&lt;/a&gt;では&lt;code&gt;requestIdleCallback()&lt;/code&gt;を使った遅延実行のパターンについて書かれています。&lt;br&gt;
+さまざまなパターンの遅延実行やそのパターンを実装した&lt;code&gt;idlize&lt;/code&gt;というライブラリについて書かれています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChromeLabs/idlize&quot;&gt;GoogleChromeLabs/idlize: Helper classes and methods for implementing the idle-until-urgent pattern&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;part-2a003bb4b350ea2b&quot;&gt;お知らせ&lt;/h2&gt;
+
+&lt;p&gt;無事JSer.info 400回記念イベントは開催され、その結果については議事録なども含め次の記事で紹介しています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jser.info/2018/09/22/jser-info-400/&quot;&gt;JSer.info 400回記念イベントを開催しました - JSer.info&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;what-s-new-in-safari-apple-developer&quot;&gt;What’s New in Safari - Apple Developer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/safari/whats-new/&quot; title=&quot;What’s New in Safari - Apple Developer&quot;&gt;developer.apple.com/safari/whats-new/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari 12リリース。&lt;br&gt;
+watchOSで動作するように、&lt;code&gt;font-display&lt;/code&gt;のサポート、iPadでFullscreen APIのサポート。&lt;br&gt;
+ITP 2.0、CORBの一部をサポート、&lt;code&gt;.safariextz&lt;/code&gt;スタイルのSafari拡張を非推奨化など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-gatsby-2-0-0-gatsbyjs&quot;&gt;Announcing Gatsby 2.0.0 🎉🎉🎉 | GatsbyJS&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.gatsbyjs.org/blog/2018-09-17-gatsby-v2/&quot; title=&quot;Announcing Gatsby 2.0.0 🎉🎉🎉 | GatsbyJS&quot;&gt;www.gatsbyjs.org/blog/2018-09-17-gatsby-v2/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;静的サイトジェネレータとして知られるGatsby 2.0.0リリース。&lt;br&gt;
+Runtimeのサイズを削減、React 16、webpack 4、Babel 7に対応。&lt;br&gt;
+&lt;code&gt;react-router&lt;/code&gt;から&lt;code&gt;@reach/router&lt;/code&gt;に変更。&lt;code&gt;layout&lt;/code&gt;コンポーネントをプラグインに移動など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v2-0-0-nuxt-nuxt-js&quot;&gt;Release v2.0.0 · nuxt/nuxt.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.0.0&quot; title=&quot;Release v2.0.0 · nuxt/nuxt.js&quot;&gt;github.com/nuxt/nuxt.js/releases/tag/v2.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Nuxt.js 2.0.0リリース。&lt;br&gt;
+Babel7、webpack 4を使うように、serverとclientの成果物を別々のディレクトリに出力できるように、&lt;code&gt;nuxt.config.js&lt;/code&gt;で&lt;code&gt;server&lt;/code&gt;オプションのサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@nuxt_js/nuxt-js-2-0-webpack-4-esm-modules-create-nuxt-app-and-more-6936ce80d94c&quot; title=&quot;Nuxt.js 2.0: Webpack 4, ESM Modules, create-nuxt-app and more! 💫&quot;&gt;Nuxt.js 2.0: Webpack 4, ESM Modules, create-nuxt-app and more! 💫&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;next-js-7-next-js-blog&quot;&gt;Next.js 7 - Next.js Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nextjs.org/blog/next-7/&quot; title=&quot;Next.js 7 - Next.js Blog&quot;&gt;nextjs.org/blog/next-7/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Next.js 7.0.0リリース。&lt;br&gt;
+Babel 7、webpack 4へのアップグレード、&lt;code&gt;react-error-overlay&lt;/code&gt;を使ったエラー表示を行うように。&lt;br&gt;
+CSSに対してもDynamic Importをサポート、&lt;code&gt;assetPrefix&lt;/code&gt;オプションのサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/releases/tag/7.0.0&quot; title=&quot;Release 7.0.0 · zeit/next.js&quot;&gt;Release 7.0.0 · zeit/next.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-electron-v3-0-0-electron-electron&quot;&gt;Release electron v3.0.0 · electron/electron&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/electron/electron/releases/tag/v3.0.0&quot; title=&quot;Release electron v3.0.0 · electron/electron&quot;&gt;github.com/electron/electron/releases/tag/v3.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Electron 3.0リリース。&lt;br&gt;
+Chrome 66、Node 10.2.0へのアップデート。&lt;code&gt;app.isPackaged&lt;/code&gt;、&lt;code&gt;app.whenReady()&lt;/code&gt;の追加、いくつかのAPIの名前を変更といった破壊的な変更も行われている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/electron/electron/blob/master/docs/api/breaking-changes.md#breaking-api-changes-30&quot; title=&quot;electron/breaking-changes.md at master · electron/electron&quot;&gt;electron/breaking-changes.md at master · electron/electron&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;com-javascript-com-developers-blog&quot;&gt;一休.comスマホサイトのパフォーマンス改善（JavaScript編） - 一休.com Developers Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://user-first.ikyu.co.jp/entry/2018/09/20/090000&quot; title=&quot;一休.comスマホサイトのパフォーマンス改善（JavaScript編） - 一休.com Developers Blog&quot;&gt;user-first.ikyu.co.jp/entry/2018/09/20/090000&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Calibreを使ったパフォーマンス計測とBudgetの設定、ファイルサイズの削減による最適化、Vueの&lt;code&gt;v-if&lt;/code&gt;と&lt;code&gt;v-show&lt;/code&gt;の処理の違い、遅延ロードなどのパフォーマンス改善について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-spa&quot;&gt;React製のSPAのパフォーマンスチューニング実例 | リクルートテクノロジーズ　メンバーズブログ&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://recruit-tech.co.jp/blog/2018/09/19/react_spa_performance_tuning/&quot; title=&quot;React製のSPAのパフォーマンスチューニング実例 | リクルートテクノロジーズ　メンバーズブログ&quot;&gt;recruit-tech.co.jp/blog/2018/09/19/react_spa_performance_tuning/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Reactコンポーネントの&lt;code&gt;shouldComponentUpdate&lt;/code&gt;ライフサイクルメソッドの動作とパフォーマンスについて。&lt;br&gt;
+&lt;code&gt;shouldComponentUpdate&lt;/code&gt;の実装の違いによるコンポーネントの最適化の違いやボトルネックを開発者ツールで見つける方法についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;idle-until-urgent-philip-walton&quot;&gt;Idle Until Urgent — Philip Walton&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://philipwalton.com/articles/idle-until-urgent/&quot; title=&quot;Idle Until Urgent — Philip Walton&quot;&gt;philipwalton.com/articles/idle-until-urgent/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;すぐに実行するとコストが高いものを&lt;code&gt;requestIdleCallback&lt;/code&gt;を使い遅延実行することでfirst input delay (FID)を改善するという話。&lt;br&gt;
+それらのパターンをまとめたidliveというライブラリの使い方やユースケースについて&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChromeLabs/idlize&quot; title=&quot;GoogleChromeLabs/idlize: Helper classes and methods for implementing the idle-until-urgent pattern&quot;&gt;GoogleChromeLabs/idlize: Helper classes and methods for implementing the idle-until-urgent pattern&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;misoca&quot;&gt;レガシーなフロントエンドコードを整理するためにどう立ち向かったか - Misoca開発者ブログ&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tech.misoca.jp/entry/2018/09/21/110000&quot; title=&quot;レガシーなフロントエンドコードを整理するためにどう立ち向かったか - Misoca開発者ブログ&quot;&gt;tech.misoca.jp/entry/2018/09/21/110000&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;リファクタリング&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;jQueryで書かれていたDOM操作とロジックがべったりだったコードをどのようにリファクタリングしていったかについて。&lt;br&gt;
+コードにおけるデータの読み書きの流れを整理どこまでをリファクタリング対象にするかを決めテストを書いて進めたかについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;1-100-0-1-speaker-deck&quot;&gt;「1⇒100」のために「0⇒1」を考える フロントエンド - Speaker Deck&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/mukai21/1-100-falsetameni-0-1-wokao-eru-hurontoendo&quot; title=&quot;「1⇒100」のために「0⇒1」を考える フロントエンド - Speaker Deck&quot;&gt;speakerdeck.com/mukai21/1-100-falsetameni-0-1-wokao-eru-hurontoendo&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;design&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;設計&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;1=&amp;gt;100のフェーズは長くこの段階での変更は難しいため、0=&amp;gt;1の段階で基礎を作ることの重要性についてのスライド。&lt;br&gt;
+多人数開発でのコンポーネントガイド、PrettierやLint、テストとTypeScript、パッケージの更新を定期的に行うことについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;firefox-reality-developers-guide&quot;&gt;Firefox Reality Developers Guide&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.mozvr.com/firefox-reality-developers-guide/&quot; title=&quot;Firefox Reality Developers Guide&quot;&gt;blog.mozvr.com/firefox-reality-developers-guide/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;VR&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebVRをサポートしているライブラリについて。&lt;br&gt;
+またVRアプリでの最適化で気をつける点やFirefox Realityでのデバッグ方法について書かれている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.mozvr.com/remote-debugging-firefox-reality/&quot; title=&quot;Remote Debugging Firefox Reality&quot;&gt;Remote Debugging Firefox Reality&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;bokub-lyo-node-js-to-browser-the-easy-way&quot;&gt;bokub/lyo: 📦 Node.js to browser - The easy way&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/bokub/lyo&quot; title=&quot;bokub/lyo: 📦 Node.js to browser - The easy way&quot;&gt;github.com/bokub/lyo&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Browserify、Babel、UglifyJSを使った設定ファイルを使わないブラウザ向けにbundleするツール。&lt;br&gt;
+XOのようにopnionatedな設定を提供することで、設定自体をしなくても使えるようにしている。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;googlechromelabs-worker-plugin-adds-native-web-worker-bundling-support-to-webpack&quot;&gt;GoogleChromeLabs/worker-plugin: 🐳 Adds native Web Worker bundling support to Webpack.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChromeLabs/worker-plugin&quot; title=&quot;GoogleChromeLabs/worker-plugin: 🐳 Adds native Web Worker bundling support to Webpack.&quot;&gt;github.com/GoogleChromeLabs/worker-plugin&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;plugin&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;new Worker&lt;/code&gt;指定したファイルを自動的にbundleするwebpackプラグイン&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;kidkarolis-space-router-minimal-yet-awesome-universal-router&quot;&gt;KidkArolis/space-router: Minimal, yet awesome, universal router.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/KidkArolis/space-router&quot; title=&quot;KidkArolis/space-router: Minimal, yet awesome, universal router.&quot;&gt;github.com/KidkArolis/space-router&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ファイルサイズが小さなReact向けのルーターライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jameshenry-typescript-estree-a-parser-that-converts-typescript-source-code-into-an-estree-compatible-form&quot;&gt;JamesHenry/typescript-estree: A parser that converts TypeScript source code into an ESTree-compatible form&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/JamesHenry/typescript-estree&quot; title=&quot;JamesHenry/typescript-estree: A parser that converts TypeScript source code into an ESTree-compatible form&quot;&gt;github.com/JamesHenry/typescript-estree&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;AST&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript Compilerを使ってTypeScriptコードからESTree互換のASTを出力するパーサライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;javascript-kindle-amazon&quot;&gt;できるキッズ　子どもと学ぶ　JavaScriptプログラミング入門 できるキッズシリーズ | 大澤文孝, できるシリーズ編集部 | 工学 | Kindleストア | Amazon&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B07HHR8J4B/&quot; title=&quot;できるキッズ　子どもと学ぶ　JavaScriptプログラミング入門 できるキッズシリーズ | 大澤文孝, できるシリーズ編集部 | 工学 | Kindleストア | Amazon&quot;&gt;www.amazon.co.jp/dp/B07HHR8J4B/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2018年9月21日発売&lt;br&gt;
+プログラミング教育としてのJavaScript本&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 25 Sep 2018 09:58:46 +0900</pubDate>
+        <link>https://jser.info/2018/09/25/gatsby-2.0.0nuxt.js-2.0next.js-7idle-until-urgent/</link>
+        <guid isPermaLink="true">https://jser.info/2018/09/25/gatsby-2.0.0nuxt.js-2.0next.js-7idle-until-urgent/</guid>
+        
+        <category>nuxtjs</category>
+        
+        <category>nextjs</category>
+        
+        <category>requestIdleCallback</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>JSer.info 400回記念イベントを開催しました</title>
@@ -3642,253 +3923,6 @@ Tweening animationのような特定のイージングやループでの値の�
         <category>vue</category>
         
         <category>preact</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-07-31のJS: TypeScript 3.0、Chrome 68、Vueの内部技術</title>
-        <description>&lt;p&gt;JSer.info #394 - TypeScript 3.0が正式にリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2018/07/30/announcing-typescript-3-0/&quot;&gt;Announcing TypeScript 3.0 | TypeScript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/What&amp;#x27;s-new-in-TypeScript#typescript-30&quot;&gt;What&amp;#39;s new in TypeScript · Microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Breaking-Changes#typescript-30&quot;&gt;Breaking Changes · Microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;monorepoなどで複数パッケージ間のビルド関係などを扱うProject referencesの追加、Generic rest parametersのサポート、Tuple型の改善、&lt;code&gt;unknown&lt;/code&gt;型の追加、Reactの&lt;code&gt;defaultProps&lt;/code&gt;の型のサポートなどが行われています。&lt;/p&gt;
-
-&lt;p&gt;次の記事でも具体的な動作について説明されているので合わせてみてみるといいかもしれません。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/57a0559c45b88b2ae168&quot;&gt;TypeScript 3.0.0-RC 変更点 - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Chrome 68がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/07/nic68&quot;&gt;New in Chrome 68  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://chromereleases.googleblog.com/2018/07/stable-channel-update-for-desktop.html&quot; title=&quot;Chrome Releases: Stable Channel Update for Desktop&quot;&gt;Chrome Releases: Stable Channel Update for Desktop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/06/chrome-68-beta-add-to-home-screen.html&quot; title=&quot;Chromium Blog: Chrome 68 Beta: add to home screen, payment handler, page lifecycle&quot;&gt;Chromium Blog: Chrome 68 Beta: add to home screen, payment handler, page lifecycle&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#browsers.chrome.desktop%3D68&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Chrome 68から&lt;code&gt;http://&lt;/code&gt;なサイトの場合にアドレスバーには&amp;quot;Not Secure&amp;quot;（保護されていない通信）の表示がでるようになりました。&lt;br&gt;
-逆に&lt;code&gt;https://&lt;/code&gt;のアドレスバーの表示が控えめになっていくなど、徐々にHTTPSがデフォルトとなるような表示に変化していく予定です。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://security.googleblog.com/2018/02/a-secure-web-is-here-to-stay.html&quot;&gt;Google Online Security Blog: A secure web is here to stay&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/05/evolving-chromes-security-indicators.html&quot;&gt;Chromium Blog: Evolving Chrome&amp;#39;s security indicators&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また、Chrome 68ではPage Lifecycle APIのサポート、&lt;code&gt;customElements.upgrade()&lt;/code&gt;のサポート、Service WorkerにおけるHTTPキャッシュのデフォルトの挙動を変更などが行われています。&lt;/p&gt;
-
-&lt;p&gt;Page Lifecycle API、&lt;code&gt;fetch&lt;/code&gt; APIの&lt;a href=&quot;https://fetch.spec.whatwg.org/#keep-alive-flag&quot;&gt;&lt;code&gt;keepalive&lt;/code&gt;&lt;/a&gt;オプション、&lt;code&gt;navigator.sendBeacon&lt;/code&gt;などが揃ってきたこともあり、将来的にChromeではページを閉じる際に同期的なXHR（ログ送信などに利用されていた）を使えなくする予定があります。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/LnqwTCiT9Gs/tO0IBO4PAwAJ&quot;&gt;Intent to Implement &amp;amp; Ship: Disallow Sync XHR in Page Dismissal - Google グループ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/07/page-lifecycle-api&quot;&gt;Page Lifecycle API  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2018/07/logging-activity-web-beacon-api/&quot;&gt;Logging Activity With The Web Beacon API — Smashing Magazine&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://hcysun.me/vue-design/&quot;&gt;Vue技术内幕&lt;/a&gt;というサイトではVue.js本体のコード解説をしています。&lt;br&gt;
-中国語で書かれていてまだ書き途中の部分もありますが、ディレクトリ構造、オプションや初期化処理、リアクティブシステムの実装、テンプレートのパースとコンパイルの仕組み、Virtual DOMについてなどに書かれています。&lt;/p&gt;
-
-&lt;p&gt;コード解説なのでコードの動きを中心に解説されていて、特にテンプレートの処理周りの解説はかなり細かい印象です。&lt;br&gt;
-Vue.jsのコード自体に興味がある人は読んでみると面白いかもしれません。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;prettier-1-14-yaml-support-prettier&quot;&gt;Prettier 1.14: YAML Support · Prettier&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://prettier.io/blog/2018/07/29/1.14.0.html&quot; title=&quot;Prettier 1.14: YAML Support · Prettier&quot;&gt;prettier.io/blog/2018/07/29/1.14.0.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Prettier 1.14リリース。&lt;br&gt;
-YAMLのサポート、Front matterをサポート、&lt;code&gt;requirePragma&lt;/code&gt;と&lt;code&gt;requirePragma&lt;/code&gt;を各言語でサポート、CJK処理を改善してパフォーマンスの改善など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;angular-v6-1-now-available-typescript-2-9-scroll-positioning-and-more&quot;&gt;Angular v6.1 Now Available — TypeScript 2.9, Scroll Positioning, and more&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.angular.io/angular-v6-1-now-available-typescript-2-9-scroll-positioning-and-more-9f1c03007bb6&quot; title=&quot;Angular v6.1 Now Available — TypeScript 2.9, Scroll Positioning, and more&quot;&gt;blog.angular.io/angular-v6-1-now-available-typescript-2-9-scroll-positioning-and-more-9f1c03007bb6&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Angular v6.1リリース。&lt;br&gt;
-ルーターの&lt;code&gt;scrollPositionRestoration&lt;/code&gt;オプションでスクロール位置の保存に対応、TypeScript 2.9サポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-the-ionic-4-beta-the-official-ionic-blog&quot;&gt;Announcing the Ionic 4 Beta | The Official Ionic Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.ionicframework.com/announcing-ionic-4-beta/&quot; title=&quot;Announcing the Ionic 4 Beta | The Official Ionic Blog&quot;&gt;blog.ionicframework.com/announcing-ionic-4-beta/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;クロスプラットフォームアプリ開発フレームワークのIonic 4 Betaリリース。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-typescript-3-0-typescript&quot;&gt;Announcing TypeScript 3.0 | TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2018/07/30/announcing-typescript-3-0/&quot; title=&quot;Announcing TypeScript 3.0 | TypeScript&quot;&gt;blogs.msdn.microsoft.com/typescript/2018/07/30/announcing-typescript-3-0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.0リリース。&lt;br&gt;
-Project references、可変長引数にGenerics型パラメータを適応できるように、Tuple型の改善、&lt;code&gt;unknown&lt;/code&gt;型の追加、Reactの&lt;code&gt;defaultProps&lt;/code&gt;の型のサポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/57a0559c45b88b2ae168&quot; title=&quot;TypeScript 3.0.0-RC 変更点 - Qiita&quot;&gt;TypeScript 3.0.0-RC 変更点 - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-68-web-google-developers&quot;&gt;New in Chrome 68  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/07/nic68&quot; title=&quot;New in Chrome 68  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/07/nic68&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 68リリース。&lt;br&gt;
-HTTPなサイトにはNot Secureの表示がでるように。&lt;br&gt;
-Page Lifecycle APIのサポート、&lt;code&gt;customElements.upgrade()&lt;/code&gt;のサポート、Service WorkerにおけるHTTPキャッシュのデフォルトの挙動を変更など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://chromereleases.googleblog.com/2018/07/stable-channel-update-for-desktop.html&quot; title=&quot;Chrome Releases: Stable Channel Update for Desktop&quot;&gt;Chrome Releases: Stable Channel Update for Desktop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/06/chrome-68-beta-add-to-home-screen.html&quot; title=&quot;Chromium Blog: Chrome 68 Beta: add to home screen, payment handler, page lifecycle&quot;&gt;Chromium Blog: Chrome 68 Beta: add to home screen, payment handler, page lifecycle&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/06/fresher-sw&quot; title=&quot;Fresher service workers, by default  |  Web  |  Google Developers&quot;&gt;Fresher service workers, by default  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;page-lifecycle-api-web-google-developers&quot;&gt;Page Lifecycle API  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/07/page-lifecycle-api&quot; title=&quot;Page Lifecycle API  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/07/page-lifecycle-api&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Page Lifecycle APIについての解説。&lt;br&gt;
-ウェブページにライフサイクルの概念を導入する。&lt;code&gt;visibilitychange&lt;/code&gt;など既存のイベントや新しく追加された&lt;code&gt;freeze&lt;/code&gt;、&lt;code&gt;resume&lt;/code&gt;などイベントの紹介、ライフサイクルにおけるStateについてを解説している。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;a-one-year-pwa-retrospective-pinterest-engineering-medium&quot;&gt;A one year PWA retrospective – Pinterest Engineering – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@Pinterest_Engineering/a-one-year-pwa-retrospective-f4a2f4129e05&quot; title=&quot;A one year PWA retrospective – Pinterest Engineering – Medium&quot;&gt;medium.com/@Pinterest_Engineering/a-one-year-pwa-retrospective-f4a2f4129e05&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;PinterestのモバイルサイトのPWA化についてのタイムライン。&lt;br&gt;
-ログインユーザーからログアウトユーザーへの適応、GestaltとUIレイアウト、bundleサイズについてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;time-travel-md&quot;&gt;time-travel.md&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://gist.github.com/jasonLaster/1e220992c294a571dd9b59abd084ccf2&quot; title=&quot;time-travel.md&quot;&gt;gist.github.com/jasonLaster/1e220992c294a571dd9b59abd084ccf2&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;FirefoxのNightlyに入ったWebReplayの使い方や機能について。 一連の操作や状態を保存してブレークポイントからの状態をもどしていったり、リプレイできるデバッグ機能。バグの再現とデバッグなどに利用できる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;redux-vs-the-react-context-api&quot;&gt;Redux vs. The React Context API&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://daveceddia.com/context-api-vs-redux/&quot; title=&quot;Redux vs. The React Context API&quot;&gt;daveceddia.com/context-api-vs-redux/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React Contextの使い方や動作についての解説。Reduxでのステート管理との違いやContextはReduxを置き換えるものではない点についてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;removing-babels-stage-presets-babel&quot;&gt;Removing Babel&amp;#39;s Stage Presets · Babel&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://babeljs.io/blog/2018/07/27/removing-babels-stage-presets&quot; title=&quot;Removing Babel&amp;#39;s Stage Presets · Babel&quot;&gt;babeljs.io/blog/2018/07/27/removing-babels-stage-presets&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Babel 7では&lt;code&gt;babel-preset-stage-0&lt;/code&gt;のようなStage Presetを公開しないことについて。&lt;br&gt;
-Stage Presetを削除することにした背景やProposalへのフィードバックについて。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;logging-activity-with-the-web-beacon-api-smashing-magazine&quot;&gt;Logging Activity With The Web Beacon API — Smashing Magazine&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2018/07/logging-activity-web-beacon-api/&quot; title=&quot;Logging Activity With The Web Beacon API — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2018/07/logging-activity-web-beacon-api/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;navigator.sendBeacon&lt;/code&gt;を使ってページを離脱する前にログを送信する方法について。&lt;br&gt;
-またGDPRやDNTの対応について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;thedaviddias-front-end-performance-checklist-the-only-front-end-performance-checklist-that-runs-faster-than-the-others&quot;&gt;thedaviddias/Front-End-Performance-Checklist: 🎮 The only Front-End Performance Checklist that runs faster than the others&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/thedaviddias/Front-End-Performance-Checklist&quot; title=&quot;thedaviddias/Front-End-Performance-Checklist: 🎮 The only Front-End Performance Checklist that runs faster than the others&quot;&gt;github.com/thedaviddias/Front-End-Performance-Checklist&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;フロントエンドのパフォーマンスチェックリスト&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;perf-tools-performance-at-master-artifact-project-perf-tools&quot;&gt;perf-tools/performance at master · artifact-project/perf-tools&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/artifact-project/perf-tools/tree/master/performance&quot; title=&quot;perf-tools/performance at master · artifact-project/perf-tools&quot;&gt;github.com/artifact-project/perf-tools/tree/master/performance&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;User Timing APIのpolyfillライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;cozmo-jsqr-a-pure-javascript-qr-code-reading-library-this-library-takes-in-raw-images-and-will-locate-extract-and-parse-any-qr-code-found-within&quot;&gt;cozmo/jsQR: A pure javascript QR code reading library. This library takes in raw images and will locate, extract and parse any QR code found within.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/cozmo/jsQR&quot; title=&quot;cozmo/jsQR: A pure javascript QR code reading library. This library takes in raw images and will locate, extract and parse any QR code found within.&quot;&gt;github.com/cozmo/jsQR&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;依存がないQRコードリーダライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;vue&quot;&gt;Vue技术内幕&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://hcysun.me/vue-design/&quot; title=&quot;Vue技术内幕&quot;&gt;hcysun.me/vue-design/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ebook&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Vue.jsのソースコードを解説する電子書籍。&lt;br&gt;
-ディレクトリ構造、オプションや初期化処理、リアクティブシステムの実装、テンプレートのパースとジェネレートの仕組み、Virtual DOMについてなど&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 31 Jul 2018 09:34:34 +0900</pubDate>
-        <link>https://jser.info/2018/07/31/typescript-3.0chrome-68vue/</link>
-        <guid isPermaLink="true">https://jser.info/2018/07/31/typescript-3.0chrome-68vue/</guid>
-        
-        <category>typescript</category>
-        
-        <category>chrome</category>
-        
-        <category>Vue</category>
         
         
         <category>JSer</category>
