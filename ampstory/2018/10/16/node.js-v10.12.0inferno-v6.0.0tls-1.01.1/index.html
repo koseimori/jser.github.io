@@ -1,0 +1,437 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2018-10-16のJS: Node.js v10.12.0、Inferno v6.0.0、ブラウザのTLS 1.0と1.1終了時期 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2018/10/16/node.js-v10.12.0inferno-v6.0.0tls-1.01.1/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2018-10-16のJS: Node.js v10.12.0、Inferno v6.0.0、ブラウザのTLS 1.0と1.1終了時期"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2018-10-16のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://nodejs.org/en/blog/release/v10.12.0/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v10.12.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 10.12.0リリース。
+<code>util.inspect</code>に<code>sorted</code>オプションの追加、<code>fs.mkdir</code>に<code>recursive</code>オプションの追加、WebSockets over HTTP/2のサポート。
+<code>module.createRequireFromPath(filename)</code>の追加、<code>URL</code>とPathの相互変換するメソッドを<code>url</code>モジュールに追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v10.12.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v10.12.0/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://eslint.org/blog/2018/10/eslint-v5.7.0-released">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint v5.7.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+            <p class="item-contents">ESLint v5.7.0リリース。
+<code>no-tabs</code>ルールに<code>allowIndentationTabs</code>オプションの追加、<code>camelcase</code>ルールに<code>ignoreList</code>オプションの追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ESLint v5.7.0 released - ESLint - Pluggable JavaScript linter" href="https://eslint.org/blog/2018/10/eslint-v5.7.0-released" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/reduxjs/redux/releases/tag/v4.0.1">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v4.0.1 · reduxjs/redux</amp-fit-text>
+            <p class="item-contents">Redux 4.0.1リリース。
+<code>.mjs</code>をサポート、unpkgフィールドを追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v4.0.1 · reduxjs/redux" href="https://github.com/reduxjs/redux/releases/tag/v4.0.1" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/infernojs/inferno/releases/tag/v6.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Inferno v6.0.0 · infernojs/inferno</amp-fit-text>
+            <p class="item-contents">Inferno v6.0.0リリース。
+<code>hydrate</code>を別パッケージに移行、スタイルプロパティがhyphenを使った命名規則に、Reactのライフサイクルイベントとの互換性向上。
+String refsを削除、CreateRef/ForwardRef APIの追加、Fragmentsのサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Inferno v6.0.0 · infernojs/inferno" href="https://github.com/infernojs/inferno/releases/tag/v6.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/8419/release-notes-for-safari-technology-preview-67/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 67 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview 67リリース。
+Pointer Eventsを試験的にサポート、H264  Simulcastの有効化、<code>CSS.registerProperty</code>の<code>initialValue</code>プロパティのサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 67 | WebKit" href="https://webkit.org/blog/8419/release-notes-for-safari-technology-preview-67/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://v8.dev/blog/v8-release-70">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">V8 release v7.0 · V8</amp-fit-text>
+            <p class="item-contents">V8 7.0リリース。
+Embedded builtinsでのメモリ消費量の削減、WebAssembly ThreadsのOrigin Trialの開始、<code>Array#sort</code>が安定ソートになるなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 release v7.0 · V8" href="https://v8.dev/blog/v8-release-70" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/sinonjs/lolex/blob/master/History.md#300--2018-10-08">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">lolex/History.md at master · sinonjs/lolex</amp-fit-text>
+            <p class="item-contents">Sinon.jsでも使われるFake TimerライブラリであるLolex 3.0リリース。 <code>Clock#countTimers</code>の追加、negative tickは例外を投げるように変更など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="lolex/History.md at master · sinonjs/lolex" href="https://github.com/sinonjs/lolex/blob/master/History.md#300--2018-10-08" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2018/10/devtools">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">What&#039;s New In DevTools (Chrome 71)  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">Chrome 71の開発者ツールの変更点について。
+DOM nodeをglobal variableとして保存できるように、HARファイルに<code>_initiator</code>と<code>_priority</code>を追加、PiPのbreakpointをサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="What&#039;s New In DevTools (Chrome 71)  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2018/10/devtools" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://addyosmani.com/blog/performance-budgets/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">AddyOsmani.com - Start Performance Budgeting</amp-fit-text>
+            <p class="item-contents">performance budgetとはなにかについての記事。performance budgetとして使うことがある指標やその設定例。
+新しい機能開発をするときにステークホルダーとの理解を共有に使うケースやトレードオフについてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="AddyOsmani.com - Start Performance Budgeting" href="https://addyosmani.com/blog/performance-budgets/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@elijahmanor/whats-new-in-create-react-app-2-0-video-series-4ffaaa7cb7df">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">What’s New in Create React App 2.0 Video Series – Elijah Manor – Medium</amp-fit-text>
+            <p class="item-contents">Create React App 2.0についてのスクリーンキャストと解説
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="What’s New in Create React App 2.0 Video Series – Elijah Manor – Medium" href="https://medium.com/@elijahmanor/whats-new-in-create-react-app-2-0-video-series-4ffaaa7cb7df" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://qiita.com/shimarin/items/17707fa575744ca0bd89">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Webpack v3 → v4移行パッケージ対照表 - Qiita</amp-fit-text>
+            <p class="item-contents">webpack3から4への移行におけるオプションやプラグインなどの対応関係や変更点について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Webpack v3 → v4移行パッケージ対照表 - Qiita" href="https://qiita.com/shimarin/items/17707fa575744ca0bd89" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/dkundel/sinnerschrader-tech-session-18-2018-the-year-of-web-components">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">SinnerSchrader Tech Session &#039;18 - 2018 - The Year of Web Components - Speaker Deck</amp-fit-text>
+            <p class="item-contents">Web Componentsについてのスライド。
+Web Componentsを構成する仕様の紹介、ツールやフレームワークについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="SinnerSchrader Tech Session &#039;18 - 2018 - The Year of Web Components - Speaker Deck" href="https://speakerdeck.com/dkundel/sinnerschrader-tech-session-18-2018-the-year-of-web-components" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://slides.com/seldo/npm-future-of-javascript#/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">npm and the future of JavaScript</amp-fit-text>
+            <p class="item-contents">npmとJavaScriptのエコシステムについてスライド。
+フロントエンドフレームワークやバックエンドフレームワークのシェアの変化、何にnpmを使っているかについてなど。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="npm and the future of JavaScript" href="https://slides.com/seldo/npm-future-of-javascript#/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/smooth-code/loadable-components">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">smooth-code/loadable-components: React code splitting made easy ✂️✨</amp-fit-text>
+            <p class="item-contents">Dynamic ImportやCode Splitting、SSRに対応したReactコンポーネントの動的ロードを扱うライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="smooth-code/loadable-components: React code splitting made easy ✂️✨" href="https://github.com/smooth-code/loadable-components" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://javascriptvisualizer.com/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScript Visualizer</amp-fit-text>
+            <p class="item-contents">JavaScriptコードの実行をステップごとにインタプリタ的に実行しながら、実行コンテキストがどのように変化しているかを見られるツール。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript Visualizer" href="https://javascriptvisualizer.com/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.co.jp/dp/4798153907/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">入門JavaScript フロントエンドエンジニアになるための基本と実践スキル | 玉川 純 |本 | 通販 | Amazon</amp-fit-text>
+            <p class="item-contents">2018年11月28日発売。
+初心者向けのJavaScriptについての書籍
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="入門JavaScript フロントエンドエンジニアになるための基本と実践スキル | 玉川 純 |本 | 通販 | Amazon" href="https://www.amazon.co.jp/dp/4798153907/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
