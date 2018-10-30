@@ -5,9 +5,315 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 24 Oct 2018 15:42:25 +0900</pubDate>
-    <lastBuildDate>Wed, 24 Oct 2018 15:42:25 +0900</lastBuildDate>
+    <pubDate>Tue, 30 Oct 2018 12:26:34 +0900</pubDate>
+    <lastBuildDate>Tue, 30 Oct 2018 12:26:34 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2018-10-30のJS: Node.js 11.0.0、Storybook 4.0.0、Firefox 63</title>
+        <description>&lt;p&gt;JSer.info #407 - Node.js 11系がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.0.0/&quot; title=&quot;Node v11.0.0 (Current) | Node.js&quot;&gt;Node v11.0.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/october-brings-node-js-10-x-to-lts-and-node-js-11-to-current-ae19f8f12b51&quot; title=&quot;October Brings Node.js 10.x to LTS and Node.js 11 to Current!&quot;&gt;October Brings Node.js 10.x to LTS and Node.js 11 to Current!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Node.js 11.xは6ヶ月のサポートとなる開発版に位置づけられる奇数バージョンです。&lt;br&gt;
+これに合わせてNode.js 10.xが10月30日のリリースでLong Term Support(LTS)になる予定です。&lt;/p&gt;
+
+&lt;p&gt;Node.js 11では、V8 7.0へ更新、&lt;code&gt;http.request&lt;/code&gt;メソッドのオプションがデフォルトではWHATWG URLでパースされるように変更されています。&lt;br&gt;
+(後方互換性のため、&lt;a href=&quot;https://github.com/nodejs/node/pull/20270&quot;&gt;パースに失敗した際は&lt;code&gt;url&lt;/code&gt;でパースし直します&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;また&lt;code&gt;TextEncoder&lt;/code&gt;/&lt;code&gt;TextDecoder&lt;/code&gt;が&lt;code&gt;util&lt;/code&gt;からグローバルへ移動、&lt;code&gt;process.binding()&lt;/code&gt;の非推奨化などが行われています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;UIコンポーネントの開発ツールであるStorybook 4.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · storybooks/storybook&quot;&gt;Release v4.0.0 · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/blob/master/MIGRATION.md#from-version-34x-to-40x&quot; title=&quot;storybook/MIGRATION.md at master · storybooks/storybook&quot;&gt;storybook/MIGRATION.md at master · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-4-0-is-here-10b9857fc7de&quot; title=&quot;Storybook 4.0 is here! – Storybook – Medium&quot;&gt;Storybook 4.0 is here! – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Babel 7/webacpk 4へのアップデートが行われ、Ember/MarkoJS/Mithril/HTML/Svelte/Riotのサポートが追加されています。&lt;br&gt;
+またReact Nativeなどのモバイル対応の改善、theme変数が実装されStorybookの管理UIの設定を変更できるようになっています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://storybook.js.org/configurations/theming/&quot;&gt;Theming Storybook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Firefox 63.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/63.0/releasenotes/&quot; title=&quot;Firefox 63.0, See All New Features, Updates and Fixes&quot;&gt;Firefox 63.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.com/en-CA/versions/63/&quot; title=&quot;Firefox 63 Site Compatibility | Firefox Site Compatibility&quot;&gt;Firefox 63 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/63&quot; title=&quot;Firefox 63 for developers - Mozilla | MDN&quot;&gt;Firefox 63 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Firefox 63ではWeb Componentsがサポートされています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2018/10/firefox-63-tricks-and-treats/&quot; title=&quot;Firefox 63 - Tricks and Treats! - Mozilla Hacks - the Web developer blog&quot;&gt;Firefox 63 - Tricks and Treats! - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Media Capabilities API、Async Clipboard API のサポート、&lt;code&gt;Clear-Site-Data&lt;/code&gt;ヘッダがデフォルトで有効化されています。&lt;br&gt;
+またクロスブラウザ互換のために&lt;code&gt;Window.event&lt;/code&gt;プロパティの実装されています。&lt;/p&gt;
+
+&lt;p&gt;開発者ツールでは&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_fonts&quot;&gt;Fonts Editor&lt;/a&gt;を追加し、&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector&quot;&gt;Accessibility inspector&lt;/a&gt;がデフォルトで有効化されています。&lt;br&gt;
+また、開発者ツールでもWeb Components(Shadow DOM)のサポートが追加されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.nightly.mozilla.org/2018/09/06/developer-tools-support-for-web-components-in-firefox-63/&quot; title=&quot;Developer Tools support for Web Components in Firefox 63 – Firefox Nightly News&quot;&gt;Developer Tools support for Web Components in Firefox 63 – Firefox Nightly News&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v3-1-0-karma-runner-karma&quot;&gt;Release v3.1.0 · karma-runner/karma&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/karma-runner/karma/releases/tag/v3.1.0&quot; title=&quot;Release v3.1.0 · karma-runner/karma&quot;&gt;github.com/karma-runner/karma/releases/tag/v3.1.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Karma 3.1.0リリース。&lt;br&gt;
+socket timeoutのオプション追加、ES modules対応、ファイルを強制的に更新する&lt;code&gt;refreshFile&lt;/code&gt;メソッドの追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v11-0-0-current-node-js&quot;&gt;Node v11.0.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.0.0/&quot; title=&quot;Node v11.0.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v11.0.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 11.0.0リリース。&lt;br&gt;
+V8 7.0へ更新、&lt;code&gt;http.request&lt;/code&gt;メソッドのオプションがデフォルトではWHATWG URLでパースされるように。&lt;br&gt;
+また&lt;code&gt;TextEncoder&lt;/code&gt;/&lt;code&gt;TextDecoder&lt;/code&gt;が&lt;code&gt;util&lt;/code&gt;からグローバルへ移動、&lt;code&gt;process.binding()&lt;/code&gt;の非推奨化など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/october-brings-node-js-10-x-to-lts-and-node-js-11-to-current-ae19f8f12b51&quot; title=&quot;October Brings Node.js 10.x to LTS and Node.js 11 to Current!&quot;&gt;October Brings Node.js 10.x to LTS and Node.js 11 to Current!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jasmine-3-3-0-md-at-master-jasmine-jasmine&quot;&gt;jasmine/3.3.0.md at master · jasmine/jasmine&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jasmine/jasmine/blob/master/release_notes/3.3.0.md&quot; title=&quot;jasmine/3.3.0.md at master · jasmine/jasmine&quot;&gt;github.com/jasmine/jasmine/blob/master/release_notes/3.3.0.md&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Jasmine 3.3リリース。&lt;br&gt;
+&lt;code&gt;expect().withContext()&lt;/code&gt;の追加、&lt;code&gt;toBeRejectedWith&lt;/code&gt;の追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-68-webkit&quot;&gt;Release Notes for Safari Technology Preview 68 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8475/release-notes-for-safari-technology-preview-68/&quot; title=&quot;Release Notes for Safari Technology Preview 68 | WebKit&quot;&gt;webkit.org/blog/8475/release-notes-for-safari-technology-preview-68/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview 68リリース。&lt;br&gt;
+&lt;code&gt;&amp;lt;input type=&amp;quot;color&amp;quot;&amp;gt;&lt;/code&gt;をデフォルトで有効化、&lt;code&gt;target=&amp;quot;_blank&amp;quot;&lt;/code&gt;をデフォルトで&lt;code&gt;rel=noopener&lt;/code&gt;にする変更。&lt;br&gt;
+WebRTCでVP8をサポート、WebVTTでのインラインスタイルをサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v4-0-0-storybooks-storybook&quot;&gt;Release v4.0.0 · storybooks/storybook&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · storybooks/storybook&quot;&gt;github.com/storybooks/storybook/releases/tag/v4.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Storybook 4.0.0リリース。&lt;br&gt;
+Babel 7/webacpk 4へのアップデート、Ember/MarkoJS/Mithril/HTML/Svelte/Riotのサポート。&lt;br&gt;
+モバイルの表示改善、theme変数の実装など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/blob/master/MIGRATION.md#from-version-34x-to-40x&quot; title=&quot;storybook/MIGRATION.md at master · storybooks/storybook&quot;&gt;storybook/MIGRATION.md at master · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-4-0-is-here-10b9857fc7de&quot; title=&quot;Storybook 4.0 is here! – Storybook – Medium&quot;&gt;Storybook 4.0 is here! – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-v16-6-0-lazy-memo-and-contexttype-react-blog&quot;&gt;React v16.6.0: lazy, memo and contextType – React Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://reactjs.org/blog/2018/10/23/react-v-16-6.html&quot; title=&quot;React v16.6.0: lazy, memo and contextType – React Blog&quot;&gt;reactjs.org/blog/2018/10/23/react-v-16-6.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React 16.6.0リリース。&lt;br&gt;
+&lt;code&gt;React.memo&lt;/code&gt;、&lt;code&gt;React.lazy&lt;/code&gt;、&lt;code&gt;static contextType&lt;/code&gt;、&lt;code&gt;static getDerivedStateFromError()&lt;/code&gt;のサポートなど。&lt;br&gt;
+StrictModeで廃止予定のAPIのwarningを出すようになるなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;firefox-63-0-see-all-new-features-updates-and-fixes&quot;&gt;Firefox 63.0, See All New Features, Updates and Fixes&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/63.0/releasenotes/&quot; title=&quot;Firefox 63.0, See All New Features, Updates and Fixes&quot;&gt;www.mozilla.org/en-US/firefox/63.0/releasenotes/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Firefox 63リリース。&lt;br&gt;
+Web Componentsのサポート、Media Capabilities API、Async Clipboard API のサポート。&lt;br&gt;
+クロスブラウザ互換のために&lt;code&gt;Window.event&lt;/code&gt;プロパティの実装、&lt;code&gt;Clear-Site-Data&lt;/code&gt;ヘッダがデフォルトで有効化など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/63&quot; title=&quot;Firefox 63 for developers - Mozilla | MDN&quot;&gt;Firefox 63 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.com/en-CA/versions/63/&quot; title=&quot;Firefox 63 Site Compatibility | Firefox Site Compatibility&quot;&gt;Firefox 63 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jsdom-changelog-md-at-master-jsdom-jsdom&quot;&gt;jsdom/Changelog.md at master · jsdom/jsdom&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jsdom/jsdom/blob/master/Changelog.md#1300&quot; title=&quot;jsdom/Changelog.md at master · jsdom/jsdom&quot;&gt;github.com/jsdom/jsdom/blob/master/Changelog.md#1300&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;jsdom 13.0.0リリース。&lt;br&gt;
+&lt;code&gt;canvas&lt;/code&gt;パッケージの1.xをサポート終了し、&lt;code&gt;2.x&lt;/code&gt;のみサポート。&lt;br&gt;
+XML serializationのサポート、&lt;code&gt;addEventListener&lt;/code&gt;で&lt;code&gt;passive&lt;/code&gt;オプションのサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;grpc-web-is-going-ga-cloud-native-computing-foundation&quot;&gt;gRPC-Web is going GA - Cloud Native Computing Foundation&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cncf.io/blog/2018/10/24/grpc-web-is-going-ga/&quot; title=&quot;gRPC-Web is going GA - Cloud Native Computing Foundation&quot;&gt;www.cncf.io/blog/2018/10/24/grpc-web-is-going-ga/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;gRPC-Webが正式にリリース。&lt;br&gt;
+WebブラウザなどからgRPCを呼び出すためのクライアントライブラリ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;gas-webpagetest-webpagetest-web-scratch&quot;&gt;gas-webpagetestでWebPagetestのパフォーマンス計測を自動化、可視化する | Web Scratch&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://efcl.info/2018/10/22/gas-webpagetest/&quot; title=&quot;gas-webpagetestでWebPagetestのパフォーマンス計測を自動化、可視化する | Web Scratch&quot;&gt;efcl.info/2018/10/22/gas-webpagetest/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebPagetestを使ったパフォーマンス計測を自動化、Google DataStudioを使ったデータの可視化について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-intl-relativetimeformat-api-web-google-developers&quot;&gt;The Intl.RelativeTimeFormat API  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/10/intl-relativetimeformat&quot; title=&quot;The Intl.RelativeTimeFormat API  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/10/intl-relativetimeformat&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Intl.RelativeTimeFormat&lt;/code&gt;を相対時間のローカライズについて。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;angular-firebase-qiita&quot;&gt;Angular+Firebaseでチャットアプリを作る - Qiita&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/Yamamoto0525/items/a76ea4b3924eeb82b0f9&quot; title=&quot;Angular+Firebaseでチャットアプリを作る - Qiita&quot;&gt;qiita.com/Yamamoto0525/items/a76ea4b3924eeb82b0f9&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;firebase&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;AngularとFirebaseを使ってチャットウェブアプリを作るハンズオン形式の連載&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-qiita&quot;&gt;私のReactのコンポーネント実装アンチパターン - Qiita&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/seya/items/7a0d20da4de5fab14426&quot; title=&quot;私のReactのコンポーネント実装アンチパターン - Qiita&quot;&gt;qiita.com/seya/items/7a0d20da4de5fab14426&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Reactコンポーネントのアンチパターンについて。&lt;br&gt;
+コンポーネントの分割と責務、Propsの渡し方などについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;asking-for-required-annotations-flow-medium&quot;&gt;Asking for required annotations – Flow – Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/flow-type/asking-for-required-annotations-64d4f9c1edf8&quot; title=&quot;Asking for required annotations – Flow – Medium&quot;&gt;medium.com/flow-type/asking-for-required-annotations-64d4f9c1edf8&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Flow 0.85.0で修正が入った&amp;quot;missing annotation&amp;quot;についての解説記事。&lt;br&gt;
+型annotationが存在しない場合に0.85.0からはエラーとなる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/flow/releases/tag/v0.85.0&quot; title=&quot;Release v0.85.0 · facebook/flow&quot;&gt;Release v0.85.0 · facebook/flow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ruhrjs-2018-tobias-koppers-webpack-and-the-challenge-of-webassembly-youtube&quot;&gt;RuhrJS 2018 - Tobias Koppers - webpack and the challenge of WebAssembly - YouTube&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=k86Z_6_BJy0&quot; title=&quot;RuhrJS 2018 - Tobias Koppers - webpack and the challenge of WebAssembly - YouTube&quot;&gt;www.youtube.com/watch?v&amp;#x3D;k86Z_6_BJy0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webpackのWebAssembly対応についての発表。&lt;br&gt;
+WebAssembly APIやWebAssemblyの実行フェーズの解説。&lt;br&gt;
+webpackからwasmファイルを簡単に利用できるようにするため、どのようにwasmを扱うかやCode Splittingの対応についてなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sokra/slides/blob/master/data/webpack-wasm-challenge.pdf&quot; title=&quot;slides/webpack-wasm-challenge.pdf at master · sokra/slides&quot;&gt;slides/webpack-wasm-challenge.pdf at master · sokra/slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-conf-2018-youtube&quot;&gt;React Conf 2018 - YouTube&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLPxbbTqCLbGE5AihOSExAa4wUM-P42EIJ&quot; title=&quot;React Conf 2018 - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PLPxbbTqCLbGE5AihOSExAa4wUM-P42EIJ&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;イベント&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Conf 2018の動画まとめ&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://conf.reactjs.org/&quot; title=&quot;React Conf 2018 - Fall 2018 in Lake Las Vegas, Nevada&quot;&gt;React Conf 2018 - Fall 2018 in Lake Las Vegas, Nevada&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ast-flow-typescript&quot;&gt;実践AST FlowからTypeScriptへの変換&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://talks.leko.jp/transform-flow-to-typescript-using-ast/#0&quot; title=&quot;実践AST FlowからTypeScriptへの変換&quot;&gt;talks.leko.jp/transform-flow-to-typescript-using-ast/#0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;FlowからTypeScriptへの変換を行うBabelプラグインについてスライド。&lt;br&gt;
+Babelプラグインを書いてコード変換を行う話&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/CureApp/babel-plugin-flow-to-typescript&quot; title=&quot;CureApp/babel-plugin-flow-to-typescript: Babel plugin to convert Flow code into TypeScript&quot;&gt;CureApp/babel-plugin-flow-to-typescript: Babel plugin to convert Flow code into TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;suchipi-fs-remote-drop-in-replacement-for-fs-that-lets-you-write-to-the-filesystem-from-the-browser&quot;&gt;suchipi/fs-remote: Drop-in replacement for fs that lets you write to the filesystem from the browser&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/suchipi/fs-remote&quot; title=&quot;suchipi/fs-remote: Drop-in replacement for fs that lets you write to the filesystem from the browser&quot;&gt;github.com/suchipi/fs-remote&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;fs&lt;/code&gt;のブラウザ向け実装と&lt;code&gt;fs&lt;/code&gt;サーバのライブラリ。&lt;br&gt;
+&lt;code&gt;fs&lt;/code&gt;を行うサーバを立て、ブラウザからサーバにXHRやWebSocketsでアクセスする。&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 30 Oct 2018 11:55:37 +0900</pubDate>
+        <link>https://jser.info/2018/10/30/node.js-11.0.0storybook-4.0.0firefox-63/</link>
+        <guid isPermaLink="true">https://jser.info/2018/10/30/node.js-11.0.0storybook-4.0.0firefox-63/</guid>
+        
+        <category>node</category>
+        
+        <category>Storybook</category>
+        
+        <category>firefox</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2018-10-21のJS: Chrome 70、Angular 7、LoopBack 4 GA</title>
@@ -3814,190 +4120,6 @@ WebGL Insightsの翻訳本&lt;/p&gt;
         
         
         <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018年9月22日(土)に JSer.info 400回目記念イベントを開催します</title>
-        <description>&lt;p&gt;2018年9月22日(土)にJSer.infoの400回記念イベントをやります。&lt;/p&gt;
-
-&lt;p&gt;次のイベントページから申し込むことができます。&lt;br&gt;
-申し込み開始は2018年9月3日(月) 12:00からです。&lt;br&gt;
-すべての枠が抽選なので、実際に参加が決まるのは2018年9月7日(金)です。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;イベントページ: &lt;a href=&quot;https://jser.connpass.com/event/100092&quot;&gt;JSer.info 400回記念イベント - connpass&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;日時と場所&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;日時: 2018年9月22日(土) 14:00 〜 19:00&lt;/li&gt;
-&lt;li&gt;場所: サイボウズ株式会社(東京オフィス) 東京都中央区日本橋2-7-1 (東京日本橋タワー 27階)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;このイベントには次の参加するための枠があります。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;参加枠(参加費1000円)&lt;/li&gt;
-&lt;li&gt;発表枠&lt;/li&gt;
-&lt;li&gt;手伝い枠&lt;/li&gt;
-&lt;li&gt;書紀枠&lt;/li&gt;
-&lt;li&gt;質問モデレータ枠&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;細かい説明は&lt;a href=&quot;https://jser.connpass.com/event/100092&quot;&gt;JSer.info 400回記念イベント - connpass&lt;/a&gt;にも書かれているので参照してください。&lt;/p&gt;
-
-&lt;h2 id=&quot;part-37868fd8850f9d7&quot;&gt;テーマ&lt;/h2&gt;
-
-&lt;p&gt;テーマは「憶測しないで議論しよう」です。&lt;/p&gt;
-
-&lt;p&gt;会場には大体自分より何かしら詳しい人がいると思います。&lt;br&gt;
-そのため、発表者であっても憶測でしゃべるよりはその場で詳しい人に聞いて議論することを重要視しています。&lt;/p&gt;
-
-&lt;p&gt;技術的な問題などについて議論するには、まずその技術について知っている必要があります。&lt;br&gt;
-なのでわからなかったことはまず聞きましょう。&lt;/p&gt;
-
-&lt;h3 id=&quot;part-3786f05587d2354&quot;&gt;発表枠&lt;/h3&gt;
-
-&lt;p&gt;5-20分程度の発表をしてくれる人を募集しています。&lt;br&gt;
-テーマはJavaScriptであれば問題ありません。&lt;/p&gt;
-
-&lt;p&gt;発表枠で申し込んだ方は、希望する発表時間やテーマなどを次のIssueなどで伝えてください。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/jser/jser.info/issues/102&quot;&gt;JSer.info 400回記念イベント · Issue #102 · jser/jser.info&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Q&amp;amp;A&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Q. 30分以上の発表がしたい&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;他の発表枠次第ですが応相談です。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Q. どのくらいのレベルの参加者を想定した内容にすればいいの?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;基本的に全力でやってもらえればいいです。&lt;br&gt;
-azuが勝手に補足を入れるので遠慮は不要です。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Q. どんなテーマならいいの?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;JavaScriptであればいい気がします。&lt;br&gt;
-参考までに前回のイベントでの発表内容は次のページにまとまっています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jser.info/2017/01/15/jser-info-6years/&quot;&gt;JSer.info 6周年記念イベントを開催しました - JSer.info&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://jser.info/2016/01/16/jser-5years/&quot;&gt;JSer.info 5周年記念イベントを開催しました - JSer.info&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://jser.info/2014/11/02/jser200/&quot;&gt;JSer.info 200回記念イベントを開催しました - JSer.info&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;JSer.infoに載っていそうなテーマ(JavaScriptやウェブ)からかけ離れてなければ良いです。&lt;br&gt;
-逆に載ってないようなテーマも歓迎です。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Q. 初心者向けの内容でもいいの?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;問題ありません。&lt;br&gt;
-初心者に教える時にどういう工夫をしているかという話などを踏まれるとより良いかもしれません。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Q. 商業的な宣伝をメインにしたトーク&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ダメ&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Q. LTしたい&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ご自由にどうぞ。&lt;br&gt;
-JavaScript Discussion後に懇談会を行う予定です。&lt;br&gt;
-そのタイミングで自由にできます。&lt;/p&gt;
-
-&lt;h3 id=&quot;part-3786dd12305c80a&quot;&gt;書記枠&lt;/h3&gt;
-
-&lt;p&gt;当日、発表内容をリアルタイムメモに協力してくれる方は「&lt;strong&gt;書記枠&lt;/strong&gt;」から申し込み下さい。&lt;/p&gt;
-
-&lt;p&gt;当日に&lt;a href=&quot;https://www.dropbox.com/ja/paper&quot;&gt;Dropbox Paper&lt;/a&gt;を使って、発表内容や質問のアウトラインのメモ書きを手伝ってくれる人を募集しています。&lt;br&gt;
-主な目的としては、発表内容を全て把握できなくても、発表内容のメモを見ながら質問などをしやすくするためです。&lt;br&gt;
-また参加者はあえてメモをとらなくてもよくなるので、議論に集中できるようにするという目的があります。&lt;/p&gt;
-
-&lt;p&gt;司会業をやっていないときは@azuもやりますが、手伝えそうな方はこの枠で申し込んでみてください。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.dropbox.com/ja/paper&quot;&gt;Dropbox Paper&lt;/a&gt;に書くためのDropboxのアカウントが必要です(こちらは後日連絡します)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;参考: 前回のログ&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://paper.dropbox.com/doc/JSer.info-6-4ko0NvdzqpYj5Rt6TvdJi&quot;&gt;6周年記念イベントのDropbox Paperで書かれたログ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;part-3ecc52f915b7a2ae&quot;&gt;質問モデレータ枠 🆕&lt;/h3&gt;
-
-&lt;p&gt;当日は、&lt;a href=&quot;https://sli.do/&quot;&gt;sli.do&lt;/a&gt;を使って質問を管理します。&lt;br&gt;
-質問はリアルタイムに変動するので、sli.doの質問を管理するモデレータを募集しています。&lt;/p&gt;
-
-&lt;p&gt;具体的にはsli.doの管理権限で、質問にフォーカスを当てたり、回答済みの質問をアーカイブしたりという操作を行います。sli.doの使い方がわかる程度なら問題なくできる内容です。&lt;/p&gt;
-
-&lt;p&gt;基本的には発表者と参加者間の質問のやり取りは@azuが担当するので、司会業のようなものは考えなくて大丈夫です。&lt;/p&gt;
-
-&lt;p&gt;主な目的としては、参加者の質問や発表者の疑問をできるだけ多く解決するためです。&lt;br&gt;
-質問モデレータに主に手伝ってほしいのはsli.doの解決した質問をアーカイブしたり、&lt;br&gt;
-発表中にTwitterで出た質問をsli.doにコピーしてきたり、質問はsli.doでできることを案内したりという役割です。&lt;/p&gt;
-
-&lt;p&gt;質問は &lt;a href=&quot;https://sli.do/&quot;&gt;sli.do&lt;/a&gt; に集約して見られるようにするにしたいです。&lt;/p&gt;
-
-&lt;p&gt;応募する方は&lt;a href=&quot;https://sli.do/&quot;&gt;sli.do&lt;/a&gt;に適当なイベントを作って操作に慣れておくと良いです。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Twitterアカウントとsli.doのアカウント(こちらは後日連絡します)が必要です&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;javascript-discussion&quot;&gt;JavaScript Discussion&lt;/h3&gt;
-
-&lt;p&gt;事前または当日にJavaScriptなどに関する質問や意見などを&lt;a href=&quot;https://sli.do/&quot;&gt;sli.do&lt;/a&gt;に集めます。そのDiscussionボードを見ながら議論するコーナーです。&lt;/p&gt;
-
-&lt;p&gt;次の場所に質問、聞きたいこと、話したいこと、主張はconnpassでのアンケートに書けます。&lt;br&gt;
-当日も時間を取りますが、事前に聞きたいことなどを準備しておくと良いです。&lt;/p&gt;
-
-&lt;p&gt;以前のDiscussionボードの様子:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://app.sli.do/event/bkry5ojl/questions&quot;&gt;JSer.info 6周年 - JavaScript Discussion | 質問&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://app.sli.do/event/0egbwyxz/questions&quot;&gt;[JSer.info] JavaScript Discussion(JavaScriptの良い所/悪い所/気になる事) | Questions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;他にも、この人と話したいとかあったらお知らせください。&lt;/p&gt;
-
-&lt;h2 id=&quot;part-2a00357080695c85&quot;&gt;おわりに&lt;/h2&gt;
-
-&lt;p&gt;JSer.infoの400回記念イベントは2018年9月22日(土)に開催予定です。&lt;br&gt;
-JavaScriptに興味がある人のご参加お待ちしています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;イベントページ: &lt;a href=&quot;https://jser.connpass.com/event/100092&quot;&gt;JSer.info 400回記念イベント - connpass&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;イベントに関する質問やコメント: &lt;a href=&quot;https://github.com/jser/jser.info/issues/102&quot;&gt;JSer.info 400回記念イベント · Issue #102 · jser/jser.info&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 31 Aug 2018 22:15:00 +0900</pubDate>
-        <link>https://jser.info/2018/08/31/jser-400-event-announce/</link>
-        <guid isPermaLink="true">https://jser.info/2018/08/31/jser-400-event-announce/</guid>
-        
-        <category>イベント</category>
-        
-        <category>JSer.info</category>
-        
-        
-        <category>雑記</category>
         
       </item>
     
