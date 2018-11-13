@@ -1,0 +1,416 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2018-11-13のJS: Prettier 1.15のHTMLサポート、TypeScriptガイド、BigIntsのJavaScript実装 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2018/11/13/prettier-1.15htmltypescriptbigintsjavascript/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2018-11-13のJS: Prettier 1.15のHTMLサポート、TypeScriptガイド、BigIntsのJavaScript実装"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2018-11-13のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://prettier.io/blog/2018/11/07/1.15.0.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Prettier 1.15: HTML, Vue, Angular and MDX Support · Prettier</amp-fit-text>
+            <p class="item-contents">Prettier 1.15リリース。
+HTML/Vue/Angular/MDXのサポート。
+フォーマットの改善、エラーメッセージの改善など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Prettier 1.15: HTML, Vue, Angular and MDX Support · Prettier" href="https://prettier.io/blog/2018/11/07/1.15.0.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/reduxjs/react-redux/releases/tag/v6.0.0-beta.1">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v6.0.0-beta.1 · reduxjs/react-redux</amp-fit-text>
+            <p class="item-contents">react-redux 6.0.0βリリース。
+React Context に対応した。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v6.0.0-beta.1 · reduxjs/react-redux" href="https://github.com/reduxjs/react-redux/releases/tag/v6.0.0-beta.1" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/8479/release-notes-for-safari-technology-preview-69/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 69 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview 69リリース。
+CSS Conic Gradientsがデフォルトで有効化、CSS Painting APIの対応改善、Web SQL利用時にコンソールへ警告メッセージを追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 69 | WebKit" href="https://webkit.org/blog/8479/release-notes-for-safari-technology-preview-69/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://eslint.org/blog/2018/11/eslint-v5.9.0-released">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint v5.9.0 released - ESLint - Pluggable JavaScript linter</amp-fit-text>
+            <p class="item-contents">ESLint 5.9.0リリース。
+<code>--fix-type</code>オプションが追加され、<code>problem</code>、<code>suggestion</code>、<code>layout</code>の種類を選択して修正を適応できるようになっ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ESLint v5.9.0 released - ESLint - Pluggable JavaScript linter" href="https://eslint.org/blog/2018/11/eslint-v5.9.0-released" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/avajs/ava/releases/tag/v1.0.0-rc.2">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 1.0.0-rc.2 · avajs/ava</amp-fit-text>
+            <p class="item-contents">AVA 1.0.0 RC2リリース。
+スナップショットテストの改善、TypeScriptの型チェック改善など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 1.0.0-rc.2 · avajs/ava" href="https://github.com/avajs/ava/releases/tag/v1.0.0-rc.2" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nystudio107.com/blog/an-annotated-webpack-4-config-for-frontend-web-development">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">nystudio107 | An Annotated webpack 4 Config for Frontend Web…</amp-fit-text>
+            <p class="item-contents">webpack 4の設定についての解説記事
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="nystudio107 | An Annotated webpack 4 Config for Frontend Web…" href="https://nystudio107.com/blog/an-annotated-webpack-4-config-for-frontend-web-development" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.fullstackreact.com/articles/an-introduction-to-hooks-in-react/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Fullstack React: An Introduction to Hooks in React</amp-fit-text>
+            <p class="item-contents">α公開されているReact Hooksの使い方やテスト方法についての解説記事。
+<code>useState</code>などそれぞれのAPIについての挙動や使い方について解説している
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Fullstack React: An Introduction to Hooks in React" href="https://www.fullstackreact.com/articles/an-introduction-to-hooks-in-react/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webdesign.tutsplus.com/tutorials/how-to-use-svg-patterns-as-backgrounds--cms-31507">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">How to Use SVG Patterns as Backgrounds</amp-fit-text>
+            <p class="item-contents">SVGパターンを背景として使う方法についての解説記事。
+CSS TilingとSVG <code>&lt;pattern&gt;</code>要素でのやり方やサポートブラウザについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="How to Use SVG Patterns as Backgrounds" href="https://webdesign.tutsplus.com/tutorials/how-to-use-svg-patterns-as-backgrounds--cms-31507" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://bocoup.com/blog/announcing-test262-report">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing Test262 Report - javascript, testing, web standards - Bocoup</amp-fit-text>
+            <p class="item-contents">各JavaScriptエンジンがECMAScriptの仕様テストであるTest262をどれだけパスしているかを一覧できるTest262 Reportというサイトについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing Test262 Report - javascript, testing, web standards - Bocoup" href="https://bocoup.com/blog/announcing-test262-report" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.sitepen.com/blog/2018/10/29/update-the-definitive-typescript-guide/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">The Definitive TypeScript Guide - Blog | SitePen</amp-fit-text>
+            <p class="item-contents">TypeScript初心者向けのガイド。
+コンパイル方法、TypeScriptの型の解説、Type Guards、型定義ファイルなどについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The Definitive TypeScript Guide - Blog | SitePen" href="https://www.sitepen.com/blog/2018/10/29/update-the-definitive-typescript-guide/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/leoafarias/neardb">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">leoafarias/neardb: Simple document db made for globally distributed reads.</amp-fit-text>
+            <p class="item-contents">AWS S3、Google Cloud Storageなどに対応したデータベースライブラリ。
+Cloudflare WorkerやLambda@Edgeなどで動かす目的のストレージライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="leoafarias/neardb: Simple document db made for globally distributed reads." href="https://github.com/leoafarias/neardb" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/sokra/rawact">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">sokra/rawact: \[POC\] A babel plugin which compiles React.js components into native DOM instructions to eliminate the need for the react library at runtime.</amp-fit-text>
+            <p class="item-contents">Reactで書かれたコンポーネントをDOM APIで書かれたものへ変換するBabelプラグイン。
+ランタイムでReactを利用しなくても動くように変換する実験的なプラグイン
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="sokra/rawact: \[POC\] A babel plugin which compiles React.js components into native DOM instructions to eliminate the need for the react library at runtime." href="https://github.com/sokra/rawact" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/enquirer/enquirer">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">enquirer/enquirer: Stylish, intuitive and user-friendly prompt system.</amp-fit-text>
+            <p class="item-contents">ターミナルでの入力や選択などを補助するプロンプトライブラリ。
+値の種類別のプロンプトやアンケートの投票など高機能なCUIライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="enquirer/enquirer: Stylish, intuitive and user-friendly prompt system." href="https://github.com/enquirer/enquirer" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/GoogleChromeLabs/jsbi">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">GoogleChromeLabs/jsbi: JSBI is a pure-JavaScript implementation of the official ECMAScript BigInt proposal.</amp-fit-text>
+            <p class="item-contents">BitIntをJavaScriptのオブジェクトとして実装したライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="GoogleChromeLabs/jsbi: JSBI is a pure-JavaScript implementation of the official ECMAScript BigInt proposal." href="https://github.com/GoogleChromeLabs/jsbi" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Evercoder/culori">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Evercoder/culori: 🌈 A general-purpose color library for JavaScript.</amp-fit-text>
+            <p class="item-contents">RGBやHSLなどの色空間の操作ライブラリ。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Evercoder/culori: 🌈 A general-purpose color library for JavaScript." href="https://github.com/Evercoder/culori" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

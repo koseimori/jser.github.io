@@ -5,9 +5,235 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 06 Nov 2018 11:43:27 +0900</pubDate>
-    <lastBuildDate>Tue, 06 Nov 2018 11:43:27 +0900</lastBuildDate>
+    <pubDate>Tue, 13 Nov 2018 12:02:04 +0900</pubDate>
+    <lastBuildDate>Tue, 13 Nov 2018 12:02:04 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2018-11-13のJS: Prettier 1.15のHTMLサポート、TypeScriptガイド、BigIntsのJavaScript実装</title>
+        <description>&lt;p&gt;JSer.info #409 - コード整形ツールのPrettier 1.15がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://prettier.io/blog/2018/11/07/1.15.0.html&quot;&gt;Prettier 1.15: HTML, Vue, Angular and MDX Support · Prettier&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Prettier 1.15ではHTMLパーサを使い、HTML、Vue、Angularの整形をサポートしました。&lt;br&gt;
+また、MarkdownにJSXを書ける&lt;a href=&quot;https://mdxjs.com/&quot;&gt;MDX&lt;/a&gt;のサポートも行われています。&lt;br&gt;
+その他のフォーマットの改善やエラーメッセージの改善なども行われています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.sitepen.com/blog/2018/10/29/update-the-definitive-typescript-guide/&quot;&gt;The Definitive TypeScript Guide - Blog | SitePen&lt;/a&gt;という記事では、TypeScriptの主要な機能について紹介しています。&lt;/p&gt;
+
+&lt;p&gt;TypeScriptのインストール方法から基本的な文法、基本的な型や応用的な型、型定義ファイルなどTypeScriptの概要を紹介しています。&lt;/p&gt;
+
+&lt;p&gt;TypeScriptの公式ドキュメントと合わせて読むとよさそうです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.typescriptlang.org/docs/home.html&quot;&gt;Documentation ·  TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChromeLabs/jsbi&quot;&gt;GoogleChromeLabs/jsbi: JSBI is a pure-JavaScript implementation of the official ECMAScript BigInt proposal.&lt;/a&gt;という、現在Stage 3のECMAScript Proposalである&lt;a href=&quot;https://github.com/tc39/proposal-bigint&quot;&gt;BigInt&lt;/a&gt;をJavaScriptで実装したライブラリが公開されています。&lt;/p&gt;
+
+&lt;p&gt;BigIntは&lt;code&gt;1n + 1n&lt;/code&gt;のように構文としてのサポートも必要になるため、構文と同様の演算機能をもつクラスとして公開されています。&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;🔥 New: JSBI, a pure-JavaScript BigInt implementation 🔥&lt;br&gt; &lt;br&gt;JSBI makes it possible to use spec-compliant BigInt functionality *today*, in all browsers, without sacrificing compatibility.&lt;br&gt; &lt;a href=&quot;https://t.co/8kuiPBq9Hs&quot;&gt;https://t.co/8kuiPBq9Hs&lt;/a&gt;&lt;/p&gt;&amp;mdash; Mathias Bynens (@mathias) &lt;a href=&quot;https://twitter.com/mathias/status/1060677466832818176?ref_src=twsrc%5Etfw&quot;&gt;November 8, 2018&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;BitIntは構文としてのサポートが必要となるため、ネイティブの実装が行われるまで利用できないという問題があります。&lt;a href=&quot;https://github.com/GoogleChromeLabs/jsbi&quot;&gt;JSBI&lt;/a&gt;では、同様の機能をもつ抽象レイヤーを提供することで、既存のブラウザなどでもBitInt相当の機能を使えるようにすることを目的としています。&lt;/p&gt;
+
+&lt;p&gt;また、JSBIで書いたものをネイティブのBigIntに変換するBabel Pluginなどが今後予定されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChromeLabs/jsbi/issues/2&quot;&gt;Create a JSBI → BigInt transpiler · Issue #2 · GoogleChromeLabs/jsbi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;prettier-1-15-html-vue-angular-and-mdx-support-prettier&quot;&gt;Prettier 1.15: HTML, Vue, Angular and MDX Support · Prettier&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://prettier.io/blog/2018/11/07/1.15.0.html&quot; title=&quot;Prettier 1.15: HTML, Vue, Angular and MDX Support · Prettier&quot;&gt;prettier.io/blog/2018/11/07/1.15.0.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Prettier 1.15リリース。&lt;br&gt;
+HTML/Vue/Angular/MDXのサポート。&lt;br&gt;
+フォーマットの改善、エラーメッセージの改善など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v6-0-0-beta-1-reduxjs-react-redux&quot;&gt;Release v6.0.0-beta.1 · reduxjs/react-redux&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/reduxjs/react-redux/releases/tag/v6.0.0-beta.1&quot; title=&quot;Release v6.0.0-beta.1 · reduxjs/react-redux&quot;&gt;github.com/reduxjs/react-redux/releases/tag/v6.0.0-beta.1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;react-redux 6.0.0βリリース。&lt;br&gt;
+React Context に対応した。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-69-webkit&quot;&gt;Release Notes for Safari Technology Preview 69 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8479/release-notes-for-safari-technology-preview-69/&quot; title=&quot;Release Notes for Safari Technology Preview 69 | WebKit&quot;&gt;webkit.org/blog/8479/release-notes-for-safari-technology-preview-69/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview 69リリース。&lt;br&gt;
+CSS Conic Gradientsがデフォルトで有効化、CSS Painting APIの対応改善、Web SQL利用時にコンソールへ警告メッセージを追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;eslint-v5-9-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v5.9.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2018/11/eslint-v5.9.0-released&quot; title=&quot;ESLint v5.9.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2018/11/eslint-v5.9.0-released&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ESLint 5.9.0リリース。&lt;br&gt;
+&lt;code&gt;--fix-type&lt;/code&gt;オプションが追加され、&lt;code&gt;problem&lt;/code&gt;、&lt;code&gt;suggestion&lt;/code&gt;、&lt;code&gt;layout&lt;/code&gt;の種類を選択して修正を適応できるようになっ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-1-0-0-rc-2-avajs-ava&quot;&gt;Release 1.0.0-rc.2 · avajs/ava&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v1.0.0-rc.2&quot; title=&quot;Release 1.0.0-rc.2 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v1.0.0-rc.2&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;AVA 1.0.0 RC2リリース。&lt;br&gt;
+スナップショットテストの改善、TypeScriptの型チェック改善など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;nystudio107-an-annotated-webpack-4-config-for-frontend-web&quot;&gt;nystudio107 | An Annotated webpack 4 Config for Frontend Web…&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nystudio107.com/blog/an-annotated-webpack-4-config-for-frontend-web-development&quot; title=&quot;nystudio107 | An Annotated webpack 4 Config for Frontend Web…&quot;&gt;nystudio107.com/blog/an-annotated-webpack-4-config-for-frontend-web-development&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webpack 4の設定についての解説記事&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;fullstack-react-an-introduction-to-hooks-in-react&quot;&gt;Fullstack React: An Introduction to Hooks in React&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.fullstackreact.com/articles/an-introduction-to-hooks-in-react/&quot; title=&quot;Fullstack React: An Introduction to Hooks in React&quot;&gt;www.fullstackreact.com/articles/an-introduction-to-hooks-in-react/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;α公開されているReact Hooksの使い方やテスト方法についての解説記事。&lt;br&gt;
+&lt;code&gt;useState&lt;/code&gt;などそれぞれのAPIについての挙動や使い方について解説している&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;how-to-use-svg-patterns-as-backgrounds&quot;&gt;How to Use SVG Patterns as Backgrounds&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webdesign.tutsplus.com/tutorials/how-to-use-svg-patterns-as-backgrounds--cms-31507&quot; title=&quot;How to Use SVG Patterns as Backgrounds&quot;&gt;webdesign.tutsplus.com/tutorials/how-to-use-svg-patterns-as-backgrounds--cms-31507&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;SVGパターンを背景として使う方法についての解説記事。&lt;br&gt;
+CSS TilingとSVG &lt;code&gt;&amp;lt;pattern&amp;gt;&lt;/code&gt;要素でのやり方やサポートブラウザについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-test262-report-javascript-testing-web-standards-bocoup&quot;&gt;Announcing Test262 Report - javascript, testing, web standards - Bocoup&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bocoup.com/blog/announcing-test262-report&quot; title=&quot;Announcing Test262 Report - javascript, testing, web standards - Bocoup&quot;&gt;bocoup.com/blog/announcing-test262-report&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;各JavaScriptエンジンがECMAScriptの仕様テストであるTest262をどれだけパスしているかを一覧できるTest262 Reportというサイトについて&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://test262.report/&quot; title=&quot;Test262 Report&quot;&gt;Test262 Report&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-definitive-typescript-guide-blog-sitepen&quot;&gt;The Definitive TypeScript Guide - Blog | SitePen&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.sitepen.com/blog/2018/10/29/update-the-definitive-typescript-guide/&quot; title=&quot;The Definitive TypeScript Guide - Blog | SitePen&quot;&gt;www.sitepen.com/blog/2018/10/29/update-the-definitive-typescript-guide/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript初心者向けのガイド。&lt;br&gt;
+コンパイル方法、TypeScriptの型の解説、Type Guards、型定義ファイルなどについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;leoafarias-neardb-simple-document-db-made-for-globally-distributed-reads&quot;&gt;leoafarias/neardb: Simple document db made for globally distributed reads.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/leoafarias/neardb&quot; title=&quot;leoafarias/neardb: Simple document db made for globally distributed reads.&quot;&gt;github.com/leoafarias/neardb&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;AWS S3、Google Cloud Storageなどに対応したデータベースライブラリ。&lt;br&gt;
+Cloudflare WorkerやLambda@Edgeなどで動かす目的のストレージライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;sokra-rawact-poc-a-babel-plugin-which-compiles-react-js-components-into-native-dom-instructions-to-eliminate-the-need-for-the-react-library-at-runtime&quot;&gt;sokra/rawact: [POC] A babel plugin which compiles React.js components into native DOM instructions to eliminate the need for the react library at runtime.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sokra/rawact&quot; title=&quot;sokra/rawact: \[POC\] A babel plugin which compiles React.js components into native DOM instructions to eliminate the need for the react library at runtime.&quot;&gt;github.com/sokra/rawact&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;plugin&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Reactで書かれたコンポーネントをDOM APIで書かれたものへ変換するBabelプラグイン。&lt;br&gt;
+ランタイムでReactを利用しなくても動くように変換する実験的なプラグイン&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;enquirer-enquirer-stylish-intuitive-and-user-friendly-prompt-system&quot;&gt;enquirer/enquirer: Stylish, intuitive and user-friendly prompt system.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/enquirer/enquirer&quot; title=&quot;enquirer/enquirer: Stylish, intuitive and user-friendly prompt system.&quot;&gt;github.com/enquirer/enquirer&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ターミナルでの入力や選択などを補助するプロンプトライブラリ。&lt;br&gt;
+値の種類別のプロンプトやアンケートの投票など高機能なCUIライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;googlechromelabs-jsbi-jsbi-is-a-pure-javascript-implementation-of-the-official-ecmascript-bigint-proposal&quot;&gt;GoogleChromeLabs/jsbi: JSBI is a pure-JavaScript implementation of the official ECMAScript BigInt proposal.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChromeLabs/jsbi&quot; title=&quot;GoogleChromeLabs/jsbi: JSBI is a pure-JavaScript implementation of the official ECMAScript BigInt proposal.&quot;&gt;github.com/GoogleChromeLabs/jsbi&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;BitIntをJavaScriptのオブジェクトとして実装したライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;evercoder-culori-a-general-purpose-color-library-for-javascript&quot;&gt;Evercoder/culori: 🌈 A general-purpose color library for JavaScript.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Evercoder/culori&quot; title=&quot;Evercoder/culori: 🌈 A general-purpose color library for JavaScript.&quot;&gt;github.com/Evercoder/culori&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;RGBやHSLなどの色空間の操作ライブラリ。&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 13 Nov 2018 11:30:26 +0900</pubDate>
+        <link>https://jser.info/2018/11/13/prettier-1.15htmltypescriptbigintsjavascript/</link>
+        <guid isPermaLink="true">https://jser.info/2018/11/13/prettier-1.15htmltypescriptbigintsjavascript/</guid>
+        
+        <category>Prettier</category>
+        
+        <category>TypeScript</category>
+        
+        <category>BigInt</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2018-11-06のJS: Node.js 10.13.0(LTS)、React Hooks、Vueコンポーネントのテスト</title>
@@ -3854,311 +4080,6 @@ webpackを使ったビルド、開発サーバ、Nuxt.jsのようなルーティ
         <category>vue</category>
         
         <category>css</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-09-11のJS: Firefox 62.0、whatwg-fetch 3.0.0、Removing jQuery from GitHub.com</title>
-        <description>&lt;p&gt;JSer.info #400 - Firefox 62.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/62.0/releasenotes/&quot;&gt;Firefox 62.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/62&quot;&gt;Firefox 62 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.com/en-CA/versions/62/&quot;&gt;Firefox 62 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!-- textlint-disable --&gt;
-
-&lt;p&gt;開発者ツールでは&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_CSS_shapes&quot;&gt;Shape Path Editor&lt;/a&gt;の追加、&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Examine_grid_layouts&quot;&gt;CSS Grid Inspector&lt;/a&gt;や&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector&quot;&gt;Accessibility inspector&lt;/a&gt;の改善、&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors&quot;&gt;CORSエラーのドキュメント&lt;/a&gt;へのリンクがコンソールへ表示されるようになっています。&lt;/p&gt;
-
-&lt;!-- textlint-enable --&gt;
-
-&lt;p&gt;また CSS Variable Fontsのサポート、&lt;code&gt;Array#flat&lt;/code&gt;と&lt;code&gt;Array#flatMap&lt;/code&gt;をデフォルト有効化、&lt;code&gt;import.meta&lt;/code&gt;のサポート、WebDriver APIの更新などが行われています。&lt;/p&gt;
-
-&lt;p&gt;CSS周りの更新についてはMozillaのJen Simmonsが次のPodcastで話しているので、合わせて聞いてみるといいかもしれません。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://shoptalkshow.com/episodes/328-jen-simmons-intrinsic-web-design/&quot;&gt;328: Jen Simmons and Intrinsic Web Design - ShopTalk&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/API/Fetch_API&quot;&gt;Fetch API&lt;/a&gt;のpolyfillライブラリである&lt;code&gt;whatwg-fetch&lt;/code&gt; 3.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/github/fetch/releases/tag/v3.0.0&quot;&gt;Release fetch 3.0.0 · github/fetch&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;今までは&lt;code&gt;export&lt;/code&gt;されていなかった&lt;code&gt;Headers&lt;/code&gt;、&lt;code&gt;Request&lt;/code&gt;、&lt;code&gt;Response&lt;/code&gt;が参照できるように修正されています。&lt;/p&gt;
-
-&lt;p&gt;すでにメジャーブラウザの&lt;code&gt;fetch&lt;/code&gt;実装では&lt;code&gt;credentials&lt;/code&gt;が&lt;code&gt;omit&lt;/code&gt;から&lt;code&gt;same-origin&lt;/code&gt;に変更されていますが、polyfillもこの変更の追従するように変更されました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/whatwg/fetch/pull/585&quot;&gt;Make fetch() use &amp;quot;same-origin&amp;quot; credentials by default by annevk · Pull Request #585 · whatwg/fetch&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また、Fetch APIをキャンセルするための&lt;code&gt;signal&lt;/code&gt;オプションに対応しています。&lt;br&gt;
-&lt;code&gt;signal&lt;/code&gt;に渡す&lt;code&gt;AbortController&lt;/code&gt;に関してはFetchのpolyfillではなく、&lt;code&gt;AbortController&lt;/code&gt;の&lt;a href=&quot;https://github.com/mo/abortcontroller-polyfill/&quot;&gt;abortcontroller-polyfill&lt;/a&gt;を使うことになっています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/github/fetch/pull/572&quot;&gt;Added AbortController polyfill by coldhamix · Pull Request #572 · github/fetch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/github/fetch#aborting-requests&quot;&gt;Aborting requests&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://githubengineering.com/removing-jquery-from-github-frontend/&quot;&gt;Removing jQuery from GitHub.com frontend | GitHub Engineering&lt;/a&gt;という記事ではGitHub.comでjQueryをウェブ標準のAPIをベースにどう置き換えていったかについて書かれています。&lt;/p&gt;
-
-&lt;p&gt;jQueryの機能はウェブ標準のAPIに置き換えることでMDNといったドキュメントをベースに開発できることやjQuery特有の動作を解消できることがあげられています。&lt;/p&gt;
-
-&lt;p&gt;どのようにjQueryを外していったかについては、コードで使われてる&lt;code&gt;jQuery&lt;/code&gt;のメトリクスをとり可視化、ESLintを使ってjQueryの利用をCIでチェック、Polyfillを使うなど置き換えていった方針についてもかかれています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;part-2a003bb4b350ea2b&quot;&gt;お知らせ&lt;/h2&gt;
-
-&lt;p&gt;今回で400回目のJSer.infoです。&lt;/p&gt;
-
-&lt;p&gt;400回記念イベントを2018年9月22日(土)に開催するので興味がある人は参照してみてください。&lt;br&gt;
-既に定員になっていますが、当日来れない人もいると思うので参加したい人はとりあえず申し込んでおくといいかもしれません。(入場に必要なIDを送る必要があるので直前より事前に登録しておくといいです)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jser.connpass.com/event/100092/&quot; title=&quot;JSer.info 400回記念イベント - connpass&quot;&gt;JSer.info 400回記念イベント - connpass&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://jser.info/2018/08/31/jser-400-event-announce/&quot; title=&quot;2018年9月22日(土)に JSer.info 400回目記念イベントを開催します - JSer.info&quot;&gt;2018年9月22日(土)に JSer.info 400回目記念イベントを開催します - JSer.info&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;どうしても参加したい人は&lt;a href=&quot;https://twitter.com/azu_re&quot;&gt;@azu_re&lt;/a&gt;にご相談ください。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-69-web-google-developers&quot;&gt;New in Chrome 69  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/09/nic69&quot; title=&quot;New in Chrome 69  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/09/nic69&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 69リリース。&lt;br&gt;
-CSS Scroll Snap、CSS &lt;code&gt;env&lt;/code&gt;とDisplay cutouts、Web Locks API、OffscreenCanvasのサポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/08/chrome-69-beta-av1-video-decoder-css.html&quot; title=&quot;Chromium Blog: Chrome 69 Beta: CSS tricks, and more&quot;&gt;Chromium Blog: Chrome 69 Beta: CSS tricks, and more&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#browsers.chrome.desktop%3D69&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v10-10-0-current-node-js&quot;&gt;Node v10.10.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v10.10.0/&quot; title=&quot;Node v10.10.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v10.10.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 10.10.0リリース&lt;br&gt;
-&lt;code&gt;fs&lt;/code&gt;モジュールが&lt;code&gt;TypedArray&lt;/code&gt;と&lt;code&gt;DataView&lt;/code&gt;をサポート、&lt;code&gt;http2&lt;/code&gt;モジュールがexperimentalではなくなった。&lt;br&gt;
-また&lt;code&gt;vm.compileFunction&lt;/code&gt;の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-fetch-3-0-0-github-fetch&quot;&gt;Release fetch 3.0.0 · github/fetch&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/github/fetch/releases/tag/v3.0.0&quot; title=&quot;Release fetch 3.0.0 · github/fetch&quot;&gt;github.com/github/fetch/releases/tag/v3.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Fetch&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;polyfill&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Fetch polyfill 3.0.0リリース。&lt;br&gt;
-&lt;code&gt;credentials&lt;/code&gt;のデフォルト値を&lt;code&gt;same-origin&lt;/code&gt;に変更、&lt;code&gt;Request&lt;/code&gt;をキャンセルするための&lt;code&gt;signal&lt;/code&gt;をサポート、仕様の追従など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v16-5-0-facebook-react&quot;&gt;Release v16.5.0 · facebook/react&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/react/releases/tag/v16.5.0&quot; title=&quot;Release v16.5.0 · facebook/react&quot;&gt;github.com/facebook/react/releases/tag/v16.5.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React 16.5.0リリース。&lt;br&gt;
-React DevTools Profilerのサポート、&lt;code&gt;onAuxClick&lt;/code&gt;のサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;firefox-62-0-see-all-new-features-updates-and-fixes&quot;&gt;Firefox 62.0, See All New Features, Updates and Fixes&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/62.0/releasenotes/&quot; title=&quot;Firefox 62.0, See All New Features, Updates and Fixes&quot;&gt;www.mozilla.org/en-US/firefox/62.0/releasenotes/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 62.0リリース。&lt;br&gt;
-開発者ツールでShape Path Editorの追加、CORSエラー表示の改善。&lt;br&gt;
-&lt;code&gt;Array#flat&lt;/code&gt;と&lt;code&gt;Array#flatMap&lt;/code&gt;をデフォルト有効化、&lt;code&gt;import.meta&lt;/code&gt;のサポート、WebDriver APIの更新など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/62&quot; title=&quot;Firefox 62 for developers - Mozilla | MDN&quot;&gt;Firefox 62 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;web-performance-review-trademe-wildly-inaccurate&quot;&gt;Web performance review: TradeMe | Wildly Inaccurate&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://wildlyinaccurate.com/web-performance-review-trademe/&quot; title=&quot;Web performance review: TradeMe | Wildly Inaccurate&quot;&gt;wildlyinaccurate.com/web-performance-review-trademe/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;SpeedCurveで計測しながら、ページの表示のパフォーマンスを改善する話。&lt;br&gt;
-何がボトルネックであるかを調べて、Hero Elementであるトップ画像の表示を早く表示するかについて。&lt;br&gt;
-また改善後もperformance budgetsをもとに修正し続けることについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-reporting-api-web-google-developers&quot;&gt;The Reporting API  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/09/reportingapi&quot; title=&quot;The Reporting API  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/09/reportingapi&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Reporting APIについて。&lt;br&gt;
-指定したURLに対してCSP違反、Feature Policy違反、deprecationｍネットワークエラーなどのレポートを送信できる。&lt;br&gt;
-またレポートが送信されたかをデバッグする方法について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;developer-tools-support-for-web-components-in-firefox-63-firefox-nightly-news&quot;&gt;Developer Tools support for Web Components in Firefox 63 – Firefox Nightly News&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.nightly.mozilla.org/2018/09/06/developer-tools-support-for-web-components-in-firefox-63/&quot; title=&quot;Developer Tools support for Web Components in Firefox 63 – Firefox Nightly News&quot;&gt;blog.nightly.mozilla.org/2018/09/06/developer-tools-support-for-web-components-in-firefox-63/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 63でWeb Componentsがデフォルトで有効化され開発者ツールも&lt;code&gt;&amp;lt;template&amp;gt;&lt;/code&gt;要素やShadow DOMなどに対応する&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;removing-jquery-from-github-com-frontend-github-engineering&quot;&gt;Removing jQuery from GitHub.com frontend | GitHub Engineering&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://githubengineering.com/removing-jquery-from-github-frontend/&quot; title=&quot;Removing jQuery from GitHub.com frontend | GitHub Engineering&quot;&gt;githubengineering.com/removing-jquery-from-github-frontend/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;github&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHubがjQueryの依存を外すまでの話。&lt;br&gt;
-jQueryの機能はウェブ標準で代替できるものが増え、また一部のjQueryのメソッドチェーンには意図通りではない挙動があった。&lt;br&gt;
-コードで使われてる&lt;code&gt;jQuery&lt;/code&gt;のメトリクスをとり可視化、ESLintを使ってjQueryの利用をCIでチェック、Polyfillを使うなどしてウェブ標準の実装に置き換えていった話。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/dgraham/eslint-plugin-jquery#readme&quot; title=&quot;dgraham/eslint-plugin-jquery: Disallow jQuery functions with native equivalents.&quot;&gt;dgraham/eslint-plugin-jquery: Disallow jQuery functions with native equivalents.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;asynchronous-access-to-http-cookies-web-google-developers&quot;&gt;Asynchronous Access to HTTP Cookies  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/09/asynchronous-access-to-http-cookies&quot; title=&quot;Asynchronous Access to HTTP Cookies  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/09/asynchronous-access-to-http-cookies&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 69でOrigin Trialを開始した Cookie Store APIについて。&lt;br&gt;
-&lt;code&gt;document.cookie&lt;/code&gt; APIとは異なり非同期処理として扱え、値の変更も監視できる。&lt;br&gt;
-またServie Workerからも利用できるようになっている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;inside-look-at-modern-web-browser-part-1-web-google-developers&quot;&gt;Inside look at modern web browser (part 1)  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/09/inside-browser-part1&quot; title=&quot;Inside look at modern web browser (part 1)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/09/inside-browser-part1&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chromeのプロセスについての連載。&lt;br&gt;
-どのようにプロセス分離されているか、ページナビゲーションからの各処理の流れなどについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;a-tour-of-javascript-timers-on-the-web-read-the-tea-leaves&quot;&gt;A tour of JavaScript timers on the web | Read the Tea Leaves&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nolanlawson.com/2018/09/01/a-tour-of-javascript-timers-on-the-web/&quot; title=&quot;A tour of JavaScript timers on the web | Read the Tea Leaves&quot;&gt;nolanlawson.com/2018/09/01/a-tour-of-javascript-timers-on-the-web/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptのタイマー処理についての解説。&lt;br&gt;
-microtask、&lt;code&gt;setTimeout&lt;/code&gt;/&lt;code&gt;setInterval&lt;/code&gt;、&lt;br&gt;
-&lt;code&gt;setImmediate&lt;/code&gt;、&lt;br&gt;
-&lt;code&gt;requestAnimationFrame&lt;/code&gt;、&lt;code&gt;requestIdleCallback&lt;/code&gt;について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;typescript-with-babel-a-beautiful-marriage-dailyjs-medium&quot;&gt;TypeScript with Babel: A Beautiful Marriage – DailyJS – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/dailyjs/typescript-babel-ce24f724398&quot; title=&quot;TypeScript with Babel: A Beautiful Marriage – DailyJS – Medium&quot;&gt;medium.com/dailyjs/typescript-babel-ce24f724398&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Babel 7の&lt;code&gt;@babel/preset-typescript&lt;/code&gt;でサポートされたTypeScriptのコードコンパイルについて。&lt;br&gt;
-ユースケースや&lt;code&gt;.ts&lt;/code&gt;をBabelでコンパイルして&lt;code&gt;tsc&lt;/code&gt;で型チェックをする例などについて。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;lusakasa-sqorn-a-javascript-library-for-building-sql-queries&quot;&gt;lusakasa/sqorn: A Javascript library for building SQL queries&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/lusakasa/sqorn&quot; title=&quot;lusakasa/sqorn: A Javascript library for building SQL queries&quot;&gt;github.com/lusakasa/sqorn&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;SQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Tagged Template Literalを使ったSQLクエリビルダー&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;nuxt-js-vue-js-amazon&quot;&gt;Nuxt.jsビギナーズガイド―Vue.js ベースのフレームワークによるシングルページアプリケーション開発 | 花谷 拓磨 |本 | 通販 | Amazon&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4863542569/&quot; title=&quot;Nuxt.jsビギナーズガイド―Vue.js ベースのフレームワークによるシングルページアプリケーション開発 | 花谷 拓磨 |本 | 通販 | Amazon&quot;&gt;www.amazon.co.jp/dp/4863542569/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2018年10月19日発売&lt;br&gt;
-Nuxt.jsについての書籍&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;practical-react-native-build-two-full-projects-and-one-full-game-using-react-native-frank-zammetti-9781484239384-amazon-com-books&quot;&gt;Practical React Native: Build Two Full Projects and One Full Game using React Native: Frank Zammetti: 9781484239384: Amazon.com: Books&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/dp/1484239385/&quot; title=&quot;Practical React Native: Build Two Full Projects and One Full Game using React Native: Frank Zammetti: 9781484239384: Amazon.com: Books&quot;&gt;www.amazon.com/dp/1484239385/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2019年3月10日発売&lt;br&gt;
-React Nativeについての書籍&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;browsers-devices-and-fonts-a-designers-guide-to-fonts-and-how-they-function-on-the-web-gary-rozanc-9781138612310-amazon-com-books&quot;&gt;Browsers, Devices, and Fonts: A Designer&amp;#39;s Guide to Fonts and How They Function on the Web: Gary Rozanc: 9781138612310: Amazon.com: Books&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/dp/1138612316/&quot; title=&quot;Browsers, Devices, and Fonts: A Designer&amp;#39;s Guide to Fonts and How They Function on the Web: Gary Rozanc: 9781138612310: Amazon.com: Books&quot;&gt;www.amazon.com/dp/1138612316/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;web&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;desin&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;fonts&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2018年12月8日発売&lt;br&gt;
-ウェブタイポグラフィについての書籍。&lt;br&gt;
-Web Fontsとデザインについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jump-start-vue-js-nilson-jacques-9781925836097-amazon-com-books&quot;&gt;Jump Start Vue.js: Nilson Jacques: 9781925836097: Amazon.com: Books&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/dp/1925836096/&quot; title=&quot;Jump Start Vue.js: Nilson Jacques: 9781925836097: Amazon.com: Books&quot;&gt;www.amazon.com/dp/1925836096/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2019年2月25日発売&lt;br&gt;
-Vue、Vuex、Nuxt.jsについて簡潔に紹介する書籍&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 11 Sep 2018 11:04:31 +0900</pubDate>
-        <link>https://jser.info/2018/09/11/firefox-62.0whatwg-fetch-3.0.0removing-jquery-from-github.com/</link>
-        <guid isPermaLink="true">https://jser.info/2018/09/11/firefox-62.0whatwg-fetch-3.0.0removing-jquery-from-github.com/</guid>
-        
-        <category>Firefox</category>
-        
-        <category>GitHub</category>
-        
-        <category>jQuery</category>
         
         
         <category>JSer</category>
