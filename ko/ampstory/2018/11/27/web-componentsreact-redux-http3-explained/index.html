@@ -1,0 +1,499 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2018-11-27のJS: Web Components入門、React-Reduxの歴史と実装、 HTTP/3 explained - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2018/11/27/web-componentsreact-redux-http3-explained/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2018-11-27のJS: Web Components入門、React-Reduxの歴史と実装、 HTTP/3 explained"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2018-11-27のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://dev.to/bennypowers/lets-build-web-components-part-1-the-standards-3e85">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Lets Build Web Components! Part 1: The Standards - DEV Community 👩‍💻👨‍💻</amp-fit-text>
+            <p class="item-contents">Web Componentsについての連載。
+Web Componentsの構成要素、polyfill、読み込み方法、ライフサイクル、非同期ロード。
+また<code>:host</code>や<code>&lt;slot&gt;</code>、スタイル、アクセシビリティ、Polymerなどのフレームワークについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Lets Build Web Components! Part 1: The Standards - DEV Community 👩‍💻👨‍💻" href="https://dev.to/bennypowers/lets-build-web-components-part-1-the-standards-3e85" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.ably.io/concepts/websockets">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">WebSockets - A Conceptual Deep-Dive | Ably Realtime</amp-fit-text>
+            <p class="item-contents">WebSocketについての記事。 Cometのようなポーリングによる通信、WebSocketによるハンドシェイクについて。 <code>WebSocket</code>を使っての接続方法や著名なライブラリの紹介など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WebSockets - A Conceptual Deep-Dive | Ably Realtime" href="https://www.ably.io/concepts/websockets" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.isquaredsoftware.com/2018/11/react-redux-history-implementation/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Idiomatic Redux: The History and Implementation of React-Redux · Mark&#039;s Dev Blog</amp-fit-text>
+            <p class="item-contents">react-reduxの歴史と今後について
+今までのreact-reduxの実装とv6 β実装されたContext APIベースの実装。
+また、React Hooksを使った実装のProposalについてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Idiomatic Redux: The History and Implementation of React-Redux · Mark&#039;s Dev Blog" href="https://blog.isquaredsoftware.com/2018/11/react-redux-history-implementation/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://zeit.co/blog/ncc">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ZEIT – ncc: Node.js Compiler Collection</amp-fit-text>
+            <p class="item-contents">Node.jsのプログラムを依存含めて1つのファイルにするnccについて。
+ファイル1つにまとめることで配布性や実行時の起動時間のI/Oオーバヘッドの改善を目的としている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ZEIT – ncc: Node.js Compiler Collection" href="https://zeit.co/blog/ncc" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://snyk.io/blog/malicious-code-found-in-npm-package-event-stream">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Malicious code found in npm package event-stream downloaded 8 million times in the past 2.5 months | Snyk</amp-fit-text>
+            <p class="item-contents"><code>event-stream@3.x</code>と<code>flatmap-stream</code>の問題について。
+<code>flatmap-stream</code>にwalletsからbitcoinを盗むコードが含まれており、<code>event-stream@3.x</code>がこのパッケージに依存していた問題について。
+現在<code>flatmap-stream</code>はnpmからunpublishされている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Malicious code found in npm package event-stream downloaded 8 million times in the past 2.5 months | Snyk" href="https://snyk.io/blog/malicious-code-found-in-npm-package-event-stream" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/carousell-insider/how-we-made-carousells-mobile-web-experience-3x-faster-bbb3be93e006">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">How we made Carousell’s mobile web experience 3x faster</amp-fit-text>
+            <p class="item-contents">carousellにおけるパフォーマンス改善について。
+PRPLパターン、Critical CSS、Lazy LOading、画像の圧縮とCDN、Service Workerの導入などについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="How we made Carousell’s mobile web experience 3x faster" href="https://medium.com/carousell-insider/how-we-made-carousells-mobile-web-experience-3x-faster-bbb3be93e006" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://akito0107.hatenablog.com/entry/2018/11/23/195538">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">フロントエンド向けvalidator: favalidの紹介 - asterisc</amp-fit-text>
+            <p class="item-contents">バリデーターを関数で書いてcombineできるライブラリのfavalidについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="フロントエンド向けvalidator: favalidの紹介 - asterisc" href="http://akito0107.hatenablog.com/entry/2018/11/23/195538" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/kazuyaseki/seo-for-spa-cfb3706f-ae1d-4c6f-a83f-96dc2452f32b">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">seo\_for\_spa.pdf - Speaker Deck</amp-fit-text>
+            <p class="item-contents">Google botに適切に解釈されるようにするための手法についてのスライド。
+Google botがChrome 41相当であることによる制限、タイムアウトの検証、Dynamic Rendering(prerender)やSSRなどの対策についてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="seo\_for\_spa.pdf - Speaker Deck" href="https://speakerdeck.com/kazuyaseki/seo-for-spa-cfb3706f-ae1d-4c6f-a83f-96dc2452f32b" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/koumatsumot0/angular-webahurikesiyonfalsezui-xin-she-ji-shou-fa">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Angular Webアプリケーションの最新設計手法.pdf - Speaker Deck</amp-fit-text>
+            <p class="item-contents">Angularのコンポーネント設計やステート管理についてのスライド
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Angular Webアプリケーションの最新設計手法.pdf - Speaker Deck" href="https://speakerdeck.com/koumatsumot0/angular-webahurikesiyonfalsezui-xin-she-ji-shou-fa" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/sisidovski/nikkei-pwa-html5conf2018">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">PWA導入の成果と課題 / nikkei-pwa-html5conf2018 - Speaker Deck</amp-fit-text>
+            <p class="item-contents">PWAの導入と運用しての課題についてのスライド。
+Service Workerによるパフォーマンスの改善、Add to HomeScreenのハンドリング、Performance Budgetの設定方法とパフォーマンス監視などについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="PWA導入の成果と課題 / nikkei-pwa-html5conf2018 - Speaker Deck" href="https://speakerdeck.com/sisidovski/nikkei-pwa-html5conf2018" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.slideshare.net/dynamis/httpp-and-5g-fixed1">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">HTTP and 5G (fixed1)</amp-fit-text>
+            <p class="item-contents">5G環境での通信試験についてのスライド。
+5Gの試験環境における輻輳制御方法CUBICとBBRの比較、HTTP/1、HTTP/2、QUICの比較などについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="HTTP and 5G (fixed1)" href="https://www.slideshare.net/dynamis/httpp-and-5g-fixed1" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://docs.google.com/presentation/d/1nsR7QnPlyhlPj1ff4cYyARwcWrYM1j_fM7dpbFZM3K8/mobilepresent#slide=id.p">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Class features in NodeFest Japan - Google スライド</amp-fit-text>
+            <p class="item-contents">ECMAScript ProposalのPrivate fieldsについてのスライド。
+privateを実現するための構文として<code>#variable</code>を使う理由や経緯、構文、現在のStageについてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Class features in NodeFest Japan - Google スライド" href="https://docs.google.com/presentation/d/1nsR7QnPlyhlPj1ff4cYyARwcWrYM1j_fM7dpbFZM3K8/mobilepresent#slide=id.p" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/google/js-green-licenses">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">google/js-green-licenses: JavaScript package.json License Checker</amp-fit-text>
+            <p class="item-contents"><code>package.json</code>にかかれている依存ライブラリのライセンスチェックツール。
+Pull Reuqest対するチェックなども対応している
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="google/js-green-licenses: JavaScript package.json License Checker" href="https://github.com/google/js-green-licenses" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/KidkArolis/jetpack">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">KidkArolis/jetpack: 🚀 Jetpack – a more convenient webpack dev server.</amp-fit-text>
+            <p class="item-contents">webpackベースの開発サーバ、ビルドツール。
+Parcelのようにデフォルトの設定があり、設定なしで利用できることを目的としている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="KidkArolis/jetpack: 🚀 Jetpack – a more convenient webpack dev server." href="https://github.com/KidkArolis/jetpack" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/wasmerio/wasmer">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">wasmerio/wasmer: High-Performance WebAssembly JIT interpreter</amp-fit-text>
+            <p class="item-contents">WebAssemblyファイル(<code>.wasm</code>と<code>.wat</code>)を実行できるスタンドアローンなツール。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="wasmerio/wasmer: High-Performance WebAssembly JIT interpreter" href="https://github.com/wasmerio/wasmer" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://http3-explained.haxx.se/en/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Introduction · HTTP/3 explained</amp-fit-text>
+            <p class="item-contents">HTTP/3とQUICについての解説ドキュメント。
+TCPとUDP、HTTP/2との違い、QUICの仕組みなどについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introduction · HTTP/3 explained" href="https://http3-explained.haxx.se/en/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/developit/htm">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">developit/htm: Hyperscript Tagged Markup: JSX alternative using standard tagged templates, with compiler support.</amp-fit-text>
+            <p class="item-contents">JSXライクなTagged Templatesライブラリ。babelプラグインでコンパイルも可能になっている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="developit/htm: Hyperscript Tagged Markup: JSX alternative using standard tagged templates, with compiler support." href="https://github.com/developit/htm" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/areknawo/rex">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">areknawo/Rex: Your RegEx companion.</amp-fit-text>
+            <p class="item-contents">メソッドチェーンで正規表現を作成したり、マッチング、置換するライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="areknawo/Rex: Your RegEx companion." href="https://github.com/areknawo/rex" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/boneskull/create-yo">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">boneskull/create-yo: Use any Yeoman generator with &quot;npm init&quot;</amp-fit-text>
+            <p class="item-contents"><code>npm init yo &lt;generator&gt;</code>できるYoeman向けのツール
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="boneskull/create-yo: Use any Yeoman generator with &quot;npm init&quot;" href="https://github.com/boneskull/create-yo" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
