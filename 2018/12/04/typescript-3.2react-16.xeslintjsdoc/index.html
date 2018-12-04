@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>2018-12-04のJS:  - JSer.info</title>
-    <meta name="description" content="JSer.info #412">
+    <title>2018-12-04のJS: TypeScript 3.2、React 16.xロードマップ、ESLintのビルトインJSDocサポート終了の予定 - JSer.info</title>
+    <meta name="description" content="JSer.info #412 - TypeScript 3.2が正式にリリースされました。">
     
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="typescript,react,eslint,JSDoc" />
     
     <meta name="author" content="azu">
     
@@ -22,10 +22,18 @@
     
     
       
+      <meta content="typescript" property="article:tag">
+      
+      <meta content="react" property="article:tag">
+      
+      <meta content="eslint" property="article:tag">
+      
+      <meta content="JSDoc" property="article:tag">
+      
     
     
     
-    <link rel="canonical" href="https://jser.info/2018/12/04/412draft/">
+    <link rel="canonical" href="https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jser.info/rss/">
     <link rel="apple-touch-icon" sizes="57x57" href="/public/img/favicon/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/public/img/favicon/apple-touch-icon-60x60.png">
@@ -48,16 +56,16 @@
     <!-- JavaScript -->
     <script src="/public/js/switch-alt-link.js"></script>
     <!-- Open graph tags -->
-<meta name="twitter:card" content="JSer.info #412" />
+<meta name="twitter:card" content="JSer.info #412 - TypeScript 3.2が正式にリリースされました。" />
 <meta name="twitter:site" content="@jser_info" />
 
 
-<meta property="og:title" content="2018-12-04のJS: ">
+<meta property="og:title" content="2018-12-04のJS: TypeScript 3.2、React 16.xロードマップ、ESLintのビルトインJSDocサポート終了の予定">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://jser.info/2018/12/04/412draft/">
+<meta property="og:url" content="https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/">
 <meta property="og:image" content="https://jser.info/media/logo.png">
 
-<meta property="og:description" content="JSer.info #412">
+<meta property="og:description" content="JSer.info #412 - TypeScript 3.2が正式にリリースされました。">
 <meta property="og:site_name" content="JSer.info">
 
 
@@ -67,6 +75,14 @@
 
 
 
+
+<meta property="article:tag" content="typescript">
+
+<meta property="article:tag" content="react">
+
+<meta property="article:tag" content="eslint">
+
+<meta property="article:tag" content="JSDoc">
 
 
     <script async src='https://www.google-analytics.com/analytics.js'></script>
@@ -111,8 +127,8 @@
     <h2 class="site-description">JavaScriptの最新情報を紹介する週刊ブログ</h2>
     <nav class="lang-menu">
         <ul>
-            <li><a href="/" data-alt-href="/2018/12/04/412draft/">日本語</a></li>
-            <li><a href="/ko/" data-alt-href="/ko/2018/12/04/412draft/">한국어</a></li>
+            <li><a href="/" data-alt-href="/2018/12/04/typescript-3.2react-16.xeslintjsdoc/">日本語</a></li>
+            <li><a href="/ko/" data-alt-href="/ko/2018/12/04/typescript-3.2react-16.xeslintjsdoc/">한국어</a></li>
         </ul>
         
         <div>
@@ -129,15 +145,15 @@
             <div class="post">
     <header>
         <div class="post-header">
-            <h1><a href="/2018/12/04/412draft/">2018-12-04のJS: </a></h1>
+            <h1><a href="/2018/12/04/typescript-3.2react-16.xeslintjsdoc/">2018-12-04のJS: TypeScript 3.2、React 16.xロードマップ、ESLintのビルトインJSDocサポート終了の予定</a></h1>
 
             <div class="pre-post-toolbar">
                 <span class="post-date">2018年12月04日</span>
                 
                 <span class="svg-icon"><img src="/public/svg/github.svg"/></span>
-                <a class="btn edit-on-github" href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2018/2018-12-04-412draft.md"><span class="edit-on-github-label"></span>Edit on GitHub</a>
+                <a class="btn edit-on-github" href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2018/2018-12-04-typescript-3.2react-16.xeslintjsdoc.md"><span class="edit-on-github-label"></span>Edit on GitHub</a>
                 <span class="svg-icon"><img src="/public/svg/git.svg"/></span>
-                <a class="btn revision-on-github" href="https://github.com/jser/jser.github.io/commits/develop/_i18n/ja/_posts/2018/2018-12-04-412draft.md"><span class="revision-on-github-label"></span>編集履歴を見る</a>
+                <a class="btn revision-on-github" href="https://github.com/jser/jser.github.io/commits/develop/_i18n/ja/_posts/2018/2018-12-04-typescript-3.2react-16.xeslintjsdoc.md"><span class="revision-on-github-label"></span>編集履歴を見る</a>
             </div>
 
         </div>
@@ -157,13 +173,13 @@
     </li>
     <!-- Hatena -->
     <li>
-        <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-url="https://jser.info/2018/12/04/412draft/">
+        <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-url="https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/">
             <img src="https://b.st-hatena.com/images/entry-button/button-only.gif" alt="はてなブックマークに追加" width="20" height="20" style="border: none">
         </a>
     </li>
     <!-- Pocket -->
     <li>
-        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/2018/12/04/412draft/"
+        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/"
             data-pocket-count="horizontal" data-pocket-align="left">Pocket</a>
     </li>
 </ul>
@@ -171,7 +187,75 @@
         </div>
     </header>
     <article class="post-content">
-        <p>JSer.info #412</p>
+        <p>JSer.info #412 - TypeScript 3.2が正式にリリースされました。</p>
+
+<ul>
+<li><a href="https://blogs.msdn.microsoft.com/typescript/2018/11/29/announcing-typescript-3-2/">Announcing TypeScript 3.2 | TypeScript</a></li>
+<li><a href="https://qiita.com/vvakame/items/79557e00cfe6d3c612cd">TypeScript 3.2.0-RC 変更点 - Qiita</a></li>
+</ul>
+
+<p><code>strictBindCallApply</code>オプションが追加され<code>bind</code>、<code>call</code>、<code>apply</code>の型付け改善、Object spread/restとGenericsの組み合わせを改善、BigIntサポート。</p>
+
+<p>また<code>allowJs</code>の際に<code>Object.defineProperty</code>で宣言されたプロパティのチェック(<code>checkJs</code>)に対応しています。</p>
+
+<p><code>tsconfig.json</code>では既存の<code>tsconfig.json</code>を継承して拡張できますが、今まで<code>node_modules/</code>にある場合はそのままパスを書く必要がありました。</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"extends"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../node_modules/@my-team/tsconfig-base/tsconfig.json"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"./**/*"</span><span class="p">]</span><span class="w">
+    </span><span class="s2">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Override</span><span class="w"> </span><span class="err">certain</span><span class="w"> </span><span class="err">options</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">project-by-project</span><span class="w"> </span><span class="err">basis.</span><span class="w">
+        </span><span class="s2">"strictBindCallApply"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>プロジェクトなどで<code>tsconfig.json</code>をnpmで配布して共有する場合には、少し不便でした。(たとえば、node<em>modulesがflatかどうかでパスが変わる可能性もあります)<br>
+そのため、3.2から<code>extends</code>が`node</em>modules/`以下を探索するようになったため、次のように書けます。</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"extends"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@my-team/tsconfig-base"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"./**/*"</span><span class="p">]</span><span class="w">
+    </span><span class="s2">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Override</span><span class="w"> </span><span class="err">certain</span><span class="w"> </span><span class="err">options</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">project-by-project</span><span class="w"> </span><span class="err">basis.</span><span class="w">
+        </span><span class="s2">"strictBindCallApply"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<hr>
+
+<p><a href="https://reactjs.org/blog/2018/11/27/react-16-roadmap.html">React 16.x Roadmap – React Blog</a>ではReact 16.xのロードマップについて書かれています。</p>
+
+<p>それぞれのminorアップデートや実装される予定の機能について書かれています。</p>
+
+<ul>
+<li>React 16.6 with Suspense for Code Splitting (already shipped)</li>
+<li>16.7?: A minor 16.x release with React Hooks (~Q1 2019)</li>
+<li>16.8?: A minor 16.x release with Concurrent Mode (~Q2 2019)</li>
+<li>16.9?: A minor 16.x release with Suspense for Data Fetching (~mid 2019)</li>
+</ul>
+
+<p>また合わせてReact DOMのリファクタリングやSuspenseのSSR対応なども勧めていく予定とのことです。</p>
+
+<ul>
+<li><a href="https://github.com/facebook/react/issues/13525">React Fire: Modernizing React DOM · Issue #13525 · facebook/react</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://eslint.org/blog/2018/11/jsdoc-end-of-life">End-of-Life for Built-in JSDoc Support in ESLint - ESLint - Pluggable JavaScript linter</a>という記事では、現在ESLintにビルトインで入っているJSDocサポートの今後について書かれています。</p>
+
+<ul>
+<li><a href="https://qiita.com/mysticatea/items/09f9dd4ab2569cd4cd68">ESLint の組み込み JSDoc サポートが終了します - Qiita</a></li>
+</ul>
+
+<p>ESLintコアで行っていたJSDoc周りのパーサやルールなどの開発を終了するという内容です。</p>
+
+<p>これによりESLint本体から<code>require-jsdoc</code>などのJSDoc関係のサポートが終了され、次のメジャーアップデートで削除される可能性があります。<br>
+そのためコミュニティで開発されている<a href="https://github.com/gajus/eslint-plugin-jsdoc">eslint-plugin-jsdoc</a>というプラグインへの移行が推奨されています。</p>
+
+<h2 id="incorporating-now-deprecated-eslint-jsdoc-features-issue-107-gajus-eslint-plugin-jsdoc">- <a href="https://github.com/gajus/eslint-plugin-jsdoc/issues/107">Incorporating now deprecated ESLint jsdoc features · Issue #107 · gajus/eslint-plugin-jsdoc</a></h2>
+
+<p>ESLintが利用していたJSDocパーサである<a href="https://github.com/eslint/doctrine">doctrine</a>も開発が終了され、現在アーカイブ化されています。<br>
+これはもともと<a href="https://github.com/Constellation">@constellation</a>さんが開発し、ESLint/JS Foundationにtransferしたパッケージです。<br>
+JS Foundationでの開発を引き継ぐには手続きが煩雑になることから、Forkによる引き継ぎが推奨されています。</p>
 
 <hr>
 
@@ -195,7 +279,7 @@ Web Components V1を非推奨化など</p>
 <p><a href="https://blogs.msdn.microsoft.com/typescript/2018/11/29/announcing-typescript-3-2/" title="Announcing TypeScript 3.2 | TypeScript">blogs.msdn.microsoft.com/typescript/2018/11/29/announcing-typescript-3-2/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">TypeScript</span> <span class="jser-tag">ReleaseNote</span></p></p>
 
-<p>TypeScript 3.2リリース。<code>strictBindCallApply</code>オプションが追加され<code>bind</code>、<code>call</code>、<code>apply</code>の型付け改善、Object spread/restとGenericsの組み合わせを改善、BigIntサポート。 <br>
+<p>TypeScript 3.2リリース。<code>strictBindCallApply</code>オプションが追加され<code>bind</code>、<code>call</code>、<code>apply</code>の型付け改善、Object spread/restとGenericsの組み合わせを改善、BigIntサポート。<br>
 <code>tsconfig.json</code>の<code>extends</code>がnode_modulesのパスに対応など</p>
 
 <hr>
@@ -337,7 +421,7 @@ TypeScript対応、Service Workerがオプトインに変更、Babel macrosの�
     <div class="post-post-toolbar">
         <span class="svg-icon"><img src="/public/svg/github.svg"/></span>
         <a class="btn edit-on-github"
-           href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2018/2018-12-04-412draft.md"><span
+           href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2018/2018-12-04-typescript-3.2react-16.xeslintjsdoc.md"><span
                 class="edit-on-github-label"></span>この記事へ修正リクエストをする</a>
         
         <nav>
@@ -347,9 +431,17 @@ TypeScript対応、Service Workerがオプトインに変更、Babel macrosの�
         
         <nav class="tags"
              id="js-post-tags"
-             data-post-tags='[]'>
+             data-post-tags='["typescript","react","eslint","JSDoc"]'>
             <span><span class="svg-icon"><img src="/public/svg/tag.svg"/></span>タグ:</span>
             <ul>
+                
+                <li>typescript</li>
+                
+                <li>react</li>
+                
+                <li>eslint</li>
+                
+                <li>JSDoc</li>
                 
             </ul>
         </nav>
@@ -371,13 +463,13 @@ TypeScript対応、Service Workerがオプトインに変更、Babel macrosの�
     </li>
     <!-- Hatena -->
     <li>
-        <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-url="https://jser.info/2018/12/04/412draft/">
+        <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-url="https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/">
             <img src="https://b.st-hatena.com/images/entry-button/button-only.gif" alt="はてなブックマークに追加" width="20" height="20" style="border: none">
         </a>
     </li>
     <!-- Pocket -->
     <li>
-        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/2018/12/04/412draft/"
+        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/"
             data-pocket-count="horizontal" data-pocket-align="left">Pocket</a>
     </li>
 </ul>
@@ -457,7 +549,7 @@ TypeScript対応、Service Workerがオプトインに変更、Babel macrosの�
             <ul>
                 
                 
-                <li><a class="page-link" href="/2018/12/04/412draft/">2018-12-04のJS: </a></li>
+                <li><a class="page-link" href="/2018/12/04/typescript-3.2react-16.xeslintjsdoc/">2018-12-04のJS: TypeScript 3.2、React 16.xロードマップ、ESLintのビルトインJSDocサポート終了の予定</a></li>
                 
                 
                 

@@ -5,13 +5,81 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 04 Dec 2018 11:36:06 +0900</pubDate>
-    <lastBuildDate>Tue, 04 Dec 2018 11:36:06 +0900</lastBuildDate>
+    <pubDate>Tue, 04 Dec 2018 11:49:02 +0900</pubDate>
+    <lastBuildDate>Tue, 04 Dec 2018 11:49:02 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
-        <title>2018-12-04のJS: </title>
-        <description>&lt;p&gt;JSer.info #412&lt;/p&gt;
+        <title>2018-12-04のJS: TypeScript 3.2、React 16.xロードマップ、ESLintのビルトインJSDocサポート終了の予定</title>
+        <description>&lt;p&gt;JSer.info #412 - TypeScript 3.2が正式にリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2018/11/29/announcing-typescript-3-2/&quot;&gt;Announcing TypeScript 3.2 | TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/79557e00cfe6d3c612cd&quot;&gt;TypeScript 3.2.0-RC 変更点 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;strictBindCallApply&lt;/code&gt;オプションが追加され&lt;code&gt;bind&lt;/code&gt;、&lt;code&gt;call&lt;/code&gt;、&lt;code&gt;apply&lt;/code&gt;の型付け改善、Object spread/restとGenericsの組み合わせを改善、BigIntサポート。&lt;/p&gt;
+
+&lt;p&gt;また&lt;code&gt;allowJs&lt;/code&gt;の際に&lt;code&gt;Object.defineProperty&lt;/code&gt;で宣言されたプロパティのチェック(&lt;code&gt;checkJs&lt;/code&gt;)に対応しています。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;tsconfig.json&lt;/code&gt;では既存の&lt;code&gt;tsconfig.json&lt;/code&gt;を継承して拡張できますが、今まで&lt;code&gt;node_modules/&lt;/code&gt;にある場合はそのままパスを書く必要がありました。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;extends&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;../node_modules/@my-team/tsconfig-base/tsconfig.json&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;include&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;./**/*&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Override&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;certain&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;project-by-project&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;basis.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;strictBindCallApply&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;プロジェクトなどで&lt;code&gt;tsconfig.json&lt;/code&gt;をnpmで配布して共有する場合には、少し不便でした。(たとえば、node&lt;em&gt;modulesがflatかどうかでパスが変わる可能性もあります)&lt;br&gt;
+そのため、3.2から&lt;code&gt;extends&lt;/code&gt;が`node&lt;/em&gt;modules/`以下を探索するようになったため、次のように書けます。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;extends&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@my-team/tsconfig-base&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;include&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;./**/*&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Override&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;certain&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;project-by-project&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;basis.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;strictBindCallApply&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://reactjs.org/blog/2018/11/27/react-16-roadmap.html&quot;&gt;React 16.x Roadmap – React Blog&lt;/a&gt;ではReact 16.xのロードマップについて書かれています。&lt;/p&gt;
+
+&lt;p&gt;それぞれのminorアップデートや実装される予定の機能について書かれています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;React 16.6 with Suspense for Code Splitting (already shipped)&lt;/li&gt;
+&lt;li&gt;16.7?: A minor 16.x release with React Hooks (~Q1 2019)&lt;/li&gt;
+&lt;li&gt;16.8?: A minor 16.x release with Concurrent Mode (~Q2 2019)&lt;/li&gt;
+&lt;li&gt;16.9?: A minor 16.x release with Suspense for Data Fetching (~mid 2019)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また合わせてReact DOMのリファクタリングやSuspenseのSSR対応なども勧めていく予定とのことです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/react/issues/13525&quot;&gt;React Fire: Modernizing React DOM · Issue #13525 · facebook/react&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2018/11/jsdoc-end-of-life&quot;&gt;End-of-Life for Built-in JSDoc Support in ESLint - ESLint - Pluggable JavaScript linter&lt;/a&gt;という記事では、現在ESLintにビルトインで入っているJSDocサポートの今後について書かれています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/09f9dd4ab2569cd4cd68&quot;&gt;ESLint の組み込み JSDoc サポートが終了します - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ESLintコアで行っていたJSDoc周りのパーサやルールなどの開発を終了するという内容です。&lt;/p&gt;
+
+&lt;p&gt;これによりESLint本体から&lt;code&gt;require-jsdoc&lt;/code&gt;などのJSDoc関係のサポートが終了され、次のメジャーアップデートで削除される可能性があります。&lt;br&gt;
+そのためコミュニティで開発されている&lt;a href=&quot;https://github.com/gajus/eslint-plugin-jsdoc&quot;&gt;eslint-plugin-jsdoc&lt;/a&gt;というプラグインへの移行が推奨されています。&lt;/p&gt;
+
+&lt;h2 id=&quot;incorporating-now-deprecated-eslint-jsdoc-features-issue-107-gajus-eslint-plugin-jsdoc&quot;&gt;- &lt;a href=&quot;https://github.com/gajus/eslint-plugin-jsdoc/issues/107&quot;&gt;Incorporating now deprecated ESLint jsdoc features · Issue #107 · gajus/eslint-plugin-jsdoc&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;ESLintが利用していたJSDocパーサである&lt;a href=&quot;https://github.com/eslint/doctrine&quot;&gt;doctrine&lt;/a&gt;も開発が終了され、現在アーカイブ化されています。&lt;br&gt;
+これはもともと&lt;a href=&quot;https://github.com/Constellation&quot;&gt;@constellation&lt;/a&gt;さんが開発し、ESLint/JS Foundationにtransferしたパッケージです。&lt;br&gt;
+JS Foundationでの開発を引き継ぐには手続きが煩雑になることから、Forkによる引き継ぎが推奨されています。&lt;/p&gt;
 
 &lt;hr&gt;
 
@@ -35,7 +103,7 @@ Web Components V1を非推奨化など&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2018/11/29/announcing-typescript-3-2/&quot; title=&quot;Announcing TypeScript 3.2 | TypeScript&quot;&gt;blogs.msdn.microsoft.com/typescript/2018/11/29/announcing-typescript-3-2/&lt;/a&gt;&lt;br&gt;
 &lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
 
-&lt;p&gt;TypeScript 3.2リリース。&lt;code&gt;strictBindCallApply&lt;/code&gt;オプションが追加され&lt;code&gt;bind&lt;/code&gt;、&lt;code&gt;call&lt;/code&gt;、&lt;code&gt;apply&lt;/code&gt;の型付け改善、Object spread/restとGenericsの組み合わせを改善、BigIntサポート。 &lt;br&gt;
+&lt;p&gt;TypeScript 3.2リリース。&lt;code&gt;strictBindCallApply&lt;/code&gt;オプションが追加され&lt;code&gt;bind&lt;/code&gt;、&lt;code&gt;call&lt;/code&gt;、&lt;code&gt;apply&lt;/code&gt;の型付け改善、Object spread/restとGenericsの組み合わせを改善、BigIntサポート。&lt;br&gt;
 &lt;code&gt;tsconfig.json&lt;/code&gt;の&lt;code&gt;extends&lt;/code&gt;がnode_modulesのパスに対応など&lt;/p&gt;
 
 &lt;hr&gt;
@@ -173,8 +241,16 @@ TypeScript対応、Service Workerがオプトインに変更、Babel macrosの�
 &lt;hr&gt;
 </description>
         <pubDate>Tue, 04 Dec 2018 09:33:24 +0900</pubDate>
-        <link>https://jser.info/2018/12/04/412draft/</link>
-        <guid isPermaLink="true">https://jser.info/2018/12/04/412draft/</guid>
+        <link>https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/</link>
+        <guid isPermaLink="true">https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/</guid>
+        
+        <category>typescript</category>
+        
+        <category>react</category>
+        
+        <category>eslint</category>
+        
+        <category>JSDoc</category>
         
         
         <category>JSer</category>
