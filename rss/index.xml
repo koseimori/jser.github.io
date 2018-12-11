@@ -5,9 +5,296 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 04 Dec 2018 11:57:20 +0900</pubDate>
-    <lastBuildDate>Tue, 04 Dec 2018 11:57:20 +0900</lastBuildDate>
+    <pubDate>Tue, 11 Dec 2018 10:39:54 +0900</pubDate>
+    <lastBuildDate>Tue, 11 Dec 2018 10:39:54 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2018-12-11のJS: gulp 4が正式リリース、MSEdgeがChromiumベースに移行</title>
+        <description>&lt;p&gt;JSer.info #413 - gulp 4.0が正式にリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/gulpjs/version-4-now-default-92c6cd4beb45&quot;&gt;🎉 Version 4.0 Now Default 🎉 – gulpjs – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;今まではプレリリース扱いだったので&lt;code&gt;npm install gulp@next&lt;/code&gt;でないとインストールされませんでしたが、現在は&lt;code&gt;npm install gulp&lt;/code&gt;で4.0がインストールされるようになっています。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;gulp.series&lt;/code&gt;、&lt;code&gt;gulp.parallel&lt;/code&gt;、&lt;code&gt;gulp.lastRun&lt;/code&gt;、&lt;code&gt;gulp.symlink&lt;/code&gt;などのAPIが追加されています。&lt;br&gt;
+sourcemapsのデフォルトサポート、gulpfileからのmodule exportをタスクとして扱えるようなっています。&lt;/p&gt;
+
+&lt;p&gt;または破壊的な変更として、&lt;code&gt;gulp&lt;/code&gt;と&lt;code&gt;gulp-cli&lt;/code&gt;の分離、&lt;code&gt;gulp.task&lt;/code&gt;や&lt;code&gt;gulp.watch&lt;/code&gt;の引数の変更などが行われています。&lt;/p&gt;
+
+&lt;p&gt;3.xからの公式なマイグレーションガイドはまだありませんが、すでにいくつか記事が書かれているのでそれらを見てみるとよいかもしれません。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp/issues/861&quot;&gt;[Docs] Migration Guide · Issue #861 · gulpjs/gulp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://satoyan419.com/gulp-v4/&quot; title=&quot;gulp v4.0.0がプレリリース！ 移行方法と変更点まとめ - satoyan419.com&quot;&gt;gulp v4.0.0がプレリリース！ 移行方法と変更点まとめ - satoyan419.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.liquidlight.co.uk/blog/article/how-do-i-update-to-gulp-4/&quot; title=&quot;How do I update to Gulp 4? - Liquid Light&quot;&gt;How do I update to Gulp 4? - Liquid Light&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.joezimjs.com/javascript/complete-guide-upgrading-gulp-4/&quot; title=&quot;The Complete-Ish Guide to Upgrading to Gulp 4 | Joe Zim&amp;#39;s JavaScript Corner&quot;&gt;The Complete-Ish Guide to Upgrading to Gulp 4 | Joe Zim&amp;#39;s JavaScript Corner&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Microsoftは、&lt;a href=&quot;https://www.microsoft.com/windows/microsoft-edge&quot;&gt;Microsoft Edge&lt;/a&gt;(MSEdge)を&lt;a href=&quot;https://www.chromium.org/Home&quot;&gt;Chromium&lt;/a&gt;ベースへと移行することを発表しました。&lt;br&gt;
+現在のMSEdgeはレンダリングエンジンであるEdgeHTMLとJavaScriptエンジンである&lt;a href=&quot;https://github.com/Microsoft/ChakraCore&quot;&gt;ChakraCore&lt;/a&gt;を利用しています。&lt;br&gt;
+これをChromiumのレンダリングエンジンである&lt;a href=&quot;https://www.chromium.org/blink&quot;&gt;Blink&lt;/a&gt;とJavaScriptエンジンである&lt;a href=&quot;https://v8.dev/&quot;&gt;V8&lt;/a&gt;へ移行することを表明しています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/#5yeIh988gX4mFiRU.97&quot;&gt;Microsoft Edge: Making the web better through more open source collaboration - Windows Experience BlogWindows Experience Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/MicrosoftEdge/MSEdge&quot; title=&quot;MicrosoftEdge/MSEdge: Microsoft Edge&quot;&gt;MicrosoftEdge/MSEdge: Microsoft Edge&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/MicrosoftEdge/MSEdgeExplainers&quot; title=&quot;MicrosoftEdge/MSEdgeExplainers: Home for explainer documents originated by the Microsoft Edge team&quot;&gt;MicrosoftEdge/MSEdgeExplainers: Home for explainer documents originated by the Microsoft Edge team&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;MSEdgeというブラウザ自体(ブランド)は維持されますが、中身がChromeと同じ&lt;a href=&quot;https://www.chromium.org/Home&quot;&gt;Chromium&lt;/a&gt;ベースへ移行されます。&lt;br&gt;
+この移行によってWindows7, 8を含めたすべてのサポートバージョンのWindowsとmacOSなどの他のプラットフォームをサポートする予定です。&lt;/p&gt;
+
+&lt;p&gt;新しいMSEdgeはChakraCoreは利用しない予定ですが、ChakraCore自体はブラウザ以外でも利用されているためサポートを継続するとの発表もしています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/ChakraCore/issues/5865&quot;&gt;Chromium adoption in Microsoft Edge and future of ChakraCore · Issue #5865 · Microsoft/ChakraCore&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-in-chrome-71-web-google-developers&quot;&gt;New in Chrome 71  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/12/nic71&quot; title=&quot;New in Chrome 71  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/12/nic71&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 71の変更点について。&lt;br&gt;
+&lt;code&gt;Intl.RelativeTimeFormat()&lt;/code&gt;のサポート、&lt;code&gt;text-underline-position&lt;/code&gt;のサポート。&lt;br&gt;
+Fetch APIのcredentials-modeのデフォルト値が&lt;code&gt;omit&lt;/code&gt;から&lt;code&gt;same-origin&lt;/code&gt;へと変更など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;7-2-0-released-private-instance-methods-babel&quot;&gt;7.2.0 Released: Private Instance Methods · Babel&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://babeljs.io/blog/2018/12/03/7.2.0.html&quot; title=&quot;7.2.0 Released: Private Instance Methods · Babel&quot;&gt;babeljs.io/blog/2018/12/03/7.2.0.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Babel 7.2.0リリース。&lt;br&gt;
+Private methods proposalのサポート、pipeline operator proposalのパースをサポート、replで変換過程を見られるタイムトラベルをサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-71-webkit&quot;&gt;Release Notes for Safari Technology Preview 71 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8517/release-notes-for-safari-technology-preview-71/&quot; title=&quot;Release Notes for Safari Technology Preview 71 | WebKit&quot;&gt;webkit.org/blog/8517/release-notes-for-safari-technology-preview-71/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview 71リリース。&lt;br&gt;
+&lt;code&gt;supported-color-schemes&lt;/code&gt;のサポート、Intersection Observerの有効化、Web Authenticationの試験的サポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-8-4-0-developit-preact&quot;&gt;Release 8.4.0 · developit/preact&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/developit/preact/releases/tag/8.4.0&quot; title=&quot;Release 8.4.0 · developit/preact&quot;&gt;github.com/developit/preact/releases/tag/8.4.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Preact 8.4.0リリース。&lt;br&gt;
+TypeScriptの型定義を改善、パフォーマンスの改善など。&lt;br&gt;
+また次期メジャーバージョンのPreact Xについて書かれている&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;microsoft-edge-making-the-web-better-through-more-open-source-collaboration-windows-experience-blogwindows-experience-blog&quot;&gt;Microsoft Edge: Making the web better through more open source collaboration - Windows Experience BlogWindows Experience Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/&quot; title=&quot;Microsoft Edge: Making the web better through more open source collaboration - Windows Experience BlogWindows Experience Blog&quot;&gt;blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;デスクトップMSEdgeはChromiumベース(Blink+V8)に移行し、すべてのWindowsバージョンやmacOS向けなどへ提供予定。&lt;br&gt;
+JavaScriptエンジンのChakraCoreはEdge以外の利用のためサポートを続ける。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/MicrosoftEdge/MSEdge&quot; title=&quot;MicrosoftEdge/MSEdge: Microsoft Edge&quot;&gt;MicrosoftEdge/MSEdge: Microsoft Edge&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/ChakraCore/issues/5865&quot; title=&quot;Chromium adoption in Microsoft Edge and future of ChakraCore · Issue #5865 · Microsoft/ChakraCore&quot;&gt;Chromium adoption in Microsoft Edge and future of ChakraCore · Issue #5865 · Microsoft/ChakraCore&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/MicrosoftEdge/MSEdgeExplainers&quot; title=&quot;MicrosoftEdge/MSEdgeExplainers: Home for explainer documents originated by the Microsoft Edge team&quot;&gt;MicrosoftEdge/MSEdgeExplainers: Home for explainer documents originated by the Microsoft Edge team&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;puppeteer-experimental-puppeteer-firefox-at-master-googlechrome-puppeteer&quot;&gt;puppeteer/experimental/puppeteer-firefox at master · GoogleChrome/puppeteer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/puppeteer/tree/master/experimental/puppeteer-firefox&quot; title=&quot;puppeteer/experimental/puppeteer-firefox at master · GoogleChrome/puppeteer&quot;&gt;github.com/GoogleChrome/puppeteer/tree/master/experimental/puppeteer-firefox&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;PuppeteerのFirefox版&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;google-developers-blog-flutter-1-0-google-s-portable-ui-toolkit&quot;&gt;Google Developers Blog: Flutter 1.0: Google’s Portable UI Toolkit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html&quot; title=&quot;Google Developers Blog: Flutter 1.0: Google’s Portable UI Toolkit&quot;&gt;developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Flutter&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Flutter 1.0リリース。&lt;br&gt;
+Hummingbirdというウェブ向けの出力対応予定について&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/flutter-io/hummingbird-building-flutter-for-the-web-e687c2a023a8&quot; title=&quot;Hummingbird: Building Flutter for the Web – Flutter – Medium&quot;&gt;Hummingbird: Building Flutter for the Web – Flutter – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;processing-js-2008-2018&quot;&gt;Processing.js 2008-2018&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.humphd.org/processing-js-2008/&quot; title=&quot;Processing.js 2008-2018&quot;&gt;blog.humphd.org/processing-js-2008/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;メンテンナンスモードであったProcessing.jsのリポジトリがアーカイブ化された。&lt;br&gt;
+またProcessing.jsの歴史について。後継ライブラリとしてはp5jsが開発されている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/processing-js/processing-js/&quot; title=&quot;processing-js/processing-js: A port of the Processing visualization language to JavaScript.&quot;&gt;processing-js/processing-js: A port of the Processing visualization language to JavaScript.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v0-88-0-facebook-flow&quot;&gt;Release v0.88.0 · facebook/flow&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/flow/releases/tag/v0.88.0&quot; title=&quot;Release v0.88.0 · facebook/flow&quot;&gt;github.com/facebook/flow/releases/tag/v0.88.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Flow 0.88.0リリース。&lt;br&gt;
+&lt;code&gt;Function&lt;/code&gt;と&lt;code&gt;Object&lt;/code&gt;を&lt;code&gt;any&lt;/code&gt;のaliasとして扱うように。&lt;br&gt;
+&lt;code&gt;flow start --lazy-mode watchman&lt;/code&gt;の追加、&lt;code&gt;flow config check&lt;/code&gt;コマンドの追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;eslint-v5-10-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v5.10.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2018/12/eslint-v5.10.0-released&quot; title=&quot;ESLint v5.10.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2018/12/eslint-v5.10.0-released&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ESLint 5.10.0リリース。&lt;br&gt;
+&lt;code&gt;padding-line-between-statements&lt;/code&gt;にオプションの追加、&lt;br&gt;
+JSDoc関係のルールである&lt;code&gt;require-jsdoc&lt;/code&gt;と&lt;code&gt;valid-jsdoc&lt;/code&gt;が非推奨になるなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/64a09c3bea4c06d84a2e&quot; title=&quot;ESLint v5.10.0 - Qiita&quot;&gt;ESLint v5.10.0 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;version-4-0-now-default-gulpjs-medium&quot;&gt;🎉 Version 4.0 Now Default 🎉 – gulpjs – Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/gulpjs/version-4-now-default-92c6cd4beb45&quot; title=&quot;🎉 Version 4.0 Now Default 🎉 – gulpjs – Medium&quot;&gt;medium.com/gulpjs/version-4-now-default-92c6cd4beb45&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;gulp 4.0が正式リリース。&lt;br&gt;
+&lt;code&gt;gulp.series&lt;/code&gt;と&lt;code&gt;gulp.parallel&lt;/code&gt;を追加。&lt;br&gt;
+sourcemapsのデフォルトサポート、gulpfileからのexportをタスクとして扱えるように、&lt;code&gt;gulp&lt;/code&gt;と&lt;code&gt;gulp-cli&lt;/code&gt;の分離など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · gulpjs/gulp&quot;&gt;Release v4.0.0 · gulpjs/gulp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jquery-dely-engineering-blog&quot;&gt;jQueryへの依存を外す方法 - dely engineering blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tech.dely.jp/entry/2018/12/08/160000&quot; title=&quot;jQueryへの依存を外す方法 - dely engineering blog&quot;&gt;tech.dely.jp/entry/2018/12/08/160000&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CoffeeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;リファクタリング&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;jQueryの依存を外すまでのフローについて。&lt;br&gt;
+polyfill.io の利用、CoffeeScriptからTypeScriptへの移行。&lt;br&gt;
+jQueryをVanillaJS + polyfillで動くように書き直し、BackstopJSでビジュアルリグレッションテストする方法について。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-js-everywhere-with-environment-variables-node-js-collection-medium&quot;&gt;Node.js Everywhere with Environment Variables! – Node.js Collection – Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786&quot; title=&quot;Node.js Everywhere with Environment Variables! – Node.js Collection – Medium&quot;&gt;medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsでの環境変数の使い方、&lt;code&gt;.env&lt;/code&gt;を使った環境変数の定義と読み込み方法についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;yahoo-japan-fido2-yahoo-japan-tech-blog&quot;&gt;Yahoo! JAPANでの生体認証の取り組み（FIDO2サーバーの仕組みについて） - Yahoo! JAPAN Tech Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://techblog.yahoo.co.jp/advent-calendar-2018/webauthn/&quot; title=&quot;Yahoo! JAPANでの生体認証の取り組み（FIDO2サーバーの仕組みについて） - Yahoo! JAPAN Tech Blog&quot;&gt;techblog.yahoo.co.jp/advent-calendar-2018/webauthn/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebAuthn（Web Authentication）を使った生体認証でのログインフローについての解説&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;web-yahoo-japan-tech-blog&quot;&gt;ヤフー株式会社におけるWebフロントエンドの技術選定 - Yahoo! JAPAN Tech Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://techblog.yahoo.co.jp/advent-calendar-2018/yahoo-frontend/&quot; title=&quot;ヤフー株式会社におけるWebフロントエンドの技術選定 - Yahoo! JAPAN Tech Blog&quot;&gt;techblog.yahoo.co.jp/advent-calendar-2018/yahoo-frontend/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;company&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;opinion&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ヤフー株式会社における各サービスごとのフロントエンドに利用しているフレームワークやライブラリなどについて。&lt;br&gt;
+それぞれの技術を選定した理由などについてもまとめられている。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;performance-calendar-data-s-h-aver-strategies&quot;&gt;Performance Calendar » data-s(h)aver strategies&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://calendar.perfplanet.com/2018/data-shaver-strategies/&quot; title=&quot;Performance Calendar » data-s(h)aver strategies&quot;&gt;calendar.perfplanet.com/2018/data-shaver-strategies/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ブラウザのデータセーバーが有効かを判定し、それに対してどのようなコンテンツを返すかについて。&lt;br&gt;
+コンテンツ数の削減、自動再生の防止、解像度の低い画像の配信、データセーバーが有効になっていることの通知などについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;compare-har-files&quot;&gt;Compare HAR files&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://compare.sitespeed.io/&quot; title=&quot;Compare HAR files&quot;&gt;compare.sitespeed.io/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;HARファイル同士を比較できるウェブサービス。&lt;br&gt;
+それぞれのリソースロードのタイムライン比較、動画、ファイルサイズのDiffなどを出してくれる&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://calendar.perfplanet.com/2018/sharing-comparing-har-files/&quot; title=&quot;Performance Calendar » Sharing is caring: What’s new with comparing HAR files?&quot;&gt;Performance Calendar » Sharing is caring: What’s new with comparing HAR files?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;rowanmanning-proclaim-a-simple-assertion-library-for-server-and-client-side-javascript&quot;&gt;rowanmanning/proclaim: A simple assertion library for server and client side JavaScript.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rowanmanning/proclaim&quot; title=&quot;rowanmanning/proclaim: A simple assertion library for server and client side JavaScript.&quot;&gt;github.com/rowanmanning/proclaim&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;古いブラウザや古いNode.jsでも動作するように書かれたassert系ライブラリ。&lt;br&gt;
+chaiのようにassertの拡張メソッドも実装されている&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 11 Dec 2018 09:22:12 +0900</pubDate>
+        <link>https://jser.info/2018/12/11/gulp-4msedgechromium/</link>
+        <guid isPermaLink="true">https://jser.info/2018/12/11/gulp-4msedgechromium/</guid>
+        
+        <category>gulpjs</category>
+        
+        <category>MSEdge</category>
+        
+        <category>Chromium</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2018-12-04のJS: TypeScript 3.2、React 16.xロードマップ、ESLintのビルトインJSDocサポート終了の予定</title>
@@ -2402,316 +2689,6 @@ uglify-esがメンテナンスされていないため(uglify-js自体は開発�
         <category>msedge</category>
         
         <category>nodejs</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-10-02のJS: Cypress正式リリース、TypeScript 3.1、Parcel 1.10.0、Vue 3.0のロードマップ</title>
-        <description>&lt;p&gt;JSer.info #403 - E2Eテストフレームワーク/サービスの&lt;a href=&quot;https://www.cypress.io/&quot;&gt;Cypress&lt;/a&gt;が正式リリースされました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.cypress.io/blog/2018/09/20/cypress-is-officially-out-of-beta/#&quot;&gt;We&amp;#39;re officially out of beta!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Public Betaのときと同じく&lt;a href=&quot;https://github.com/cypress-io/cypress&quot;&gt;Test Runner&lt;/a&gt;はOSSのMITライセンスで、&lt;a href=&quot;https://www.cypress.io/dashboard/&quot;&gt;Dashboardサービス&lt;/a&gt;はOSSや公開プロジェクトなら無料、プライベートプロジェクトは有料となっています。&lt;/p&gt;
-
-&lt;p&gt;現在はChromeまたはElectronのみでテストが実行されますが、今後はIE11を含むクロスプラウザでのテストやGitHub連携、ネットワークProxyなどをサポートする予定です。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;TypeScript 3.1がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/announcing-typescript-3-1/&quot;&gt;Announcing TypeScript 3.1 | TypeScript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Breaking-Changes#typescript-31&quot;&gt;Breaking Changes · Microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Mapped Typeの挙動がTupleにおいて変更され、Tuple Typeがより型付けしやすくなっています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/Quramy/items/c596b1bacf591da545b2&quot;&gt;TypeScript 3.1 の Mapped Tuple Typeについて - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;namespace&lt;/code&gt;を使わずに関数へプロパティ追加できるように、TypeScriptのバージョンごとに型定義ファイルを指定して配布できる&lt;code&gt;typesVersions&lt;/code&gt;フィールドのサポートが追加されています。&lt;/p&gt;
-
-&lt;p&gt;またLanguage Serviceでは&lt;code&gt;then&lt;/code&gt;をAsync/Awaitへリファクタリングできるようになるといった変更が追加されています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Vueの次のメジャーアップデートであるVue 3.0のロードマップが公開されました。&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Just announced plans for Vue 3.0 at &lt;a href=&quot;https://twitter.com/vue_london?ref_src=twsrc%5Etfw&quot;&gt;@vue_london&lt;/a&gt; - sorry the slides were a bit rough, full writeup coming next week.&lt;/p&gt;&amp;mdash; Evan You (@youyuxi) &lt;a href=&quot;https://twitter.com/youyuxi/status/1043188361073176576?ref_src=twsrc%5Etfw&quot;&gt;September 21, 2018&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/the-vue-point/plans-for-the-next-iteration-of-vue-js-777ffea6fabf&quot;&gt;Plans for the Next Iteration of Vue.js – The Vue Point – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/unecochan/items/ac206365745257d68926&quot;&gt;[和訳] 次期 Vue (v3.0) の計画 / Plans for the Next Iteration of Vue.js - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;この記事ではVue 3で行われる変更予定や追加機能などについてかかれています。&lt;br&gt;
-Vue自体のコードベースをTypeScriptに書き直し、クラスベースコンポーネントの導入、&lt;a href=&quot;https://jp.vuejs.org/v2/guide/render-function.html#%E9%96%A2%E6%95%B0%E5%9E%8B%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88&quot;&gt;Functional Component&lt;/a&gt;がただの関数として書けるようになり、Observer/Schedulerの分離、ES Proxyベースのobserverの導入などについて書かれています。&lt;/p&gt;
-
-&lt;p&gt;またProxyを使えないIE11も制限ありでサポートする予定ですが、&lt;code&gt;Object.defineProperty&lt;/code&gt;を使った2.xと同じ仕組みであるため、他のブラウザと完全な互換性を提供することが難しい点についても書かれています。&lt;/p&gt;
-
-&lt;p&gt;注釈: &lt;code&gt;Object.defineProperty&lt;/code&gt;のgetter/setterで変更を検知する仕組みでは、オブジェクト作成時にないプロパティの変更を検知できない問題があります。一方Proxyはオブジェクト作成時にないプロパティ名に対する代入なども検知できます。&lt;br&gt;
-この点はMobX 4.xと5.xに類似する話だと思います。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mobxjs/mobx/blob/5.0.0/CHANGELOG.md&quot;&gt;mobx/CHANGELOG.md at 5.0.0 · mobxjs/mobx&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://lealog.hateblo.jp/entry/2018/06/08/105219&quot;&gt;MobX 5.0.0 について - console.lealog();&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;were-officially-out-of-beta&quot;&gt;We&amp;#39;re officially out of beta!&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.cypress.io/blog/2018/09/20/cypress-is-officially-out-of-beta/&quot; title=&quot;We&amp;#39;re officially out of beta!&quot;&gt;www.cypress.io/blog/2018/09/20/cypress-is-officially-out-of-beta/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Cypressが正式リリース。&lt;br&gt;
-今後のロードマップとして、IE11を含むクロスブラウザ、Flakyテストを見つけるためのリトライと分析、GitHub連携などを予定している&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;parcel-v1-10-0-babel-7-flow-elm-and-more&quot;&gt;📦 Parcel v1.10.0 — Babel 7, Flow, Elm, and more! 🚀&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@devongovett/parcel-v1-10-0-babel-7-flow-elm-and-more-c20736553573&quot; title=&quot;📦 Parcel v1.10.0 — Babel 7, Flow, Elm, and more! 🚀&quot;&gt;medium.com/@devongovett/parcel-v1-10-0-babel-7-flow-elm-and-more-c20736553573&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Parcel 1.10.0リリース。&lt;br&gt;
-Babel 7、Flowの自動検出、Elm対応、インライン&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;と&lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;の対応、HTMLのimportに対応など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;husky-changelog-md-at-master-typicode-husky&quot;&gt;husky/CHANGELOG.md at master · typicode/husky&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/typicode/husky/blob/master/CHANGELOG.md#100&quot; title=&quot;husky/CHANGELOG.md at master · typicode/husky&quot;&gt;github.com/typicode/husky/blob/master/CHANGELOG.md#100&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Git Hook管理ツールであるHusky 1.0.0リリース。&lt;br&gt;
-Node.js 4のサポート終了、&lt;code&gt;scripts&lt;/code&gt;フィールドから&lt;code&gt;husky&lt;/code&gt;フィールドへ設定を移行、&lt;code&gt;.huskyrc&lt;/code&gt;のサポートなど。&lt;br&gt;
-マイグレーションは&lt;code&gt;husky-upgrade&lt;/code&gt;コマンドで行える&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-66-webkit&quot;&gt;Release Notes for Safari Technology Preview 66 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8414/release-notes-for-safari-technology-preview-66/&quot; title=&quot;Release Notes for Safari Technology Preview 66 | WebKit&quot;&gt;webkit.org/blog/8414/release-notes-for-safari-technology-preview-66/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 66リリース。&lt;br&gt;
-Web Share API、CSS Conic Gradientsのサポート。&lt;br&gt;
-実験的にWebRTC Unified Plan、Media Capabilities APIをサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;systemjs-2-0-0-release&quot;&gt;SystemJS 2.0.0 Release&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://guybedford.com/systemjs-2.0&quot; title=&quot;SystemJS 2.0.0 Release&quot;&gt;guybedford.com/systemjs-2.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;SystemJS 2.0.0リリース。 &lt;code&gt;s.js&lt;/code&gt;でレガシーブラウザのサポート、&lt;code&gt;system.js&lt;/code&gt;で新しいProposalや仕様などをサポートする方針。 Package Name MapsやWeb Assembly Integrationなどの実装など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-inferno-v6-0-0-rc-0-infernojs-inferno&quot;&gt;Release Inferno v6.0.0-rc.0 · infernojs/inferno&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/infernojs/inferno/releases/tag/v6.0.0-rc.0&quot; title=&quot;Release Inferno v6.0.0-rc.0 · infernojs/inferno&quot;&gt;github.com/infernojs/inferno/releases/tag/v6.0.0-rc.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Inferno v6.0.0-rc.0リリース。&lt;br&gt;
-Fragmentsのサポート、&lt;code&gt;getDerivedStateFromProps&lt;/code&gt;と&lt;code&gt;getSnapshotBeforeUpdate&lt;/code&gt;のライフサイクルイベントをサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ecmascript-proposal-updates-2018-09-ecmascript-daily&quot;&gt;ECMAScript proposal updates @ 2018-09 | ECMAScript Daily&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://ecmascript-daily.github.io/ecmascript/2018/10/01/ecmascript-proposal-updates&quot; title=&quot;ECMAScript proposal updates @ 2018-09 | ECMAScript Daily&quot;&gt;ecmascript-daily.github.io/ecmascript/2018/10/01/ecmascript-proposal-updates&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proposal&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2018年9月に行われたTC39ミーティングで変更があったECMAScriptのProposalのまとめ。&lt;br&gt;
-&lt;code&gt;JSON.parse&lt;/code&gt;の拡張Proposalの追加、Temporal(Dates and Times)がStage 2になるなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-1-0-0-basecamp-trix&quot;&gt;Release 1.0.0 · basecamp/trix&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/basecamp/trix/releases/tag/1.0.0&quot; title=&quot;Release 1.0.0 · basecamp/trix&quot;&gt;github.com/basecamp/trix/releases/tag/1.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;editor&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Basecampが作成しているリッチエディタのtrix 1.0.0がリリースされた。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://trix-editor.org/&quot; title=&quot;Trix: A rich text editor for everyday writing&quot;&gt;Trix: A rich text editor for everyday writing&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-typescript-3-1-typescript&quot;&gt;Announcing TypeScript 3.1 | TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/announcing-typescript-3-1/&quot; title=&quot;Announcing TypeScript 3.1 | TypeScript&quot;&gt;blogs.msdn.microsoft.com/typescript/announcing-typescript-3-1/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.1リリース。&lt;br&gt;
-Mapped Tuple Type、namespaceを使わずに関数へプロパティ追加できるように、TypeScriptのバージョンごとに型を配布できる&lt;code&gt;typesVersions&lt;/code&gt;フィールドをサポート。&lt;br&gt;
-&lt;code&gt;then&lt;/code&gt;をAsync/Awaitへリファクタリングできるようになるなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/Quramy/items/c596b1bacf591da545b2&quot; title=&quot;TypeScript 3.1 の Mapped Tuple Typeについて - Qiita&quot;&gt;TypeScript 3.1 の Mapped Tuple Typeについて - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Breaking-Changes#typescript-31&quot; title=&quot;Breaking Changes · Microsoft/TypeScript Wiki&quot;&gt;Breaking Changes · Microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;nw-node-release-lines-api-for-node-js-release-metadata&quot;&gt;nw/node-release-lines: API for Node.js release metadata&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nw/node-release-lines&quot; title=&quot;nw/node-release-lines: API for Node.js release metadata&quot;&gt;github.com/nw/node-release-lines&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsのリリース情報を取得できるライブラリ。&lt;br&gt;
-LTSのバージョンやEOLなバージョンの取得、バージョンごとの状態を取得などができる&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-66-webkit&quot;&gt;Release Notes for Safari Technology Preview 66 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8414/release-notes-for-safari-technology-preview-66/&quot; title=&quot;Release Notes for Safari Technology Preview 66 | WebKit&quot;&gt;webkit.org/blog/8414/release-notes-for-safari-technology-preview-66/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 66リリース。 Web Share API、CSS Conic Gradientsのサポート。 試験的にWebRTC Unified Plan、Media Capabilities APIをサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;whats-new-in-vue-devtools-5-0-beta&quot;&gt;What&amp;#39;s New in Vue Devtools 5.0 Beta&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.telerik.com/blogs/whats-new-in-vue-devtools-5-beta&quot; title=&quot;What&amp;#39;s New in Vue Devtools 5.0 Beta&quot;&gt;www.telerik.com/blogs/whats-new-in-vue-devtools-5-beta&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Extension&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Vue DevTools 5.0βについて。&lt;br&gt;
-Routing Tab、Performance Tab、Settings Tab、VuexのStateの編集機能について&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-devtools/releases/tag/v5.0.0-beta.1&quot; title=&quot;Release v5.0.0-beta.1 · vuejs/vue-devtools&quot;&gt;Release v5.0.0-beta.1 · vuejs/vue-devtools&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;payment-request-api-web-google-developers&quot;&gt;Payment Request API: 統合ガイド  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/fundamentals/payments/&quot; title=&quot;Payment Request API: 統合ガイド  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/fundamentals/payments/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Payment Request APIについての記事。&lt;br&gt;
-Payment Request APIを使った取引のプロセス、APIの使い方、Feature Detectの方法などについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-js&quot;&gt;Node.jsでのイベントループの仕組みとタイマーについて - 技術探し&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.hiroppy.me/entry/nodejs-event-loop&quot; title=&quot;Node.jsでのイベントループの仕組みとタイマーについて - 技術探し&quot;&gt;blog.hiroppy.me/entry/nodejs-event-loop&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsのイベントループのフェーズについての解説。&lt;br&gt;
-Node.js/V8 ではどのようにイベントループを回しているかについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript-typeof-logrocket&quot;&gt;JavaScript typeof – LogRocket&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.logrocket.com/javascript-typeof-2511d53a1a62&quot; title=&quot;JavaScript typeof – LogRocket&quot;&gt;blog.logrocket.com/javascript-typeof-2511d53a1a62&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptの&lt;code&gt;typeof&lt;/code&gt;を使ったデータ型のチェックについて。&lt;br&gt;
-またプリミティブ型とWrapper objectについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-importance-of-manual-accessibility-testing-smashing-magazine&quot;&gt;The Importance Of Manual Accessibility Testing — Smashing Magazine&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2018/09/importance-manual-accessibility-testing/&quot; title=&quot;The Importance Of Manual Accessibility Testing — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2018/09/importance-manual-accessibility-testing/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;アクセシビリティの手動テストや自動テスト関するリソースを紹介している記事&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;turtledb-a-javascript-framework-for-building-offline-first-collaborative-web-apps&quot;&gt;turtleDB: A JavaScript Framework for building offline-first, collaborative web apps&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hackernoon.com/turtledb-a-javascript-framework-for-building-offline-first-collaborative-web-apps-7183cd787163&quot; title=&quot;turtleDB: A JavaScript Framework for building offline-first, collaborative web apps&quot;&gt;hackernoon.com/turtledb-a-javascript-framework-for-building-offline-first-collaborative-web-apps-7183cd787163&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;データベース&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Offline-FirstなデータベースライブラリのturtleDBについて。&lt;br&gt;
-クライアント側はIndexedDBでローカルに保存でき、サーバ側はMongoDBなどのアダプタとして動作する。オフラインではクライアントに保存でき、オンラインでは同期ができるような仕組み&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/turtle-DB/turtleDB&quot; title=&quot;turtle-DB/turtleDB: Official turtleDB project&quot;&gt;turtle-DB/turtleDB: Official turtleDB project&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;plans-for-the-next-iteration-of-vue-js-the-vue-point-medium&quot;&gt;Plans for the Next Iteration of Vue.js – The Vue Point – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/the-vue-point/plans-for-the-next-iteration-of-vue-js-777ffea6fabf&quot; title=&quot;Plans for the Next Iteration of Vue.js – The Vue Point – Medium&quot;&gt;medium.com/the-vue-point/plans-for-the-next-iteration-of-vue-js-777ffea6fabf&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Vue 3.0のロードマップについて。 クラスベースコンポーネント、Functional Component、コードベースをTypeSript化、Observer/Schedulerの分離、ES Proxyベースのobserverについて。 またProxyを使えないIE11も制限ありでサポート予定。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/unecochan/items/ac206365745257d68926&quot; title=&quot;\[和訳\] 次期 Vue (v3.0) の計画 / Plans for the Next Iteration of Vue.js - Qiita&quot;&gt;[和訳] 次期 Vue (v3.0) の計画 / Plans for the Next Iteration of Vue.js - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;array-30-seconds-of-code&quot;&gt;Array - 30 seconds of code&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://30secondsofcode.org/&quot; title=&quot;Array - 30 seconds of code&quot;&gt;30secondsofcode.org/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptのコードスニペット集。&lt;br&gt;
-典型的な処理のスニペットをまとめている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;leko-hothouse-continuous-dependency-update-for-node-js-project&quot;&gt;Leko/hothouse: Continuous dependency update for Node.js project&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Leko/hothouse&quot; title=&quot;Leko/hothouse: Continuous dependency update for Node.js project&quot;&gt;github.com/Leko/hothouse&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;github&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npmtとyarnに対応しているGreenkeeperのような依存パッケージの更新PRを出してくれるツール&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 02 Oct 2018 09:53:18 +0900</pubDate>
-        <link>https://jser.info/2018/10/02/cypresstypescript-3.1parcel-1.10.0vue-3.0/</link>
-        <guid isPermaLink="true">https://jser.info/2018/10/02/cypresstypescript-3.1parcel-1.10.0vue-3.0/</guid>
-        
-        <category>cypress</category>
-        
-        <category>TypeSript</category>
-        
-        <category>parcel</category>
-        
-        <category>Vue</category>
         
         
         <category>JSer</category>
