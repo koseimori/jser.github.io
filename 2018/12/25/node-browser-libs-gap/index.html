@@ -237,65 +237,359 @@
 
 <p>注記: 依存しているpolyfillそのものはアップデートで解決されている場合があります。しかし、bundlerが古いバージョンを使っている場合があります。</p>
 
-<p>|    Node.js     |               Browser polyfill               |                  Issue                   | Link                                     |<br>
-| :------------: | :--------------------------------------: | :--------------------------------------: | ---------------------------------------- |<br>
-|     assert     | <a href="https://github.com/browserify/commonjs-assert">browserify/commonjs-assert</a> | Error code and Error message are different | <a href="https://github.com/nodejs/node/issues/13937">Issue</a>, <a href="https://medium.com/the-node-js-collection/node-js-errors-changes-you-need-to-know-about-dc8c82417f65">Article</a> |<br>
-|                |                                          | <code>assert.deepEqual</code> does&#39;t support <code>Map</code>, <code>Set</code>, <code>Iterator</code> etc... | <a href="https://github.com/nodejs/node/issues/2309">Issue</a>, <a href="https://nodejs.org/api/assert.html#assert_assert_deepequal_actual_expected_message">Document</a>, <a href="https://nodejs.org/en/blog/release/v8.0.0/">Release</a> |<br>
-|                |                                          | <code>require(&quot;assert&quot;).strict</code> | <a href="https://nodejs.org/api/assert.html#assert_strict_mode">Docs</a>, <a href="https://nodejs.org/en/blog/release/v9.9.0/">Release</a> |<br>
-|                |                                          | <a href="https://nodejs.org/api/assert.html#assert_assert_rejects_block_error_message"><code>assert.rejects()</code></a> | <a href="https://nodejs.org/en/blog/release/v10.0.0/">Release</a> |<br>
-|                |                                          | <a href="https://nodejs.org/api/assert.html#assert_assert_doesnotreject_block_error_message"><code>assert.doesNotReject()</code></a> | <a href="https://nodejs.org/en/blog/release/v10.0.0/">Release</a> |<br>
-|                |                                          | Compatible issue with <code>assert.fail()</code>, <code>assert.ok()</code>, and <code>assert.ifError()</code>|  No arguments behavior. <a href="https://nodejs.org/en/blog/release/v10.0.0/">Release</a> |<br>
-|     buffer     | <a href="https://github.com/feross/buffer">feross/buffer</a> |                   ---                    |                                          |<br>
-| child<em>process  |                   ---                    |                   ---                    |                                          |<br>
-|    cluster     |                   ---                    |                   ---                    |                                          |<br>
-|    console     | <a href="https://github.com/Raynos/console-browserify">Raynos/console-browserify</a> |                   ---                    |                                          |<br>
-|   constants    | <a href="https://github.com/juliangruber/constants-browserify">juliangruber/constants-browserify</a> |                   ---                    |                                          |<br>
-|     crypto     | <a href="https://github.com/crypto-browserify/crypto-browserify">crypto-browserify/crypto-browserify</a> |                   ---                    |                                          |<br>
-|     dgram      |                   ---                    |                   ---                    |                                          |<br>
-|      dns       |                   ---                    |                   ---                    |                                          |<br>
-|     domain     | <a href="https://github.com/bevry/domain-browser">bevry/domain-browser</a> |                   ---                    |                                          |<br>
-|     events     | <a href="https://github.com/Gozala/events">Gozala/events</a> | <a href="https://nodejs.org/api/events.html#events_emitter_eventnames"><code>eventNames</code></a> | <a href="https://github.com/Gozala/events/pull/32">Issue</a> |<br>
-|                |                                          | <a href="https://nodejs.org/api/events.html#events_emitter_getmaxlisteners"><code>getMaxListeners</code></a> | <a href="https://github.com/Gozala/events/pull/32">Issue</a> |<br>
-|                |                                          | <a href="https://nodejs.org/api/events.html#events_emitter_prependlistener_eventname_listener"><code>prependListener</code></a> | <a href="https://github.com/Gozala/events/pull/32">Issue</a> |<br>
-|                |                                          | <a href="https://nodejs.org/api/events.html#events_emitter_prependoncelistener_eventname_listener"><code>prependOnceListener</code></a> | <a href="https://github.com/Gozala/events/pull/32">Issue</a> |<br>
-|                |                                          | <code>off</code> | <a href="https://github.com/nodejs/node/pull/17156">Issue</a> |<br>
-|       fs       |                   ---                    |                   ---                    |                                          |<br>
-|      http      | <a href="https://github.com/jhiesey/stream-http">jhiesey/stream-http</a> |                   ---                    |                                          |<br>
-|     https      | <a href="https://github.com/substack/https-browserify">substack/https-browserify</a> |                   ---                    |                                          |<br>
-|     module     |                   ---                    |                   ---                    |                                          |<br>
-|      net       |                   ---                    |                   ---                    |                                          |<br>
-|       os       | <a href="https://github.com/CoderPuppy/os-browserify">CoderPuppy/os-browserify</a> | <a href="https://nodejs.org/api/os.html#os_os_constants" title="os.constants">os.constants</a> |                                          |<br>
-|      path      | <a href="https://github.com/browserify/path-browserify">browserify/path-browserify</a> | <a href="https://nodejs.org/api/path.html#path_path_posix" title="path.posix">path.posix</a> | <a href="https://github.com/browserify/path-browserify/issues/11" title="Update to use newer node path code · Issue #11 · substack/path-browserify">Issue</a> |<br>
-|                |                                          | <a href="https://nodejs.org/docs/latest/api/path.html#path_path_parse_path" title="path.parse(path)">path.parse(path)</a> | <a href="https://github.com/browserify/path-browserify/issues/2">Issue</a> |<br>
-|                |                                          | <a href="https://nodejs.org/api/path.html#path_path_posix" title="path.win32">path.win32</a> |                                          |<br>
-|                |                                          | <a href="https://nodejs.org/api/path.html#path_path_posix" title="path.format(pathObject)">path.format(pathObject)</a> |                                          |<br>
-|    process     | <a href="https://github.com/defunctzombie/node-process">defunctzombie/node-process</a> | <a href="https://nodejs.org/api/process.html#process_process_channel" title="process.channel">process.channel</a> |                                          |<br>
-|                |                                          | <a href="https://nodejs.org/api/process.html#process_process_platform" title="process.platform">process.platform</a> | <a href="https://github.com/defunctzombie/node-process/issues/55">Issue</a> |<br>
-|                |                                          | <a href="https://nodejs.org/api/process.html#process_process_execargv" title="process.execArgv">process.execArgv</a> | <a href="https://github.com/defunctzombie/node-process/issues/75">Issue</a> |<br>
-|                |                                          | [process.cpuUsage([previousValue])](<a href="https://nodejs.org/api/process.html#process">https://nodejs.org/api/process.html#process</a></em>process<em>cpuusage</em>previousvalue &quot;process.cpuUsage([previousValue])&quot;) |                                          |<br>
-|                |                                          | <a href="https://nodejs.org/api/process.html#process_process_emitwarning_warning_options" title="process.emitWarning(warning[, options])">process.emitWarning(warning[, options])</a> |                                          |<br>
-|    punycode    | <a href="https://github.com/bestiejs/punycode.js">bestiejs/punycode.js</a> |                   ---                    |                                          |<br>
-|  querystring   | <a href="https://github.com/mike-spainhower/querystring">mike-spainhower/querystring</a> |                   ---                    |                                          |<br>
-|    readline    |                   ---                    |                   ---                    |                                          |<br>
-|      repl      |                   ---                    |                   ---                    |                                          |<br>
-|     stream     | <a href="https://github.com/browserify/stream-browserify">browserify/stream-browserify</a> |                   ---                    |                                          |<br>
-| string_decoder | <a href="https://github.com/rvagg/archived-string_decoder">rvagg/string_decoder</a> |                   TODO                   | <a href="https://github.com/nodejs/string_decoder">Repository</a> |<br>
-|      sys       | <a href="https://github.com/defunctzombie/node-util">defunctzombie/node-util</a> |                   TODO                   |                                          |<br>
-|     timers     | <a href="https://github.com/browserify/timers-browserify">browserify/timers-browserify</a> |                   ---                    |                                          |<br>
-|      tls       |                   ---                    |                   ---                    |                                          |<br>
-|      tty       | <a href="https://github.com/browserify/tty-browserify">browserify/tty-browserify</a> |                   ---                    |                                          |<br>
-|      url       | <a href="https://github.com/defunctzombie/node-url">defunctzombie/node-url</a> |          <code>url.URL</code>(WHATWG URL)           | <a href="https://nodejs.org/en/blog/release/v8.0.0/#say-hello-to-the-whatwg-url-parser">Release</a>, <a href="https://nodejs.org/api/url.html#url_the_whatwg_url_api">Document</a>, <a href="https://github.com/defunctzombie/node-url/issues/33">Issue</a> |<br>
-|                |                                          | <code>url.format</code> does&#39;t support  WHATWG URL  | <a href="https://nodejs.org/en/blog/release/v7.6.0/">Release</a>, <a href="https://nodejs.org/api/url.html#url_url_format_url_options">Document</a> |<br>
-|      util      | <a href="https://github.com/defunctzombie/node-util">defunctzombie/node-util</a> | <a href="https://nodejs.org/api/util.html#util_util_callbackify_original" title="util.callbackify(original)">util.callbackify(original)</a> |                                          |<br>
-|                |                                          | <a href="https://nodejs.org/api/util.html#util_util_inspect_custom" title="util.inspect.custom">util.inspect.custom</a> |                                          |<br>
-|                |                                          | <a href="https://nodejs.org/api/util.html#util_util_inspect_defaultoptions" title="util.inspect.defaultOptions">util.inspect.defaultOptions</a> |                                          |<br>
-|                |                                          | <a href="https://nodejs.org/api/util.html#util_util_promisify_original" title="util.promisify(original)">util.promisify(original)</a> |                                          |<br>
-|                |                                          | <a href="https://nodejs.org/api/util.html#util_util_promisify_custom" title="util.promisify.custom">util.promisify.custom</a> |                                          |<br>
-|                |                                          | <a href="https://github.com/defunctzombie/node-util/issues/15" title="util.inspect() options maxArrayLength, breakLength">util.inspect() options maxArrayLength, breakLength</a> |                                          |<br>
-|                |                                          | <a href="https://nodejs.org/api/util.html#util_util_isdeepstrictequal_val1_val2">util.isDeepStrictEqual</a> |                                          |<br>
-|                |                                          | <a href="https://nodejs.org/api/util.html#util_util_isdeepstrictequal_val1_val2">util.isDeepStrictEqual</a> |                                          |<br>
-|       vm       | <a href="https://github.com/browserify/vm-browserify">browserify/vm-browserify</a> | <a href="https://nodejs.org/api/vm.html#vm_vm_runincontext_code_contextifiedsandbox_options" title="vm.isContext(sandbox)">vm.isContext(sandbox)</a> |                                          |<br>
-|      zlib      | <a href="https://github.com/devongovett/browserify-zlib">devongovett/browserify-zlib</a> | <a href="https://nodejs.org/api/zlib.html#zlib_zlib_bytesread" title="zlib.bytesRead#">zlib.bytesRead</a> |                                          |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Node.js</th>
+<th style="text-align:center">Browser polyfill</th>
+<th style="text-align:center">Issue</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">assert</td>
+<td style="text-align:center"><a href="https://github.com/browserify/commonjs-assert">browserify/commonjs-assert</a></td>
+<td style="text-align:center">Error code and Error message are different</td>
+<td><a href="https://github.com/nodejs/node/issues/13937">Issue</a>, <a href="https://medium.com/the-node-js-collection/node-js-errors-changes-you-need-to-know-about-dc8c82417f65">Article</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>assert.deepEqual</code> does&#39;t support <code>Map</code>, <code>Set</code>, <code>Iterator</code> etc...</td>
+<td><a href="https://github.com/nodejs/node/issues/2309">Issue</a>, <a href="https://nodejs.org/api/assert.html#assert_assert_deepequal_actual_expected_message">Document</a>, <a href="https://nodejs.org/en/blog/release/v8.0.0/">Release</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>require(&quot;assert&quot;).strict</code></td>
+<td><a href="https://nodejs.org/api/assert.html#assert_strict_mode">Docs</a>, <a href="https://nodejs.org/en/blog/release/v9.9.0/">Release</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/assert.html#assert_assert_rejects_block_error_message"><code>assert.rejects()</code></a></td>
+<td><a href="https://nodejs.org/en/blog/release/v10.0.0/">Release</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/assert.html#assert_assert_doesnotreject_block_error_message"><code>assert.doesNotReject()</code></a></td>
+<td><a href="https://nodejs.org/en/blog/release/v10.0.0/">Release</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Compatible issue with <code>assert.fail()</code>, <code>assert.ok()</code>, and <code>assert.ifError()</code></td>
+<td>No arguments behavior. <a href="https://nodejs.org/en/blog/release/v10.0.0/">Release</a></td>
+</tr>
+<tr>
+<td style="text-align:center">buffer</td>
+<td style="text-align:center"><a href="https://github.com/feross/buffer">feross/buffer</a></td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">child_process</td>
+<td style="text-align:center">---</td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">cluster</td>
+<td style="text-align:center">---</td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">console</td>
+<td style="text-align:center"><a href="https://github.com/Raynos/console-browserify">Raynos/console-browserify</a></td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">constants</td>
+<td style="text-align:center"><a href="https://github.com/juliangruber/constants-browserify">juliangruber/constants-browserify</a></td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">crypto</td>
+<td style="text-align:center"><a href="https://github.com/crypto-browserify/crypto-browserify">crypto-browserify/crypto-browserify</a></td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">dgram</td>
+<td style="text-align:center">---</td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">dns</td>
+<td style="text-align:center">---</td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">domain</td>
+<td style="text-align:center"><a href="https://github.com/bevry/domain-browser">bevry/domain-browser</a></td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">events</td>
+<td style="text-align:center"><a href="https://github.com/Gozala/events">Gozala/events</a></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/events.html#events_emitter_eventnames"><code>eventNames</code></a></td>
+<td><a href="https://github.com/Gozala/events/pull/32">Issue</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/events.html#events_emitter_getmaxlisteners"><code>getMaxListeners</code></a></td>
+<td><a href="https://github.com/Gozala/events/pull/32">Issue</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/events.html#events_emitter_prependlistener_eventname_listener"><code>prependListener</code></a></td>
+<td><a href="https://github.com/Gozala/events/pull/32">Issue</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/events.html#events_emitter_prependoncelistener_eventname_listener"><code>prependOnceListener</code></a></td>
+<td><a href="https://github.com/Gozala/events/pull/32">Issue</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>off</code></td>
+<td><a href="https://github.com/nodejs/node/pull/17156">Issue</a></td>
+</tr>
+<tr>
+<td style="text-align:center">fs</td>
+<td style="text-align:center">---</td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">http</td>
+<td style="text-align:center"><a href="https://github.com/jhiesey/stream-http">jhiesey/stream-http</a></td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">https</td>
+<td style="text-align:center"><a href="https://github.com/substack/https-browserify">substack/https-browserify</a></td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">module</td>
+<td style="text-align:center">---</td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">net</td>
+<td style="text-align:center">---</td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">os</td>
+<td style="text-align:center"><a href="https://github.com/CoderPuppy/os-browserify">CoderPuppy/os-browserify</a></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/os.html#os_os_constants" title="os.constants">os.constants</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">path</td>
+<td style="text-align:center"><a href="https://github.com/browserify/path-browserify">browserify/path-browserify</a></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/path.html#path_path_posix" title="path.posix">path.posix</a></td>
+<td><a href="https://github.com/browserify/path-browserify/issues/11" title="Update to use newer node path code · Issue #11 · substack/path-browserify">Issue</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/docs/latest/api/path.html#path_path_parse_path" title="path.parse(path)">path.parse(path)</a></td>
+<td><a href="https://github.com/browserify/path-browserify/issues/2">Issue</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/path.html#path_path_posix" title="path.win32">path.win32</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/path.html#path_path_posix" title="path.format(pathObject)">path.format(pathObject)</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">process</td>
+<td style="text-align:center"><a href="https://github.com/defunctzombie/node-process">defunctzombie/node-process</a></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/process.html#process_process_channel" title="process.channel">process.channel</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/process.html#process_process_platform" title="process.platform">process.platform</a></td>
+<td><a href="https://github.com/defunctzombie/node-process/issues/55">Issue</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/process.html#process_process_execargv" title="process.execArgv">process.execArgv</a></td>
+<td><a href="https://github.com/defunctzombie/node-process/issues/75">Issue</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/process.html#process_process_cpuusage_previousvalue" title="process.cpuUsage([previousValue])">process.cpuUsage([previousValue])</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/process.html#process_process_emitwarning_warning_options" title="process.emitWarning(warning[, options])">process.emitWarning(warning[, options])</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">punycode</td>
+<td style="text-align:center"><a href="https://github.com/bestiejs/punycode.js">bestiejs/punycode.js</a></td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">querystring</td>
+<td style="text-align:center"><a href="https://github.com/mike-spainhower/querystring">mike-spainhower/querystring</a></td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">readline</td>
+<td style="text-align:center">---</td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">repl</td>
+<td style="text-align:center">---</td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">stream</td>
+<td style="text-align:center"><a href="https://github.com/browserify/stream-browserify">browserify/stream-browserify</a></td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">string_decoder</td>
+<td style="text-align:center"><a href="https://github.com/rvagg/archived-string_decoder">rvagg/string_decoder</a></td>
+<td style="text-align:center">TODO</td>
+<td><a href="https://github.com/nodejs/string_decoder">Repository</a></td>
+</tr>
+<tr>
+<td style="text-align:center">sys</td>
+<td style="text-align:center"><a href="https://github.com/defunctzombie/node-util">defunctzombie/node-util</a></td>
+<td style="text-align:center">TODO</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">timers</td>
+<td style="text-align:center"><a href="https://github.com/browserify/timers-browserify">browserify/timers-browserify</a></td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">tls</td>
+<td style="text-align:center">---</td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">tty</td>
+<td style="text-align:center"><a href="https://github.com/browserify/tty-browserify">browserify/tty-browserify</a></td>
+<td style="text-align:center">---</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">url</td>
+<td style="text-align:center"><a href="https://github.com/defunctzombie/node-url">defunctzombie/node-url</a></td>
+<td style="text-align:center"><code>url.URL</code>(WHATWG URL)</td>
+<td><a href="https://nodejs.org/en/blog/release/v8.0.0/#say-hello-to-the-whatwg-url-parser">Release</a>, <a href="https://nodejs.org/api/url.html#url_the_whatwg_url_api">Document</a>, <a href="https://github.com/defunctzombie/node-url/issues/33">Issue</a></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>url.format</code> does&#39;t support  WHATWG URL</td>
+<td><a href="https://nodejs.org/en/blog/release/v7.6.0/">Release</a>, <a href="https://nodejs.org/api/url.html#url_url_format_url_options">Document</a></td>
+</tr>
+<tr>
+<td style="text-align:center">util</td>
+<td style="text-align:center"><a href="https://github.com/defunctzombie/node-util">defunctzombie/node-util</a></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/util.html#util_util_callbackify_original" title="util.callbackify(original)">util.callbackify(original)</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/util.html#util_util_inspect_custom" title="util.inspect.custom">util.inspect.custom</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/util.html#util_util_inspect_defaultoptions" title="util.inspect.defaultOptions">util.inspect.defaultOptions</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/util.html#util_util_promisify_original" title="util.promisify(original)">util.promisify(original)</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/util.html#util_util_promisify_custom" title="util.promisify.custom">util.promisify.custom</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://github.com/defunctzombie/node-util/issues/15" title="util.inspect() options maxArrayLength, breakLength">util.inspect() options maxArrayLength, breakLength</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/util.html#util_util_isdeepstrictequal_val1_val2">util.isDeepStrictEqual</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/util.html#util_util_isdeepstrictequal_val1_val2">util.isDeepStrictEqual</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">vm</td>
+<td style="text-align:center"><a href="https://github.com/browserify/vm-browserify">browserify/vm-browserify</a></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/vm.html#vm_vm_runincontext_code_contextifiedsandbox_options" title="vm.isContext(sandbox)">vm.isContext(sandbox)</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center"><a href="https://github.com/devongovett/browserify-zlib">devongovett/browserify-zlib</a></td>
+<td style="text-align:center"><a href="https://nodejs.org/api/zlib.html#zlib_zlib_bytesread" title="zlib.bytesRead#">zlib.bytesRead</a></td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="part-2c5fae6c6b9bbc28">実装状況</h2>
 
