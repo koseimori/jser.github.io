@@ -5,9 +5,304 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 25 Dec 2018 12:30:25 +0900</pubDate>
-    <lastBuildDate>Tue, 25 Dec 2018 12:30:25 +0900</lastBuildDate>
+    <pubDate>Tue, 25 Dec 2018 14:28:35 +0900</pubDate>
+    <lastBuildDate>Tue, 25 Dec 2018 14:28:35 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>JSerレポート #2: Node.jsコアモジュールとBundler(webpackなど)によるpolyfillのギャップ</title>
+        <description>&lt;h1 id=&quot;node-js-bundler-polyfill&quot;&gt;Node.jsコアモジュールとBundlerによるpolyfillのギャップ&lt;/h1&gt;
+
+&lt;p&gt;このレポートは、現在進行形で機能追加や仕様変更が行われているNode.jsコアモジュールとブラウザ向けpolyfillにおける挙動の違い(ギャップ)が広がってきている問題について調べたものです。&lt;/p&gt;
+
+&lt;p&gt;ここでは &lt;a href=&quot;https://nodejs.org/api/&quot;&gt;https://nodejs.org/api/&lt;/a&gt; に掲載されているうち &lt;code&gt;assert&lt;/code&gt;のようにNode.jsにバンドルされているモジュールのことをNode.jsコアモジュールと呼びます。コアモジュールはNode.jsでの利用のみを想定しているため、Node.jsに依存した処理を多く含んでいます。そのため、コアモジュールのコードをコピーしてブラウザなどで動かすことは難しいです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/webpack/webpack&quot; title=&quot;webpack&quot;&gt;webpack&lt;/a&gt;や&lt;a href=&quot;https://github.com/substack/node-browserify&quot; title=&quot;browserify&quot;&gt;browserify&lt;/a&gt;などのbundlerは、コード中にあるコアモジュールを代替モジュールへとすり替えます。この代替モジュールはブラウザ向けpolyfillライブラリとよび、このpolyfillライブラリはブラウザで動くようにNode.jsコアモジュールと同等また空のダミー実装をしています。&lt;/p&gt;
+
+&lt;h2 id=&quot;node-js-polyfill&quot;&gt;Node.jsコアモジュールのpolyfillライブラリの例&lt;/h2&gt;
+
+&lt;p&gt;webpackとbrowserifyは変換時に、コード中に現れる&lt;code&gt;assert&lt;/code&gt;モジュールを&lt;a href=&quot;https://github.com/browserify/commonjs-assert&quot; title=&quot;commonjs-assert&quot;&gt;commonjs-assert&lt;/a&gt;というpolyfillライブラリに自動的にすり替えられます。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;assert&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;というコードはwebpackなどでbundleすると、次のように書いたのと同じようにモジュールの差し替えが行われる。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;commonjs-assert&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;webpackでは、このNode.jsコアモジュールへの差し替えを&lt;a href=&quot;https://webpack.js.org/configuration/node/&quot;&gt;node&lt;/a&gt;オプションによって設定が可能です。&lt;/p&gt;
+
+&lt;h2 id=&quot;polyfill-library&quot;&gt;polyfill library&lt;/h2&gt;
+
+&lt;p&gt;webpackとbrowserifyが利用するpolyfillライブラリは次の場所で管理されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;webpack:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/webpack/node-libs-browser&quot; title=&quot;webpack/node-libs-browser: The node core libs for in browser usage.&quot;&gt;webpack/node-libs-browser: The node core libs for in browser usage.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;browserify:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/substack/browserify-handbook#builtins&quot;&gt;substack/browserify-handbook: how to build modular applications with browserify&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/substack/node-browserify/blob/master/lib/builtins.js&quot;&gt;node-browserify/builtins.js at master · substack/node-browserify&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;どちらも基本的に利用しているpolyfill自体はほとんど同じです。  &lt;/p&gt;
+
+&lt;h2 id=&quot;part-ce8bd090803bc3cf&quot;&gt;機能のギャップ&lt;/h2&gt;
+
+&lt;p&gt;このレポートの本題であるNode.jsコアモジュールとブラウザ向けpolyfillのギャップがあったものをまとめた表です。&lt;br&gt;
+ここでいうギャップというのは、次のようなケースを並べています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Node.jsコアモジュールで追加されたAPIがpolyfillライブラリには存在しない&lt;/li&gt;
+&lt;li&gt;Node.jsコアモジュールとpolyfillライブラリで挙動が異なる&lt;/li&gt;
+&lt;li&gt;利用されているpolyfillライブラリがDeprecatedになっている&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これらの調査結果については次のリポジトリで管理しています。最新の状況もこのリポジトリに反映しています。&lt;br&gt;
+そのため次の表は古くなっている可能性があります。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/azu/node-browser-polyfill-gap&quot; title=&quot;azu/node-browser-polyfill-gap: The gap issue between Node.js and Browser polyfills.&quot;&gt;azu/node-browser-polyfill-gap: The gap issue between Node.js and Browser polyfills.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;注記: 依存しているpolyfillそのものはアップデートで解決されている場合があります。しかし、bundlerが古いバージョンを使っている場合があります。&lt;/p&gt;
+
+&lt;p&gt;|    Node.js     |               Browser polyfill               |                  Issue                   | Link                                     |&lt;br&gt;
+| :------------: | :--------------------------------------: | :--------------------------------------: | ---------------------------------------- |&lt;br&gt;
+|     assert     | &lt;a href=&quot;https://github.com/browserify/commonjs-assert&quot;&gt;browserify/commonjs-assert&lt;/a&gt; | Error code and Error message are different | &lt;a href=&quot;https://github.com/nodejs/node/issues/13937&quot;&gt;Issue&lt;/a&gt;, &lt;a href=&quot;https://medium.com/the-node-js-collection/node-js-errors-changes-you-need-to-know-about-dc8c82417f65&quot;&gt;Article&lt;/a&gt; |&lt;br&gt;
+|                |                                          | &lt;code&gt;assert.deepEqual&lt;/code&gt; does&amp;#39;t support &lt;code&gt;Map&lt;/code&gt;, &lt;code&gt;Set&lt;/code&gt;, &lt;code&gt;Iterator&lt;/code&gt; etc... | &lt;a href=&quot;https://github.com/nodejs/node/issues/2309&quot;&gt;Issue&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/api/assert.html#assert_assert_deepequal_actual_expected_message&quot;&gt;Document&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/en/blog/release/v8.0.0/&quot;&gt;Release&lt;/a&gt; |&lt;br&gt;
+|                |                                          | &lt;code&gt;require(&amp;quot;assert&amp;quot;).strict&lt;/code&gt; | &lt;a href=&quot;https://nodejs.org/api/assert.html#assert_strict_mode&quot;&gt;Docs&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/en/blog/release/v9.9.0/&quot;&gt;Release&lt;/a&gt; |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/assert.html#assert_assert_rejects_block_error_message&quot;&gt;&lt;code&gt;assert.rejects()&lt;/code&gt;&lt;/a&gt; | &lt;a href=&quot;https://nodejs.org/en/blog/release/v10.0.0/&quot;&gt;Release&lt;/a&gt; |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/assert.html#assert_assert_doesnotreject_block_error_message&quot;&gt;&lt;code&gt;assert.doesNotReject()&lt;/code&gt;&lt;/a&gt; | &lt;a href=&quot;https://nodejs.org/en/blog/release/v10.0.0/&quot;&gt;Release&lt;/a&gt; |&lt;br&gt;
+|                |                                          | Compatible issue with &lt;code&gt;assert.fail()&lt;/code&gt;, &lt;code&gt;assert.ok()&lt;/code&gt;, and &lt;code&gt;assert.ifError()&lt;/code&gt;|  No arguments behavior. &lt;a href=&quot;https://nodejs.org/en/blog/release/v10.0.0/&quot;&gt;Release&lt;/a&gt; |&lt;br&gt;
+|     buffer     | &lt;a href=&quot;https://github.com/feross/buffer&quot;&gt;feross/buffer&lt;/a&gt; |                   ---                    |                                          |&lt;br&gt;
+| child&lt;em&gt;process  |                   ---                    |                   ---                    |                                          |&lt;br&gt;
+|    cluster     |                   ---                    |                   ---                    |                                          |&lt;br&gt;
+|    console     | &lt;a href=&quot;https://github.com/Raynos/console-browserify&quot;&gt;Raynos/console-browserify&lt;/a&gt; |                   ---                    |                                          |&lt;br&gt;
+|   constants    | &lt;a href=&quot;https://github.com/juliangruber/constants-browserify&quot;&gt;juliangruber/constants-browserify&lt;/a&gt; |                   ---                    |                                          |&lt;br&gt;
+|     crypto     | &lt;a href=&quot;https://github.com/crypto-browserify/crypto-browserify&quot;&gt;crypto-browserify/crypto-browserify&lt;/a&gt; |                   ---                    |                                          |&lt;br&gt;
+|     dgram      |                   ---                    |                   ---                    |                                          |&lt;br&gt;
+|      dns       |                   ---                    |                   ---                    |                                          |&lt;br&gt;
+|     domain     | &lt;a href=&quot;https://github.com/bevry/domain-browser&quot;&gt;bevry/domain-browser&lt;/a&gt; |                   ---                    |                                          |&lt;br&gt;
+|     events     | &lt;a href=&quot;https://github.com/Gozala/events&quot;&gt;Gozala/events&lt;/a&gt; | &lt;a href=&quot;https://nodejs.org/api/events.html#events_emitter_eventnames&quot;&gt;&lt;code&gt;eventNames&lt;/code&gt;&lt;/a&gt; | &lt;a href=&quot;https://github.com/Gozala/events/pull/32&quot;&gt;Issue&lt;/a&gt; |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/events.html#events_emitter_getmaxlisteners&quot;&gt;&lt;code&gt;getMaxListeners&lt;/code&gt;&lt;/a&gt; | &lt;a href=&quot;https://github.com/Gozala/events/pull/32&quot;&gt;Issue&lt;/a&gt; |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/events.html#events_emitter_prependlistener_eventname_listener&quot;&gt;&lt;code&gt;prependListener&lt;/code&gt;&lt;/a&gt; | &lt;a href=&quot;https://github.com/Gozala/events/pull/32&quot;&gt;Issue&lt;/a&gt; |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/events.html#events_emitter_prependoncelistener_eventname_listener&quot;&gt;&lt;code&gt;prependOnceListener&lt;/code&gt;&lt;/a&gt; | &lt;a href=&quot;https://github.com/Gozala/events/pull/32&quot;&gt;Issue&lt;/a&gt; |&lt;br&gt;
+|                |                                          | &lt;code&gt;off&lt;/code&gt; | &lt;a href=&quot;https://github.com/nodejs/node/pull/17156&quot;&gt;Issue&lt;/a&gt; |&lt;br&gt;
+|       fs       |                   ---                    |                   ---                    |                                          |&lt;br&gt;
+|      http      | &lt;a href=&quot;https://github.com/jhiesey/stream-http&quot;&gt;jhiesey/stream-http&lt;/a&gt; |                   ---                    |                                          |&lt;br&gt;
+|     https      | &lt;a href=&quot;https://github.com/substack/https-browserify&quot;&gt;substack/https-browserify&lt;/a&gt; |                   ---                    |                                          |&lt;br&gt;
+|     module     |                   ---                    |                   ---                    |                                          |&lt;br&gt;
+|      net       |                   ---                    |                   ---                    |                                          |&lt;br&gt;
+|       os       | &lt;a href=&quot;https://github.com/CoderPuppy/os-browserify&quot;&gt;CoderPuppy/os-browserify&lt;/a&gt; | &lt;a href=&quot;https://nodejs.org/api/os.html#os_os_constants&quot; title=&quot;os.constants&quot;&gt;os.constants&lt;/a&gt; |                                          |&lt;br&gt;
+|      path      | &lt;a href=&quot;https://github.com/browserify/path-browserify&quot;&gt;browserify/path-browserify&lt;/a&gt; | &lt;a href=&quot;https://nodejs.org/api/path.html#path_path_posix&quot; title=&quot;path.posix&quot;&gt;path.posix&lt;/a&gt; | &lt;a href=&quot;https://github.com/browserify/path-browserify/issues/11&quot; title=&quot;Update to use newer node path code · Issue #11 · substack/path-browserify&quot;&gt;Issue&lt;/a&gt; |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/docs/latest/api/path.html#path_path_parse_path&quot; title=&quot;path.parse(path)&quot;&gt;path.parse(path)&lt;/a&gt; | &lt;a href=&quot;https://github.com/browserify/path-browserify/issues/2&quot;&gt;Issue&lt;/a&gt; |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/path.html#path_path_posix&quot; title=&quot;path.win32&quot;&gt;path.win32&lt;/a&gt; |                                          |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/path.html#path_path_posix&quot; title=&quot;path.format(pathObject)&quot;&gt;path.format(pathObject)&lt;/a&gt; |                                          |&lt;br&gt;
+|    process     | &lt;a href=&quot;https://github.com/defunctzombie/node-process&quot;&gt;defunctzombie/node-process&lt;/a&gt; | &lt;a href=&quot;https://nodejs.org/api/process.html#process_process_channel&quot; title=&quot;process.channel&quot;&gt;process.channel&lt;/a&gt; |                                          |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/process.html#process_process_platform&quot; title=&quot;process.platform&quot;&gt;process.platform&lt;/a&gt; | &lt;a href=&quot;https://github.com/defunctzombie/node-process/issues/55&quot;&gt;Issue&lt;/a&gt; |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/process.html#process_process_execargv&quot; title=&quot;process.execArgv&quot;&gt;process.execArgv&lt;/a&gt; | &lt;a href=&quot;https://github.com/defunctzombie/node-process/issues/75&quot;&gt;Issue&lt;/a&gt; |&lt;br&gt;
+|                |                                          | [process.cpuUsage([previousValue])](&lt;a href=&quot;https://nodejs.org/api/process.html#process&quot;&gt;https://nodejs.org/api/process.html#process&lt;/a&gt;&lt;/em&gt;process&lt;em&gt;cpuusage&lt;/em&gt;previousvalue &amp;quot;process.cpuUsage([previousValue])&amp;quot;) |                                          |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/process.html#process_process_emitwarning_warning_options&quot; title=&quot;process.emitWarning(warning[, options])&quot;&gt;process.emitWarning(warning[, options])&lt;/a&gt; |                                          |&lt;br&gt;
+|    punycode    | &lt;a href=&quot;https://github.com/bestiejs/punycode.js&quot;&gt;bestiejs/punycode.js&lt;/a&gt; |                   ---                    |                                          |&lt;br&gt;
+|  querystring   | &lt;a href=&quot;https://github.com/mike-spainhower/querystring&quot;&gt;mike-spainhower/querystring&lt;/a&gt; |                   ---                    |                                          |&lt;br&gt;
+|    readline    |                   ---                    |                   ---                    |                                          |&lt;br&gt;
+|      repl      |                   ---                    |                   ---                    |                                          |&lt;br&gt;
+|     stream     | &lt;a href=&quot;https://github.com/browserify/stream-browserify&quot;&gt;browserify/stream-browserify&lt;/a&gt; |                   ---                    |                                          |&lt;br&gt;
+| string_decoder | &lt;a href=&quot;https://github.com/rvagg/archived-string_decoder&quot;&gt;rvagg/string_decoder&lt;/a&gt; |                   TODO                   | &lt;a href=&quot;https://github.com/nodejs/string_decoder&quot;&gt;Repository&lt;/a&gt; |&lt;br&gt;
+|      sys       | &lt;a href=&quot;https://github.com/defunctzombie/node-util&quot;&gt;defunctzombie/node-util&lt;/a&gt; |                   TODO                   |                                          |&lt;br&gt;
+|     timers     | &lt;a href=&quot;https://github.com/browserify/timers-browserify&quot;&gt;browserify/timers-browserify&lt;/a&gt; |                   ---                    |                                          |&lt;br&gt;
+|      tls       |                   ---                    |                   ---                    |                                          |&lt;br&gt;
+|      tty       | &lt;a href=&quot;https://github.com/browserify/tty-browserify&quot;&gt;browserify/tty-browserify&lt;/a&gt; |                   ---                    |                                          |&lt;br&gt;
+|      url       | &lt;a href=&quot;https://github.com/defunctzombie/node-url&quot;&gt;defunctzombie/node-url&lt;/a&gt; |          &lt;code&gt;url.URL&lt;/code&gt;(WHATWG URL)           | &lt;a href=&quot;https://nodejs.org/en/blog/release/v8.0.0/#say-hello-to-the-whatwg-url-parser&quot;&gt;Release&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/api/url.html#url_the_whatwg_url_api&quot;&gt;Document&lt;/a&gt;, &lt;a href=&quot;https://github.com/defunctzombie/node-url/issues/33&quot;&gt;Issue&lt;/a&gt; |&lt;br&gt;
+|                |                                          | &lt;code&gt;url.format&lt;/code&gt; does&amp;#39;t support  WHATWG URL  | &lt;a href=&quot;https://nodejs.org/en/blog/release/v7.6.0/&quot;&gt;Release&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/api/url.html#url_url_format_url_options&quot;&gt;Document&lt;/a&gt; |&lt;br&gt;
+|      util      | &lt;a href=&quot;https://github.com/defunctzombie/node-util&quot;&gt;defunctzombie/node-util&lt;/a&gt; | &lt;a href=&quot;https://nodejs.org/api/util.html#util_util_callbackify_original&quot; title=&quot;util.callbackify(original)&quot;&gt;util.callbackify(original)&lt;/a&gt; |                                          |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/util.html#util_util_inspect_custom&quot; title=&quot;util.inspect.custom&quot;&gt;util.inspect.custom&lt;/a&gt; |                                          |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/util.html#util_util_inspect_defaultoptions&quot; title=&quot;util.inspect.defaultOptions&quot;&gt;util.inspect.defaultOptions&lt;/a&gt; |                                          |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/util.html#util_util_promisify_original&quot; title=&quot;util.promisify(original)&quot;&gt;util.promisify(original)&lt;/a&gt; |                                          |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/util.html#util_util_promisify_custom&quot; title=&quot;util.promisify.custom&quot;&gt;util.promisify.custom&lt;/a&gt; |                                          |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://github.com/defunctzombie/node-util/issues/15&quot; title=&quot;util.inspect() options maxArrayLength, breakLength&quot;&gt;util.inspect() options maxArrayLength, breakLength&lt;/a&gt; |                                          |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/util.html#util_util_isdeepstrictequal_val1_val2&quot;&gt;util.isDeepStrictEqual&lt;/a&gt; |                                          |&lt;br&gt;
+|                |                                          | &lt;a href=&quot;https://nodejs.org/api/util.html#util_util_isdeepstrictequal_val1_val2&quot;&gt;util.isDeepStrictEqual&lt;/a&gt; |                                          |&lt;br&gt;
+|       vm       | &lt;a href=&quot;https://github.com/browserify/vm-browserify&quot;&gt;browserify/vm-browserify&lt;/a&gt; | &lt;a href=&quot;https://nodejs.org/api/vm.html#vm_vm_runincontext_code_contextifiedsandbox_options&quot; title=&quot;vm.isContext(sandbox)&quot;&gt;vm.isContext(sandbox)&lt;/a&gt; |                                          |&lt;br&gt;
+|      zlib      | &lt;a href=&quot;https://github.com/devongovett/browserify-zlib&quot;&gt;devongovett/browserify-zlib&lt;/a&gt; | &lt;a href=&quot;https://nodejs.org/api/zlib.html#zlib_zlib_bytesread&quot; title=&quot;zlib.bytesRead#&quot;&gt;zlib.bytesRead&lt;/a&gt; |                                          |&lt;/p&gt;
+
+&lt;h2 id=&quot;part-2c5fae6c6b9bbc28&quot;&gt;実装状況&lt;/h2&gt;
+
+&lt;p&gt;この&lt;a href=&quot;https://github.com/azu/node-browser-polyfill-gap&quot;&gt;調査リポジトリ&lt;/a&gt;には簡単な機能テストも実装されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/azu/node-browser-polyfill-gap/tree/master/test&quot;&gt;node-browser-polyfill-gap/test at master · azu/node-browser-polyfill-gap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;次にそれぞれでのテスト結果を示します。&lt;/p&gt;
+
+&lt;h3 id=&quot;node-v11-5-0&quot;&gt;Node v11.5.0&lt;/h3&gt;
+
+&lt;p&gt;24コのテストをすべてパス(これがpolyfillの元なので当然ですが…)&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;  24 passing (146ms)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;browserify-16-2-3&quot;&gt;Browserify 16.2.3&lt;/h3&gt;
+
+&lt;p&gt;4/24のテストをパス。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;  gap-test
+    assert
+      1) Error#code
+      2) assert.deepEqual
+      3) assert.strict
+      4) assert.rejects
+      5) assert.doesNotReject
+    events
+      6) off
+      ✓ eventNames
+      ✓ getMaxListeners()
+      ✓ prependListener()
+      ✓ prependOnceListener()
+    os
+      7) constants
+    path
+      8) posix
+      9) win32
+      10) parse
+      11) format
+    process
+      12) platform
+      13) execArgv
+      14) cpuUsage()
+      15) emitWarning()
+    url
+      16) URL
+    util
+      17) inspect.defaultOptions
+      18) callbackify()
+      19) promisify()
+    vm
+      20) isContext
+
+
+  4 passing (293ms)
+  20 failing
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;webpack-4-82-2&quot;&gt;webpack 4.82.2&lt;/h3&gt;
+
+&lt;p&gt;0/24のテストをパス。&lt;br&gt;
+Gapリストに載っているものは未実装となっているpolyfillが使わrています。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;  gap-test
+    assert
+      1) Error#code
+      2) assert.deepEqual
+      3) assert.strict
+      4) assert.rejects
+      5) assert.doesNotReject
+    events
+      6) off
+      7) eventNames
+      8) getMaxListeners()
+      9) prependListener()
+      10) prependOnceListener()
+    os
+      11) constants
+    path
+      12) posix
+      13) win32
+      14) parse
+      15) format
+    process
+      16) platform
+      17) execArgv
+      18) cpuUsage()
+      19) emitWarning()
+    url
+      20) URL
+    util
+      21) inspect.defaultOptions
+      22) callbackify()
+      23) promisify()
+    vm
+      24) isContext
+
+
+  0 passing (134ms)
+  24 failing
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;part-2a00357080695c85&quot;&gt;おわりに&lt;/h2&gt;
+
+&lt;p&gt;このレポートは、webpackやbrowserifyを使っているとあまり意識されないpolyfillライブラリに潜在的な問題があることを調べる目的で書きました。この問題の難しさは各polyfillライブラリの管理者やバランスが異なるにもかかわらず、polyfillライブラリ群として暗黙的に参照されている点です。&lt;/p&gt;
+
+&lt;p&gt;多くのコアモジュールにおいては、問題が表面化しない可能性もあります。&lt;br&gt;
+しかし、&lt;code&gt;assert&lt;/code&gt;、&lt;code&gt;events&lt;/code&gt;、&lt;code&gt;url&lt;/code&gt;はブラウザ向けとしてよく使われているにもかかわらず、差異が分かる程度にはあります。&lt;br&gt;
+また、これらの問題が解決できた場合にも、webpackやbrowserifyには暗黙的にpolyfillライブラリを差し替える仕組み上は、バージョン違いといった互換性の問題が発生するかもしれません。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/the-node-js-collection/node-js-errors-changes-you-need-to-know-about-dc8c82417f65&quot; title=&quot;Node.js Errors — Changes you need to know about – Node.js Collection – Medium&quot;&gt;Node.js Errors — Changes you need to know about – Node.js Collection – Medium&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;assert&lt;/code&gt;結果の&lt;code&gt;Error#name&lt;/code&gt;などが異なるため、Node.jsでは通るがブラウザ(polyfill)では失敗するテストができる&lt;/li&gt;
+&lt;li&gt;MapやSetなどES2015以降のビルトインオブジェクトに対応していない&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.jxck.io/entries/2016-10-27/whatwg-url.html&quot; title=&quot;Node v7 で入った WHATWG URL 実装について | blog.jxck.io&quot;&gt;Node v7 で入った WHATWG URL 実装について | blog.jxck.io&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Node.jsがブラウザのWHATWG URLをサポートしたが、ブラウザ(polyfill)ではサポートされていない&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;webpackなどにIssueで同様の問題を報告していましたが、このIssueについては特に進捗はありませんでした。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/webpack/node-libs-browser/issues/78&quot;&gt;Incompatibility between Node.js core libs and webpack&amp;#39;s lib · Issue #78 · webpack/node-libs-browser&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最近になって、2018年12月21日に&lt;a href=&quot;https://github.com/webpack/webpack/issues/8537&quot;&gt;webpack 5 alpha&lt;/a&gt;が公開されました。&lt;br&gt;
+webpack 5では自動的にNode.jsコアモジュールのpolyfillを自動的に入れないようにする変更が予定されています。&lt;br&gt;
+(2018年12月25日時点ではただの予定であるため、&lt;a href=&quot;https://github.com/webpack/webpack/issues/8537&quot;&gt;該当Issue&lt;/a&gt;においてフィードバックを求めています。)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In the early days, webpack&amp;#39;s aim was to allow running most node.js modules in the browser, but the module landscape changed and many module uses are now written mainly for frontend purposes.&lt;br&gt;
+-- &lt;a href=&quot;https://github.com/webpack/changelog-v5/blob/master/README.md#automatic-nodejs-polyfills-removed&quot;&gt;https://github.com/webpack/changelog-v5/blob/master/README.md#automatic-nodejs-polyfills-removed&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;CHANGELOGにこのように書かれているのように、webpackはNode.jsモジュールをブラウザ向けにpack(polyfill)する役割から、フロントエンド向けに書かれたモジュールをbundleする役割へ変わってきています。&lt;/p&gt;
+
+&lt;p&gt;今までは&lt;code&gt;Buffer&lt;/code&gt;など&lt;a href=&quot;https://nodejs.org/api/index.html&quot;&gt;Node.jsのコアAPI&lt;/a&gt;に対応するモジュールを自動的にbundleすることで、Node.js向けに書かれたモジュールをブラウザでも動かせるようにしていました。&lt;br&gt;
+一方で、現在ではブラウザ向けに書かれたは多くのモジュールがあるため、webpackが自動的にpolyfillを入れる必然性が小さくなってきています。&lt;/p&gt;
+
+&lt;p&gt;また、&lt;code&gt;Buffer&lt;/code&gt;のpolyfillなどはファイルサイズがほどほどに大きいため、パフォーマンス面においては自動的にpolyfillを行わないメリットもあります。(polyfillを行うかどうかは、webpack 4でも&lt;a href=&quot;https://webpack.js.org/configuration/node/&quot;&gt;node&lt;/a&gt;オプションによって設定が可能です)&lt;/p&gt;
+
+&lt;p&gt;少しブラウザとは異なりますが、React Nativeの&lt;a href=&quot;https://facebook.github.io/metro/&quot;&gt;Bundler&lt;/a&gt;もNode.jsのコアモジュールのpolyfillを自動的にbundleはしない仕組みになっています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/react-native/issues/21405&quot;&gt;Unable to resolve module &lt;code&gt;assert&lt;/code&gt; &lt;code&gt;buffer&lt;/code&gt; &lt;code&gt;events&lt;/code&gt; · Issue #21405 · facebook/react-native&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;このように、BundlerがNode.jsコアモジュールのpolyfillを暗黙的に入れるという挙動の状況は少し変わりつつあります。&lt;br&gt;
+これは、&lt;a href=&quot;https://github.com/webpack/changelog-v5/blob/master/README.md#automatic-nodejs-polyfills-removed&quot;&gt;webpack 5の変更予定&lt;/a&gt;にも書かれていたように、Bundlerの目的の1つがNode.js向けに書かれたモジュールをブラウザ向けに変換することでした。&lt;br&gt;
+しかし、現在は多くのブラウザ向けに書かれたモジュールがあり、Bundlerはそれを効率的に扱うという目的に変わってきている点も関係しているのかもしれません。&lt;/p&gt;
+
+&lt;h2 id=&quot;jser-report&quot;&gt;&lt;a href=&quot;https://github.com/jser/report&quot;&gt;jser/report&lt;/a&gt; バックナンバー&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jser.info/2017/01/31/bundler-testing-framework-report/&quot;&gt;JSerレポート #1 Bundlerの未来、テスティングフレームワークの現状 - JSer.info&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 25 Dec 2018 12:14:00 +0900</pubDate>
+        <link>https://jser.info/2018/12/25/node-browser-libs-gap/</link>
+        <guid isPermaLink="true">https://jser.info/2018/12/25/node-browser-libs-gap/</guid>
+        
+        <category>webpack</category>
+        
+        <category>browserify</category>
+        
+        <category>node.js</category>
+        
+        <category>polyfill</category>
+        
+        
+        <category>レポート</category>
+        
+      </item>
     
       <item>
         <title>2018-12-25のJS: Chrome 72βとV8 7.2、webpack 5α、スクリーンリーダーの見え方</title>
@@ -2390,263 +2685,6 @@ Babelプラグインを書いてコード変換を行う話&lt;/p&gt;
         <category>Storybook</category>
         
         <category>firefox</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-10-21のJS: Chrome 70、Angular 7、LoopBack 4 GA</title>
-        <description>&lt;p&gt;JSer.info #406 - Chrome 70がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/10/nic70&quot; title=&quot;New in Chrome 70  |  Web  |  Google Developers&quot;&gt;New in Chrome 70  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#browsers.chrome.desktop%3D70&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/09/chrome-70-beta-shape-detection-web.html&quot; title=&quot;Chromium Blog: Chrome 70 beta: shape detection, web authentication, and more&quot;&gt;Chromium Blog: Chrome 70 beta: shape detection, web authentication, and more&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/09/chrome-70-deps-rems&quot; title=&quot;Deprecations and removals in Chrome 70  |  Web  |  Google Developers&quot;&gt;Deprecations and removals in Chrome 70  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/progressive-web-apps/desktop&quot;&gt;Desktop PWA&lt;/a&gt;でWindowsとLinuxのサポートが追加されました。macOSはChrome 72でサポートされる予定です。&lt;/p&gt;
-
-&lt;p&gt;Credential Management APIで指紋認証をサポート、Web Workerで&lt;code&gt;name&lt;/code&gt;オプション、TLS 1.3のサポート。 Web Components v0を非推奨化などが行われています。&lt;br&gt;
-また、Chrome 70から&lt;code&gt;http://&lt;/code&gt;なサイトフォームなどに入力した際に赤色の&amp;quot;Not Secure&amp;quot;警告がでるようになりました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/05/evolving-chromes-security-indicators.html&quot;&gt;Chromium Blog: Evolving Chrome&amp;#39;s security indicators&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Angular 7がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.angular.io/version-7-of-angular-cli-prompts-virtual-scroll-drag-and-drop-and-more-c594e22e7b8c&quot;&gt;Version 7 of Angular — CLI Prompts, Virtual Scroll, Drag and Drop and more&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/angular/angular/blob/master/CHANGELOG.md#700-2018-10-18&quot;&gt;angular/CHANGELOG.md at master · angular/angular&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;TypeScript 3.1のサポート、Virtual Scrollingの対応、CDKでDrag and Dropのサポートされています。また開発時だけに必要な&lt;code&gt;reflect-metadata&lt;/code&gt;はproductionビルドから自動的に取り除かれるようになっています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Node.jsのAPIフレームワークの&lt;a href=&quot;https://v4.loopback.io/&quot;&gt;LoopBack 4&lt;/a&gt; GA (General Availability)がリリースされています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://strongloop.com/strongblog/loopback-4-ga&quot;&gt;StrongLoop - Announcing LoopBack 4 GA is Now Ready for Production Use!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;コアがTypeScriptで書き直されているため型周りが全体的に改善されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/strongloop/loopback-next&quot;&gt;strongloop/loopback-next: LoopBack makes it easy to build modern API applications that require complex integrations.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;lb4 openapi&lt;/code&gt;コマンドでOpenAPI形式への出力対応しています。&lt;br&gt;
-またLTSポリシーも合わせて更新され、LoopBack 4は2021年4月までサポートされる予定となっています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-70-web-google-developers&quot;&gt;New in Chrome 70  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/10/nic70&quot; title=&quot;New in Chrome 70  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/10/nic70&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 70リリース。&lt;br&gt;
-Desktop PWA(Windows)のサポート、Credential Management APIで指紋認証をサポート、Web Workerで&lt;code&gt;name&lt;/code&gt;オプション、TLS 1.3のサポート。 Web Components v0を非推奨化など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#browsers.chrome.desktop%3D70&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/09/chrome-70-beta-shape-detection-web.html&quot; title=&quot;Chromium Blog: Chrome 70 beta: shape detection, web authentication, and more&quot;&gt;Chromium Blog: Chrome 70 beta: shape detection, web authentication, and more&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/09/chrome-70-deps-rems&quot; title=&quot;Deprecations and removals in Chrome 70  |  Web  |  Google Developers&quot;&gt;Deprecations and removals in Chrome 70  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-7-0-2-zeit-next-js&quot;&gt;Release 7.0.2 · zeit/next.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/zeit/next.js/releases/tag/7.0.2&quot; title=&quot;Release 7.0.2 · zeit/next.js&quot;&gt;github.com/zeit/next.js/releases/tag/7.0.2&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Next.js 7.0.2リリース。&lt;br&gt;
-7.0.0と7.0.1にあったエラー画面でのXSSが修正された。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;version-7-of-angular-cli-prompts-virtual-scroll-drag-and-drop-and-more&quot;&gt;Version 7 of Angular — CLI Prompts, Virtual Scroll, Drag and Drop and more&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.angular.io/version-7-of-angular-cli-prompts-virtual-scroll-drag-and-drop-and-more-c594e22e7b8c&quot; title=&quot;Version 7 of Angular — CLI Prompts, Virtual Scroll, Drag and Drop and more&quot;&gt;blog.angular.io/version-7-of-angular-cli-prompts-virtual-scroll-drag-and-drop-and-more-c594e22e7b8c&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Angular 7リリース。&lt;br&gt;
-TypeScript 3.1のサポート、Virtual Scrollingの対応、CDKでDrag and Dropのサポート。&lt;br&gt;
-&lt;code&gt;reflect-metadata&lt;/code&gt;がproductionビルドに誤って含まれるケースを防止する改善など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/angular/angular/blob/master/CHANGELOG.md#700-2018-10-18&quot; title=&quot;angular/CHANGELOG.md at master · angular/angular&quot;&gt;angular/CHANGELOG.md at master · angular/angular&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://mae.chab.in/archives/60226&quot; title=&quot;Angular 7リリースノート – Angular Blog日本語訳 | maesblog&quot;&gt;Angular 7リリースノート – Angular Blog日本語訳 | maesblog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;strongloop-announcing-loopback-4-ga-is-now-ready-for-production-use&quot;&gt;StrongLoop - Announcing LoopBack 4 GA is Now Ready for Production Use!&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://strongloop.com/strongblog/loopback-4-ga&quot; title=&quot;StrongLoop - Announcing LoopBack 4 GA is Now Ready for Production Use!&quot;&gt;strongloop.com/strongblog/loopback-4-ga&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js APIフレームワークのLoopBack 4GAリリース。&lt;br&gt;
-コアがTypeScriptで書き直され、OpenAPI形式への出力対応。&lt;br&gt;
-LTSポリシーも合わせて更新され、LoopBack 4は2021年4月までサポートされる予定。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://v4.loopback.io/&quot; title=&quot;LoopBack 4&quot;&gt;LoopBack 4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-js&quot;&gt;Node.jsにおけるプロトタイプ汚染攻撃とは何か - ぼちぼち日記&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jovi0608.hatenablog.com/entry/2018/10/19/083725&quot; title=&quot;Node.jsにおけるプロトタイプ汚染攻撃とは何か - ぼちぼち日記&quot;&gt;jovi0608.hatenablog.com/entry/2018/10/19/083725&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Prototype pollutionについて。&lt;br&gt;
-オブジェクトをマージする際などに&lt;code&gt;__proto__&lt;/code&gt;プロパティによって意図しない書き換えが行われる問題について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;angular-4-angular-6&quot;&gt;Angular 4アプリケーションをAngular 6に移行する | 株式会社カブク&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.kabuku.co.jp/developers/migration-from-ng4-to-ng6&quot; title=&quot;Angular 4アプリケーションをAngular 6に移行する | 株式会社カブク&quot;&gt;www.kabuku.co.jp/developers/migration-from-ng4-to-ng6&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Angular 4.xから6.xへの移行方法について。&lt;br&gt;
-Angular 4のLTSが2018年9月で終了するため、6.xへどのように移行するかについて。&lt;br&gt;
-移行した結果ビルド時間やファイルサイズが改善されたことについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;on-the-roadmap-exact-objects-by-default-flow-medium&quot;&gt;On the Roadmap: Exact Objects by Default – Flow – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/flow-type/on-the-roadmap-exact-objects-by-default-16b72933c5cf&quot; title=&quot;On the Roadmap: Exact Objects by Default – Flow – Medium&quot;&gt;medium.com/flow-type/on-the-roadmap-exact-objects-by-default-16b72933c5cf&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Flow 0.84.0からExact Objects（&lt;code&gt;{| |}&lt;/code&gt;相当）がデフォルトになる変更予定について。 その他のプロパティを許可する新しい構文として&lt;code&gt;{foo: number, ...}&lt;/code&gt;を導入し、どのようにマイグレーションしていくかについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;re-ducks-react-redux&quot;&gt;Re-ducksパターン：React + Redux のディレクトリ構成ベストプラクティス&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://noah.plus/blog/021/&quot; title=&quot;Re-ducksパターン：React + Redux のディレクトリ構成ベストプラクティス&quot;&gt;noah.plus/blog/021/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Reduxの文脈で見るDucksパターンとRe-ducksパターンについて。 ファイルディレクトリ構造をどのようなルールにするかやそれによって解決できることについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;wai-aria&quot;&gt;マークアップをパワーアップするWAI-ARIA&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://masup9.github.io/dist23/#/&quot; title=&quot;マークアップをパワーアップするWAI-ARIA&quot;&gt;masup9.github.io/dist23/#/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WAI-ARIA&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WAI-AIRAの目的、使い方、ユースケースについて解説しているスライド。&lt;br&gt;
-role、ステート、プロパティを付与したときにウェブブラウザやアクセシビリティの支援技術に伝わるかについて。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;gridsome-build-blazing-fast-websites-with-vue-js-and-graphql&quot;&gt;Gridsome - Build blazing fast websites with Vue.js and GraphQL&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://gridsome.org/&quot; title=&quot;Gridsome - Build blazing fast websites with Vue.js and GraphQL&quot;&gt;gridsome.org/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;VueとGraphQLを使った静的サイトツール/フレームワーク。&lt;br&gt;
-Gatsby.jsインスパイアなフレームワークでGraphQL経由レイヤーを経由してデータソースにアクセスする。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;perf-tools-timekeeper-at-master-artifact-project-perf-tools&quot;&gt;perf-tools/timekeeper at master · artifact-project/perf-tools&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/artifact-project/perf-tools/tree/master/timekeeper&quot; title=&quot;perf-tools/timekeeper at master · artifact-project/perf-tools&quot;&gt;github.com/artifact-project/perf-tools/tree/master/timekeeper&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;指定区間の時間計測結果をコンソールやパフォーマンスタブ(Performance Timing API)に出力できるライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;nico3333fr-csp-useful-collection-of-scripts-thoughts-about-csp-content-security-policy&quot;&gt;nico3333fr/CSP-useful: Collection of scripts, thoughts about CSP (Content Security Policy)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nico3333fr/CSP-useful&quot; title=&quot;nico3333fr/CSP-useful: Collection of scripts, thoughts about CSP (Content Security Policy)&quot;&gt;github.com/nico3333fr/CSP-useful&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSPレポートのサンプルやノイズになってるCSPレポートなどについてまとめてるリポジトリ。またCSPのTipsやユースケースについて書かれている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;terkelg-zet-set-as-it-should-be&quot;&gt;terkelg/zet: Set() as it should be&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/terkelg/zet&quot; title=&quot;terkelg/zet: Set() as it should be&quot;&gt;github.com/terkelg/zet&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Set&lt;/code&gt;を使った和集合、積集合などの演算をサポートしたライブラリ。&lt;br&gt;
-&lt;code&gt;Set&lt;/code&gt;同士の集合演算を行う&lt;code&gt;Set&lt;/code&gt;のサブクラスライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;f-graphql-js-a-simple-and-isomorphic-graphql-client-for-javascript&quot;&gt;f/graphql.js: A Simple and Isomorphic GraphQL Client for JavaScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/f/graphql.js&quot; title=&quot;f/graphql.js: A Simple and Isomorphic GraphQL Client for JavaScript&quot;&gt;github.com/f/graphql.js&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;IsomorphicなGraphQLクライアントライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;segmentio-evergreen-evergreen-react-ui-framework-by-segment&quot;&gt;segmentio/evergreen: 🌲 Evergreen React UI Framework by Segment&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/segmentio/evergreen/&quot; title=&quot;segmentio/evergreen: 🌲 Evergreen React UI Framework by Segment&quot;&gt;github.com/segmentio/evergreen/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;SegmentによるReact UIフレームワーク&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;tencent-omi-next-generation-web-framework-in-4kb-javascript-web-components-jsx-proxy-store-path-updating&quot;&gt;Tencent/omi: Next generation web framework in 4kb JavaScript (Web Components + JSX + Proxy + Store + Path Updating)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Tencent/omi&quot; title=&quot;Tencent/omi: Next generation web framework in 4kb JavaScript (Web Components + JSX + Proxy + Store + Path Updating)&quot;&gt;github.com/Tencent/omi&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Web Componentsをベースにしたフレームワーク。&lt;br&gt;
-JSXのサポート、ES Proxyを使った変更検知、Shadow DOMを使ったScoped CSSなど持っている&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Sun, 21 Oct 2018 23:10:58 +0900</pubDate>
-        <link>https://jser.info/2018/10/21/chrome-70angular-7loopback-4-ga/</link>
-        <guid isPermaLink="true">https://jser.info/2018/10/21/chrome-70angular-7loopback-4-ga/</guid>
-        
-        <category>chrome</category>
-        
-        <category>angular</category>
-        
-        <category>LoopBack</category>
         
         
         <category>JSer</category>
