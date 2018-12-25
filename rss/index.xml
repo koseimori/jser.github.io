@@ -5,8 +5,8 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 25 Dec 2018 17:34:18 +0900</pubDate>
-    <lastBuildDate>Tue, 25 Dec 2018 17:34:18 +0900</lastBuildDate>
+    <pubDate>Tue, 25 Dec 2018 17:35:38 +0900</pubDate>
+    <lastBuildDate>Tue, 25 Dec 2018 17:35:38 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -547,7 +547,7 @@ Gapリスト通りのpolyfillが使われています。&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/webpack/node-libs-browser/issues/78&quot;&gt;Incompatibility between Node.js core libs and webpack&amp;#39;s lib · Issue #78 · webpack/node-libs-browser&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;最近になって、2018年12月21日に&lt;a href=&quot;https://github.com/webpack/webpack/issues/8537&quot;&gt;webpack 5 alpha&lt;/a&gt;が公開されました。&lt;br&gt;
+&lt;p&gt;最近(2018年12月21日)になって&lt;a href=&quot;https://github.com/webpack/webpack/issues/8537&quot;&gt;webpack 5 alpha&lt;/a&gt;が公開されました。&lt;br&gt;
 webpack 5では自動的にNode.jsコアモジュールのpolyfillを自動的に入れないようにする変更が予定されています。&lt;br&gt;
 (2018年12月25日時点ではただの予定であるため、&lt;a href=&quot;https://github.com/webpack/webpack/issues/8537&quot;&gt;該当Issue&lt;/a&gt;においてフィードバックを求めています。)&lt;/p&gt;
 
@@ -559,7 +559,7 @@ webpack 5では自動的にNode.jsコアモジュールのpolyfillを自動的�
 &lt;p&gt;CHANGELOGにこのように書かれているのように、webpackはNode.jsモジュールをブラウザ向けにpack(polyfill)する役割から、フロントエンド向けに書かれたモジュールをbundleする役割へ変わってきています。&lt;/p&gt;
 
 &lt;p&gt;今までは&lt;code&gt;Buffer&lt;/code&gt;など&lt;a href=&quot;https://nodejs.org/api/index.html&quot;&gt;Node.jsのコアAPI&lt;/a&gt;に対応するモジュールを自動的にbundleすることで、Node.js向けに書かれたモジュールをブラウザでも動かせるようにしていました。&lt;br&gt;
-一方で、現在ではブラウザ向けに書かれたは多くのモジュールがあるため、webpackが自動的にpolyfillを入れる必然性が小さくなってきています。&lt;/p&gt;
+一方で、現在ではブラウザ向けに書かれたは多くのモジュールがあるため、webpackが自動的にpolyfillを入れる必然性が少なくなってきています。&lt;/p&gt;
 
 &lt;p&gt;また、&lt;code&gt;Buffer&lt;/code&gt;のpolyfillなどはファイルサイズがほどほどに大きいため、パフォーマンス面においては自動的にpolyfillを行わないメリットもあります。(polyfillを行うかどうかは、webpack 4でも&lt;a href=&quot;https://webpack.js.org/configuration/node/&quot;&gt;node&lt;/a&gt;オプションによって設定が可能です)&lt;/p&gt;
 

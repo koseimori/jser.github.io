@@ -717,7 +717,7 @@ Gapリスト通りのpolyfillが使われています。</p>
 <li><a href="https://github.com/webpack/node-libs-browser/issues/78">Incompatibility between Node.js core libs and webpack&#39;s lib · Issue #78 · webpack/node-libs-browser</a></li>
 </ul>
 
-<p>最近になって、2018年12月21日に<a href="https://github.com/webpack/webpack/issues/8537">webpack 5 alpha</a>が公開されました。<br>
+<p>最近(2018年12月21日)になって<a href="https://github.com/webpack/webpack/issues/8537">webpack 5 alpha</a>が公開されました。<br>
 webpack 5では自動的にNode.jsコアモジュールのpolyfillを自動的に入れないようにする変更が予定されています。<br>
 (2018年12月25日時点ではただの予定であるため、<a href="https://github.com/webpack/webpack/issues/8537">該当Issue</a>においてフィードバックを求めています。)</p>
 
@@ -729,7 +729,7 @@ webpack 5では自動的にNode.jsコアモジュールのpolyfillを自動的�
 <p>CHANGELOGにこのように書かれているのように、webpackはNode.jsモジュールをブラウザ向けにpack(polyfill)する役割から、フロントエンド向けに書かれたモジュールをbundleする役割へ変わってきています。</p>
 
 <p>今までは<code>Buffer</code>など<a href="https://nodejs.org/api/index.html">Node.jsのコアAPI</a>に対応するモジュールを自動的にbundleすることで、Node.js向けに書かれたモジュールをブラウザでも動かせるようにしていました。<br>
-一方で、現在ではブラウザ向けに書かれたは多くのモジュールがあるため、webpackが自動的にpolyfillを入れる必然性が小さくなってきています。</p>
+一方で、現在ではブラウザ向けに書かれたは多くのモジュールがあるため、webpackが自動的にpolyfillを入れる必然性が少なくなってきています。</p>
 
 <p>また、<code>Buffer</code>のpolyfillなどはファイルサイズがほどほどに大きいため、パフォーマンス面においては自動的にpolyfillを行わないメリットもあります。(polyfillを行うかどうかは、webpack 4でも<a href="https://webpack.js.org/configuration/node/">node</a>オプションによって設定が可能です)</p>
 
