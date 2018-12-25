@@ -689,9 +689,10 @@ Gapリスト通りのpolyfillが使われています。</p>
   0 passing (134ms)
   24 failing
 </code></pre></div>
-<h2 id="part-2a00357080695c85">おわりに</h2>
+<h2 id="node-js-polyfill">Node.jsコアモジュールのpolyfillの今後</h2>
 
-<p>このレポートは、webpackやbrowserifyを使っているとあまり意識されないpolyfillライブラリに潜在的な問題があることを調べる目的で書きました。この問題の難しさは各polyfillライブラリの管理者やバランスが異なるにもかかわらず、polyfillライブラリ群として暗黙的に参照されている点です。</p>
+<p>このレポートは、webpackやbrowserifyを使っているとあまり意識されないpolyfillライブラリに潜在的な問題があることを調べる目的で書きました。<br>
+この問題の難しさは各polyfillライブラリの管理者やバランスが異なるにもかかわらず、polyfillライブラリ群として暗黙的に参照されている点です。</p>
 
 <p>多くのコアモジュールにおいては、問題が表面化しない可能性もあります。<br>
 しかし、<code>assert</code>、<code>events</code>、<code>url</code>はブラウザ向けとしてよく使われているにもかかわらず、差異が分かる程度にはあります。<br>
