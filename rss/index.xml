@@ -5,8 +5,8 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 25 Dec 2018 18:04:53 +0900</pubDate>
-    <lastBuildDate>Tue, 25 Dec 2018 18:04:53 +0900</lastBuildDate>
+    <pubDate>Tue, 25 Dec 2018 18:06:32 +0900</pubDate>
+    <lastBuildDate>Tue, 25 Dec 2018 18:06:32 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -573,6 +573,8 @@ webpack 5では自動的にNode.jsコアモジュールのpolyfillを自動的�
 &lt;p&gt;このように、BundlerがNode.jsコアモジュールのpolyfillを暗黙的に入れるという挙動の状況は少し変わりつつあります。&lt;br&gt;
 これは&lt;a href=&quot;https://github.com/webpack/changelog-v5/blob/master/README.md#automatic-nodejs-polyfills-removed&quot;&gt;webpack 5の変更予定&lt;/a&gt;にも書かれていたように、Bundlerの目的の1つがNode.js向けに書かれたモジュールをブラウザ向けに変換することでした。&lt;br&gt;
 しかし、現在は多くのブラウザ向けに書かれたモジュールがあり、Bundlerはそれを効率的に扱うという目的に変わってきている点も関係しているのかもしれません。&lt;/p&gt;
+
+&lt;h2 id=&quot;part-34bec9340448ad61&quot;&gt;調査を終えて&lt;/h2&gt;
 
 &lt;p&gt;今回の調査で感じたのは、Node.jsのコアモジュールとブラウザ向けのPolyfillといった一種の互換レイヤーに対して関心を持っている人の絶対数が少ないという印象です。Node.jsもコアAPIとしてブラウザと同じ&lt;a href=&quot;https://nodejs.org/api/url.html#url_the_whatwg_url_api&quot;&gt;WHATWG URL API&lt;/a&gt;を実装するなどいった&lt;a href=&quot;https://github.com/nodejs/node/pull/18281&quot;&gt;ブラウザとの相互運用性&lt;/a&gt;に関する取り組みも行われています。&lt;br&gt;
 しかし、このNode.jsコアモジュールのpolyfillという互換レイヤーに関しては暗黙的に扱われていることが多く、その互換性に問題があることについてはあまり言及されていません。&lt;/p&gt;
