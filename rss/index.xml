@@ -5,8 +5,8 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 25 Dec 2018 17:39:16 +0900</pubDate>
-    <lastBuildDate>Tue, 25 Dec 2018 17:39:16 +0900</lastBuildDate>
+    <pubDate>Tue, 25 Dec 2018 17:40:59 +0900</pubDate>
+    <lastBuildDate>Tue, 25 Dec 2018 17:40:59 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -557,10 +557,10 @@ webpack 5では自動的にNode.jsコアモジュールのpolyfillを自動的�
 -- &lt;a href=&quot;https://github.com/webpack/changelog-v5/blob/master/README.md#automatic-nodejs-polyfills-removed&quot;&gt;https://github.com/webpack/changelog-v5/blob/master/README.md#automatic-nodejs-polyfills-removed&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;CHANGELOGにこのように書かれているのように、webpackはNode.jsモジュールをブラウザ向けにpack(polyfill)する役割から、フロントエンド向けに書かれたモジュールをbundleする役割へ変わってきています。&lt;/p&gt;
+&lt;p&gt;変更理由としてこのように書かれているのように、webpackはNode.jsモジュールをブラウザ向けにpack(polyfill)する役割から、フロントエンド向けに書かれたモジュールをbundleする役割へ変わってきています。&lt;/p&gt;
 
 &lt;p&gt;今までは&lt;code&gt;Buffer&lt;/code&gt;など&lt;a href=&quot;https://nodejs.org/api/index.html&quot;&gt;Node.jsのコアAPI&lt;/a&gt;に対応するモジュールを自動的にbundleすることで、Node.js向けに書かれたモジュールをブラウザでも動かせるようにしていました。&lt;br&gt;
-一方で、現在ではブラウザ向けに書かれたは多くのモジュールがあるため、webpackが自動的にpolyfillを入れる必然性が少なくなってきています。&lt;/p&gt;
+一方で、現在ではブラウザ向けに書かれた多くのモジュールがあるため、webpackが自動的にpolyfillを入れる必然性が少なくなってきています。&lt;/p&gt;
 
 &lt;p&gt;また、&lt;code&gt;Buffer&lt;/code&gt;のpolyfillなどはファイルサイズがほどほどに大きいため、パフォーマンス面においては自動的にpolyfillを行わないメリットもあります。(polyfillを行うかどうかは、webpack 4でも&lt;a href=&quot;https://webpack.js.org/configuration/node/&quot;&gt;node&lt;/a&gt;オプションによって設定が可能です)&lt;/p&gt;
 
