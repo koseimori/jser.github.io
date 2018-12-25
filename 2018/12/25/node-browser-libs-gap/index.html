@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>JSerレポート #2: Node.jsコアモジュールとBundler(webpackなど)によるpolyfillのギャップ - JSer.info</title>
-    <meta name="description" content="Node.jsコアモジュールとBundlerによるpolyfillのギャップ">
+    <meta name="description" content="このレポートは、現在進行形で機能追加や仕様変更が行われているNode.jsコアモジュールとブラウザ向けpolyfillにおける挙動の違い(ギャップ)が広がってきている問題について調べたものです。">
     
     <meta name="keywords" content="webpack,browserify,node.js,polyfill" />
     
@@ -56,7 +56,7 @@
     <!-- JavaScript -->
     <script src="/public/js/switch-alt-link.js"></script>
     <!-- Open graph tags -->
-<meta name="twitter:card" content="Node.jsコアモジュールとBundlerによるpolyfillのギャップ" />
+<meta name="twitter:card" content="このレポートは、現在進行形で機能追加や仕様変更が行われているNode.jsコアモジュールとブラウザ向けpolyfillにおける挙動の違い(ギャップ)が広がってきている問題について調べたものです。" />
 <meta name="twitter:site" content="@jser_info" />
 
 
@@ -65,7 +65,7 @@
 <meta property="og:url" content="https://jser.info/2018/12/25/node-browser-libs-gap/">
 <meta property="og:image" content="https://jser.info/media/logo.png">
 
-<meta property="og:description" content="Node.jsコアモジュールとBundlerによるpolyfillのギャップ">
+<meta property="og:description" content="このレポートは、現在進行形で機能追加や仕様変更が行われているNode.jsコアモジュールとブラウザ向けpolyfillにおける挙動の違い(ギャップ)が広がってきている問題について調べたものです。">
 <meta property="og:site_name" content="JSer.info">
 
 
@@ -181,9 +181,7 @@
         </div>
     </header>
     <article class="post-content">
-        <h1 id="node-js-bundler-polyfill">Node.jsコアモジュールとBundlerによるpolyfillのギャップ</h1>
-
-<p>このレポートは、現在進行形で機能追加や仕様変更が行われているNode.jsコアモジュールとブラウザ向けpolyfillにおける挙動の違い(ギャップ)が広がってきている問題について調べたものです。</p>
+        <p>このレポートは、現在進行形で機能追加や仕様変更が行われているNode.jsコアモジュールとブラウザ向けpolyfillにおける挙動の違い(ギャップ)が広がってきている問題について調べたものです。</p>
 
 <p>ここでは <a href="https://nodejs.org/api/">https://nodejs.org/api/</a> に掲載されているうち <code>assert</code>のようにNode.jsにバンドルされているモジュールのことをNode.jsコアモジュールと呼びます。コアモジュールはNode.jsでの利用のみを想定しているため、Node.jsに依存した処理を多く含んでいます。そのため、コアモジュールのコードをコピーしてブラウザなどで動かすことは難しいです。</p>
 
@@ -191,10 +189,10 @@
 
 <h2 id="node-js-polyfill">Node.jsコアモジュールのpolyfillライブラリの例</h2>
 
-<p>webpackとbrowserifyは変換時に、コード中に現れる<code>assert</code>モジュールを<a href="https://github.com/browserify/commonjs-assert" title="commonjs-assert">commonjs-assert</a>というpolyfillライブラリに自動的にすり替えられます。</p>
+<p>webpackとbrowserifyは変換時に、コード中に現れる<code>assert</code>モジュールを<a href="https://github.com/browserify/commonjs-assert" title="commonjs-assert">commonjs-assert</a>というpolyfillライブラリに自動的にすり替えます。</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"assert"</span><span class="p">)</span>
 </code></pre></div>
-<p>というコードはwebpackなどでbundleすると、次のように書いたのと同じようにモジュールの差し替えが行われる。</p>
+<p>というコードはwebpackなどでbundleすると、次のように書いたのと同じようにモジュールの差し替えが行われます。</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"commonjs-assert"</span><span class="p">)</span>
 </code></pre></div>
 <p>webpackでは、このNode.jsコアモジュールへの差し替えを<a href="https://webpack.js.org/configuration/node/">node</a>オプションによって設定が可能です。</p>

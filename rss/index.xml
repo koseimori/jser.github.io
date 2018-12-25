@@ -5,15 +5,13 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 25 Dec 2018 14:28:35 +0900</pubDate>
-    <lastBuildDate>Tue, 25 Dec 2018 14:28:35 +0900</lastBuildDate>
+    <pubDate>Tue, 25 Dec 2018 14:31:01 +0900</pubDate>
+    <lastBuildDate>Tue, 25 Dec 2018 14:31:01 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
         <title>JSerレポート #2: Node.jsコアモジュールとBundler(webpackなど)によるpolyfillのギャップ</title>
-        <description>&lt;h1 id=&quot;node-js-bundler-polyfill&quot;&gt;Node.jsコアモジュールとBundlerによるpolyfillのギャップ&lt;/h1&gt;
-
-&lt;p&gt;このレポートは、現在進行形で機能追加や仕様変更が行われているNode.jsコアモジュールとブラウザ向けpolyfillにおける挙動の違い(ギャップ)が広がってきている問題について調べたものです。&lt;/p&gt;
+        <description>&lt;p&gt;このレポートは、現在進行形で機能追加や仕様変更が行われているNode.jsコアモジュールとブラウザ向けpolyfillにおける挙動の違い(ギャップ)が広がってきている問題について調べたものです。&lt;/p&gt;
 
 &lt;p&gt;ここでは &lt;a href=&quot;https://nodejs.org/api/&quot;&gt;https://nodejs.org/api/&lt;/a&gt; に掲載されているうち &lt;code&gt;assert&lt;/code&gt;のようにNode.jsにバンドルされているモジュールのことをNode.jsコアモジュールと呼びます。コアモジュールはNode.jsでの利用のみを想定しているため、Node.jsに依存した処理を多く含んでいます。そのため、コアモジュールのコードをコピーしてブラウザなどで動かすことは難しいです。&lt;/p&gt;
 
@@ -21,10 +19,10 @@
 
 &lt;h2 id=&quot;node-js-polyfill&quot;&gt;Node.jsコアモジュールのpolyfillライブラリの例&lt;/h2&gt;
 
-&lt;p&gt;webpackとbrowserifyは変換時に、コード中に現れる&lt;code&gt;assert&lt;/code&gt;モジュールを&lt;a href=&quot;https://github.com/browserify/commonjs-assert&quot; title=&quot;commonjs-assert&quot;&gt;commonjs-assert&lt;/a&gt;というpolyfillライブラリに自動的にすり替えられます。&lt;/p&gt;
+&lt;p&gt;webpackとbrowserifyは変換時に、コード中に現れる&lt;code&gt;assert&lt;/code&gt;モジュールを&lt;a href=&quot;https://github.com/browserify/commonjs-assert&quot; title=&quot;commonjs-assert&quot;&gt;commonjs-assert&lt;/a&gt;というpolyfillライブラリに自動的にすり替えます。&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;assert&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;というコードはwebpackなどでbundleすると、次のように書いたのと同じようにモジュールの差し替えが行われる。&lt;/p&gt;
+&lt;p&gt;というコードはwebpackなどでbundleすると、次のように書いたのと同じようにモジュールの差し替えが行われます。&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;commonjs-assert&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;webpackでは、このNode.jsコアモジュールへの差し替えを&lt;a href=&quot;https://webpack.js.org/configuration/node/&quot;&gt;node&lt;/a&gt;オプションによって設定が可能です。&lt;/p&gt;
