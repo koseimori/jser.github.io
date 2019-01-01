@@ -5,9 +5,237 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 25 Dec 2018 19:06:00 +0900</pubDate>
-    <lastBuildDate>Tue, 25 Dec 2018 19:06:00 +0900</lastBuildDate>
+    <pubDate>Tue, 01 Jan 2019 11:55:12 +0900</pubDate>
+    <lastBuildDate>Tue, 01 Jan 2019 11:55:12 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-01-01のJS: WebdriverIO v5、Rollup 1.0、Rust + WebAssembly + WebWorker</title>
+        <description>&lt;p&gt;JSer.info #416 - WebDriverを扱うテストフレームワークであるWebdriverIO v5がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webdriver.io/blog/2018/12/19/webdriverio-v5-released.html&quot;&gt;WebdriverIO v5 Released · WebdriverIO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/webdriverio/webdriverio/blob/master/CHANGELOG.md#v500-2018-12-20&quot;&gt;webdriverio/CHANGELOG.md at master · webdriverio/webdriverio&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;パッケージ構造やAPI周りの変更が行われています。&lt;/p&gt;
+
+&lt;p&gt;基本的なパッケージが&lt;a href=&quot;https://www.npmjs.com/org/@wdio/&quot;&gt;&lt;code&gt;@wdio&lt;/code&gt;&lt;/a&gt;に移動され、同梱されていたCLIが&lt;code&gt;@wdio/cli&lt;/code&gt;に移動しています。&lt;/p&gt;
+
+&lt;p&gt;API周りではコマンドがselectorを受け取らないようになり、メソッドチェーンではなくasync/awaitベースに変更されています。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// v4ではセレクタを渡せた&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;browser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#elem'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// v5からはelementを取得してから操作する&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#elem'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;その他にも&lt;code&gt;isVisible&lt;/code&gt;が&lt;code&gt;isDisplayed&lt;/code&gt;にリネームされるなど多くのコマンドのリネームが行われています。&lt;br&gt;
+詳しくは&lt;a href=&quot;https://github.com/webdriverio/webdriverio/blob/master/CHANGELOG.md#v500-2018-12-20&quot;&gt;CHANGELOG.md&lt;/a&gt;に掲載されています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;モジュールBundlerであるRollup v1.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/rollup/rollup/releases/tag/v1.0.0&quot;&gt;Release v1.0.0 · rollup/rollup&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;破壊的な変更として、非推奨となっていたオプションやオプションのリネームが含まれています。&lt;br&gt;
+&lt;code&gt;bundle.generate&lt;/code&gt;と&lt;code&gt;bundle.write&lt;/code&gt;の返す値のフォーマットの変更、&lt;code&gt;acorn@6&lt;/code&gt;へアップデートなどが行われています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/rollup/rollup/pull/2293&quot;&gt;1.0 changes by guybedford · Pull Request #2293 · rollup/rollup&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/3846masa/items/92d24e16ebb5151b08ba&quot;&gt;Comlink + Rust で言語とスレッドの垣根を越えた WebAssembly 開発 - Qiita&lt;/a&gt;という記事では、Zip展開アプリの例にしたRustとWebAssemblyを使った開発について書かれています。&lt;/p&gt;
+
+&lt;p&gt;Rustや&lt;a href=&quot;https://rustwasm.github.io/wasm-pack/book/&quot;&gt;wasm-pack&lt;/a&gt;を使った開発環境の設定から、&lt;a href=&quot;https://rustwasm.github.io/wasm-bindgen/&quot;&gt;wasm-bindgen&lt;/a&gt;でRust&lt;br&gt;
+とJavaScriptのバインディングの作成、webpackでの読み込みとブラウザでの実行についてまで書かれています。&lt;br&gt;
+また、メインスレッドで重たい処理を行うのを避けるために、WebAssemblyの処理をWebWorker上で行い、そのメッセージのやり取りに&lt;a href=&quot;https://github.com/GoogleChromeLabs/comlink&quot;&gt;Comlink&lt;/a&gt;を使う方法などについても紹介されています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webdriverio-v5-released-webdriverio&quot;&gt;WebdriverIO v5 Released · WebdriverIO&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webdriver.io/blog/2018/12/19/webdriverio-v5-released.html&quot; title=&quot;WebdriverIO v5 Released · WebdriverIO&quot;&gt;webdriver.io/blog/2018/12/19/webdriverio-v5-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Selenium&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebdriverIO v5リリース。&lt;br&gt;
+&lt;code&gt;wdio&lt;/code&gt; CLIは&lt;code&gt;@wdio/cli&lt;/code&gt;に移動、コマンドがselectorを受け取らないように、メソッドチェーンではなくasync/awaitベースに変更。&lt;br&gt;
+その他にもコマンドのリネームなどの破壊的な変更を多く含む&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/webdriverio/webdriverio/blob/master/CHANGELOG.md#v500-2018-12-20&quot; title=&quot;webdriverio/CHANGELOG.md at master · webdriverio/webdriverio&quot;&gt;webdriverio/CHANGELOG.md at master · webdriverio/webdriverio&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v1-0-0-rollup-rollup&quot;&gt;Release v1.0.0 · rollup/rollup&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rollup/rollup/releases/tag/v1.0.0&quot; title=&quot;Release v1.0.0 · rollup/rollup&quot;&gt;github.com/rollup/rollup/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Rollup 1.0.0リリース。&lt;br&gt;
+破壊的な変更としてオプションのリネーム、&lt;code&gt;bundle.generate&lt;/code&gt;の返す値のフォーマットの変更、&lt;code&gt;acorn@6&lt;/code&gt;へアップデートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;graphql-rest-api-hub-web&quot;&gt;「GraphQL」徹底入門 ─ RESTとの比較、API・フロント双方の実装から学ぶ - エンジニアHub｜若手Webエンジニアのキャリアを考える！&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://employment.en-japan.com/engineerhub/entry/2018/12/26/103000&quot; title=&quot;「GraphQL」徹底入門 ─ RESTとの比較、API・フロント双方の実装から学ぶ - エンジニアHub｜若手Webエンジニアのキャリアを考える！&quot;&gt;employment.en-japan.com/engineerhub/entry/2018/12/26/103000&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;GraphQLの入門記事。&lt;br&gt;
+GraphQLの利点、欠点、スキーマ/クエリの書き方、VariableやFragmentの使い方について。&lt;br&gt;
+またRelayの拡張や実際にGraphQLを使った実装例についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;understanding-throttling-and-debouncing-bits-and-pieces&quot;&gt;Understanding Throttling and Debouncing – Bits and Pieces&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.bitsrc.io/understanding-throttling-and-debouncing-973131c1ba07&quot; title=&quot;Understanding Throttling and Debouncing – Bits and Pieces&quot;&gt;blog.bitsrc.io/understanding-throttling-and-debouncing-973131c1ba07&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ThrottlingとDebouncingについてそれぞれを実装しながら挙動を理解していく記事&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;comlink-rust-webassembly-qiita&quot;&gt;Comlink + Rust で言語とスレッドの垣根を越えた WebAssembly 開発 - Qiita&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/3846masa/items/92d24e16ebb5151b08ba&quot; title=&quot;Comlink + Rust で言語とスレッドの垣根を越えた WebAssembly 開発 - Qiita&quot;&gt;qiita.com/3846masa/items/92d24e16ebb5151b08ba&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Rust&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Rustを使ったWebAssemblyライブラリの開発について。&lt;br&gt;
+Rustを使ったwasmのバインディングの作成、webpackを使ったロード方法について。&lt;br&gt;
+また、処理をメインスレッド外のWebWorkerで行いComlinkでのデータのやり取りする方法について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;babel-7-qiita&quot;&gt;Babel 7 の主な変更点まとめ - Qiita&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/soarflat/items/21b8955f992bf7d38581&quot; title=&quot;Babel 7 の主な変更点まとめ - Qiita&quot;&gt;qiita.com/soarflat/items/21b8955f992bf7d38581&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Babel 7の主な変更点やマイグレーション方法について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-native-codezine&quot;&gt;基礎からはじめるReact Native入門連載一覧：CodeZine（コードジン）&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://codezine.jp/article/corner/772&quot; title=&quot;基礎からはじめるReact Native入門連載一覧：CodeZine（コードジン）&quot;&gt;codezine.jp/article/corner/772&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;iOS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Android&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Nativeについての連載記事。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ecmascript-modules-in-node-js-the-new-plan&quot;&gt;ECMAScript modules in Node.js: the new plan&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://2ality.com/2018/12/nodejs-esm-phases.html&quot; title=&quot;ECMAScript modules in Node.js: the new plan&quot;&gt;2ality.com/2018/12/nodejs-esm-phases.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsにおけるES Modulesの扱いについてのまとめ記事。&lt;br&gt;
+&lt;code&gt;.mjs&lt;/code&gt;のサポートについてやCommonJSとの相互運用性の問題、今後どのような方針が予定されているのかについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;javascript-web-infoq&quot;&gt;JavaScriptとWeb開発に関するInfoQトレンドレポート&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.infoq.com/jp/articles/javascript-web-development-trends&quot; title=&quot;JavaScriptとWeb開発に関するInfoQトレンドレポート&quot;&gt;www.infoq.com/jp/articles/javascript-web-development-trends&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;InfoQのJavaScriptに関するトレンドレポート。&lt;br&gt;
+イノベーター、アーリーアダプター、アーリーマジョリティ、レイトマジョリティ、ラガードに分けて関連するライブラリ/フレームワーク/ツールについて紹介している。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;typescript-angular&quot;&gt;TypeScriptで実現する型安全な多言語対応（Angularを例に） | 株式会社カブク&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.kabuku.co.jp/software_engineer/typescript-angular-i18n/&quot; title=&quot;TypeScriptで実現する型安全な多言語対応（Angularを例に） | 株式会社カブク&quot;&gt;www.kabuku.co.jp/software_engineer/typescript-angular-i18n/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;翻訳ファイルをTypeScriptのコードとして表現することで型安全な翻訳定義を作成する方法について。&lt;br&gt;
+翻訳ファイルをコードにするメリットとデメリットについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;takefumi-yoshii-react-hooks-ogiri-advent-calendar-of-2018-this-is-a-showreel-using-a-reaction-hook&quot;&gt;takefumi-yoshii/react-hooks-ogiri: Advent calendar of 2018. This is a showreel using a reaction hook.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/takefumi-yoshii/react-hooks-ogiri&quot; title=&quot;takefumi-yoshii/react-hooks-ogiri: Advent calendar of 2018. This is a showreel using a reaction hook.&quot;&gt;github.com/takefumi-yoshii/react-hooks-ogiri&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;example&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Hooks APIを使ったUIコンポーネントのサンプル実装集&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/advent-calendar/2018/react-hooks-ogiri&quot; title=&quot;React Hooks 大喜利 Advent Calendar 2018 - Qiita&quot;&gt;React Hooks 大喜利 Advent Calendar 2018 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;fontoxml-fontoxpath-a-minimalistic-xpath-3-1-implementation-in-pure-javascript&quot;&gt;FontoXML/fontoxpath: A minimalistic XPath 3.1 implementation in pure JavaScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/FontoXML/fontoxpath&quot; title=&quot;FontoXML/fontoxpath: A minimalistic XPath 3.1 implementation in pure JavaScript&quot;&gt;github.com/FontoXML/fontoxpath&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;xpath&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;XPath 3.1、XQuery 3.1の実装ライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jsincss-a-js-in-css-stylesheet-loader&quot;&gt;jsincss | A JS-in-CSS stylesheet loader&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jsincss.com/&quot; title=&quot;jsincss | A JS-in-CSS stylesheet loader&quot;&gt;jsincss.com/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptからテンプレートでCSSを生成でき、イベントによってリアクティブにCSSを変更できるライブラリ。&lt;br&gt;
+プラグインで拡張できるようになっている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tomhodgins/jsincss&quot; title=&quot;tomhodgins/jsincss: A JS-in-CSS stylesheet loader&quot;&gt;tomhodgins/jsincss: A JS-in-CSS stylesheet loader&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://responsive.style/theory/what-is-a-jic-stylesheet.html&quot; title=&quot;What is a JIC Stylesheet? - Responsive Style&quot;&gt;What is a JIC Stylesheet? - Responsive Style&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;babeledit-editor-for-json-translation-files-for-angular-react&quot;&gt;BabelEdit - Editor for JSON translation files for Angular &amp;amp; React&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.codeandweb.com/babeledit&quot; title=&quot;BabelEdit - Editor for JSON translation files for Angular &amp;amp; React&quot;&gt;www.codeandweb.com/babeledit&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;software&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JSONベースの翻訳ファイルエディタ。&lt;br&gt;
+AngularやReactとの連携としたワークフローが紹介されている&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Mon, 31 Dec 2018 22:38:01 +0900</pubDate>
+        <link>https://jser.info/2018/12/31/webdriverio-v5rollup-1.0rust-webassembly-webworker/</link>
+        <guid isPermaLink="true">https://jser.info/2018/12/31/webdriverio-v5rollup-1.0rust-webassembly-webworker/</guid>
+        
+        <category>Selenium</category>
+        
+        <category>rollup</category>
+        
+        <category>WebAssembly</category>
+        
+        <category>Rust</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>JSerレポート #2: Node.jsコアモジュールとBundler(webpackなど)によるpolyfillのギャップ</title>
@@ -2690,312 +2918,6 @@ ElectronのようなChromeをWebViewとしたアプリ開発ができる。Node�
         <category>react</category>
         
         <category>vue</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-10-30のJS: Node.js 11.0.0、Storybook 4.0.0、Firefox 63</title>
-        <description>&lt;p&gt;JSer.info #407 - Node.js 11系がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.0.0/&quot; title=&quot;Node v11.0.0 (Current) | Node.js&quot;&gt;Node v11.0.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/october-brings-node-js-10-x-to-lts-and-node-js-11-to-current-ae19f8f12b51&quot; title=&quot;October Brings Node.js 10.x to LTS and Node.js 11 to Current!&quot;&gt;October Brings Node.js 10.x to LTS and Node.js 11 to Current!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Node.js 11.xは6ヶ月のサポートとなる開発版に位置づけられる奇数バージョンです。&lt;br&gt;
-これに合わせてNode.js 10.xが10月30日のリリースでLong Term Support(LTS)になる予定です。&lt;/p&gt;
-
-&lt;p&gt;Node.js 11では、V8 7.0へ更新、&lt;code&gt;http.request&lt;/code&gt;メソッドのオプションがデフォルトではWHATWG URLでパースされるように変更されています。&lt;br&gt;
-(後方互換性のため、&lt;a href=&quot;https://github.com/nodejs/node/pull/20270&quot;&gt;パースに失敗した際は&lt;code&gt;url&lt;/code&gt;でパースし直します&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;また&lt;code&gt;TextEncoder&lt;/code&gt;/&lt;code&gt;TextDecoder&lt;/code&gt;が&lt;code&gt;util&lt;/code&gt;からグローバルへ移動、&lt;code&gt;process.binding()&lt;/code&gt;の非推奨化などが行われています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;UIコンポーネントの開発ツールであるStorybook 4.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · storybooks/storybook&quot;&gt;Release v4.0.0 · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/blob/master/MIGRATION.md#from-version-34x-to-40x&quot; title=&quot;storybook/MIGRATION.md at master · storybooks/storybook&quot;&gt;storybook/MIGRATION.md at master · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-4-0-is-here-10b9857fc7de&quot; title=&quot;Storybook 4.0 is here! – Storybook – Medium&quot;&gt;Storybook 4.0 is here! – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Babel 7/webacpk 4へのアップデートが行われ、Ember/MarkoJS/Mithril/HTML/Svelte/Riotのサポートが追加されています。&lt;br&gt;
-またReact Nativeなどのモバイル対応の改善、theme変数が実装されStorybookの管理UIの設定を変更できるようになっています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://storybook.js.org/configurations/theming/&quot;&gt;Theming Storybook&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Firefox 63.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/63.0/releasenotes/&quot; title=&quot;Firefox 63.0, See All New Features, Updates and Fixes&quot;&gt;Firefox 63.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.com/en-CA/versions/63/&quot; title=&quot;Firefox 63 Site Compatibility | Firefox Site Compatibility&quot;&gt;Firefox 63 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/63&quot; title=&quot;Firefox 63 for developers - Mozilla | MDN&quot;&gt;Firefox 63 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Firefox 63ではWeb Componentsがサポートされています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2018/10/firefox-63-tricks-and-treats/&quot; title=&quot;Firefox 63 - Tricks and Treats! - Mozilla Hacks - the Web developer blog&quot;&gt;Firefox 63 - Tricks and Treats! - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Media Capabilities API、Async Clipboard API のサポート、&lt;code&gt;Clear-Site-Data&lt;/code&gt;ヘッダがデフォルトで有効化されています。&lt;br&gt;
-またクロスブラウザ互換のために&lt;code&gt;Window.event&lt;/code&gt;プロパティの実装されています。&lt;/p&gt;
-
-&lt;p&gt;開発者ツールでは&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_fonts&quot;&gt;Fonts Editor&lt;/a&gt;を追加し、&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector&quot;&gt;Accessibility inspector&lt;/a&gt;がデフォルトで有効化されています。&lt;br&gt;
-また、開発者ツールでもWeb Components(Shadow DOM)のサポートが追加されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.nightly.mozilla.org/2018/09/06/developer-tools-support-for-web-components-in-firefox-63/&quot; title=&quot;Developer Tools support for Web Components in Firefox 63 – Firefox Nightly News&quot;&gt;Developer Tools support for Web Components in Firefox 63 – Firefox Nightly News&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v3-1-0-karma-runner-karma&quot;&gt;Release v3.1.0 · karma-runner/karma&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/karma-runner/karma/releases/tag/v3.1.0&quot; title=&quot;Release v3.1.0 · karma-runner/karma&quot;&gt;github.com/karma-runner/karma/releases/tag/v3.1.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Karma 3.1.0リリース。&lt;br&gt;
-socket timeoutのオプション追加、ES modules対応、ファイルを強制的に更新する&lt;code&gt;refreshFile&lt;/code&gt;メソッドの追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v11-0-0-current-node-js&quot;&gt;Node v11.0.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.0.0/&quot; title=&quot;Node v11.0.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v11.0.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 11.0.0リリース。&lt;br&gt;
-V8 7.0へ更新、&lt;code&gt;http.request&lt;/code&gt;メソッドのオプションがデフォルトではWHATWG URLでパースされるように。&lt;br&gt;
-また&lt;code&gt;TextEncoder&lt;/code&gt;/&lt;code&gt;TextDecoder&lt;/code&gt;が&lt;code&gt;util&lt;/code&gt;からグローバルへ移動、&lt;code&gt;process.binding()&lt;/code&gt;の非推奨化など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/october-brings-node-js-10-x-to-lts-and-node-js-11-to-current-ae19f8f12b51&quot; title=&quot;October Brings Node.js 10.x to LTS and Node.js 11 to Current!&quot;&gt;October Brings Node.js 10.x to LTS and Node.js 11 to Current!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jasmine-3-3-0-md-at-master-jasmine-jasmine&quot;&gt;jasmine/3.3.0.md at master · jasmine/jasmine&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jasmine/jasmine/blob/master/release_notes/3.3.0.md&quot; title=&quot;jasmine/3.3.0.md at master · jasmine/jasmine&quot;&gt;github.com/jasmine/jasmine/blob/master/release_notes/3.3.0.md&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Jasmine 3.3リリース。&lt;br&gt;
-&lt;code&gt;expect().withContext()&lt;/code&gt;の追加、&lt;code&gt;toBeRejectedWith&lt;/code&gt;の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-68-webkit&quot;&gt;Release Notes for Safari Technology Preview 68 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8475/release-notes-for-safari-technology-preview-68/&quot; title=&quot;Release Notes for Safari Technology Preview 68 | WebKit&quot;&gt;webkit.org/blog/8475/release-notes-for-safari-technology-preview-68/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 68リリース。&lt;br&gt;
-&lt;code&gt;&amp;lt;input type=&amp;quot;color&amp;quot;&amp;gt;&lt;/code&gt;をデフォルトで有効化、&lt;code&gt;target=&amp;quot;_blank&amp;quot;&lt;/code&gt;をデフォルトで&lt;code&gt;rel=noopener&lt;/code&gt;にする変更。&lt;br&gt;
-WebRTCでVP8をサポート、WebVTTでのインラインスタイルをサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v4-0-0-storybooks-storybook&quot;&gt;Release v4.0.0 · storybooks/storybook&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · storybooks/storybook&quot;&gt;github.com/storybooks/storybook/releases/tag/v4.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Storybook 4.0.0リリース。&lt;br&gt;
-Babel 7/webacpk 4へのアップデート、Ember/MarkoJS/Mithril/HTML/Svelte/Riotのサポート。&lt;br&gt;
-モバイルの表示改善、theme変数の実装など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/blob/master/MIGRATION.md#from-version-34x-to-40x&quot; title=&quot;storybook/MIGRATION.md at master · storybooks/storybook&quot;&gt;storybook/MIGRATION.md at master · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-4-0-is-here-10b9857fc7de&quot; title=&quot;Storybook 4.0 is here! – Storybook – Medium&quot;&gt;Storybook 4.0 is here! – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-v16-6-0-lazy-memo-and-contexttype-react-blog&quot;&gt;React v16.6.0: lazy, memo and contextType – React Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://reactjs.org/blog/2018/10/23/react-v-16-6.html&quot; title=&quot;React v16.6.0: lazy, memo and contextType – React Blog&quot;&gt;reactjs.org/blog/2018/10/23/react-v-16-6.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React 16.6.0リリース。&lt;br&gt;
-&lt;code&gt;React.memo&lt;/code&gt;、&lt;code&gt;React.lazy&lt;/code&gt;、&lt;code&gt;static contextType&lt;/code&gt;、&lt;code&gt;static getDerivedStateFromError()&lt;/code&gt;のサポートなど。&lt;br&gt;
-StrictModeで廃止予定のAPIのwarningを出すようになるなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;firefox-63-0-see-all-new-features-updates-and-fixes&quot;&gt;Firefox 63.0, See All New Features, Updates and Fixes&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/63.0/releasenotes/&quot; title=&quot;Firefox 63.0, See All New Features, Updates and Fixes&quot;&gt;www.mozilla.org/en-US/firefox/63.0/releasenotes/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 63リリース。&lt;br&gt;
-Web Componentsのサポート、Media Capabilities API、Async Clipboard API のサポート。&lt;br&gt;
-クロスブラウザ互換のために&lt;code&gt;Window.event&lt;/code&gt;プロパティの実装、&lt;code&gt;Clear-Site-Data&lt;/code&gt;ヘッダがデフォルトで有効化など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/63&quot; title=&quot;Firefox 63 for developers - Mozilla | MDN&quot;&gt;Firefox 63 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.com/en-CA/versions/63/&quot; title=&quot;Firefox 63 Site Compatibility | Firefox Site Compatibility&quot;&gt;Firefox 63 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jsdom-changelog-md-at-master-jsdom-jsdom&quot;&gt;jsdom/Changelog.md at master · jsdom/jsdom&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jsdom/jsdom/blob/master/Changelog.md#1300&quot; title=&quot;jsdom/Changelog.md at master · jsdom/jsdom&quot;&gt;github.com/jsdom/jsdom/blob/master/Changelog.md#1300&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;jsdom 13.0.0リリース。&lt;br&gt;
-&lt;code&gt;canvas&lt;/code&gt;パッケージの1.xをサポート終了し、&lt;code&gt;2.x&lt;/code&gt;のみサポート。&lt;br&gt;
-XML serializationのサポート、&lt;code&gt;addEventListener&lt;/code&gt;で&lt;code&gt;passive&lt;/code&gt;オプションのサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;grpc-web-is-going-ga-cloud-native-computing-foundation&quot;&gt;gRPC-Web is going GA - Cloud Native Computing Foundation&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.cncf.io/blog/2018/10/24/grpc-web-is-going-ga/&quot; title=&quot;gRPC-Web is going GA - Cloud Native Computing Foundation&quot;&gt;www.cncf.io/blog/2018/10/24/grpc-web-is-going-ga/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;gRPC-Webが正式にリリース。&lt;br&gt;
-WebブラウザなどからgRPCを呼び出すためのクライアントライブラリ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;gas-webpagetest-webpagetest-web-scratch&quot;&gt;gas-webpagetestでWebPagetestのパフォーマンス計測を自動化、可視化する | Web Scratch&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://efcl.info/2018/10/22/gas-webpagetest/&quot; title=&quot;gas-webpagetestでWebPagetestのパフォーマンス計測を自動化、可視化する | Web Scratch&quot;&gt;efcl.info/2018/10/22/gas-webpagetest/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebPagetestを使ったパフォーマンス計測を自動化、Google DataStudioを使ったデータの可視化について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-intl-relativetimeformat-api-web-google-developers&quot;&gt;The Intl.RelativeTimeFormat API  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/10/intl-relativetimeformat&quot; title=&quot;The Intl.RelativeTimeFormat API  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/10/intl-relativetimeformat&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Intl.RelativeTimeFormat&lt;/code&gt;を相対時間のローカライズについて。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;angular-firebase-qiita&quot;&gt;Angular+Firebaseでチャットアプリを作る - Qiita&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://qiita.com/Yamamoto0525/items/a76ea4b3924eeb82b0f9&quot; title=&quot;Angular+Firebaseでチャットアプリを作る - Qiita&quot;&gt;qiita.com/Yamamoto0525/items/a76ea4b3924eeb82b0f9&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;firebase&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AngularとFirebaseを使ってチャットウェブアプリを作るハンズオン形式の連載&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-qiita&quot;&gt;私のReactのコンポーネント実装アンチパターン - Qiita&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://qiita.com/seya/items/7a0d20da4de5fab14426&quot; title=&quot;私のReactのコンポーネント実装アンチパターン - Qiita&quot;&gt;qiita.com/seya/items/7a0d20da4de5fab14426&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Reactコンポーネントのアンチパターンについて。&lt;br&gt;
-コンポーネントの分割と責務、Propsの渡し方などについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;asking-for-required-annotations-flow-medium&quot;&gt;Asking for required annotations – Flow – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/flow-type/asking-for-required-annotations-64d4f9c1edf8&quot; title=&quot;Asking for required annotations – Flow – Medium&quot;&gt;medium.com/flow-type/asking-for-required-annotations-64d4f9c1edf8&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Flow 0.85.0で修正が入った&amp;quot;missing annotation&amp;quot;についての解説記事。&lt;br&gt;
-型annotationが存在しない場合に0.85.0からはエラーとなる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/flow/releases/tag/v0.85.0&quot; title=&quot;Release v0.85.0 · facebook/flow&quot;&gt;Release v0.85.0 · facebook/flow&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ruhrjs-2018-tobias-koppers-webpack-and-the-challenge-of-webassembly-youtube&quot;&gt;RuhrJS 2018 - Tobias Koppers - webpack and the challenge of WebAssembly - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=k86Z_6_BJy0&quot; title=&quot;RuhrJS 2018 - Tobias Koppers - webpack and the challenge of WebAssembly - YouTube&quot;&gt;www.youtube.com/watch?v&amp;#x3D;k86Z_6_BJy0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpackのWebAssembly対応についての発表。&lt;br&gt;
-WebAssembly APIやWebAssemblyの実行フェーズの解説。&lt;br&gt;
-webpackからwasmファイルを簡単に利用できるようにするため、どのようにwasmを扱うかやCode Splittingの対応についてなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/sokra/slides/blob/master/data/webpack-wasm-challenge.pdf&quot; title=&quot;slides/webpack-wasm-challenge.pdf at master · sokra/slides&quot;&gt;slides/webpack-wasm-challenge.pdf at master · sokra/slides&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-conf-2018-youtube&quot;&gt;React Conf 2018 - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLPxbbTqCLbGE5AihOSExAa4wUM-P42EIJ&quot; title=&quot;React Conf 2018 - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PLPxbbTqCLbGE5AihOSExAa4wUM-P42EIJ&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;イベント&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React Conf 2018の動画まとめ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://conf.reactjs.org/&quot; title=&quot;React Conf 2018 - Fall 2018 in Lake Las Vegas, Nevada&quot;&gt;React Conf 2018 - Fall 2018 in Lake Las Vegas, Nevada&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ast-flow-typescript&quot;&gt;実践AST FlowからTypeScriptへの変換&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://talks.leko.jp/transform-flow-to-typescript-using-ast/#0&quot; title=&quot;実践AST FlowからTypeScriptへの変換&quot;&gt;talks.leko.jp/transform-flow-to-typescript-using-ast/#0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;FlowからTypeScriptへの変換を行うBabelプラグインについてスライド。&lt;br&gt;
-Babelプラグインを書いてコード変換を行う話&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/CureApp/babel-plugin-flow-to-typescript&quot; title=&quot;CureApp/babel-plugin-flow-to-typescript: Babel plugin to convert Flow code into TypeScript&quot;&gt;CureApp/babel-plugin-flow-to-typescript: Babel plugin to convert Flow code into TypeScript&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;suchipi-fs-remote-drop-in-replacement-for-fs-that-lets-you-write-to-the-filesystem-from-the-browser&quot;&gt;suchipi/fs-remote: Drop-in replacement for fs that lets you write to the filesystem from the browser&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/suchipi/fs-remote&quot; title=&quot;suchipi/fs-remote: Drop-in replacement for fs that lets you write to the filesystem from the browser&quot;&gt;github.com/suchipi/fs-remote&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;fs&lt;/code&gt;のブラウザ向け実装と&lt;code&gt;fs&lt;/code&gt;サーバのライブラリ。&lt;br&gt;
-&lt;code&gt;fs&lt;/code&gt;を行うサーバを立て、ブラウザからサーバにXHRやWebSocketsでアクセスする。&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 30 Oct 2018 11:55:37 +0900</pubDate>
-        <link>https://jser.info/2018/10/30/node.js-11.0.0storybook-4.0.0firefox-63/</link>
-        <guid isPermaLink="true">https://jser.info/2018/10/30/node.js-11.0.0storybook-4.0.0firefox-63/</guid>
-        
-        <category>node</category>
-        
-        <category>Storybook</category>
-        
-        <category>firefox</category>
         
         
         <category>JSer</category>

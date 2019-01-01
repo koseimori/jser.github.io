@@ -1,0 +1,396 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-01-01のJS: WebdriverIO v5、Rollup 1.0、Rust + WebAssembly + WebWorker - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/01/01/webdriverio-v5rollup-1.0rust-webassembly-webworker/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-01-01のJS: WebdriverIO v5、Rollup 1.0、Rust + WebAssembly + WebWorker"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-01-01のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://webdriver.io/blog/2018/12/19/webdriverio-v5-released.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">WebdriverIO v5 Released · WebdriverIO</amp-fit-text>
+            <p class="item-contents">WebdriverIO v5リリース。
+<code>wdio</code> CLIは<code>@wdio/cli</code>に移動、コマンドがselectorを受け取らないように、メソッドチェーンではなくasync/awaitベースに変更。
+その他にもコマンドのリネームなどの破壊的な変更を多く含む
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WebdriverIO v5 Released · WebdriverIO" href="https://webdriver.io/blog/2018/12/19/webdriverio-v5-released.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/rollup/rollup/releases/tag/v1.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v1.0.0 · rollup/rollup</amp-fit-text>
+            <p class="item-contents">Rollup 1.0.0リリース。
+破壊的な変更としてオプションのリネーム、<code>bundle.generate</code>の返す値のフォーマットの変更、<code>acorn@6</code>へアップデートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v1.0.0 · rollup/rollup" href="https://github.com/rollup/rollup/releases/tag/v1.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://employment.en-japan.com/engineerhub/entry/2018/12/26/103000">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">「GraphQL」徹底入門 ─ RESTとの比較、API・フロント双方の実装から学ぶ - エンジニアHub｜若手Webエンジニアのキャリアを考える！</amp-fit-text>
+            <p class="item-contents">GraphQLの入門記事。
+GraphQLの利点、欠点、スキーマ/クエリの書き方、VariableやFragmentの使い方について。
+またRelayの拡張や実際にGraphQLを使った実装例についてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="「GraphQL」徹底入門 ─ RESTとの比較、API・フロント双方の実装から学ぶ - エンジニアHub｜若手Webエンジニアのキャリアを考える！" href="https://employment.en-japan.com/engineerhub/entry/2018/12/26/103000" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.bitsrc.io/understanding-throttling-and-debouncing-973131c1ba07">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Understanding Throttling and Debouncing – Bits and Pieces</amp-fit-text>
+            <p class="item-contents">ThrottlingとDebouncingについてそれぞれを実装しながら挙動を理解していく記事
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Understanding Throttling and Debouncing – Bits and Pieces" href="https://blog.bitsrc.io/understanding-throttling-and-debouncing-973131c1ba07" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://qiita.com/3846masa/items/92d24e16ebb5151b08ba">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Comlink + Rust で言語とスレッドの垣根を越えた WebAssembly 開発 - Qiita</amp-fit-text>
+            <p class="item-contents">Rustを使ったWebAssemblyライブラリの開発について。
+Rustを使ったwasmのバインディングの作成、webpackを使ったロード方法について。
+また、処理をメインスレッド外のWebWorkerで行いComlinkでのデータのやり取りする方法について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Comlink + Rust で言語とスレッドの垣根を越えた WebAssembly 開発 - Qiita" href="https://qiita.com/3846masa/items/92d24e16ebb5151b08ba" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://qiita.com/soarflat/items/21b8955f992bf7d38581">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Babel 7 の主な変更点まとめ - Qiita</amp-fit-text>
+            <p class="item-contents">Babel 7の主な変更点やマイグレーション方法について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Babel 7 の主な変更点まとめ - Qiita" href="https://qiita.com/soarflat/items/21b8955f992bf7d38581" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://codezine.jp/article/corner/772">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">基礎からはじめるReact Native入門連載一覧：CodeZine（コードジン）</amp-fit-text>
+            <p class="item-contents">React Nativeについての連載記事。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="基礎からはじめるReact Native入門連載一覧：CodeZine（コードジン）" href="https://codezine.jp/article/corner/772" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://2ality.com/2018/12/nodejs-esm-phases.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ECMAScript modules in Node.js: the new plan</amp-fit-text>
+            <p class="item-contents">Node.jsにおけるES Modulesの扱いについてのまとめ記事。
+<code>.mjs</code>のサポートについてやCommonJSとの相互運用性の問題、今後どのような方針が予定されているのかについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ECMAScript modules in Node.js: the new plan" href="http://2ality.com/2018/12/nodejs-esm-phases.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.infoq.com/jp/articles/javascript-web-development-trends">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScriptとWeb開発に関するInfoQトレンドレポート</amp-fit-text>
+            <p class="item-contents">InfoQのJavaScriptに関するトレンドレポート。
+イノベーター、アーリーアダプター、アーリーマジョリティ、レイトマジョリティ、ラガードに分けて関連するライブラリ/フレームワーク/ツールについて紹介している。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScriptとWeb開発に関するInfoQトレンドレポート" href="https://www.infoq.com/jp/articles/javascript-web-development-trends" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.kabuku.co.jp/software_engineer/typescript-angular-i18n/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">TypeScriptで実現する型安全な多言語対応（Angularを例に） | 株式会社カブク</amp-fit-text>
+            <p class="item-contents">翻訳ファイルをTypeScriptのコードとして表現することで型安全な翻訳定義を作成する方法について。
+翻訳ファイルをコードにするメリットとデメリットについてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="TypeScriptで実現する型安全な多言語対応（Angularを例に） | 株式会社カブク" href="https://www.kabuku.co.jp/software_engineer/typescript-angular-i18n/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/takefumi-yoshii/react-hooks-ogiri">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">takefumi-yoshii/react-hooks-ogiri: Advent calendar of 2018. This is a showreel using a reaction hook.</amp-fit-text>
+            <p class="item-contents">React Hooks APIを使ったUIコンポーネントのサンプル実装集
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="takefumi-yoshii/react-hooks-ogiri: Advent calendar of 2018. This is a showreel using a reaction hook." href="https://github.com/takefumi-yoshii/react-hooks-ogiri" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/FontoXML/fontoxpath">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">FontoXML/fontoxpath: A minimalistic XPath 3.1 implementation in pure JavaScript</amp-fit-text>
+            <p class="item-contents">XPath 3.1、XQuery 3.1の実装ライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="FontoXML/fontoxpath: A minimalistic XPath 3.1 implementation in pure JavaScript" href="https://github.com/FontoXML/fontoxpath" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://jsincss.com/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">jsincss | A JS-in-CSS stylesheet loader</amp-fit-text>
+            <p class="item-contents">JavaScriptからテンプレートでCSSを生成でき、イベントによってリアクティブにCSSを変更できるライブラリ。
+プラグインで拡張できるようになっている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jsincss | A JS-in-CSS stylesheet loader" href="https://jsincss.com/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.codeandweb.com/babeledit">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">BabelEdit - Editor for JSON translation files for Angular &amp; React</amp-fit-text>
+            <p class="item-contents">JSONベースの翻訳ファイルエディタ。
+AngularやReactとの連携としたワークフローが紹介されている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="BabelEdit - Editor for JSON translation files for Angular &amp; React" href="https://www.codeandweb.com/babeledit" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
