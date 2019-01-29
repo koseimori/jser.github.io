@@ -1,0 +1,506 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-01-29のJS: Node.js 11.8.0(Policy機能)、Nuxt.js 2.4.0(TSサポート)、Yarn v2のロードマップ - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/01/29/node.js-11.8.0policynuxt.js-2.4.0tsyarn-v2/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-01-29のJS: Node.js 11.8.0(Policy機能)、Nuxt.js 2.4.0(TSサポート)、Yarn v2のロードマップ"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-01-29のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://blogs.msdn.microsoft.com/typescript/2019/01/23/announcing-typescript-3-3-rc/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing TypeScript 3.3 RC | TypeScript</amp-fit-text>
+            <p class="item-contents">TypeScript 3.3 RCリリース。
+関数呼び出しにおけるUnion Typesの扱いを改善、<code>--build --watch</code>でのインクリメンタルビルドを改善しビルド時間の改善など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing TypeScript 3.3 RC | TypeScript" href="https://blogs.msdn.microsoft.com/typescript/2019/01/23/announcing-typescript-3-3-rc/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://docs.gitlab.com/ee/user/project/packages/npm_registry.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">GitLab NPM Registry | GitLab</amp-fit-text>
+            <p class="item-contents">GitLab　Premiumがnpm registryをサポート
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="GitLab NPM Registry | GitLab" href="https://docs.gitlab.com/ee/user/project/packages/npm_registry.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/karma-runner/karma/releases/tag/v4.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v4.0.0 · karma-runner/karma</amp-fit-text>
+            <p class="item-contents">Karma v4.0.0リリース。
+コードベースでネイティブのasync/awaitを利用するために、Node 6のサポートを終了など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v4.0.0 · karma-runner/karma" href="https://github.com/karma-runner/karma/releases/tag/v4.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/redux-saga/redux-saga/releases/tag/v1.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v1.0.0 · redux-saga/redux-saga</amp-fit-text>
+            <p class="item-contents">redux-saga v1.0.0リリース。
+破壊的な変更としてDeprecatedなAPIを削除、APIのデフォルト値の変更やオプションの変更など。
+また、<code>babel-plugin-redux-saga</code>でスタックトレースの改善や不適切な使い方に対する警告表示の追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v1.0.0 · redux-saga/redux-saga" href="https://github.com/redux-saga/redux-saga/releases/tag/v1.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/8566/release-notes-for-safari-technology-preview-74/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 74 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview 74リリース。
+Fetch APIでabortするための<code>AbortController</code>のサポート、Visual Viewport APIの有効化、U2F HID Authenticationのサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 74 | WebKit" href="https://webkit.org/blog/8566/release-notes-for-safari-technology-preview-74/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/yarnpkg/yarn/issues/6953">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Yarn&#039;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn</amp-fit-text>
+            <p class="item-contents">Yarn 2.0のロードマップについて。
+lockファイルのフォーマット変更、PnPを新規インストール時にデフォルト化、コードベースをTypeScriptでの書き直し、プラグインのサポート、ワークスペース対応の改善、<code>yarn constraints</code>の追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Yarn&#039;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn" href="https://github.com/yarnpkg/yarn/issues/6953" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v11.8.0/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v11.8.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 11.8.0リリース。
+Subresource IntegrityのようなPolicy機能が試験的に実装、node-reportモジュールを本体に取り込み<code>process.report</code>を試験的に実装など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v11.8.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v11.8.0/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://jestjs.io/blog/2019/01/25/jest-24-refreshing-polished-typescript-friendly">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Jest 24: 💅 Refreshing, Polished, TypeScript-friendly · Jest</amp-fit-text>
+            <p class="item-contents">Jest 24リリース。
+<code>@babel/preset-typescript</code>を使ってTypeScriptをサポート、<code>test.todo</code>の追加、エラー表示の改善など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Jest 24: 💅 Refreshing, Polished, TypeScript-friendly · Jest" href="https://jestjs.io/blog/2019/01/25/jest-24-refreshing-polished-typescript-friendly" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.ionicframework.com/introducing-ionic-4-ionic-for-everyone/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Introducing Ionic 4: Ionic for Everyone | The Ionic Blog</amp-fit-text>
+            <p class="item-contents">Ionic 4リリース。
+Angular以外のフレームワークとしてReactとVueをサポート
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introducing Ionic 4: Ionic for Everyone | The Ionic Blog" href="https://blog.ionicframework.com/introducing-ionic-4-ionic-for-everyone/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/avajs/ava/releases/tag/v1.2.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 1.2.0 · avajs/ava</amp-fit-text>
+            <p class="item-contents">AVA 1.2.0リリース。
+テストケースごとにtimeoutを設定できるようになるなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 1.2.0 · avajs/ava" href="https://github.com/avajs/ava/releases/tag/v1.2.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/nuxt/nuxt.js/releases/tag/v2.4.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v2.4.0 · nuxt/nuxt.js</amp-fit-text>
+            <p class="item-contents">Nuxt.js 2.4.0リリース。
+minor、major、EOLなどのリリース方針の決定。
+<code>nuxt-ts</code>によるTypeScriptサポート、<code>&lt;nuxt-link&gt;</code>がviewport内のprefetchをデフォルトで行うように、<code>bin</code>スクリプトの対応など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v2.4.0 · nuxt/nuxt.js" href="https://github.com/nuxt/nuxt.js/releases/tag/v2.4.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/webpack/webpack/issues/8656">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Parsing of \`import()\` fails in 4.29.0 (Compilation issue, related to dynamic import) · Issue #8656 · webpack/webpack</amp-fit-text>
+            <p class="item-contents">webpack 4.29.0 + npmで<code>import()</code>が失敗する問題について。
+npmがacorn + acorn-dynamic-importのpeerDependencyの関係を無視したhoistを行うバグにより、<code>import()</code>がパースできなくなる。yarnでは発生していない、npmに修正のPull Requestがでている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Parsing of \`import()\` fails in 4.29.0 (Compilation issue, related to dynamic import) · Issue #8656 · webpack/webpack" href="https://github.com/webpack/webpack/issues/8656" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2019/01/devtools">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">What&#039;s New In DevTools (Chrome 73)  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">Chrome 73のDevToolsの更新点について。
+Logpointsの追加、コードカバレッジをJSONとして出力できるように、コンソールパネルでキーボードナビゲーションに対応、Geolocationを設定できるようになるなど。
+またWebSocketsの"Frames"を"Messages"にリネームなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="What&#039;s New In DevTools (Chrome 73)  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2019/01/devtools" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://efcl.info/2019/01/26/monorepo-release-flow/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">lernaでのmonorepoにおけるリリースフロー(Fixed/Independent) | Web Scratch</amp-fit-text>
+            <p class="item-contents">lernaを使ったmonorepoにおけるパッケージのリリースフローについて。
+lernaのmode(Fixed/Independent)のち外、monorepoでのpublishまでの流れ、Yarn Workspacesなどの利用についてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="lernaでのmonorepoにおけるリリースフロー(Fixed/Independent) | Web Scratch" href="https://efcl.info/2019/01/26/monorepo-release-flow/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/ericclemmons/polydev">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ericclemmons/polydev: Faster, route-centric development for Node.js apps with built-in Hot Module Replacement.</amp-fit-text>
+            <p class="item-contents">Next.jsのようなディレクトリとルーティングの対応構造をもつNode.jsフレームワーク。
+リクエストがくるまで必要ないPartは読み込まない、HMRに対応してファイルの変更をすぐに反映するなどイテレーションのしやすさを目的に作られている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ericclemmons/polydev: Faster, route-centric development for Node.js apps with built-in Hot Module Replacement." href="https://github.com/ericclemmons/polydev" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/nuxt/nuxt.js/blob/dev/RELEASE_PLAN.md">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">nuxt.js/RELEASE\_PLAN.md at dev · nuxt/nuxt.js</amp-fit-text>
+            <p class="item-contents">Nuxt.jsのリリース方針について。
+minorは4週ごと、majorは6ヶ月ごと、各majorバージョンにセキュリティアップデートがでなくなりEOLとなるのは1年と2週間後となる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="nuxt.js/RELEASE\_PLAN.md at dev · nuxt/nuxt.js" href="https://github.com/nuxt/nuxt.js/blob/dev/RELEASE_PLAN.md" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/LiquidPlayer/LiquidCore">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">LiquidPlayer/LiquidCore: Node.js virtual machine for Android and iOS</amp-fit-text>
+            <p class="item-contents">AndroidとiOSアプリでNode.jsライムタイムを動かすライブラリ。
+iOS向けにはV82JSC(JavaScript Core)のレイヤーを実装している
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="LiquidPlayer/LiquidCore: Node.js virtual machine for Android and iOS" href="https://github.com/LiquidPlayer/LiquidCore" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/reduxjs/redux-starter-kit">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">reduxjs/redux-starter-kit: A simple set of tools to make using Redux easier</amp-fit-text>
+            <p class="item-contents">Redux上に作られたフレームワーク。
+boilerplate codeを減らし、Reduxにおける一般的なユースケースをサポートするが目的。
+immerを組み込んだReducerやActionの作成、selectorのサポートなど。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="reduxjs/redux-starter-kit: A simple set of tools to make using Redux easier" href="https://github.com/reduxjs/redux-starter-kit" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/egoist/import-http">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">egoist/import-http: Import modules from URL instead of local node\_modules</amp-fit-text>
+            <p class="item-contents">ブラウザやdenoのようにmoduleを<code>import m from "https://"</code>のように指定するためのwebpack, rollupプラグイン。
+モジュールのダウンロード、キャッシュ、import先の書き換えを行う。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="egoist/import-http: Import modules from URL instead of local node\_modules" href="https://github.com/egoist/import-http" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
