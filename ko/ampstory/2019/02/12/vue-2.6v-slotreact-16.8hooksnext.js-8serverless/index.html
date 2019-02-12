@@ -1,0 +1,403 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-02-12のJS: Vue 2.6(v-slot)、React 16.8(Hooks)、Next.js 8(serverless) - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/02/12/vue-2.6v-slotreact-16.8hooksnext.js-8serverless/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-02-12のJS: Vue 2.6(v-slot)、React 16.8(Hooks)、Next.js 8(serverless)"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-02-12のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://www.polymer-project.org/blog/2019-02-05-lit-element-and-lit-html-release">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Lightning-fast templates &amp; Web Components: lit-html &amp; LitElement - Polymer Project</amp-fit-text>
+            <p class="item-contents">lit-html 1.0とLitElement 2.0リリース。
+lit-htmlはTagged Templateを使ったHTMLテンプレート、LitElementはWeb Componentベースのクラスライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Lightning-fast templates &amp; Web Components: lit-html &amp; LitElement - Polymer Project" href="https://www.polymer-project.org/blog/2019-02-05-lit-element-and-lit-html-release" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/the-vue-point/vue-2-6-released-66aa6c8e785e">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Vue 2.6 released! – The Vue Point – Medium</amp-fit-text>
+            <p class="item-contents">Vue 2.6リリース。
+<code>v-slot</code>ディレクティブの追加、Dynamic Directive Argumentsのサポート。
+ライフサイクルhookがRejectedなPromiseを返した場合にエラーハンドリングできるように、コンパイルエラー表示の改善。
+またes module版がパッケージに含まれるように
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Vue 2.6 released! – The Vue Point – Medium" href="https://medium.com/the-vue-point/vue-2-6-released-66aa6c8e785e" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://reactjs.org/blog/2019/02/06/react-v16.8.0.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React v16.8: The One With Hooks – React Blog</amp-fit-text>
+            <p class="item-contents">React 16.8リリース。
+Hooksがデフォルトで有効化された。
+またHooksのテスト向けに<code>ReactTestUtils.act()</code>が追加された。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React v16.8: The One With Hooks – React Blog" href="https://reactjs.org/blog/2019/02/06/react-v16.8.0.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://jshint.com/blog/2019-02-05/release-2-10-0/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">New Release: 2.10.0</amp-fit-text>
+            <p class="item-contents">JSHint 2.10.0リリース。
+<code>esversion</code>オプションを追加し<code>7</code>,<code>8</code>,<code>9</code>を指定できるように。
+async functionなどの構文をサポート
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="New Release: 2.10.0" href="https://jshint.com/blog/2019-02-05/release-2-10-0/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.chromium.org/2019/02/chrome-73-beta-constructable.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Chromium Blog: Chrome 73 Beta: Constructable stylesheets, a new RegExp function, and passive mouse events</amp-fit-text>
+            <p class="item-contents">Chrome 73 Betaリリース。
+CSSOMを操作するConstructable Stylesheet Objectsのサポート、String#matchAllのサポート、<code>::part</code>のサポート。
+<code>wheel</code>イベントがデフォルトで<code>passive</code>となるように変更など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chromium Blog: Chrome 73 Beta: Constructable stylesheets, a new RegExp function, and passive mouse events" href="https://blog.chromium.org/2019/02/chrome-73-beta-constructable.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/h5bp/html5-boilerplate/releases/tag/v7.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v7.0.0 · h5bp/html5-boilerplate</amp-fit-text>
+            <p class="item-contents">ウェブページのテンプレートプロジェクトのhtml5-boilerplate 7.0.0リリース。
+IE9/10に関する記述を削除、<code>theme-color</code>のmetaタグを追加、<code>secutiry.txt</code>についてを追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v7.0.0 · h5bp/html5-boilerplate" href="https://github.com/h5bp/html5-boilerplate/releases/tag/v7.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://devexpress.github.io/testcafe/blog/testcafe-v1-0-0-released.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">TestCafe v1.0.0 Released | TestCafe</amp-fit-text>
+            <p class="item-contents">TestCafe 1.0.0リリース。
+テストの実行を動画として録画できるように、<code>.testcaferc.json</code>の設定ファイルを追加、Live modeの統合、型定義ファイルの追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="TestCafe v1.0.0 Released | TestCafe" href="https://devexpress.github.io/testcafe/blog/testcafe-v1-0-0-released.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nextjs.org/blog/next-8">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Blog - Next.js 8 | Next.js</amp-fit-text>
+            <p class="item-contents">Next.js 8リリース。
+Serverlessモードの追加、ビルド時のメモリ使用量改善、<code>env</code>で環境変数を定義できるように、出力するHTMLファイルサイズの改善。
+<code>&lt;Head&gt;</code>コンポーネントの重複の解決、<code>crossOrigin</code>オプションの追加、CSP対応など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Blog - Next.js 8 | Next.js" href="https://nextjs.org/blog/next-8" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://swc-project.github.io/blog/2019/02/08/Introducing-swc-1.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Introducing swc 1.0 · swc</amp-fit-text>
+            <p class="item-contents">Rust製のJavaScript Transpiler/Compilerのswc 1.0リリース。
+ECMAScript 2019、JSX、TypeScriptサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introducing swc 1.0 · swc" href="https://swc-project.github.io/blog/2019/02/08/Introducing-swc-1.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://words.steveklabnik.com/what-s-next-for-semver">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">What’s next for SemVer</amp-fit-text>
+            <p class="item-contents">SemVerプロジェクトにnpmやCargoなどのパッケージ管理ツールの人中心のGitHub Teamが作成され、RFCプロセスでの運用が開始されたという話
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="What’s next for SemVer" href="https://words.steveklabnik.com/what-s-next-for-semver" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2019/02/scrolling-intervention">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Making wheel scrolling fast by default  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">Chrome 73から<code>wheel</code>イベントがデフォルトで<code>{ passive: true }</code>となる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Making wheel scrolling fast by default  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2019/02/scrolling-intervention" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://packtracker.io/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Webpack bundle analysis, for every commit</amp-fit-text>
+            <p class="item-contents">webpackのbundleサイズの分析を行うウェブサービス。
+GitHub Checkに対応してコミットごとのbundleサイズやハッシュの変更によるキャッシュヒットの有無などをビジュアライズできる。
+OSSプロジェクトでは無料で利用できる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Webpack bundle analysis, for every commit" href="https://packtracker.io/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/pikapkg/pack">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">pikapkg/pack: 📦⚡️ npm package building, reimagined. https://www.pikapkg.com/blog/introducing-pika-pack/</amp-fit-text>
+            <p class="item-contents">npmパッケージ公開向けにNodeやブラウザ、moduleなど様々な種類に向けたライブラリのビルドを行うbundleツール。
+それぞれのビルド設定はプラグインになっており、必要なものをパイプラインに定義してまとめてビルドできる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="pikapkg/pack: 📦⚡️ npm package building, reimagined. https://www.pikapkg.com/blog/introducing-pika-pack/" href="https://github.com/pikapkg/pack" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/notion-cli/notion">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">notion-cli/notion: Notion: the hassle-free JavaScript toolchain manager</amp-fit-text>
+            <p class="item-contents">Rust製のNode.jsバージョン管理ツール。
+プロジェクトごとにNodeバージョンを切り替える仕組みやnpmで公開されているコマンドラインツールをインストールして利用する仕組みなどを持っている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="notion-cli/notion: Notion: the hassle-free JavaScript toolchain manager" href="https://github.com/notion-cli/notion" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
