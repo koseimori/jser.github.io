@@ -1,0 +1,420 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-02-19のJS: Mocha 6.0.0、Fly(Edge Applications)、サードパーティJavaScriptの実行コスト - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/02/19/mocha-6.0.0flyedge-applicationsjavascript/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-02-19のJS: Mocha 6.0.0、Fly(Edge Applications)、サードパーティJavaScriptの実行コスト"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-02-19のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://blog.getbootstrap.com/2019/02/11/bootstrap-4-3-0/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Bootstrap 4.3.0 | Bootstrap Blog</amp-fit-text>
+            <p class="item-contents">Bootstrap 4.3.0リリース。
+<code>.stretched-link</code>、<code>.text-break</code>、<code>.rounded-sm</code>、<code>.modal-dialog-scrollable</code>、<code>.list-group-horizontal</code>のクラスの追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Bootstrap 4.3.0 | Bootstrap Blog" href="https://blog.getbootstrap.com/2019/02/11/bootstrap-4-3-0/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://npm.community/t/release-npm-6-8-0/5352">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release: npm@6.8.0 - 📣 announcements - npm forum</amp-fit-text>
+            <p class="item-contents">npm 6.8.0リリース。
+monorepo対応として<code>repository</code>フィールドの<code>directory</code>プロパティでのパッケージディレクトリの指定についてのドキュメントを追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release: npm@6.8.0 - 📣 announcements - npm forum" href="https://npm.community/t/release-npm-6-8-0/5352" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v11.10.0/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v11.10.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node v11.10.0リリース。
+npm 6.7.0を同梱するように、<code>perf_hooks</code>にhistogramベースのAPIを追加、<code>tls</code>モジュールのクライアントに<code>session</code>イベントを追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v11.10.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v11.10.0/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/rollup/rollup/releases/tag/v1.2.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v1.2.0 · rollup/rollup</amp-fit-text>
+            <p class="item-contents">Rollup 1.2.0リリース。
+Hoisting時に変数名を衝突しないようにするためのリネームロジックを再実装、configファイルをCJSとしてexportしてもエラーとならないように修正など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v1.2.0 · rollup/rollup" href="https://github.com/rollup/rollup/releases/tag/v1.2.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mochajs/mocha/releases/tag/v6.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v6.0.0 · mochajs/mocha</amp-fit-text>
+            <p class="item-contents">Mocha 6.0.0リリース。
+Node.js 4のサポート終了、非推奨のコマンドラインオプションを削除、<code>Mocha.unloadFile</code>の追加、RCファイルでの設定をサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v6.0.0 · mochajs/mocha" href="https://github.com/mochajs/mocha/releases/tag/v6.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2019/02/hotpath-with-wasm">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Replacing a hot path in your app&#039;s JavaScript with WebAssembly  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">処理速度が重要な部分だけをwasmで書くという話。
+JavaScript、C、AssemblyScript、Rustの比較
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Replacing a hot path in your app&#039;s JavaScript with WebAssembly  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2019/02/hotpath-with-wasm" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2019/02/trusted-types">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Trusted Types help prevent Cross-Site Scripting  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">Chrome 73でTrusted Typesがフラグ付きで実装され、76までOrigin Trialとして試せる。
+TrustTypesはXSSのsinkとなる部分をポリシーでチェックする。
+ポリシーに一致しない場合はエラーに落とすことで回避するAPIと仕組み
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Trusted Types help prevent Cross-Site Scripting  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2019/02/trusted-types" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2019/02/constructable-stylesheets">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Constructable Stylesheets: seamless reusable styles  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">Chrome 73で実装されたConstructable Stylesheetsについて。
+共有できるCSSオブジェクトを作成して複数のShadow RootsやDocumentに対して当てられるAPI。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Constructable Stylesheets: seamless reusable styles  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2019/02/constructable-stylesheets" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2019/02/rendering-on-the-web">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Rendering on the Web  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">CSR(クライアントサイドレンダリング)からSSR(サーバサイドレンダリング)などのウェブサイトのレンダリング手法やそれぞれの利点や欠点などをまとめた記事。
+またService Workerを前提としたTrisomorphic Renderingについてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Rendering on the Web  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2019/02/rendering-on-the-web" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/cerebral/overmind">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">cerebral/overmind: Overmind - Frictionless state management</amp-fit-text>
+            <p class="item-contents">ステート管理ライブラリ。
+副作用をeffectsとして実装し、actionを発行して、Proxyを使ったStateの変更検知してViewの更新を行う。
+React、Vue、Angularに対応したバインディングと開発者ツールが用意されている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="cerebral/overmind: Overmind - Frictionless state management" href="https://github.com/cerebral/overmind" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/patrickhulce/third-party-web">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">patrickhulce/third-party-web: Summary of which third party scripts are most responsible for excessive JavaScript execution on the web.</amp-fit-text>
+            <p class="item-contents">HTTP Archiveのデータを元にしたウェブサイトにおけるサードパーティスクリプトの実行コストについての調査結果。
+広告、アクセス解析、SNS、動画などの項目別に利用数や実行にかかった平均の時間などのまとめ。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="patrickhulce/third-party-web: Summary of which third party scripts are most responsible for excessive JavaScript execution on the web." href="https://github.com/patrickhulce/third-party-web" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://fly.io/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Fly · Edge Applications</amp-fit-text>
+            <p class="item-contents">Edge ApplicationをJavaScriptで書けるCDNサービス。
+OSSで公開されているfly runtimeを使いLB、Cache、TLS、Networkに関する処理をEdgeで行える。
+Service Worker互換のAPIも用意されていて、ローカルでもserverを立ててテストできるようになっている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Fly · Edge Applications" href="https://fly.io/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/postlight/mercury-parser">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">postlight/mercury-parser: 📜 Extracting content from the chaos of the web.</amp-fit-text>
+            <p class="item-contents">ウェブサイトからメタデータやメインコンテンツを抽出するライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="postlight/mercury-parser: 📜 Extracting content from the chaos of the web." href="https://github.com/postlight/mercury-parser" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/transloadit/uppy">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">transloadit/uppy: The next open source file uploader for web browsers</amp-fit-text>
+            <p class="item-contents">プラグインで拡張できるファイルアップロードライブラリ。
+UI、ローカルやリモートからのリソースの取得やアップロード先などをプラグインで指定できる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="transloadit/uppy: The next open source file uploader for web browsers" href="https://github.com/transloadit/uppy" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/modernserf/zebu">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">modernserf/zebu: A compiler for little languages in tagged template strings</amp-fit-text>
+            <p class="item-contents">tagged template literalを使いミニ言語を作成するライブラリ。 構文を定義して、それを扱うtagged funcitonを作成する。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="modernserf/zebu: A compiler for little languages in tagged template strings" href="https://github.com/modernserf/zebu" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
