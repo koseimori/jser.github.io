@@ -5,9 +5,274 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 19 Feb 2019 10:12:32 +0900</pubDate>
-    <lastBuildDate>Tue, 19 Feb 2019 10:12:32 +0900</lastBuildDate>
+    <pubDate>Tue, 26 Feb 2019 11:49:45 +0900</pubDate>
+    <lastBuildDate>Tue, 26 Feb 2019 11:49:45 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-02-26のJS: yarn v2候補(berry)、Fastify v2、TSLintの今後</title>
+        <description>&lt;p&gt;JSer.info #424 - &lt;a href=&quot;https://yarnpkg.com/&quot;&gt;yarn&lt;/a&gt; v2のソースコードとなりリポジトリが公開されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/berry&quot;&gt;yarnpkg/berry: 📦🐈 A modern, fast, reliable, package manager; part of the Yarn organization&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;次のIssueでも書かれているように、v1とは別のリポジトリにしているのはIssueのtriageをしやすくするためだそうです。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The codename for these changes is Berry&lt;br&gt;
+-- &lt;a href=&quot;https://github.com/yarnpkg/yarn/issues/6953&quot;&gt;https://github.com/yarnpkg/yarn/issues/6953&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&amp;quot;Berry&amp;quot;という名前はv2に向けた変更のコードネームです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/berry/issues/1&quot; title=&quot;👑 Say hello to Yarn v2 · Issue #1 · yarnpkg/berry&quot;&gt;👑 Say hello to Yarn v2 · Issue #1 · yarnpkg/berry&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/yarn/issues/6953#issuecomment-466589196&quot; title=&quot;Yarn&amp;#39;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&quot;&gt;Yarn&amp;#39;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;v2(berry)では&lt;a href=&quot;https://github.com/yarnpkg/yarn/issues/6953&quot;&gt;Yarn&amp;#39;s Future - v2 and beyond&lt;/a&gt;で予定されていたものが実装されている段階のようです。&lt;/p&gt;
+
+&lt;p&gt;コードベースがTypeScriptで書き直されていて、monorepoになっています。&lt;br&gt;
+lockファイルをymlサブセットとなるような&lt;a href=&quot;https://github.com/yarnpkg/berry/blob/master/packages/berry-parsers/sources/syml.ts&quot;&gt;syml&lt;/a&gt;というフォーマットを作り実装しています。また、プラグインの仕組みが追加され、PnPやnpm(&lt;code&gt;pacakge-lock.json&lt;/code&gt;を扱う)などの処理はプラグインとして実装されています。&lt;br&gt;
+また、ワークスペースの改善として&lt;a href=&quot;https://github.com/yarnpkg/berry/blob/master/docs/workspaces-constraints.md&quot;&gt;Constraints&lt;/a&gt;というProlog(実際には&lt;a href=&quot;https://github.com/jariazavalverde/tau-prolog&quot;&gt;tau-prolog&lt;/a&gt;)を使った制約を扱う&lt;a href=&quot;https://github.com/yarnpkg/berry/tree/master/packages/plugin-constraints&quot;&gt;プラグイン&lt;/a&gt;が追加されています。ワークスペース間の依存などのルールをPrologを使って記述して、より効率的に扱えるようにするのが目的のようです。&lt;/p&gt;
+
+&lt;p&gt;興味がある人は&lt;a href=&quot;https://github.com/yarnpkg/berry#install&quot;&gt;Install&lt;/a&gt;して試したり、&lt;a href=&quot;https://github.com/yarnpkg/berry/issues&quot;&gt;Issue&lt;/a&gt;を見てみると良いかもしれません。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/issues/29288&quot;&gt;TypeScriptの2019 Juneロードマップ&lt;/a&gt;でTSLintではなくESLintのサポートを強化していくという話が行われ、&lt;a href=&quot;https://github.com/typescript-eslint/typescript-eslint&quot;&gt;typescript-eslint&lt;/a&gt;というプロジェクトが作成され&lt;a href=&quot;https://eslint.org/blog/2019/01/future-typescript-eslint&quot;&gt;ESLintチームと協力&lt;/a&gt;していくことが発表されていました。&lt;/p&gt;
+
+&lt;p&gt;このような背景もあり、TSLintのメンテナーからTSLintの今後について記事が公開されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/palantir/tslint-in-2019-1a144c2317a9&quot; title=&quot;TSLint in 2019 – Palantir Blog – Medium&quot;&gt;TSLint in 2019 – Palantir Blog – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/palantir/tslint/issues/4534&quot; title=&quot;Roadmap: TSLint -&amp;gt; ESLint · Issue #4534 · palantir/tslint&quot;&gt;Roadmap: TSLint -&amp;gt; ESLint · Issue #4534 · palantir/tslint&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TSLintは2019年中には非推奨となり(今すぐではないです)、今後はESLintへの移行パスを整備していくという話が書かれています。&lt;br&gt;
+&lt;a href=&quot;https://github.com/typescript-eslint/typescript-eslint&quot;&gt;typescript-eslint&lt;/a&gt;(ESLintのTypeScript対応)は開発途中であるため、TSLintとの互換となるようなルールがない部分もあります。そのため、TSLint自体はまだしばらくはメンテンスを続けていくという方針についても書かれています。&lt;/p&gt;
+
+&lt;p&gt;現状の&lt;a href=&quot;https://github.com/typescript-eslint/typescript-eslint&quot;&gt;typescript-eslint&lt;/a&gt;の動作については、次の記事も参照して見てください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://teppeis.hatenablog.com/entry/2019/02/typescript-eslint&quot;&gt;@typescript-eslint ことはじめ - teppeis blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-version-3-5-0-knockout-knockout&quot;&gt;Release Version 3.5.0 · knockout/knockout&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/knockout/knockout/releases/tag/v3.5.0&quot; title=&quot;Release Version 3.5.0 · knockout/knockout&quot;&gt;github.com/knockout/knockout/releases/tag/v3.5.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Knockout 3.5.0リリース。&lt;br&gt;
+&lt;code&gt;foreach&lt;/code&gt;バインディングの挙動の変更とパフォーマンスの改善、&lt;code&gt;ko.when&lt;/code&gt;がPromiseを返すようになるなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-npm-6-9-0-next-0-announcements-npm-forum&quot;&gt;Release: &lt;a href=&quot;mailto:npm@6.9.0-next.0&quot;&gt;npm@6.9.0-next.0&lt;/a&gt; - 📣 announcements - npm forum&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://npm.community/t/release-npm-6-9-0-next-0/5553&quot; title=&quot;Release: npm@6.9.0-next.0 - 📣 announcements - npm forum&quot;&gt;npm.community/t/release-npm-6-9-0-next-0/5553&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm 6.9.0-next.0リリース。&lt;br&gt;
+パッケージに別名をつけることができるpackage alias機能をサポート、&lt;code&gt;--before&lt;/code&gt;オプションをサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/npm/cli/pull/3&quot; title=&quot;install: add support for package aliases by zkat · Pull Request #3 · npm/cli&quot;&gt;install: add support for package aliases by zkat · Pull Request #3 · npm/cli&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-npm-blog-managing-javascript-in-the-enterprise&quot;&gt;The npm Blog — Managing JavaScript in the Enterprise&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.npmjs.org/post/182958759735/managing-javascript-in-the-enterprise&quot; title=&quot;The npm Blog — Managing JavaScript in the Enterprise&quot;&gt;blog.npmjs.org/post/182958759735/managing-javascript-in-the-enterprise&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm Enterpriseの正式リリース。&lt;br&gt;
+SSO認証の対応やprivate registryのサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/products/enterprise&quot; title=&quot;npm | Enterprise&quot;&gt;npm | Enterprise&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;dsherret-conditional-type-checks-types-for-testing-typescript-types&quot;&gt;dsherret/conditional-type-checks: Types for testing TypeScript types.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/dsherret/conditional-type-checks&quot; title=&quot;dsherret/conditional-type-checks: Types for testing TypeScript types.&quot;&gt;github.com/dsherret/conditional-type-checks&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Conditional Typeを使いTypeScriptの型Assertionを行うライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;fastify-v2-0-0-is-here-fastify-medium&quot;&gt;Fastify v2.0.0 is here – Fastify – Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@fastifyjs/fastify-v2-0-0-is-here-8275d613fba4&quot; title=&quot;Fastify v2.0.0 is here – Fastify – Medium&quot;&gt;medium.com/@fastifyjs/fastify-v2-0-0-is-here-8275d613fba4&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsフレームワークのFastify 2.0.0リリース。&lt;br&gt;
+&lt;code&gt;onError&lt;/code&gt;、&lt;code&gt;preParsing&lt;/code&gt;、&lt;code&gt;preSerialization&lt;/code&gt;、&lt;code&gt;preValidation&lt;/code&gt; hookの追加。&lt;br&gt;
+pluginのロードのタイムアウトを設定、シグネチャの一貫性の修正など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/fastify/fastify/releases/tag/v2.0.0&quot; title=&quot;Release v2.0.0 · fastify/fastify&quot;&gt;Release v2.0.0 · fastify/fastify&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;yarnpkg-berry-a-modern-fast-reliable-package-manager-part-of-the-yarn-organization&quot;&gt;yarnpkg/berry: 📦🐈 A modern, fast, reliable, package manager; part of the Yarn organization&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yarnpkg/berry&quot; title=&quot;yarnpkg/berry: 📦🐈 A modern, fast, reliable, package manager; part of the Yarn organization&quot;&gt;github.com/yarnpkg/berry&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;yarn v2となるソースコードのリポジトリが公開された。&lt;br&gt;
+v1のリポジトリと分けているのは、issueをハンドリングしやすくするため。&lt;br&gt;
+現在はロードマップに予定した機能はある程度実装された状態で、一部の機能やドキュメントが足りていない状況。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/yarn/issues/6953#issuecomment-466589196&quot; title=&quot;Yarn&amp;amp;#x27;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&quot;&gt;Yarn&amp;#39;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/berry/issues/1&quot; title=&quot;👑 Say hello to Yarn v2 · Issue #1 · yarnpkg/berry&quot;&gt;👑 Say hello to Yarn v2 · Issue #1 · yarnpkg/berry&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;addyosmani-com-javascript-loading-priorities-in-chrome&quot;&gt;AddyOsmani.com - JavaScript Loading Priorities in Chrome&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://addyosmani.com/blog/script-priorities/&quot; title=&quot;AddyOsmani.com - JavaScript Loading Priorities in Chrome&quot;&gt;addyosmani.com/blog/script-priorities/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;link rel=preloadとscript要素の defer/async属性を組み合わせ際のLoadingやExecution Priorityについてまとめた記事&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;how-supports-works-css-tricks&quot;&gt;How @supports Works | CSS-Tricks&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://css-tricks.com/how-supports-works/&quot; title=&quot;How @supports Works | CSS-Tricks&quot;&gt;css-tricks.com/how-supports-works/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSSの&lt;code&gt;@supports&lt;/code&gt;の使い方やユースケースについて。&lt;br&gt;
+また、JavaScriptからのCSS Supportsを使ったFeature Detectについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;intelligent-tracking-prevention-2-1-webkit&quot;&gt;Intelligent Tracking Prevention 2.1 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8613/intelligent-tracking-prevention-2-1/&quot; title=&quot;Intelligent Tracking Prevention 2.1 | WebKit&quot;&gt;webkit.org/blog/8613/intelligent-tracking-prevention-2-1/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari 12.1で導入されるITP 2.1について。 Partitioned Cookiesのサポート終了、document.cookieで作成したクッキーは生存期間が7日間のcapがつくように、DNTの削除など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;tslint-in-2019-palantir-blog-medium&quot;&gt;TSLint in 2019 – Palantir Blog – Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/palantir/tslint-in-2019-1a144c2317a9&quot; title=&quot;TSLint in 2019 – Palantir Blog – Medium&quot;&gt;medium.com/palantir/tslint-in-2019-1a144c2317a9&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TSLintの今後について。&lt;br&gt;
+今後TSLintは非推奨となり、TSLintからESLintへの移行パスを整備していくという話&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-a-javascript-library-for-building-user-interfaces&quot;&gt;React – A JavaScript library for building user interfaces&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ja.reactjs.org/&quot; title=&quot;React – A JavaScript library for building user interfaces&quot;&gt;ja.reactjs.org/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;翻訳&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Reactサイトの日本語訳&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactjs.org/blog/2019/02/23/is-react-translated-yet.html&quot; title=&quot;Is React Translated Yet? ¡Sí! Sim! はい！ – React Blog&quot;&gt;Is React Translated Yet? ¡Sí! Sim! はい！ – React Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;patr0nus-deskgap-a-cross-platform-desktop-app-framework-based-on-node-js-and-the-system-webview&quot;&gt;patr0nus/DeskGap: A cross-platform desktop app framework based on Node.js and the system webview&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/patr0nus/DeskGap/&quot; title=&quot;patr0nus/DeskGap: A cross-platform desktop app framework based on Node.js and the system webview&quot;&gt;github.com/patr0nus/DeskGap/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;mac&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;windows&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;OSのWebViewの仕組みを利用したElectronライクなデスクトップアプリ作成フレームワーク。&lt;br&gt;
+Chromiumなどをbundleしないが、Node.jsをbundleしている。&lt;br&gt;
+フレームワーク上では制限されたElectronライクなAPIとNode.jsの機能が利用できる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;klaussinani-qoa-minimal-interactive-command-line-prompts&quot;&gt;klaussinani/qoa: 💬 Minimal interactive command-line prompts&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/klaussinani/qoa&quot; title=&quot;klaussinani/qoa: 💬 Minimal interactive command-line prompts&quot;&gt;github.com/klaussinani/qoa&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ターミナルで対話的なインタフェースを提供するNode.jsライブラリ。&lt;br&gt;
+Confirm、Quiz、Secure Promptなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jariazavalverde-tau-prolog-an-open-source-prolog-interpreter-in-javascript&quot;&gt;jariazavalverde/tau-prolog: An open source Prolog interpreter in JavaScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jariazavalverde/tau-prolog&quot; title=&quot;jariazavalverde/tau-prolog: An open source Prolog interpreter in JavaScript&quot;&gt;github.com/jariazavalverde/tau-prolog&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;program&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;PrologインタプリタのJavaScript実装&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;fagbokforlaget-simple-fs-handles-files-on-indexeddb-like-you-would-do-in-node-js-promise&quot;&gt;fagbokforlaget/simple-fs: Handles files on indexeddb like you would do in node.js (promise)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/fagbokforlaget/simple-fs&quot; title=&quot;fagbokforlaget/simple-fs: Handles files on indexeddb like you would do in node.js (promise)&quot;&gt;github.com/fagbokforlaget/simple-fs&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;IndexedDBを使ったファイルシステムライクなAPIを持ったブラウザ向けライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;namics-webpack-config-plugins-provide-best-practices-for-webpack-loader-configurations&quot;&gt;namics/webpack-config-plugins: Provide best practices for webpack loader configurations&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/namics/webpack-config-plugins&quot; title=&quot;namics/webpack-config-plugins: Provide best practices for webpack loader configurations&quot;&gt;github.com/namics/webpack-config-plugins&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;設定&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webpackのloader設定をまとめたプラグイン。&lt;br&gt;
+Babel、TypeScript、Sass、Font、Imageなどのビルドを行うプラグインが用意されている&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 26 Feb 2019 11:02:23 +0900</pubDate>
+        <link>https://jser.info/2019/02/26/yarn-v2berryfastify-v2tslint/</link>
+        <guid isPermaLink="true">https://jser.info/2019/02/26/yarn-v2berryfastify-v2tslint/</guid>
+        
+        <category>yarn</category>
+        
+        <category>node</category>
+        
+        <category>typescript</category>
+        
+        <category>eslint</category>
+        
+        <category>tslint</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-02-19のJS: Mocha 6.0.0、Fly(Edge Applications)、サードパーティJavaScriptの実行コスト</title>
@@ -2253,606 +2518,6 @@ AngularやReactとの連携としたワークフローが紹介されている&l
         
         
         <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>JSerレポート #2: Node.jsコアモジュールとBundler(webpackなど)によるpolyfillのギャップ</title>
-        <description>&lt;p&gt;このレポートは、現在進行形で機能追加や仕様変更が行われているNode.jsコアモジュールとブラウザ向けpolyfillにおける挙動の違い(ギャップ)が広がってきている問題について調べたものです。&lt;/p&gt;
-
-&lt;p&gt;ここでは &lt;a href=&quot;https://nodejs.org/api/&quot;&gt;https://nodejs.org/api/&lt;/a&gt; に掲載されているうち &lt;code&gt;assert&lt;/code&gt;のようにNode.jsにバンドルされているモジュールのことをNode.jsコアモジュールと呼びます。コアモジュールはNode.jsでの利用のみを想定しているため、Node.jsに依存した処理を多く含んでいます。そのため、コアモジュールのコードをコピーしてブラウザなどで動かすことは難しいです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/webpack/webpack&quot; title=&quot;webpack&quot;&gt;webpack&lt;/a&gt;や&lt;a href=&quot;https://github.com/substack/node-browserify&quot; title=&quot;browserify&quot;&gt;browserify&lt;/a&gt;などのbundlerは、コード中にあるコアモジュールを代替モジュールへとすり替えます。この代替モジュールはブラウザ向けpolyfillライブラリとよび、このpolyfillライブラリはブラウザで動くようにNode.jsコアモジュールと同等また空のダミー実装をしています。&lt;/p&gt;
-
-&lt;h2 id=&quot;node-js-polyfill&quot;&gt;Node.jsコアモジュールのpolyfillライブラリの例&lt;/h2&gt;
-
-&lt;p&gt;webpackとbrowserifyは変換時に、コード中に現れる&lt;code&gt;assert&lt;/code&gt;モジュールを&lt;a href=&quot;https://github.com/browserify/commonjs-assert&quot; title=&quot;commonjs-assert&quot;&gt;commonjs-assert&lt;/a&gt;というpolyfillライブラリに自動的にすり替えます。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;assert&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;というコードはwebpackなどでbundleすると、次のように書いたのと同じようにモジュールの差し替えが行われます。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;commonjs-assert&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;webpackでは、このNode.jsコアモジュールへの差し替えを&lt;a href=&quot;https://webpack.js.org/configuration/node/&quot;&gt;node&lt;/a&gt;オプションによって設定が可能です。&lt;/p&gt;
-
-&lt;h2 id=&quot;polyfill-library&quot;&gt;polyfill library&lt;/h2&gt;
-
-&lt;p&gt;webpackとbrowserifyが利用するpolyfillライブラリは次の場所で管理されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;webpack:
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/webpack/node-libs-browser&quot; title=&quot;webpack/node-libs-browser: The node core libs for in browser usage.&quot;&gt;webpack/node-libs-browser: The node core libs for in browser usage.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;browserify:
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/substack/browserify-handbook#builtins&quot;&gt;substack/browserify-handbook: how to build modular applications with browserify&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/substack/node-browserify/blob/master/lib/builtins.js&quot;&gt;node-browserify/builtins.js at master · substack/node-browserify&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;どちらも基本的に利用しているpolyfill自体はほとんど同じです。  &lt;/p&gt;
-
-&lt;h2 id=&quot;part-ce8bd090803bc3cf&quot;&gt;機能のギャップ&lt;/h2&gt;
-
-&lt;p&gt;このレポートの本題であるNode.jsコアモジュールとブラウザ向けpolyfillのギャップがあったものをまとめた表です。&lt;br&gt;
-ここでいうギャップというのは、次のようなケースを並べています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Node.jsコアモジュールで追加されたAPIがpolyfillライブラリには存在しない&lt;/li&gt;
-&lt;li&gt;Node.jsコアモジュールとpolyfillライブラリで挙動が異なる&lt;/li&gt;
-&lt;li&gt;利用されているpolyfillライブラリがDeprecatedになっている&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;これらの調査結果については次のリポジトリで管理しています。最新の状況もこのリポジトリに反映しています。&lt;br&gt;
-そのため次の表は古くなっている可能性があります。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/azu/node-browser-polyfill-gap&quot; title=&quot;azu/node-browser-polyfill-gap: The gap issue between Node.js and Browser polyfills.&quot;&gt;azu/node-browser-polyfill-gap: The gap issue between Node.js and Browser polyfills.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;注記: 依存しているpolyfillそのものはアップデートで解決されている場合があります。しかし、bundlerが古いバージョンを使っている場合があります。&lt;/p&gt;
-
-&lt;table border=&quot;1&quot;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;Node.js&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;Browser polyfill&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;Issue&lt;/th&gt;
-&lt;th&gt;Link&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;assert&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/browserify/commonjs-assert&quot;&gt;browserify/commonjs-assert&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Error code and Error message are different&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/nodejs/node/issues/13937&quot;&gt;Issue&lt;/a&gt;, &lt;a href=&quot;https://medium.com/the-node-js-collection/node-js-errors-changes-you-need-to-know-about-dc8c82417f65&quot;&gt;Article&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;code&gt;assert.deepEqual&lt;/code&gt; does&amp;#39;t support &lt;code&gt;Map&lt;/code&gt;, &lt;code&gt;Set&lt;/code&gt;, &lt;code&gt;Iterator&lt;/code&gt; etc...&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/nodejs/node/issues/2309&quot;&gt;Issue&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/api/assert.html#assert_assert_deepequal_actual_expected_message&quot;&gt;Document&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/en/blog/release/v8.0.0/&quot;&gt;Release&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;code&gt;require(&amp;quot;assert&amp;quot;).strict&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://nodejs.org/api/assert.html#assert_strict_mode&quot;&gt;Docs&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/en/blog/release/v9.9.0/&quot;&gt;Release&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/assert.html#assert_assert_rejects_block_error_message&quot;&gt;&lt;code&gt;assert.rejects()&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v10.0.0/&quot;&gt;Release&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/assert.html#assert_assert_doesnotreject_block_error_message&quot;&gt;&lt;code&gt;assert.doesNotReject()&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v10.0.0/&quot;&gt;Release&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Compatible issue with &lt;code&gt;assert.fail()&lt;/code&gt;, &lt;code&gt;assert.ok()&lt;/code&gt;, and &lt;code&gt;assert.ifError()&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;No arguments behavior. &lt;a href=&quot;https://nodejs.org/en/blog/release/v10.0.0/&quot;&gt;Release&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;buffer&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/feross/buffer&quot;&gt;feross/buffer&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;child_process&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;cluster&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;console&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/Raynos/console-browserify&quot;&gt;Raynos/console-browserify&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;constants&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/juliangruber/constants-browserify&quot;&gt;juliangruber/constants-browserify&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;crypto&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/crypto-browserify/crypto-browserify&quot;&gt;crypto-browserify/crypto-browserify&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;dgram&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;dns&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;domain&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/bevry/domain-browser&quot;&gt;bevry/domain-browser&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;events&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/Gozala/events&quot;&gt;Gozala/events&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/events.html#events_emitter_eventnames&quot;&gt;&lt;code&gt;eventNames&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/Gozala/events/pull/32&quot;&gt;Issue&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/events.html#events_emitter_getmaxlisteners&quot;&gt;&lt;code&gt;getMaxListeners&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/Gozala/events/pull/32&quot;&gt;Issue&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/events.html#events_emitter_prependlistener_eventname_listener&quot;&gt;&lt;code&gt;prependListener&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/Gozala/events/pull/32&quot;&gt;Issue&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/events.html#events_emitter_prependoncelistener_eventname_listener&quot;&gt;&lt;code&gt;prependOnceListener&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/Gozala/events/pull/32&quot;&gt;Issue&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/nodejs/node/pull/17156&quot;&gt;Issue&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;fs&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;http&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/jhiesey/stream-http&quot;&gt;jhiesey/stream-http&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;https&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/substack/https-browserify&quot;&gt;substack/https-browserify&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;module&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;net&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;os&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/CoderPuppy/os-browserify&quot;&gt;CoderPuppy/os-browserify&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/os.html#os_os_constants&quot; title=&quot;os.constants&quot;&gt;os.constants&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;path&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/browserify/path-browserify&quot;&gt;browserify/path-browserify&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/path.html#path_path_posix&quot; title=&quot;path.posix&quot;&gt;path.posix&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/browserify/path-browserify/issues/11&quot; title=&quot;Update to use newer node path code · Issue #11 · substack/path-browserify&quot;&gt;Issue&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/docs/latest/api/path.html#path_path_parse_path&quot; title=&quot;path.parse(path)&quot;&gt;path.parse(path)&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/browserify/path-browserify/issues/2&quot;&gt;Issue&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/path.html#path_path_posix&quot; title=&quot;path.win32&quot;&gt;path.win32&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/path.html#path_path_posix&quot; title=&quot;path.format(pathObject)&quot;&gt;path.format(pathObject)&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;process&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/defunctzombie/node-process&quot;&gt;defunctzombie/node-process&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/process.html#process_process_channel&quot; title=&quot;process.channel&quot;&gt;process.channel&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/process.html#process_process_platform&quot; title=&quot;process.platform&quot;&gt;process.platform&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/defunctzombie/node-process/issues/55&quot;&gt;Issue&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/process.html#process_process_execargv&quot; title=&quot;process.execArgv&quot;&gt;process.execArgv&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/defunctzombie/node-process/issues/75&quot;&gt;Issue&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/process.html#process_process_cpuusage_previousvalue&quot; title=&quot;process.cpuUsage([previousValue])&quot;&gt;process.cpuUsage([previousValue])&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/process.html#process_process_emitwarning_warning_options&quot; title=&quot;process.emitWarning(warning[, options])&quot;&gt;process.emitWarning(warning[, options])&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;punycode&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/bestiejs/punycode.js&quot;&gt;bestiejs/punycode.js&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;querystring&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/mike-spainhower/querystring&quot;&gt;mike-spainhower/querystring&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;readline&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;repl&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;stream&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/browserify/stream-browserify&quot;&gt;browserify/stream-browserify&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;string_decoder&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/rvagg/archived-string_decoder&quot;&gt;rvagg/string_decoder&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;TODO&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/nodejs/string_decoder&quot;&gt;Repository&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;sys&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/defunctzombie/node-util&quot;&gt;defunctzombie/node-util&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;TODO&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;timers&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/browserify/timers-browserify&quot;&gt;browserify/timers-browserify&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;tls&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;tty&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/browserify/tty-browserify&quot;&gt;browserify/tty-browserify&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;---&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;url&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/defunctzombie/node-url&quot;&gt;defunctzombie/node-url&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;code&gt;url.URL&lt;/code&gt;(WHATWG URL)&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v8.0.0/#say-hello-to-the-whatwg-url-parser&quot;&gt;Release&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/api/url.html#url_the_whatwg_url_api&quot;&gt;Document&lt;/a&gt;, &lt;a href=&quot;https://github.com/defunctzombie/node-url/issues/33&quot;&gt;Issue&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;code&gt;url.format&lt;/code&gt; does&amp;#39;t support  WHATWG URL&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v7.6.0/&quot;&gt;Release&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/api/url.html#url_url_format_url_options&quot;&gt;Document&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;util&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/defunctzombie/node-util&quot;&gt;defunctzombie/node-util&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/util.html#util_util_callbackify_original&quot; title=&quot;util.callbackify(original)&quot;&gt;util.callbackify(original)&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/util.html#util_util_inspect_custom&quot; title=&quot;util.inspect.custom&quot;&gt;util.inspect.custom&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/util.html#util_util_inspect_defaultoptions&quot; title=&quot;util.inspect.defaultOptions&quot;&gt;util.inspect.defaultOptions&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/util.html#util_util_promisify_original&quot; title=&quot;util.promisify(original)&quot;&gt;util.promisify(original)&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/util.html#util_util_promisify_custom&quot; title=&quot;util.promisify.custom&quot;&gt;util.promisify.custom&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/defunctzombie/node-util/issues/15&quot; title=&quot;util.inspect() options maxArrayLength, breakLength&quot;&gt;util.inspect() options maxArrayLength, breakLength&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/util.html#util_util_isdeepstrictequal_val1_val2&quot;&gt;util.isDeepStrictEqual&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/util.html#util_util_isdeepstrictequal_val1_val2&quot;&gt;util.isDeepStrictEqual&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;vm&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/browserify/vm-browserify&quot;&gt;browserify/vm-browserify&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/vm.html#vm_vm_runincontext_code_contextifiedsandbox_options&quot; title=&quot;vm.isContext(sandbox)&quot;&gt;vm.isContext(sandbox)&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;zlib&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://github.com/devongovett/browserify-zlib&quot;&gt;devongovett/browserify-zlib&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;a href=&quot;https://nodejs.org/api/zlib.html#zlib_zlib_bytesread&quot; title=&quot;zlib.bytesRead#&quot;&gt;zlib.bytesRead&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;part-2c5fae6c6b9bbc28&quot;&gt;実装状況&lt;/h2&gt;
-
-&lt;p&gt;この&lt;a href=&quot;https://github.com/azu/node-browser-polyfill-gap&quot;&gt;調査リポジトリ&lt;/a&gt;には簡単な機能テストも実装されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/azu/node-browser-polyfill-gap/tree/master/test&quot;&gt;node-browser-polyfill-gap/test at master · azu/node-browser-polyfill-gap&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;次にそれぞれでのテスト結果を示します。&lt;/p&gt;
-
-&lt;h3 id=&quot;node-v11-5-0&quot;&gt;Node v11.5.0&lt;/h3&gt;
-
-&lt;p&gt;24コのテストをすべてパス(これがpolyfillの元なので当然ですが…)&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;  24 passing (146ms)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;browserify-16-2-3&quot;&gt;Browserify 16.2.3&lt;/h3&gt;
-
-&lt;p&gt;4/24のテストをパス。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;  gap-test
-    assert
-      1) Error#code
-      2) assert.deepEqual
-      3) assert.strict
-      4) assert.rejects
-      5) assert.doesNotReject
-    events
-      6) off
-      ✓ eventNames
-      ✓ getMaxListeners()
-      ✓ prependListener()
-      ✓ prependOnceListener()
-    os
-      7) constants
-    path
-      8) posix
-      9) win32
-      10) parse
-      11) format
-    process
-      12) platform
-      13) execArgv
-      14) cpuUsage()
-      15) emitWarning()
-    url
-      16) URL
-    util
-      17) inspect.defaultOptions
-      18) callbackify()
-      19) promisify()
-    vm
-      20) isContext
-
-
-  4 passing (293ms)
-  20 failing
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;webpack-4-82-2&quot;&gt;webpack 4.82.2&lt;/h3&gt;
-
-&lt;p&gt;すべてのテストが失敗しました。&lt;br&gt;
-Gapリスト通りのpolyfillが使われています。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;  gap-test
-    assert
-      1) Error#code
-      2) assert.deepEqual
-      3) assert.strict
-      4) assert.rejects
-      5) assert.doesNotReject
-    events
-      6) off
-      7) eventNames
-      8) getMaxListeners()
-      9) prependListener()
-      10) prependOnceListener()
-    os
-      11) constants
-    path
-      12) posix
-      13) win32
-      14) parse
-      15) format
-    process
-      16) platform
-      17) execArgv
-      18) cpuUsage()
-      19) emitWarning()
-    url
-      20) URL
-    util
-      21) inspect.defaultOptions
-      22) callbackify()
-      23) promisify()
-    vm
-      24) isContext
-
-
-  0 passing (134ms)
-  24 failing
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;node-js-polyfill&quot;&gt;Node.jsコアモジュールのpolyfillの今後&lt;/h2&gt;
-
-&lt;p&gt;このレポートは、webpackやbrowserifyを使っているとあまり意識されないpolyfillライブラリに潜在的な問題があることを調べる目的で書きました。&lt;br&gt;
-この問題の難しさは各polyfillライブラリの管理者やバランスが異なるにもかかわらず、polyfillライブラリ群として暗黙的に参照されている点です。&lt;/p&gt;
-
-&lt;p&gt;多くのコアモジュールにおいては、問題が表面化しない可能性もあります。&lt;br&gt;
-しかし、&lt;code&gt;assert&lt;/code&gt;、&lt;code&gt;events&lt;/code&gt;、&lt;code&gt;url&lt;/code&gt;はブラウザ向けとしてよく使われているにもかかわらず、差異が分かる程度にはあります。&lt;br&gt;
-また、ギャップの問題が解決できた場合にも、バージョンを指定できずに暗黙的なpolyfillライブラリを差し替える仕組みは、互換性の問題が発生するかもしれません。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/the-node-js-collection/node-js-errors-changes-you-need-to-know-about-dc8c82417f65&quot; title=&quot;Node.js Errors — Changes you need to know about – Node.js Collection – Medium&quot;&gt;Node.js Errors — Changes you need to know about – Node.js Collection – Medium&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;assert&lt;/code&gt;結果の&lt;code&gt;Error#name&lt;/code&gt;などが異なるため、Node.jsでは通るがブラウザ(polyfill)では失敗するテストができる&lt;/li&gt;
-&lt;li&gt;MapやSetなどES2015以降のビルトインオブジェクトに対応していない&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.jxck.io/entries/2016-10-27/whatwg-url.html&quot; title=&quot;Node v7 で入った WHATWG URL 実装について | blog.jxck.io&quot;&gt;Node v7 で入った WHATWG URL 実装について | blog.jxck.io&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Node.jsがブラウザのWHATWG URLをサポートしたが、ブラウザ(polyfill)ではサポートされていない&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;webpackなどにIssueで同様の問題を報告していましたが、このIssueについては特に進捗はありませんでした。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/webpack/node-libs-browser/issues/78&quot;&gt;Incompatibility between Node.js core libs and webpack&amp;#39;s lib · Issue #78 · webpack/node-libs-browser&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;最近(2018年12月21日)になって&lt;a href=&quot;https://github.com/webpack/webpack/issues/8537&quot;&gt;webpack 5 alpha&lt;/a&gt;が公開されました。&lt;br&gt;
-webpack 5では自動的にNode.jsコアモジュールのpolyfillを自動的に入れないようにする変更が予定されています。&lt;br&gt;
-(2018年12月25日時点ではただの予定であるため、&lt;a href=&quot;https://github.com/webpack/webpack/issues/8537&quot;&gt;該当Issue&lt;/a&gt;においてフィードバックを求めています。)&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;In the early days, webpack&amp;#39;s aim was to allow running most node.js modules in the browser, but the module landscape changed and many module uses are now written mainly for frontend purposes.&lt;br&gt;
--- &lt;a href=&quot;https://github.com/webpack/changelog-v5/blob/master/README.md#automatic-nodejs-polyfills-removed&quot;&gt;https://github.com/webpack/changelog-v5/blob/master/README.md#automatic-nodejs-polyfills-removed&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;変更理由としてこのように書かれているのように、webpackはNode.jsモジュールをブラウザ向けにpack(polyfill)する役割から、フロントエンド向けに書かれたモジュールをbundleする役割へ変わってきています。&lt;/p&gt;
-
-&lt;p&gt;今までは&lt;code&gt;Buffer&lt;/code&gt;など&lt;a href=&quot;https://nodejs.org/api/index.html&quot;&gt;Node.jsのコアAPI&lt;/a&gt;に対応するモジュールを自動的にbundleすることで、Node.js向けに書かれたモジュールをブラウザでも動かせるようにしていました。&lt;br&gt;
-一方で、現在ではブラウザ向けに書かれた多くのモジュールがあるため、webpackが自動的にpolyfillを入れる必然性が少なくなってきています。&lt;/p&gt;
-
-&lt;p&gt;また、&lt;code&gt;Buffer&lt;/code&gt;のpolyfillなどはファイルサイズがほどほどに大きいため、パフォーマンス面においては自動的にpolyfillを行わないメリットもあります。(polyfillを行うかどうかは、webpack 4でも&lt;a href=&quot;https://webpack.js.org/configuration/node/&quot;&gt;node&lt;/a&gt;オプションによって設定が可能です)&lt;/p&gt;
-
-&lt;p&gt;少しブラウザとは異なりますが、React Nativeの&lt;a href=&quot;https://facebook.github.io/metro/&quot;&gt;Bundler&lt;/a&gt;もNode.jsコアモジュールのpolyfillを自動的に差し替えない仕組みとなっています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/react-native/issues/21405&quot;&gt;Unable to resolve module &lt;code&gt;assert&lt;/code&gt; &lt;code&gt;buffer&lt;/code&gt; &lt;code&gt;events&lt;/code&gt; · Issue #21405 · facebook/react-native&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;このように、BundlerがNode.jsコアモジュールのpolyfillを暗黙的に入れるという挙動の状況は少し変わりつつあります。&lt;br&gt;
-これは&lt;a href=&quot;https://github.com/webpack/changelog-v5/blob/master/README.md#automatic-nodejs-polyfills-removed&quot;&gt;webpack 5の変更予定&lt;/a&gt;にも書かれていたように、Bundlerの目的の1つがNode.js向けに書かれたモジュールをブラウザ向けに変換することでした。&lt;br&gt;
-しかし、現在は多くのブラウザ向けに書かれたモジュールがあり、Bundlerはそれを効率的に扱うという目的に変わってきている点も関係しているのかもしれません。&lt;/p&gt;
-
-&lt;h2 id=&quot;part-34bec9340448ad61&quot;&gt;調査を終えて&lt;/h2&gt;
-
-&lt;p&gt;今回の調査で感じたのは、Node.jsのコアモジュールとブラウザ向けのPolyfillといった一種の互換レイヤーに対して関心を持っている人の絶対数が少ないという印象です。Node.jsもコアAPIとしてブラウザと同じ&lt;a href=&quot;https://nodejs.org/api/url.html#url_the_whatwg_url_api&quot;&gt;WHATWG URL API&lt;/a&gt;を実装するなどいった&lt;a href=&quot;https://github.com/nodejs/node/pull/18281&quot;&gt;ブラウザとの相互運用性&lt;/a&gt;に関する取り組みも行われています。&lt;br&gt;
-しかし、このNode.jsコアモジュールのpolyfillという互換レイヤーに関しては暗黙的に扱われていることが多く、その互換性に問題があることについてはあまり言及されていません。&lt;/p&gt;
-
-&lt;p&gt;W3C TAGの&lt;a href=&quot;https://w3ctag.github.io/polyfills/&quot;&gt;Polyfills and the evolution of the Web&lt;/a&gt;というドキュメントでpolyfillがどうあるべきかということについて書かれています。&lt;br&gt;
-このNode.jsコアモジュールのpolfyillの問題も&lt;a href=&quot;https://w3ctag.github.io/polyfills/#life-cycle&quot;&gt;Node.jsとpolyfillのライフサイクルの違い&lt;/a&gt;からきている面があると思います。&lt;br&gt;
-ブラウザの仕様における壊れたpolyfillはグローバルの挙動を書き換えるため問題となることがありましたが、幸いにもNode.jsのコアモジュールのpolyfillの多くはモジュールやBundlerという仕組みの上に作られたものです。&lt;/p&gt;
-
-&lt;p&gt;しかしながら、このNode.jsコアモジュールのpolfyillも一定数利用者がいるため互換性という問題からは切り離すことが難しいです。(polyfillの1つである&lt;a href=&quot;https://www.npmjs.com/package/events&quot;&gt;events&lt;/a&gt;モジュールは500万/weekダウンロードされています)&lt;br&gt;
-この問題に深く関係しているのはwebpackやbrowserifyなどのbundlerであるため、bundlerの動きがそのままNode.jsコアモジュールのpolfyillの今後に影響する可能性は高いと思います。&lt;/p&gt;
-
-&lt;h2 id=&quot;jser-report&quot;&gt;&lt;a href=&quot;https://github.com/jser/report&quot;&gt;jser/report&lt;/a&gt; バックナンバー&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jser.info/2017/01/31/bundler-testing-framework-report/&quot;&gt;JSerレポート #1 Bundlerの未来、テスティングフレームワークの現状 - JSer.info&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 25 Dec 2018 12:14:00 +0900</pubDate>
-        <link>https://jser.info/2018/12/25/node-browser-libs-gap/</link>
-        <guid isPermaLink="true">https://jser.info/2018/12/25/node-browser-libs-gap/</guid>
-        
-        <category>webpack</category>
-        
-        <category>browserify</category>
-        
-        <category>node.js</category>
-        
-        <category>polyfill</category>
-        
-        
-        <category>レポート</category>
         
       </item>
     

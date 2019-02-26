@@ -1,0 +1,437 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-02-26のJS: yarn v2候補(berry)、Fastify v2、TSLintの今後 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/02/26/yarn-v2berryfastify-v2tslint/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-02-26のJS: yarn v2候補(berry)、Fastify v2、TSLintの今後"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-02-26のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/knockout/knockout/releases/tag/v3.5.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Version 3.5.0 · knockout/knockout</amp-fit-text>
+            <p class="item-contents">Knockout 3.5.0リリース。
+<code>foreach</code>バインディングの挙動の変更とパフォーマンスの改善、<code>ko.when</code>がPromiseを返すようになるなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Version 3.5.0 · knockout/knockout" href="https://github.com/knockout/knockout/releases/tag/v3.5.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://npm.community/t/release-npm-6-9-0-next-0/5553">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release: npm@6.9.0-next.0 - 📣 announcements - npm forum</amp-fit-text>
+            <p class="item-contents">npm 6.9.0-next.0リリース。
+パッケージに別名をつけることができるpackage alias機能をサポート、<code>--before</code>オプションをサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release: npm@6.9.0-next.0 - 📣 announcements - npm forum" href="https://npm.community/t/release-npm-6-9-0-next-0/5553" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.npmjs.org/post/182958759735/managing-javascript-in-the-enterprise">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">The npm Blog — Managing JavaScript in the Enterprise</amp-fit-text>
+            <p class="item-contents">npm Enterpriseの正式リリース。
+SSO認証の対応やprivate registryのサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The npm Blog — Managing JavaScript in the Enterprise" href="https://blog.npmjs.org/post/182958759735/managing-javascript-in-the-enterprise" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/dsherret/conditional-type-checks">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">dsherret/conditional-type-checks: Types for testing TypeScript types.</amp-fit-text>
+            <p class="item-contents">Conditional Typeを使いTypeScriptの型Assertionを行うライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="dsherret/conditional-type-checks: Types for testing TypeScript types." href="https://github.com/dsherret/conditional-type-checks" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@fastifyjs/fastify-v2-0-0-is-here-8275d613fba4">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Fastify v2.0.0 is here – Fastify – Medium</amp-fit-text>
+            <p class="item-contents">Node.jsフレームワークのFastify 2.0.0リリース。
+<code>onError</code>、<code>preParsing</code>、<code>preSerialization</code>、<code>preValidation</code> hookの追加。
+pluginのロードのタイムアウトを設定、シグネチャの一貫性の修正など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Fastify v2.0.0 is here – Fastify – Medium" href="https://medium.com/@fastifyjs/fastify-v2-0-0-is-here-8275d613fba4" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/yarnpkg/berry">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">yarnpkg/berry: 📦🐈 A modern, fast, reliable, package manager; part of the Yarn organization</amp-fit-text>
+            <p class="item-contents">yarn v2となるソースコードのリポジトリが公開された。
+v1のリポジトリと分けているのは、issueをハンドリングしやすくするため。
+現在はロードマップに予定した機能はある程度実装された状態で、一部の機能やドキュメントが足りていない状況。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="yarnpkg/berry: 📦🐈 A modern, fast, reliable, package manager; part of the Yarn organization" href="https://github.com/yarnpkg/berry" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://addyosmani.com/blog/script-priorities/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">AddyOsmani.com - JavaScript Loading Priorities in Chrome</amp-fit-text>
+            <p class="item-contents">link rel=preloadとscript要素の defer/async属性を組み合わせ際のLoadingやExecution Priorityについてまとめた記事
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="AddyOsmani.com - JavaScript Loading Priorities in Chrome" href="https://addyosmani.com/blog/script-priorities/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://css-tricks.com/how-supports-works/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">How @supports Works | CSS-Tricks</amp-fit-text>
+            <p class="item-contents">CSSの<code>@supports</code>の使い方やユースケースについて。
+また、JavaScriptからのCSS Supportsを使ったFeature Detectについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="How @supports Works | CSS-Tricks" href="https://css-tricks.com/how-supports-works/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/8613/intelligent-tracking-prevention-2-1/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Intelligent Tracking Prevention 2.1 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari 12.1で導入されるITP 2.1について。 Partitioned Cookiesのサポート終了、document.cookieで作成したクッキーは生存期間が7日間のcapがつくように、DNTの削除など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Intelligent Tracking Prevention 2.1 | WebKit" href="https://webkit.org/blog/8613/intelligent-tracking-prevention-2-1/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/palantir/tslint-in-2019-1a144c2317a9">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">TSLint in 2019 – Palantir Blog – Medium</amp-fit-text>
+            <p class="item-contents">TSLintの今後について。
+今後TSLintは非推奨となり、TSLintからESLintへの移行パスを整備していくという話
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="TSLint in 2019 – Palantir Blog – Medium" href="https://medium.com/palantir/tslint-in-2019-1a144c2317a9" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://ja.reactjs.org/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React – A JavaScript library for building user interfaces</amp-fit-text>
+            <p class="item-contents">Reactサイトの日本語訳
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React – A JavaScript library for building user interfaces" href="https://ja.reactjs.org/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/patr0nus/DeskGap/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">patr0nus/DeskGap: A cross-platform desktop app framework based on Node.js and the system webview</amp-fit-text>
+            <p class="item-contents">OSのWebViewの仕組みを利用したElectronライクなデスクトップアプリ作成フレームワーク。
+Chromiumなどをbundleしないが、Node.jsをbundleしている。
+フレームワーク上では制限されたElectronライクなAPIとNode.jsの機能が利用できる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="patr0nus/DeskGap: A cross-platform desktop app framework based on Node.js and the system webview" href="https://github.com/patr0nus/DeskGap/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/klaussinani/qoa">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">klaussinani/qoa: 💬 Minimal interactive command-line prompts</amp-fit-text>
+            <p class="item-contents">ターミナルで対話的なインタフェースを提供するNode.jsライブラリ。
+Confirm、Quiz、Secure Promptなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="klaussinani/qoa: 💬 Minimal interactive command-line prompts" href="https://github.com/klaussinani/qoa" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jariazavalverde/tau-prolog">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">jariazavalverde/tau-prolog: An open source Prolog interpreter in JavaScript</amp-fit-text>
+            <p class="item-contents">PrologインタプリタのJavaScript実装
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jariazavalverde/tau-prolog: An open source Prolog interpreter in JavaScript" href="https://github.com/jariazavalverde/tau-prolog" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/fagbokforlaget/simple-fs">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">fagbokforlaget/simple-fs: Handles files on indexeddb like you would do in node.js (promise)</amp-fit-text>
+            <p class="item-contents">IndexedDBを使ったファイルシステムライクなAPIを持ったブラウザ向けライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="fagbokforlaget/simple-fs: Handles files on indexeddb like you would do in node.js (promise)" href="https://github.com/fagbokforlaget/simple-fs" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/namics/webpack-config-plugins">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">namics/webpack-config-plugins: Provide best practices for webpack loader configurations</amp-fit-text>
+            <p class="item-contents">webpackのloader設定をまとめたプラグイン。
+Babel、TypeScript、Sass、Font、Imageなどのビルドを行うプラグインが用意されている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="namics/webpack-config-plugins: Provide best practices for webpack loader configurations" href="https://github.com/namics/webpack-config-plugins" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
