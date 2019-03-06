@@ -5,9 +5,232 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 28 Feb 2019 12:56:00 +0900</pubDate>
-    <lastBuildDate>Thu, 28 Feb 2019 12:56:00 +0900</lastBuildDate>
+    <pubDate>Wed, 06 Mar 2019 11:01:48 +0900</pubDate>
+    <lastBuildDate>Wed, 06 Mar 2019 11:01:48 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-03-05のJS:Storybook 5.0.0、Preact X(αリリース)、ウェブサイトのサイズ(パーセンタイル) </title>
+        <description>&lt;p&gt;JSer.info #425 - コンポーネント開発環境である&lt;a href=&quot;https://storybook.js.org/&quot;&gt;Storybook&lt;/a&gt; 5.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · storybooks/storybook&quot;&gt;Release v5.0.0 · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-0-db1d0f9c83b8&quot; title=&quot;Storybook 5.0 – Storybook – Medium&quot;&gt;Storybook 5.0 – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/meet-storybook-5-0s-new-design-fb5735bc2a81&quot; title=&quot;Meet Storybook 5.0&amp;#39;s new design – Storybook – Medium&quot;&gt;Meet Storybook 5.0&amp;#39;s new design – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;UIやキーボードショートカットやURLの構造などが変更されています。&lt;/p&gt;
+
+&lt;p&gt;破壊的な変更としてwebpack設定の引数の変更、options addonが非推奨になるなどの変更が入っています。&lt;br&gt;
+マイグレショーン方法については次のページにまとめられています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/blob/next/MIGRATION.md&quot;&gt;storybook/MIGRATION.md at next · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-0-db1d0f9c83b8&quot; title=&quot;Storybook 5.0 – Storybook – Medium&quot;&gt;Storybook 5.0 – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://preactjs.com/&quot;&gt;Preact&lt;/a&gt;の次期メジャーバージョンであるPreact X(10.0.0)のα版が公開されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/developit/preact/releases/tag/10.0.0-alpha.0&quot;&gt;Release Preact X is here 🎉 · developit/preact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;Fragment&lt;/code&gt;、&lt;code&gt;componentDidCatch&lt;/code&gt;、&lt;a href=&quot;https://reactjs.org/docs/hooks-intro.html&quot;&gt;Hooks&lt;/a&gt;、&lt;code&gt;createContext&lt;/code&gt;、CSS Custom Propertiesに対応しReactのアップデートに追従しています。また&lt;code&gt;preact-compat&lt;/code&gt;を別パッケージではなく&lt;code&gt;preact/compat&lt;/code&gt;として同梱するようになっています。&lt;/p&gt;
+
+&lt;p&gt;破壊的な変更として、string refや&lt;code&gt;createClass&lt;/code&gt;といったすでに非推奨だったものが削除されています。&lt;br&gt;
+また、&lt;code&gt;setState&lt;/code&gt;が同期的にstateを変更しなくなる(&lt;a href=&quot;https://github.com/facebook/react/issues/11527&quot;&gt;Reactも同様&lt;/a&gt;)変更や&lt;code&gt;VNode&lt;/code&gt;のプロパティ構造の変更などが行われています。&lt;/p&gt;
+
+&lt;p&gt;合わせてPreact Xについての発表動画を見るとわかりやすいかもしれません。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/DFF9eOlTWzY?t=3988&quot; title=&quot;This.JavaScript - State of Frameworks &amp;amp;amp; Libraries - YouTube&quot;&gt;This.JavaScript - State of Frameworks &amp;amp; Libraries - YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;tweet&quot;&gt;今週のTweet&lt;/h2&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Page Weight Percentiles: overall &amp;amp; by resource type&lt;br&gt;&lt;br&gt;If one of these categories is super high for a site, it&amp;#39;s often an indicator that there&amp;#39;s &amp;quot;low hanging fruit&amp;quot; performance wins to be had by optimizing that resource type.&lt;br&gt;&lt;br&gt;(Data source: &lt;a href=&quot;https://twitter.com/HTTPArchive?ref_src=twsrc%5Etfw&quot;&gt;@HTTPArchive&lt;/a&gt;, Desktop Oct&amp;#39;18 data) &lt;a href=&quot;https://t.co/JSEsEUejE8&quot;&gt;pic.twitter.com/JSEsEUejE8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Katie Hempenius (@katiehempenius) &lt;a href=&quot;https://twitter.com/katiehempenius/status/1103005053353369600?ref_src=twsrc%5Etfw&quot;&gt;March 5, 2019&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://httparchive.org/&quot;&gt;HTTP Archive&lt;/a&gt;のデータをもとにウェブサイトのサイズをパーセンタイルで表現した図です。&lt;br&gt;
+JavaScriptのファイルサイズをみると、ウェブサイトの50%は420KB以下ですが、10%は1.2MB以上のファイルサイズとなっていることがわかります。&lt;/p&gt;
+
+&lt;p&gt;この&lt;a href=&quot;https://httparchive.org/&quot;&gt;HTTP Archive&lt;/a&gt;の元データは誰でもBigQueryからアクセスできるようになっているので、興味がある人は以下のドキュメントを見てみると良いかもしれません。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md&quot;&gt;httparchive.org/gettingstarted_bigquery.md at master · HTTPArchive/httparchive.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;february-2019-security-releases-node-js&quot;&gt;February 2019 Security Releases | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/vulnerability/february-2019-security-releases/&quot; title=&quot;February 2019 Security Releases | Node.js&quot;&gt;nodejs.org/en/blog/vulnerability/february-2019-security-releases/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsのセキュリティ修正リリース。Node.js LTS全部に対して修正がででている。&lt;br&gt;
+keep-alive系のDoSが2種(どちらもimpactはlow)とOpenSSL脆弱性(Node 10+は影響なし)の修正がされている。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ember-js-ember-3-8-released&quot;&gt;Ember.js - Ember 3.8 Released&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://emberjs.com/blog/2019/02/27/ember-3-8-released.html&quot; title=&quot;Ember.js - Ember 3.8 Released&quot;&gt;emberjs.com/blog/2019/02/27/ember-3-8-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Ember 3.8リリース。&lt;br&gt;
+Element Modifier Managerの追加、Array helperの追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v5-0-0-storybooks-storybook&quot;&gt;Release v5.0.0 · storybooks/storybook&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · storybooks/storybook&quot;&gt;github.com/storybooks/storybook/releases/tag/v5.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Storybook 5.0.0リリース。&lt;br&gt;
+デザインとURL構造の変更、ショートカットの変更、webpackのカスタム設定の引数を変更など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-migration-guide-d804b38c739d&quot; title=&quot;Storybook 5 Migration Guide – Storybook – Medium&quot;&gt;Storybook 5 Migration Guide – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/meet-storybook-5-0s-new-design-fb5735bc2a81&quot; title=&quot;Meet Storybook 5.0&amp;amp;#x27;s new design – Storybook – Medium&quot;&gt;Meet Storybook 5.0&amp;#39;s new design – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-0-db1d0f9c83b8&quot; title=&quot;Storybook 5.0 – Storybook – Medium&quot;&gt;Storybook 5.0 – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-preact-x-is-here-developit-preact&quot;&gt;Release Preact X is here 🎉 · developit/preact&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/developit/preact/releases/tag/10.0.0-alpha.0&quot; title=&quot;Release Preact X is here 🎉 · developit/preact&quot;&gt;github.com/developit/preact/releases/tag/10.0.0-alpha.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Preact X α版リリース。&lt;br&gt;
+&lt;code&gt;Fragment&lt;/code&gt;、&lt;code&gt;componentDidCatch&lt;/code&gt;、Hooks、&lt;code&gt;createContext&lt;/code&gt;、CSS Custom Propertiesに対応など。&lt;br&gt;
+また&lt;code&gt;preact-compat&lt;/code&gt;を別パッケージではなく&lt;code&gt;preact/compat&lt;/code&gt;として同梱するようになるなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/DFF9eOlTWzY?t=3988&quot; title=&quot;This.JavaScript - State of Frameworks &amp;amp;amp; Libraries - YouTube&quot;&gt;This.JavaScript - State of Frameworks &amp;amp; Libraries - YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;testcafe-v1-1-0-released-testcafe&quot;&gt;TestCafe v1.1.0 Released | TestCafe&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devexpress.github.io/testcafe/blog/testcafe-v1-1-0-released.html&quot; title=&quot;TestCafe v1.1.0 Released | TestCafe&quot;&gt;devexpress.github.io/testcafe/blog/testcafe-v1-1-0-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TestCafe 1.1.0リリース。&lt;br&gt;
+TypeScript 3.3サポート、TypeScriptの型改善など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;html-snapshot-testing-with-node&quot;&gt;HTML Snapshot Testing with Node&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://spin.atomicobject.com/2019/02/13/html-snapshot-testing-with-node/&quot; title=&quot;HTML Snapshot Testing with Node&quot;&gt;spin.atomicobject.com/2019/02/13/html-snapshot-testing-with-node/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;HTMLのスナップショットを比較するスナップショットテストについての記事。&lt;br&gt;
+スナップショットテストをどのように実装するかについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;progressive-react&quot;&gt;Progressive React&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://houssein.me/progressive-react&quot; title=&quot;Progressive React&quot;&gt;houssein.me/progressive-react&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Reactを中心にしたウェブアプリの改善についての話。&lt;br&gt;
+Reactレベルとアプリレベルでのパフォーマンスについて。&lt;br&gt;
+&lt;code&gt;shouldComponentUpdate&lt;/code&gt;での無駄なレンダリングの最小化、バンドルサイズとCode Splitting、キャッシュやSSRによる初期表示の改善、クリティカルパスの最適化などについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webpack-babel-1-webpack-qiita&quot;&gt;webpackとBabelの基本を理解する(1) ―webpack編― - Qiita&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/koedamon/items/3e64612d22f3473f36a4&quot; title=&quot;webpackとBabelの基本を理解する(1) ―webpack編― - Qiita&quot;&gt;qiita.com/koedamon/items/3e64612d22f3473f36a4&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webpack、Babelの役割とその設定方法のチュートリアル&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;package-diff&quot;&gt;Package Diff&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://diff.intrinsic.com/&quot; title=&quot;Package Diff&quot;&gt;diff.intrinsic.com/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npmパッケージのバージョン同士のDiffを表示できるサービス&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/intrinsic/introducing-package-diff-for-npm-e6487cc9b434&quot; title=&quot;Introducing Package Diff (for npm) – intrinsic – Medium&quot;&gt;Introducing Package Diff (for npm) – intrinsic – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;dyatko-arkit-visualises-javascript-typescript-and-flow-codebases-as-meaningful-and-committable-architecture-diagrams&quot;&gt;dyatko/arkit: Visualises JavaScript, TypeScript and Flow codebases as meaningful and committable architecture diagrams&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/dyatko/arkit&quot; title=&quot;dyatko/arkit: Visualises JavaScript, TypeScript and Flow codebases as meaningful and committable architecture diagrams&quot;&gt;github.com/dyatko/arkit&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UML&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;アーキテクチャのダイアグラムをファイルから生成するツール。。&lt;br&gt;
+コードベースのファイルを指定して、その構造をPlant UMLやSVGなどの図に変換してくれるツール&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;autonumeric-autonumeric-autonumeric-is-a-standalone-library-that-provides-live-as-you-type-formatting-for-international-numbers-and-currencies&quot;&gt;autoNumeric/autoNumeric: autoNumeric is a standalone library that provides live as-you-type formatting for international numbers and currencies.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/autoNumeric/autoNumeric/&quot; title=&quot;autoNumeric/autoNumeric: autoNumeric is a standalone library that provides live as-you-type formatting for international numbers and currencies.&quot;&gt;github.com/autoNumeric/autoNumeric/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;通貨の入力を扱うライブラリ。&lt;br&gt;
+既存の入力要素へバインディングして、通貨の入力に対するバリデーションや表示のフォーマットなどを行う&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;pikapkg-web-install-npm-dependencies-that-run-directly-in-the-browser-no-browserify-webpack-or-import-maps-required&quot;&gt;pikapkg/web: Install npm dependencies that run directly in the browser. No Browserify, Webpack or import maps required.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/pikapkg/web&quot; title=&quot;pikapkg/web: Install npm dependencies that run directly in the browser. No Browserify, Webpack or import maps required.&quot;&gt;github.com/pikapkg/web&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Development&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Rollupを使って既存モジュールをES Modulesに変換するツール。&lt;br&gt;
+変換済みのmoduleはブラウザからES moduleとしてimportできる&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Wed, 06 Mar 2019 00:43:44 +0900</pubDate>
+        <link>https://jser.info/2019/03/06/storybook-5.0.0preact-xa/</link>
+        <guid isPermaLink="true">https://jser.info/2019/03/06/storybook-5.0.0preact-xa/</guid>
+        
+        <category>storybook</category>
+        
+        <category>preact</category>
+        
+        <category>HTTPArchive</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-02-26のJS: yarn v2候補(berry)、Fastify v2、TSLintの今後</title>
@@ -2288,233 +2511,6 @@ JS/JSDocの扱いの改善、TSLintではなくESLintでのTSのLint改善、パ
         <category>i18n</category>
         
         <category>JavaScript</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-01-01のJS: WebdriverIO v5、Rollup 1.0、Rust + WebAssembly + WebWorker</title>
-        <description>&lt;p&gt;JSer.info #416 - WebDriverを扱うテストフレームワークであるWebdriverIO v5がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://webdriver.io/blog/2018/12/19/webdriverio-v5-released.html&quot;&gt;WebdriverIO v5 Released · WebdriverIO&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/webdriverio/webdriverio/blob/master/CHANGELOG.md#v500-2018-12-20&quot;&gt;webdriverio/CHANGELOG.md at master · webdriverio/webdriverio&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;パッケージ構造やAPI周りの変更が行われています。&lt;/p&gt;
-
-&lt;p&gt;基本的なパッケージが&lt;a href=&quot;https://www.npmjs.com/org/@wdio/&quot;&gt;&lt;code&gt;@wdio&lt;/code&gt;&lt;/a&gt;に移動され、同梱されていたCLIが&lt;code&gt;@wdio/cli&lt;/code&gt;に移動しています。&lt;/p&gt;
-
-&lt;p&gt;API周りではコマンドがselectorを受け取らないようになり、メソッドチェーンではなくasync/awaitベースに変更されています。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// v4ではセレクタを渡せた&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;browser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#elem'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// v5からはelementを取得してから操作する&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#elem'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;その他にも&lt;code&gt;isVisible&lt;/code&gt;が&lt;code&gt;isDisplayed&lt;/code&gt;にリネームされるなど多くのコマンドのリネームが行われています。&lt;br&gt;
-詳しくは&lt;a href=&quot;https://github.com/webdriverio/webdriverio/blob/master/CHANGELOG.md#v500-2018-12-20&quot;&gt;CHANGELOG.md&lt;/a&gt;に掲載されています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;モジュールBundlerであるRollup v1.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/rollup/rollup/releases/tag/v1.0.0&quot;&gt;Release v1.0.0 · rollup/rollup&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;破壊的な変更として、非推奨となっていたオプションやオプションのリネームが含まれています。&lt;br&gt;
-&lt;code&gt;bundle.generate&lt;/code&gt;と&lt;code&gt;bundle.write&lt;/code&gt;の返す値のフォーマットの変更、&lt;code&gt;acorn@6&lt;/code&gt;へアップデートなどが行われています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/rollup/rollup/pull/2293&quot;&gt;1.0 changes by guybedford · Pull Request #2293 · rollup/rollup&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://qiita.com/3846masa/items/92d24e16ebb5151b08ba&quot;&gt;Comlink + Rust で言語とスレッドの垣根を越えた WebAssembly 開発 - Qiita&lt;/a&gt;という記事では、Zip展開アプリの例にしたRustとWebAssemblyを使った開発について書かれています。&lt;/p&gt;
-
-&lt;p&gt;Rustや&lt;a href=&quot;https://rustwasm.github.io/wasm-pack/book/&quot;&gt;wasm-pack&lt;/a&gt;を使った開発環境の設定から、&lt;a href=&quot;https://rustwasm.github.io/wasm-bindgen/&quot;&gt;wasm-bindgen&lt;/a&gt;でRustとJavaScriptのバインディングの作成、webpackでの読み込みとブラウザでの実行についてまで書かれています。&lt;br&gt;
-また、メインスレッドで重たい処理を行うのを避けるために、WebAssemblyの処理をWebWorker上で行い、そのメッセージのやり取りに&lt;a href=&quot;https://github.com/GoogleChromeLabs/comlink&quot;&gt;Comlink&lt;/a&gt;を使う方法などについても紹介されています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;webdriverio-v5-released-webdriverio&quot;&gt;WebdriverIO v5 Released · WebdriverIO&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webdriver.io/blog/2018/12/19/webdriverio-v5-released.html&quot; title=&quot;WebdriverIO v5 Released · WebdriverIO&quot;&gt;webdriver.io/blog/2018/12/19/webdriverio-v5-released.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Selenium&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebdriverIO v5リリース。&lt;br&gt;
-&lt;code&gt;wdio&lt;/code&gt; CLIは&lt;code&gt;@wdio/cli&lt;/code&gt;に移動、コマンドがselectorを受け取らないように、メソッドチェーンではなくasync/awaitベースに変更。&lt;br&gt;
-その他にもコマンドのリネームなどの破壊的な変更を多く含む&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/webdriverio/webdriverio/blob/master/CHANGELOG.md#v500-2018-12-20&quot; title=&quot;webdriverio/CHANGELOG.md at master · webdriverio/webdriverio&quot;&gt;webdriverio/CHANGELOG.md at master · webdriverio/webdriverio&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v1-0-0-rollup-rollup&quot;&gt;Release v1.0.0 · rollup/rollup&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/rollup/rollup/releases/tag/v1.0.0&quot; title=&quot;Release v1.0.0 · rollup/rollup&quot;&gt;github.com/rollup/rollup/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Rollup 1.0.0リリース。&lt;br&gt;
-破壊的な変更としてオプションのリネーム、&lt;code&gt;bundle.generate&lt;/code&gt;の返す値のフォーマットの変更、&lt;code&gt;acorn@6&lt;/code&gt;へアップデートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;graphql-rest-api-hub-web&quot;&gt;「GraphQL」徹底入門 ─ RESTとの比較、API・フロント双方の実装から学ぶ - エンジニアHub｜若手Webエンジニアのキャリアを考える！&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://employment.en-japan.com/engineerhub/entry/2018/12/26/103000&quot; title=&quot;「GraphQL」徹底入門 ─ RESTとの比較、API・フロント双方の実装から学ぶ - エンジニアHub｜若手Webエンジニアのキャリアを考える！&quot;&gt;employment.en-japan.com/engineerhub/entry/2018/12/26/103000&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GraphQLの入門記事。&lt;br&gt;
-GraphQLの利点、欠点、スキーマ/クエリの書き方、VariableやFragmentの使い方について。&lt;br&gt;
-またRelayの拡張や実際にGraphQLを使った実装例についてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;understanding-throttling-and-debouncing-bits-and-pieces&quot;&gt;Understanding Throttling and Debouncing – Bits and Pieces&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.bitsrc.io/understanding-throttling-and-debouncing-973131c1ba07&quot; title=&quot;Understanding Throttling and Debouncing – Bits and Pieces&quot;&gt;blog.bitsrc.io/understanding-throttling-and-debouncing-973131c1ba07&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ThrottlingとDebouncingについてそれぞれを実装しながら挙動を理解していく記事&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;comlink-rust-webassembly-qiita&quot;&gt;Comlink + Rust で言語とスレッドの垣根を越えた WebAssembly 開発 - Qiita&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://qiita.com/3846masa/items/92d24e16ebb5151b08ba&quot; title=&quot;Comlink + Rust で言語とスレッドの垣根を越えた WebAssembly 開発 - Qiita&quot;&gt;qiita.com/3846masa/items/92d24e16ebb5151b08ba&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Rust&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Rustを使ったWebAssemblyライブラリの開発について。&lt;br&gt;
-Rustを使ったwasmのバインディングの作成、webpackを使ったロード方法について。&lt;br&gt;
-また、処理をメインスレッド外のWebWorkerで行いComlinkでのデータのやり取りする方法について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;babel-7-qiita&quot;&gt;Babel 7 の主な変更点まとめ - Qiita&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://qiita.com/soarflat/items/21b8955f992bf7d38581&quot; title=&quot;Babel 7 の主な変更点まとめ - Qiita&quot;&gt;qiita.com/soarflat/items/21b8955f992bf7d38581&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Babel 7の主な変更点やマイグレーション方法について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-native-codezine&quot;&gt;基礎からはじめるReact Native入門連載一覧：CodeZine（コードジン）&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://codezine.jp/article/corner/772&quot; title=&quot;基礎からはじめるReact Native入門連載一覧：CodeZine（コードジン）&quot;&gt;codezine.jp/article/corner/772&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;iOS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Android&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React Nativeについての連載記事。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ecmascript-modules-in-node-js-the-new-plan&quot;&gt;ECMAScript modules in Node.js: the new plan&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://2ality.com/2018/12/nodejs-esm-phases.html&quot; title=&quot;ECMAScript modules in Node.js: the new plan&quot;&gt;2ality.com/2018/12/nodejs-esm-phases.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsにおけるES Modulesの扱いについてのまとめ記事。&lt;br&gt;
-&lt;code&gt;.mjs&lt;/code&gt;のサポートについてやCommonJSとの相互運用性の問題、今後どのような方針が予定されているのかについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript-web-infoq&quot;&gt;JavaScriptとWeb開発に関するInfoQトレンドレポート&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.infoq.com/jp/articles/javascript-web-development-trends&quot; title=&quot;JavaScriptとWeb開発に関するInfoQトレンドレポート&quot;&gt;www.infoq.com/jp/articles/javascript-web-development-trends&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;InfoQのJavaScriptに関するトレンドレポート。&lt;br&gt;
-イノベーター、アーリーアダプター、アーリーマジョリティ、レイトマジョリティ、ラガードに分けて関連するライブラリ/フレームワーク/ツールについて紹介している。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;typescript-angular&quot;&gt;TypeScriptで実現する型安全な多言語対応（Angularを例に） | 株式会社カブク&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.kabuku.co.jp/software_engineer/typescript-angular-i18n/&quot; title=&quot;TypeScriptで実現する型安全な多言語対応（Angularを例に） | 株式会社カブク&quot;&gt;www.kabuku.co.jp/software_engineer/typescript-angular-i18n/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;翻訳ファイルをTypeScriptのコードとして表現することで型安全な翻訳定義を作成する方法について。&lt;br&gt;
-翻訳ファイルをコードにするメリットとデメリットについてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;takefumi-yoshii-react-hooks-ogiri-advent-calendar-of-2018-this-is-a-showreel-using-a-reaction-hook&quot;&gt;takefumi-yoshii/react-hooks-ogiri: Advent calendar of 2018. This is a showreel using a reaction hook.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/takefumi-yoshii/react-hooks-ogiri&quot; title=&quot;takefumi-yoshii/react-hooks-ogiri: Advent calendar of 2018. This is a showreel using a reaction hook.&quot;&gt;github.com/takefumi-yoshii/react-hooks-ogiri&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;example&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React Hooks APIを使ったUIコンポーネントのサンプル実装集&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/advent-calendar/2018/react-hooks-ogiri&quot; title=&quot;React Hooks 大喜利 Advent Calendar 2018 - Qiita&quot;&gt;React Hooks 大喜利 Advent Calendar 2018 - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;fontoxml-fontoxpath-a-minimalistic-xpath-3-1-implementation-in-pure-javascript&quot;&gt;FontoXML/fontoxpath: A minimalistic XPath 3.1 implementation in pure JavaScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/FontoXML/fontoxpath&quot; title=&quot;FontoXML/fontoxpath: A minimalistic XPath 3.1 implementation in pure JavaScript&quot;&gt;github.com/FontoXML/fontoxpath&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;xpath&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;XPath 3.1、XQuery 3.1の実装ライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jsincss-a-js-in-css-stylesheet-loader&quot;&gt;jsincss | A JS-in-CSS stylesheet loader&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jsincss.com/&quot; title=&quot;jsincss | A JS-in-CSS stylesheet loader&quot;&gt;jsincss.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptからテンプレートでCSSを生成でき、イベントによってリアクティブにCSSを変更できるライブラリ。&lt;br&gt;
-プラグインで拡張できるようになっている。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/tomhodgins/jsincss&quot; title=&quot;tomhodgins/jsincss: A JS-in-CSS stylesheet loader&quot;&gt;tomhodgins/jsincss: A JS-in-CSS stylesheet loader&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://responsive.style/theory/what-is-a-jic-stylesheet.html&quot; title=&quot;What is a JIC Stylesheet? - Responsive Style&quot;&gt;What is a JIC Stylesheet? - Responsive Style&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;babeledit-editor-for-json-translation-files-for-angular-react&quot;&gt;BabelEdit - Editor for JSON translation files for Angular &amp;amp; React&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.codeandweb.com/babeledit&quot; title=&quot;BabelEdit - Editor for JSON translation files for Angular &amp;amp; React&quot;&gt;www.codeandweb.com/babeledit&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;software&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JSONベースの翻訳ファイルエディタ。&lt;br&gt;
-AngularやReactとの連携としたワークフローが紹介されている&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Mon, 31 Dec 2018 22:38:01 +0900</pubDate>
-        <link>https://jser.info/2018/12/31/webdriverio-v5rollup-1.0rust-webassembly-webworker/</link>
-        <guid isPermaLink="true">https://jser.info/2018/12/31/webdriverio-v5rollup-1.0rust-webassembly-webworker/</guid>
-        
-        <category>Selenium</category>
-        
-        <category>rollup</category>
-        
-        <category>WebAssembly</category>
-        
-        <category>Rust</category>
         
         
         <category>JSer</category>
