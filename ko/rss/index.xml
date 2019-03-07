@@ -5,9 +5,229 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 06 Mar 2019 13:02:54 +0900</pubDate>
-    <lastBuildDate>Wed, 06 Mar 2019 13:02:54 +0900</lastBuildDate>
+    <pubDate>Fri, 08 Mar 2019 08:16:40 +0900</pubDate>
+    <lastBuildDate>Fri, 08 Mar 2019 08:16:40 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-03-05: Storybook 5.0.0, Preact X(α릴리스), 웹사이트의 크기(백분위수) </title>
+        <description>&lt;p&gt;JSer.info #425 - 컴포넌트 개발 환경인 &lt;a href=&quot;https://storybook.js.org/&quot;&gt;Storybook&lt;/a&gt; 5.0.0이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · storybooks/storybook&quot;&gt;Release v5.0.0 · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-0-db1d0f9c83b8&quot; title=&quot;Storybook 5.0 – Storybook – Medium&quot;&gt;Storybook 5.0 – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/meet-storybook-5-0s-new-design-fb5735bc2a81&quot; title=&quot;Meet Storybook 5.0&amp;#39;s new design – Storybook – Medium&quot;&gt;Meet Storybook 5.0&amp;#39;s new design – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;UI, 단축키, URL 구조 등이 변경됐습니다.&lt;/p&gt;
+
+&lt;p&gt;비호환적 변경 사항으로 웹팩 설정 인수가 변경 됐고 options addon이 비권장 됐습니다.&lt;br&gt;
+이전하는 방법은 아래 페이지에 정리돼 있으니 참고하시길 바랍니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/blob/next/MIGRATION.md&quot;&gt;storybook/MIGRATION.md at next · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-0-db1d0f9c83b8&quot; title=&quot;Storybook 5.0 – Storybook – Medium&quot;&gt;Storybook 5.0 – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://preactjs.com/&quot;&gt;Preact&lt;/a&gt;의 다음 메이저 버전 Preact X(10.0.0)의 α 버전이 공개됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/developit/preact/releases/tag/10.0.0-alpha.0&quot;&gt;Release Preact X is here 🎉 · developit/preact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;React 최신 업데이트에 맞춰 &lt;code&gt;Fragment&lt;/code&gt;, &lt;code&gt;componentDidCatch&lt;/code&gt;, &lt;a href=&quot;https://reactjs.org/docs/hooks-intro.html&quot;&gt;Hooks&lt;/a&gt;, &lt;code&gt;createContext&lt;/code&gt;, CSS Custom Properties를 대응합니다. 또 &lt;code&gt;preact-compat&lt;/code&gt;이라는 별도의 패키지가 아니라 &lt;code&gt;preact/compat&lt;/code&gt;으로 사용할 수 있도록 포함해 배포됩니다.&lt;/p&gt;
+
+&lt;p&gt;비호환적 변경사항으로 string ref, &lt;code&gt;createClass&lt;/code&gt;와 같이 과거에 비권장됐던 기능이 삭제됐으며 &lt;code&gt;setState&lt;/code&gt;가 비동기(&lt;a href=&quot;https://github.com/facebook/react/issues/11527&quot;&gt;React와 같이&lt;/a&gt;)로 state를 변경하도록 변경됐습니다. 또, &lt;code&gt;VNode&lt;/code&gt;의 프로퍼티 구조가 변경됐습니다.&lt;/p&gt;
+
+&lt;p&gt;아래 Preact X에 관해 발표한 부분을 함께 살펴보면 도움이 될 거 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/DFF9eOlTWzY?t=3988&quot; title=&quot;This.JavaScript - State of Frameworks &amp;amp;amp; Libraries - YouTube&quot;&gt;This.JavaScript - State of Frameworks &amp;amp; Libraries - YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;tweet&quot;&gt;금주의 Tweet&lt;/h2&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Page Weight Percentiles: overall &amp;amp; by resource type&lt;br&gt;&lt;br&gt;If one of these categories is super high for a site, it&amp;#39;s often an indicator that there&amp;#39;s &amp;quot;low hanging fruit&amp;quot; performance wins to be had by optimizing that resource type.&lt;br&gt;&lt;br&gt;(Data source: &lt;a href=&quot;https://twitter.com/HTTPArchive?ref_src=twsrc%5Etfw&quot;&gt;@HTTPArchive&lt;/a&gt;, Desktop Oct&amp;#39;18 data) &lt;a href=&quot;https://t.co/JSEsEUejE8&quot;&gt;pic.twitter.com/JSEsEUejE8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Katie Hempenius (@katiehempenius) &lt;a href=&quot;https://twitter.com/katiehempenius/status/1103005053353369600?ref_src=twsrc%5Etfw&quot;&gt;March 5, 2019&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;위 트윗에서 볼 수 있는 테이블은 &lt;a href=&quot;https://httparchive.org/&quot;&gt;HTTP Archive&lt;/a&gt;의 자료(data)를 이용해 웹사이트의 크기를 백분위수로 표현한 것 입니다. JS 열을 보면 웹사이트의 50%는 420KB 이지만 10%는 1.2MB 이상의 파일 크기로 이뤄져 있음을 알 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이 &lt;a href=&quot;https://httparchive.org/&quot;&gt;HTTP Archive&lt;/a&gt;의 원자료는 누구라도 BigQuery로 접근할 수 있습니다. 흥미 있는 분은 아래 분서를 참고하시길 바랍니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md&quot;&gt;httparchive.org/gettingstarted_bigquery.md at master · HTTPArchive/httparchive.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;february-2019-security-releases-node-js&quot;&gt;February 2019 Security Releases | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/vulnerability/february-2019-security-releases/&quot; title=&quot;February 2019 Security Releases | Node.js&quot;&gt;nodejs.org/en/blog/vulnerability/february-2019-security-releases/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 보안 수정 릴리스, Node.js LTS 모든 버전을 지원하는 보안 수정이 이뤄졌습니다.&lt;br&gt;
+keep-alive 관련 DoS 두 건(모두 impact는 low)과 OpenSSL 취약점(Node 10+는 영향 없음)이 수정됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ember-js-ember-3-8-released&quot;&gt;Ember.js - Ember 3.8 Released&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://emberjs.com/blog/2019/02/27/ember-3-8-released.html&quot; title=&quot;Ember.js - Ember 3.8 Released&quot;&gt;emberjs.com/blog/2019/02/27/ember-3-8-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Ember 3.8이 릴리스 됐습니다.&lt;br&gt;
+Element Modifier Manager, Array helper가 추가됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v5-0-0-storybooks-storybook&quot;&gt;Release v5.0.0 · storybooks/storybook&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · storybooks/storybook&quot;&gt;github.com/storybooks/storybook/releases/tag/v5.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Storybook 5.0.0이 릴리스됐습니다.&lt;br&gt;
+디자인과 URL 구조와 단축키 그리고 웹팩 커스텀 설정 인수가 변경됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-migration-guide-d804b38c739d&quot; title=&quot;Storybook 5 Migration Guide – Storybook – Medium&quot;&gt;Storybook 5 Migration Guide – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/meet-storybook-5-0s-new-design-fb5735bc2a81&quot; title=&quot;Meet Storybook 5.0&amp;amp;#x27;s new design – Storybook – Medium&quot;&gt;Meet Storybook 5.0&amp;#39;s new design – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-0-db1d0f9c83b8&quot; title=&quot;Storybook 5.0 – Storybook – Medium&quot;&gt;Storybook 5.0 – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-preact-x-is-here-developit-preact&quot;&gt;Release Preact X is here 🎉 · developit/preact&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/developit/preact/releases/tag/10.0.0-alpha.0&quot; title=&quot;Release Preact X is here 🎉 · developit/preact&quot;&gt;github.com/developit/preact/releases/tag/10.0.0-alpha.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Preact X α 버전이 릴리스 됐습니다.&lt;br&gt;
+&lt;code&gt;Fragment&lt;/code&gt;, &lt;code&gt;componentDidCatch&lt;/code&gt;, Hooks, &lt;code&gt;createContext&lt;/code&gt;, CSS Custom Properties를 대응합니다.&lt;br&gt;
+또, &lt;code&gt;preact-compat&lt;/code&gt;를 별도의 패키지가 아니라 &lt;code&gt;preact/compat&lt;/code&gt;로 통합했습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/DFF9eOlTWzY?t=3988&quot; title=&quot;This.JavaScript - State of Frameworks &amp;amp;amp; Libraries - YouTube&quot;&gt;This.JavaScript - State of Frameworks &amp;amp; Libraries - YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;testcafe-v1-1-0-released-testcafe&quot;&gt;TestCafe v1.1.0 Released | TestCafe&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devexpress.github.io/testcafe/blog/testcafe-v1-1-0-released.html&quot; title=&quot;TestCafe v1.1.0 Released | TestCafe&quot;&gt;devexpress.github.io/testcafe/blog/testcafe-v1-1-0-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TestCafe 1.1.0이 릴리스 됐습니다.&lt;br&gt;
+TypeScript 3.3 지원, TypeScript의 타입 개선이 이뤄졌습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;html-snapshot-testing-with-node&quot;&gt;HTML Snapshot Testing with Node&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://spin.atomicobject.com/2019/02/13/html-snapshot-testing-with-node/&quot; title=&quot;HTML Snapshot Testing with Node&quot;&gt;spin.atomicobject.com/2019/02/13/html-snapshot-testing-with-node/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;HTML의 스냅샷을 비교하는 스냅샷 테스트에 관해 작성돼 있습니다.&lt;br&gt;
+스냅샷 테스트를 실제로 어떻게 구현하는지 소개합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;progressive-react&quot;&gt;Progressive React&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://houssein.me/progressive-react&quot; title=&quot;Progressive React&quot;&gt;houssein.me/progressive-react&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React로 개발한 웹앱을 어떻게 개선할 수 있는지 이야기합니다.&lt;br&gt;
+&lt;code&gt;shouldComponentUpdate&lt;/code&gt;를 이용한 불필요한 렌더링 최소화, 번들 크기와 Code Splitting, 캐시와 SSR을 이용한 초기 출력 개선, 크리티컬 패스 최적화 등 React 레벨 뿐 아니라 앱 레벨에서의 최적화 대해 작성돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webpack-babel-1-webpack-qiita&quot;&gt;webpack과 Babel의 기본을 이해한다(1) ―webpack 편― Qiita(읿본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/koedamon/items/3e64612d22f3473f36a4&quot; title=&quot;webpackとBabelの基本を理解する(1) ―webpack編― - Qiita&quot;&gt;qiita.com/koedamon/items/3e64612d22f3473f36a4&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;웹팩, Babel의 역할과 설정 방법을 튜토리얼 형식으로 소개합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;package-diff&quot;&gt;Package Diff&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://diff.intrinsic.com/&quot; title=&quot;Package Diff&quot;&gt;diff.intrinsic.com/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm 패키지 버전 간의 비교(diff)를 제공하는 서비스입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/intrinsic/introducing-package-diff-for-npm-e6487cc9b434&quot; title=&quot;Introducing Package Diff (for npm) – intrinsic – Medium&quot;&gt;Introducing Package Diff (for npm) – intrinsic – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;dyatko-arkit-visualises-javascript-typescript-and-flow-codebases-as-meaningful-and-committable-architecture-diagrams&quot;&gt;dyatko/arkit: Visualises JavaScript, TypeScript and Flow codebases as meaningful and committable architecture diagrams&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/dyatko/arkit&quot; title=&quot;dyatko/arkit: Visualises JavaScript, TypeScript and Flow codebases as meaningful and committable architecture diagrams&quot;&gt;github.com/dyatko/arkit&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UML&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;파일을 토대로 아키텍처 다이어그램을 생성하는 도구입니다.&lt;br&gt;
+코드 베이스가 되는 파일을 지정하고 구조 분석해 Plant UML이나 SVG 등의 그림으로 변환해줍니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;autonumeric-autonumeric-autonumeric-is-a-standalone-library-that-provides-live-as-you-type-formatting-for-international-numbers-and-currencies&quot;&gt;autoNumeric/autoNumeric: autoNumeric is a standalone library that provides live as-you-type formatting for international numbers and currencies.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/autoNumeric/autoNumeric/&quot; title=&quot;autoNumeric/autoNumeric: autoNumeric is a standalone library that provides live as-you-type formatting for international numbers and currencies.&quot;&gt;github.com/autoNumeric/autoNumeric/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;통화 입력 처리를 다루는 라이브러리입니다.&lt;br&gt;
+기존 입력 요소에 바인딩하여 통화 입력에 대해 유효성 검증이나 단위 포맷 등을 제공합니다. &lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;pikapkg-web-install-npm-dependencies-that-run-directly-in-the-browser-no-browserify-webpack-or-import-maps-required&quot;&gt;pikapkg/web: Install npm dependencies that run directly in the browser. No Browserify, Webpack or import maps required.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/pikapkg/web&quot; title=&quot;pikapkg/web: Install npm dependencies that run directly in the browser. No Browserify, Webpack or import maps required.&quot;&gt;github.com/pikapkg/web&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Development&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Rollup를 사용해 기존 모듈을 ES Modules로 변환하는 도구입니다.&lt;br&gt;
+변환된 모듈은 브라우저에서 ES module로 import 할 수 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Wed, 06 Mar 2019 00:43:44 +0900</pubDate>
+        <link>https://jser.info/ko/2019/03/06/storybook-5.0.0preact-xa/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2019/03/06/storybook-5.0.0preact-xa/</guid>
+        
+        <category>storybook</category>
+        
+        <category>preact</category>
+        
+        <category>HTTPArchive</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-02-26: yarn v2 후보(berry), Fastify v2, TSLint의 향후 방향</title>
@@ -2366,262 +2586,6 @@ Babel 플러그인을 써서 코드를 변환하는 과정을 이야기합니다
         <category>Storybook</category>
         
         <category>firefox</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-10-21 JS: Chrome 70, Angular 7, LoopBack 4 GA</title>
-        <description>&lt;p&gt;JSer.info #406 - Chrome 70이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/10/nic70&quot; title=&quot;New in Chrome 70  |  Web  |  Google Developers&quot;&gt;New in Chrome 70  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#browsers.chrome.desktop%3D70&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/09/chrome-70-beta-shape-detection-web.html&quot; title=&quot;Chromium Blog: Chrome 70 beta: shape detection, web authentication, and more&quot;&gt;Chromium Blog: Chrome 70 beta: shape detection, web authentication, and more&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/09/chrome-70-deps-rems&quot; title=&quot;Deprecations and removals in Chrome 70  |  Web  |  Google Developers&quot;&gt;Deprecations and removals in Chrome 70  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/progressive-web-apps/desktop&quot;&gt;Desktop PWA&lt;/a&gt;에서 확인할 수 있듯 Windows와 Linux에서 지원합니다. macOS는 Chrome 72에서 지원할 예정입니다.&lt;/p&gt;
-
-&lt;p&gt;Credential Management API에서 지문 인증, TLS 1.3을 지원하며 Web Worker에 &lt;code&gt;name&lt;/code&gt; 속성(Named workers)을 추가했고 Web Components v0를 비권장화 했습니다.&lt;br&gt;
-또, Chrome 70 부터 &lt;code&gt;http://&lt;/code&gt; 사이트의 폼 등에 데이터를 입력 시 빨간색으로 &amp;quot;Not Secure&amp;quot; 경고를 출력합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/05/evolving-chromes-security-indicators.html&quot;&gt;Chromium Blog: Evolving Chrome&amp;#39;s security indicators&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Angular 7이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.angular.io/version-7-of-angular-cli-prompts-virtual-scroll-drag-and-drop-and-more-c594e22e7b8c&quot;&gt;Version 7 of Angular — CLI Prompts, Virtual Scroll, Drag and Drop and more&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/angular/angular/blob/master/CHANGELOG.md#700-2018-10-18&quot;&gt;angular/CHANGELOG.md at master · angular/angular&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;TypeScript 3.1, CDK에서 Drag and Drop 지원하며 Virtual Scrolling을 대응했습니다. 또, 개발할 때만 필요한 &lt;code&gt;reflect-metadata&lt;/code&gt;를 production 빌드 시 자동으로 제거하도록 변경했습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Node.js의 API 프레임워크 &lt;a href=&quot;https://v4.loopback.io/&quot;&gt;LoopBack 4&lt;/a&gt; GA (General Availability)가 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://strongloop.com/strongblog/loopback-4-ga&quot;&gt;StrongLoop - Announcing LoopBack 4 GA is Now Ready for Production Use!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;핵심 코드를 TypeScript로 재작성하고 있으며 따라서 타입과 관련한 부분을 전체적으로 개선하고 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/strongloop/loopback-next&quot;&gt;strongloop/loopback-next: LoopBack makes it easy to build modern API applications that require complex integrations.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;lb4 openapi&lt;/code&gt; 커맨드를 이용해 OpenAPI 스펙에 따른 출력에 대응할 수 있으며 LTS 정책도 함께 갱신했습니다.&lt;br&gt;
- 이번 LoopBack 4는 2021년 4월까지 지원할 예정입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-70-web-google-developers&quot;&gt;New in Chrome 70  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/10/nic70&quot; title=&quot;New in Chrome 70  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/10/nic70&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 70이 릴리스됐습니다.&lt;br&gt;
-Desktop PWA(Windows)와 Credential Management API에서 지문 인증을 지원하며 Web Worker에 &lt;code&gt;name&lt;/code&gt; 속성을 추가했습니다. 도, TLS 1.3을 지원하고 Web Components v0 비권장이 이뤄졌습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#browsers.chrome.desktop%3D70&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/09/chrome-70-beta-shape-detection-web.html&quot; title=&quot;Chromium Blog: Chrome 70 beta: shape detection, web authentication, and more&quot;&gt;Chromium Blog: Chrome 70 beta: shape detection, web authentication, and more&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/09/chrome-70-deps-rems&quot; title=&quot;Deprecations and removals in Chrome 70  |  Web  |  Google Developers&quot;&gt;Deprecations and removals in Chrome 70  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-7-0-2-zeit-next-js&quot;&gt;Release 7.0.2 · zeit/next.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/zeit/next.js/releases/tag/7.0.2&quot; title=&quot;Release 7.0.2 · zeit/next.js&quot;&gt;github.com/zeit/next.js/releases/tag/7.0.2&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Next.js 7.0.2가 릴리스됐습니다.&lt;br&gt;
-7.0.0와 7.0.1의 에러 화면에 존재하는 XSS 취약점을 수정했습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;version-7-of-angular-cli-prompts-virtual-scroll-drag-and-drop-and-more&quot;&gt;Version 7 of Angular — CLI Prompts, Virtual Scroll, Drag and Drop and more&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.angular.io/version-7-of-angular-cli-prompts-virtual-scroll-drag-and-drop-and-more-c594e22e7b8c&quot; title=&quot;Version 7 of Angular — CLI Prompts, Virtual Scroll, Drag and Drop and more&quot;&gt;blog.angular.io/version-7-of-angular-cli-prompts-virtual-scroll-drag-and-drop-and-more-c594e22e7b8c&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Angular 7이 릴리스됐습니다.&lt;br&gt;
-TypeScript 3.1, CDK에서 Drag and Drop 지원하며 Virtual Scrolling을 대응했습니다. 또, &lt;code&gt;reflect-metadata&lt;/code&gt;를 production 빌드에 잘못 포함하는 경우를 방지하기 위해 자동으로 제거하도록 변경했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/angular/angular/blob/master/CHANGELOG.md#700-2018-10-18&quot; title=&quot;angular/CHANGELOG.md at master · angular/angular&quot;&gt;angular/CHANGELOG.md at master · angular/angular&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://mae.chab.in/archives/60226&quot; title=&quot;Angular 7 릴리스 노트 - Angular Blog 일본어 버전 | maesblog&quot;&gt;Angular 7 릴리스 노트 - Angular Blog 일본어 버전 | maesblog&lt;/a&gt;(일본어)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;strongloop-announcing-loopback-4-ga-is-now-ready-for-production-use&quot;&gt;StrongLoop - Announcing LoopBack 4 GA is Now Ready for Production Use!&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://strongloop.com/strongblog/loopback-4-ga&quot; title=&quot;StrongLoop - Announcing LoopBack 4 GA is Now Ready for Production Use!&quot;&gt;strongloop.com/strongblog/loopback-4-ga&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js API 프레임워크 LoopBack 4GA가 릴리스됐습니다.&lt;br&gt;
-핵심 코드를 TypeScript로 재작성했고 OpenAPI 형식으로의 출력을 대응했으며 LTS 정책도 포함해 갱신했습니다.&lt;br&gt;
-LoopBack 4는 2021년 4월까지 지원할 예정입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://v4.loopback.io/&quot; title=&quot;LoopBack 4&quot;&gt;LoopBack 4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-js&quot;&gt;Node.js에 있어 프로토타입 오염 공격이란 무엇인가 - 한가한 일기(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jovi0608.hatenablog.com/entry/2018/10/19/083725&quot; title=&quot;Node.js에 있어 프로토타입 오염 공격이란 무엇인가 - 한가한 일기&quot;&gt;jovi0608.hatenablog.com/entry/2018/10/19/083725&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Prototype pollution에 관해 작성돼 있습니다.&lt;br&gt;
-객체를 합칠 때 등  &lt;code&gt;__proto__&lt;/code&gt; 프로퍼티를 의도치 않게 다시 쓰게되는 경우에 대해 이야기합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;angular-4-angular-6&quot;&gt;Angular 4 애플리케이션을 Angular 6에 마이그레이션 | 주식회사 카부쿠(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.kabuku.co.jp/developers/migration-from-ng4-to-ng6&quot; title=&quot;Angular 4 애플리케이션을 Angular 6에 마이그레이션 | 주식회사 카부쿠&quot;&gt;www.kabuku.co.jp/developers/migration-from-ng4-to-ng6&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Angular 4.x에서 6.x으로 마이크레이션하는 방법에 대해 작성돼 있습니다.&lt;br&gt;
-Angular 4의 LTS가 2018년 9월 종료되며 이에 맞춰 6.x으로 어떻게 마이그레이션하면 될 지 이야기합니다.&lt;br&gt;
-마이그레이션 결과, 빌드 시간, 파일 사이즈 등에 개선 효과가 있었는지 등에 대해 다룹니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;on-the-roadmap-exact-objects-by-default-flow-medium&quot;&gt;On the Roadmap: Exact Objects by Default – Flow – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/flow-type/on-the-roadmap-exact-objects-by-default-16b72933c5cf&quot; title=&quot;On the Roadmap: Exact Objects by Default – Flow – Medium&quot;&gt;medium.com/flow-type/on-the-roadmap-exact-objects-by-default-16b72933c5cf&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Flow 0.84.0부터 예정된 Exact Objects(&lt;code&gt;{| |}&lt;/code&gt; 유형)가 기본으로 변경되는 것 대해 작성돼 있습니다. 그 외 속성을 허용하는 새로운 구문으로서 &lt;code&gt;{foo: number, ...}&lt;/code&gt;를 도입, 어떻게 마이그레이션 할 수 있는지 이야기합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;re-ducks-react-redux&quot;&gt;Re-ducks 패턴 : React + Redux 의 디렉터리 구성 베스트 프랙티스(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://noah.plus/blog/021/&quot; title=&quot;Re-ducks 패턴 : React + Redux 의 디렉터리 구성 베스트 프랙티스&quot;&gt;noah.plus/blog/021/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Redux의 문맥으로 보는 Ducks 패턴과 Re-ducks 패턴에 대해 이야기합니다. 파일 디렉터리 구조를 어떤 규칙으로 구성할지, 그리고 그렇게 구성함으로서 해결할 수 있는 것들에 대해 작성돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;wai-aria&quot;&gt;마크업을 파워업하는 WAI-ARIA(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://masup9.github.io/dist23/#/&quot; title=&quot;마크업을 파워업하는 WAI-ARIA&quot;&gt;masup9.github.io/dist23/#/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WAI-ARIA&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WAI-AIRA의 목적, 사용법, 유즈케이스에 관해 설명하는 슬라이드입니다.&lt;br&gt;
-role, 스테이트, 프로퍼티를 지정했을 때 웹 브라우저와 접근성 지원 기기에 어떻게 전해지는지에 대해 정리돼 있습니다. &lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;gridsome-build-blazing-fast-websites-with-vue-js-and-graphql&quot;&gt;Gridsome - Build blazing fast websites with Vue.js and GraphQL&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://gridsome.org/&quot; title=&quot;Gridsome - Build blazing fast websites with Vue.js and GraphQL&quot;&gt;gridsome.org/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Vue와 GraphQL을 사용한 정적 사이트 도구 / 프레임워크입니다.&lt;br&gt;
-Gatsby.js에서 영감을 받아 개발한 프레임워크로 GraphQL 경유 레이어를 통해 데이터 소스에 접근합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;perf-tools-timekeeper-at-master-artifact-project-perf-tools&quot;&gt;perf-tools/timekeeper at master · artifact-project/perf-tools&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/artifact-project/perf-tools/tree/master/timekeeper&quot; title=&quot;perf-tools/timekeeper at master · artifact-project/perf-tools&quot;&gt;github.com/artifact-project/perf-tools/tree/master/timekeeper&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;지정 구간에 대한 시간 측정 결과를 콘솔이나 퍼포먼스 타이밍(Performance Timing API)에 출력 가능한 라이브러리입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;nico3333fr-csp-useful-collection-of-scripts-thoughts-about-csp-content-security-policy&quot;&gt;nico3333fr/CSP-useful: Collection of scripts, thoughts about CSP (Content Security Policy)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nico3333fr/CSP-useful&quot; title=&quot;nico3333fr/CSP-useful: Collection of scripts, thoughts about CSP (Content Security Policy)&quot;&gt;github.com/nico3333fr/CSP-useful&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSP 보고서 샘플과 노이즈가 돼 있는 CSP 보고서 등에 대해 정리하고 있는 저장소. 또, CSP의 팁이나 유즈케이스에 관해서도 작성돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;terkelg-zet-set-as-it-should-be&quot;&gt;terkelg/zet: Set() as it should be&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/terkelg/zet&quot; title=&quot;terkelg/zet: Set() as it should be&quot;&gt;github.com/terkelg/zet&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Set&lt;/code&gt;를 사용한 합집합, 차집합 등의 연산을 지원하는 라이브러리입니다.&lt;br&gt;
-&lt;code&gt;Set&lt;/code&gt; 간 집합 연산을 시행하는 &lt;code&gt;Set&lt;/code&gt; 서브클래스 라이브러리입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;f-graphql-js-a-simple-and-isomorphic-graphql-client-for-javascript&quot;&gt;f/graphql.js: A Simple and Isomorphic GraphQL Client for JavaScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/f/graphql.js&quot; title=&quot;f/graphql.js: A Simple and Isomorphic GraphQL Client for JavaScript&quot;&gt;github.com/f/graphql.js&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;동형(Isomorphic)의 GraphQL 클라이언트 라이브러리입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;segmentio-evergreen-evergreen-react-ui-framework-by-segment&quot;&gt;segmentio/evergreen: 🌲 Evergreen React UI Framework by Segment&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/segmentio/evergreen/&quot; title=&quot;segmentio/evergreen: 🌲 Evergreen React UI Framework by Segment&quot;&gt;github.com/segmentio/evergreen/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Segment에 의한 React UI 프레임워크입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;tencent-omi-next-generation-web-framework-in-4kb-javascript-web-components-jsx-proxy-store-path-updating&quot;&gt;Tencent/omi: Next generation web framework in 4kb JavaScript (Web Components + JSX + Proxy + Store + Path Updating)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Tencent/omi&quot; title=&quot;Tencent/omi: Next generation web framework in 4kb JavaScript (Web Components + JSX + Proxy + Store + Path Updating)&quot;&gt;github.com/Tencent/omi&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Web Components를 기반으로한 프레임워크입니다.&lt;br&gt;
-JSX 지원, ES Proxy를 사용한 변경 감지, Shadow DOM을 사용한 Scoped CSS 활용 등이 특징입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Sun, 21 Oct 2018 23:10:58 +0900</pubDate>
-        <link>https://jser.info/ko/2018/10/21/chrome-70angular-7loopback-4-ga/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2018/10/21/chrome-70angular-7loopback-4-ga/</guid>
-        
-        <category>chrome</category>
-        
-        <category>angular</category>
-        
-        <category>LoopBack</category>
         
         
         <category>JSer</category>
