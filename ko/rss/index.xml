@@ -5,9 +5,250 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 12 Mar 2019 12:59:13 +0900</pubDate>
-    <lastBuildDate>Tue, 12 Mar 2019 12:59:13 +0900</lastBuildDate>
+    <pubDate>Tue, 12 Mar 2019 14:26:08 +0900</pubDate>
+    <lastBuildDate>Tue, 12 Mar 2019 14:26:08 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-03-12: TensorFlow.js 1.0, Cache-Control 설명, `JSON.stringify(-0)`</title>
+        <description>&lt;p&gt;JSer.info #426 - TensorFlow 모델을 브라우저와 Node.js에서도 사용할 수 있는 TensorFlow.js 1.0이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tensorflow/tfjs/releases/tag/v1.0.0&quot;&gt;Release 1.0.0 · tensorflow/tfjs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;1.0에 &lt;code&gt;Tensor.array()&lt;/code&gt;와 &lt;code&gt;Tensor.arraySync()&lt;/code&gt;가 추가됐고 API의 이름이 변경되는 등 비호환적 변경사항이 포함돼 있습니다.&lt;br&gt;
+또, 초기 릴리스한 버전에 비해 성능이 크게 개선 됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://csswizardry.com/2019/03/cache-control-for-civilians/&quot; title=&quot;Cache-Control for Civilians – CSS Wizardry – CSS Architecture, Web Performance Optimisation, and more, by Harry Roberts&quot;&gt;Cache-Control for Civilians – CSS Wizardry – CSS Architecture, Web Performance Optimisation, and more, by Harry Roberts&lt;/a&gt;에는 &lt;code&gt;Cache-Control&lt;/code&gt; HTTP 헤더에 관해 자세히 작성돼 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;public&lt;/code&gt;, &lt;code&gt;private&lt;/code&gt;, &lt;code&gt;max-age&lt;/code&gt;, &lt;code&gt;no-store&lt;/code&gt;, &lt;code&gt;no-cache&lt;/code&gt;, &lt;code&gt;immutable&lt;/code&gt;, &lt;code&gt;stale-while-revalidate&lt;/code&gt; 라는 각 프로퍼티의 동작 방식이나 유스케이를 설명합니다.&lt;br&gt;
+뿐만 아니라 Cache Busting 방법이나 &lt;code&gt;Clear-Site-Data&lt;/code&gt; 헤더 그리고 라이브 전송 용 페이지 설정 등 다양한 내용을 다루고 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;part-c346e3d0c01109cd&quot;&gt;이번주 이슈&lt;/h2&gt;
+
+&lt;p&gt;ECMAScript 사양의 이슈로 &lt;code&gt;JSON.stringify(-0)&lt;/code&gt;의 처리에 관한 이슈가 등록됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/ecma262/pull/1466&quot;&gt;Normative: Make &lt;code&gt;JSON.stringify(-0)&lt;/code&gt; preserve the sign by mathiasbynens · Pull Request #1466 · tc39/ecma262&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;현재의 사양에서 &lt;code&gt;JSON.stringify(-0)&lt;/code&gt;할 경우 &lt;code&gt;String(-0)&lt;/code&gt;의 경우와 같은 로직으로 동작하므로 &lt;code&gt;-&lt;/code&gt;를 무시하여 &lt;code&gt;&amp;quot;0&amp;quot;&lt;/code&gt; 문자열이 반환됩니다.&lt;br&gt;
+한편,  &lt;code&gt;JSON.parse(&amp;quot;-0&amp;quot;)&lt;/code&gt;을 할 경우엔 &lt;code&gt;-&lt;/code&gt;를 고려하여 &lt;code&gt;-0&lt;/code&gt;이 반환됩니다.&lt;/p&gt;
+
+&lt;p&gt;이로 인해 parse 한 후 stringify 한 결과를 본래의 값과 &lt;code&gt;Object.is&lt;/code&gt;로 비교 시 일치하지 않는 경우가 있습니다.&lt;br&gt;
+이 사양은 JSON 포맷을 발견한 &lt;a href=&quot;https://github.com/douglascrockford&quot;&gt;douglascrockford/JSON-js&lt;/a&gt;에 근거한 것입니다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// 현재 사양&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;JSON.stringify(-0)&lt;/code&gt;가 &lt;code&gt;&amp;quot;-0&amp;quot;&lt;/code&gt;을 반환하도록 하는 사양을 수정한 PR이 등록됐습니다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// PR로 제안한 사양&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;하지만 &lt;code&gt;===&lt;/code&gt;로 비교할 때 &lt;code&gt;-0&lt;/code&gt;과 &lt;code&gt;0&lt;/code&gt; 차이를 무시하는 동작, &lt;code&gt;String()&lt;/code&gt;의 동작 방식과 통일하는 문제 등이 제기 됐으며 &lt;code&gt;JSON.stringify(-0)&lt;/code&gt;의 동작이 현업에서 그다지 문제될 일이 없다는 의견이 있어 일단은 PR이 취하됐습니다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// === 는 -0과 0의 차이를 무시함&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 문제에 관심 있는 분들은 위 이슈를 살펴보면 좋을 것 같습니다. &lt;br&gt;
+&lt;code&gt;===&lt;/code&gt;와 &lt;code&gt;Object.is&lt;/code&gt;의 비교 방식에 대해선 아래 문서를 통해 알 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Equality_comparisons_and_sameness&quot;&gt;동치 비교 및 동일성 - JavaScript | MDN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-1-0-0-tensorflow-tfjs&quot;&gt;Release 1.0.0 · tensorflow/tfjs&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/tensorflow/tfjs/releases/tag/v1.0.0&quot; title=&quot;Release 1.0.0 · tensorflow/tfjs&quot;&gt;github.com/tensorflow/tfjs/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MachineLearning&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TensorFlow.js 1.0이 릴리스됐습니다.&lt;br&gt;
+성능 개선이 이뤄졌고 &lt;code&gt;Tensor.array()&lt;/code&gt;와 &lt;code&gt;Tensor.arraySync()&lt;/code&gt;가 추가 됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-npm-6-9-0-announcements-npm-forum&quot;&gt;Release: &lt;a href=&quot;mailto:npm@6.9.0&quot;&gt;npm@6.9.0&lt;/a&gt; - 📣 announcements - npm forum&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://npm.community/t/release-npm-6-9-0/5911&quot; title=&quot;Release: npm@6.9.0 - 📣 announcements - npm forum&quot;&gt;npm.community/t/release-npm-6-9-0/5911&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm 6.9.0이 릴리스됐습니다.&lt;br&gt;
+지정한 날짜 보다 이전 버전을 설치하는 &lt;code&gt;--before&lt;/code&gt; 옵션이 추가됐고 패키지의 이름을 alias 하여 설치할 수 있는 package alias를 지원합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;rmdm-rmgr-release-resources-gracefully&quot;&gt;rmdm/rmgr: Release resources gracefully&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rmdm/rmgr&quot; title=&quot;rmdm/rmgr: Release resources gracefully&quot;&gt;github.com/rmdm/rmgr&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;리소스를 관리하는 라이브러리 입니다.&lt;br&gt;
+리소스 별로 initialize와 dispose 시의 처리를 정의하고 리소스를 배포할 수 있는 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;marble-js-2-0-reactive-better-functional-stronger&quot;&gt;Marble.js 2.0 🔥 — reactive, better, functional, stronger&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@jflakus/marble-2-reactive-better-functional-stronger-5924119d3098&quot; title=&quot;Marble.js 2.0 🔥 — reactive, better, functional, stronger&quot;&gt;medium.com/@jflakus/marble-2-reactive-better-functional-stronger-5924119d3098&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;RxJS를 사용한 Node.js 용 HTTP 프레임워크인 Marble.js 2.0이 릴리스됐습니다. WebSockets 대응, Context를 사용한 DI 구조, io-ts를 사용한 검증(validation)을 지원합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jsdom-changelog-md-at-master-jsdom-jsdom&quot;&gt;jsdom/Changelog.md at master · jsdom/jsdom&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jsdom/jsdom/blob/master/Changelog.md#1400&quot; title=&quot;jsdom/Changelog.md at master · jsdom/jsdom&quot;&gt;github.com/jsdom/jsdom/blob/master/Changelog.md#1400&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JSDOM 14.0.0이 릴리스됐습니다.&lt;br&gt;
+&lt;code&gt;JSDOM.fragment()&lt;/code&gt;가 browsing context를 갖지 않는 framents를 생성하도록 변경됐으며 &lt;code&gt;element.blur()&lt;/code&gt;가 회귀(regression) 수정됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;cache-control-for-civilians-css-wizardry-css-architecture-web-performance-optimisation-and-more-by-harry-roberts&quot;&gt;Cache-Control for Civilians – CSS Wizardry – CSS Architecture, Web Performance Optimisation, and more, by Harry Roberts&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://csswizardry.com/2019/03/cache-control-for-civilians/&quot; title=&quot;Cache-Control for Civilians – CSS Wizardry – CSS Architecture, Web Performance Optimisation, and more, by Harry Roberts&quot;&gt;csswizardry.com/2019/03/cache-control-for-civilians/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Cache-Control&lt;/code&gt; HTTP 헤더에 관한 설명 글입니다.&lt;br&gt;
+&lt;code&gt;public&lt;/code&gt;, &lt;code&gt;private&lt;/code&gt;, &lt;code&gt;max-age&lt;/code&gt;, &lt;code&gt;no-store&lt;/code&gt;, &lt;code&gt;no-cache&lt;/code&gt;, &lt;code&gt;immutable&lt;/code&gt;, &lt;code&gt;stale-while-revalidate&lt;/code&gt; 등 각각 항목을 설명하고 Cache Busting 방법 등에 대해서 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;javascript-loose-comparison-step-by-step&quot;&gt;JavaScript loose comparison (==) step by step&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://felix-kling.de/js-loose-comparison/&quot; title=&quot;JavaScript loose comparison (==) step by step&quot;&gt;felix-kling.de/js-loose-comparison/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;spec&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;==&lt;/code&gt;이 어떻게 값을 비교하는지 ECMAScript 사양에 정의된 알고리즘 단계에 따라 체크하는 도구입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;whats-new-in-devtools-chrome-74-web-google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 74)  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/03/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 74)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/03/devtools&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 74 개발자 도구 변경 사항을 정리한 글입니다. CSS property의 영향이 강조 표현되며 Lighthouse v4로 갱신됐습니다. 이어 WebSocket 바이너리 메시지 표현 기능이 추가됐으며 퍼포먼스 패널에서 Long task를 기록할 수 있게 됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-complete-guide-to-useeffect-overreacted&quot;&gt;A Complete Guide to useEffect — Overreacted&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://overreacted.io/a-complete-guide-to-useeffect/&quot; title=&quot;A Complete Guide to useEffect — Overreacted&quot;&gt;overreacted.io/a-complete-guide-to-useeffect/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Hooks의 &lt;code&gt;useEffect&lt;/code&gt; 동작과 사용 방법에 대해 설명하며 자주 있는 질문에 대해 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;request-map-generator&quot;&gt;Request Map Generator&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://requestmap.webperf.tools/&quot; title=&quot;Request Map Generator&quot;&gt;requestmap.webperf.tools/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;지정한 URL의 요청 관계(흐름)을 맵으로 출력 / 시각화 하는 도구입니다.&lt;br&gt;
+WebPageTest 결과를 이용합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;twbs-rfs-automated-responsive-font-sizes&quot;&gt;twbs/rfs: Automated responsive font sizes&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/twbs/rfs&quot; title=&quot;twbs/rfs: Automated responsive font sizes&quot;&gt;github.com/twbs/rfs&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;PostCSS&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;반응형 폰트 사이즈를 지정하는 CSS 세트입니다. &lt;br&gt;
+Sass, PostCSS, less, stylus 버전이 준비돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;feature-policy&quot;&gt;Feature policy&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://featurepolicy.info/&quot; title=&quot;Feature policy&quot;&gt;featurepolicy.info/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;example&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Feature Policy 데모 사이트입니다. 각각의 정책의 지원 상황과 문서, 샘플 등이 정리돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;dyatko-arkit-visualises-javascript-typescript-and-flow-codebases-as-meaningful-and-committable-architecture-diagrams&quot;&gt;dyatko/arkit: Visualises JavaScript, TypeScript and Flow codebases as meaningful and committable architecture diagrams&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/dyatko/arkit&quot; title=&quot;dyatko/arkit: Visualises JavaScript, TypeScript and Flow codebases as meaningful and committable architecture diagrams&quot;&gt;github.com/dyatko/arkit&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UML&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;파일로 부터 아키텍처 다이어그램을 생성하는 도구입니다. 코드 베이스가 되는 파일을 지정해 그 구조를 Plant UML이나 SVG 등의 그림으로 변환해 줍니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introduction-anyproxy&quot;&gt;Introduction · AnyProxy&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://anyproxy.io/en/&quot; title=&quot;Introduction · AnyProxy&quot;&gt;anyproxy.io/en/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proxy&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;HTTPS나 WebSocket 등에 대응한 로컬 프록시 도구입니다.&lt;br&gt;
+Proxy한 로그를 살펴볼 수 있는 GUI도 제공합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jaames-iro-js-color-wheel-widget-for-javascript-with-zero-dependencies-and-a-lovely-svg-based-ui&quot;&gt;jaames/iro.js: 🎨 Color wheel widget for JavaScript - with zero dependencies and a lovely SVG-based UI&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jaames/iro.js&quot; title=&quot;jaames/iro.js: 🎨 Color wheel widget for JavaScript - with zero dependencies and a lovely SVG-based UI&quot;&gt;github.com/jaames/iro.js&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;의존 모듈 없는 색상 추출 라이브러리입니다. SVG를 기반으로 한 색상 추출 UI를 제공합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;vladocar-femtojs-femtojs-really-small-javascript-es6-library-for-dom-manipulation&quot;&gt;vladocar/femtoJS: femtoJS - Really small JavaScript (ES6) library for DOM manipulation.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/vladocar/femtoJS&quot; title=&quot;vladocar/femtoJS: femtoJS - Really small JavaScript (ES6) library for DOM manipulation.&quot;&gt;github.com/vladocar/femtoJS&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;jQuery와 비슷한 일부 DOM API를 제공하는 라이브러리입니다.&lt;br&gt;
+ES2015+를 지원하는 브라우저를 대상으로 개발됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/vladocar/nanoJS&quot; title=&quot;vladocar/nanoJS: Minimal standalone JS library for DOM manipulation&quot;&gt;vladocar/nanoJS: Minimal standalone JS library for DOM manipulation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 12 Mar 2019 09:20:50 +0900</pubDate>
+        <link>https://jser.info/ko/2019/03/12/tensorflow.js-1.0cache-controljson.stringify-0/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2019/03/12/tensorflow.js-1.0cache-controljson.stringify-0/</guid>
+        
+        <category>TensorFlow</category>
+        
+        <category>HTTP</category>
+        
+        <category>JSON</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-03-05: Storybook 5.0.0, Preact X(α릴리스), 웹사이트의 크기(백분위수) </title>
@@ -2283,309 +2524,6 @@ Angular나 React와 연계한 워크플로우도 소개하고 있습니다.&lt;/
         <category>WebAssembly</category>
         
         <category>Rust</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2018-10-30 JS: Node.js 11.0.0, Storybook 4.0.0, Firefox 63</title>
-        <description>&lt;p&gt;JSer.info #407 - Node.js 11 계열이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.0.0/&quot; title=&quot;Node v11.0.0 (Current) | Node.js&quot;&gt;Node v11.0.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/october-brings-node-js-10-x-to-lts-and-node-js-11-to-current-ae19f8f12b51&quot; title=&quot;October Brings Node.js 10.x to LTS and Node.js 11 to Current!&quot;&gt;October Brings Node.js 10.x to LTS and Node.js 11 to Current!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Node.js 11.x, 홀수 버전은 6개월 간 지원하는 개발 버전입니다.&lt;br&gt;
-이와 함께 Long Term Support(LTS) 버전인 Node.js 10.x가 10월 30일에 릴리스 될 예정입니다. &lt;/p&gt;
-
-&lt;p&gt;Node.js 11에서는 V8을 7.0으로 갱신하며 &lt;code&gt;http.request&lt;/code&gt; 메서드의 옵션을 기본적으로 WHATWG URL로 파싱하도록 변경했습니다.&lt;br&gt;
-(하위호환성을 위해 &lt;a href=&quot;https://github.com/nodejs/node/pull/20270&quot;&gt;파싱에 실패했을 때엔 &lt;code&gt;url&lt;/code&gt;으로 다시 파싱합니다&lt;/a&gt;)&lt;br&gt;
-또 &lt;code&gt;TextEncoder&lt;/code&gt; / &lt;code&gt;TextDecoder&lt;/code&gt;를 &lt;code&gt;util&lt;/code&gt;에서 전역으로 옮겼고 &lt;code&gt;process.binding()&lt;/code&gt;을 비동기화했습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;UI 컴포넌트 개발 도구인 Storybook 4.0.0이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · storybooks/storybook&quot;&gt;Release v4.0.0 · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/blob/master/MIGRATION.md#from-version-34x-to-40x&quot; title=&quot;storybook/MIGRATION.md at master · storybooks/storybook&quot;&gt;storybook/MIGRATION.md at master · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-4-0-is-here-10b9857fc7de&quot; title=&quot;Storybook 4.0 is here! – Storybook – Medium&quot;&gt;Storybook 4.0 is here! – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Babel 7 / webacpk 4으로 갱신했고 Ember / MarkoJS / Mithril / HTML / Svelte / Riot 지원을 추가했습니다.&lt;br&gt;
-또, React Native 등의 모바일 지원 관련 기능을 개선했으며 theme 변수를 구현해 Storybook 관리 UI의 설정을 변경할 수 있게 했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://storybook.js.org/configurations/theming/&quot;&gt;Theming Storybook&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Firefox 63.0이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/63.0/releasenotes/&quot; title=&quot;Firefox 63.0, See All New Features, Updates and Fixes&quot;&gt;Firefox 63.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.com/en-CA/versions/63/&quot; title=&quot;Firefox 63 Site Compatibility | Firefox Site Compatibility&quot;&gt;Firefox 63 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/63&quot; title=&quot;Firefox 63 for developers - Mozilla | MDN&quot;&gt;Firefox 63 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Firefox 63에서는 Web Components를 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2018/10/firefox-63-tricks-and-treats/&quot; title=&quot;Firefox 63 - Tricks and Treats! - Mozilla Hacks - the Web developer blog&quot;&gt;Firefox 63 - Tricks and Treats! - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Media Capabilities API, Async Clipboard API를 지원하며 &lt;code&gt;Clear-Site-Data&lt;/code&gt; 헤더를 기본적으로 활성화했습니다.&lt;br&gt;
-또, 크로스 브라우저 호환을 위해서 &lt;code&gt;Window.event&lt;/code&gt; 프로퍼티를 구현했습니다.&lt;/p&gt;
-
-&lt;p&gt;개발자 도구에서는 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_fonts&quot;&gt;Fonts Editor&lt;/a&gt;를 새롭게 추가하고 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector&quot;&gt;Accessibility inspector&lt;/a&gt;를 기본적으로 활성화했습니다.&lt;br&gt;
-또, 개발자 도구의 인스펙터에서 Web Components(Shadow DOM)를 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.nightly.mozilla.org/2018/09/06/developer-tools-support-for-web-components-in-firefox-63/&quot; title=&quot;Developer Tools support for Web Components in Firefox 63 – Firefox Nightly News&quot;&gt;Developer Tools support for Web Components in Firefox 63 – Firefox Nightly News&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v3-1-0-karma-runner-karma&quot;&gt;Release v3.1.0 · karma-runner/karma&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/karma-runner/karma/releases/tag/v3.1.0&quot; title=&quot;Release v3.1.0 · karma-runner/karma&quot;&gt;github.com/karma-runner/karma/releases/tag/v3.1.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Karma 3.1.0이 릴리스됐습니다.&lt;br&gt;
-socket timeout 옵션과 파일을 강제적으로 갱신하는 &lt;code&gt;refreshFile&lt;/code&gt; 메서드를 추가했고 ES modules을 대응했습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v11-0-0-current-node-js&quot;&gt;Node v11.0.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.0.0/&quot; title=&quot;Node v11.0.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v11.0.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 11.0.0이 릴리스됐습니다.&lt;br&gt;
-V8 7.0으로 갱신했으며 &lt;code&gt;http.request&lt;/code&gt; 메서드의 옵션을 기본적으로 WHATWG URL로 파싱하도록 변경했습니다.&lt;br&gt;
-또, &lt;code&gt;TextEncoder&lt;/code&gt; / &lt;code&gt;TextDecoder&lt;/code&gt;를 &lt;code&gt;util&lt;/code&gt;에서 전역으로 옮기고 &lt;code&gt;process.binding()&lt;/code&gt;을 비동기화 했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/october-brings-node-js-10-x-to-lts-and-node-js-11-to-current-ae19f8f12b51&quot; title=&quot;October Brings Node.js 10.x to LTS and Node.js 11 to Current!&quot;&gt;October Brings Node.js 10.x to LTS and Node.js 11 to Current!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jasmine-3-3-0-md-at-master-jasmine-jasmine&quot;&gt;jasmine/3.3.0.md at master · jasmine/jasmine&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jasmine/jasmine/blob/master/release_notes/3.3.0.md&quot; title=&quot;jasmine/3.3.0.md at master · jasmine/jasmine&quot;&gt;github.com/jasmine/jasmine/blob/master/release_notes/3.3.0.md&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Jasmine 3.3 릴리스됐습니다.&lt;br&gt;
-&lt;code&gt;expect().withContext()&lt;/code&gt;, &lt;code&gt;toBeRejectedWith&lt;/code&gt;를 추가했습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-68-webkit&quot;&gt;Release Notes for Safari Technology Preview 68 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8475/release-notes-for-safari-technology-preview-68/&quot; title=&quot;Release Notes for Safari Technology Preview 68 | WebKit&quot;&gt;webkit.org/blog/8475/release-notes-for-safari-technology-preview-68/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 68이 릴리스됐습니다.&lt;br&gt;
-&lt;code&gt;&amp;lt;input type=&amp;quot;color&amp;quot;&amp;gt;&lt;/code&gt;를 기본적으로 활성화하고 &lt;code&gt;target=&amp;quot;_blank&amp;quot;&lt;/code&gt; 앵커의 기본 속성을 &lt;code&gt;rel=noopener&lt;/code&gt;으로 변경했습니다.&lt;br&gt;
-WebRTC에서 VP8을 그리고 WebVTT 인라인 스타일을 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v4-0-0-storybooks-storybook&quot;&gt;Release v4.0.0 · storybooks/storybook&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · storybooks/storybook&quot;&gt;github.com/storybooks/storybook/releases/tag/v4.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Storybook 4.0.0이 릴리스됐습니다.&lt;br&gt;
-Babel 7 / webacpk 4으로 갱신했고 Ember / MarkoJS / Mithril / HTML / Svelte / Riot 지원을 추가했습니다.&lt;br&gt;
-또, 모바일 지원 관련 기능을 개선했으며 theme 변수를 구현했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/blob/master/MIGRATION.md#from-version-34x-to-40x&quot; title=&quot;storybook/MIGRATION.md at master · storybooks/storybook&quot;&gt;storybook/MIGRATION.md at master · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-4-0-is-here-10b9857fc7de&quot; title=&quot;Storybook 4.0 is here! – Storybook – Medium&quot;&gt;Storybook 4.0 is here! – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-v16-6-0-lazy-memo-and-contexttype-react-blog&quot;&gt;React v16.6.0: lazy, memo and contextType – React Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://reactjs.org/blog/2018/10/23/react-v-16-6.html&quot; title=&quot;React v16.6.0: lazy, memo and contextType – React Blog&quot;&gt;reactjs.org/blog/2018/10/23/react-v-16-6.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React 16.6.0이 릴리스됐습니다.&lt;br&gt;
-&lt;code&gt;React.memo&lt;/code&gt;, &lt;code&gt;React.lazy&lt;/code&gt;, &lt;code&gt;static contextType&lt;/code&gt;, &lt;code&gt;static getDerivedStateFromError()&lt;/code&gt;를 지원합니다.&lt;br&gt;
-StrictMode에서 폐지 예정인 API를 사용할 시 warning 메세지를 출력하도록 변경했습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;firefox-63-0-see-all-new-features-updates-and-fixes&quot;&gt;Firefox 63.0, See All New Features, Updates and Fixes&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/63.0/releasenotes/&quot; title=&quot;Firefox 63.0, See All New Features, Updates and Fixes&quot;&gt;www.mozilla.org/en-US/firefox/63.0/releasenotes/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 63이 릴리스됐습니다.&lt;br&gt;
-Web Components, Media Capabilities API, Async Clipboard API를 지원하며 &lt;br&gt;
-크로스 브라우저 호환을 위해서 &lt;code&gt;Window.event&lt;/code&gt; 프로퍼티를 구현했고 &lt;code&gt;Clear-Site-Data&lt;/code&gt; 헤더를 기본적으로 활성화했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/63&quot; title=&quot;Firefox 63 for developers - Mozilla | MDN&quot;&gt;Firefox 63 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.com/en-CA/versions/63/&quot; title=&quot;Firefox 63 Site Compatibility | Firefox Site Compatibility&quot;&gt;Firefox 63 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jsdom-changelog-md-at-master-jsdom-jsdom&quot;&gt;jsdom/Changelog.md at master · jsdom/jsdom&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jsdom/jsdom/blob/master/Changelog.md#1300&quot; title=&quot;jsdom/Changelog.md at master · jsdom/jsdom&quot;&gt;github.com/jsdom/jsdom/blob/master/Changelog.md#1300&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;jsdom 13.0.0이 릴리스됐습니다.&lt;br&gt;
-&lt;code&gt;canvas&lt;/code&gt; 패키지 1.x에 대한 지원을 종료하고 &lt;code&gt;2.x&lt;/code&gt;만 지원합니다.&lt;br&gt;
-또, XML serialization과 &lt;code&gt;addEventListener&lt;/code&gt;에서 &lt;code&gt;passive&lt;/code&gt; 옵션을 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;grpc-web-is-going-ga-cloud-native-computing-foundation&quot;&gt;gRPC-Web is going GA - Cloud Native Computing Foundation&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.cncf.io/blog/2018/10/24/grpc-web-is-going-ga/&quot; title=&quot;gRPC-Web is going GA - Cloud Native Computing Foundation&quot;&gt;www.cncf.io/blog/2018/10/24/grpc-web-is-going-ga/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Web 브라우저 등에서 gRPC 호출을 위한 클라이언트 라이브러리인 gRPC-Web가 정식으로 릴리스됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;gas-webpagetest-webpagetest-web-scratch&quot;&gt;gas-webpagetest로 WebPagetest 성을 측정을 자동화, 시각화한다 | Web Scratch(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://efcl.info/2018/10/22/gas-webpagetest/&quot; title=&quot;gas-webpagetest로 WebPagetest 성을 측정을 자동화, 시각화한다 | Web Scratch&quot;&gt;efcl.info/2018/10/22/gas-webpagetest/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebPagetest를 사용한 성능 측정 자동화, Google DataS tudio를 활용한 데이터 시각화에 대한 글입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-intl-relativetimeformat-api-web-google-developers&quot;&gt;The Intl.RelativeTimeFormat API  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/10/intl-relativetimeformat&quot; title=&quot;The Intl.RelativeTimeFormat API  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2018/10/intl-relativetimeformat&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Intl.RelativeTimeFormat&lt;/code&gt;을 이용한 상대적 시간 지역화에 대한 글입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;angular-firebase-qiita&quot;&gt;Angular + Firebase으로 채팅 앱을 만들다 - Qiita(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://qiita.com/Yamamoto0525/items/a76ea4b3924eeb82b0f9&quot; title=&quot;Angular + Firebase으로 채팅 앱을 만들다 - Qiita&quot;&gt;qiita.com/Yamamoto0525/items/a76ea4b3924eeb82b0f9&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;firebase&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Angular와 Firebase을 사용해 채팅 앱을 만드는 것을 주제로한 핸즈온 형식의 연재 글입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-qiita&quot;&gt;나의 React 컴포넌트 구현 안티 패턴 - Qiita(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://qiita.com/seya/items/7a0d20da4de5fab14426&quot; title=&quot;나의 React 컴포넌트 구현 안티 패턴 - Qiita&quot;&gt;qiita.com/seya/items/7a0d20da4de5fab14426&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React 컴포넌트의 안티패턴에 대한 글입니다.&lt;br&gt;
-컴포넌트 분할과 책임, Props의 전달 방법 등에 대해 작성돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;asking-for-required-annotations-flow-medium&quot;&gt;Asking for required annotations – Flow – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/flow-type/asking-for-required-annotations-64d4f9c1edf8&quot; title=&quot;Asking for required annotations – Flow – Medium&quot;&gt;medium.com/flow-type/asking-for-required-annotations-64d4f9c1edf8&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Flow 0.85.0에서 수정에 들어간 &amp;quot;missing annotation&amp;quot;에 대한 해설 글입니다.&lt;br&gt;
-0.85.0부터는 타입 annotation이 존재하지 않은 경우 에러가 발생하게 됩니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/flow/releases/tag/v0.85.0&quot; title=&quot;Release v0.85.0 · facebook/flow&quot;&gt;Release v0.85.0 · facebook/flow&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ruhrjs-2018-tobias-koppers-webpack-and-the-challenge-of-webassembly-youtube&quot;&gt;RuhrJS 2018 - Tobias Koppers - webpack and the challenge of WebAssembly - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=k86Z_6_BJy0&quot; title=&quot;RuhrJS 2018 - Tobias Koppers - webpack and the challenge of WebAssembly - YouTube&quot;&gt;www.youtube.com/watch?v&amp;#x3D;k86Z_6_BJy0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpack의 WebAssembly 지원에 대한 발표 영상입니다.&lt;br&gt;
-WebAssembly API나 WebAssembly 실행 단계 그리고 webpack에서 wasm 파일을 간단하게 이용하기 위해서는 어떻게 wasm를 다뤄야 하는지 Code Splitting 지원 등에 대해 이야기합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/sokra/slides/blob/master/data/webpack-wasm-challenge.pdf&quot; title=&quot;slides/webpack-wasm-challenge.pdf at master · sokra/slides&quot;&gt;slides/webpack-wasm-challenge.pdf at master · sokra/slides&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-conf-2018-youtube&quot;&gt;React Conf 2018 - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLPxbbTqCLbGE5AihOSExAa4wUM-P42EIJ&quot; title=&quot;React Conf 2018 - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PLPxbbTqCLbGE5AihOSExAa4wUM-P42EIJ&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;이벤트&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React Conf 2018 행사 영상을 공개했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://conf.reactjs.org/&quot; title=&quot;React Conf 2018 - Fall 2018 in Lake Las Vegas, Nevada&quot;&gt;React Conf 2018 - Fall 2018 in Lake Las Vegas, Nevada&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ast-flow-typescript&quot;&gt;실천 AST Flow에서 TypeScript로 변경하기(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://talks.leko.jp/transform-flow-to-typescript-using-ast/#0&quot; title=&quot;실천 AST Flow에서 TypeScript로 변경하기&quot;&gt;talks.leko.jp/transform-flow-to-typescript-using-ast/#0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Flow에서 TypeScript으로 변환하는 Babel 플러그인에 대한 슬라이드입니다.&lt;br&gt;
-Babel 플러그인을 써서 코드를 변환하는 과정을 이야기합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/CureApp/babel-plugin-flow-to-typescript&quot; title=&quot;CureApp/babel-plugin-flow-to-typescript: Babel plugin to convert Flow code into TypeScript&quot;&gt;CureApp/babel-plugin-flow-to-typescript: Babel plugin to convert Flow code into TypeScript&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;suchipi-fs-remote-drop-in-replacement-for-fs-that-lets-you-write-to-the-filesystem-from-the-browser&quot;&gt;suchipi/fs-remote: Drop-in replacement for fs that lets you write to the filesystem from the browser&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/suchipi/fs-remote&quot; title=&quot;suchipi/fs-remote: Drop-in replacement for fs that lets you write to the filesystem from the browser&quot;&gt;github.com/suchipi/fs-remote&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;fs&lt;/code&gt;의 브라우저 용 구현체 그리고 &lt;code&gt;fs&lt;/code&gt; 서버 라이브러리입니다.&lt;br&gt;
-&lt;code&gt;fs&lt;/code&gt;를 다루는 서버를 띄우고 브라우저에서 해당 서버에 XHR이나 WebSockets으로 접근할 수 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 30 Oct 2018 11:55:37 +0900</pubDate>
-        <link>https://jser.info/ko/2018/10/30/node.js-11.0.0storybook-4.0.0firefox-63/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2018/10/30/node.js-11.0.0storybook-4.0.0firefox-63/</guid>
-        
-        <category>node</category>
-        
-        <category>Storybook</category>
-        
-        <category>firefox</category>
         
         
         <category>JSer</category>
