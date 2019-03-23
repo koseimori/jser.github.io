@@ -5,9 +5,240 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 19 Mar 2019 11:17:33 +0900</pubDate>
-    <lastBuildDate>Tue, 19 Mar 2019 11:17:33 +0900</lastBuildDate>
+    <pubDate>Sat, 23 Mar 2019 21:36:36 +0900</pubDate>
+    <lastBuildDate>Sat, 23 Mar 2019 21:36:36 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-03-18: TypeScript 3.4 RC(readonly), Node.js 11.12.0의 `--frozen-intrinsic`와 시험적 기능 정리</title>
+        <description>&lt;p&gt;JSer.info #427 - TypeScript 3.4 RC가 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-4-rc/&quot;&gt;TypeScript | Announcing TypeScript 3.4 RC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Roadmap#34-march-2019&quot; title=&quot;Roadmap · Microsoft/TypeScript Wiki&quot;&gt;Roadmap · Microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Breaking-Changes#typescript-34&quot; title=&quot;Breaking Changes · Microsoft/TypeScript Wiki&quot;&gt;Breaking Changes · Microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/7f4a55fe15fc9bbe1a63&quot; title=&quot;TypeScript v3.4.0-rc 변경 사항 - Qiita&quot;&gt;TypeScript v3.4.0-rc 변경 사항 - Qiita&lt;/a&gt;(일본어)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;CLI에 빌드 정보를 파일에 저장하고 다음 빌드 시 그 정보를 기반으로 동작할 수 있도록 하는 &lt;code&gt;--incremental&lt;/code&gt; 플래그가 추가 됐습니다.&lt;br&gt;
+&lt;code&gt;--watch&lt;/code&gt;와는 다르게 프로세스가 종료 되더라도 다시 이어서 증분 빌드(incremental build)를 할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;타입과 관련한 변경 사항으로 &lt;code&gt;readonly&lt;/code&gt; 수식자를 배열과 tuple에 정의할 수 있도록 됐습니다. 그리고 리터럴에  &lt;code&gt;readyonly&lt;/code&gt; 적용할 수 있는 &lt;code&gt;const&lt;/code&gt; assertion과 &lt;code&gt;&amp;quot;문자열&amp;quot;&lt;/code&gt;이 의도하지 않게 &lt;code&gt;string&lt;/code&gt; 타입으로 확장되는 문제를 방지할 수 있는 구문이 추가됐습니다.&lt;/p&gt;
+
+&lt;p&gt;이 외에도 고차 함수의 타입 추론이 개선됐으며 &lt;code&gt;globalThis&lt;/code&gt;(Stage 3)의 타입 정의가 추가 됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Node.js 11.12.0이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.12.0/&quot;&gt;Node v11.12.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Node.js 11.12.0에 &lt;code&gt;--frozen-intrinsics&lt;/code&gt;라는 시험적인 플래그가 추가됐습니다.&lt;br&gt;
+상세한 내용은 구현 PR 등에 작성돼 있습니다만 &lt;code&gt;--frozen-intrinsics&lt;/code&gt;는 &lt;code&gt;Array&lt;/code&gt; 등의 자바스크립트 빌트인 객체를 기본적으로 깊게 동결(deep freeze)시키는 플래그입니다.&lt;br&gt;
+이 플래그를 활성화하면 몽키 패치(monkey patch)라 부르는 빌트인 객체를 수정하거나 기능을 확장하는 기법을 사용할 수 없는 상태가 됩니다. 따라서 빌트인 객체가 수정되거나 확장돼 있지 않은 상태에서 코드를 살펴볼 수 있는 보안적인 이점을 얻을 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/node/pull/25685&quot; title=&quot;Frozen intrinsics experimental flag by guybedford · Pull Request #25685 · nodejs/node&quot;&gt;Frozen intrinsics experimental flag by guybedford · Pull Request #25685 · nodejs/node&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.google.com/document/d/1h__FmXsEWRuNrzAV_l3Iw9i_z8fCXSokGfBiW8-nDNg/edit?ts=5c1adaed#heading=h.xh66r8quma5i&quot;&gt;A Node.js Security Model&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이와 관련된 사항으로 Secure EcmaScript(SES)와 Node.js 11.8.0에 실험적으로 구현된 Policy 기능을 함께 살펴보면 좋을 것 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Agoric/SES&quot; title=&quot;Agoric/SES: Secure EcmaScript&quot;&gt;Agoric/SES: Secure EcmaScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jser.info/2019/01/29/node.js-11.8.0policynuxt.js-2.4.0tsyarn-v2/&quot;&gt;2019-01-29のJS: Node.js 11.8.0(Policy機能)、Nuxt.js 2.4.0(TSサポート)、Yarn v2のロードマップ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodesource.com/blog/experimental-features-in-node.js&quot;&gt;Update on Experimental Features in Node.js - NodeSource&lt;/a&gt;에서는 현재 구현돼 있는 Node.js의 시험적 기능을 소개하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;위에서 언급한 Policy 기능과 Worker Threads, Performance Hooks, Diagnostic Report, ECMAScript Modules에 대해 작성돼 있습니다.&lt;/p&gt;
+
+&lt;p&gt;Performance Hooks는 브라우저의 Performance Timing API와의 호환성 관련 내용 뿐 아니라 ECMAScript Module(&lt;code&gt;.mjs&lt;/code&gt;)의 사용 방법 등에 대해서도 이야기합니다.&lt;/p&gt;
+
+&lt;p&gt;관심 있는 분은 해당 글을 참고해 한번 사용해보면 좋을 거 같습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-in-chrome-73-web-google-developers&quot;&gt;New in Chrome 73  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/03/nic73&quot; title=&quot;New in Chrome 73  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/03/nic73&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 73이 릴리스 됐습니다.&lt;br&gt;
+데스크탑 크롬에서도 PWA 설치와 Signed HTTP Exchanges, Constructable style sheets, &lt;code&gt;String#matchAll&lt;/code&gt;를 지원합니다.&lt;br&gt;
+&lt;code&gt;wheel&lt;/code&gt; 이벤트가 기본적으로 Passive로 동작하도록 변경됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#browsers.chrome.desktop%3D73&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;typescript-announcing-typescript-3-4-rc&quot;&gt;TypeScript | Announcing TypeScript 3.4 RC&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-4-rc/&quot; title=&quot;TypeScript | Announcing TypeScript 3.4 RC&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-4-rc/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 3.4 RC가 릴리스 됐습니다.&lt;br&gt;
+빌드 정보를 파일에 저장하고 다음 동작 시 그 정보를 기반으로 빌드를 이어갈 수 있는 &lt;code&gt;--incremental&lt;/code&gt;가 추가 됐습니다.&lt;br&gt;
+&lt;code&gt;readonly&lt;/code&gt; 수식자를 배열과 tuple에 정의할 수 있으며 &lt;code&gt;const&lt;/code&gt; assertion이 추가 됐고 고차 함수의 타입 추론이 개선됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Roadmap#34-march-2019&quot; title=&quot;Roadmap · Microsoft/TypeScript Wiki&quot;&gt;Roadmap · Microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Breaking-Changes#typescript-34&quot; title=&quot;Breaking Changes · Microsoft/TypeScript Wiki&quot;&gt;Breaking Changes · Microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/7f4a55fe15fc9bbe1a63&quot; title=&quot;TypeScript v3.4.0-rc 변경 사항 - Qiita&quot;&gt;TypeScript v3.4.0-rc 변경 사항 - Qiita&lt;/a&gt;(일본어)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v11-12-0-current-node-js&quot;&gt;Node v11.12.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.12.0/&quot; title=&quot;Node v11.12.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v11.12.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 11.12.0이 릴리스됐습니다.&lt;br&gt;
+&lt;code&gt;Array&lt;/code&gt; 등 빌트인 객체를 기본적으로 동결하는 &lt;code&gt;--frozen-intrinsics&lt;/code&gt; 플래그가 시험적으로 추가됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ckeditor-5-v12-0-0-with-inline-widgets-and-distraction-free-editor-released&quot;&gt;CKEditor 5 v12.0.0 with inline widgets and distraction free editor released&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ckeditor.com/blog/CKEditor-5-v12.0.0-with-inline-widgets-and-distraction-free-editor-released/&quot; title=&quot;CKEditor 5 v12.0.0 with inline widgets and distraction free editor released&quot;&gt;ckeditor.com/blog/CKEditor-5-v12.0.0-with-inline-widgets-and-distraction-free-editor-released/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;editor&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CKEditor 5 v12.0.0이 릴리스됐습니다.&lt;br&gt;
+Inline widgets과 placeholder를 지원하며 Table에 Media를 넣을 수 있도록 변경됐습니다. 또, 인스팩터 기능을 지원하는 디버깅 모듈을 공개했습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;releasing-react-native-0-59-react-native&quot;&gt;Releasing React Native 0.59 · React Native&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://facebook.github.io/react-native/blog/2019/03/12/releasing-react-native-059&quot; title=&quot;Releasing React Native 0.59 · React Native&quot;&gt;facebook.github.io/react-native/blog/2019/03/12/releasing-react-native-059&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ios&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;andoi&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Native 0.59가 릴리스됐습니다.&lt;br&gt;
+Hooks를 대응하며 JavaScriptCore를 갱신하여 64 bit를 지원합니다. 그리고 일부 코어 컴포넌트를 별개의 라이브러리로 분리했습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;performance-mark-web-scratch&quot;&gt;손안의 코드를 성능 측정하는 performance.mark 스니펫 | Web Scratch&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://efcl.info/2019/03/14/performance-snnipet/&quot; title=&quot;손안의 코드를 성능 측정하는 performance.mark 스니펫 | Web Scratch&quot;&gt;efcl.info/2019/03/14/performance-snnipet/&lt;/a&gt;(일본어)&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;performance.mark&lt;/code&gt;를 사용한 특정 코드의 처리 시간이나 관련 데이터를 기록하는 스니펫을 소개합니다. 측정과 데이터 수집 그리고 어떻게 기록했는지 이야기합니다. &lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-complete-react-redux-tutorial-for-2019&quot;&gt;A Complete React Redux Tutorial for 2019&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://daveceddia.com/redux-tutorial/&quot; title=&quot;A Complete React Redux Tutorial for 2019&quot;&gt;daveceddia.com/redux-tutorial/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Redux를 주제로 한 튜토리얼 입니다.&lt;br&gt;
+상태 관리 방법, Action의 Dispatch 방법과 동작, React와 같이 사용하는 방법에 대해 작성돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-js-and-express-tutorial-building-and-securing-restful-apis&quot;&gt;Node.js and Express Tutorial: Building and Securing RESTful APIs&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://auth0.com/blog/node-js-and-express-tutorial-building-and-securing-restful-apis/&quot; title=&quot;Node.js and Express Tutorial: Building and Securing RESTful APIs&quot;&gt;auth0.com/blog/node-js-and-express-tutorial-building-and-securing-restful-apis/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;API&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js와 Express를 사용해 Rest API 개발을 주제로 한 튜토리얼 입니다.&lt;br&gt;
+Auth0를 사용한 jwt 대응 방법도 소개돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;on-the-road-to-webrtc-1-0-including-vp8-webkit&quot;&gt;On the Road to WebRTC 1.0, Including VP8 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8672/on-the-road-to-webrtc-1-0-including-vp8/&quot; title=&quot;On the Road to WebRTC 1.0, Including VP8 | WebKit&quot;&gt;webkit.org/blog/8672/on-the-road-to-webrtc-1-0-including-vp8/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebRTC&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari 12.1에서 변경된 WebRTC에 대해 작성돼 있습니다.&lt;br&gt;
+VP8코덱, Simulcast, Unified Plan 대응 내용과 Screen capture API 시험적 지원, 비권장된 과거 WebRTC API에 대해 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;update-on-experimental-features-in-node-js-nodesource&quot;&gt;Update on Experimental Features in Node.js - NodeSource&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodesource.com/blog/experimental-features-in-node.js&quot; title=&quot;Update on Experimental Features in Node.js - NodeSource&quot;&gt;nodesource.com/blog/experimental-features-in-node.js&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js의 시험적 기능을 정리해 소개하는 글입니다.&lt;br&gt;
+Worker Threads, Performance Hooks, Diagnostic Report, Policy, ECMAScript Modules에 대해 작성돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;pwa-oauth-apc&quot;&gt;자사 운영 웹 애플리케이션을 PWA로 바꾸면서 알게된 것（OAuth 등） - APC 기술 블로그&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://techblog.ap-com.co.jp/entry/2019/03/13/201027&quot; title=&quot;자사 운영 웹 애플리케이션을 PWA로 바꿀 때 알게된 것（OAuth 등） - APC 기술 블로그&quot;&gt;techblog.ap-com.co.jp/entry/2019/03/13/201027&lt;/a&gt;(일본어)&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Android&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Android와 iOS의 PWA 대응 상황에 대해 정리돼 있는 글입니다.&lt;br&gt;
+홈 스크린 애플리케이션으로 실행하면 동작하지 않는 기능을 소개하고 해당 문제를 어떻게 대응했는지 작성돼 있습니다. &lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;yahoo-bff&quot;&gt;Yahoo! 뉴스의 BFF 성능 튜닝 사례&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.slideshare.net/techblogyahoo/yahoobff&quot; title=&quot;Yahoo! 뉴스의 BFF 성능 튜닝 사례&quot;&gt;www.slideshare.net/techblogyahoo/yahoobff&lt;/a&gt;(일본어)&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 서버의 처리 병목 지점 조사 및 벤치마크 하는 방법과 튜닝을 위한 접근 방법 등에 대해 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;aruneko-webusb-mynumbercard&quot;&gt;aruneko/WebUSB-MyNumberCard&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/aruneko/WebUSB-MyNumberCard&quot; title=&quot;aruneko/WebUSB-MyNumberCard&quot;&gt;github.com/aruneko/WebUSB-MyNumberCard&lt;/a&gt;(일본어)&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebUSB를 사용한 마이 넘버 카드 드라이버 모듈입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;sindresorhus-type-fest-a-collection-of-essential-typescript-types&quot;&gt;sindresorhus/type-fest: A collection of essential TypeScript types&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sindresorhus/type-fest&quot; title=&quot;sindresorhus/type-fest: A collection of essential TypeScript types&quot;&gt;github.com/sindresorhus/type-fest&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript의 타입 컬렉션 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 19 Mar 2019 08:34:25 +0900</pubDate>
+        <link>https://jser.info/ko/2019/03/19/typescript-3.4-rcreadonlynode.js-11.12.0-frozen-intrinsic/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2019/03/19/typescript-3.4-rcreadonlynode.js-11.12.0-frozen-intrinsic/</guid>
+        
+        <category>TypeScript</category>
+        
+        <category>Node.js</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-03-12: TensorFlow.js 1.0, Cache-Control 설명, `JSON.stringify(-0)`</title>
@@ -2350,178 +2581,6 @@ HTML을 생성하는 DOM API를 덮어써 트레이스 가능하게 만든 Chrom
         <category>typescript</category>
         
         <category>github</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-01-08: TypeScript 로드맵, FBT i18n Framework, Learn JavaScript</title>
-        <description>&lt;p&gt;JSer.info #417 - TypeScript의 2019년 로드맵을 아래 깃허브 이슈를 통해 공개했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/issues/29288&quot;&gt;TypeScript Roadmap: January - June 2019 · Issue #29288 · Microsoft/TypeScript&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;현재 &lt;code&gt;allowJs&lt;/code&gt;나 &lt;code&gt;checkJS&lt;/code&gt; 등으로 JavaScript도 함께 다룰 수 있으며 더 나아가 JS / JSDoc에 대한 기능을 개선하여 TypeScript로의 이전을 편리하게 할 수 있도록 제공할 계획입니다. 또, TSLint는 구조상 성능 문제가 있는데 이를 개선하면 기존 규칙에도 영향을 줍니다. 그래서 TSLint가 아닌 ESLint를 활용하여 TypeScript의 Lint 지원을 개선할 계획입니다.  &lt;/p&gt;
-
-&lt;p&gt;이어 TypeScript Compiler 성능 개선, CLI를 이용한 코드 자동 보정, 공식 문서 개선, 플레이그라운드에서 &lt;code&gt;tsconfig.json&lt;/code&gt;를 설정할 수 있게 하는 등 앞으로의 개발 및 개선 방향에 대해서 다양하게 정리하고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;기능에 대한 로드맵은 아래 문서에 공개하고 있으니 함께 살펴보면 좋을 것 같습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Roadmap&quot;&gt;Roadmap · Microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;이번 로드맵에 대한 다양한 의견도 모집하고 있습니다. 의견이 있는 분은 참고하세요.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;JavaScript에 대해 공부할 수 있는 &lt;a href=&quot;https://learnjavascript.online/&quot;&gt;Learn JavaScript&lt;/a&gt;를 공개했습니다.&lt;/p&gt;
-
-&lt;p&gt;ES2015를 포함해 기본적인 JavaScript 문법 작성 방법에 대해 연습 문제를 풀어보면서 학습할 수 있는 사이트입니다.&lt;br&gt;
-모든 문제에 대한 테스트가 있고 그 테스트를 통과할 수 있도록 JavaScript를 작성해 나가는 &lt;a href=&quot;https://en.wikipedia.org/wiki/Kata_%28programming%29&quot;&gt;code kata&lt;/a&gt; 형식의 서비스입니다.&lt;/p&gt;
-
-&lt;p&gt;복습용 Flashcards도 제공하기 때문에 JavaScript에 대해서 알고 싶은 분에게 유용할 것 같습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-2-9-0-qunitjs-qunit&quot;&gt;Release 2.9.0 · qunitjs/qunit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/qunitjs/qunit/releases/tag/2.9.0&quot; title=&quot;Release 2.9.0 · qunitjs/qunit&quot;&gt;github.com/qunitjs/qunit/releases/tag/2.9.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;QUnit 2.9.0을 릴리스했습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2-1-3-facebook-create-react-app&quot;&gt;Release v2.1.3 · facebook/create-react-app&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/create-react-app/releases/tag/v2.1.3&quot; title=&quot;Release v2.1.3 · facebook/create-react-app&quot;&gt;github.com/facebook/create-react-app/releases/tag/v2.1.3&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;react&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;create-react-app 2.1.3을 릴리스했습니다.&lt;br&gt;
-&lt;code&gt;webpack-dev-server@3.1.10&lt;/code&gt; 이하 버전에 있던 취약점을 수정한 버전을 도입했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.cal1.cn/post/Sniffing%20Codes%20in%20Hot%20Module%20Reloading%20Messages&quot; title=&quot;Sniffing Codes in Hot Module Reloading Messages - crblog&quot;&gt;Sniffing Codes in Hot Module Reloading Messages - crblog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/webpack/webpack-dev-server/releases/tag/v3.1.11&quot; title=&quot;Release v3.1.11 · webpack/webpack-dev-server&quot;&gt;Release v3.1.11 · webpack/webpack-dev-server&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/advisories/725&quot; title=&quot;npm&quot;&gt;npm&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;page-object-pattern-in-javascript-linkedin&quot;&gt;Page Object pattern in JavaScript | LinkedIn&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/pulse/page-object-pattern-javascript-vladim%C3%ADr-gorej/&quot; title=&quot;Page Object pattern in JavaScript | LinkedIn&quot;&gt;www.linkedin.com/pulse/page-object-pattern-javascript-vladim%C3%ADr-gorej/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Selenium WebDriver를 사용한 페이지 오브젝트 패턴을 소개하는 글입니다.&lt;br&gt;
-페이지 객체란 무엇인지, 요소의 추상화, 지연 처리, Assert 없는 자유로운 페이지 오브젝트 등에 대해 이야기합니다. &lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;odi-server-side-framework-dev-community&quot;&gt;Odi - server-side framework - DEV Community 👩‍💻👨‍💻&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://dev.to/dantsk/odi---server-side-framework-2ep7&quot; title=&quot;Odi - server-side framework - DEV Community 👩‍💻👨‍💻&quot;&gt;dev.to/dantsk/odi---server-side-framework-2ep7&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 용 서버 사이드 프레임워크 Odi를 소개하는 글입니다. &lt;br&gt;
-Decorator를 사용해 선언적으로 정의하고 TypeScript의 &lt;code&gt;emitDecoratorMetadata&lt;/code&gt;를 이용한 DTO 시스템을 갖고 있는 프레임워크입니다. 또, 유사한 컨셉을 갖는 Nestjs와의 차이점에 대해서도 이야기합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Odi-ts/odi&quot; title=&quot;Odi-ts/odi: 🌪🌌 Opinionated, Declarative, Idiomatic framework for building scalable, supportable, enterprise applications and servers.&quot;&gt;Odi-ts/odi: 🌪🌌 Opinionated, Declarative, Idiomatic framework for building scalable, supportable, enterprise applications and servers.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;neural-networks-in-javascript-scrimba-com&quot;&gt;Neural networks in JavaScript | Scrimba.com&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://scrimba.com/g/gneuralnetworks&quot; title=&quot;Neural networks in JavaScript | Scrimba.com&quot;&gt;scrimba.com/g/gneuralnetworks&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;인공 신경망 라이브러리 Brain.js를 상호 작용하여 학습할 수 있는 튜토리얼입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/BrainJS/brain.js&quot; title=&quot;BrainJS/brain.js: 🤖 Neural networks in JavaScript&quot;&gt;BrainJS/brain.js: 🤖 Neural networks in JavaScript&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;typescript-roadmap-january-june-2019-issue-29288-microsoft-typescript&quot;&gt;TypeScript Roadmap: January - June 2019 · Issue #29288 · Microsoft/TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/issues/29288&quot; title=&quot;TypeScript Roadmap: January - June 2019 · Issue #29288 · Microsoft/TypeScript&quot;&gt;github.com/Microsoft/TypeScript/issues/29288&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript의 로드맵을 공개했습니다.&lt;br&gt;
-JS/JSDoc 대한 기능과 TSLint가 아니라 ESLint를 활용해 Lint를 좀 더 효율적으로 개선할 계획과 함께 성능, CLI, 공식 문서, Playground 등 다양한 개발 및 개선 계획에 대해 정리하고 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;learn-javascript&quot;&gt;Learn JavaScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://learnjavascript.online/&quot; title=&quot;Learn JavaScript&quot;&gt;learnjavascript.online/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;테스트를 통과하도록 코드를 작성하면서 JavaScript를 학습할 수 있는 사이트입니다.&lt;br&gt;
-각 챕터별로 다양한 연습 문제가 있고 복습을 위한 Flashcards도 준비하고 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;googlechromelabs-webm-wasm-webm-wasm-lets-you-create-webm-videos-in-javascript-via-webassembly&quot;&gt;GoogleChromeLabs/webm-wasm: webm-wasm lets you create webm videos in JavaScript via WebAssembly.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChromeLabs/webm-wasm&quot; title=&quot;GoogleChromeLabs/webm-wasm: webm-wasm lets you create webm videos in JavaScript via WebAssembly.&quot;&gt;github.com/GoogleChromeLabs/webm-wasm&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;C++&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webm를 인코딩하는 WebAssembly 라이브러리입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;facebookincubator-fbt-a-javascript-internationalization-framework&quot;&gt;facebookincubator/fbt: A JavaScript Internationalization Framework&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/facebookincubator/fbt&quot; title=&quot;facebookincubator/fbt: A JavaScript Internationalization Framework&quot;&gt;github.com/facebookincubator/fbt&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;u18&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Facebook의 i18n JavaScript 프레임워크입니다.&lt;br&gt;
-소스 코드에서 텍스트 수집, 번역 파일 관리, 함수나 JSX에서 번역 표현 등을 지원하며 babel 플러그인을 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;runjs-write-and-run-javascript-instantly&quot;&gt;RunJS - Write and run JavaScript instantly&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://projects.lukehaas.me/runjs/&quot; title=&quot;RunJS - Write and run JavaScript instantly&quot;&gt;projects.lukehaas.me/runjs/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;mac&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;software&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScript를 실행한 결과를 케이스 별로 출력할 수 잇는 macOS 용 어플리케이션입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 08 Jan 2019 11:22:36 +0900</pubDate>
-        <link>https://jser.info/ko/2019/01/08/typescriptfbt-i18n-frameworklearn-javascript/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2019/01/08/typescriptfbt-i18n-frameworklearn-javascript/</guid>
-        
-        <category>TypeScript</category>
-        
-        <category>i18n</category>
-        
-        <category>JavaScript</category>
         
         
         <category>JSer</category>
