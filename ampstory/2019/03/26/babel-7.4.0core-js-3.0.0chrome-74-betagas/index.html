@@ -1,0 +1,467 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-03-26のJS: Babel 7.4.0とcore-js 3.0.0リリース、Chrome 74 beta、GAS入門 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/03/26/babel-7.4.0core-js-3.0.0chrome-74-betagas/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-03-26のJS: Babel 7.4.0とcore-js 3.0.0リリース、Chrome 74 beta、GAS入門"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-03-26のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/babel/babel/releases/tag/v7.4.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v7.4.0 · babel/babel</amp-fit-text>
+            <p class="item-contents">Babel v7.4.0リリース。
+core-js v3にアップデート、Partial application Proposal、Private Static Class Methods Proposalのサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v7.4.0 · babel/babel" href="https://github.com/babel/babel/releases/tag/v7.4.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/zloirock/core-js/releases/tag/v3.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 3.0.0 - 2019.03.19 · zloirock/core-js</amp-fit-text>
+            <p class="item-contents">core-js 3.0.0リリース。
+ECMAScript仕様への追従、Proposalの対応、DropされたProposalなどの機能を削除。
+またパッケージを3つに分類(core-js,pure,bundle)、LiveScriptをJavaScriptに書き換えなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 3.0.0 - 2019.03.19 · zloirock/core-js" href="https://github.com/zloirock/core-js/releases/tag/v3.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.mozilla.org/en-US/firefox/66.0/releasenotes/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Firefox 66.0, See All New Features, Updates and Fixes</amp-fit-text>
+            <p class="item-contents">Firefox 66.0リリース。
+メディアの自動再生がデフォルトでブロックされるように、Windows Helloの対応、AV1の有効化など。
+スクリーンシェアをする<code>getDisplayMedia</code> APIの対応、CSS Scroll Anchoringの対応、属性セレクタで大文字小文字を無視する<code>i</code>フラグをサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Firefox 66.0, See All New Features, Updates and Fixes" href="https://www.mozilla.org/en-US/firefox/66.0/releasenotes/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="http://releases.llvm.org/8.0.0/docs/ReleaseNotes.html#changes-to-the-webassembly-target">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">LLVM 8.0.0 Release Notes — LLVM 8 documentation</amp-fit-text>
+            <p class="item-contents">LLVM 8.0.0リリース。
+WebAssembly Targetが"experimental"ではなくなり、デフォルトのTargetとしてサポートされた
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="LLVM 8.0.0 Release Notes — LLVM 8 documentation" href="http://releases.llvm.org/8.0.0/docs/ReleaseNotes.html#changes-to-the-webassembly-target" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/nuxt/nuxt.js/releases/tag/v2.5.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v2.5.0 · nuxt/nuxt.js</amp-fit-text>
+            <p class="item-contents">Nuxt.js 2.5.0リリース。
+<code>nuxt-ts</code>をインストールしなくてもよくなり、Nuxt.js本体でTypeScriptをサポート。
+Babel 7.4とcore-js 3へのアップデート、<code>.nuxtignore</code>のサポートなど。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v2.5.0 · nuxt/nuxt.js" href="https://github.com/nuxt/nuxt.js/releases/tag/v2.5.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/8676/release-notes-for-safari-technology-preview-78/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 78 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview 78リリース。
+Pointer Eventsの有効化、開発者ツールでCPU使用率やエネルギー影響率を見られるようになるなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 78 | WebKit" href="https://webkit.org/blog/8676/release-notes-for-safari-technology-preview-78/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.chromium.org/2019/03/chrome-74-beta-reducing-unwanted-motion.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Chromium Blog: Chrome 74 beta: reducing unwanted motion, private class fields, and feature policy API</amp-fit-text>
+            <p class="item-contents">Chrome 74 betaリリース。
+CSS <code>prefers-reduced-motion: reduce</code>、private class field、Feature PolicyのJS API、
+<code>Intl.Locale</code>のサポート。
+<code>window.open</code>をunload中に呼び出せなくなるなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chromium Blog: Chrome 74 beta: reducing unwanted motion, private class fields, and feature policy API" href="https://blog.chromium.org/2019/03/chrome-74-beta-reducing-unwanted-motion.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://v8.dev/blog/v8-release-74">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">V8 release v7.4 · V8</amp-fit-text>
+            <p class="item-contents">V8 v7.4リリース。
+JIT-lessオプションを追加、WebAssembly Threads、Private class fields、<code>Intl.Locale</code>のサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 release v7.4 · V8" href="https://v8.dev/blog/v8-release-74" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/reduxjs/react-redux/releases/tag/v7.0.0-beta.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v7.0.0-beta.0 · reduxjs/react-redux</amp-fit-text>
+            <p class="item-contents">React-Redux 7βリリース。
+<code>useRedux()</code>のHooks APIをサポート、Batched Updatesの対応、<code>store</code>をPropsとして渡せる機能をテストのために再実装など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v7.0.0-beta.0 · reduxjs/react-redux" href="https://github.com/reduxjs/react-redux/releases/tag/v7.0.0-beta.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://reacttraining.com/blog/react-router-v5/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React Training: React Router v5</amp-fit-text>
+            <p class="item-contents">React Router 5リリース。
+React 16との互換性改善、bundle済みファイルを配布するように<code>&lt;Route path&gt;</code>が配列を受け取れるように。
+minorアップデートだが、react-router-domとバージョンを合わせるためにmajorアップデートとしてリリースされた。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React Training: React Router v5" href="https://reacttraining.com/blog/react-router-v5/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.freecodecamp.org/es5-to-esnext-heres-every-feature-added-to-javascript-since-2015-d0c255e13c6e">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ES5 to ESNext — here’s every feature added to JavaScript since 2015</amp-fit-text>
+            <p class="item-contents">ES5からES.nextまでに増えた機能を紹介している記事。
+ES2015, 201, 2017, 2018, 2019(候補)についてそれぞれ追加された構文や機能を紹介している
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ES5 to ESNext — here’s every feature added to JavaScript since 2015" href="https://medium.freecodecamp.org/es5-to-esnext-heres-every-feature-added-to-javascript-since-2015-d0c255e13c6e" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.logrocket.com/a-complete-guide-to-threads-in-node-js-4fa3898fe74f">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">A complete guide to threads in Node.js – LogRocket</amp-fit-text>
+            <p class="item-contents">Node.jsの<code>worker_threads</code>モジュールについて。
+基本的な使い方やイベント、threads間でのメモリ共有、<code>MessageChannel</code>を使ってのportでのメッセージング、メインスレッドかの判定などについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="A complete guide to threads in Node.js – LogRocket" href="https://blog.logrocket.com/a-complete-guide-to-threads-in-node-js-4fa3898fe74f" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://docs.google.com/presentation/d/1nHxLlNwNg23j_bp0JBgRhjUQpnm0E_S5OK4VAXiS2y8/edit#slide=id.g54702a7210_0_0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ノンプログラマ向けGASレクチャ - Google スライド</amp-fit-text>
+            <p class="item-contents">Google Apps Script(GAS)についてのスライド。
+基本的なJavaScriptの書き方や解説、スプレッドシートで動かすスクリプトや外部連携などのGASの使い方について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ノンプログラマ向けGASレクチャ - Google スライド" href="https://docs.google.com/presentation/d/1nHxLlNwNg23j_bp0JBgRhjUQpnm0E_S5OK4VAXiS2y8/edit#slide=id.g54702a7210_0_0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/q-nick/npm-gui">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">q-nick/npm-gui: Graphic tool for managing javascript project dependencies - in a friendly way.</amp-fit-text>
+            <p class="item-contents">npmのGUIツール。
+依存のインストール、更新、scriptの実行を行う。
+npm、yarnなどに対応している
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="q-nick/npm-gui: Graphic tool for managing javascript project dependencies - in a friendly way." href="https://github.com/q-nick/npm-gui" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/francisrstokes/hexnut">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">francisrstokes/hexnut: 🔩 Hexnut is a middleware based, express/koa like framework for web sockets</amp-fit-text>
+            <p class="item-contents">WebSocketsをベースにしたExpress/Koaライクなサーバフレームワーク
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="francisrstokes/hexnut: 🔩 Hexnut is a middleware based, express/koa like framework for web sockets" href="https://github.com/francisrstokes/hexnut" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jakearchibald/idb">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">jakearchibald/idb: IndexedDB, but with promises</amp-fit-text>
+            <p class="item-contents">IndexedDBのPromiseラッパーライブラリ。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jakearchibald/idb: IndexedDB, but with promises" href="https://github.com/jakearchibald/idb" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/tomi/fromfrom/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">tomi/fromfrom: A JS library written in TS to transform sequences of data from format to another</amp-fit-text>
+            <p class="item-contents">LINQインスパイアなデータ変換を扱うライブラリ。
+データ変換処理をメソッドチェーンでパイプライン処理できる。
+Iteratorをベースにした実装となっていて、遅延実行ができる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="tomi/fromfrom: A JS library written in TS to transform sequences of data from format to another" href="https://github.com/tomi/fromfrom/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
