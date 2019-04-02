@@ -184,7 +184,7 @@
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">const</span> <span class="p">{</span> <span class="nx">once</span><span class="p">,</span> <span class="nx">EventEmitter</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'events'</span><span class="p">);</span>
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">run</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">eventEmitter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="p">();</span>
-  <span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">eventEmitter</span><span class="p">(</span><span class="nx">ee</span><span class="p">,</span> <span class="s1">'myevent'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">]</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">once</span><span class="p">(</span><span class="nx">eventEmitter</span><span class="p">,</span> <span class="s1">'myevent'</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">run</span><span class="p">();</span>
 </code></pre></div>
