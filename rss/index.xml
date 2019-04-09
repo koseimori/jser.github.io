@@ -5,9 +5,250 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 02 Apr 2019 16:33:11 +0900</pubDate>
-    <lastBuildDate>Tue, 02 Apr 2019 16:33:11 +0900</lastBuildDate>
+    <pubDate>Tue, 09 Apr 2019 09:53:37 +0900</pubDate>
+    <lastBuildDate>Tue, 09 Apr 2019 09:53:37 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-04-09のJS: ChromiumベースのMicrosoft Edge プレビュー版公開、`request`モジュールがメンテンスモードに移行の予定</title>
+        <description>&lt;p&gt;JSer.info #430 - &lt;a href=&quot;https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/&quot;&gt;2018年12月にアナウンス&lt;/a&gt;されていたように、Chromiumを利用したMicrosoft Edge(MSEdge)のプレビュー版が公開されました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/windowsexperience/2019/04/08/microsoft-edge-preview-builds-the-next-step-in-our-oss-journey/&quot; title=&quot;Microsoft Edge preview builds: The next step in our OSS journey | Windows Experience Blog&quot;&gt;Microsoft Edge preview builds: The next step in our OSS journey | Windows Experience Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/04/08/microsoft-edge-preview-channel-details/&quot;&gt;What to expect in the new Microsoft Edge Insider Channels - Microsoft Edge Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;現在はWindows 10 PC向けのみですが、今後はWindows 7、Windows 8.1、macOSなども対応していく予定とのことです。&lt;br&gt;
+&lt;a href=&quot;https://www.microsoftedgeinsider.com/en-us/download/&quot;&gt;Microsoft Edge Insider&lt;/a&gt;ではBeta、Dev、Canaryビルドを公開していくようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/MicrosoftEdge/MSEdge/blob/master/README.md&quot;&gt;Microsoft Edge and Chromium Open Source: Our Intent&lt;/a&gt;のドキュメントや&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/04/08/microsoft-edge-preview-channel-details/&quot;&gt;What to expect in the new Microsoft Edge Insider Channels - Microsoft Edge Blog&lt;/a&gt;ではChromiumのどこへコントリビュートしていくかについても書かれています。&lt;br&gt;
+また、ウェブ標準へのコントリビュートについては&lt;a href=&quot;https://github.com/MicrosoftEdge/MSEdgeExplainers&quot;&gt;MSEdgeExplainers&lt;/a&gt;で公開されているドキュメントに予定が書かれていたり、HTML Modules周りで既にコミットされています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/whatwg/html/pull/4505&quot;&gt;[WIP] Introduce HTML Modules by dandclark · Pull Request #4505 · whatwg/html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/ewfRSdqcOd8/w_Fr6rJ3DQAJ&quot;&gt;Intent to Implement: HTML Modules - Google グループ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、リリース記事では新しいEdgeのUser Agentについても書かれていて、ウェブ互換性の観点から&lt;code&gt;Edg&lt;/code&gt;(Edgeではない)の文字列を使うようです。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.48 Safari/537.36 Edg/74.1.96.24
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+
+&lt;p&gt;Node.jsのHTTPライブラリとして著名な&lt;a href=&quot;https://github.com/request/request&quot;&gt;request&lt;/a&gt;モジュールがメンテンスモードとなる方針がアナウンスされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3142&quot;&gt;Request’s Past, Present and Future · Issue #3142 · request/request&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;新しい機能の受け入れや破壊的な変更の受け入れはせずに、修正リリースのみを行う方針について書かれています。&lt;br&gt;
+まだ、非推奨にするかや別のライブラリへのマイグレーション方法については、さきほどのIssueで話し合われている段階です。&lt;/p&gt;
+
+&lt;p&gt;代替ライブラリについては、次のIssueで話し合われています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3143&quot;&gt;Alternative libraries to request · Issue #3143 · request/request&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;request&lt;/code&gt;モジュールに関心がある人は読んでおくと良さそうです。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v2-6-0-nuxt-nuxt-js&quot;&gt;Release v2.6.0 · nuxt/nuxt.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.6.0&quot; title=&quot;Release v2.6.0 · nuxt/nuxt.js&quot;&gt;github.com/nuxt/nuxt.js/releases/tag/v2.6.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Nuxt.js v2.6.0リリース。&lt;br&gt;
+core-js 2と3の両方をサポート、2.5で入った&lt;code&gt;ready()&lt;/code&gt;に関するBreaking Changeをrevertなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-3-13-1-nodeca-js-yaml&quot;&gt;Release 3.13.1 · nodeca/js-yaml&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nodeca/js-yaml/releases/tag/3.13.1&quot; title=&quot;Release 3.13.1 · nodeca/js-yaml&quot;&gt;github.com/nodeca/js-yaml/releases/tag/3.13.1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;js-yaml 3.13.1リリース。&lt;br&gt;
+&lt;code&gt;load()&lt;/code&gt;で悪意のあるyamlファイルを読むと任意のコードを実行できる脆弱性の修正。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://snyk.io/vuln/SNYK-JS-JSYAML-174129&quot; title=&quot;Arbitrary Code Execution in js-yaml | Snyk&quot;&gt;Arbitrary Code Execution in js-yaml | Snyk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nodeca/js-yaml/pull/480&quot; title=&quot;Fix possible code execution in (already unsafe) load() by rlidwka · Pull Request #480 · nodeca/js-yaml&quot;&gt;Fix possible code execution in (already unsafe) load() by rlidwka · Pull Request #480 · nodeca/js-yaml&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;request-s-past-present-and-future-issue-3142-request-request&quot;&gt;Request’s Past, Present and Future · Issue #3142 · request/request&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/request/request/issues/3142&quot; title=&quot;Request’s Past, Present and Future · Issue #3142 · request/request&quot;&gt;github.com/request/request/issues/3142&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsのHTTPライブラリである&lt;code&gt;request&lt;/code&gt;モジュールがメンテンスモードとなる。&lt;br&gt;
+新しい機能追加やBreaking Changesを入れないメンテンスモードとなる予定について書かれている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3143&quot; title=&quot;Alternative libraries to request · Issue #3143 · request/request&quot;&gt;Alternative libraries to request · Issue #3143 · request/request&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;microsoft-edge-preview-builds-the-next-step-in-our-oss-journey-windows-experience-blog&quot;&gt;Microsoft Edge preview builds: The next step in our OSS journey | Windows Experience Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/windowsexperience/2019/04/08/microsoft-edge-preview-builds-the-next-step-in-our-oss-journey/&quot; title=&quot;Microsoft Edge preview builds: The next step in our OSS journey | Windows Experience Blog&quot;&gt;blogs.windows.com/windowsexperience/2019/04/08/microsoft-edge-preview-builds-the-next-step-in-our-oss-journey/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chromiumを使ったMicrosoft Edgeのプレビュー版がリリースされた。 Beta、Dev、Canaryビルドを用意し、今後はmacOSの対応なども行う。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/04/08/microsoft-edge-preview-channel-details/#veEezTt4cKDiSZ0P.97&quot; title=&quot;What to expect in the new Microsoft Edge Insider Channels - Microsoft Edge Blog&quot;&gt;What to expect in the new Microsoft Edge Insider Channels - Microsoft Edge Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;2019-pwa&quot;&gt;アメブロ2019: こえのブログでのPWA&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.cyberagent.co.jp/blog/archives/20506/&quot; title=&quot;アメブロ2019: こえのブログでのPWA&quot;&gt;developers.cyberagent.co.jp/blog/archives/20506/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;こえのブログでのフロント周りの設計について。&lt;br&gt;
+Fastly CDN前提のURL構造、Cloud Speech-to-Textを使った文字起こし、vmsgを使ったクライアントでエンコードしてからのアップロード、Web Componentsの利用。&lt;br&gt;
+初回訪問と再訪問の最適化、performance budgetの設定など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-webkit-features-in-safari-12-1-webkit&quot;&gt;New WebKit Features in Safari 12.1 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8718/new-webkit-features-in-safari-12-1/&quot; title=&quot;New WebKit Features in Safari 12.1 | WebKit&quot;&gt;webkit.org/blog/8718/new-webkit-features-in-safari-12-1/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari 12.1のWebKit周りの変更点について。&lt;br&gt;
+ダークモードの対応、ITP 2.1へのアップデート、Payment Request API、WebRTCの改善、EME API/MSEの対応。&lt;br&gt;
+Intersection Observer、Web Share APIの対応、Web Inspectorの改善など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;scroll-anchoring-in-firefox-66-mozilla-hacks-the-web-developer-blog&quot;&gt;Scroll Anchoring in Firefox 66 - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/03/scroll-anchoring-in-firefox-66/&quot; title=&quot;Scroll Anchoring in Firefox 66 - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2019/03/scroll-anchoring-in-firefox-66/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSS Scroll Anchoringについて。&lt;br&gt;
+どのように動作するかの解説&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;managing-z-index-in-a-component-based-web-application-smashing-magazine&quot;&gt;Managing Z-Index In A Component-Based Web Application — Smashing Magazine&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2019/04/z-index-component-based-web-application/&quot; title=&quot;Managing Z-Index In A Component-Based Web Application — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2019/04/z-index-component-based-web-application/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;コンポーネントベースにおけるz-indexの管理方法について。&lt;br&gt;
+Stacking Context、z-indexの管理、オーバーレイについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;docker-node-bestpractices-md-at-master-nodejs-docker-node&quot;&gt;docker-node/BestPractices.md at master · nodejs/docker-node&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md&quot; title=&quot;docker-node/BestPractices.md at master · nodejs/docker-node&quot;&gt;github.com/nodejs/docker-node/blob/master/docs/BestPractices.md&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Docker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;DockerにおけるNode.jsのベストプラクティスについて書かれたドキュメント。&lt;br&gt;
+環境変数、Ctrl + Cのシグナルが送れない問題、yarnのアップデート、root周りの設定、&lt;code&gt;CMD&lt;/code&gt;でnpm run-script経由ではなく直接実行することについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jeffijoe-typesync-install-missing-typescript-typings-for-dependencies-in-your-package-json&quot;&gt;jeffijoe/typesync: Install missing TypeScript typings for dependencies in your package.json.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jeffijoe/typesync&quot; title=&quot;jeffijoe/typesync: Install missing TypeScript typings for dependencies in your package.json.&quot;&gt;github.com/jeffijoe/typesync&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;toll&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;package.json&lt;/code&gt;から関連する@typesのパッケージをインストールしてくれるツール&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;typeless-js-typeless-a-complete-toolkit-for-building-scalable-react-apps-with-typescript&quot;&gt;typeless-js/typeless: A complete toolkit for building scalable React apps with Typescript.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/typeless-js/typeless&quot; title=&quot;typeless-js/typeless: A complete toolkit for building scalable React apps with Typescript.&quot;&gt;github.com/typeless-js/typeless&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Reduxの典型的なケースをビルトインで持つ、React+Redux+Rxjsを前提としたステート管理ライブラリ。&lt;br&gt;
+React Hooksに対応し、Reactに合わせたライフサイクルアクションをもつ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;codex-team-editor-js-a-block-styled-editor-with-clean-json-output&quot;&gt;codex-team/editor.js: A block-styled editor with clean JSON output&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/codex-team/editor.js&quot; title=&quot;codex-team/editor.js: A block-styled editor with clean JSON output&quot;&gt;github.com/codex-team/editor.js&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;editor&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ブロックスタイルのエディタライブラリ。&lt;br&gt;
+ブロックごとの記述をJSONとして出力できる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;mgechev-codelyzer-static-analysis-for-angular-projects&quot;&gt;mgechev/codelyzer: Static analysis for Angular projects.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/mgechev/codelyzer&quot; title=&quot;mgechev/codelyzer: Static analysis for Angular projects.&quot;&gt;github.com/mgechev/codelyzer&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TSLintを使ったAngularコンポーネント向けのLintルールセット&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;home-prevue&quot;&gt;Home | PreVue&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://prevue.io/&quot; title=&quot;Home | PreVue&quot;&gt;prevue.io/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;design&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vue.jsを使ったUIプロトタイピングツール&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;kognise-water-css-a-just-add-css-collection-of-styles-to-make-simple-websites-just-a-little-nicer&quot;&gt;kognise/water.css: A just-add-css collection of styles to make simple websites just a little nicer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/kognise/water.css&quot; title=&quot;kognise/water.css: A just-add-css collection of styles to make simple websites just a little nicer&quot;&gt;github.com/kognise/water.css&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;HTML要素のベーススタイルを定義したライブラリ。&lt;br&gt;
+要素に対するスタイルを提供するため、特別なクラスを提供していない。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;leebyron-react-loops-react-loops-works-with-react-hooks-as-part-of-the-react-velcro-architecture&quot;&gt;leebyron/react-loops: React Loops works with React Hooks as part of the React Velcro Architecture&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/leebyron/react-loops&quot; title=&quot;leebyron/react-loops: React Loops works with React Hooks as part of the React Velcro Architecture&quot;&gt;github.com/leebyron/react-loops&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;forループするReactコンポーネントライブラリ。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 09 Apr 2019 09:14:01 +0900</pubDate>
+        <link>https://jser.info/2019/04/09/chromiummicrosoft-edge-request/</link>
+        <guid isPermaLink="true">https://jser.info/2019/04/09/chromiummicrosoft-edge-request/</guid>
+        
+        <category>Chrome</category>
+        
+        <category>MSEdge</category>
+        
+        <category>Node.js</category>
+        
+        <category>HTTP</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-04-02のJS: Node.js 11.13.0(once)、WebAssembly System Interface(WASI)</title>
@@ -2248,332 +2489,6 @@ Chrome Developer Toolsについての書籍&lt;/p&gt;
         <category>safari</category>
         
         <category>ECMAScript</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-01-29のJS: Node.js 11.8.0(Policy機能)、Nuxt.js 2.4.0(TSサポート)、Yarn v2のロードマップ</title>
-        <description>&lt;p&gt;JSer.info #420 - Node.jsの開発バージョンである11.8.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.8.0/&quot;&gt;Node v11.8.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;前回の&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.7.0/&quot;&gt;11.7.0&lt;/a&gt;に引き続き新しい機能が追加されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jser.info/2019/01/22/node.js-11.7.0lighthouse-4.0.0flow-to-typescript/&quot;&gt;2019-01-22のJS: Node.js 11.7.0、Lighthouse 4.0.0、Flow to TypeScript - JSer.info&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.8.0/&quot;&gt;11.8.0&lt;/a&gt;では、ブラウザの&lt;a href=&quot;https://www.w3.org/TR/SRI/&quot;&gt;Subresource Integrity&lt;/a&gt;と同じようなPoliciesという機能がフラグ付きで実装されています。&lt;br&gt;
-Policies機能では、読み込むリソース(モジュール)のハッシュ値などを定義したポリシーファイルを事前に作成しておき、実行時にポリシーファイルと照合することで意図せず改ざんされていないかをチェックできます。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/policy.html&quot;&gt;Policies | Node.js v11.8.0 Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/node/pull/23834&quot;&gt;Integrity checks via policy by bmeck · Pull Request #23834 · nodejs/node&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity&quot;&gt;Subresource Integrity | MDN&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Subresource Integrityの解説&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/api/policy.html&quot;&gt;Policies&lt;/a&gt;のドキュメントでは、ファイルのハッシュ値を定義する&lt;code&gt;policy.json&lt;/code&gt;の作成方法やポリシーファイル自体を書き換えできないように運用する方法についてなどが書かれています。&lt;/p&gt;
-
-&lt;p&gt;また、11.8.0では今まで外部モジュールとして開発されていた&lt;a href=&quot;https://github.com/nodejs/node-report&quot;&gt;node-report&lt;/a&gt;がコアに取り込まれています。&lt;br&gt;
-現在はフラグ付きの実装となっており、エラーが発生した際に詳細な情報をJSONで出力できます。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/process.html#process_process_report&quot; title=&quot;Process | Node.js v11.8.0 Documentation&quot;&gt;Process | Node.js v11.8.0 Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.hiroppy.me/entry/node-report&quot; title=&quot;Node.jsのCoreにレポート機能が入った - 技術探し&quot;&gt;Node.jsのCoreにレポート機能が入った - 技術探し&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Vue.jsを使ったフレームワークであるNuxt.js 2.4.0がリリースされています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.4.0&quot;&gt;Release v2.4.0 · nuxt/nuxt.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;2.4からバージョンのリリース方針が明確に定義されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;minorは4週ごと&lt;/li&gt;
-&lt;li&gt;majorは6ヶ月ごと&lt;/li&gt;
-&lt;li&gt;majorバージョンがEOLとなるのは1年と2週間後&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/blob/dev/RELEASE_PLAN.md&quot;&gt;nuxt.js/RELEASE_PLAN.md at dev · nuxt/nuxt.js&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;2.4では&lt;code&gt;nuxt-ts&lt;/code&gt;によるTypeScriptサポートが行われています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/haiiro-io/nuxt-js-and-typescript-as-of-jan-2019-4d8674a91815&quot;&gt;Nuxt.js and TypeScript as of Jan 2019 – Hai-iro – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また&lt;code&gt;store/&lt;/code&gt;がHMRに対応、&lt;code&gt;&amp;lt;nuxt-link&amp;gt;&lt;/code&gt;がviewport内のprefetchをデフォルトで行うように、&lt;code&gt;bin&lt;/code&gt;スクリプトの対応、SSR bundleのファイルサイズ改善などが行われています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/yarnpkg/yarn/issues/6953&quot;&gt;Yarn&amp;#39;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&lt;/a&gt;では、Yarn v2で予定されている変更などのロードマップが公開されています。&lt;/p&gt;
-
-&lt;p&gt;lockファイルがYAMLのサブセットとなるようにフォーマット変更、&lt;a href=&quot;https://yarnpkg.com/en/docs/pnp/&quot;&gt;PnP&lt;/a&gt;を新規インストール時にデフォルト化、コードベースをTypeScriptでの書き直し、プラグインのサポート、ワークスペース対応の改善、&lt;code&gt;yarn constraints&lt;/code&gt;の追加などが予定されています。&lt;/p&gt;
-
-&lt;p&gt;2月ごろにv2を新規リポジトリで公開する予定とのことです。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-typescript-3-3-rc-typescript&quot;&gt;Announcing TypeScript 3.3 RC | TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2019/01/23/announcing-typescript-3-3-rc/&quot; title=&quot;Announcing TypeScript 3.3 RC | TypeScript&quot;&gt;blogs.msdn.microsoft.com/typescript/2019/01/23/announcing-typescript-3-3-rc/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.3 RCリリース。&lt;br&gt;
-関数呼び出しにおけるUnion Typesの扱いを改善、&lt;code&gt;--build --watch&lt;/code&gt;でのインクリメンタルビルドを改善しビルド時間の改善など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;gitlab-npm-registry-gitlab&quot;&gt;GitLab NPM Registry | GitLab&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.gitlab.com/ee/user/project/packages/npm_registry.html&quot; title=&quot;GitLab NPM Registry | GitLab&quot;&gt;docs.gitlab.com/ee/user/project/packages/npm_registry.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GitLab　Premiumがnpm registryをサポート&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://about.gitlab.com/2019/01/22/gitlab-11-7-released/#support-for-private-go-packages-in-subgroups&quot; title=&quot;GitLab 11.7 shipped with Releases, Multi-level Child Epics, and NPM Registry | GitLab&quot;&gt;GitLab 11.7 shipped with Releases, Multi-level Child Epics, and NPM Registry | GitLab&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v4-0-0-karma-runner-karma&quot;&gt;Release v4.0.0 · karma-runner/karma&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/karma-runner/karma/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · karma-runner/karma&quot;&gt;github.com/karma-runner/karma/releases/tag/v4.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Karma v4.0.0リリース。&lt;br&gt;
-コードベースでネイティブのasync/awaitを利用するために、Node 6のサポートを終了など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v1-0-0-redux-saga-redux-saga&quot;&gt;Release v1.0.0 · redux-saga/redux-saga&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/redux-saga/redux-saga/releases/tag/v1.0.0&quot; title=&quot;Release v1.0.0 · redux-saga/redux-saga&quot;&gt;github.com/redux-saga/redux-saga/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;redux-saga v1.0.0リリース。&lt;br&gt;
-破壊的な変更としてDeprecatedなAPIを削除、APIのデフォルト値の変更やオプションの変更など。&lt;br&gt;
-また、&lt;code&gt;babel-plugin-redux-saga&lt;/code&gt;でスタックトレースの改善や不適切な使い方に対する警告表示の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-74-webkit&quot;&gt;Release Notes for Safari Technology Preview 74 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8566/release-notes-for-safari-technology-preview-74/&quot; title=&quot;Release Notes for Safari Technology Preview 74 | WebKit&quot;&gt;webkit.org/blog/8566/release-notes-for-safari-technology-preview-74/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 74リリース。&lt;br&gt;
-Fetch APIでabortするための&lt;code&gt;AbortController&lt;/code&gt;のサポート、Visual Viewport APIの有効化、U2F HID Authenticationのサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;yarns-future-v2-and-beyond-issue-6953-yarnpkg-yarn&quot;&gt;Yarn&amp;#39;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/yarnpkg/yarn/issues/6953&quot; title=&quot;Yarn&amp;#39;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&quot;&gt;github.com/yarnpkg/yarn/issues/6953&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Yarn 2.0のロードマップについて。&lt;br&gt;
-lockファイルのフォーマット変更、PnPを新規インストール時にデフォルト化、コードベースをTypeScriptでの書き直し、プラグインのサポート、ワークスペース対応の改善、&lt;code&gt;yarn constraints&lt;/code&gt;の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v11-8-0-current-node-js&quot;&gt;Node v11.8.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.8.0/&quot; title=&quot;Node v11.8.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v11.8.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 11.8.0リリース。&lt;br&gt;
-Subresource IntegrityのようなPolicy機能が試験的に実装、node-reportモジュールを本体に取り込み&lt;code&gt;process.report&lt;/code&gt;を試験的に実装など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/policy.html&quot; title=&quot;Policies | Node.js v11.8.0 Documentation&quot;&gt;Policies | Node.js v11.8.0 Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/process.html#process_process_report&quot; title=&quot;Process | Node.js v11.8.0 Documentation&quot;&gt;Process | Node.js v11.8.0 Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/node-report&quot; title=&quot;nodejs/node-report: Delivers a human-readable diagnostic summary, written to file.&quot;&gt;nodejs/node-report: Delivers a human-readable diagnostic summary, written to file.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jest-24-refreshing-polished-typescript-friendly-jest&quot;&gt;Jest 24: 💅 Refreshing, Polished, TypeScript-friendly · Jest&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jestjs.io/blog/2019/01/25/jest-24-refreshing-polished-typescript-friendly&quot; title=&quot;Jest 24: 💅 Refreshing, Polished, TypeScript-friendly · Jest&quot;&gt;jestjs.io/blog/2019/01/25/jest-24-refreshing-polished-typescript-friendly&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Jest 24リリース。&lt;br&gt;
-&lt;code&gt;@babel/preset-typescript&lt;/code&gt;を使ってTypeScriptをサポート、&lt;code&gt;test.todo&lt;/code&gt;の追加、エラー表示の改善など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introducing-ionic-4-ionic-for-everyone-the-ionic-blog&quot;&gt;Introducing Ionic 4: Ionic for Everyone | The Ionic Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.ionicframework.com/introducing-ionic-4-ionic-for-everyone/&quot; title=&quot;Introducing Ionic 4: Ionic for Everyone | The Ionic Blog&quot;&gt;blog.ionicframework.com/introducing-ionic-4-ionic-for-everyone/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Ionic 4リリース。&lt;br&gt;
-Angular以外のフレームワークとしてReactとVueをサポート&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-1-2-0-avajs-ava&quot;&gt;Release 1.2.0 · avajs/ava&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v1.2.0&quot; title=&quot;Release 1.2.0 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v1.2.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AVA 1.2.0リリース。&lt;br&gt;
-テストケースごとにtimeoutを設定できるようになるなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2-4-0-nuxt-nuxt-js&quot;&gt;Release v2.4.0 · nuxt/nuxt.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.4.0&quot; title=&quot;Release v2.4.0 · nuxt/nuxt.js&quot;&gt;github.com/nuxt/nuxt.js/releases/tag/v2.4.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Nuxt.js 2.4.0リリース。&lt;br&gt;
-minor、major、EOLなどのリリース方針の決定。&lt;br&gt;
-&lt;code&gt;nuxt-ts&lt;/code&gt;によるTypeScriptサポート、&lt;code&gt;&amp;lt;nuxt-link&amp;gt;&lt;/code&gt;がviewport内のprefetchをデフォルトで行うように、&lt;code&gt;bin&lt;/code&gt;スクリプトの対応など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/haiiro-io/nuxt-js-and-typescript-as-of-jan-2019-4d8674a91815&quot; title=&quot;Nuxt.js and TypeScript as of Jan 2019 – Hai-iro – Medium&quot;&gt;Nuxt.js and TypeScript as of Jan 2019 – Hai-iro – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/blob/dev/RELEASE_PLAN.md&quot; title=&quot;nuxt.js/RELEASE\_PLAN.md at dev · nuxt/nuxt.js&quot;&gt;nuxt.js/RELEASE_PLAN.md at dev · nuxt/nuxt.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;parsing-of-import-fails-in-4-29-0-compilation-issue-related-to-dynamic-import-issue-8656-webpack-webpack&quot;&gt;Parsing of `import()` fails in 4.29.0 (Compilation issue, related to dynamic import) · Issue #8656 · webpack/webpack&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/webpack/webpack/issues/8656&quot; title=&quot;Parsing of \`import()\` fails in 4.29.0 (Compilation issue, related to dynamic import) · Issue #8656 · webpack/webpack&quot;&gt;github.com/webpack/webpack/issues/8656&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpack 4.29.0 + npmで&lt;code&gt;import()&lt;/code&gt;が失敗する問題について。&lt;br&gt;
-npmがacorn + acorn-dynamic-importのpeerDependencyの関係を無視したhoistを行うバグにより、&lt;code&gt;import()&lt;/code&gt;がパースできなくなる。yarnでは発生していない、npmに修正のPull Requestがでている。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/npm/cli/pull/147&quot; title=&quot;install/dedupe: fix hoisting of packages with peerDeps by sokra · Pull Request #147 · npm/cli&quot;&gt;install/dedupe: fix hoisting of packages with peerDeps by sokra · Pull Request #147 · npm/cli&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;whats-new-in-devtools-chrome-73-web-google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 73)  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/01/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 73)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/01/devtools&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 73のDevToolsの更新点について。&lt;br&gt;
-Logpointsの追加、コードカバレッジをJSONとして出力できるように、コンソールパネルでキーボードナビゲーションに対応、Geolocationを設定できるようになるなど。&lt;br&gt;
-またWebSocketsの&amp;quot;Frames&amp;quot;を&amp;quot;Messages&amp;quot;にリネームなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;lerna-monorepo-fixed-independent-web-scratch&quot;&gt;lernaでのmonorepoにおけるリリースフロー(Fixed/Independent) | Web Scratch&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://efcl.info/2019/01/26/monorepo-release-flow/&quot; title=&quot;lernaでのmonorepoにおけるリリースフロー(Fixed/Independent) | Web Scratch&quot;&gt;efcl.info/2019/01/26/monorepo-release-flow/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;monorepo&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;lernaを使ったmonorepoにおけるパッケージのリリースフローについて。&lt;br&gt;
-lernaのmode(Fixed/Independent)のち外、monorepoでのpublishまでの流れ、Yarn Workspacesなどの利用についてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ericclemmons-polydev-faster-route-centric-development-for-node-js-apps-with-built-in-hot-module-replacement&quot;&gt;ericclemmons/polydev: Faster, route-centric development for Node.js apps with built-in Hot Module Replacement.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/ericclemmons/polydev&quot; title=&quot;ericclemmons/polydev: Faster, route-centric development for Node.js apps with built-in Hot Module Replacement.&quot;&gt;github.com/ericclemmons/polydev&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Development&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Next.jsのようなディレクトリとルーティングの対応構造をもつNode.jsフレームワーク。&lt;br&gt;
-リクエストがくるまで必要ないPartは読み込まない、HMRに対応してファイルの変更をすぐに反映するなどイテレーションのしやすさを目的に作られている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;nuxt-js-release_plan-md-at-dev-nuxt-nuxt-js&quot;&gt;nuxt.js/RELEASE_PLAN.md at dev · nuxt/nuxt.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/blob/dev/RELEASE_PLAN.md&quot; title=&quot;nuxt.js/RELEASE\_PLAN.md at dev · nuxt/nuxt.js&quot;&gt;github.com/nuxt/nuxt.js/blob/dev/RELEASE_PLAN.md&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Nuxt.jsのリリース方針について。&lt;br&gt;
-minorは4週ごと、majorは6ヶ月ごと、各majorバージョンにセキュリティアップデートがでなくなりEOLとなるのは1年と2週間後となる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;liquidplayer-liquidcore-node-js-virtual-machine-for-android-and-ios&quot;&gt;LiquidPlayer/LiquidCore: Node.js virtual machine for Android and iOS&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/LiquidPlayer/LiquidCore&quot; title=&quot;LiquidPlayer/LiquidCore: Node.js virtual machine for Android and iOS&quot;&gt;github.com/LiquidPlayer/LiquidCore&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ios&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Android&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AndroidとiOSアプリでNode.jsライムタイムを動かすライブラリ。&lt;br&gt;
-iOS向けにはV82JSC(JavaScript Core)のレイヤーを実装している&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/LiquidPlayer/LiquidCore/tree/master/LiquidCoreiOS/LiquidCore/node-8.9.3&quot; title=&quot;LiquidCore/LiquidCoreiOS/LiquidCore/node-8.9.3 at master · LiquidPlayer/LiquidCore&quot;&gt;LiquidCore/LiquidCoreiOS/LiquidCore/node-8.9.3 at master · LiquidPlayer/LiquidCore&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;reduxjs-redux-starter-kit-a-simple-set-of-tools-to-make-using-redux-easier&quot;&gt;reduxjs/redux-starter-kit: A simple set of tools to make using Redux easier&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/reduxjs/redux-starter-kit&quot; title=&quot;reduxjs/redux-starter-kit: A simple set of tools to make using Redux easier&quot;&gt;github.com/reduxjs/redux-starter-kit&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Redux上に作られたフレームワーク。&lt;br&gt;
-boilerplate codeを減らし、Reduxにおける一般的なユースケースをサポートするが目的。&lt;br&gt;
-immerを組み込んだReducerやActionの作成、selectorのサポートなど。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/reduxjs/redux-starter-kit/issues/82#issuecomment-456261368&quot; title=&quot;Discussion: Roadmap to 1.0 · Issue #82 · reduxjs/redux-starter-kit&quot;&gt;Discussion: Roadmap to 1.0 · Issue #82 · reduxjs/redux-starter-kit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;egoist-import-http-import-modules-from-url-instead-of-local-node_modules&quot;&gt;egoist/import-http: Import modules from URL instead of local node_modules&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/egoist/import-http&quot; title=&quot;egoist/import-http: Import modules from URL instead of local node\_modules&quot;&gt;github.com/egoist/import-http&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ブラウザやdenoのようにmoduleを&lt;code&gt;import m from &amp;quot;https://&amp;quot;&lt;/code&gt;のように指定するためのwebpack, rollupプラグイン。&lt;br&gt;
-モジュールのダウンロード、キャッシュ、import先の書き換えを行う。&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 29 Jan 2019 10:47:59 +0900</pubDate>
-        <link>https://jser.info/2019/01/29/node.js-11.8.0policynuxt.js-2.4.0tsyarn-v2/</link>
-        <guid isPermaLink="true">https://jser.info/2019/01/29/node.js-11.8.0policynuxt.js-2.4.0tsyarn-v2/</guid>
-        
-        <category>Node.js</category>
-        
-        <category>Nuxt.js</category>
-        
-        <category>Yarn</category>
         
         
         <category>JSer</category>
