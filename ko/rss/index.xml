@@ -5,8 +5,8 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 10 Apr 2019 19:47:02 +0900</pubDate>
-    <lastBuildDate>Wed, 10 Apr 2019 19:47:02 +0900</lastBuildDate>
+    <pubDate>Thu, 11 Apr 2019 12:02:36 +0900</pubDate>
+    <lastBuildDate>Thu, 11 Apr 2019 12:02:36 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -242,6 +242,222 @@ React Hooks를 지원하고 React에 맞춘 라이프사이클 액션을 제공�
         <category>Node.js</category>
         
         <category>HTTP</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
+    
+      <item>
+        <title>2019-04-02: Node.js 11.13.0(once), WebAssembly System Interface(WASI)</title>
+        <description>&lt;p&gt;JSer.info #429 - Node.js 11.13.0이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.13.0/&quot;&gt;Node v11.13.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;events&lt;/code&gt; 모듈에 Promise를 반환하는 &lt;code&gt;once&lt;/code&gt;가 추가됐습니다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;once&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;EventEmitter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'events'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;eventEmitter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;EventEmitter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;once&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;eventEmitter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'myevent'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;또, &lt;a href=&quot;https://www.npmjs.com/package/heapdump&quot;&gt;node-heapdump&lt;/a&gt; 모듈을 코어에 통합하고 이를 기반으로 &lt;code&gt;v8.heapdump.getHeapdump()&lt;/code&gt;와 &lt;code&gt;v8.heapdump.triggerHeapdump(filename)&lt;/code&gt;를 추가했습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/&quot;&gt;Standardizing WASI: A system interface to run WebAssembly outside the web - Mozilla Hacks - the Web developer blog&lt;/a&gt;에는 WebAssembly의 파일 시스템 및 네트워크 등의 접근을 표준화하는 WebAssembly System Interface(WASI)에 관해 작성돼 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://wasi.dev/&quot;&gt;WASI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;WASI는 WebAssembly에서 파일이나 네트워크 등에 접근하기 위한 시스템 인터페이스 표준을 제정하는데 목적이 있습니다.&lt;br&gt;
+WASI는 각 플랫폼에서도 동작하는 포터블한 바이너리와 프로그램 단위의 샌드박스 보안을 원칙으로 하고 있습니다.&lt;br&gt;
+해당 글에는 POSIX에서 부족했던 보안 접근 통제에 관한 접근 방식을 WASI에서는 어떻게 다룰지에 대해서도 작성돼 있습니다.&lt;/p&gt;
+
+&lt;p&gt;또, 이와 함께 WASI를 지원하는 WebAssembly compiler(.wasm -&amp;gt; .so)와 Runtime 프로젝트고 공개 됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.fastly.com/blog/announcing-lucet-fastly-native-webassembly-compiler-runtime&quot; title=&quot;Announcing Lucet: Fastly’s native WebAssembly compiler and runtime&quot;&gt;Announcing Lucet: Fastly’s native WebAssembly compiler and runtime&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/CraneStation/wasmtime&quot; title=&quot;CraneStation/wasmtime: Standalone JIT-style runtime for WebAsssembly, using Cranelift&quot;&gt;CraneStation/wasmtime: Standalone JIT-style runtime for WebAsssembly, using Cranelift&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;현재 &lt;code&gt;wasi-core&lt;/code&gt;라고 칭하는 파일이나 네트워크 등의 기본적인 기능의 표준화를 시작으로 다른 기능에 대한 표준화도 추후 확장할 계획인 것 같습니다.&lt;br&gt;
+아키텍쳐에 관한 자세한 정보와 구현에 대해서는 아래 저장소를 참고하시길 바랍니다. &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/fastly/lucet/blob/master/SECURITY.md&quot;&gt;lucet/SECURITY.md at master · fastly/lucet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/CraneStation/wasmtime/tree/master/docs&quot;&gt;wasmtime/docs at master · CraneStation/wasmtime&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v11-13-0-current-node-js&quot;&gt;Node v11.13.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.13.0/&quot; title=&quot;Node v11.13.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v11.13.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 11.13.0이 릴리스됐습니다.&lt;br&gt;
+&lt;code&gt;events&lt;/code&gt; 모듈에 Promise를 반환하는 &lt;code&gt;once&lt;/code&gt;가 추가됐으며 &lt;code&gt;node-heapdump&lt;/code&gt; 모듈을 &lt;code&gt;v8.heapdump&lt;/code&gt; API로 코어에 통합했습니다.&lt;br&gt;
+또, &lt;code&gt;worker.moveMessagePortToContext&lt;/code&gt;가 추가됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-typescript-3-4-typescript&quot;&gt;Announcing TypeScript 3.4 | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-4/&quot; title=&quot;Announcing TypeScript 3.4 | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-4/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 3.4가 릴리스됐습니다.&lt;br&gt;
+빌드 정보를 파일에 저장하고 다음 실행 시 그 정보를 이용해 빌드를 이어갈 수 있는 &lt;code&gt;--incremental&lt;/code&gt; 플래그가 추가됐습니다.&lt;br&gt;
+readonly 수식자를 배열과 튜블에 정의할 수 있으며 const assertion이 추가됐습니다. 그리고 고차 함수의 타입 추론이 개선됐습니다.&lt;br&gt;
+또, &lt;code&gt;globalThis&lt;/code&gt;와 Top-level &lt;code&gt;this&lt;/code&gt; 타입을 지웝합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v5-0-0-vuejs-vue-devtools&quot;&gt;Release v5.0.0 · vuejs/vue-devtools&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/vuejs/vue-devtools/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · vuejs/vue-devtools&quot;&gt;github.com/vuejs/vue-devtools/releases/tag/v5.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Extension&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;vue-devtools 5.0.0이 릴리스됐습니다.&lt;br&gt;
+라우팅 탭, 퍼포먼스 탭, 설정 탭이 추가됐습니다.&lt;br&gt;
+props나 vuex의 state를 편집할 수 있도록 개선됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;vue-observable-typescript-qiita&quot;&gt;Vue.observable &amp;amp; TypeScript로 빠르게 안심할 수 있는 상태 관리를 손에 넣다 - Qiita(일본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/mugi_uno/items/cb48e5d3178891f94fa7&quot; title=&quot;Vue.observable &amp;amp; TypeScript로 빠르게 안심할 수 있는 상태 관리를 손에 넣다  - Qiita&quot;&gt;qiita.com/mugi_uno/items/cb48e5d3178891f94fa7&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vue 2.6에 추가된 &lt;code&gt;Vue.observable&lt;/code&gt;에 관한 글입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;expo-cli-and-sdk-web-support-beta-exposition&quot;&gt;Expo CLI and SDK web support beta – Exposition&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.expo.io/expo-cli-and-sdk-web-support-beta-d0c588221375&quot; title=&quot;Expo CLI and SDK web support beta – Exposition&quot;&gt;blog.expo.io/expo-cli-and-sdk-web-support-beta-d0c588221375&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Expo에서 react-native-web를 기반으로 브라우저 환경을 지원합니다. 따라서 &lt;code&gt;platforms&lt;/code&gt;에 &lt;code&gt;web&lt;/code&gt;이 추가됐습니다.&lt;br&gt;
+현재 몇개의 expo 모듈도 web을 지원하고 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/necolas/react-native-web&quot; title=&quot;necolas/react-native-web: React Native for Web&quot;&gt;necolas/react-native-web: React Native for Web&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/expo/web-examples&quot; title=&quot;expo/web-examples: Examples of using Expo in the browser.&quot;&gt;expo/web-examples: Examples of using Expo in the browser.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/expo/web-examples/blob/master/docs/FEATURES.md&quot; title=&quot;web-examples/FEATURES.md at master · expo/web-examples&quot;&gt;web-examples/FEATURES.md at master · expo/web-examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;standardizing-wasi-a-system-interface-to-run-webassembly-outside-the-web-mozilla-hacks-the-web-developer-blog&quot;&gt;Standardizing WASI: A system interface to run WebAssembly outside the web - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/&quot; title=&quot;Standardizing WASI: A system interface to run WebAssembly outside the web - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;브라우저 이외의 환경에서 WebAssembly를 시행하기 위한 표준을 제정하는 WASI를 설명하는 글입니다.&lt;br&gt;
+각 플랫폼에서 동작하는 포터블한 바이너이와 프로그램 단위의 샌드박스 보안을 원칙으로 디자인하고 있습니다.&lt;br&gt;
+CloudABI의 Capability-based security를 기반으로 한 보안 모델을 갖고 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.fastly.com/blog/announcing-lucet-fastly-native-webassembly-compiler-runtime&quot; title=&quot;Announcing Lucet: Fastly’s native WebAssembly compiler and runtime&quot;&gt;Announcing Lucet: Fastly’s native WebAssembly compiler and runtime&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://wasi.dev/&quot; title=&quot;WASI&quot;&gt;WASI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/CraneStation/wasmtime&quot; title=&quot;CraneStation/wasmtime: Standalone JIT-style runtime for WebAsssembly, using Cranelift&quot;&gt;CraneStation/wasmtime: Standalone JIT-style runtime for WebAsssembly, using Cranelift&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://cloudabi.org/&quot; title=&quot;Introducing CloudABI&quot;&gt;Introducing CloudABI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introducing-experimental-integrity-policies-to-node-js-snyk&quot;&gt;Introducing experimental integrity policies to Node.js | Snyk&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://snyk.io/blog/introducing-experimental-integrity-policies-to-node-js/&quot; title=&quot;Introducing experimental integrity policies to Node.js | Snyk&quot;&gt;snyk.io/blog/introducing-experimental-integrity-policies-to-node-js/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 11.8.0에 실험적으로 도입된 Policy 기능을 소개합니다.&lt;br&gt;
+웹브라우저의 Subresource Integrity 기능 대부분을 Node.js의 모듈 로드에 대해 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ecmascript-proposal-updates-2019-03-ecmascript-daily&quot;&gt;ECMAScript proposal updates @ 2019-03 | ECMAScript Daily&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ecmascript-daily.github.io/ecmascript/2019/04/01/ecmascript-proposal-updates&quot; title=&quot;ECMAScript proposal updates @ 2019-03 | ECMAScript Daily&quot;&gt;ecmascript-daily.github.io/ecmascript/2019/04/01/ecmascript-proposal-updates&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proposal&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2019년 3월 TC39 미팅에서 변경된 ECMAScript Proposal Stage가 정리돼 있습니다.&lt;br&gt;
+&lt;code&gt;String.prototype.matchAll&lt;/code&gt;가 Stage 4로 변경됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;understanding-event-emitters-css-tricks&quot;&gt;Understanding Event Emitters | CSS-Tricks&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://css-tricks.com/understanding-event-emitters/&quot; title=&quot;Understanding Event Emitters | CSS-Tricks&quot;&gt;css-tricks.com/understanding-event-emitters/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Event Emitter를 구현해 보면서 Event Emitter 원리를 학습할 수 있는 글입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;an-overview-of-javascript-testing-in-2019-welldone-software-medium&quot;&gt;An Overview of JavaScript Testing in 2019 – Welldone Software – Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/welldone-software/an-overview-of-javascript-testing-in-2019-264e19514d0a&quot; title=&quot;An Overview of JavaScript Testing in 2019 – Welldone Software – Medium&quot;&gt;medium.com/welldone-software/an-overview-of-javascript-testing-in-2019-264e19514d0a&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScript 테스트와 관련한 내용을 정리한 글입니다.&lt;br&gt;
+테스트의 종류, 도구, 프레임워크 등이 소개돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;bluebill1049-react-hook-form-react-hook-for-form-validation-without-the-hassle&quot;&gt;bluebill1049/react-hook-form: 📋 React hook for form validation without the hassle&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/bluebill1049/react-hook-form&quot; title=&quot;bluebill1049/react-hook-form: 📋 React hook for form validation without the hassle&quot;&gt;github.com/bluebill1049/react-hook-form&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;폼을 React Hooks로 다룰 수 있는 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ilearnio-module-alias-register-aliases-of-directories-and-custom-module-paths-in-node&quot;&gt;ilearnio/module-alias: Register aliases of directories and custom module paths in Node&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ilearnio/module-alias&quot; title=&quot;ilearnio/module-alias: Register aliases of directories and custom module paths in Node&quot;&gt;github.com/ilearnio/module-alias&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webpack의 alias와 같이 불러올 모듈을 맵핑할 수 있는 Node.js 라이브러리입니다.&lt;br&gt;
+&lt;code&gt;Module._resolveFilename&lt;/code&gt;을 덮어쓰는 방식으로 구현돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;raathigesh-majestic-zero-config-gui-for-jest&quot;&gt;Raathigesh/majestic: ⚡ Zero config GUI for Jest&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Raathigesh/majestic/&quot; title=&quot;Raathigesh/majestic: ⚡ Zero config GUI for Jest&quot;&gt;github.com/Raathigesh/majestic/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;GUI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Jest의 GUI 도구입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 02 Apr 2019 11:04:56 +0900</pubDate>
+        <link>https://jser.info/ko/2019/04/02/node.js-11.13.0oncewebassembly-system-interfacewasi/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2019/04/02/node.js-11.13.0oncewebassembly-system-interfacewasi/</guid>
+        
+        <category>Node.js</category>
+        
+        <category>WebAssembly</category>
         
         
         <category>JSer</category>
@@ -2267,328 +2483,6 @@ Node의 코어 모듈 만을 사용해 개발했습니다.&lt;/p&gt;
         <category>safari</category>
         
         <category>ECMAScript</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-01-29 JS: Node.js 11.8.0(Policy 기능), Nuxt.js 2.4.0(TS지원), Yarn v2 로드맵</title>
-        <description>&lt;p&gt;JSer.info #420 - Node.js의 개발 버전인 11.8.0을 릴리스했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.8.0/&quot;&gt;Node v11.8.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;전 버전인 &lt;a href=&quot;https://nodejs.org/en/blog/release/v11.7.0/&quot;&gt;11.7.0&lt;/a&gt;에 이어서 새로운 기능을 추가했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jser.info/ko/2019/01/22/node.js-11.7.0lighthouse-4.0.0flow-to-typescript/&quot;&gt;2019-01-22 JS: Node.js 11.7.0, Lighthouse 4.0.0, Flow to TypeScript - JSer.info&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.8.0/&quot;&gt;11.8.0&lt;/a&gt;에서 브라우저의 &lt;a href=&quot;https://www.w3.org/TR/SRI/&quot;&gt;Subresource Integrity&lt;/a&gt;와 같은 Policies 기능을 시범적으로 추가했습니다.&lt;br&gt;
-Policeis 기능은 불러 올 자원(모듈)의 해시 값을 갖는 정책 파일을 작성해 실행 시 정책 파일과 조합하여 파일이 의도하지않게 변경되진 않았는지 검사합니다.  &lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/policy.html&quot;&gt;Policies | Node.js v11.8.0 Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/node/pull/23834&quot;&gt;Integrity checks via policy by bmeck · Pull Request #23834 · nodejs/node&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity&quot;&gt;Subresource Integrity | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/api/policy.html&quot;&gt;Policies&lt;/a&gt;에서 파일의 해시 값을 정의하는 &lt;code&gt;policy.json&lt;/code&gt; 작성 방법과 정책 파일을 수정할 수 없도록 운영하는 방법을 소개하고 있으니 참고하시길 바랍니다.&lt;/p&gt;
-
-&lt;p&gt;또, 11.8.0 에서는 지금까지 외부 모듈로 개발하던 &lt;a href=&quot;https://github.com/nodejs/node-report&quot;&gt;node-report&lt;/a&gt;를 코어에 도입했습니다.&lt;br&gt;
-현재는 플래그를 붙여 사용할 수 있으며 에러가 발생했을 때 자세한 정보를 JSON으로 살펴볼 수 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/process.html#process_process_report&quot; title=&quot;Process | Node.js v11.8.0 Documentation&quot;&gt;Process | Node.js v11.8.0 Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.hiroppy.me/entry/node-report&quot; title=&quot;Node.js Core에 레포트 기능이 들어갔다 - 기술 찾기&quot;&gt;Node.js Core에 레포트 기능이 들어갔다 - 기술 찾기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Vue.js를 사용한 프레임워크 Nuxt.js 2.4.0을 릴리스했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.4.0&quot;&gt;Release v2.4.0 · nuxt/nuxt.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;2.4부터 버전 릴리스 방침이 명확하게 정의됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;minor는 4주 주기&lt;/li&gt;
-&lt;li&gt;major는 6개월 주기&lt;/li&gt;
-&lt;li&gt;major 버전을 EOL하는 시점은 1년 2주 후&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/blob/dev/RELEASE_PLAN.md&quot;&gt;nuxt.js/RELEASE_PLAN.md at dev · nuxt/nuxt.js&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;2.4에서는 &lt;code&gt;nuxt-ts&lt;/code&gt;를 제공하여 타입스크립트를 공식 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/haiiro-io/nuxt-js-and-typescript-as-of-jan-2019-4d8674a91815&quot;&gt;Nuxt.js and TypeScript as of Jan 2019 – Hai-iro – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;또, &lt;code&gt;store/&lt;/code&gt;를 HMR에 대응하고 &lt;code&gt;&amp;lt;nuxt-link&amp;gt;&lt;/code&gt;가 viewport 내의 prefetch를 기본적으로 실행하도록 변경했으며 &lt;code&gt;bin&lt;/code&gt; 스크립트 대응, SSR bundle 파일의 크기 개선이 이뤄졌습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/yarnpkg/yarn/issues/6953&quot;&gt;Yarn&amp;#39;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&lt;/a&gt;를 통해 Yarn v2에서 이뤄질 변경사항과 로드맵을 공개했습니다.&lt;/p&gt;
-
-&lt;p&gt;lock 파일을 YAML 서브셋 포맷으로 변경하고 &lt;a href=&quot;https://yarnpkg.com/en/docs/pnp/&quot;&gt;PnP&lt;/a&gt;를 기본적으로 활성화합니다. 또, 기반 코드를 타입스크립트로 재작성 했으며 플러그인을 지원하고 워스크페이스 관련 기능을 개선합니다.&lt;/p&gt;
-
-&lt;p&gt;2월 즈음 v2를 새로운 저장소를 통해 공개 할 예정입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-typescript-3-3-rc-typescript&quot;&gt;Announcing TypeScript 3.3 RC | TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2019/01/23/announcing-typescript-3-3-rc/&quot; title=&quot;Announcing TypeScript 3.3 RC | TypeScript&quot;&gt;blogs.msdn.microsoft.com/typescript/2019/01/23/announcing-typescript-3-3-rc/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.3 RC를 릴리스했습니다.&lt;br&gt;
-함수 호출에서의 Union Types 행위 개선했으며 &lt;code&gt;--build --watch&lt;/code&gt; 시 인크리멘탈 빌드 시스템을 활용해 빌드 시간을 최적화했습니다. &lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;gitlab-npm-registry-gitlab&quot;&gt;GitLab NPM Registry | GitLab&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.gitlab.com/ee/user/project/packages/npm_registry.html&quot; title=&quot;GitLab NPM Registry | GitLab&quot;&gt;docs.gitlab.com/ee/user/project/packages/npm_registry.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GitLab　Premium에서 npm registry를 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://about.gitlab.com/2019/01/22/gitlab-11-7-released/#support-for-private-go-packages-in-subgroups&quot; title=&quot;GitLab 11.7 shipped with Releases, Multi-level Child Epics, and NPM Registry | GitLab&quot;&gt;GitLab 11.7 shipped with Releases, Multi-level Child Epics, and NPM Registry | GitLab&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v4-0-0-karma-runner-karma&quot;&gt;Release v4.0.0 · karma-runner/karma&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/karma-runner/karma/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · karma-runner/karma&quot;&gt;github.com/karma-runner/karma/releases/tag/v4.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Karma v4.0.0을 릴리스했습니다.&lt;br&gt;
-테스트 코드에서 네이티브 async/await를 사용할 수 있도록 Node 6 지원을 종료했습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v1-0-0-redux-saga-redux-saga&quot;&gt;Release v1.0.0 · redux-saga/redux-saga&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/redux-saga/redux-saga/releases/tag/v1.0.0&quot; title=&quot;Release v1.0.0 · redux-saga/redux-saga&quot;&gt;github.com/redux-saga/redux-saga/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;redux-saga v1.0.0을 릴리스했습니다.&lt;br&gt;
-비호환적 변경사항으로 비권장 API를 삭제했고 API의 기본값과 옵션을 변경했습니다.&lt;br&gt;
-또, &lt;code&gt;babel-plugin-redux-saga&lt;/code&gt;에서 출력하는 스택 트레이스를 개선했으며 부적절한 사용법에 대한 경고를 출력하도록 수정했습니다. &lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-74-webkit&quot;&gt;Release Notes for Safari Technology Preview 74 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8566/release-notes-for-safari-technology-preview-74/&quot; title=&quot;Release Notes for Safari Technology Preview 74 | WebKit&quot;&gt;webkit.org/blog/8566/release-notes-for-safari-technology-preview-74/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 74를 릴리스했습니다.&lt;br&gt;
-Fetch API의 요청을 취소할 수 있는 &lt;code&gt;AbortController&lt;/code&gt;를 지원하며 Visual Viewport API를 활성화했습니다. 또, U2F HID Authentication을 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;yarns-future-v2-and-beyond-issue-6953-yarnpkg-yarn&quot;&gt;Yarn&amp;#39;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/yarnpkg/yarn/issues/6953&quot; title=&quot;Yarn&amp;#39;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&quot;&gt;github.com/yarnpkg/yarn/issues/6953&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Yarn 2.0 로드맵을 공개했습니다.&lt;br&gt;
-lock 파일 포맷 변경, PnP 기본 활성화, 타입스크립트로 재작성, 플러그인을 지원, 워크스페이스 관련 기능 개선,  &lt;code&gt;yarn constraints&lt;/code&gt; 추가 등이 이뤄집니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v11-8-0-current-node-js&quot;&gt;Node v11.8.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.8.0/&quot; title=&quot;Node v11.8.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v11.8.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 11.8.0을 릴리스했습니다.&lt;br&gt;
-Subresource Integrity와 같은 Policy 기능을 시범적으로 지원합니다. node-report 모듈을 코어에 도입 &lt;code&gt;process.report&lt;/code&gt;를 실험적으로 구현했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/policy.html&quot; title=&quot;Policies | Node.js v11.8.0 Documentation&quot;&gt;Policies | Node.js v11.8.0 Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/process.html#process_process_report&quot; title=&quot;Process | Node.js v11.8.0 Documentation&quot;&gt;Process | Node.js v11.8.0 Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/node-report&quot; title=&quot;nodejs/node-report: Delivers a human-readable diagnostic summary, written to file.&quot;&gt;nodejs/node-report: Delivers a human-readable diagnostic summary, written to file.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jest-24-refreshing-polished-typescript-friendly-jest&quot;&gt;Jest 24: 💅 Refreshing, Polished, TypeScript-friendly · Jest&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jestjs.io/blog/2019/01/25/jest-24-refreshing-polished-typescript-friendly&quot; title=&quot;Jest 24: 💅 Refreshing, Polished, TypeScript-friendly · Jest&quot;&gt;jestjs.io/blog/2019/01/25/jest-24-refreshing-polished-typescript-friendly&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Jest 24를 릴리스했습니다.&lt;br&gt;
-&lt;code&gt;@babel/preset-typescript&lt;/code&gt;를 사용한 타입스크립트 지원, &lt;code&gt;test.todo&lt;/code&gt; 추가, 에러 출력 방식 개선 등이 이뤄졌습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introducing-ionic-4-ionic-for-everyone-the-ionic-blog&quot;&gt;Introducing Ionic 4: Ionic for Everyone | The Ionic Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.ionicframework.com/introducing-ionic-4-ionic-for-everyone/&quot; title=&quot;Introducing Ionic 4: Ionic for Everyone | The Ionic Blog&quot;&gt;blog.ionicframework.com/introducing-ionic-4-ionic-for-everyone/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Ionic 4를 릴리스했습니다.&lt;br&gt;
-Angular 이 외의 프레임워크로 React와 Vue를 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-1-2-0-avajs-ava&quot;&gt;Release 1.2.0 · avajs/ava&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v1.2.0&quot; title=&quot;Release 1.2.0 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v1.2.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AVA 1.2.0을 릴리스했습니다.&lt;br&gt;
-테스트 케이스 별로 Timeout를 설정할 수 있도록 변경했습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2-4-0-nuxt-nuxt-js&quot;&gt;Release v2.4.0 · nuxt/nuxt.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.4.0&quot; title=&quot;Release v2.4.0 · nuxt/nuxt.js&quot;&gt;github.com/nuxt/nuxt.js/releases/tag/v2.4.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Nuxt.js 2.4.0을 릴리스했습니다.&lt;br&gt;
-minor, major, EOL 등의 릴리스 방침을 결정했습니다.&lt;br&gt;
-&lt;code&gt;nuxt-ts&lt;/code&gt;를 이용한 타입스크립트 지원, &lt;code&gt;&amp;lt;nuxt-link&amp;gt;&lt;/code&gt;가 viewport 내의 prefetch를 기본적으로 실행, &lt;code&gt;bin&lt;/code&gt; 스크립트 대응 등이 이뤄졌습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/haiiro-io/nuxt-js-and-typescript-as-of-jan-2019-4d8674a91815&quot; title=&quot;Nuxt.js and TypeScript as of Jan 2019 – Hai-iro – Medium&quot;&gt;Nuxt.js and TypeScript as of Jan 2019 – Hai-iro – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/blob/dev/RELEASE_PLAN.md&quot; title=&quot;nuxt.js/RELEASE\_PLAN.md at dev · nuxt/nuxt.js&quot;&gt;nuxt.js/RELEASE_PLAN.md at dev · nuxt/nuxt.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;parsing-of-import-fails-in-4-29-0-compilation-issue-related-to-dynamic-import-issue-8656-webpack-webpack&quot;&gt;Parsing of `import()` fails in 4.29.0 (Compilation issue, related to dynamic import) · Issue #8656 · webpack/webpack&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/webpack/webpack/issues/8656&quot; title=&quot;Parsing of \`import()\` fails in 4.29.0 (Compilation issue, related to dynamic import) · Issue #8656 · webpack/webpack&quot;&gt;github.com/webpack/webpack/issues/8656&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpack 4.29.0 + npm 환경에서 &lt;code&gt;import()&lt;/code&gt;가 실패하는 문제에 대한 이슈입니다.&lt;br&gt;
-npm이 acorn + acorn-dynamic-import의 peerDependency 관계를 무시하고 hoist 하는 버그 때문에 &lt;code&gt;import()&lt;/code&gt;가 실패합니다. yarn에서는 발생하지 않는 문제이며 현재 npm에 Pull Request가 등록된 상태입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/npm/cli/pull/147&quot; title=&quot;install/dedupe: fix hoisting of packages with peerDeps by sokra · Pull Request #147 · npm/cli&quot;&gt;install/dedupe: fix hoisting of packages with peerDeps by sokra · Pull Request #147 · npm/cli&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;whats-new-in-devtools-chrome-73-web-google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 73)  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/01/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 73)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/01/devtools&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 73 DevTools의 변경 사항을 소개합니다.&lt;br&gt;
-Logpoints 추가 지원하고 코드 커버리지를 JSON으로 출력 가능하도록 변경했습니다. 그리고 콘솔 패널에서 키보드 네비게이션 지원하며 Geolocation을 설정할 수 있도록 변경했습니다.&lt;br&gt;
-또, WebSockets의 &amp;quot;Frames&amp;quot;을 &amp;quot;Messages&amp;quot;로 이름 변경 했습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;lerna-monorepo-fixed-independent-web-scratch&quot;&gt;lerna의 monorepo 환경에서의 릴리스 플로우(Fixed/Independent) | Web Scratch(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://efcl.info/2019/01/26/monorepo-release-flow/&quot; title=&quot;lerna의 monorepo에 의한 릴리스 플로우(Fixed/Independent)&quot;&gt;efcl.info/2019/01/26/monorepo-release-flow/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;monorepo&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;lerna를 사용한 monorepo 환경에서의 패키지 릴리스 흐름 관해 이야기합니다.&lt;br&gt;
-lerna의 mode(Fixed/Independent)의 다른점, monorepo에서의 publish 까지의 흐름, Yarn Workspaces 활용 방법을 설명합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ericclemmons-polydev-faster-route-centric-development-for-node-js-apps-with-built-in-hot-module-replacement&quot;&gt;ericclemmons/polydev: Faster, route-centric development for Node.js apps with built-in Hot Module Replacement.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/ericclemmons/polydev&quot; title=&quot;ericclemmons/polydev: Faster, route-centric development for Node.js apps with built-in Hot Module Replacement.&quot;&gt;github.com/ericclemmons/polydev&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Development&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Next.js와 같은 디렉터리와 라우팅 구조를 갖는 Node.js 프레임워크 입니다.&lt;br&gt;
-요청이 올 때까지 필요없는 부분은 읽지 않으며 HMR를 지원해 파일의 변경을 곧바로 반영하는 등 서버 운영과 개발 편의성을 염두에 두고 개발했습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;nuxt-js-release_plan-md-at-dev-nuxt-nuxt-js&quot;&gt;nuxt.js/RELEASE_PLAN.md at dev · nuxt/nuxt.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/blob/dev/RELEASE_PLAN.md&quot; title=&quot;nuxt.js/RELEASE\_PLAN.md at dev · nuxt/nuxt.js&quot;&gt;github.com/nuxt/nuxt.js/blob/dev/RELEASE_PLAN.md&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Nuxt.js의 릴리스 계획에 대해 이야기합니다.&lt;br&gt;
-minor는 4주 주기, major는 6개월 주기, 각 major은 1년 2주 동안 보안 및 버그 수정이 이뤄지며 이후 EOL 됩니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;liquidplayer-liquidcore-node-js-virtual-machine-for-android-and-ios&quot;&gt;LiquidPlayer/LiquidCore: Node.js virtual machine for Android and iOS&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/LiquidPlayer/LiquidCore&quot; title=&quot;LiquidPlayer/LiquidCore: Node.js virtual machine for Android and iOS&quot;&gt;github.com/LiquidPlayer/LiquidCore&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ios&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Android&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Android와 iOS 앱에서 Node.js 런타임을 실행하는 라이브러리입니다.&lt;br&gt;
-iOS는 V82JSC(JavaScript Core) 레이어를 이용해 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/LiquidPlayer/LiquidCore/tree/master/LiquidCoreiOS/LiquidCore/node-8.9.3&quot; title=&quot;LiquidCore/LiquidCoreiOS/LiquidCore/node-8.9.3 at master · LiquidPlayer/LiquidCore&quot;&gt;LiquidCore/LiquidCoreiOS/LiquidCore/node-8.9.3 at master · LiquidPlayer/LiquidCore&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;reduxjs-redux-starter-kit-a-simple-set-of-tools-to-make-using-redux-easier&quot;&gt;reduxjs/redux-starter-kit: A simple set of tools to make using Redux easier&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/reduxjs/redux-starter-kit&quot; title=&quot;reduxjs/redux-starter-kit: A simple set of tools to make using Redux easier&quot;&gt;github.com/reduxjs/redux-starter-kit&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Redux을 기반으로 개발한 프레임워크(스타터킷) 입니다.&lt;br&gt;
-boilerplate code를 줄이고 Redux의 일반적인 유스케이스를 지원하는데 목적을 두고 있습니다.&lt;br&gt;
-immer를 사용한 Reducer와 Action과 selector를 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/reduxjs/redux-starter-kit/issues/82#issuecomment-456261368&quot; title=&quot;Discussion: Roadmap to 1.0 · Issue #82 · reduxjs/redux-starter-kit&quot;&gt;Discussion: Roadmap to 1.0 · Issue #82 · reduxjs/redux-starter-kit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;egoist-import-http-import-modules-from-url-instead-of-local-node_modules&quot;&gt;egoist/import-http: Import modules from URL instead of local node_modules&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/egoist/import-http&quot; title=&quot;egoist/import-http: Import modules from URL instead of local node\_modules&quot;&gt;github.com/egoist/import-http&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;브라우저 혹은 deno 처럼 module을 &lt;code&gt;import m from &amp;quot;https://&amp;quot;&lt;/code&gt;와 같이 지정할 수 있도록 지원하는 webpack, rollup 플러그인 입니다.&lt;br&gt;
-모듈의 다운로드, 캐시, import 구문 변환을 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 29 Jan 2019 10:47:59 +0900</pubDate>
-        <link>https://jser.info/ko/2019/01/29/node.js-11.8.0policynuxt.js-2.4.0tsyarn-v2/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2019/01/29/node.js-11.8.0policynuxt.js-2.4.0tsyarn-v2/</guid>
-        
-        <category>Node.js</category>
-        
-        <category>Nuxt.js</category>
-        
-        <category>Yarn</category>
         
         
         <category>JSer</category>
