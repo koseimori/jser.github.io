@@ -5,9 +5,210 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 11 Apr 2019 12:02:24 +0900</pubDate>
-    <lastBuildDate>Thu, 11 Apr 2019 12:02:24 +0900</lastBuildDate>
+    <pubDate>Tue, 16 Apr 2019 10:33:29 +0900</pubDate>
+    <lastBuildDate>Tue, 16 Apr 2019 10:33:29 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-04-15のJS: jQuery 3.4.0(Sizzle)、ESLint 6.0.0 α、react-redux 7.0(Hooks)</title>
+        <description>&lt;p&gt;JSer.info #431 - jQuery 3.4.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.jquery.com/2019/04/10/jquery-3-4-0-released/&quot;&gt;jQuery 3.4.0 Released | Official jQuery Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;jQuery経由で&lt;code&gt;script&lt;/code&gt;タグを作成すると&lt;code&gt;nonce&lt;/code&gt;属性や&lt;code&gt;nomodule&lt;/code&gt;属性が無視されていましたが、3.4.0ではこれが修正されています。&lt;br&gt;
+同時に&lt;code&gt;jQuery.extend&lt;/code&gt;にPrototype Pollutionの脆弱性があったのが修正されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jovi0608.hatenablog.com/entry/2018/10/19/083725&quot;&gt;Node.jsにおけるプロトタイプ汚染攻撃とは何か - ぼちぼち日記&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、3.4.0ではjQueryのCSSセレクタエンジンである&lt;a href=&quot;https://github.com/jquery/sizzle&quot;&gt;Sizzle&lt;/a&gt;特有のセレクタが一部非推奨化されています。&lt;br&gt;
+&lt;code&gt;:first&lt;/code&gt;, &lt;code&gt;:last&lt;/code&gt;, &lt;code&gt;:eq&lt;/code&gt;, &lt;code&gt;:even&lt;/code&gt;, &lt;code&gt;:odd&lt;/code&gt;, &lt;code&gt;:lt&lt;/code&gt;, &lt;code&gt;:gt&lt;/code&gt;, &lt;code&gt;:nth&lt;/code&gt;が非推奨となります。&lt;br&gt;
+jQuery 4.0.0ではSizzleを削除する予定で、これらのセレクタは&lt;code&gt;querySelectorAll&lt;/code&gt;からは利用できない(標準化されていない)ため非推奨化されました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;ESLint 6.0.0 αがリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://eslint.org/blog/2019/04/eslint-v6.0.0-alpha.0-released&quot;&gt;ESLint v6.0.0-alpha.0 released - ESLint - Pluggable JavaScript linter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://eslint.org/docs/6.0.0/user-guide/migrating-to-6.0.0&quot;&gt;Migrating to v6.0.0 - ESLint - Pluggable JavaScript linter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/274347ff9473b26b575a&quot;&gt;ESLint v6.0.0 の変更点まとめ - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;インストールしたプラグインの読み込み方法の変更されたため、globalにESLintをインストールしていた場合の挙動が変わりました。&lt;br&gt;
+&lt;code&gt;eslint:recommended&lt;/code&gt;の更新、ルールのデフォルトの挙動を一部変更、設定ファイルのチェックがより厳密になるなどの変更が含まれています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;React-Redux 7.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/reduxjs/react-redux/releases/tag/v7.0.1&quot;&gt;Release v7.0.1 · reduxjs/react-redux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;connect&lt;/code&gt;が内部的に&lt;code&gt;React.memo&lt;/code&gt;とHooks APIを使って実装されなおされました。&lt;br&gt;
+これにより、React-Redux 7はReact 16.8.4以上に依存する形になっています。&lt;br&gt;
+また、Hooks APIを使った&lt;code&gt;useRedux()&lt;/code&gt;も今後実装していく予定のようです。&lt;/p&gt;
+
+&lt;p&gt;その他の変更として、Subscriptionの動作を変更、&lt;code&gt;batch&lt;/code&gt;APIの追加、&lt;code&gt;store&lt;/code&gt;をPropsとして渡せる機能をテストのために再実装などがおこなわれています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jquery-3-4-0-released-official-jquery-blog&quot;&gt;jQuery 3.4.0 Released | Official jQuery Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.jquery.com/2019/04/10/jquery-3-4-0-released/&quot; title=&quot;jQuery 3.4.0 Released | Official jQuery Blog&quot;&gt;blog.jquery.com/2019/04/10/jquery-3-4-0-released/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;jQuery 3.4.0リリース。&lt;br&gt;
+scriptタグの&lt;code&gt;nomodule&lt;/code&gt;と&lt;code&gt;nonce&lt;/code&gt;をサポート、&lt;code&gt;Object.prototype&lt;/code&gt; pollutionの脆弱性を修正、Sizzleが提供するCSSセレクタを非推奨に。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ember-js-ember-3-9-released&quot;&gt;Ember.js - Ember 3.9 Released&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/04/10/ember-3-9-released.html&quot; title=&quot;Ember.js - Ember 3.9 Released&quot;&gt;blog.emberjs.com/2019/04/10/ember-3-9-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Ember 3.9リリース。&lt;br&gt;
+jQueryをデフォルトで外すために&lt;code&gt;Ember.$()&lt;/code&gt;など非推奨化、&lt;code&gt;.volatile()&lt;/code&gt;と&lt;code&gt;.property()&lt;/code&gt;ではなくネイティブのgetter/setterを利用を推奨するようになるなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/emberjs/ember.js/releases/tag/v3.9.0&quot; title=&quot;Release v3.9.0 · emberjs/ember.js&quot;&gt;Release v3.9.0 · emberjs/ember.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://deprecations.emberjs.com/v3.x/&quot; title=&quot;Ember.js - Deprecations&quot;&gt;Ember.js - Deprecations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;eslint-v6-0-0-alpha-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v6.0.0-alpha.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2019/04/eslint-v6.0.0-alpha.0-released&quot; title=&quot;ESLint v6.0.0-alpha.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2019/04/eslint-v6.0.0-alpha.0-released&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ESLint 6.0.0アルファリリース。&lt;br&gt;
+インストールしたプラグインの読み込み方法の変更、&lt;code&gt;eslint:recommended&lt;/code&gt;の更新、ルールのデフォルトの挙動を一部変更など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/274347ff9473b26b575a&quot; title=&quot;ESLint v6.0.0 の変更点まとめ - Qiita&quot;&gt;ESLint v6.0.0 の変更点まとめ - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v11-14-0-current-node-js&quot;&gt;Node v11.14.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.14.0/&quot; title=&quot;Node v11.14.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v11.14.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 11.14.0リリース。&lt;br&gt;
+&lt;code&gt;fs.promises&lt;/code&gt;がStableに、&lt;code&gt;readline&lt;/code&gt;の&lt;code&gt;Symbol.asyncIterator&lt;/code&gt;対応がStableになるなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v7-0-1-reduxjs-react-redux&quot;&gt;Release v7.0.1 · reduxjs/react-redux&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/reduxjs/react-redux/releases/tag/v7.0.1&quot; title=&quot;Release v7.0.1 · reduxjs/react-redux&quot;&gt;github.com/reduxjs/react-redux/releases/tag/v7.0.1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React-Redux 7.0リリース。 &lt;code&gt;connect&lt;/code&gt;が&lt;code&gt;React.memo&lt;/code&gt;とHooks　APIを使うように、Subscriptionの動作を変更、&lt;code&gt;batch&lt;/code&gt;APIの追加、&lt;code&gt;store&lt;/code&gt;をPropsとして渡せる機能をテストのために再実装など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;prettier-1-17-more-quotes-options-and-support-for-shared-configs-prettier&quot;&gt;Prettier 1.17: More quotes options and support for shared configs · Prettier&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://prettier.io/blog/2019/04/12/1.17.0.html&quot; title=&quot;Prettier 1.17: More quotes options and support for shared configs · Prettier&quot;&gt;prettier.io/blog/2019/04/12/1.17.0.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Prettier 1.17リリース。&lt;br&gt;
+オブジェクトのquote設定をする&lt;code&gt;--quote-props&lt;/code&gt;の追加、shared configのサポート、TypeScript 3.4の&lt;code&gt;readonly&lt;/code&gt;修飾子をサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;form-validation-in-under-an-hour-with-vuelidate-css-tricks&quot;&gt;Form Validation in Under an Hour with Vuelidate | CSS-Tricks&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://css-tricks.com/form-validation-in-under-an-hour-with-vuelidate/&quot; title=&quot;Form Validation in Under an Hour with Vuelidate | CSS-Tricks&quot;&gt;css-tricks.com/form-validation-in-under-an-hour-with-vuelidate/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;VueのフォームバリデーターライブラリのVuelidateについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;catsnake11-webpack-ops-webpack-bundle-visualization-optimization-config-tool&quot;&gt;CatSnake11/Webpack-Ops: 📁 Webpack bundle visualization // optimization // config tool&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/CatSnake11/Webpack-Ops&quot; title=&quot;CatSnake11/Webpack-Ops: 📁 Webpack bundle visualization // optimization // config tool&quot;&gt;github.com/CatSnake11/Webpack-Ops&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webpackダッシュボードツール。&lt;br&gt;
+bundle結果のビジュアライズ、最適化設定をテストして設定ファイルの生成などを行える&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;commenthol-date-holidays-worldwide-holidays&quot;&gt;commenthol/date-holidays: worldwide holidays&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/commenthol/date-holidays&quot; title=&quot;commenthol/date-holidays: worldwide holidays&quot;&gt;github.com/commenthol/date-holidays&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;祝日判定ライブラリ。&lt;br&gt;
+各国ごとの祝日の定義を持っている。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;niklasvh-html2canvas-screenshots-with-javascript&quot;&gt;niklasvh/html2canvas: Screenshots with JavaScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/niklasvh/html2canvas&quot; title=&quot;niklasvh/html2canvas: Screenshots with JavaScript&quot;&gt;github.com/niklasvh/html2canvas&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;HTMLをCanvasに描画してHTMLのスクリーンショットを撮るJavaScriptライブラリ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;seek-oss-playroom-design-with-jsx-powered-by-your-own-component-library&quot;&gt;seek-oss/playroom: Design with JSX, powered by your own component library.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/seek-oss/playroom&quot; title=&quot;seek-oss/playroom: Design with JSX, powered by your own component library.&quot;&gt;github.com/seek-oss/playroom&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JSX/Reactのコンポーネントプレイグラウンドツール。&lt;br&gt;
+さまざまなViewportでプレビューしながらコンポーネントのプロトタイピングができる&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;packem-packem-a-precompiled-javascript-module-bundler&quot;&gt;packem/packem: 📦⚡ A precompiled JavaScript module bundler&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/packem/packem&quot; title=&quot;packem/packem: 📦⚡ A precompiled JavaScript module bundler&quot;&gt;github.com/packem/packem&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Rust&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Rust製のJavaScriptモジュールBundler。&lt;br&gt;
+JavaScriptプラグインを書いて拡張もできる。&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Mon, 15 Apr 2019 09:37:33 +0900</pubDate>
+        <link>https://jser.info/2019/04/15/jquery-3.4.0sizzleeslint-6.0.0-areact-redux-7.0hooks/</link>
+        <guid isPermaLink="true">https://jser.info/2019/04/15/jquery-3.4.0sizzleeslint-6.0.0-areact-redux-7.0hooks/</guid>
+        
+        <category>jquery</category>
+        
+        <category>ESLint</category>
+        
+        <category>redux</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-04-09のJS: ChromiumベースのMicrosoft Edge プレビュー版公開、`request`モジュールがメンテンスモードに移行の予定</title>
@@ -2188,307 +2389,6 @@ OSSプロジェクトでは無料で利用できる。&lt;/p&gt;
         <category>React</category>
         
         <category>next.js</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-02-05のJS: Firefox 65(WebP)、Safari 12.1(リリース候補)、ECMAScript 2019の機能決定</title>
-        <description>&lt;p&gt;JSer.info #421 - Firefox 65がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/65.0/releasenotes/&quot; title=&quot;Firefox 65.0, See All New Features, Updates and Fixes&quot;&gt;Firefox 65.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/65&quot; title=&quot;Firefox 65 for developers - Mozilla | MDN&quot;&gt;Firefox 65 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.com/ja/versions/65/&quot; title=&quot;Firefox 65 サイト互換性情報 | Firefox サイト互換性情報&quot;&gt;Firefox 65 サイト互換性情報 | Firefox サイト互換性情報&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/01/firefox-65-webp-flexbox-inspector-new-tooling/&quot; title=&quot;Firefox 65: WebP support, Flexbox Inspector, new tooling &amp;amp; platform updates - Mozilla Hacks - the Web developer blog&quot;&gt;Firefox 65: WebP support, Flexbox Inspector, new tooling &amp;amp; platform updates - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Firefox 65では&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Examine_Flexbox_layouts&quot;&gt;CSS Flexbox Inspector&lt;/a&gt;の追加といった開発者ツールの改善、CSS &lt;code&gt;env()&lt;/code&gt;のサポート、&lt;code&gt;Intl.RelativeTimeFormat&lt;/code&gt;や&lt;code&gt;globalThis&lt;/code&gt;の実装がされています。&lt;br&gt;
-また、今までフラグ付きであったStorage Access APIとReadable Streamsがデフォルトで有効化されています。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://tools.ietf.org/html/rfc8441&quot;&gt;RFC 8441 - Bootstrapping WebSockets with HTTP/2&lt;/a&gt;として標準化されたWebSocketsのHTTP/2対応、画像形式のWebPのサポートなどが追加されています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;iOS 12.2/macOS 10.14.4と合わせて公開予定のSafari 12.1のリリースノートが公開されています。(まだ正式リリースはされていません)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/safari_release_notes/safari_12_1_release_notes&quot;&gt;Safari 12.1 Release Notes | Apple Developer Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Safari 12.1は&lt;a href=&quot;https://webkit.org/blog/8384/release-notes-for-safari-technology-preview-62/&quot;&gt;Safari Technology Preview 62&lt;/a&gt;からの変更が含まれているようです。&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Safari Technology Preview 62 is out!&lt;br&gt;&lt;br&gt;A small note: STP 62 bumps its Safari version number from 12.0 to 12.1. That is, STP is now tracking a release after Safari 12.&lt;br&gt;&lt;br&gt;Release Notes: &lt;a href=&quot;https://t.co/vt8myfz7NO&quot;&gt;https://t.co/vt8myfz7NO&lt;/a&gt; &lt;a href=&quot;https://t.co/yrgHQyUpSa&quot;&gt;pic.twitter.com/yrgHQyUpSa&lt;/a&gt;&lt;/p&gt;&amp;mdash; Ricky Mondello (@rmondello) &lt;a href=&quot;https://twitter.com/rmondello/status/1024708391396995072?ref_src=twsrc%5Etfw&quot;&gt;August 1, 2018&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;Safari 12.1ではITP(Intelligent Tracking Prevention)の強化、ダークモードサポートのためのcolor scheme系APIのサポート、Intersection Observer API、Web Share API、&lt;code&gt;&amp;lt;datalist&amp;gt;&lt;/code&gt;のサポートが追加されています。&lt;br&gt;
-また、WebRTC Unified PlanとVP8サポートがサポートが追加されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@voluntas/safari-12-1-%E3%81%A7-vp8-%E3%81%A8-unified-plan-%E3%81%8C%E5%85%A5%E3%82%8B-47c3aa0cb9eb&quot;&gt;Safari 12.1 で VP8 と Unified Plan が入る – V – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;2019年1月にTC39のミーティングが行われECMAScript 2019に入る機能が決定されました。&lt;br&gt;
-ECMAScript 2019は2019年6月ごろにリリース予定のため、1月の段階で入る機能が決定されます。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/agendas/blob/master/2018/11.md&quot;&gt;agendas/11.md at master · tc39/agendas&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://efcl.info/2015/10/18/ecmascript-paper/&quot;&gt;ECMAScriptの仕様策定に関するカンニングペーパー | Web Scratch&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;1月のミーティングでは&lt;code&gt;Object.fromEntries&lt;/code&gt;、Well-formed &lt;code&gt;JSON.stringify&lt;/code&gt;、&lt;code&gt;String.prototype.{trimStart,trimEnd}&lt;/code&gt;、&lt;code&gt;Array.prototype.{flat,flatMap}&lt;/code&gt;がStage 4となりES 2019に入ります。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://ecmascript-daily.github.io/ecmascript/2019/02/03/ecmascript-proposal-updates&quot;&gt;[ES2019] ECMAScript proposal updates @ 2019-01 | ECMAScript Daily&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;最終的にES2019へと入る機能は次のページでまとめられています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://2ality.com/2018/02/ecmascript-2019.html&quot; title=&quot;ECMAScript 2019: the final feature set&quot;&gt;ECMAScript 2019: the final feature set&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposals/blob/master/finished-proposals.md&quot; title=&quot;proposals/finished-proposals.md at master · tc39/proposals&quot;&gt;proposals/finished-proposals.md at master · tc39/proposals&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;メソッドの追加などが中心で、DecoratorやPrivate fieldなどの構文的な大きなProposalはまだStage 4ではないため、ES2019には入りません。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;firefox-65-0-see-all-new-features-updates-and-fixes&quot;&gt;Firefox 65.0, See All New Features, Updates and Fixes&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/65.0/releasenotes/&quot; title=&quot;Firefox 65.0, See All New Features, Updates and Fixes&quot;&gt;www.mozilla.org/en-US/firefox/65.0/releasenotes/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 65.0リリース。&lt;br&gt;
-CSS &lt;code&gt;env()&lt;/code&gt;のサポート、&lt;code&gt;Intl.RelativeTimeFormat&lt;/code&gt;/&lt;code&gt;globalThis&lt;/code&gt;の実装、Storage Access API/Readable Streamsをデフォルトで有効化。&lt;br&gt;
-WebSocketsのHTTP/2対応、WebP画像のサポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/65&quot; title=&quot;Firefox 65 for developers | MDN&quot;&gt;Firefox 65 for developers | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.com/ja/versions/65/&quot; title=&quot;Firefox 65 サイト互換性情報 | Firefox サイト互換性情報&quot;&gt;Firefox 65 サイト互換性情報 | Firefox サイト互換性情報&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/01/firefox-65-webp-flexbox-inspector-new-tooling/&quot; title=&quot;Firefox 65: WebP support, Flexbox Inspector, new tooling &amp;amp;amp; platform updates - Mozilla Hacks - the Web developer blog&quot;&gt;Firefox 65: WebP support, Flexbox Inspector, new tooling &amp;amp; platform updates - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2-0-0-facebook-relay&quot;&gt;Release v2.0.0 · facebook/relay&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/relay/releases/tag/v2.0.0&quot; title=&quot;Release v2.0.0 · facebook/relay&quot;&gt;github.com/facebook/relay/releases/tag/v2.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GraphQL + ReactライブラリのRepay v2.0.0リリース。&lt;br&gt;
-Reactの新しいContext APIに対応、依存の更新、&lt;code&gt;replay-compiler&lt;/code&gt;がPersisted Queriesのサポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://facebook.github.io/relay/docs/en/persisted-queries.html&quot; title=&quot;Persisted Queries · Relay&quot;&gt;Persisted Queries · Relay&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-72-web-google-developers&quot;&gt;New in Chrome 72  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/01/nic72&quot; title=&quot;New in Chrome 72  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/01/nic72&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 72リリース。&lt;br&gt;
-Public class fields、User Activation API、&lt;code&gt;Intl.format&lt;/code&gt;のサポートなど。&lt;br&gt;
-またHPKPの削除、TLS 1.0と1.1を非推奨化など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2018/12/chrome-72-beta-public-class-fields-user.html&quot; title=&quot;Chromium Blog: Chrome 72 Beta: Public class fields, user activation and more&quot;&gt;Chromium Blog: Chrome 72 Beta: Public class fields, user activation and more&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#browsers.chrome.desktop%3D72&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/12/chrome-72-deps-rems&quot; title=&quot;Deprecations and removals in Chrome 72  |  Web  |  Google Developers&quot;&gt;Deprecations and removals in Chrome 72  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;safari-12-1-release-notes-apple-developer-documentation&quot;&gt;Safari 12.1 Release Notes | Apple Developer Documentation&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/safari_release_notes/safari_12_1_release_notes&quot; title=&quot;Safari 12.1 Release Notes | Apple Developer Documentation&quot;&gt;developer.apple.com/documentation/safari_release_notes/safari_12_1_release_notes&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari 12.1のリリースノート(iOS 12.2/macOS 10.14.4の予定)。&lt;br&gt;
-ITPの強化、color schemeのサポート、Intersection Observer API、Web Share API、&lt;code&gt;&amp;lt;datalist&amp;gt;&lt;/code&gt;のサポート。&lt;br&gt;
-WebRTC Unified PlanとVP8サポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://twitter.com/rmondello/status/1091073294202269696&quot; title=&quot;Ricky Mondelloによる解説&quot;&gt;Ricky Mondelloによる解説&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-typescript-3-3-typescript&quot;&gt;Announcing TypeScript 3.3 | TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/typescript/2019/01/31/announcing-typescript-3-3/&quot; title=&quot;Announcing TypeScript 3.3 | TypeScript&quot;&gt;blogs.msdn.microsoft.com/typescript/2019/01/31/announcing-typescript-3-3/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.3リリース。&lt;br&gt;
-関数呼び出しにおけるUnion Typeの扱いを改善、&lt;code&gt;--build&lt;/code&gt;の&lt;code&gt;--watch&lt;/code&gt;でインクリメンタルビルドをサポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/dadc91f0be6fc00085ae&quot; title=&quot;TypeScript v3.3.0-rc 変更点 - Qiita&quot;&gt;TypeScript v3.3.0-rc 変更点 - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;type-safe-javascript-with-jsdoc-truckjs-medium&quot;&gt;Type Safe JavaScript with JSDoc – TruckJS – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76&quot; title=&quot;Type Safe JavaScript with JSDoc – TruckJS – Medium&quot;&gt;medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JSDoc&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;VSCode&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JSDocと&lt;code&gt;jsconfig.json&lt;/code&gt;での型チェックについて。&lt;br&gt;
-&lt;code&gt;tsc&lt;/code&gt;の&lt;code&gt;checkJS&lt;/code&gt;機能を使ってJavaScriptのままJSDocの型チェック行う話&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;es2019-ecmascript-proposal-updates-2019-01-ecmascript-daily&quot;&gt;[ES2019] ECMAScript proposal updates @ 2019-01 | ECMAScript Daily&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://ecmascript-daily.github.io/ecmascript/2019/02/03/ecmascript-proposal-updates&quot; title=&quot;\[ES2019\] ECMAScript proposal updates @ 2019-01 | ECMAScript Daily&quot;&gt;ecmascript-daily.github.io/ecmascript/2019/02/03/ecmascript-proposal-updates&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proposal&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2019年1月のTC39ミーティングでのECMAScript Proposalの更新まとめ。&lt;br&gt;
-今回のミーティングまでにStage 4となったものがES2019となる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposals/blob/master/finished-proposals.md&quot; title=&quot;proposals/finished-proposals.md at master · tc39/proposals&quot;&gt;proposals/finished-proposals.md at master · tc39/proposals&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://2ality.com/2018/02/ecmascript-2019.html&quot; title=&quot;ECMAScript 2019: the final feature set&quot;&gt;ECMAScript 2019: the final feature set&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0&quot;&gt;Code-splitting for libraries—bundling for npm with Rollup 1.0&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0-2522c7437697&quot; title=&quot;Code-splitting for libraries—bundling for npm with Rollup 1.0&quot;&gt;levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0-2522c7437697&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Rollupを使ってどのようにライブラリをbundleするかやnpmに公開するかについて。&lt;br&gt;
-umd、esm、cjs形式での配布について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ecmascript-2019-the-final-feature-set&quot;&gt;ECMAScript 2019: the final feature set&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://2ality.com/2018/02/ecmascript-2019.html&quot; title=&quot;ECMAScript 2019: the final feature set&quot;&gt;2ality.com/2018/02/ecmascript-2019.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proposal&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ECMAScript 2019の入る機能が1月のTC39ミーティングで最終決定された。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposals/blob/master/finished-proposals.md&quot; title=&quot;proposals/finished-proposals.md at master · tc39/proposals&quot;&gt;proposals/finished-proposals.md at master · tc39/proposals&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;rtcquictransport-coming-to-an-origin-trial-near-you-chrome-73-web-google-developers&quot;&gt;RTCQuicTransport Coming to an Origin Trial Near You (Chrome 73)  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/01/rtcquictransport-api&quot; title=&quot;RTCQuicTransport Coming to an Origin Trial Near You (Chrome 73)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/01/rtcquictransport-api&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebRTC&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;QUIC&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 73でQUICでの接続してデータのやりとりをするAPIである&lt;code&gt;RTCQuicTransport&lt;/code&gt;のOrigin Trialが開始された。&lt;br&gt;
-WebRTC NV(Next Version)への取り組みとして、UDP上のQUICを使ったLow Level APIの策定が目的。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/shampson/RTCQuicTransport-Origin-Trial-Documentation&quot; title=&quot;shampson/RTCQuicTransport-Origin-Trial-Documentation: Documentation and demos for developers using the RTCQuicTransport in Chrome&amp;amp;#x27;s origin trial.&quot;&gt;shampson/RTCQuicTransport-Origin-Trial-Documentation: Documentation and demos for developers using the RTCQuicTransport in Chrome&amp;#39;s origin trial.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@voluntas/webrtc-over-quic-d65425230ef&quot; title=&quot;WebRTC over QUIC – V – Medium&quot;&gt;WebRTC over QUIC – V – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;severe-security-vulnerability-in-bower-s-zip-archive-extraction-snyk&quot;&gt;Severe Security Vulnerability in Bower’s Zip Archive Extraction | Snyk&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://snyk.io/blog/severe-security-vulnerability-in-bowers-zip-archive-extraction/&quot; title=&quot;Severe Security Vulnerability in Bower’s Zip Archive Extraction | Snyk&quot;&gt;snyk.io/blog/severe-security-vulnerability-in-bowers-zip-archive-extraction/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Bowerのzip/tarの解凍処理に脆弱性があり修正バージョンとしてBower 1.8.8がリリースされた。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/bower/bower/releases/tag/v1.8.8&quot; title=&quot;Release v1.8.8 · bower/bower&quot;&gt;Release v1.8.8 · bower/bower&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;chrome-university-2018-youtube&quot;&gt;Chrome University 2018 - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PL9ioqAuyl6UIFAdsM5KU6P-hRJdh-BPmm&quot; title=&quot;Chrome University 2018 - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PL9ioqAuyl6UIFAdsM5KU6P-hRJdh-BPmm&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ChromeとChrome OSのアーキテクチャについての発表動画まとめ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ungap&quot;&gt;ungap&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://ungap.github.io/&quot; title=&quot;ungap&quot;&gt;ungap.github.io/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;polyfill&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ECMAScriptやDOM APIに関するES5互換なPolyfillをまとめるプロジェクト。&lt;br&gt;
-それぞれのpolyfillがモジュールとして利用でき、1つのOrganizationとして管理するのが目的&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;nextapps-de-flexsearch-next-generation-full-text-search-library-for-browser-and-node-js&quot;&gt;nextapps-de/flexsearch: Next-Generation full text search library for Browser and Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nextapps-de/flexsearch&quot; title=&quot;nextapps-de/flexsearch: Next-Generation full text search library for Browser and Node.js&quot;&gt;github.com/nextapps-de/flexsearch&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;search &lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ブラウザとNode.jsで動く全文検索エンジンライブラリ。&lt;br&gt;
-WebWorkerの対応や検索モードのオプションが用意されている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;lukeed-httpie-a-node-js-http-client-as-easy-as-pie&quot;&gt;lukeed/httpie: A Node.js HTTP client as easy as pie! 🥧&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/lukeed/httpie&quot; title=&quot;lukeed/httpie: A Node.js HTTP client as easy as pie! 🥧&quot;&gt;github.com/lukeed/httpie&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js向けのシンプルなPromise HTTPライブラリ。&lt;br&gt;
-Nodeコアモジュールのみを利用している。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;chrome-developer-tools-pod-nextpublishing&quot;&gt;Chrome Developer Tools 入門 | 電子書籍とプリントオンデマンド（POD） | NextPublishing（ネクストパブリッシング）&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nextpublishing.jp/book/10430.html&quot; title=&quot;Chrome Developer Tools 入門 | 電子書籍とプリントオンデマンド（POD） | NextPublishing（ネクストパブリッシング）&quot;&gt;nextpublishing.jp/book/10430.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2019年2月1日発売&lt;br&gt;
-Chrome Developer Toolsについての書籍&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 05 Feb 2019 09:35:02 +0900</pubDate>
-        <link>https://jser.info/2019/02/05/firefox-65webpsafari-12.1ecmascript-2019/</link>
-        <guid isPermaLink="true">https://jser.info/2019/02/05/firefox-65webpsafari-12.1ecmascript-2019/</guid>
-        
-        <category>firefox</category>
-        
-        <category>safari</category>
-        
-        <category>ECMAScript</category>
         
         
         <category>JSer</category>
