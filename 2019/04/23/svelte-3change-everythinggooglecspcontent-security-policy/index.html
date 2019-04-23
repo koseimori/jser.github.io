@@ -189,10 +189,10 @@
 
 <p>テンプレートの構文、コンポーネントで利用できるAPI、ステートを変更したときにUIを更新するために変更検知の仕組み(Reactiveな仕組み)が変更されています。<br>
 今までは、コンポーネントのステーを<code>set</code> APIなどで変更して、この変更がUIに反映されています。</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">count</span><span class="p">}</span> <span class="nx">doubled</span> <span class="nx">is</span> <span class="p">{</span><span class="kr">double</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">button</span> <span class="nx">on</span><span class="p">:</span><span class="nx">click</span><span class="o">=</span><span class="s2">"set({ count: count + 1 })"</span><span class="o">&gt;+</span><span class="mi">1</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>
-<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>{count} doubled is {double}<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">on:click=</span><span class="s">"set({ count: count + 1 })"</span><span class="nt">&gt;</span>+1<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
     <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
         <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
             <span class="k">return</span> <span class="p">{</span>
@@ -203,8 +203,8 @@
             <span class="na">doubled</span><span class="p">:</span> <span class="p">({</span> <span class="nx">count</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="nx">count</span> <span class="o">*</span> <span class="mi">2</span>
         <span class="p">}</span>
     <span class="p">};</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
 <p>Svelte 3からは、次のように変更を検知したい文を<code>$</code>ラベル(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label">JavaScriptのラベル</a>)でアノテーションします。このラベルで指定した変数などの値が変更されるとUIが更新されるコードがコンパイル時に生成されます。<br>
 (<code>$$invalidate</code>という更新を通知する処理が生成コードには含まれるようになります。)</p>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>{count} doubled is {doubled}<span class="nt">&lt;/p&gt;</span>
