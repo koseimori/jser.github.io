@@ -5,9 +5,319 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 19 Apr 2019 15:17:34 +0900</pubDate>
-    <lastBuildDate>Fri, 19 Apr 2019 15:17:34 +0900</lastBuildDate>
+    <pubDate>Tue, 23 Apr 2019 11:13:36 +0900</pubDate>
+    <lastBuildDate>Tue, 23 Apr 2019 11:13:36 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-04-23のJS: Svelte 3(Change Everything)、GoogleでのCSP(Content Security Policy)導入ステップ</title>
+        <description>&lt;p&gt;JSer.info #432 - コンパイル前提のUIコンポーネントフレームワークであるSvelte 3リリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://svelte.dev/blog/svelte-3-rethinking-reactivity&quot;&gt;Svelte 3: Rethinking reactivity&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3.0.0の&lt;a href=&quot;https://github.com/sveltejs/svelte/blob/master/CHANGELOG.md#300&quot;&gt;CHANGELOGには&amp;quot;Everything&amp;quot;&lt;/a&gt;として書かれていませんが、&lt;br&gt;
+今までの仕組みを大幅に書き換えたバージョンとなっています。&lt;/p&gt;
+
+&lt;p&gt;テンプレートの構文、コンポーネントで利用できるAPI、ステートを変更したときにUIを更新するために変更検知の仕組み(Reactiveな仕組み)が変更されています。&lt;br&gt;
+今までは、コンポーネントのステーを&lt;code&gt;set&lt;/code&gt; APIなどで変更して、この変更がUIに反映されています。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doubled&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/p&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;set({ count: count + 1 })&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/button&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;computed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;doubled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Svelte 3からは、次のように変更を検知したい文を&lt;code&gt;$&lt;/code&gt;ラベル(&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label&quot;&gt;JavaScriptのラベル&lt;/a&gt;)でアノテーションします。このラベルで指定した変数などの値が変更されるとUIが更新されるコードがコンパイル時に生成されます。&lt;br&gt;
+(&lt;code&gt;$$invalidate&lt;/code&gt;という更新を通知する処理が生成コードには含まれるようになります。)&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;{count} doubled is {doubled}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;on:click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{() =&amp;gt; count += 1}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;+1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doubled&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handleClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;この宣言的なReactivityについては次のドキュメントやRFCを見るのが良さそうです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://svelte.dev/tutorial/reactive-declarations&quot;&gt;Reactivity / Declarations • Svelte Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sveltejs/rfcs/blob/master/text/0003-reactive-declarations.md&quot;&gt;rfcs/0003-reactive-declarations.md at master · sveltejs/rfcs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ものすごく簡単にまとめると、&lt;code&gt;@observable&lt;/code&gt;のような&lt;a href=&quot;https://github.com/tc39/proposal-decorators&quot;&gt;​まだ策定中のDecorator構文&lt;/a&gt;ではなく、既にある&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label&quot;&gt;label文&lt;/a&gt;と&lt;code&gt;$&lt;/code&gt;というラベルを使って、コンパイル時に変数などをObservableを作り出すという手法のようです。&lt;/p&gt;
+
+&lt;p&gt;この他にも&lt;a href=&quot;https://svelte.dev/blog/write-less-code&quot;&gt;Write less code&lt;/a&gt;に寄せた変更などが多く含まれているため詳細は公式サイトを読むのがよさそうです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://svelte.dev/&quot;&gt;Svelte • Cybernetically enhanced web apps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/mikispag/content-security-policy-a-successful-mess-between-hardening-and-mitigation&quot;&gt;Content Security Policy: A successful mess between hardening and mitigation - Speaker Deck&lt;/a&gt;というスライドでは、Googleの主要なドメインにおけるCSP(Content Security Policy)の導入状態などについて書かれています。&lt;/p&gt;
+
+&lt;p&gt;Google domainでCSPがどの程度導入されているかのカバレッジや60%以上のXSSはCSPでブロックできている点について。&lt;br&gt;
+また、CSP導入の4つのLevelと導入ステップ、ホワイリストの問題とnonce-based CSP、CSPとデプロイのトレードオフについてなど。&lt;br&gt;
+CSPのディレクティブ(設定)によってはevalやinline codeなどが利用できないため、CSP対応のリファクタリング手法やステップについて書かれています。&lt;/p&gt;
+
+&lt;p&gt;このスライドでも紹介されているホワイリストの問題とnonce-based CSPについては次の記事も参照するとよさそうです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://inside.pixiv.blog/kobo/5137&quot; title=&quot;Content Security Policy Level 3におけるXSS対策 - pixiv inside&quot;&gt;Content Security Policy Level 3におけるXSS対策 - pixiv inside&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;alibaba-rax-v1-0-released-the-fastest-way-to-build-universal-application&quot;&gt;alibaba/rax: [ v1.0 released] The fastest way to build universal application.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/alibaba/rax&quot; title=&quot;alibaba/rax: \[ v1.0 released\] The fastest way to build universal application.&quot;&gt;github.com/alibaba/rax&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ReactライクなAPIを持つUniversalなViewライブラリであるRax 1.0.0リリース。&lt;br&gt;
+Hooks APIにも対応している。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v5-0-0-sindresorhus-np&quot;&gt;Release v5.0.0 · sindresorhus/np&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sindresorhus/np/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · sindresorhus/np&quot;&gt;github.com/sindresorhus/np/releases/tag/v5.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm publishするnp 5.0.0リリース。&lt;br&gt;
+2要素認証を新しく公開するパッケージに関しては自動で有効化、公開に失敗したときのロールバック処理の改善など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-80-webkit&quot;&gt;Release Notes for Safari Technology Preview 80 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8825/release-notes-for-safari-technology-preview-80/&quot; title=&quot;Release Notes for Safari Technology Preview 80 | WebKit&quot;&gt;webkit.org/blog/8825/release-notes-for-safari-technology-preview-80/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview 80リリース。&lt;br&gt;
+ResizeObserverのサポート、&lt;code&gt;window.open&lt;/code&gt;の第二引数で&lt;code&gt;noreferrer&lt;/code&gt;のサポート、&lt;code&gt;contentWindow&lt;/code&gt;のサポートなど。&lt;br&gt;
+またLegacy Safari Extensionsのサポート終了など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;blog-next-js-8-1-next-js&quot;&gt;Blog - Next.js 8.1 | Next.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nextjs.org/blog/next-8-1&quot; title=&quot;Blog - Next.js 8.1 | Next.js&quot;&gt;nextjs.org/blog/next-8-1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;AMP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Next.js 8.1リリース。&lt;br&gt;
+AMPサポートが追加された。&lt;br&gt;
+コンポーネント内でAMPとの処理分岐でのhybrid対応、&lt;code&gt;next export&lt;/code&gt;でAMPでの出力とバリデーション&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-10-0-0-beta-0-reconcilertron-developit-preact&quot;&gt;Release 10.0.0-beta.0 Reconcilertron · developit/preact&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/developit/preact/releases/tag/10.0.0-beta.0&quot; title=&quot;Release 10.0.0-beta.0 Reconcilertron · developit/preact&quot;&gt;github.com/developit/preact/releases/tag/10.0.0-beta.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Preact 10.0.0-beta.0リリース。&lt;br&gt;
+&lt;code&gt;Fragments&lt;/code&gt;の安定化、条件分岐を含む描画のパフォーマンス改善、コンポーネントの上下関係を考慮した更新処理を行うように修正など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;svelte-3-rethinking-reactivity&quot;&gt;Svelte 3: Rethinking reactivity&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://svelte.dev/blog/svelte-3-rethinking-reactivity&quot; title=&quot;Svelte 3: Rethinking reactivity&quot;&gt;svelte.dev/blog/svelte-3-rethinking-reactivity&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;コンパイル前提のUIフレームワークであるSvelte 3リリース。&lt;br&gt;
+今までの仕組みを書き直したため、テンプレート構文、API、ウェブサイトが変更されている。&lt;br&gt;
+変更検知の仕組みが大きく変わり、&lt;code&gt;set&lt;/code&gt; APIではなく、reactiveな変数を&lt;code&gt;$:&lt;/code&gt;で宣言しコンパイル時に変更を追跡するコードを生成する方法に変更された&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;typescript-typescript-javascript-gfx-hub-web&quot;&gt;TypeScript再入門「がんばらないTypeScript」で、JavaScriptを“柔らかい”静的型付き言語に（gfx執筆） - エンジニアHub｜若手Webエンジニアのキャリアを考える！&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://employment.en-japan.com/engineerhub/entry/2019/04/16/103000&quot; title=&quot;TypeScript再入門「がんばらないTypeScript」で、JavaScriptを“柔らかい”静的型付き言語に（gfx執筆） - エンジニアHub｜若手Webエンジニアのキャリアを考える！&quot;&gt;employment.en-japan.com/engineerhub/entry/2019/04/16/103000&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ゆるい型付けの設定で始めるTypeScriptについて。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-horrifying-globalthis-polyfill-in-universal-javascript-mathias-bynens&quot;&gt;A horrifying globalThis polyfill in universal JavaScript · Mathias Bynens&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://mathiasbynens.be/notes/globalthis&quot; title=&quot;A horrifying globalThis polyfill in universal JavaScript · Mathias Bynens&quot;&gt;mathiasbynens.be/notes/globalthis&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;polyfill&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;globalThis&lt;/code&gt;のpolyfillとその動作原理についての解説。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;experimental-node-js-testing-the-new-performance-hooks&quot;&gt;Experimental Node.js: testing the new performance hooks&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.logrocket.com/experimental-node-js-testing-the-new-performance-hooks-31fcdd2a747e&quot; title=&quot;Experimental Node.js: testing the new performance hooks&quot;&gt;blog.logrocket.com/experimental-node-js-testing-the-new-performance-hooks-31fcdd2a747e&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsの&lt;code&gt;perf_hooks&lt;/code&gt;の使い方についての記事。&lt;br&gt;
+モジュールのロード時間やURLへのリクエスト時間を計測を例に紹介している&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-perfect-unit-test&quot;&gt;The perfect unit test&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://javascriptplayground.com/the-perfect-javascript-unit-test/&quot; title=&quot;The perfect unit test&quot;&gt;javascriptplayground.com/the-perfect-javascript-unit-test/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Unit Testの書き方について。&lt;br&gt;
+テストケース名の書き方、テストをSetup、コード実行、Assertの3つのステップに分解して書くことについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-realworld-comparison-of-front-end-frameworks-with-benchmarks-2019-update&quot;&gt;A RealWorld Comparison of Front-End Frameworks with Benchmarks (2019 update)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.freecodecamp.org/a-realworld-comparison-of-front-end-frameworks-with-benchmarks-2019-update-4be0d3c78075&quot; title=&quot;A RealWorld Comparison of Front-End Frameworks with Benchmarks (2019 update)&quot;&gt;medium.freecodecamp.org/a-realworld-comparison-of-front-end-frameworks-with-benchmarks-2019-update-4be0d3c78075&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;benchmark&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;quot;RealWorld&amp;quot;というベンチマークアプリの各JavaScriptフレームワークなどの実装を比較した記事。&lt;br&gt;
+パフォーマンス、出力されたコードのファイルサイズ、Line of Code(LOC)でそれぞれを比較した結果をまとめている&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/gothinkster/realworld&quot; title=&quot;gothinkster/realworld: &amp;amp;amp;quot;The mother of all demo apps&amp;amp;amp;quot; — Exemplary fullstack Medium.com clone powered by React, Angular, Node, Django, and many more 🏅&quot;&gt;gothinkster/realworld: &amp;quot;The mother of all demo apps&amp;quot; — Exemplary fullstack Medium.com clone powered by React, Angular, Node, Django, and many more 🏅&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;content-security-policy-a-successful-mess-between-hardening-and-mitigation-speaker-deck&quot;&gt;Content Security Policy: A successful mess between hardening and mitigation - Speaker Deck&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/mikispag/content-security-policy-a-successful-mess-between-hardening-and-mitigation&quot; title=&quot;Content Security Policy: A successful mess between hardening and mitigation - Speaker Deck&quot;&gt;speakerdeck.com/mikispag/content-security-policy-a-successful-mess-between-hardening-and-mitigation&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;GoogleにおけるCSPについてのスライド。Google domainのCSPのカバレッジや60%以上のXSSはCSPでブロックできている。&lt;br&gt;
+CSP導入の4つのLevelと導入ステップ、ホワイリストの問題とnonce-based CSP、CSPとデプロイのトレードオフについてなど。&lt;br&gt;
+CSP対応のリファクタリング手法などについて&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://inside.pixiv.blog/kobo/5137&quot; title=&quot;Content Security Policy Level 3におけるXSS対策 - pixiv inside&quot;&gt;Content Security Policy Level 3におけるXSS対策 - pixiv inside&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;isinputpending-facebooks-first-browser-api-contribution-facebook-code&quot;&gt;isInputPending: Facebook&amp;#39;s first browser API contribution - Facebook Code&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://code.fb.com/developer-tools/isinputpending-api/&quot; title=&quot;isInputPending: Facebook&amp;#39;s first browser API contribution - Facebook Code&quot;&gt;code.fb.com/developer-tools/isinputpending-api/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;navigator.scheduling.isInputPending()&lt;/code&gt;を使いユーザーの操作中は、キューにためた処理を実行しないように制御する方法について。&lt;br&gt;
+ロード処理が完了するまでユーザーが操作できない時間であるFirst Input Delay (FID) を軽減する手法について&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2018/05/first-input-delay&quot; title=&quot;First Input Delay  |  Web  |  Google Developers&quot;&gt;First Input Delay  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;do-you-really-know-how-a-lockfile-works-for-yarn-and-npm-packages-snyk&quot;&gt;Do you really know how a lockfile works for yarn and npm packages? | Snyk&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://snyk.io/blog/making-sense-of-package-lock-files-in-the-npm-ecosystem/&quot; title=&quot;Do you really know how a lockfile works for yarn and npm packages? | Snyk&quot;&gt;snyk.io/blog/making-sense-of-package-lock-files-in-the-npm-ecosystem/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;yarnの&lt;code&gt;yarn.lock&lt;/code&gt;、npmの&lt;code&gt;package-lock.json&lt;/code&gt;が実際にどのように動いているのかについて。&lt;br&gt;
+アプリケーションとライブラリのロックファイルについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;stryker-mutator-stryker-mutation-testing-for-javascript-and-friends&quot;&gt;stryker-mutator/stryker: Mutation testing for JavaScript and friends&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/stryker-mutator/stryker&quot; title=&quot;stryker-mutator/stryker: Mutation testing for JavaScript and friends&quot;&gt;github.com/stryker-mutator/stryker&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;C#&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;scala&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Mutation testingライブラリ。&lt;br&gt;
+テストコードをテストするためのフレームワーク。&lt;br&gt;
+mochaやjestなど各種テストフレームワークと連携して動作する。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/stryker-mutator/stryker-handbook#readme&quot; title=&quot;stryker-mutator/stryker-handbook: A comprehensive guide to the stryker ecosystem&quot;&gt;stryker-mutator/stryker-handbook: A comprehensive guide to the stryker ecosystem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/stryker-mutator/stryker/tree/master/packages/core#readme&quot; title=&quot;stryker/packages/core at master · stryker-mutator/stryker&quot;&gt;stryker/packages/core at master · stryker-mutator/stryker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stryker-mutator.io/blog/2017-01-17/introduction-to-mutation-testing&quot; title=&quot;Blog - Stryker Mutator&quot;&gt;Blog - Stryker Mutator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;lancedikson-bowser-a-browser-detector&quot;&gt;lancedikson/bowser: a browser detector&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/lancedikson/bowser&quot; title=&quot;lancedikson/bowser: a browser detector&quot;&gt;github.com/lancedikson/bowser&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;User-Agentを元にブラウザ名やバージョンなどを構造的なデータとして取得できるライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;sindresorhus-file-type-detect-the-file-type-of-a-buffer-uint8array-arraybuffer&quot;&gt;sindresorhus/file-type: Detect the file type of a Buffer/Uint8Array/ArrayBuffer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sindresorhus/file-type&quot; title=&quot;sindresorhus/file-type: Detect the file type of a Buffer/Uint8Array/ArrayBuffer&quot;&gt;github.com/sindresorhus/file-type&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Content sniffingをしてファイルの種類を判定するNode.jsライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;front-end-developer-handbook-2019-learn-the-entire-javascript-css-and-html-development-practice&quot;&gt;Front-end Developer Handbook 2019 - Learn the entire JavaScript, CSS and HTML development practice!&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://frontendmasters.com/books/front-end-handbook/2019/&quot; title=&quot;Front-end Developer Handbook 2019 - Learn the entire JavaScript, CSS and HTML development practice!&quot;&gt;frontendmasters.com/books/front-end-handbook/2019/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;links&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;フロントエンド開発についての概要や技術項目ごとのリソースをまとめた電子書籍の2019年版&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 23 Apr 2019 10:35:41 +0900</pubDate>
+        <link>https://jser.info/2019/04/23/svelte-3change-everythinggooglecspcontent-security-policy/</link>
+        <guid isPermaLink="true">https://jser.info/2019/04/23/svelte-3change-everythinggooglecspcontent-security-policy/</guid>
+        
+        <category>Svelte</category>
+        
+        <category>CSP</category>
+        
+        <category>security</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-04-15のJS: jQuery 3.4.0(Sizzle)、ESLint 6.0.0 α、react-redux 7.0(Hooks)</title>
@@ -2132,263 +2442,6 @@ UI、ローカルやリモートからのリソースの取得やアップロー
         <category>cdn</category>
         
         <category>JavaScript</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-02-12のJS: Vue 2.6(v-slot)、React 16.8(Hooks)、Next.js 8(serverless)</title>
-        <description>&lt;p&gt;JSer.info #422 - &lt;a href=&quot;https://github.com/vuejs/vue/releases/tag/v2.6.0&quot;&gt;Vue 2.6.0&lt;/a&gt;がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/the-vue-point/vue-2-6-released-66aa6c8e785e&quot;&gt;Vue 2.6 released! – The Vue Point – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://vuejs.org/v2/guide/components-slots.html&quot;&gt;Slots&lt;/a&gt;の新しい構文として&lt;code&gt;v-slot&lt;/code&gt;ディレクティブが追加されています。&lt;br&gt;
-ライフサイクルhookがRejectedなPromiseを返した場合にエラーハンドリングできるように、コンパイルエラー表示の改善なども行われています。&lt;br&gt;
-また、npmパッケージにES Module版のビルドが含まれるようになりました。&lt;/p&gt;
-
-&lt;p&gt;ES Moduleをサポートしているブラウザなら、&lt;a href=&quot;http://unpkg.com/&quot;&gt;http://unpkg.com/&lt;/a&gt;のようなCDNを使い、次のようにVueを読むことができるようになっています。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;module&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://unpkg.com/vue/dist/vue.esm.browser.js'&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;hr&gt;
-
-&lt;p&gt;React 16.8がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://reactjs.org/blog/2019/02/06/react-v16.8.0.html&quot;&gt;React v16.8: The One With Hooks – React Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://reactjs.org/docs/hooks-intro.html&quot;&gt;Hooks&lt;/a&gt;というFunctional Components内でのステートやライフサイクルを扱う仕組みが追加されました。&lt;br&gt;
-また、Hooksのテスト向けに&lt;code&gt;ReactTestUtils.act()&lt;/code&gt;が追加されています。&lt;/p&gt;
-
-&lt;p&gt;Hooksについては公式ドキュメントにモチベーションから使い方までまとまっています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://reactjs.org/docs/hooks-intro.html&quot;&gt;Introducing Hooks – React&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Next.js 8がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nextjs.org/blog/next-8&quot;&gt;Blog - Next.js 8 | Next.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Serverlessモードの追加され、ページごとにserverless functionを出力できるようになっています。このserverless functionは依存をbundleした形になっているため、読み込んでNode.jsの&lt;code&gt;http&lt;/code&gt;サーバとつなぐことでページのコンテンツを返せます。&lt;/p&gt;
-
-&lt;p&gt;また、ビルド時のメモリ使用量改善、&lt;code&gt;next.config.js&lt;/code&gt;に&lt;code&gt;env&lt;/code&gt;で環境変数を定義をサポート、出力するHTMLファイルサイズの改善などが行われています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;lightning-fast-templates-web-components-lit-html-litelement-polymer-project&quot;&gt;Lightning-fast templates &amp;amp; Web Components: lit-html &amp;amp; LitElement - Polymer Project&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.polymer-project.org/blog/2019-02-05-lit-element-and-lit-html-release&quot; title=&quot;Lightning-fast templates &amp;amp; Web Components: lit-html &amp;amp; LitElement - Polymer Project&quot;&gt;www.polymer-project.org/blog/2019-02-05-lit-element-and-lit-html-release&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;lit-html 1.0とLitElement 2.0リリース。&lt;br&gt;
-lit-htmlはTagged Templateを使ったHTMLテンプレート、LitElementはWeb Componentベースのクラスライブラリ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/02/lit-element-and-lit-html&quot; title=&quot;Lightning-fast templates &amp;amp;amp; Web Components: lit-html &amp;amp;amp; LitElement  |  Web  |  Google Developers&quot;&gt;Lightning-fast templates &amp;amp; Web Components: lit-html &amp;amp; LitElement  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;vue-2-6-released-the-vue-point-medium&quot;&gt;Vue 2.6 released! – The Vue Point – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/the-vue-point/vue-2-6-released-66aa6c8e785e&quot; title=&quot;Vue 2.6 released! – The Vue Point – Medium&quot;&gt;medium.com/the-vue-point/vue-2-6-released-66aa6c8e785e&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Vue 2.6リリース。&lt;br&gt;
-&lt;code&gt;v-slot&lt;/code&gt;ディレクティブの追加、Dynamic Directive Argumentsのサポート。&lt;br&gt;
-ライフサイクルhookがRejectedなPromiseを返した場合にエラーハンドリングできるように、コンパイルエラー表示の改善。&lt;br&gt;
-またes module版がパッケージに含まれるように&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-v16-8-the-one-with-hooks-react-blog&quot;&gt;React v16.8: The One With Hooks – React Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://reactjs.org/blog/2019/02/06/react-v16.8.0.html&quot; title=&quot;React v16.8: The One With Hooks – React Blog&quot;&gt;reactjs.org/blog/2019/02/06/react-v16.8.0.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React 16.8リリース。&lt;br&gt;
-Hooksがデフォルトで有効化された。&lt;br&gt;
-またHooksのテスト向けに&lt;code&gt;ReactTestUtils.act()&lt;/code&gt;が追加された。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-release-2-10-0&quot;&gt;New Release: 2.10.0&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jshint.com/blog/2019-02-05/release-2-10-0/&quot; title=&quot;New Release: 2.10.0&quot;&gt;jshint.com/blog/2019-02-05/release-2-10-0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JSHint 2.10.0リリース。&lt;br&gt;
-&lt;code&gt;esversion&lt;/code&gt;オプションを追加し&lt;code&gt;7&lt;/code&gt;,&lt;code&gt;8&lt;/code&gt;,&lt;code&gt;9&lt;/code&gt;を指定できるように。&lt;br&gt;
-async functionなどの構文をサポート&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;chromium-blog-chrome-73-beta-constructable-stylesheets-a-new-regexp-function-and-passive-mouse-events&quot;&gt;Chromium Blog: Chrome 73 Beta: Constructable stylesheets, a new RegExp function, and passive mouse events&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.chromium.org/2019/02/chrome-73-beta-constructable.html&quot; title=&quot;Chromium Blog: Chrome 73 Beta: Constructable stylesheets, a new RegExp function, and passive mouse events&quot;&gt;blog.chromium.org/2019/02/chrome-73-beta-constructable.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 73 Betaリリース。&lt;br&gt;
-CSSOMを操作するConstructable Stylesheet Objectsのサポート、String#matchAllのサポート、&lt;code&gt;::part&lt;/code&gt;のサポート。&lt;br&gt;
-&lt;code&gt;wheel&lt;/code&gt;イベントがデフォルトで&lt;code&gt;passive&lt;/code&gt;となるように変更など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#milestone%3D73&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/WICG/construct-stylesheets&quot; title=&quot;WICG/construct-stylesheets: API for constructing CSS stylesheet objects&quot;&gt;WICG/construct-stylesheets: API for constructing CSS stylesheet objects&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v7-0-0-h5bp-html5-boilerplate&quot;&gt;Release v7.0.0 · h5bp/html5-boilerplate&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/h5bp/html5-boilerplate/releases/tag/v7.0.0&quot; title=&quot;Release v7.0.0 · h5bp/html5-boilerplate&quot;&gt;github.com/h5bp/html5-boilerplate/releases/tag/v7.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;HTML5&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;template&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ウェブページのテンプレートプロジェクトのhtml5-boilerplate 7.0.0リリース。&lt;br&gt;
-IE9/10に関する記述を削除、&lt;code&gt;theme-color&lt;/code&gt;のmetaタグを追加、&lt;code&gt;secutiry.txt&lt;/code&gt;についてを追加など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/h5bp/html5-boilerplate/pull/2074&quot; title=&quot;v7.0 Docs Update by coliff · Pull Request #2074 · h5bp/html5-boilerplate&quot;&gt;v7.0 Docs Update by coliff · Pull Request #2074 · h5bp/html5-boilerplate&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;testcafe-v1-0-0-released-testcafe&quot;&gt;TestCafe v1.0.0 Released | TestCafe&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://devexpress.github.io/testcafe/blog/testcafe-v1-0-0-released.html&quot; title=&quot;TestCafe v1.0.0 Released | TestCafe&quot;&gt;devexpress.github.io/testcafe/blog/testcafe-v1-0-0-released.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TestCafe 1.0.0リリース。&lt;br&gt;
-テストの実行を動画として録画できるように、&lt;code&gt;.testcaferc.json&lt;/code&gt;の設定ファイルを追加、Live modeの統合、型定義ファイルの追加など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://devexpress.github.io/testcafe/blog/migration-from-testcafe-v0-x-y-to-v1-0-0.html&quot; title=&quot;Migration from TestCafe v0.x.y to v1.0.0 | TestCafe&quot;&gt;Migration from TestCafe v0.x.y to v1.0.0 | TestCafe&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;blog-next-js-8-next-js&quot;&gt;Blog - Next.js 8 | Next.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nextjs.org/blog/next-8&quot; title=&quot;Blog - Next.js 8 | Next.js&quot;&gt;nextjs.org/blog/next-8&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Next.js 8リリース。&lt;br&gt;
-Serverlessモードの追加、ビルド時のメモリ使用量改善、&lt;code&gt;env&lt;/code&gt;で環境変数を定義できるように、出力するHTMLファイルサイズの改善。&lt;br&gt;
-&lt;code&gt;&amp;lt;Head&amp;gt;&lt;/code&gt;コンポーネントの重複の解決、&lt;code&gt;crossOrigin&lt;/code&gt;オプションの追加、CSP対応など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introducing-swc-1-0-swc&quot;&gt;Introducing swc 1.0 · swc&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://swc-project.github.io/blog/2019/02/08/Introducing-swc-1.0&quot; title=&quot;Introducing swc 1.0 · swc&quot;&gt;swc-project.github.io/blog/2019/02/08/Introducing-swc-1.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Rust&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Rust製のJavaScript Transpiler/Compilerのswc 1.0リリース。&lt;br&gt;
-ECMAScript 2019、JSX、TypeScriptサポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/swc-project/swc&quot; title=&quot;swc-project/swc: Super-fast javascript to javascript compiler written in rust&quot;&gt;swc-project/swc: Super-fast javascript to javascript compiler written in rust&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;what-s-next-for-semver&quot;&gt;What’s next for SemVer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://words.steveklabnik.com/what-s-next-for-semver&quot; title=&quot;What’s next for SemVer&quot;&gt;words.steveklabnik.com/what-s-next-for-semver&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;SemVerプロジェクトにnpmやCargoなどのパッケージ管理ツールの人中心のGitHub Teamが作成され、RFCプロセスでの運用が開始されたという話&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://haacked.com/archive/2019/02/11/semver-collective/&quot; title=&quot;SemVer’s New Maintainers | You’ve Been Haacked&quot;&gt;SemVer’s New Maintainers | You’ve Been Haacked&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;making-wheel-scrolling-fast-by-default-web-google-developers&quot;&gt;Making wheel scrolling fast by default  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/02/scrolling-intervention&quot; title=&quot;Making wheel scrolling fast by default  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/02/scrolling-intervention&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 73から&lt;code&gt;wheel&lt;/code&gt;イベントがデフォルトで&lt;code&gt;{ passive: true }&lt;/code&gt;となる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;webpack-bundle-analysis-for-every-commit&quot;&gt;Webpack bundle analysis, for every commit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://packtracker.io/&quot; title=&quot;Webpack bundle analysis, for every commit&quot;&gt;packtracker.io/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;github&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpackのbundleサイズの分析を行うウェブサービス。&lt;br&gt;
-GitHub Checkに対応してコミットごとのbundleサイズやハッシュの変更によるキャッシュヒットの有無などをビジュアライズできる。&lt;br&gt;
-OSSプロジェクトでは無料で利用できる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;pikapkg-pack-npm-package-building-reimagined-https-www-pikapkg-com-blog-introducing-pika-pack&quot;&gt;pikapkg/pack: 📦⚡️ npm package building, reimagined. &lt;a href=&quot;https://www.pikapkg.com/blog/introducing-pika-pack/&quot;&gt;https://www.pikapkg.com/blog/introducing-pika-pack/&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/pikapkg/pack&quot; title=&quot;pikapkg/pack: 📦⚡️ npm package building, reimagined. https://www.pikapkg.com/blog/introducing-pika-pack/&quot;&gt;github.com/pikapkg/pack&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npmパッケージ公開向けにNodeやブラウザ、moduleなど様々な種類に向けたライブラリのビルドを行うbundleツール。&lt;br&gt;
-それぞれのビルド設定はプラグインになっており、必要なものをパイプラインに定義してまとめてビルドできる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.pikapkg.com/blog/introducing-pika-pack/&quot; title=&quot;Pika | Introducing: @pika/pack&quot;&gt;Pika | Introducing: @pika/pack&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;notion-cli-notion-notion-the-hassle-free-javascript-toolchain-manager&quot;&gt;notion-cli/notion: Notion: the hassle-free JavaScript toolchain manager&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/notion-cli/notion&quot; title=&quot;notion-cli/notion: Notion: the hassle-free JavaScript toolchain manager&quot;&gt;github.com/notion-cli/notion&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Rust&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Rust製のNode.jsバージョン管理ツール。&lt;br&gt;
-プロジェクトごとにNodeバージョンを切り替える仕組みやnpmで公開されているコマンドラインツールをインストールして利用する仕組みなどを持っている&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 12 Feb 2019 09:10:22 +0900</pubDate>
-        <link>https://jser.info/2019/02/12/vue-2.6v-slotreact-16.8hooksnext.js-8serverless/</link>
-        <guid isPermaLink="true">https://jser.info/2019/02/12/vue-2.6v-slotreact-16.8hooksnext.js-8serverless/</guid>
-        
-        <category>Vue</category>
-        
-        <category>React</category>
-        
-        <category>next.js</category>
         
         
         <category>JSer</category>

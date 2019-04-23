@@ -1,0 +1,482 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-04-23のJS: Svelte 3(Change Everything)、GoogleでのCSP(Content Security Policy)導入ステップ - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/04/23/svelte-3change-everythinggooglecspcontent-security-policy/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-04-23のJS: Svelte 3(Change Everything)、GoogleでのCSP(Content Security Policy)導入ステップ"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-04-23のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/alibaba/rax">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">alibaba/rax: \[ v1.0 released\] The fastest way to build universal application.</amp-fit-text>
+            <p class="item-contents">ReactライクなAPIを持つUniversalなViewライブラリであるRax 1.0.0リリース。
+Hooks APIにも対応している。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="alibaba/rax: \[ v1.0 released\] The fastest way to build universal application." href="https://github.com/alibaba/rax" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/sindresorhus/np/releases/tag/v5.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v5.0.0 · sindresorhus/np</amp-fit-text>
+            <p class="item-contents">npm publishするnp 5.0.0リリース。
+2要素認証を新しく公開するパッケージに関しては自動で有効化、公開に失敗したときのロールバック処理の改善など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v5.0.0 · sindresorhus/np" href="https://github.com/sindresorhus/np/releases/tag/v5.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/8825/release-notes-for-safari-technology-preview-80/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 80 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview 80リリース。
+ResizeObserverのサポート、<code>window.open</code>の第二引数で<code>noreferrer</code>のサポート、<code>contentWindow</code>のサポートなど。
+またLegacy Safari Extensionsのサポート終了など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 80 | WebKit" href="https://webkit.org/blog/8825/release-notes-for-safari-technology-preview-80/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nextjs.org/blog/next-8-1">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Blog - Next.js 8.1 | Next.js</amp-fit-text>
+            <p class="item-contents">Next.js 8.1リリース。
+AMPサポートが追加された。
+コンポーネント内でAMPとの処理分岐でのhybrid対応、<code>next export</code>でAMPでの出力とバリデーション
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Blog - Next.js 8.1 | Next.js" href="https://nextjs.org/blog/next-8-1" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/developit/preact/releases/tag/10.0.0-beta.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 10.0.0-beta.0 Reconcilertron · developit/preact</amp-fit-text>
+            <p class="item-contents">Preact 10.0.0-beta.0リリース。
+<code>Fragments</code>の安定化、条件分岐を含む描画のパフォーマンス改善、コンポーネントの上下関係を考慮した更新処理を行うように修正など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 10.0.0-beta.0 Reconcilertron · developit/preact" href="https://github.com/developit/preact/releases/tag/10.0.0-beta.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://svelte.dev/blog/svelte-3-rethinking-reactivity">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Svelte 3: Rethinking reactivity</amp-fit-text>
+            <p class="item-contents">コンパイル前提のUIフレームワークであるSvelte 3リリース。
+今までの仕組みを書き直したため、テンプレート構文、API、ウェブサイトが変更されている。
+変更検知の仕組みが大きく変わり、<code>set</code> APIではなく、reactiveな変数を<code>$:</code>で宣言しコンパイル時に変更を追跡するコードを生成する方法に変更された
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Svelte 3: Rethinking reactivity" href="https://svelte.dev/blog/svelte-3-rethinking-reactivity" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://employment.en-japan.com/engineerhub/entry/2019/04/16/103000">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">TypeScript再入門「がんばらないTypeScript」で、JavaScriptを“柔らかい”静的型付き言語に（gfx執筆） - エンジニアHub｜若手Webエンジニアのキャリアを考える！</amp-fit-text>
+            <p class="item-contents">ゆるい型付けの設定で始めるTypeScriptについて。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="TypeScript再入門「がんばらないTypeScript」で、JavaScriptを“柔らかい”静的型付き言語に（gfx執筆） - エンジニアHub｜若手Webエンジニアのキャリアを考える！" href="https://employment.en-japan.com/engineerhub/entry/2019/04/16/103000" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://mathiasbynens.be/notes/globalthis">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">A horrifying globalThis polyfill in universal JavaScript · Mathias Bynens</amp-fit-text>
+            <p class="item-contents"><code>globalThis</code>のpolyfillとその動作原理についての解説。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="A horrifying globalThis polyfill in universal JavaScript · Mathias Bynens" href="https://mathiasbynens.be/notes/globalthis" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.logrocket.com/experimental-node-js-testing-the-new-performance-hooks-31fcdd2a747e">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Experimental Node.js: testing the new performance hooks</amp-fit-text>
+            <p class="item-contents">Node.jsの<code>perf_hooks</code>の使い方についての記事。
+モジュールのロード時間やURLへのリクエスト時間を計測を例に紹介している
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Experimental Node.js: testing the new performance hooks" href="https://blog.logrocket.com/experimental-node-js-testing-the-new-performance-hooks-31fcdd2a747e" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://javascriptplayground.com/the-perfect-javascript-unit-test/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">The perfect unit test</amp-fit-text>
+            <p class="item-contents">Unit Testの書き方について。
+テストケース名の書き方、テストをSetup、コード実行、Assertの3つのステップに分解して書くことについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The perfect unit test" href="https://javascriptplayground.com/the-perfect-javascript-unit-test/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.freecodecamp.org/a-realworld-comparison-of-front-end-frameworks-with-benchmarks-2019-update-4be0d3c78075">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">A RealWorld Comparison of Front-End Frameworks with Benchmarks (2019 update)</amp-fit-text>
+            <p class="item-contents">"RealWorld"というベンチマークアプリの各JavaScriptフレームワークなどの実装を比較した記事。
+パフォーマンス、出力されたコードのファイルサイズ、Line of Code(LOC)でそれぞれを比較した結果をまとめている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="A RealWorld Comparison of Front-End Frameworks with Benchmarks (2019 update)" href="https://medium.freecodecamp.org/a-realworld-comparison-of-front-end-frameworks-with-benchmarks-2019-update-4be0d3c78075" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/mikispag/content-security-policy-a-successful-mess-between-hardening-and-mitigation">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Content Security Policy: A successful mess between hardening and mitigation - Speaker Deck</amp-fit-text>
+            <p class="item-contents">GoogleにおけるCSPについてのスライド。Google domainのCSPのカバレッジや60%以上のXSSはCSPでブロックできている。
+CSP導入の4つのLevelと導入ステップ、ホワイリストの問題とnonce-based CSP、CSPとデプロイのトレードオフについてなど。
+CSP対応のリファクタリング手法などについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Content Security Policy: A successful mess between hardening and mitigation - Speaker Deck" href="https://speakerdeck.com/mikispag/content-security-policy-a-successful-mess-between-hardening-and-mitigation" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://code.fb.com/developer-tools/isinputpending-api/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">isInputPending: Facebook&#039;s first browser API contribution - Facebook Code</amp-fit-text>
+            <p class="item-contents"><code>navigator.scheduling.isInputPending()</code>を使いユーザーの操作中は、キューにためた処理を実行しないように制御する方法について。
+ロード処理が完了するまでユーザーが操作できない時間であるFirst Input Delay (FID) を軽減する手法について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="isInputPending: Facebook&#039;s first browser API contribution - Facebook Code" href="https://code.fb.com/developer-tools/isinputpending-api/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://snyk.io/blog/making-sense-of-package-lock-files-in-the-npm-ecosystem/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Do you really know how a lockfile works for yarn and npm packages? | Snyk</amp-fit-text>
+            <p class="item-contents">yarnの<code>yarn.lock</code>、npmの<code>package-lock.json</code>が実際にどのように動いているのかについて。
+アプリケーションとライブラリのロックファイルについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Do you really know how a lockfile works for yarn and npm packages? | Snyk" href="https://snyk.io/blog/making-sense-of-package-lock-files-in-the-npm-ecosystem/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/stryker-mutator/stryker">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">stryker-mutator/stryker: Mutation testing for JavaScript and friends</amp-fit-text>
+            <p class="item-contents">Mutation testingライブラリ。
+テストコードをテストするためのフレームワーク。
+mochaやjestなど各種テストフレームワークと連携して動作する。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="stryker-mutator/stryker: Mutation testing for JavaScript and friends" href="https://github.com/stryker-mutator/stryker" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/lancedikson/bowser">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">lancedikson/bowser: a browser detector</amp-fit-text>
+            <p class="item-contents">User-Agentを元にブラウザ名やバージョンなどを構造的なデータとして取得できるライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="lancedikson/bowser: a browser detector" href="https://github.com/lancedikson/bowser" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/sindresorhus/file-type">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">sindresorhus/file-type: Detect the file type of a Buffer/Uint8Array/ArrayBuffer</amp-fit-text>
+            <p class="item-contents">Content sniffingをしてファイルの種類を判定するNode.jsライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="sindresorhus/file-type: Detect the file type of a Buffer/Uint8Array/ArrayBuffer" href="https://github.com/sindresorhus/file-type" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://frontendmasters.com/books/front-end-handbook/2019/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Front-end Developer Handbook 2019 - Learn the entire JavaScript, CSS and HTML development practice!</amp-fit-text>
+            <p class="item-contents">フロントエンド開発についての概要や技術項目ごとのリソースをまとめた電子書籍の2019年版
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Front-end Developer Handbook 2019 - Learn the entire JavaScript, CSS and HTML development practice!" href="https://frontendmasters.com/books/front-end-handbook/2019/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
