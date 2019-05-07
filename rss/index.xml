@@ -5,9 +5,260 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 03 May 2019 13:41:48 +0900</pubDate>
-    <lastBuildDate>Fri, 03 May 2019 13:41:48 +0900</lastBuildDate>
+    <pubDate>Tue, 07 May 2019 10:59:29 +0900</pubDate>
+    <lastBuildDate>Tue, 07 May 2019 10:59:29 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-05-07のJS: Chrome 75 Beta(Low Latency Canvas)、Babylon.js 4.0(WebGL)</title>
+        <description>&lt;p&gt;JSer.info #434 - CHrome 75のベータ版がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2019/05/chrome-75-beta-low-latency-canvas.html&quot;&gt;Chromium Blog: Chrome 75 Beta: low latency canvas contexts, sharing files, and numeric separators&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#milestone%3D75&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Canvas Contextに低遅延レンダリングのための&lt;code&gt;desynchronized&lt;/code&gt;オプションを追加されています。&lt;br&gt;
+&lt;code&gt;desynchronized&lt;/code&gt;オプションについては次の記事で解説されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/05/desynchronized&quot;&gt;Low-latency rendering with the desynchronized hint  |  Web  |  Google Developers&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/whatwg/html/issues/2659&quot;&gt;Add a low latency mode for OffscreenCanvas · Issue #2659 · whatwg/html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Web Share APIでファイルをサポート、ES Proposalの&lt;a href=&quot;https://github.com/tc39/proposal-numeric-separator&quot;&gt;Numeric separators&lt;/a&gt;をサポートしています。&lt;br&gt;
+また、CSPの &lt;code&gt;script-src-attr&lt;/code&gt;, &lt;code&gt;script-src-elem&lt;/code&gt;, &lt;code&gt;style-src-attr&lt;/code&gt;, &lt;code&gt;style-src-elem&lt;/code&gt;ディレクティブのサポートが追加され、&lt;br&gt;
+&lt;a href=&quot;https://www.chromestatus.com/feature/Discussion%20to%20add%20it%20to%20spec:%20https://github.com/whatwg/html/issues/1237&quot;&gt;HTMLVideoElement.playsInline&lt;/a&gt;やCache-Controlの&lt;code&gt;stale-while-revalidate&lt;/code&gt;のサポートなども含まれています。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;stale-while-revalidate&lt;/code&gt;については次の記事がわかりやすいと思います。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://csswizardry.com/2019/03/cache-control-for-civilians/&quot;&gt;What stale-while-revalidate provides is a grace period (defined by us) in which the browser is permitted to use an out of date (stale) asset while we’re checking for a newer version.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;WebGLベースの3D games向けフレームワークであるBabylon.js 4.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@babylonjs/babylon-js-4-0-is-here-d725b5b02e9b&quot;&gt;Babylon.js 4.0 Is Here! – Babylon.js – Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/BabylonJS/Babylon.js/releases/tag/v4.0.0&quot;&gt;Release 4.0.0 · BabylonJS/Babylon.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Visual Scene Inspectorが追加され&lt;a href=&quot;https://doc.babylonjs.com/features/playground_debuglayer&quot;&gt;inspector&lt;/a&gt;のデバッグ機能が強化されています。&lt;br&gt;
+また、不要なモジュールなどをbundle時にeliminateできるようにファイルサイズが改善されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://doc.babylonjs.com/features/es6_support&quot;&gt;ES6 - Babylon.js Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;またパフォーマンスの改善や物理エンジンとして&lt;a href=&quot;https://github.com/kripken/ammo.js/&quot;&gt;ammo.js&lt;/a&gt;をサポートなどが行われています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://doc.babylonjs.com/how_to/using_the_physics_engine&quot;&gt;Use a Physics Engine - Babylon.js Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jquery-3-4-1-triggering-focus-events-in-ie-and-finding-root-elements-in-ios-10-official-jquery-blog&quot;&gt;jQuery 3.4.1: triggering focus events in IE and finding root elements in iOS 10 | Official jQuery Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.jquery.com/2019/05/01/jquery-3-4-1-triggering-focus-events-in-ie-and-finding-root-elements-in-ios-10/&quot; title=&quot;jQuery 3.4.1: triggering focus events in IE and finding root elements in iOS 10 | Official jQuery Blog&quot;&gt;blog.jquery.com/2019/05/01/jquery-3-4-1-triggering-focus-events-in-ie-and-finding-root-elements-in-ios-10/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;jQuery 3.4.1リリース。&lt;br&gt;
+IE10-IE11で&lt;code&gt;trigger&lt;/code&gt;の問題を修正、iOS 10.0-10.2でのclickの問題を修正、AMDとしてロードしたときの問題を修正など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-81-webkit&quot;&gt;Release Notes for Safari Technology Preview 81 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8834/release-notes-for-safari-technology-preview-81/&quot; title=&quot;Release Notes for Safari Technology Preview 81 | WebKit&quot;&gt;webkit.org/blog/8834/release-notes-for-safari-technology-preview-81/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webkit&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview 81リリース。&lt;br&gt;
+印刷時のスタイルで&lt;code&gt;@page&lt;/code&gt;によるmarginのサポート、&lt;code&gt;frame-ancestors&lt;/code&gt; CSPを&lt;code&gt;X-Frame-Options&lt;/code&gt;ヘッダより優先するように。&lt;br&gt;
+&lt;code&gt;requestAnimationFrame&lt;/code&gt;の実行タイミングの問題を修正など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://bugs.webkit.org/show_bug.cgi?id=177484&quot; title=&quot;177484 – requestAnimationFrame should execute before the next frame&quot;&gt;177484 – requestAnimationFrame should execute before the next frame&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;chromium-blog-chrome-75-beta-low-latency-canvas-contexts-sharing-files-and-numeric-separators&quot;&gt;Chromium Blog: Chrome 75 Beta: low latency canvas contexts, sharing files, and numeric separators&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.chromium.org/2019/05/chrome-75-beta-low-latency-canvas.html&quot; title=&quot;Chromium Blog: Chrome 75 Beta: low latency canvas contexts, sharing files, and numeric separators&quot;&gt;blog.chromium.org/2019/05/chrome-75-beta-low-latency-canvas.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 75 Betaリリース。&lt;br&gt;
+Canvasに低遅延レンダリングのための&lt;code&gt;desynchronized&lt;/code&gt;オプションを追加、Web Shareでファイルをサポート、ES ProposalのNumeric separatorsをサポート。&lt;br&gt;
+CSPの&lt;code&gt;script-src-attr&lt;/code&gt;ディレクティブのサポート、Cache-Controlの&lt;code&gt;stale-while-revalidate&lt;/code&gt;のサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#milestone%3D75&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/05/desynchronized&quot; title=&quot;Low-latency rendering with the desynchronized hint  |  Web  |  Google Developers&quot;&gt;Low-latency rendering with the desynchronized hint  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-7-0-0-websockets-ws&quot;&gt;Release 7.0.0 · websockets/ws&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/websockets/ws/releases/tag/7.0.0&quot; title=&quot;Release 7.0.0 · websockets/ws&quot;&gt;github.com/websockets/ws/releases/tag/7.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebSocket&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebSocketクライアント &amp;amp; サーバの&lt;code&gt;ws&lt;/code&gt; 7.0.0リリース。&lt;br&gt;
+Node.js 6のサポート終了、コンストラクタでNode.jsの&lt;code&gt;url&lt;/code&gt;オブジェクトではなく&lt;code&gt;URL&lt;/code&gt;オブジェクトを受け取るように変更。&lt;br&gt;
+&lt;code&gt;readyState&lt;/code&gt;が&lt;code&gt;OPEN&lt;/code&gt;ではないときの&lt;code&gt;ping&lt;/code&gt;、&lt;code&gt;pong&lt;/code&gt;の挙動変更など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v4-0-0-facebook-relay&quot;&gt;Release v4.0.0 · facebook/relay&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/relay/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · facebook/relay&quot;&gt;github.com/facebook/relay/releases/tag/v4.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;GraphQLとReact向けのフレームワークであるRelay 4.0.0リリース。&lt;br&gt;
+Containerの引数に&lt;code&gt;graphql&lt;/code&gt; tagを渡すのではなくオブジェクトを受け付けるように変更、client schema extensionsのフルサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.facebook.com/videos/2019/building-the-new-facebookcom-with-react-graphql-and-relay/&quot; title=&quot;Building the New facebook.com with React, GraphQL and Relay&quot;&gt;Building the New facebook.com with React, GraphQL and Relay&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;microsoft-edge-all-the-news-from-build-2019-microsoft-edge-blog&quot;&gt;Microsoft Edge – All the news from Build 2019 - Microsoft Edge Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/05/06/edge-chromium-build-2019-pwa-ie-mode-devtools/&quot; title=&quot;Microsoft Edge – All the news from Build 2019 - Microsoft Edge Blog&quot;&gt;blogs.windows.com/msedgedev/2019/05/06/edge-chromium-build-2019-pwa-ie-mode-devtools/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;IE&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ChromiumベースのMSEdgeにはサードパーティトラッキングのブロックができるPrivacy Tools、表示しているサイトをIE互換するIE modeが搭載される予定&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;babylon-js-4-0-is-here-babylon-js-medium&quot;&gt;Babylon.js 4.0 Is Here! – Babylon.js – Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@babylonjs/babylon-js-4-0-is-here-d725b5b02e9b&quot; title=&quot;Babylon.js 4.0 Is Here! – Babylon.js – Medium&quot;&gt;medium.com/@babylonjs/babylon-js-4-0-is-here-d725b5b02e9b&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebGLベースの3Dゲーム向けフレームワークのBabylon.js 4.0.0リリース。 Visual Scene Inspectorの導入、ファイルサイズやパフォーマンスの改善、物理エンジンとしてAmmo.jsをサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;hyper-blog&quot;&gt;Hyper Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hyper.is/blog&quot; title=&quot;Hyper Blog&quot;&gt;hyper.is/blog&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;software&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Electron製のターミナルであるHyper 3リリース。 &lt;code&gt;hterm&lt;/code&gt;から&lt;code&gt;xterm.js&lt;/code&gt;に変更してWebGL Rendererを使うように、IPCのバッチ処理でパフォーマンス改善など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;stub-navigator-api-in-end-to-end-tests-better-world-by-better-software&quot;&gt;Stub navigator API in end-to-end tests | Better world by better software&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://glebbahmutov.com/blog/stub-navigator-api/&quot; title=&quot;Stub navigator API in end-to-end tests | Better world by better software&quot;&gt;glebbahmutov.com/blog/stub-navigator-api/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Cypressを使いBattery status APIのStubをしながらテストをするチュートリアル。&lt;br&gt;
+&lt;code&gt;navigator&lt;/code&gt;をどのようにstubしてテストするかについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-css-handbook-a-handy-guide-to-css-for-developers&quot;&gt;The CSS Handbook: a handy guide to CSS for developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.freecodecamp.org/the-css-handbook-a-handy-guide-to-css-for-developers-b56695917d11&quot; title=&quot;The CSS Handbook: a handy guide to CSS for developers&quot;&gt;medium.freecodecamp.org/the-css-handbook-a-handy-guide-to-css-for-developers-b56695917d11&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSSについてのガイド。&lt;br&gt;
+基本的なCSSのプロパティの解説からunit、レイアウト、アニメーションなど幅広く書かれている&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;revisiting-prefers-reduced-motion-the-reduced-motion-media-query-css-tricks&quot;&gt;Revisiting prefers-reduced-motion, the reduced motion media query | CSS-Tricks&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/&quot; title=&quot;Revisiting prefers-reduced-motion, the reduced motion media query | CSS-Tricks&quot;&gt;css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;animation&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSSの&lt;code&gt;prefers-reduced-motion&lt;/code&gt;の解説と使い方についての記事。&lt;br&gt;
+アクセシビリティ、プログレッシブ・エンハンスメントの考え、CSS Variablesと組み合わせた実装について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;optimizing-performance-with-resource-hints-smashing-magazine&quot;&gt;Optimizing Performance With Resource Hints — Smashing Magazine&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2019/04/optimization-performance-resource-hints/&quot; title=&quot;Optimizing Performance With Resource Hints — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2019/04/optimization-performance-resource-hints/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Resource Hintsについての記事。&lt;br&gt;
+&lt;code&gt;dns-prefetch&lt;/code&gt;、&lt;code&gt;preconnect&lt;/code&gt;、&lt;code&gt;prefetch&lt;/code&gt;、&lt;code&gt;prerender&lt;/code&gt;をそれぞれどのような場合に利用するかについて。&lt;code&gt;as&lt;/code&gt;属性についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;gulp4-gulpfile-node-qiita&quot;&gt;gulp4再入門 gulpfileの分割とnodeモジュールの利用 - Qiita&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/masato_makino/items/ad11058e1a8a009abbdf&quot; title=&quot;gulp4再入門 gulpfileの分割とnodeモジュールの利用 - Qiita&quot;&gt;qiita.com/masato_makino/items/ad11058e1a8a009abbdf&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;gulp4ベースの入門記事。&lt;br&gt;
+gulp taskの定義方法、タスクファイルの分割、gulpプラグインとNodeモジュールについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;oclif-cli-ux-cli-io-utilities&quot;&gt;oclif/cli-ux: CLI IO utilities&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/oclif/cli-ux&quot; title=&quot;oclif/cli-ux: CLI IO utilities&quot;&gt;github.com/oclif/cli-ux&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ターミナルのCLIを提供するNode.jsライブラリ。&lt;br&gt;
+promptやconfirmなどの対話操作、URLのリンク表示、spinner、アノテーション、table表示など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;laconia-create-well-crafted-serverless-applications-effortlessly&quot;&gt;Laconia · Create well-crafted serverless applications, effortlessly&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://laconiajs.io/&quot; title=&quot;Laconia · Create well-crafted serverless applications, effortlessly&quot;&gt;laconiajs.io/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsのserverlsssフレームワーク。Hexagonal Architectureで依存を外から渡せるような構造にしてテストしやすくしている。&lt;br&gt;
+Long Task向けのbatch処理を行うモジュールも提供されている。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;microsoft-react-native-windows-a-framework-for-building-native-windows-apps-with-react&quot;&gt;microsoft/react-native-windows: A framework for building native Windows apps with React.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Microsoft/react-native-windows&quot; title=&quot;microsoft/react-native-windows: A framework for building native Windows apps with React.&quot;&gt;github.com/Microsoft/react-native-windows&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;windows&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Native for Windows。&lt;br&gt;
+React NativeでネイティブなWindowsアプリ(UWP)を作成するフレームワーク。&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 07 May 2019 10:19:40 +0900</pubDate>
+        <link>https://jser.info/2019/05/07/chrome-75-betalow-latency-canvasbabylon.js-4.0webgl/</link>
+        <guid isPermaLink="true">https://jser.info/2019/05/07/chrome-75-betalow-latency-canvasbabylon.js-4.0webgl/</guid>
+        
+        <category>Chrome</category>
+        
+        <category>WebGL</category>
+        
+        <category>gulp</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-04-30のJS: Node.js 12.0.0(Node.js 6.xはEOL)、Electron 5.0.0、Pixi.js 5.0.0(WebGL by default)</title>
@@ -2240,271 +2491,6 @@ Reactレベルとアプリレベルでのパフォーマンスについて。&lt
         <category>preact</category>
         
         <category>HTTPArchive</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-02-26のJS: yarn v2候補(berry)、Fastify v2、TSLintの今後</title>
-        <description>&lt;p&gt;JSer.info #424 - &lt;a href=&quot;https://yarnpkg.com/&quot;&gt;yarn&lt;/a&gt; v2のソースコードとなるリポジトリが公開されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/berry&quot;&gt;yarnpkg/berry: 📦🐈 A modern, fast, reliable, package manager; part of the Yarn organization&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;次のIssueでも書かれているように、v1とは別のリポジトリにしているのはIssueのtriageをしやすくするためだそうです。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/berry/issues/1&quot; title=&quot;👑 Say hello to Yarn v2 · Issue #1 · yarnpkg/berry&quot;&gt;👑 Say hello to Yarn v2 · Issue #1 · yarnpkg/berry&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/yarn/issues/6953#issuecomment-466589196&quot; title=&quot;Yarn&amp;#39;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&quot;&gt;Yarn&amp;#39;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The codename for these changes is Berry&lt;br&gt;
--- &lt;a href=&quot;https://github.com/yarnpkg/yarn/issues/6953&quot;&gt;https://github.com/yarnpkg/yarn/issues/6953&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&amp;quot;Berry&amp;quot;という名前はv2に向けた変更のコードネームです。&lt;/p&gt;
-
-&lt;p&gt;v2(berry)では&lt;a href=&quot;https://github.com/yarnpkg/yarn/issues/6953&quot;&gt;Yarn&amp;#39;s Future - v2 and beyond&lt;/a&gt;で予定されていたものが実装されている段階のようです。&lt;/p&gt;
-
-&lt;p&gt;コードベースがTypeScriptで書き直されていて、monorepoになっています。&lt;br&gt;
-lockファイルをymlサブセットとなるような&lt;a href=&quot;https://github.com/yarnpkg/berry/blob/master/packages/berry-parsers/sources/syml.ts&quot;&gt;syml&lt;/a&gt;というフォーマットを作り実装しています。また、プラグインの仕組みが追加され、PnPやnpm(&lt;code&gt;package-lock.json&lt;/code&gt;を扱う)などの処理はプラグインとして実装されています。&lt;br&gt;
-また、ワークスペースの改善として&lt;a href=&quot;https://github.com/yarnpkg/berry/blob/master/docs/workspaces-constraints.md&quot;&gt;Constraints&lt;/a&gt;というProlog(実際には&lt;a href=&quot;https://github.com/jariazavalverde/tau-prolog&quot;&gt;tau-prolog&lt;/a&gt;)を使った制約を扱う&lt;a href=&quot;https://github.com/yarnpkg/berry/tree/master/packages/plugin-constraints&quot;&gt;プラグイン&lt;/a&gt;が追加されています。ワークスペース間の依存などのルールをPrologを使って記述して、より効率的に扱えるようにするのが目的のようです。&lt;/p&gt;
-
-&lt;p&gt;興味がある人は&lt;a href=&quot;https://github.com/yarnpkg/berry#install&quot;&gt;Install&lt;/a&gt;して試したり、&lt;a href=&quot;https://github.com/yarnpkg/berry/issues&quot;&gt;Issue&lt;/a&gt;を見てみると良いかもしれません。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/issues/29288&quot;&gt;TypeScriptの2019 Juneロードマップ&lt;/a&gt;でTSLintではなくESLintのサポートを強化していくという話が行われ、&lt;a href=&quot;https://github.com/typescript-eslint/typescript-eslint&quot;&gt;typescript-eslint&lt;/a&gt;というプロジェクトが作成され&lt;a href=&quot;https://eslint.org/blog/2019/01/future-typescript-eslint&quot;&gt;ESLintチームと協力&lt;/a&gt;していくことが発表されていました。&lt;/p&gt;
-
-&lt;p&gt;このような背景もあり、TSLintのメンテナーからTSLintの今後について記事が公開されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/palantir/tslint-in-2019-1a144c2317a9&quot; title=&quot;TSLint in 2019 – Palantir Blog – Medium&quot;&gt;TSLint in 2019 – Palantir Blog – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/palantir/tslint/issues/4534&quot; title=&quot;Roadmap: TSLint -&amp;gt; ESLint · Issue #4534 · palantir/tslint&quot;&gt;Roadmap: TSLint -&amp;gt; ESLint · Issue #4534 · palantir/tslint&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;TSLintは2019年中には非推奨となり(今すぐではないです)、今後はESLintへの移行パスを整備していくという話が書かれています。&lt;br&gt;
-&lt;a href=&quot;https://github.com/typescript-eslint/typescript-eslint&quot;&gt;typescript-eslint&lt;/a&gt;(ESLintのTypeScript対応)は開発途中であるため、TSLintとの互換となるようなルールがない部分もあります。そのため、TSLint自体もしばらくはメンテンスを続けていくという方針についても書かれています。&lt;/p&gt;
-
-&lt;p&gt;現状の&lt;a href=&quot;https://github.com/typescript-eslint/typescript-eslint&quot;&gt;typescript-eslint&lt;/a&gt;の動作については、次の記事も参照して見てください。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://teppeis.hatenablog.com/entry/2019/02/typescript-eslint&quot;&gt;@typescript-eslint ことはじめ - teppeis blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-version-3-5-0-knockout-knockout&quot;&gt;Release Version 3.5.0 · knockout/knockout&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/knockout/knockout/releases/tag/v3.5.0&quot; title=&quot;Release Version 3.5.0 · knockout/knockout&quot;&gt;github.com/knockout/knockout/releases/tag/v3.5.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Knockout 3.5.0リリース。&lt;br&gt;
-&lt;code&gt;foreach&lt;/code&gt;バインディングの挙動の変更とパフォーマンスの改善、&lt;code&gt;ko.when&lt;/code&gt;がPromiseを返すようになるなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-npm-6-9-0-next-0-announcements-npm-forum&quot;&gt;Release: &lt;a href=&quot;mailto:npm@6.9.0-next.0&quot;&gt;npm@6.9.0-next.0&lt;/a&gt; - 📣 announcements - npm forum&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://npm.community/t/release-npm-6-9-0-next-0/5553&quot; title=&quot;Release: npm@6.9.0-next.0 - 📣 announcements - npm forum&quot;&gt;npm.community/t/release-npm-6-9-0-next-0/5553&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npm 6.9.0-next.0リリース。&lt;br&gt;
-パッケージに別名をつけることができるpackage alias機能をサポート、&lt;code&gt;--before&lt;/code&gt;オプションをサポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/npm/cli/pull/3&quot; title=&quot;install: add support for package aliases by zkat · Pull Request #3 · npm/cli&quot;&gt;install: add support for package aliases by zkat · Pull Request #3 · npm/cli&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-npm-blog-managing-javascript-in-the-enterprise&quot;&gt;The npm Blog — Managing JavaScript in the Enterprise&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.npmjs.org/post/182958759735/managing-javascript-in-the-enterprise&quot; title=&quot;The npm Blog — Managing JavaScript in the Enterprise&quot;&gt;blog.npmjs.org/post/182958759735/managing-javascript-in-the-enterprise&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npm Enterpriseの正式リリース。&lt;br&gt;
-SSO認証の対応やprivate registryのサポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/products/enterprise&quot; title=&quot;npm | Enterprise&quot;&gt;npm | Enterprise&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;dsherret-conditional-type-checks-types-for-testing-typescript-types&quot;&gt;dsherret/conditional-type-checks: Types for testing TypeScript types.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/dsherret/conditional-type-checks&quot; title=&quot;dsherret/conditional-type-checks: Types for testing TypeScript types.&quot;&gt;github.com/dsherret/conditional-type-checks&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Conditional Typeを使いTypeScriptの型Assertionを行うライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;fastify-v2-0-0-is-here-fastify-medium&quot;&gt;Fastify v2.0.0 is here – Fastify – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@fastifyjs/fastify-v2-0-0-is-here-8275d613fba4&quot; title=&quot;Fastify v2.0.0 is here – Fastify – Medium&quot;&gt;medium.com/@fastifyjs/fastify-v2-0-0-is-here-8275d613fba4&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsフレームワークのFastify 2.0.0リリース。&lt;br&gt;
-&lt;code&gt;onError&lt;/code&gt;、&lt;code&gt;preParsing&lt;/code&gt;、&lt;code&gt;preSerialization&lt;/code&gt;、&lt;code&gt;preValidation&lt;/code&gt; hookの追加。&lt;br&gt;
-pluginのロードのタイムアウトを設定、シグネチャの一貫性の修正など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/fastify/fastify/releases/tag/v2.0.0&quot; title=&quot;Release v2.0.0 · fastify/fastify&quot;&gt;Release v2.0.0 · fastify/fastify&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;yarnpkg-berry-a-modern-fast-reliable-package-manager-part-of-the-yarn-organization&quot;&gt;yarnpkg/berry: 📦🐈 A modern, fast, reliable, package manager; part of the Yarn organization&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/yarnpkg/berry&quot; title=&quot;yarnpkg/berry: 📦🐈 A modern, fast, reliable, package manager; part of the Yarn organization&quot;&gt;github.com/yarnpkg/berry&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;yarn v2となるソースコードのリポジトリが公開された。&lt;br&gt;
-v1のリポジトリと分けているのは、issueをハンドリングしやすくするため。&lt;br&gt;
-現在はロードマップに予定した機能はある程度実装された状態で、一部の機能やドキュメントが足りていない状況。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/yarn/issues/6953#issuecomment-466589196&quot; title=&quot;Yarn&amp;amp;#x27;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&quot;&gt;Yarn&amp;#39;s Future - v2 and beyond · Issue #6953 · yarnpkg/yarn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/berry/issues/1&quot; title=&quot;👑 Say hello to Yarn v2 · Issue #1 · yarnpkg/berry&quot;&gt;👑 Say hello to Yarn v2 · Issue #1 · yarnpkg/berry&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;addyosmani-com-javascript-loading-priorities-in-chrome&quot;&gt;AddyOsmani.com - JavaScript Loading Priorities in Chrome&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://addyosmani.com/blog/script-priorities/&quot; title=&quot;AddyOsmani.com - JavaScript Loading Priorities in Chrome&quot;&gt;addyosmani.com/blog/script-priorities/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;link rel=preloadとscript要素の defer/async属性を組み合わせ際のLoadingやExecution Priorityについてまとめた記事&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;how-supports-works-css-tricks&quot;&gt;How @supports Works | CSS-Tricks&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://css-tricks.com/how-supports-works/&quot; title=&quot;How @supports Works | CSS-Tricks&quot;&gt;css-tricks.com/how-supports-works/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSSの&lt;code&gt;@supports&lt;/code&gt;の使い方やユースケースについて。&lt;br&gt;
-また、JavaScriptからのCSS Supportsを使ったFeature Detectについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;intelligent-tracking-prevention-2-1-webkit&quot;&gt;Intelligent Tracking Prevention 2.1 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8613/intelligent-tracking-prevention-2-1/&quot; title=&quot;Intelligent Tracking Prevention 2.1 | WebKit&quot;&gt;webkit.org/blog/8613/intelligent-tracking-prevention-2-1/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari 12.1で導入されるITP 2.1について。 Partitioned Cookiesのサポート終了、document.cookieで作成したクッキーは生存期間が7日間のcapがつくように、DNTの削除など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;tslint-in-2019-palantir-blog-medium&quot;&gt;TSLint in 2019 – Palantir Blog – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/palantir/tslint-in-2019-1a144c2317a9&quot; title=&quot;TSLint in 2019 – Palantir Blog – Medium&quot;&gt;medium.com/palantir/tslint-in-2019-1a144c2317a9&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TSLintの今後について。&lt;br&gt;
-今後TSLintは非推奨となり、TSLintからESLintへの移行パスを整備していくという話&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-a-javascript-library-for-building-user-interfaces&quot;&gt;React – A JavaScript library for building user interfaces&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://ja.reactjs.org/&quot; title=&quot;React – A JavaScript library for building user interfaces&quot;&gt;ja.reactjs.org/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;翻訳&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Reactサイトの日本語訳&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://reactjs.org/blog/2019/02/23/is-react-translated-yet.html&quot; title=&quot;Is React Translated Yet? ¡Sí! Sim! はい！ – React Blog&quot;&gt;Is React Translated Yet? ¡Sí! Sim! はい！ – React Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;patr0nus-deskgap-a-cross-platform-desktop-app-framework-based-on-node-js-and-the-system-webview&quot;&gt;patr0nus/DeskGap: A cross-platform desktop app framework based on Node.js and the system webview&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/patr0nus/DeskGap/&quot; title=&quot;patr0nus/DeskGap: A cross-platform desktop app framework based on Node.js and the system webview&quot;&gt;github.com/patr0nus/DeskGap/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;mac&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;windows&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;OSのWebViewの仕組みを利用したElectronライクなデスクトップアプリ作成フレームワーク。&lt;br&gt;
-Chromiumなどをbundleしないが、Node.jsをbundleしている。&lt;br&gt;
-フレームワーク上では制限されたElectronライクなAPIとNode.jsの機能が利用できる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;klaussinani-qoa-minimal-interactive-command-line-prompts&quot;&gt;klaussinani/qoa: 💬 Minimal interactive command-line prompts&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/klaussinani/qoa&quot; title=&quot;klaussinani/qoa: 💬 Minimal interactive command-line prompts&quot;&gt;github.com/klaussinani/qoa&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ターミナルで対話的なインタフェースを提供するNode.jsライブラリ。&lt;br&gt;
-Confirm、Quiz、Secure Promptなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jariazavalverde-tau-prolog-an-open-source-prolog-interpreter-in-javascript&quot;&gt;jariazavalverde/tau-prolog: An open source Prolog interpreter in JavaScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jariazavalverde/tau-prolog&quot; title=&quot;jariazavalverde/tau-prolog: An open source Prolog interpreter in JavaScript&quot;&gt;github.com/jariazavalverde/tau-prolog&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;program&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;PrologインタプリタのJavaScript実装&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;fagbokforlaget-simple-fs-handles-files-on-indexeddb-like-you-would-do-in-node-js-promise&quot;&gt;fagbokforlaget/simple-fs: Handles files on indexeddb like you would do in node.js (promise)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/fagbokforlaget/simple-fs&quot; title=&quot;fagbokforlaget/simple-fs: Handles files on indexeddb like you would do in node.js (promise)&quot;&gt;github.com/fagbokforlaget/simple-fs&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;IndexedDBを使ったファイルシステムライクなAPIを持ったブラウザ向けライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;namics-webpack-config-plugins-provide-best-practices-for-webpack-loader-configurations&quot;&gt;namics/webpack-config-plugins: Provide best practices for webpack loader configurations&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/namics/webpack-config-plugins&quot; title=&quot;namics/webpack-config-plugins: Provide best practices for webpack loader configurations&quot;&gt;github.com/namics/webpack-config-plugins&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;設定&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpackのloader設定をまとめたプラグイン。&lt;br&gt;
-Babel、TypeScript、Sass、Font、Imageなどのビルドを行うプラグインが用意されている&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 26 Feb 2019 11:02:23 +0900</pubDate>
-        <link>https://jser.info/2019/02/26/yarn-v2berryfastify-v2tslint/</link>
-        <guid isPermaLink="true">https://jser.info/2019/02/26/yarn-v2berryfastify-v2tslint/</guid>
-        
-        <category>yarn</category>
-        
-        <category>node</category>
-        
-        <category>typescript</category>
-        
-        <category>eslint</category>
-        
-        <category>tslint</category>
         
         
         <category>JSer</category>

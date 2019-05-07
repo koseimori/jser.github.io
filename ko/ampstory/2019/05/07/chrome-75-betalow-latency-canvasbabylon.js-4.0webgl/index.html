@@ -1,0 +1,440 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-05-07のJS: Chrome 75 Beta(Low Latency Canvas)、Babylon.js 4.0(WebGL) - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/05/07/chrome-75-betalow-latency-canvasbabylon.js-4.0webgl/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-05-07のJS: Chrome 75 Beta(Low Latency Canvas)、Babylon.js 4.0(WebGL)"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-05-07のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="http://blog.jquery.com/2019/05/01/jquery-3-4-1-triggering-focus-events-in-ie-and-finding-root-elements-in-ios-10/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">jQuery 3.4.1: triggering focus events in IE and finding root elements in iOS 10 | Official jQuery Blog</amp-fit-text>
+            <p class="item-contents">jQuery 3.4.1リリース。
+IE10-IE11で<code>trigger</code>の問題を修正、iOS 10.0-10.2でのclickの問題を修正、AMDとしてロードしたときの問題を修正など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jQuery 3.4.1: triggering focus events in IE and finding root elements in iOS 10 | Official jQuery Blog" href="http://blog.jquery.com/2019/05/01/jquery-3-4-1-triggering-focus-events-in-ie-and-finding-root-elements-in-ios-10/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/8834/release-notes-for-safari-technology-preview-81/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 81 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview 81リリース。
+印刷時のスタイルで<code>@page</code>によるmarginのサポート、<code>frame-ancestors</code> CSPを<code>X-Frame-Options</code>ヘッダより優先するように。
+<code>requestAnimationFrame</code>の実行タイミングの問題を修正など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 81 | WebKit" href="https://webkit.org/blog/8834/release-notes-for-safari-technology-preview-81/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.chromium.org/2019/05/chrome-75-beta-low-latency-canvas.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Chromium Blog: Chrome 75 Beta: low latency canvas contexts, sharing files, and numeric separators</amp-fit-text>
+            <p class="item-contents">Chrome 75 Betaリリース。
+Canvasに低遅延レンダリングのための<code>desynchronized</code>オプションを追加、Web Shareでファイルをサポート、ES ProposalのNumeric separatorsをサポート。
+CSPの<code>script-src-attr</code>ディレクティブのサポート、Cache-Controlの<code>stale-while-revalidate</code>のサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chromium Blog: Chrome 75 Beta: low latency canvas contexts, sharing files, and numeric separators" href="https://blog.chromium.org/2019/05/chrome-75-beta-low-latency-canvas.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/websockets/ws/releases/tag/7.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 7.0.0 · websockets/ws</amp-fit-text>
+            <p class="item-contents">WebSocketクライアント &amp; サーバの<code>ws</code> 7.0.0リリース。
+Node.js 6のサポート終了、コンストラクタでNode.jsの<code>url</code>オブジェクトではなく<code>URL</code>オブジェクトを受け取るように変更。
+<code>readyState</code>が<code>OPEN</code>ではないときの<code>ping</code>、<code>pong</code>の挙動変更など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 7.0.0 · websockets/ws" href="https://github.com/websockets/ws/releases/tag/7.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/facebook/relay/releases/tag/v4.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v4.0.0 · facebook/relay</amp-fit-text>
+            <p class="item-contents">GraphQLとReact向けのフレームワークであるRelay 4.0.0リリース。
+Containerの引数に<code>graphql</code> tagを渡すのではなくオブジェクトを受け付けるように変更、client schema extensionsのフルサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v4.0.0 · facebook/relay" href="https://github.com/facebook/relay/releases/tag/v4.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blogs.windows.com/msedgedev/2019/05/06/edge-chromium-build-2019-pwa-ie-mode-devtools/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Microsoft Edge – All the news from Build 2019 - Microsoft Edge Blog</amp-fit-text>
+            <p class="item-contents">ChromiumベースのMSEdgeにはサードパーティトラッキングのブロックができるPrivacy Tools、表示しているサイトをIE互換するIE modeが搭載される予定
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Microsoft Edge – All the news from Build 2019 - Microsoft Edge Blog" href="https://blogs.windows.com/msedgedev/2019/05/06/edge-chromium-build-2019-pwa-ie-mode-devtools/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@babylonjs/babylon-js-4-0-is-here-d725b5b02e9b">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Babylon.js 4.0 Is Here! – Babylon.js – Medium</amp-fit-text>
+            <p class="item-contents">WebGLベースの3Dゲーム向けフレームワークのBabylon.js 4.0.0リリース。 Visual Scene Inspectorの導入、ファイルサイズやパフォーマンスの改善、物理エンジンとしてAmmo.jsをサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Babylon.js 4.0 Is Here! – Babylon.js – Medium" href="https://medium.com/@babylonjs/babylon-js-4-0-is-here-d725b5b02e9b" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hyper.is/blog">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Hyper Blog</amp-fit-text>
+            <p class="item-contents">Electron製のターミナルであるHyper 3リリース。 <code>hterm</code>から<code>xterm.js</code>に変更してWebGL Rendererを使うように、IPCのバッチ処理でパフォーマンス改善など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Hyper Blog" href="https://hyper.is/blog" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://glebbahmutov.com/blog/stub-navigator-api/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Stub navigator API in end-to-end tests | Better world by better software</amp-fit-text>
+            <p class="item-contents">Cypressを使いBattery status APIのStubをしながらテストをするチュートリアル。
+<code>navigator</code>をどのようにstubしてテストするかについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Stub navigator API in end-to-end tests | Better world by better software" href="https://glebbahmutov.com/blog/stub-navigator-api/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.freecodecamp.org/the-css-handbook-a-handy-guide-to-css-for-developers-b56695917d11">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">The CSS Handbook: a handy guide to CSS for developers</amp-fit-text>
+            <p class="item-contents">CSSについてのガイド。
+基本的なCSSのプロパティの解説からunit、レイアウト、アニメーションなど幅広く書かれている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The CSS Handbook: a handy guide to CSS for developers" href="https://medium.freecodecamp.org/the-css-handbook-a-handy-guide-to-css-for-developers-b56695917d11" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Revisiting prefers-reduced-motion, the reduced motion media query | CSS-Tricks</amp-fit-text>
+            <p class="item-contents">CSSの<code>prefers-reduced-motion</code>の解説と使い方についての記事。
+アクセシビリティ、プログレッシブ・エンハンスメントの考え、CSS Variablesと組み合わせた実装について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Revisiting prefers-reduced-motion, the reduced motion media query | CSS-Tricks" href="https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.smashingmagazine.com/2019/04/optimization-performance-resource-hints/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Optimizing Performance With Resource Hints — Smashing Magazine</amp-fit-text>
+            <p class="item-contents">Resource Hintsについての記事。
+<code>dns-prefetch</code>、<code>preconnect</code>、<code>prefetch</code>、<code>prerender</code>をそれぞれどのような場合に利用するかについて。<code>as</code>属性についてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Optimizing Performance With Resource Hints — Smashing Magazine" href="https://www.smashingmagazine.com/2019/04/optimization-performance-resource-hints/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://qiita.com/masato_makino/items/ad11058e1a8a009abbdf">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">gulp4再入門 gulpfileの分割とnodeモジュールの利用 - Qiita</amp-fit-text>
+            <p class="item-contents">gulp4ベースの入門記事。
+gulp taskの定義方法、タスクファイルの分割、gulpプラグインとNodeモジュールについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="gulp4再入門 gulpfileの分割とnodeモジュールの利用 - Qiita" href="https://qiita.com/masato_makino/items/ad11058e1a8a009abbdf" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/oclif/cli-ux">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">oclif/cli-ux: CLI IO utilities</amp-fit-text>
+            <p class="item-contents">ターミナルのCLIを提供するNode.jsライブラリ。
+promptやconfirmなどの対話操作、URLのリンク表示、spinner、アノテーション、table表示など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="oclif/cli-ux: CLI IO utilities" href="https://github.com/oclif/cli-ux" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://laconiajs.io/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Laconia · Create well-crafted serverless applications, effortlessly</amp-fit-text>
+            <p class="item-contents">Node.jsのserverlsssフレームワーク。Hexagonal Architectureで依存を外から渡せるような構造にしてテストしやすくしている。
+Long Task向けのbatch処理を行うモジュールも提供されている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Laconia · Create well-crafted serverless applications, effortlessly" href="https://laconiajs.io/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Microsoft/react-native-windows">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">microsoft/react-native-windows: A framework for building native Windows apps with React.</amp-fit-text>
+            <p class="item-contents">React Native for Windows。
+React NativeでネイティブなWindowsアプリ(UWP)を作成するフレームワーク。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="microsoft/react-native-windows: A framework for building native Windows apps with React." href="https://github.com/Microsoft/react-native-windows" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
