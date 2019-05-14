@@ -5,9 +5,312 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 09 May 2019 12:13:11 +0900</pubDate>
-    <lastBuildDate>Thu, 09 May 2019 12:13:11 +0900</lastBuildDate>
+    <pubDate>Tue, 14 May 2019 11:08:07 +0900</pubDate>
+    <lastBuildDate>Tue, 14 May 2019 11:08:07 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-05-14のJS: Google I/O 2019、GitHub Package Registry(npm, Docket, etc...)</title>
+        <description>&lt;p&gt;JSer.info #435 - &lt;a href=&quot;https://events.google.com/io/&quot;&gt;Google I/O 2019&lt;/a&gt;が開催されイベントの動画や関連するアップデートが多数公開されています。&lt;/p&gt;
+
+&lt;p&gt;Google I/Oのウェブ関連のセッションの動画は次のページにまとめられています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=rUUazNIZW7I&amp;list=PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i&quot;&gt;Web at Google I/O 2019 - YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Google検索のクロールに使われているレンダリングエンジンがChrome 41相当から、最新版(現時点では74)のChromiumをベースとなるようにアップデートされています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html&quot;&gt;Official Google Webmaster Central Blog: The new evergreen Googlebot&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;lighthouse 5.0.0がリリースされ、Wordpressなど特定のスタックに対するレポートを表示するStack Packsの追加、Performance budgetsの対応、Lighthouse pluginsの仕組みが追加されています。また、Performance budgetsの定義ファイルを生成する&lt;a href=&quot;https://perf-budget-calculator.firebaseapp.com/&quot;&gt;Performance Budget Calculator&lt;/a&gt;というツールも公開されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse/releases/tag/v5.0.0&quot;&gt;Release v5.0.0 · GoogleChrome/lighthouse&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、Googleが運営する&lt;a href=&quot;https://web.dev/&quot;&gt;web.dev&lt;/a&gt;も更新され&lt;a href=&quot;https://web.dev/blog&quot;&gt;Blog&lt;/a&gt;や&lt;a href=&quot;https://web.dev/react&quot;&gt;React&lt;/a&gt;アプリケーションの最適化についてのチュートリアルなどが追加されています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;GitHubが&lt;a href=&quot;https://github.com/features/package-registry&quot;&gt;GitHub Package Registry&lt;/a&gt;というパッケージレジストリサービスのベータ公開を発表しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.blog/2019-05-10-introducing-github-package-registry/&quot;&gt;Introducing GitHub Package Registry - The GitHub Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/features/package-registry&quot;&gt;GitHub Package Registry: Your packages, at home with their code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;GitHub Package RegistryはnpmやRubyGems、Dockerなどに対応したpublic/private registryサービスです。&lt;br&gt;
+現在はベータなので、&lt;a href=&quot;https://github.com/features/package-registry/signup&quot;&gt;GitHub Package Registryのsignup&lt;/a&gt;から登録した人にプレリリースしている状態です。&lt;br&gt;
+詳細は次のドキュメントに書かれていますが、npmパッケージをGitHubのUserまたはOrgnization名に紐づいたscoped moduleとして公開できるようになるようです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.github.com/en/articles/about-github-package-registry&quot;&gt;About GitHub Package Registry - GitHub Help&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.github.com/en/articles/configuring-npm-for-use-with-github-package-registry&quot;&gt;Configuring NPM for use with GitHub Package Registry - GitHub Help&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;次の動画でGitHub Package Registryへpublishするデモなども行っているので、興味がある人は見てみると良さそうです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Video: &lt;a href=&quot;https://www.pscp.tv/w/1jMKgvMEggwxL&quot;&gt;GitHub: &amp;quot;Introducing GitHub Package Registry&amp;quot;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v5-0-0-googlechrome-lighthouse&quot;&gt;Release v5.0.0 · GoogleChrome/lighthouse&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · GoogleChrome/lighthouse&quot;&gt;github.com/GoogleChrome/lighthouse/releases/tag/v5.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Lighthouse 5.0.0リリース。&lt;br&gt;
+Wordpressなど特定のスタックに対するレポートを表示するStack Packsの追加、Performance budgetsの対応、Lighthouse plugins&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse-stack-packs&quot; title=&quot;GoogleChrome/lighthouse-stack-packs: Lighthouse Stack Packs&quot;&gt;GoogleChrome/lighthouse-stack-packs: Lighthouse Stack Packs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/tools/lighthouse/audits/budgets&quot; title=&quot;Performance Budgets (Keep Request Counts Low And File Sizes Small)  |  Tools for Web Developers  |  Google Developers&quot;&gt;Performance Budgets (Keep Request Counts Low And File Sizes Small)  |  Tools for Web Developers  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse/blob/master/docs/plugins.md#plugin-config&quot; title=&quot;lighthouse/plugins.md at master · GoogleChrome/lighthouse&quot;&gt;lighthouse/plugins.md at master · GoogleChrome/lighthouse&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;official-google-webmaster-central-blog-the-new-evergreen-googlebot&quot;&gt;Official Google Webmaster Central Blog: The new evergreen Googlebot&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html&quot; title=&quot;Official Google Webmaster Central Blog: The new evergreen Googlebot&quot;&gt;webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;search&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Google検索botが最新版のChromiumレンダリングエンジンを使うように変更された&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/search/docs/guides/fix-search-javascript&quot; title=&quot;Fix Search-related JavaScript problems  |  Search  |  Google Developers&quot;&gt;Fix Search-related JavaScript problems  |  Search  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v12-2-0-current-node-js&quot;&gt;Node v12.2.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.2.0/&quot; title=&quot;Node v12.2.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.2.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 12.2.0リリース。&lt;br&gt;
+&lt;code&gt;--trace-tls&lt;/code&gt;オプションの追加、&lt;code&gt;Module.createRequireFromPath()&lt;/code&gt;を非推奨化し、&lt;code&gt;URL&lt;/code&gt;でのパスも受け取れるようにした&lt;code&gt;module.createRequire&lt;/code&gt;を追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;comlink-changelog-md-at-master-googlechromelabs-comlink&quot;&gt;comlink/CHANGELOG.md at master · GoogleChromeLabs/comlink&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChromeLabs/comlink/blob/master/CHANGELOG.md#v3---v4&quot; title=&quot;comlink/CHANGELOG.md at master · GoogleChromeLabs/comlink&quot;&gt;github.com/GoogleChromeLabs/comlink/blob/master/CHANGELOG.md#v3---v4&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ES Proxyを使ったWorkerライブラリのComlink 4.0.0リリース。&lt;br&gt;
+Node.jsの&lt;code&gt;worker_thread&lt;/code&gt;をサポート、APIのリネーム、パフォーマンスの改善など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/DasSurma/status/1127266398185484288&quot; title=&quot;Surma on Twitter: &amp;amp;amp;quot;I sneakily released Comlink v4 just before #io19! ➡️Smaller than v3 (~1.1kb) 🗜 ➡️10x faster on low-end devices (we needed that for https://t.co/TQBh7GNv2g!) 🏎💨 ➡️Better API naming 💫 ➡️Better folder structure 🙏 ➡️Support for workers in Node 11+ 🤯 https://t.co/v4PNytvkfq… https://t.co/mksFf7uxPu&amp;amp;amp;quot;&quot;&gt;Surma on Twitter: &amp;quot;I sneakily released Comlink v4 just before #io19! ➡️Smaller than v3 (~1.1kb) 🗜 ➡️10x faster on low-end devices (we needed that for https://t.co/TQBh7GNv2g!) 🏎💨 ➡️Better API naming 💫 ➡️Better folder structure 🙏 ➡️Support for workers in Node 11+ 🤯 https://t.co/v4PNytvkfq… https://t.co/mksFf7uxPu&amp;quot;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v1-16-0-googlechrome-puppeteer&quot;&gt;Release v1.16.0 · GoogleChrome/puppeteer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/puppeteer/releases/tag/v1.16.0&quot; title=&quot;Release v1.16.0 · GoogleChrome/puppeteer&quot;&gt;github.com/GoogleChrome/puppeteer/releases/tag/v1.16.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Puppeteer 1.16.0リリース。&lt;br&gt;
+&lt;code&gt;browser.isConnected()&lt;/code&gt;、&lt;code&gt;target.worker()&lt;/code&gt;のサポート。&lt;br&gt;
+&lt;code&gt;accessibility.snapshot()&lt;/code&gt;が&lt;code&gt;root&lt;/code&gt;オプションをサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introducing-github-package-registry-the-github-blog&quot;&gt;Introducing GitHub Package Registry - The GitHub Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.blog/2019-05-10-introducing-github-package-registry/&quot; title=&quot;Introducing GitHub Package Registry - The GitHub Blog&quot;&gt;github.blog/2019-05-10-introducing-github-package-registry/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;github&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;GitHubのパッケージレジストリサービスのベータ公開がされた。&lt;br&gt;
+npm、gem、dockerなどに対応していて、GitHubのTeamパーミッションに紐付いて管理できるprivate registry。&lt;br&gt;
+GitHubのReleaseや検索にも表示されるようになる&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/features/package-registry&quot; title=&quot;GitHub Package Registry: Your packages, at home with their code&quot;&gt;GitHub Package Registry: Your packages, at home with their code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;aws-lambda-adds-support-for-node-js-v10&quot;&gt;AWS Lambda adds support for Node.js v10&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/jp/about-aws/whats-new/2019/05/aws_lambda_adds_support_for_node_js_v10/&quot; title=&quot;AWS Lambda adds support for Node.js v10&quot;&gt;aws.amazon.com/jp/about-aws/whats-new/2019/05/aws_lambda_adds_support_for_node_js_v10/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;aws&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Lambda&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;AWS LambdaがNode.js 10をサポート。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;samesite-cookies-explained-web-dev&quot;&gt;SameSite cookies explained  |  web.dev&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/samesite-cookies-explained/&quot; title=&quot;SameSite cookies explained  |  web.dev&quot;&gt;web.dev/samesite-cookies-explained/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;SameSite&lt;/code&gt; Cookieについての解説。&lt;code&gt;SameSite&lt;/code&gt;の設定値である&lt;code&gt;Strict&lt;/code&gt;、&lt;code&gt;Lax&lt;/code&gt;、&lt;code&gt;None&lt;/code&gt;の動作の解説。&lt;br&gt;
+Chrome 76で&lt;code&gt;SameSite&lt;/code&gt;が未指定の場合に&lt;code&gt;SameSite=Lax&lt;/code&gt;をデフォルトとする試験的フラグが追加されるなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://laboradian.com/same-site-cookies/&quot; title=&quot;HTTP クッキーをより安全にする SameSite 属性について (Same-site Cookies) | ラボラジアン&quot;&gt;HTTP クッキーをより安全にする SameSite 属性について (Same-site Cookies) | ラボラジアン&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-web-dev&quot;&gt;React  |  web.dev&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/react&quot; title=&quot;React  |  web.dev&quot;&gt;web.dev/react&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;web.dev のReactウェブアプリの最適化についてのチュートリアル。&lt;br&gt;
+Bundle size、無限リスト、Service Worker、プリレンダリング、アクセシビリティについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-guide-to-node-js-logging-twilio&quot;&gt;A Guide to Node.js Logging - Twilio&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.twilio.com/blog/guide-node-js-logging&quot; title=&quot;A Guide to Node.js Logging - Twilio&quot;&gt;www.twilio.com/blog/guide-node-js-logging&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsでログ出力についての記事。&lt;br&gt;
+Console API、pinoを使ったログ出力、ライブラリのログ、chalkなどで装飾されているログをプレーンな出力にする方法などについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;web-at-google-i-o-2019-youtube&quot;&gt;Web at Google I/O 2019 - YouTube&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i&quot; title=&quot;Web at Google I/O 2019 - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;イベント&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Google I/O 2019のウェブセッションの動画まとめ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ng-conf-2019-youtube&quot;&gt;ng-conf 2019 - YouTube&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLOETEcp3DkCpimylVKTDe968yNmNIajlR&quot; title=&quot;ng-conf 2019 - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PLOETEcp3DkCpimylVKTDe968yNmNIajlR&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;イベント&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Angularのカンファレンスであるng-confg 2019の動画一覧。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nitayneeman.com/posts/all-talks-from-ng-conf-2019/&quot; title=&quot;Angular - All Talks from ng-conf 2019&quot;&gt;Angular - All Talks from ng-conf 2019&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.notion.so/ng-conf-2019-Note-10b9443262a54fb9bd8586cc25a449c7&quot; title=&quot;ng-conf 2019 Note&quot;&gt;ng-conf 2019 Note&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-js-v12-kng6-speaker-deck&quot;&gt;Node.js v12の気になる変更点 / #kng6 - Speaker Deck&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/masashi/number-kng6&quot; title=&quot;Node.js v12の気になる変更点 / #kng6 - Speaker Deck&quot;&gt;speakerdeck.com/masashi/number-kng6&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 12の変更点についてまとめたスライド&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;wapm-webassembly-package-manager&quot;&gt;wapm | WebAssembly Package Manager&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wapm.io/&quot; title=&quot;wapm | WebAssembly Package Manager&quot;&gt;wapm.io/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebAssemblyのパッケージマネージャとレジストリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;microsoft-frontend-bootcamp-frontend-workshop-from-html-css-js-to-typescript-react-redux&quot;&gt;microsoft/frontend-bootcamp: Frontend Workshop from HTML/CSS/JS to TypeScript/React/Redux&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Microsoft/frontend-bootcamp&quot; title=&quot;microsoft/frontend-bootcamp: Frontend Workshop from HTML/CSS/JS to TypeScript/React/Redux&quot;&gt;github.com/Microsoft/frontend-bootcamp&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Microsoftのフロントエンドワークショップ教材。&lt;br&gt;
+HTML、CSS、JavaScript、TypeScriptについて扱う2日分のコンテンツ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;data-third-party-web&quot;&gt;Data | Third-Party Web&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.thirdpartyweb.today/&quot; title=&quot;Data | Third-Party Web&quot;&gt;www.thirdpartyweb.today/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;HTTP Archiveのクロールデータを元にした、サードパーティスクリプトの影響度を可視化したサイト&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;manzinello-mailgo-mailgo-a-different-mailto-wip&quot;&gt;manzinello/mailgo: 💌 mailgo, a different mailto (WIP)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/manzinello/mailgo&quot; title=&quot;manzinello/mailgo: 💌 mailgo, a different mailto (WIP)&quot;&gt;github.com/manzinello/mailgo&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;mail&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;mailto:&lt;/code&gt;なリンクをクリックした時にメニューを表示してくれるライブラリ。&lt;br&gt;
+GmailやOutlookで開くやコピーなどを選択できる&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;victorvoid-dinoql-a-customizable-graphql-style-query-language-for-interacting-with-javascript-objects&quot;&gt;victorvoid/dinoql: A customizable GraphQL style query language for interacting with JavaScript objects.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/victorvoid/dinoql&quot; title=&quot;victorvoid/dinoql: A customizable GraphQL style query language for interacting with JavaScript objects.&quot;&gt;github.com/victorvoid/dinoql&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;GraphQL構文でオブジェクトからデータを取得できるクエリライブラリ。&lt;br&gt;
+Alias、Cache、Fragmentsなどをサポートしている&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;msgpack-msgpack-javascript-messagepack-for-javascript-ecma-262&quot;&gt;msgpack/msgpack-javascript: MessagePack for JavaScript/ECMA-262&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/msgpack/msgpack-javascript&quot; title=&quot;msgpack/msgpack-javascript: MessagePack for JavaScript/ECMA-262&quot;&gt;github.com/msgpack/msgpack-javascript&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;MessagePackのJavaScript実装。&lt;br&gt;
+ブラウザとNode.jsどちらでも動作し、Async Iteratorを使いストリーム処理ができるようになっている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://gfx.hatenablog.com/entry/2019/05/07/102341&quot; title=&quot;TypeScriptで MessagePack encoder/decoder を実装した - Islands in the byte stream&quot;&gt;TypeScriptで MessagePack encoder/decoder を実装した - Islands in the byte stream&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 14 May 2019 10:14:26 +0900</pubDate>
+        <link>https://jser.info/2019/05/14/google-io-2019github-package-registrynpm-docket-etc</link>
+        <guid isPermaLink="true">https://jser.info/2019/05/14/google-io-2019github-package-registrynpm-docket-etc</guid>
+        
+        <category>Google</category>
+        
+        <category>Chrome</category>
+        
+        <category>GitHub</category>
+        
+        <category>npm</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-05-07のJS: Chrome 75 Beta(Low Latency Canvas)、Babylon.js 4.0(WebGL)</title>
@@ -2268,229 +2571,6 @@ ES2015+に対応したブラウザのみを対象にしている。&lt;/p&gt;
         <category>HTTP</category>
         
         <category>JSON</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-03-05のJS:Storybook 5.0.0、Preact X(αリリース)、ウェブサイトのサイズ(パーセンタイル) </title>
-        <description>&lt;p&gt;JSer.info #425 - コンポーネント開発環境である&lt;a href=&quot;https://storybook.js.org/&quot;&gt;Storybook&lt;/a&gt; 5.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · storybooks/storybook&quot;&gt;Release v5.0.0 · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-0-db1d0f9c83b8&quot; title=&quot;Storybook 5.0 – Storybook – Medium&quot;&gt;Storybook 5.0 – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/meet-storybook-5-0s-new-design-fb5735bc2a81&quot; title=&quot;Meet Storybook 5.0&amp;#39;s new design – Storybook – Medium&quot;&gt;Meet Storybook 5.0&amp;#39;s new design – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;UIやキーボードショートカットやURLの構造などが変更されています。&lt;/p&gt;
-
-&lt;p&gt;破壊的な変更としてwebpack設定の引数の変更、options addonが非推奨になるなどの変更が入っています。&lt;br&gt;
-マイグレーション方法については次のページにまとめられています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/blob/next/MIGRATION.md&quot;&gt;storybook/MIGRATION.md at next · storybooks/storybook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-0-db1d0f9c83b8&quot; title=&quot;Storybook 5.0 – Storybook – Medium&quot;&gt;Storybook 5.0 – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://preactjs.com/&quot;&gt;Preact&lt;/a&gt;の次期メジャーバージョンであるPreact X(10.0.0)のα版が公開されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/developit/preact/releases/tag/10.0.0-alpha.0&quot;&gt;Release Preact X is here 🎉 · developit/preact&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;Fragment&lt;/code&gt;、&lt;code&gt;componentDidCatch&lt;/code&gt;、&lt;a href=&quot;https://reactjs.org/docs/hooks-intro.html&quot;&gt;Hooks&lt;/a&gt;、&lt;code&gt;createContext&lt;/code&gt;、CSS Custom Propertiesに対応しReactのアップデートに追従しています。また&lt;code&gt;preact-compat&lt;/code&gt;を別パッケージではなく&lt;code&gt;preact/compat&lt;/code&gt;として同梱するようになっています。&lt;/p&gt;
-
-&lt;p&gt;破壊的な変更として、string refや&lt;code&gt;createClass&lt;/code&gt;といったすでに非推奨だったものが削除されています。&lt;br&gt;
-また、&lt;code&gt;setState&lt;/code&gt;が同期的にstateを変更しなくなる(&lt;a href=&quot;https://github.com/facebook/react/issues/11527&quot;&gt;Reactも同様&lt;/a&gt;)変更や&lt;code&gt;VNode&lt;/code&gt;のプロパティ構造の変更などが行われています。&lt;/p&gt;
-
-&lt;p&gt;合わせてPreact Xについての発表動画を見るとわかりやすいかもしれません。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/DFF9eOlTWzY?t=3988&quot; title=&quot;This.JavaScript - State of Frameworks &amp;amp;amp; Libraries - YouTube&quot;&gt;This.JavaScript - State of Frameworks &amp;amp; Libraries - YouTube&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;tweet&quot;&gt;今週のTweet&lt;/h2&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Page Weight Percentiles: overall &amp;amp; by resource type&lt;br&gt;&lt;br&gt;If one of these categories is super high for a site, it&amp;#39;s often an indicator that there&amp;#39;s &amp;quot;low hanging fruit&amp;quot; performance wins to be had by optimizing that resource type.&lt;br&gt;&lt;br&gt;(Data source: &lt;a href=&quot;https://twitter.com/HTTPArchive?ref_src=twsrc%5Etfw&quot;&gt;@HTTPArchive&lt;/a&gt;, Desktop Oct&amp;#39;18 data) &lt;a href=&quot;https://t.co/JSEsEUejE8&quot;&gt;pic.twitter.com/JSEsEUejE8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Katie Hempenius (@katiehempenius) &lt;a href=&quot;https://twitter.com/katiehempenius/status/1103005053353369600?ref_src=twsrc%5Etfw&quot;&gt;March 5, 2019&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://httparchive.org/&quot;&gt;HTTP Archive&lt;/a&gt;のデータをもとにウェブサイトのサイズをパーセンタイルで表現した図です。&lt;br&gt;
-JavaScriptのファイルサイズをみると、ウェブサイトの50%は420KB以下ですが、10%は1.2MB以上のファイルサイズとなっていることがわかります。&lt;/p&gt;
-
-&lt;p&gt;この&lt;a href=&quot;https://httparchive.org/&quot;&gt;HTTP Archive&lt;/a&gt;の元データは誰でもBigQueryからアクセスできるようになっているので、興味がある人は以下のドキュメントを見てみると良いかもしれません。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md&quot;&gt;httparchive.org/gettingstarted_bigquery.md at master · HTTPArchive/httparchive.org&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;february-2019-security-releases-node-js&quot;&gt;February 2019 Security Releases | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/vulnerability/february-2019-security-releases/&quot; title=&quot;February 2019 Security Releases | Node.js&quot;&gt;nodejs.org/en/blog/vulnerability/february-2019-security-releases/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsのセキュリティ修正リリース。Node.js LTS全部に対して修正がででている。&lt;br&gt;
-keep-alive系のDoSが2種(どちらもimpactはlow)とOpenSSL脆弱性(Node 10+は影響なし)の修正がされている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ember-js-ember-3-8-released&quot;&gt;Ember.js - Ember 3.8 Released&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://emberjs.com/blog/2019/02/27/ember-3-8-released.html&quot; title=&quot;Ember.js - Ember 3.8 Released&quot;&gt;emberjs.com/blog/2019/02/27/ember-3-8-released.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Ember 3.8リリース。&lt;br&gt;
-Element Modifier Managerの追加、Array helperの追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v5-0-0-storybooks-storybook&quot;&gt;Release v5.0.0 · storybooks/storybook&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/storybooks/storybook/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · storybooks/storybook&quot;&gt;github.com/storybooks/storybook/releases/tag/v5.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Storybook 5.0.0リリース。&lt;br&gt;
-デザインとURL構造の変更、ショートカットの変更、webpackのカスタム設定の引数を変更など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-migration-guide-d804b38c739d&quot; title=&quot;Storybook 5 Migration Guide – Storybook – Medium&quot;&gt;Storybook 5 Migration Guide – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/meet-storybook-5-0s-new-design-fb5735bc2a81&quot; title=&quot;Meet Storybook 5.0&amp;amp;#x27;s new design – Storybook – Medium&quot;&gt;Meet Storybook 5.0&amp;#39;s new design – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-0-db1d0f9c83b8&quot; title=&quot;Storybook 5.0 – Storybook – Medium&quot;&gt;Storybook 5.0 – Storybook – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-preact-x-is-here-developit-preact&quot;&gt;Release Preact X is here 🎉 · developit/preact&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/developit/preact/releases/tag/10.0.0-alpha.0&quot; title=&quot;Release Preact X is here 🎉 · developit/preact&quot;&gt;github.com/developit/preact/releases/tag/10.0.0-alpha.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Preact X α版リリース。&lt;br&gt;
-&lt;code&gt;Fragment&lt;/code&gt;、&lt;code&gt;componentDidCatch&lt;/code&gt;、Hooks、&lt;code&gt;createContext&lt;/code&gt;、CSS Custom Propertiesに対応など。&lt;br&gt;
-また&lt;code&gt;preact-compat&lt;/code&gt;を別パッケージではなく&lt;code&gt;preact/compat&lt;/code&gt;として同梱するようになるなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://youtu.be/DFF9eOlTWzY?t=3988&quot; title=&quot;This.JavaScript - State of Frameworks &amp;amp;amp; Libraries - YouTube&quot;&gt;This.JavaScript - State of Frameworks &amp;amp; Libraries - YouTube&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;testcafe-v1-1-0-released-testcafe&quot;&gt;TestCafe v1.1.0 Released | TestCafe&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://devexpress.github.io/testcafe/blog/testcafe-v1-1-0-released.html&quot; title=&quot;TestCafe v1.1.0 Released | TestCafe&quot;&gt;devexpress.github.io/testcafe/blog/testcafe-v1-1-0-released.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TestCafe 1.1.0リリース。&lt;br&gt;
-TypeScript 3.3サポート、TypeScriptの型改善など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;html-snapshot-testing-with-node&quot;&gt;HTML Snapshot Testing with Node&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://spin.atomicobject.com/2019/02/13/html-snapshot-testing-with-node/&quot; title=&quot;HTML Snapshot Testing with Node&quot;&gt;spin.atomicobject.com/2019/02/13/html-snapshot-testing-with-node/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;HTMLのスナップショットを比較するスナップショットテストについての記事。&lt;br&gt;
-スナップショットテストをどのように実装するかについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;progressive-react&quot;&gt;Progressive React&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://houssein.me/progressive-react&quot; title=&quot;Progressive React&quot;&gt;houssein.me/progressive-react&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Reactを中心にしたウェブアプリの改善についての話。&lt;br&gt;
-Reactレベルとアプリレベルでのパフォーマンスについて。&lt;br&gt;
-&lt;code&gt;shouldComponentUpdate&lt;/code&gt;での無駄なレンダリングの最小化、バンドルサイズとCode Splitting、キャッシュやSSRによる初期表示の改善、クリティカルパスの最適化などについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;webpack-babel-1-webpack-qiita&quot;&gt;webpackとBabelの基本を理解する(1) ―webpack編― - Qiita&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://qiita.com/koedamon/items/3e64612d22f3473f36a4&quot; title=&quot;webpackとBabelの基本を理解する(1) ―webpack編― - Qiita&quot;&gt;qiita.com/koedamon/items/3e64612d22f3473f36a4&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpack、Babelの役割とその設定方法のチュートリアル&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;package-diff&quot;&gt;Package Diff&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://diff.intrinsic.com/&quot; title=&quot;Package Diff&quot;&gt;diff.intrinsic.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npmパッケージのバージョン同士のDiffを表示できるサービス&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/intrinsic/introducing-package-diff-for-npm-e6487cc9b434&quot; title=&quot;Introducing Package Diff (for npm) – intrinsic – Medium&quot;&gt;Introducing Package Diff (for npm) – intrinsic – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;dyatko-arkit-visualises-javascript-typescript-and-flow-codebases-as-meaningful-and-committable-architecture-diagrams&quot;&gt;dyatko/arkit: Visualises JavaScript, TypeScript and Flow codebases as meaningful and committable architecture diagrams&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/dyatko/arkit&quot; title=&quot;dyatko/arkit: Visualises JavaScript, TypeScript and Flow codebases as meaningful and committable architecture diagrams&quot;&gt;github.com/dyatko/arkit&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UML&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;アーキテクチャのダイアグラムをファイルから生成するツール。。&lt;br&gt;
-コードベースのファイルを指定して、その構造をPlant UMLやSVGなどの図に変換してくれるツール&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;autonumeric-autonumeric-autonumeric-is-a-standalone-library-that-provides-live-as-you-type-formatting-for-international-numbers-and-currencies&quot;&gt;autoNumeric/autoNumeric: autoNumeric is a standalone library that provides live as-you-type formatting for international numbers and currencies.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/autoNumeric/autoNumeric/&quot; title=&quot;autoNumeric/autoNumeric: autoNumeric is a standalone library that provides live as-you-type formatting for international numbers and currencies.&quot;&gt;github.com/autoNumeric/autoNumeric/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;通貨の入力を扱うライブラリ。&lt;br&gt;
-既存の入力要素へバインディングして、通貨の入力に対するバリデーションや表示のフォーマットなどを行う&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;pikapkg-web-install-npm-dependencies-that-run-directly-in-the-browser-no-browserify-webpack-or-import-maps-required&quot;&gt;pikapkg/web: Install npm dependencies that run directly in the browser. No Browserify, Webpack or import maps required.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/pikapkg/web&quot; title=&quot;pikapkg/web: Install npm dependencies that run directly in the browser. No Browserify, Webpack or import maps required.&quot;&gt;github.com/pikapkg/web&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Development&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Rollupを使って既存モジュールをES Modulesに変換するツール。&lt;br&gt;
-変換済みのmoduleはブラウザからES moduleとしてimportできる&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Wed, 06 Mar 2019 00:43:44 +0900</pubDate>
-        <link>https://jser.info/2019/03/06/storybook-5.0.0preact-xa/</link>
-        <guid isPermaLink="true">https://jser.info/2019/03/06/storybook-5.0.0preact-xa/</guid>
-        
-        <category>storybook</category>
-        
-        <category>preact</category>
-        
-        <category>HTTPArchive</category>
         
         
         <category>JSer</category>
