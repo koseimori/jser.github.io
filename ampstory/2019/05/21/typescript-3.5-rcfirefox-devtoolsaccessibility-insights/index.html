@@ -1,0 +1,459 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-05-21のJS: TypeScript 3.5 RC、Firefox DevTools改善、Accessibility Insights(アクセシビリティテスト)  - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/05/21/typescript-3.5-rcfirefox-devtoolsaccessibility-insights/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-05-21のJS: TypeScript 3.5 RC、Firefox DevTools改善、Accessibility Insights(アクセシビリティテスト) "
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-05-21のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/lerna/lerna/releases/tag/v3.14.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v3.14.0 · lerna/lerna</amp-fit-text>
+            <p class="item-contents">monorepo管理ツールのlerna 3.14.0リリース。
+npm publish時の2要素認証(OTP)のサポート、<code>--conventional-prerelease</code>と<code>--conventional-graduate</code>のサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v3.14.0 · lerna/lerna" href="https://github.com/lerna/lerna/releases/tag/v3.14.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/nuxt/nuxt.js/releases/tag/v2.7.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v2.7.0 · nuxt/nuxt.js</amp-fit-text>
+            <p class="item-contents">Nuxt.js 2.7.0リリース。
+サーバサイドのログもブラウザコンソールに表示されるように、<code>store/</code>ディレクトリのファイル監視の改善など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v2.7.0 · nuxt/nuxt.js" href="https://github.com/nuxt/nuxt.js/releases/tag/v2.7.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://devblogs.microsoft.com/typescript/announcing-typescript-3-5-rc/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing TypeScript 3.5 RC | TypeScript</amp-fit-text>
+            <p class="item-contents">TypeScript 3.5 RCリリース。
+型チェックとビルドのパフォーマンス改善、<code>Omit</code>ヘルパー型を追加、Union型の改善など。
+破壊的な変更としてGeneric type parameterのデフォルトが<code>{}</code>から<code>unknown</code>へと変更、<code>target:es5</code>時に<code>Object.keys</code>がプリミティブ型を受け取らないように変更など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing TypeScript 3.5 RC | TypeScript" href="https://devblogs.microsoft.com/typescript/announcing-typescript-3-5-rc/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://v8.dev/blog/v8-release-75">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">V8 release v7.5 · V8</amp-fit-text>
+            <p class="item-contents">V8 v7.5リリース。
+WebAssemblyのコンパイル結果を暗黙的にキャッシュする変更、ECMAScript ProposalのNumeric separatorsを実装。
+ネットワークからスクリプトを読み込みながらパースする際に、メインスレッドによってブロックされる問題を解消など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 release v7.5 · V8" href="https://v8.dev/blog/v8-release-75" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/8921/release-notes-for-safari-technology-preview-82/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 82 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview 82リリース。
+Fetch APIの<code>keepAlive</code>オプションのサポート、Web GPU APIを<code>navigator.gpu</code>に移動など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 82 | WebKit" href="https://webkit.org/blog/8921/release-notes-for-safari-technology-preview-82/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blogs.windows.com/msedgedev/2019/05/20/microsoft-edge-macos-canary-preview/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Introducing the first Microsoft Edge preview builds for macOS - Microsoft Edge Blog</amp-fit-text>
+            <p class="item-contents">MSEdgeのmacOS対応版がInsider Previewでリリースされた
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introducing the first Microsoft Edge preview builds for macOS - Microsoft Edge Blog" href="https://blogs.windows.com/msedgedev/2019/05/20/microsoft-edge-macos-canary-preview/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://mariusschulz.com/blog/typescript-3-0-the-unknown-type">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">TypeScript 3.0: The unknown Type — Marius Schulz</amp-fit-text>
+            <p class="item-contents">TypeScript 3.0で導入された<code>unknown</code> typeについての解説。
+<code>any</code> typeとの違い、<code>unknown</code> typeに対して任意の操作ができない点、<code>unknown</code> typeは型を絞り込んでから使う点について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="TypeScript 3.0: The unknown Type — Marius Schulz" href="https://mariusschulz.com/blog/typescript-3-0-the-unknown-type" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hacks.mozilla.org/2019/05/faster-smarter-javascript-debugging-in-firefox/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Faster smarter JavaScript debugging in Firefox DevTools - Mozilla Hacks - the Web developer blog</amp-fit-text>
+            <p class="item-contents">Firefox 67の開発者ツールの改善点について。
+ロードパフォーマンスの改善、Break Pointの改善やLog Pointの対応、Web Workerスクリプトとの切り替えを改善、Source Mapを使った細かい表示の改善など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Faster smarter JavaScript debugging in Firefox DevTools - Mozilla Hacks - the Web developer blog" href="https://hacks.mozilla.org/2019/05/faster-smarter-javascript-debugging-in-firefox/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.logrocket.com/const-assertions-are-the-killer-new-typescript-feature-b73451f35802">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">const assertions are the killer new TypeScript feature</amp-fit-text>
+            <p class="item-contents">TypeScript 3.4で導入されたconst assertionについて。
+リテラルの型拡大を防いだり、オブジェクトのプロパティを<code>readonly</code>にできるなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="const assertions are the killer new TypeScript feature" href="https://blog.logrocket.com/const-assertions-are-the-killer-new-typescript-feature-b73451f35802" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.zachleat.com/web/google-fonts-display/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Google Fonts is Adding font-display 🎉—zachleat.com</amp-fit-text>
+            <p class="item-contents">Google Fontsが<code>display</code>パラメータで<code>font-display</code>プロパティの指定をサポートしたことについて。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Google Fonts is Adding font-display 🎉—zachleat.com" href="https://www.zachleat.com/web/google-fonts-display/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.kabuku.co.jp/developers/framework-agnostic-state-modification">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">\[Web フロントエンド\] 状態更新ロジックをフレームワークから独立させる | Kabuku Developers Blog</amp-fit-text>
+            <p class="item-contents">immerを使ったステート更新ロジックに分け、Angular、Vue、Reactなどのフレームワーク内に組み込む方法について。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="\[Web フロントエンド\] 状態更新ロジックをフレームワークから独立させる | Kabuku Developers Blog" href="https://www.kabuku.co.jp/developers/framework-agnostic-state-modification" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/masatokinugawa/shibuya-dot-xss-techtalk-number-11?slide=6">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JSでDoSる/ Shibuya.XSS techtalk #11 - Speaker Deck</amp-fit-text>
+            <p class="item-contents">JavaScriptで例外が発生するパターンやNode.jsでクラッシュするケーススタディについてのスライド
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JSでDoSる/ Shibuya.XSS techtalk #11 - Speaker Deck" href="https://speakerdeck.com/masatokinugawa/shibuya-dot-xss-techtalk-number-11?slide=6" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://dassur.ma/things/raw-wasm/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">DasSur.ma – Raw WebAssembly</amp-fit-text>
+            <p class="item-contents">WebAssemblyがstack-based VMであるとはどういうことかを見ていく記事。
+WebAssembly text形式であるwatを手書きして、WebAssemblyでのモジュールの定義、関数の定義と呼び出し、メモリの確保、wasmの読み込みについて。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="DasSur.ma – Raw WebAssembly" href="https://dassur.ma/things/raw-wasm/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://accessibilityinsights.io/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Accessibility Insights</amp-fit-text>
+            <p class="item-contents">アクセシビリティのチェックを補助するブラウザ拡張。
+アクセシビリティのチェック項目を可視化したり、FastPassとAssessmentの2つのシナリオでのテストをサポートしている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Accessibility Insights" href="https://accessibilityinsights.io/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.theverge.com/2019/5/6/18527550/microsoft-chromium-edge-google-history-collaboration">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Inside Microsoft’s surprise decision to work with Google on its Edge browser - The Verge</amp-fit-text>
+            <p class="item-contents">MSEdgeがChromiumベースになった背景について。
+最初はEdgeの利用率、最新の機能の実装遅れなどの問題を解決する選択肢の一つだったが、組織改編、Septagonというプロトタイプ、切り替えの公表から実際の作業に入った話など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Inside Microsoft’s surprise decision to work with Google on its Edge browser - The Verge" href="https://www.theverge.com/2019/5/6/18527550/microsoft-chromium-edge-google-history-collaboration" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://reakit.io/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Reakit</amp-fit-text>
+            <p class="item-contents">アクセシビリティを考慮したReactコンポーネントライブラリ。
+React Hooksへの対応や基礎的なコンポーネントを提供し、コンポーネントを組み合わせ利用できるようにすることを目的にしている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Reakit" href="https://reakit.io/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/esxjs/esx">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">esxjs/esx: Like JSX, but native and fast</amp-fit-text>
+            <p class="item-contents">JSXライクな構文をサポートしたTagged Templateライブラリ。
+またReactをesxの構文に変換するBabelプラグインもあり、ReactのSSRテンプレートエンジンとしても利用できる
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="esxjs/esx: Like JSX, but native and fast" href="https://github.com/esxjs/esx" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
