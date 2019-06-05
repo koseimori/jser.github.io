@@ -196,30 +196,34 @@
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// DUMMY CODES</span>
 <span class="kd">const</span> <span class="k">async</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"async"</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"https://example.com"</span><span class="p">,</span> <span class="p">...];</span>
+
 <span class="p">(</span><span class="k">async</span> <span class="kd">function</span><span class="p">(){</span>
-
-<span class="c1">// 2.3.0 &lt;</span>
-<span class="k">async</span><span class="p">.</span><span class="nx">mapLimit</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="k">async</span><span class="p">.</span><span class="nx">asyncify</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">rse</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="p">}),</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">)</span>
-<span class="p">});</span>
-<span class="c1">// 2.3.0 &gt;=</span>
-<span class="k">async</span><span class="p">.</span><span class="nx">mapLimit</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="k">async</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">rse</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="p">},</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">)</span>
-<span class="p">});</span>
-<span class="c1">// 3.0.0 &gt;=</span>
-<span class="kd">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="kr">await</span> <span class="k">async</span><span class="p">.</span><span class="nx">mapLimit</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="k">async</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">rse</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="p">});</span>
-
+  <span class="c1">// 2.3.0 &lt;</span>
+  <span class="k">async</span><span class="p">.</span><span class="nx">mapLimit</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="k">async</span><span class="p">.</span><span class="nx">asyncify</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+  <span class="p">}),</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">)</span>
+  <span class="p">});</span>
+  <span class="c1">// 2.3.0 &gt;=</span>
+  <span class="k">async</span><span class="p">.</span><span class="nx">mapLimit</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="k">async</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+  <span class="p">},</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">)</span>
+  <span class="p">});</span>
+  <span class="c1">// 3.0.0 &gt;=</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="kr">await</span> <span class="k">async</span><span class="p">.</span><span class="nx">mapLimit</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="k">async</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+    <span class="p">});</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+  <span class="p">}</span>
 <span class="p">})();</span>
 </code></pre></div>
 <p>また3.0でコードベースもES2015ベースとなったため、ES2015をサポートしていない実行環境はサポート外となっています。</p>
