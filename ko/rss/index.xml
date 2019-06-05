@@ -5,9 +5,301 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 05 Jun 2019 12:52:19 +0900</pubDate>
-    <lastBuildDate>Wed, 05 Jun 2019 12:52:19 +0900</lastBuildDate>
+    <pubDate>Wed, 05 Jun 2019 16:19:09 +0900</pubDate>
+    <lastBuildDate>Wed, 05 Jun 2019 16:19:09 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-06-04: async.js 3.0.0(async/await 대응), AVA 2.0.0, Verdaccio 4(npm registry)</title>
+        <description>&lt;p&gt;JSer.info #438 - 비동기 처리 흐름을 다루는 라이브러리인 &lt;a href=&quot;https://github.com/caolan/async&quot;&gt;Async&lt;/a&gt; 3이 릴리스 됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/caolan/async/blob/master/CHANGELOG.md#v300&quot;&gt;https://github.com/caolan/async/blob/master/CHANGELOG.md#v300&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Async 3.0.0에서 &lt;code&gt;async.mapLimit&lt;/code&gt; 등의 Async 메서드에서 Promise를 반환하도록 변경됐습니다.&lt;br&gt;
+이로써 &lt;code&gt;async.mapLimit&lt;/code&gt; 등의 메서드를 &lt;code&gt;async&lt;/code&gt;/&lt;code&gt;await&lt;/code&gt;와 조합해 사용할 수 있게 됐습니다.&lt;br&gt;
+이미 &lt;a href=&quot;https://github.com/caolan/async/blob/master/CHANGELOG.md#v230&quot;&gt;2.3.0&lt;/a&gt;에서 &lt;a href=&quot;https://github.com/caolan/async/pull/1390&quot;&gt;Async Function을 인수로 전달&lt;/a&gt;할 수 있었으며 이번 릴리스에서 &lt;code&gt;async.*&lt;/code&gt; 메서드에 콜백 함수를 전달하지 않으면 Promise를 반환하도록 변경됐습니다.&lt;/p&gt;
+
+&lt;p&gt;버전별 코드를 비교하면 다은과 같습니다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// DUMMY CODES&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;async&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;urls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://example.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...];&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 2.3.0 &amp;lt;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mapLimit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;urls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;asyncify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 2.3.0 &amp;gt;=&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mapLimit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;urls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 3.0.0 &amp;gt;=&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mapLimit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;urls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;또 3.0에선 ES2015 기반으로 코드를 배포하며 때문에 ES2015를 미지원하는 환경은 공식적으로 지원하지 않습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Node.js 테스트 프레임워크 &lt;a href=&quot;https://github.com/avajs/ava&quot;&gt;AVA&lt;/a&gt; 2.0.0이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v2.0.0&quot;&gt;Release 2.0.0 · avajs/ava&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Node.js 8.9.4 이후의 환경을 지원합니다.&lt;br&gt;
+비호환 변경사항으로 스냅샷이 만들어져 있지 않은 경우 CI에서 실패하며 assertion 메시지가 문자열이 아닌 경우는 예외가 발생합니다. &lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;OSS한 npm package registry server 구현체인 &lt;a href=&quot;https://verdaccio.org/&quot;&gt;Verdaccio&lt;/a&gt; 4가 릴리스 됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://verdaccio.org/blog/2019/05/19/15-verdaccio-4-release.html&quot;&gt;Verdaccio 4 released !!! · Verdaccio&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://verdaccio.org/&quot;&gt;Verdaccio&lt;/a&gt;는 본래&lt;a href=&quot;https://github.com/rlidwka/sinopia&quot;&gt;sinopia&lt;/a&gt;라는 npm registry server를 fork한 것으로 이번 릴리스에서 sinopia의 구현과 웹 UI를 버리고 새롭게 바꿨습니다.&lt;br&gt;
+검색, Register 정보, 패키지의 상세 화면 등의 UI가 변경됐습니다.&lt;/p&gt;
+
+&lt;p&gt;함께 npm package registry 관련 소식으로 &lt;a href=&quot;https://www.npmjs.com/about&quot;&gt;npm inc&lt;/a&gt; 전 CTO인 @&lt;a href=&quot;https://github.com/ceejbot&quot;&gt;ceejbot&lt;/a&gt;가 &lt;a href=&quot;https://github.com/entropic-dev/entropic&quot;&gt;Entropic&lt;/a&gt;라는 Federated한 npm package registry를 개발하고 있다는 발표가 &lt;a href=&quot;https://2019.jsconf.eu/&quot;&gt;JSConf EU 2019&lt;/a&gt;에서 있었습니다.&lt;br&gt;
+왜 이렇게 새로운 npm package registry를 만들려고 하는지에 대해서는 JSConf EU의 영상과 슬라이드에서 언급하고 있으니 관심있는 분은 함께 살펴보시길 바랍니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=MO8hZlgK5zc&amp;list=PL37ZVnwpeshHwJPVBqEnZild7QHWhdufu&amp;index=3&amp;t=0s&quot;&gt;The economics of open source by C J Silverio | JSConf EU 2019 - YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ceejbot/economics-of-package-management&quot;&gt;ceejbot/economics-of-package-management: ceejbot&amp;#39;s talk from JSConfEU 2019&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;async-changelog-md-at-master-caolan-async&quot;&gt;async/CHANGELOG.md at master · caolan/async&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/caolan/async/blob/master/CHANGELOG.md#v300&quot; title=&quot;async/CHANGELOG.md at master · caolan/async&quot;&gt;github.com/caolan/async/blob/master/CHANGELOG.md#v300&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;async 3.0.0이 릴리스 됐습니다.&lt;br&gt;
+&lt;code&gt;async&lt;/code&gt; 모듈의 메서드가 callback을 전달하지 않은 경우 Promise를 반환하도록 변경됐으며 컬렉션 메서드에서 Async Generator를 지원하고 &lt;code&gt;cargoQueue&lt;/code&gt;가 추가됐습니다.&lt;br&gt;
+또, 이번 버전부터 ES2015를 기준으로 코드를 배포하기 때문에 구버전 브라우저나 Node 4 이하의 환경은 지원하지 않습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v10-16-0-lts-node-js&quot;&gt;Node v10.16.0 (LTS) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v10.16.0/&quot; title=&quot;Node v10.16.0 (LTS) | Node.js&quot;&gt;nodejs.org/en/blog/release/v10.16.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node v10.16.0(LTS)이 릴리스 됐습니다.&lt;br&gt;
+npm 6.9.0로 갱신됐고 &lt;code&gt;zlib&lt;/code&gt; 모듈의 brotli와 &lt;code&gt;events&lt;/code&gt; 모듈의 &lt;code&gt;once&lt;/code&gt; 메서드를 지원(백포트) 합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;w3c-and-whatwg-to-work-together-to-advance-the-open-web-platform-w3c-blog&quot;&gt;W3C and WHATWG to work together to advance the open Web platform | W3C Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.w3.org/blog/2019/05/w3c-and-whatwg-to-work-together-to-advance-the-open-web-platform/&quot; title=&quot;W3C and WHATWG to work together to advance the open Web platform | W3C Blog&quot;&gt;www.w3.org/blog/2019/05/w3c-and-whatwg-to-work-together-to-advance-the-open-web-platform/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;W3C&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WHATWG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;W3C는 HTML와 DOM과 관련한 표준 책정을 중단, WHATWG가 책정하고 있는 Living Standard를 공동으로 책정하기로 합의했습니다.&lt;br&gt;
+WHATWG는 리뷰 드리프트라고 부르는 정기적인 스냅샷을 내고 이를 W3C 프로세스를 이용해 권고까지 진행하는 형태로 변경됩니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem&quot;&gt;Version 8 of Angular — Smaller bundles, CLI APIs, and alignment with the ecosystem&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27&quot; title=&quot;Version 8 of Angular — Smaller bundles, CLI APIs, and alignment with the ecosystem&quot;&gt;blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Angular 8.0.0이 릴리스 됐습니다.&lt;br&gt;
+modern build(es2015)와 legacy build(es5)를 나눠 빌드하여 브라우저 환경에 맞춰 불러오는 Differential Loading를 활성화했습니다.&lt;br&gt;
+Route Config에서 Dynamic Imports를 사용하도록 변경됐고 CLI 용 Builders API가 추가됐습니다.&lt;br&gt;
+또, Ivy를 &lt;code&gt;enableIvy&lt;/code&gt; 컴파일 옵션을 이용해 사용해 볼 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.angular.io/introducing-cli-builders-d012d4489f1b&quot; title=&quot;Introducing CLI Builders – Angular Blog&quot;&gt;Introducing CLI Builders – Angular Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/angular/angular/blob/master/CHANGELOG.md#800-2019-05-28&quot; title=&quot;angular/CHANGELOG.md at master · angular/angular&quot;&gt;angular/CHANGELOG.md at master · angular/angular&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-83-webkit&quot;&gt;Release Notes for Safari Technology Preview 83 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8967/release-notes-for-safari-technology-preview-83/&quot; title=&quot;Release Notes for Safari Technology Preview 83 | WebKit&quot;&gt;webkit.org/blog/8967/release-notes-for-safari-technology-preview-83/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview 83이 릴리스됐습니다.&lt;br&gt;
+WebAuthN을 기본적으로 활성화 했으며 &lt;code&gt;line-break: anywhere&lt;/code&gt;, &lt;code&gt;display: flow-root&lt;/code&gt; CSS 속성을 지원합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v0-19-0-axios-axios&quot;&gt;Release v0.19.0 · axios/axios&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/axios/axios/releases/tag/v0.19.0&quot; title=&quot;Release v0.19.0 · axios/axios&quot;&gt;github.com/axios/axios/releases/tag/v0.19.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;axios 0.19.0이 릴리스됐습니다.&lt;br&gt;
+Node.js에서 응답이 Content-ENcoding이 gzip, deflate 등 이면서 상태 코드가 204인 경우 예외가 발생하는 문제가 수정됐으며 &lt;code&gt;maxContentLength&lt;/code&gt; 설정을 무시하고 요청을 계속해 Dos로 이어지는 문제가 수정됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/axios/axios/releases/tag/v0.18.1&quot; title=&quot;Release v0.18.1 · axios/axios&quot;&gt;Release v0.18.1 · axios/axios&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/axios/axios/pull/1485&quot; title=&quot;Destroy stream on exceeding maxContentLength (fixes #1098) by resure · Pull Request #1485 · axios/axios&quot;&gt;Destroy stream on exceeding maxContentLength (fixes #1098) by resure · Pull Request #1485 · axios/axios&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-typescript-3-5-typescript&quot;&gt;Announcing TypeScript 3.5 | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-5/&quot; title=&quot;Announcing TypeScript 3.5 | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-5/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 3.5가 릴리스됐습니다.&lt;br&gt;
+타입 체크 성능과 &lt;code&gt;--incremental&lt;/code&gt; 빌드 성능이 개선됐으며 &lt;code&gt;Omit&lt;/code&gt; 헬프 타입이 추가됐습니다.&lt;br&gt;
+비호환 변경 사항으로 타입이 불분명한 경우의 표기가 &lt;code&gt;{}&lt;/code&gt;에서 &lt;code&gt;unknown&lt;/code&gt;으로 변경됐습니다. &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/What&amp;#x27;s-new-in-TypeScript#typescript-35&quot; title=&quot;What&amp;amp;#x27;s new in TypeScript · microsoft/TypeScript Wiki&quot;&gt;What&amp;#39;s new in TypeScript · microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Breaking-Changes#typescript-35&quot; title=&quot;Breaking Changes · microsoft/TypeScript Wiki&quot;&gt;Breaking Changes · microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/e7bbaff54db8fbf986bb&quot; title=&quot;TypeScript v3.5.1 変更点 - Qiita&quot;&gt;TypeScript v3.5.1 変更点 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v2-8-0-nuxt-nuxt-js&quot;&gt;Release v2.8.0 · nuxt/nuxt.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.8.0&quot; title=&quot;Release v2.8.0 · nuxt/nuxt.js&quot;&gt;github.com/nuxt/nuxt.js/releases/tag/v2.8.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Nuxt.js 2.8.0이 릴리스됐습니다.&lt;br&gt;
+SSR의 로그 출력 방식과 빌드 중 인디케이터 표현 방법이 개선됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-2-0-0-avajs-ava&quot;&gt;Release 2.0.0 · avajs/ava&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v2.0.0&quot; title=&quot;Release 2.0.0 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v2.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;AVA 2.0.0이 릴리스됐습니다.&lt;br&gt;
+비호환 변경사항으로 스냅샷이 만들어져 있지 않은 경우 CI에서 실패하며 assertion 메시지가 문자열이 아닌 경우는 예외가 발생합니다. &lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;verdaccio-4-released-verdaccio&quot;&gt;Verdaccio 4 released !!! · Verdaccio&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://verdaccio.org/blog/2019/05/19/15-verdaccio-4-release.html&quot; title=&quot;Verdaccio 4 released !!! · Verdaccio&quot;&gt;verdaccio.org/blog/2019/05/19/15-verdaccio-4-release.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm registry server의 OSS 구현체인 Verdaccio 4가 릴리스됐습니다.&lt;br&gt;
+새로운 UI로 변경했으며 &lt;code&gt;npm star&lt;/code&gt; / &lt;code&gt;npm profile&lt;/code&gt;, JWT, Plugins를 지원합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;whats-new-in-devtools-chrome-76-web-google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 76)  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/05/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 76)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/05/devtools&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 76 개발자 도구의 변경 사항이 정리돼 있습니다.&lt;br&gt;
+네트워크 패널의 설정 부분 UI가 변경 됐고 WebSocket 메시지를 HAR 파일로 추출할 수 있으며 총 메모리 소비량을 실시간으로 확인할 수 있습니다. 또, Background Fetch 디버깅 기능이 추가됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;javascript&quot;&gt;이미지로 전하자! 도형을 이용한 JavaScript 비동기 처리의 이해 - 메모비비기(일본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://memowomome.hatenablog.com/entry/js_async_viz&quot; title=&quot;イメージで伝われ！図解JavaScriptの非同期処理 - メモを揉め&quot;&gt;memowomome.hatenablog.com/entry/js_async_viz&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScript의 동기 / 비동기 처리 동작의 차이와 구현 방법과 접근 방법에 대해 정리돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jsconf-eu-2019-youtube&quot;&gt;JSConf EU 2019 - YouTube&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PL37ZVnwpeshHwJPVBqEnZild7QHWhdufu&quot; title=&quot;JSConf EU 2019 - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PL37ZVnwpeshHwJPVBqEnZild7QHWhdufu&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;イベント&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JSConf EU 2019의 영상이 공개됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://2019.jsconf.eu/&quot; title=&quot;JSConf EU 2019&quot;&gt;JSConf EU 2019&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;zdog-round-flat-designer-friendly-pseudo-3d-engine-for-canvas-and-svg&quot;&gt;Zdog · Round, flat, designer-friendly pseudo-3D engine for canvas and SVG&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://zzz.dog/&quot; title=&quot;Zdog · Round, flat, designer-friendly pseudo-3D engine for canvas and SVG&quot;&gt;zzz.dog/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;유사 3D 효과를 표현할 수 있는 Canvas, SVG 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;atomicojs-atomico-small-library-for-the-creation-of-interfaces-based-on-web-components-only-using-functions-and-hooks&quot;&gt;atomicojs/atomico: Small library for the creation of interfaces based on web-components, only using functions and hooks.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/atomicojs/atomico&quot; title=&quot;atomicojs/atomico: Small library for the creation of interfaces based on web-components, only using functions and hooks.&quot;&gt;github.com/atomicojs/atomico&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JSX를 이용한 DOM 정의와 React Hooks 스러운 API를 제공하는 Web Components 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;mholt-papaparse-fast-and-powerful-csv-delimited-text-parser-that-gracefully-handles-large-files-and-malformed-input&quot;&gt;mholt/PapaParse: Fast and powerful CSV (delimited text) parser that gracefully handles large files and malformed input&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/mholt/PapaParse&quot; title=&quot;mholt/PapaParse: Fast and powerful CSV (delimited text) parser that gracefully handles large files and malformed input&quot;&gt;github.com/mholt/PapaParse&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSV 파싱 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 04 Jun 2019 09:22:44 +0900</pubDate>
+        <link>https://jser.info/ko/2019/06/04/async.js-3.0.0asyncawaitava-2.0.0verdaccio-4npm-registry/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2019/06/04/async.js-3.0.0asyncawaitava-2.0.0verdaccio-4npm-registry/</guid>
+        
+        <category>node.js</category>
+        
+        <category>testing</category>
+        
+        <category>npm</category>
+        
+        <category>registry</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-05-14: Google I/O 2019、GitHub Package Registry(npm, Docker, etc)</title>
@@ -2326,247 +2618,6 @@ Worker Threads, Performance Hooks, Diagnostic Report, Policy, ECMAScript Modules
         <category>TypeScript</category>
         
         <category>Node.js</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-03-12: TensorFlow.js 1.0, Cache-Control 설명, `JSON.stringify(-0)`</title>
-        <description>&lt;p&gt;JSer.info #426 - TensorFlow 모델을 브라우저와 Node.js에서도 사용할 수 있는 TensorFlow.js 1.0이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/tensorflow/tfjs/releases/tag/v1.0.0&quot;&gt;Release 1.0.0 · tensorflow/tfjs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;1.0에 &lt;code&gt;Tensor.array()&lt;/code&gt;와 &lt;code&gt;Tensor.arraySync()&lt;/code&gt;가 추가됐고 API의 이름이 변경되는 등 비호환적 변경사항이 포함돼 있습니다.&lt;br&gt;
-또, 초기 릴리스한 버전에 비해 성능이 크게 개선 됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://csswizardry.com/2019/03/cache-control-for-civilians/&quot; title=&quot;Cache-Control for Civilians – CSS Wizardry – CSS Architecture, Web Performance Optimisation, and more, by Harry Roberts&quot;&gt;Cache-Control for Civilians – CSS Wizardry – CSS Architecture, Web Performance Optimisation, and more, by Harry Roberts&lt;/a&gt;에는 &lt;code&gt;Cache-Control&lt;/code&gt; HTTP 헤더에 관해 자세히 작성돼 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;public&lt;/code&gt;, &lt;code&gt;private&lt;/code&gt;, &lt;code&gt;max-age&lt;/code&gt;, &lt;code&gt;no-store&lt;/code&gt;, &lt;code&gt;no-cache&lt;/code&gt;, &lt;code&gt;immutable&lt;/code&gt;, &lt;code&gt;stale-while-revalidate&lt;/code&gt; 라는 각 프로퍼티의 동작 방식이나 유스케이를 설명합니다.&lt;br&gt;
-뿐만 아니라 Cache Busting 방법이나 &lt;code&gt;Clear-Site-Data&lt;/code&gt; 헤더 그리고 라이브 전송 용 페이지 설정 등 다양한 내용을 다루고 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;part-c346e3d0c01109cd&quot;&gt;이번주 이슈&lt;/h2&gt;
-
-&lt;p&gt;ECMAScript 사양의 이슈로 &lt;code&gt;JSON.stringify(-0)&lt;/code&gt;의 처리에 관한 이슈가 등록됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/ecma262/pull/1466&quot;&gt;Normative: Make &lt;code&gt;JSON.stringify(-0)&lt;/code&gt; preserve the sign by mathiasbynens · Pull Request #1466 · tc39/ecma262&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;현재의 사양에서 &lt;code&gt;JSON.stringify(-0)&lt;/code&gt;할 경우 &lt;code&gt;String(-0)&lt;/code&gt;의 경우와 같은 로직으로 동작하므로 &lt;code&gt;-&lt;/code&gt;를 무시하여 &lt;code&gt;&amp;quot;0&amp;quot;&lt;/code&gt; 문자열이 반환됩니다.&lt;br&gt;
-한편,  &lt;code&gt;JSON.parse(&amp;quot;-0&amp;quot;)&lt;/code&gt;을 할 경우엔 &lt;code&gt;-&lt;/code&gt;를 고려하여 &lt;code&gt;-0&lt;/code&gt;이 반환됩니다.&lt;/p&gt;
-
-&lt;p&gt;이로 인해 parse 한 후 stringify 한 결과를 본래의 값과 &lt;code&gt;Object.is&lt;/code&gt;로 비교 시 일치하지 않는 경우가 있습니다.&lt;br&gt;
-이 사양은 JSON 포맷을 발견한 &lt;a href=&quot;https://github.com/douglascrockford&quot;&gt;douglascrockford/JSON-js&lt;/a&gt;에 근거한 것입니다.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// 현재 사양&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; false&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;JSON.stringify(-0)&lt;/code&gt;가 &lt;code&gt;&amp;quot;-0&amp;quot;&lt;/code&gt;을 반환하도록 하는 사양을 수정한 PR이 등록됐습니다.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// PR로 제안한 사양&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; true&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;하지만 &lt;code&gt;===&lt;/code&gt;로 비교할 때 &lt;code&gt;-0&lt;/code&gt;과 &lt;code&gt;0&lt;/code&gt; 차이를 무시하는 동작, &lt;code&gt;String()&lt;/code&gt;의 동작 방식과 통일하는 문제 등이 제기 됐으며 &lt;code&gt;JSON.stringify(-0)&lt;/code&gt;의 동작이 현업에서 그다지 문제될 일이 없다는 의견이 있어 일단은 PR이 취하됐습니다.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// === 는 -0과 0의 차이를 무시함&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; true&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이 문제에 관심 있는 분들은 위 이슈를 살펴보면 좋을 것 같습니다. &lt;br&gt;
-&lt;code&gt;===&lt;/code&gt;와 &lt;code&gt;Object.is&lt;/code&gt;의 비교 방식에 대해선 아래 문서를 통해 알 수 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Equality_comparisons_and_sameness&quot;&gt;동치 비교 및 동일성 - JavaScript | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-1-0-0-tensorflow-tfjs&quot;&gt;Release 1.0.0 · tensorflow/tfjs&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/tensorflow/tfjs/releases/tag/v1.0.0&quot; title=&quot;Release 1.0.0 · tensorflow/tfjs&quot;&gt;github.com/tensorflow/tfjs/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MachineLearning&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TensorFlow.js 1.0이 릴리스됐습니다.&lt;br&gt;
-성능 개선이 이뤄졌고 &lt;code&gt;Tensor.array()&lt;/code&gt;와 &lt;code&gt;Tensor.arraySync()&lt;/code&gt;가 추가 됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-npm-6-9-0-announcements-npm-forum&quot;&gt;Release: &lt;a href=&quot;mailto:npm@6.9.0&quot;&gt;npm@6.9.0&lt;/a&gt; - 📣 announcements - npm forum&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://npm.community/t/release-npm-6-9-0/5911&quot; title=&quot;Release: npm@6.9.0 - 📣 announcements - npm forum&quot;&gt;npm.community/t/release-npm-6-9-0/5911&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npm 6.9.0이 릴리스됐습니다.&lt;br&gt;
-지정한 날짜 보다 이전 버전을 설치하는 &lt;code&gt;--before&lt;/code&gt; 옵션이 추가됐고 패키지의 이름을 alias 하여 설치할 수 있는 package alias를 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;rmdm-rmgr-release-resources-gracefully&quot;&gt;rmdm/rmgr: Release resources gracefully&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/rmdm/rmgr&quot; title=&quot;rmdm/rmgr: Release resources gracefully&quot;&gt;github.com/rmdm/rmgr&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;리소스를 관리하는 라이브러리 입니다.&lt;br&gt;
-리소스 별로 initialize와 dispose 시의 처리를 정의하고 리소스를 배포할 수 있는 라이브러리입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;marble-js-2-0-reactive-better-functional-stronger&quot;&gt;Marble.js 2.0 🔥 — reactive, better, functional, stronger&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@jflakus/marble-2-reactive-better-functional-stronger-5924119d3098&quot; title=&quot;Marble.js 2.0 🔥 — reactive, better, functional, stronger&quot;&gt;medium.com/@jflakus/marble-2-reactive-better-functional-stronger-5924119d3098&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;RxJS를 사용한 Node.js 용 HTTP 프레임워크인 Marble.js 2.0이 릴리스됐습니다. WebSockets 대응, Context를 사용한 DI 구조, io-ts를 사용한 검증(validation)을 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jsdom-changelog-md-at-master-jsdom-jsdom&quot;&gt;jsdom/Changelog.md at master · jsdom/jsdom&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jsdom/jsdom/blob/master/Changelog.md#1400&quot; title=&quot;jsdom/Changelog.md at master · jsdom/jsdom&quot;&gt;github.com/jsdom/jsdom/blob/master/Changelog.md#1400&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JSDOM 14.0.0이 릴리스됐습니다.&lt;br&gt;
-&lt;code&gt;JSDOM.fragment()&lt;/code&gt;가 browsing context를 갖지 않는 framents를 생성하도록 변경됐으며 &lt;code&gt;element.blur()&lt;/code&gt;가 회귀(regression) 수정됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;cache-control-for-civilians-css-wizardry-css-architecture-web-performance-optimisation-and-more-by-harry-roberts&quot;&gt;Cache-Control for Civilians – CSS Wizardry – CSS Architecture, Web Performance Optimisation, and more, by Harry Roberts&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://csswizardry.com/2019/03/cache-control-for-civilians/&quot; title=&quot;Cache-Control for Civilians – CSS Wizardry – CSS Architecture, Web Performance Optimisation, and more, by Harry Roberts&quot;&gt;csswizardry.com/2019/03/cache-control-for-civilians/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Cache-Control&lt;/code&gt; HTTP 헤더에 관한 설명 글입니다.&lt;br&gt;
-&lt;code&gt;public&lt;/code&gt;, &lt;code&gt;private&lt;/code&gt;, &lt;code&gt;max-age&lt;/code&gt;, &lt;code&gt;no-store&lt;/code&gt;, &lt;code&gt;no-cache&lt;/code&gt;, &lt;code&gt;immutable&lt;/code&gt;, &lt;code&gt;stale-while-revalidate&lt;/code&gt; 등 각각 항목을 설명하고 Cache Busting 방법 등에 대해서 이야기합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript-loose-comparison-step-by-step&quot;&gt;JavaScript loose comparison (==) step by step&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://felix-kling.de/js-loose-comparison/&quot; title=&quot;JavaScript loose comparison (==) step by step&quot;&gt;felix-kling.de/js-loose-comparison/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;spec&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;==&lt;/code&gt;이 어떻게 값을 비교하는지 ECMAScript 사양에 정의된 알고리즘 단계에 따라 체크하는 도구입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;whats-new-in-devtools-chrome-74-web-google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 74)  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/03/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 74)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/03/devtools&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 74 개발자 도구 변경 사항을 정리한 글입니다. CSS property의 영향이 강조 표현되며 Lighthouse v4로 갱신됐습니다. 이어 WebSocket 바이너리 메시지 표현 기능이 추가됐으며 퍼포먼스 패널에서 Long task를 기록할 수 있게 됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;a-complete-guide-to-useeffect-overreacted&quot;&gt;A Complete Guide to useEffect — Overreacted&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://overreacted.io/a-complete-guide-to-useeffect/&quot; title=&quot;A Complete Guide to useEffect — Overreacted&quot;&gt;overreacted.io/a-complete-guide-to-useeffect/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React Hooks의 &lt;code&gt;useEffect&lt;/code&gt; 동작과 사용 방법에 대해 설명하며 자주 있는 질문에 대해 이야기합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;request-map-generator&quot;&gt;Request Map Generator&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://requestmap.webperf.tools/&quot; title=&quot;Request Map Generator&quot;&gt;requestmap.webperf.tools/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;지정한 URL의 요청 관계(흐름)을 맵으로 출력 / 시각화 하는 도구입니다.&lt;br&gt;
-WebPageTest 결과를 이용합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;twbs-rfs-automated-responsive-font-sizes&quot;&gt;twbs/rfs: Automated responsive font sizes&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/twbs/rfs&quot; title=&quot;twbs/rfs: Automated responsive font sizes&quot;&gt;github.com/twbs/rfs&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;PostCSS&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;반응형 폰트 사이즈를 지정하는 CSS 세트입니다. &lt;br&gt;
-Sass, PostCSS, less, stylus 버전이 준비돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;feature-policy&quot;&gt;Feature policy&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://featurepolicy.info/&quot; title=&quot;Feature policy&quot;&gt;featurepolicy.info/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;example&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Feature Policy 데모 사이트입니다. 각각의 정책의 지원 상황과 문서, 샘플 등이 정리돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;dyatko-arkit-visualises-javascript-typescript-and-flow-codebases-as-meaningful-and-committable-architecture-diagrams&quot;&gt;dyatko/arkit: Visualises JavaScript, TypeScript and Flow codebases as meaningful and committable architecture diagrams&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/dyatko/arkit&quot; title=&quot;dyatko/arkit: Visualises JavaScript, TypeScript and Flow codebases as meaningful and committable architecture diagrams&quot;&gt;github.com/dyatko/arkit&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UML&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;파일로 부터 아키텍처 다이어그램을 생성하는 도구입니다. 코드 베이스가 되는 파일을 지정해 그 구조를 Plant UML이나 SVG 등의 그림으로 변환해 줍니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introduction-anyproxy&quot;&gt;Introduction · AnyProxy&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://anyproxy.io/en/&quot; title=&quot;Introduction · AnyProxy&quot;&gt;anyproxy.io/en/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proxy&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;HTTPS나 WebSocket 등에 대응한 로컬 프록시 도구입니다.&lt;br&gt;
-Proxy한 로그를 살펴볼 수 있는 GUI도 제공합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jaames-iro-js-color-wheel-widget-for-javascript-with-zero-dependencies-and-a-lovely-svg-based-ui&quot;&gt;jaames/iro.js: 🎨 Color wheel widget for JavaScript - with zero dependencies and a lovely SVG-based UI&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jaames/iro.js&quot; title=&quot;jaames/iro.js: 🎨 Color wheel widget for JavaScript - with zero dependencies and a lovely SVG-based UI&quot;&gt;github.com/jaames/iro.js&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;의존 모듈 없는 색상 추출 라이브러리입니다. SVG를 기반으로 한 색상 추출 UI를 제공합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;vladocar-femtojs-femtojs-really-small-javascript-es6-library-for-dom-manipulation&quot;&gt;vladocar/femtoJS: femtoJS - Really small JavaScript (ES6) library for DOM manipulation.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/vladocar/femtoJS&quot; title=&quot;vladocar/femtoJS: femtoJS - Really small JavaScript (ES6) library for DOM manipulation.&quot;&gt;github.com/vladocar/femtoJS&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;jQuery와 비슷한 일부 DOM API를 제공하는 라이브러리입니다.&lt;br&gt;
-ES2015+를 지원하는 브라우저를 대상으로 개발됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/vladocar/nanoJS&quot; title=&quot;vladocar/nanoJS: Minimal standalone JS library for DOM manipulation&quot;&gt;vladocar/nanoJS: Minimal standalone JS library for DOM manipulation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 12 Mar 2019 09:20:50 +0900</pubDate>
-        <link>https://jser.info/ko/2019/03/12/tensorflow.js-1.0cache-controljson.stringify-0/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2019/03/12/tensorflow.js-1.0cache-controljson.stringify-0/</guid>
-        
-        <category>TensorFlow</category>
-        
-        <category>HTTP</category>
-        
-        <category>JSON</category>
         
         
         <category>JSer</category>
