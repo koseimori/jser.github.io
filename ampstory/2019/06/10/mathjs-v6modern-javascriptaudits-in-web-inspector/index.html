@@ -1,0 +1,420 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-06-10のJS: mathjs v6、Modern JavaScriptパッケージの配布、Audits in Web Inspector - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/06/10/mathjs-v6modern-javascriptaudits-in-web-inspector/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-06-10のJS: mathjs v6、Modern JavaScriptパッケージの配布、Audits in Web Inspector"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-06-10のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://nodejs.org/en/blog/release/v12.4.0/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v12.4.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 12.4.0リリース。
+<code>import</code>文でJSONを読み込める<code>--experimental-json-modules</code>フラグの追加、V8 heap profilerを扱う<code>--heap-prof</code>フラグの追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v12.4.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v12.4.0/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://josdejong.com/blog/2019/06/08/mathjs-v6-a-monolith-turned-modular/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">mathjs v6: a monolith turned modular - Jos de Jong</amp-fit-text>
+            <p class="item-contents">matchjs v6リリース。
+モジューラーなアプローチで利用できるように変更。
+グローバルな設定ではなく<code>create</code>関数で依存と設定から特定の機能を作れるように、ES moduleでimportした際にtree-shakingができるように。
+また<code>number</code>のみをサポートしたバージョンも同梱されている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="mathjs v6: a monolith turned modular - Jos de Jong" href="https://josdejong.com/blog/2019/06/08/mathjs-v6-a-monolith-turned-modular/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/storybookjs/storybook-5-1-50afd02b5bbb">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Storybook 5.1</amp-fit-text>
+            <p class="item-contents">Stroybook 5.1リリース。
+React Nativeの再対応、A11y addonの改善、Context addonの追加、TypeScrip向けのpresetを追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Storybook 5.1" href="https://medium.com/storybookjs/storybook-5-1-50afd02b5bbb" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/mqttjs/MQTT.js/releases/tag/v3.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v3.0.0 · mqttjs/MQTT.js</amp-fit-text>
+            <p class="item-contents">MQTT.js 3.0.0リリース。
+MQTT 5.0をサポート。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v3.0.0 · mqttjs/MQTT.js" href="https://github.com/mqttjs/MQTT.js/releases/tag/v3.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/8935/audits-in-web-inspector/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Audits in Web Inspector | WebKit</amp-fit-text>
+            <p class="item-contents">Safariの開発者ツールに追加されたAudit Tabについて。
+デフォルトではアクセシビリティについてのAuditが含まれていて、自分でAuditのルールを定義して追加できるようになっている。
+例としてESLintを<code>*.js</code>に対して実行するAuditルールが挙げられている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Audits in Web Inspector | WebKit" href="https://webkit.org/blog/8935/audits-in-web-inspector/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.twilio.com/blog/mediastream-recording-api">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">An introduction to the MediaRecorder API - Twilio</amp-fit-text>
+            <p class="item-contents">MediaRecorder APIで音声の録音とダウンロードを行うチュートリアル
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="An introduction to the MediaRecorder API - Twilio" href="https://www.twilio.com/blog/mediastream-recording-api" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://ecmascript-daily.github.io/ecmascript/2019/06/09/ecmascript-proposal-updates">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ECMAScript proposal updates @ 2019-06 | ECMAScript Daily</amp-fit-text>
+            <p class="item-contents">2019年6月のTC39ミーティングでStage変更があったECMAScript Proposalのまとめ。
+Dynamic ImportがついにStage 4となった。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ECMAScript proposal updates @ 2019-06 | ECMAScript Daily" href="https://ecmascript-daily.github.io/ecmascript/2019/06/09/ecmascript-proposal-updates" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://flaviocopes.com/indexeddb/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Dive into IndexedDB</amp-fit-text>
+            <p class="item-contents">PromiseベースのIndexedDBラッパーである<code>idb</code>を使ったIndexedDBについてのチュートリアル。
+データの追加、削除、マイグレーションについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Dive into IndexedDB" href="https://flaviocopes.com/indexeddb/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://jasonformat.com/enabling-modern-js-on-npm/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Enabling Modern JavaScript on npm</amp-fit-text>
+            <p class="item-contents">npmにパッケージとして公開するモジュールについて。
+Bundleツールなどの変化によって、Transpile済みのファイルのみを配布すると利用者は最適化ができない問題について。
+<code>package.json</code>の<code>"main"</code>、<code>"module"</code>、<code>"unpkg"</code>フィールドと配布するモジュールの形式やパッケージ作者が配布時に気をつける点。
+またmicrobundleや<code>@pika/pack</code>などのパッケージ配布の補助ツールについてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Enabling Modern JavaScript on npm" href="https://jasonformat.com/enabling-modern-js-on-npm/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hacks.mozilla.org/2019/06/css-grid-level-2-subgrid-is-coming-to-firefox/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">CSS Grid Level 2 - subgrid is coming to Firefox - Mozilla Hacks - the Web developer blog</amp-fit-text>
+            <p class="item-contents">CSS Grid Level 2のサブグリッドについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CSS Grid Level 2 - subgrid is coming to Firefox - Mozilla Hacks - the Web developer blog" href="https://hacks.mozilla.org/2019/06/css-grid-level-2-subgrid-is-coming-to-firefox/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.youtube.com/playlist?list=PLZFhK-XSlb82hef6Sxyqcc-6e8xVTbaIE&amp;app=desktop">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Inside Frontend #3 - YouTube</amp-fit-text>
+            <p class="item-contents">Inside Frontend #3 の動画一覧
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Inside Frontend #3 - YouTube" href="https://www.youtube.com/playlist?list=PLZFhK-XSlb82hef6Sxyqcc-6e8xVTbaIE&amp;app=desktop" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://npmfs.com/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">npmfs - home</amp-fit-text>
+            <p class="item-contents">npmに公開されているパッケージのソースコードビューアサービス。
+特定のバージョンのコードを参照したり、バージョン間のDiffを見られるようになっている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="npmfs - home" href="https://npmfs.com/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://formidable.com/open-source/urql/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">urql</amp-fit-text>
+            <p class="item-contents">React Hooksに対応したGraphQLを扱うReact向けライブラリ。
+Queryの取得状態や取得結果を使ったコンポーネントを扱える
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="urql" href="https://formidable.com/open-source/urql/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/lukeed/tinydate">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">lukeed/tinydate: A tiny (340B) reusable date formatter. Extremely fast!</amp-fit-text>
+            <p class="item-contents">ファイルサイズが小さなDate Formatterライブラリ。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="lukeed/tinydate: A tiny (340B) reusable date formatter. Extremely fast!" href="https://github.com/lukeed/tinydate" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.co.jp/dp/483996937X/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">実践TypeScript ~ BFFとNext.js&amp;Nuxt.jsの型定義~ | 吉井 健文 |本 | 通販 | Amazon</amp-fit-text>
+            <p class="item-contents">2019年6月26日発売
+TypeSctiptとNext.js、Nuxt.jsについての書籍
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="実践TypeScript ~ BFFとNext.js&amp;Nuxt.jsの型定義~ | 吉井 健文 |本 | 通販 | Amazon" href="https://www.amazon.co.jp/dp/483996937X/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
