@@ -5,9 +5,260 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 17 Jun 2019 11:27:34 +0900</pubDate>
-    <lastBuildDate>Mon, 17 Jun 2019 11:27:34 +0900</lastBuildDate>
+    <pubDate>Tue, 25 Jun 2019 11:06:09 +0900</pubDate>
+    <lastBuildDate>Tue, 25 Jun 2019 11:06:09 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-06-25のJS: ESLint 6.0.0、Vue Function API、Google検索とService Worker</title>
+        <description>&lt;p&gt;JSer.info #441 - ESLint 6.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://eslint.org/blog/2019/06/eslint-v6.0.0-released&quot;&gt;ESLint v6.0.0 released - ESLint - Pluggable JavaScript linter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://eslint.org/docs/user-guide/migrating-to-6.0.0&quot;&gt;Migrating to v6.0.0 - ESLint - Pluggable JavaScript linter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/274347ff9473b26b575a&quot;&gt;ESLint v6.0.0 の変更点まとめ - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;メジャーアップデートであるため破壊的な変更が含まれています。&lt;br&gt;
+6.0.0では&lt;code&gt;eslint:recommended&lt;/code&gt;の設定が変更され、次のルールが追加されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://eslint.org/docs/rules/no-async-promise-executor&quot;&gt;no-async-promise-executor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://eslint.org/docs/rules/no-misleading-character-class&quot;&gt;no-misleading-character-class&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://eslint.org/docs/rules/no-prototype-builtins&quot;&gt;no-prototype-builtins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://eslint.org/docs/rules/no-shadow-restricted-names&quot;&gt;no-shadow-restricted-names&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://eslint.org/docs/rules/no-useless-catch&quot;&gt;no-useless-catch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://eslint.org/docs/rules/no-with&quot;&gt;no-with&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://eslint.org/docs/rules/require-atomic-updates&quot;&gt;require-atomic-updates&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、&lt;code&gt;eslint:recommended&lt;/code&gt;の設定から次のルールが取り除かれています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://eslint.org/docs/rules/no-console&quot;&gt;no-console&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;詳細は次のページを参照してください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://eslint.org/docs/user-guide/migrating-to-6.0.0#-eslintrecommended-has-been-updated&quot;&gt;eslint:recommended has been updated&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/274347ff9473b26b575a#-eslintrecommended%E3%81%AB%E5%90%AB%E3%81%BE%E3%82%8C%E3%82%8B%E3%83%AB%E3%83%BC%E3%83%AB%E3%81%8C%E6%9B%B4%E6%96%B0%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F&quot;&gt;eslint:recommendedに含まれるルールが更新されました。&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;またプラグインの読み込み時の動作変更、不正な設定値のチェックの厳密化、正規表現をオプション値として受け付ける場合に&lt;code&gt;u&lt;/code&gt;フラグをデフォルトにする変更などが含まれています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;次期Vueで導入を計画しているFunction-based Component APIのRFC(Request for Comments)が公開されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/rfcs/blob/function-apis/active-rfcs/0000-function-api.md&quot;&gt;rfcs/0000-function-api.md at function-apis · vuejs/rfcs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vue 3.xを対象に後方互換性を保った新しい機能としてFunction-based Component APIを導入するProposalとなっています。&lt;br&gt;
+テンプレートの構文などはそのままで、コンポーネントのライフサイクルに関する部分をReact Hooksのような関数ベースで書けるようにする提案です。&lt;/p&gt;
+
+&lt;p&gt;すでにVue 2.xでもRFCの動作を再現したプラグインが公開されていますが、公式でも2.xで動作するプラグインを提供する予定とのことです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/liximomo/vue-function-api&quot;&gt;liximomo/vue-function-api: Provide logic composition capabilities for Vue.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;まだRFCなのでどのように実装するかは決まっていませんが、興味がある人は次のIssueを見るとよさそうです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/rfcs/pull/42&quot;&gt;Function-based Component API by yyx990803 · Pull Request #42 · vuejs/rfcs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/rfcs/issues/55&quot;&gt;Function-based component API (extended discussion) · Issue #55 · vuejs/rfcs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/google-search-sw/&quot;&gt;Bringing service workers to Google Search  |  web.dev&lt;/a&gt;という記事ではGoogle検索でService Workerをどのように導入し配信しているかについて書かれています。&lt;/p&gt;
+
+&lt;p&gt;Navigation Preloadでのオーバーヘッドの対応、SWのScopeの問題とルーティング、SWでクッキーが扱えない問題の対応、ユーザー毎にSWスクリプトの動的作成など実際におきた問題ベースで解説されています。またSWスクリプトのHTTPヘッダを&lt;code&gt;Cache-Control: private, max-age=1500&lt;/code&gt;で配信している理由やアプリに合わせたSWの設定が必要といった話も書かれています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;v8-release-v7-6-v8&quot;&gt;V8 release v7.6 · V8&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://v8.dev/blog/v8-release-76&quot; title=&quot;V8 release v7.6 · V8&quot;&gt;v8.dev/blog/v8-release-76&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;V8 7.6リリース。&lt;br&gt;
+&lt;code&gt;JSON.parse&lt;/code&gt;、&lt;code&gt;Object.freeze&lt;/code&gt;された配列のパフォーマンス改善。&lt;br&gt;
+ES Proposalの&lt;code&gt;Promise.allSettled&lt;/code&gt;の実装、&lt;code&gt;BigInt&lt;/code&gt;と&lt;code&gt;Intl.DateTimeFormat&lt;/code&gt;の対応改善など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-npm-blog-protecting-package-publishers-npm-token-security&quot;&gt;The npm Blog — Protecting Package Publishers: npm Token Security...&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.npmjs.org/post/185680936500/protecting-package-publishers-npm-token-security&quot; title=&quot;The npm Blog — Protecting Package Publishers: npm Token Security...&quot;&gt;blog.npmjs.org/post/185680936500/protecting-package-publishers-npm-token-security&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Github&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;GitHubにnpmのtokenが誤って公開された場合に自動的にrevokeされるようになった。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introducing-microsoft-edge-preview-builds-for-windows-7-windows-8-and-windows-8-1-microsoft-edge-blog&quot;&gt;Introducing Microsoft Edge preview builds for Windows 7, Windows 8, and Windows 8.1 - Microsoft Edge Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/06/19/introducing-microsoft-edge-preview-builds-for-windows-7-windows-8-and-windows-8-1/&quot; title=&quot;Introducing Microsoft Edge preview builds for Windows 7, Windows 8, and Windows 8.1 - Microsoft Edge Blog&quot;&gt;blogs.windows.com/msedgedev/2019/06/19/introducing-microsoft-edge-preview-builds-for-windows-7-windows-8-and-windows-8-1/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chromium版MSEdgeのプレビュービルドがWindows 7、8、8.1に対応した。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;eslint-v6-0-0-released&quot;&gt;ESLint v6.0.0 released -&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2019/06/eslint-v6.0.0-released&quot; title=&quot;ESLint v6.0.0 released -&quot;&gt;eslint.org/blog/2019/06/eslint-v6.0.0-released&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ESLint 6.0.0リリース。&lt;br&gt;
+&lt;code&gt;eslint:recommended&lt;/code&gt;のルール更新、プラグインの読み込み時の動作変更、不正な設定値のチェックの厳密化、正規表現をオプション値として受け付ける場合に&lt;code&gt;u&lt;/code&gt;フラグをデフォルトとするように変更など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://eslint.org/docs/user-guide/migrating-to-6.0.0&quot; title=&quot;Migrating to v6.0.0 -&quot;&gt;Migrating to v6.0.0 -&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/274347ff9473b26b575a&quot; title=&quot;ESLint v6.0.0 の変更点まとめ - Qiita&quot;&gt;ESLint v6.0.0 の変更点まとめ - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-news-toast-ui-grid-4-0-is-finally-here-toast-ui-medium&quot;&gt;[Release News] TOAST UI Grid 4.0 is Finally Here! - TOAST UI - Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@toastui/release-news-toast-ui-grid-4-0-is-finally-here-585934ddf091&quot; title=&quot;\[Release News\] TOAST UI Grid 4.0 is Finally Here! - TOAST UI - Medium&quot;&gt;medium.com/@toastui/release-news-toast-ui-grid-4-0-is-finally-here-585934ddf091&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Preactを使ったグリッドUIライブラリのTOASTUI Grid 4.0リリース。&lt;br&gt;
+ファイルサイズの削減、TypeScriptに書き換え、Column Virtual Scrollの対応など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nhn/tui.grid#features&quot; title=&quot;nhn/tui.grid: 🍞🔡 The Powerful Component to Display and Edit Data. Experience the Ultimate Data Transformer!&quot;&gt;nhn/tui.grid: 🍞🔡 The Powerful Component to Display and Edit Data. Experience the Ultimate Data Transformer!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;rfcs-0000-function-api-md-at-function-apis-vuejs-rfcs&quot;&gt;rfcs/0000-function-api.md at function-apis · vuejs/rfcs&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/vuejs/rfcs/blob/function-apis/active-rfcs/0000-function-api.md&quot; title=&quot;rfcs/0000-function-api.md at function-apis · vuejs/rfcs&quot;&gt;github.com/vuejs/rfcs/blob/function-apis/active-rfcs/0000-function-api.md&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proposal&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;VueにReact HooksのようなFunction-basedコンポーネントを導入するRFCが公開された。&lt;br&gt;
+Vue 2.x、3.xを対象に後方互換性を保った新しい機能として追加するProposal。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/rfcs/pull/42&quot; title=&quot;Function-based Component API by yyx990803 · Pull Request #42 · vuejs/rfcs&quot;&gt;Function-based Component API by yyx990803 · Pull Request #42 · vuejs/rfcs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/rfcs/issues/55&quot; title=&quot;Function-based component API (extended discussion) · Issue #55 · vuejs/rfcs&quot;&gt;Function-based component API (extended discussion) · Issue #55 · vuejs/rfcs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;why-we-prefer-css-custom-properties-to-sass-variables-codyhouse&quot;&gt;Why we prefer CSS Custom Properties to SASS variables | CodyHouse&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://codyhouse.co/blog/post/css-custom-properties-vs-sass-variables&quot; title=&quot;Why we prefer CSS Custom Properties to SASS variables | CodyHouse&quot;&gt;codyhouse.co/blog/post/css-custom-properties-vs-sass-variables&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Sassの変数とCSS Custom Propertiesの役割の違いについて。&lt;br&gt;
+CSS Custom Propertiesを使った場合の利点についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-axe-react-mercari-engineering-blog&quot;&gt;React-axe で React アプリケーションのアクセシビリティを向上させる - Mercari Engineering Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tech.mercari.com/entry/2019/06/18/190000&quot; title=&quot;React-axe で React アプリケーションのアクセシビリティを向上させる - Mercari Engineering Blog&quot;&gt;tech.mercari.com/entry/2019/06/18/190000&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React-axeでReactアプリケーションのアクセシビリティについてをチェックすることについて。&lt;br&gt;
+React-axeで自動的にチェックできる項目とできない項目についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;bringing-service-workers-to-google-search-web-dev&quot;&gt;Bringing service workers to Google Search  |  web.dev&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/google-search-sw/&quot; title=&quot;Bringing service workers to Google Search  |  web.dev&quot;&gt;web.dev/google-search-sw/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Google検索でのService Worker利用と工夫について。&lt;br&gt;
+Navigation Preloadでのオーバーヘッドの対応、SWのScopeの問題とルーティング、SWでクッキーが扱えない問題の対応、ユーザー毎にSWスクリプトの動的作成。&lt;br&gt;
+SWスクリプトの&lt;code&gt;Cache-Control&lt;/code&gt;の設定、アプリに合わせたSWの設定についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;array-prototype-flat-and-array-prototype-flatmap-v8&quot;&gt;Array.prototype.flat and Array.prototype.flatMap · V8&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://v8.dev/features/array-flat-flatmap&quot; title=&quot;Array.prototype.flat and Array.prototype.flatMap · V8&quot;&gt;v8.dev/features/array-flat-flatmap&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ES2019で入る予定のArray#flatとArray#flatMapの使い方について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;yankouskia-get-browser-lightweight-tool-to-identify-the-browser-mobile-desktop-detection&quot;&gt;yankouskia/get-browser: 💻 Lightweight tool to identify the browser (+ mobile/desktop detection)📱&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yankouskia/get-browser/&quot; title=&quot;yankouskia/get-browser: 💻 Lightweight tool to identify the browser (+ mobile/desktop detection)📱&quot;&gt;github.com/yankouskia/get-browser/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;UserAgentベースのブラウザ判定ライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;pirix-gh-ts-toolbelt-higher-type-safety-for-typescript&quot;&gt;pirix-gh/ts-toolbelt: 👷 Higher type safety for TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/pirix-gh/ts-toolbelt&quot; title=&quot;pirix-gh/ts-toolbelt: 👷 Higher type safety for TypeScript&quot;&gt;github.com/pirix-gh/ts-toolbelt&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScriptの型ユーティリティライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;daybrush-scenejs-scene-js-is-javascript-css-timeline-based-animation-library&quot;&gt;daybrush/scenejs: 🎬 Scene.js is JavaScript &amp;amp; CSS timeline-based animation library&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/daybrush/scenejs&quot; title=&quot;daybrush/scenejs: 🎬 Scene.js is JavaScript &amp;amp; CSS timeline-based animation library&quot;&gt;github.com/daybrush/scenejs&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;animation&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSS Animationベースのアニメーションライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;microsoft-just-the-task-library-that-just-works&quot;&gt;microsoft/just: The task library that just works&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/microsoft/just&quot; title=&quot;microsoft/just: The task library that just works&quot;&gt;github.com/microsoft/just&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Task Runner/Build library。&lt;br&gt;
+&lt;code&gt;just-task&lt;/code&gt;ではgulpのようにタスクを定義して実行できる。&lt;code&gt;just-scripts&lt;/code&gt;というTypeScript/Jest/webpackなどを簡単に扱えるビルドライブラリが用意されている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://microsoft.github.io/just/&quot; title=&quot;Just \_\_\_\_ · The task library that just works&quot;&gt;Just ____ · The task library that just works&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 25 Jun 2019 09:42:03 +0900</pubDate>
+        <link>https://jser.info/2019/06/25/eslint-6.0.0vue-function-apigoogleservice-worker/</link>
+        <guid isPermaLink="true">https://jser.info/2019/06/25/eslint-6.0.0vue-function-apigoogleservice-worker/</guid>
+        
+        <category>ESLint</category>
+        
+        <category>Vue</category>
+        
+        <category>ServiceWorker</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-06-17のJS: react-redux 7.1.0(Hooksサポート)、Pika CDN、State of CSS 2019</title>
@@ -2510,207 +2761,6 @@ mochaやjestなど各種テストフレームワークと連携して動作す�
         <category>CSP</category>
         
         <category>security</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-04-15のJS: jQuery 3.4.0(Sizzle)、ESLint 6.0.0 α、react-redux 7.0(Hooks)</title>
-        <description>&lt;p&gt;JSer.info #431 - jQuery 3.4.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://blog.jquery.com/2019/04/10/jquery-3-4-0-released/&quot;&gt;jQuery 3.4.0 Released | Official jQuery Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;jQuery経由で&lt;code&gt;script&lt;/code&gt;タグを作成すると&lt;code&gt;nonce&lt;/code&gt;属性や&lt;code&gt;nomodule&lt;/code&gt;属性が無視されていましたが、3.4.0ではこれが修正されています。&lt;br&gt;
-同時に&lt;code&gt;jQuery.extend&lt;/code&gt;にPrototype Pollutionの脆弱性があったのが修正されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jovi0608.hatenablog.com/entry/2018/10/19/083725&quot;&gt;Node.jsにおけるプロトタイプ汚染攻撃とは何か - ぼちぼち日記&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また、3.4.0ではjQueryのCSSセレクタエンジンである&lt;a href=&quot;https://github.com/jquery/sizzle&quot;&gt;Sizzle&lt;/a&gt;特有のセレクタが一部非推奨化されています。&lt;br&gt;
-&lt;code&gt;:first&lt;/code&gt;, &lt;code&gt;:last&lt;/code&gt;, &lt;code&gt;:eq&lt;/code&gt;, &lt;code&gt;:even&lt;/code&gt;, &lt;code&gt;:odd&lt;/code&gt;, &lt;code&gt;:lt&lt;/code&gt;, &lt;code&gt;:gt&lt;/code&gt;, &lt;code&gt;:nth&lt;/code&gt;が非推奨となります。&lt;br&gt;
-jQuery 4.0.0ではSizzleを削除する予定で、これらのセレクタは&lt;code&gt;querySelectorAll&lt;/code&gt;からは利用できない(標準化されていない)ため非推奨化されました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;ESLint 6.0.0 αがリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://eslint.org/blog/2019/04/eslint-v6.0.0-alpha.0-released&quot;&gt;ESLint v6.0.0-alpha.0 released - ESLint - Pluggable JavaScript linter&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://eslint.org/docs/6.0.0/user-guide/migrating-to-6.0.0&quot;&gt;Migrating to v6.0.0 - ESLint - Pluggable JavaScript linter&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/274347ff9473b26b575a&quot;&gt;ESLint v6.0.0 の変更点まとめ - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;インストールしたプラグインの読み込み方法の変更されたため、globalにESLintをインストールしていた場合の挙動が変わりました。&lt;br&gt;
-&lt;code&gt;eslint:recommended&lt;/code&gt;の更新、ルールのデフォルトの挙動を一部変更、設定ファイルのチェックがより厳密になるなどの変更が含まれています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;React-Redux 7.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/reduxjs/react-redux/releases/tag/v7.0.1&quot;&gt;Release v7.0.1 · reduxjs/react-redux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;connect&lt;/code&gt;が内部的に&lt;code&gt;React.memo&lt;/code&gt;とHooks APIを使って実装されなおされました。&lt;br&gt;
-これにより、React-Redux 7はReact 16.8.4以上に依存する形になっています。&lt;br&gt;
-また、Hooks APIを使った&lt;code&gt;useRedux()&lt;/code&gt;も今後実装していく予定のようです。&lt;/p&gt;
-
-&lt;p&gt;その他の変更として、Subscriptionの動作を変更、&lt;code&gt;batch&lt;/code&gt;APIの追加、&lt;code&gt;store&lt;/code&gt;をPropsとして渡せる機能をテストのために再実装などがおこなわれています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jquery-3-4-0-released-official-jquery-blog&quot;&gt;jQuery 3.4.0 Released | Official jQuery Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.jquery.com/2019/04/10/jquery-3-4-0-released/&quot; title=&quot;jQuery 3.4.0 Released | Official jQuery Blog&quot;&gt;blog.jquery.com/2019/04/10/jquery-3-4-0-released/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;jQuery 3.4.0リリース。&lt;br&gt;
-scriptタグの&lt;code&gt;nomodule&lt;/code&gt;と&lt;code&gt;nonce&lt;/code&gt;をサポート、&lt;code&gt;Object.prototype&lt;/code&gt; pollutionの脆弱性を修正、Sizzleが提供するCSSセレクタを非推奨に。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ember-js-ember-3-9-released&quot;&gt;Ember.js - Ember 3.9 Released&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/04/10/ember-3-9-released.html&quot; title=&quot;Ember.js - Ember 3.9 Released&quot;&gt;blog.emberjs.com/2019/04/10/ember-3-9-released.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Ember 3.9リリース。&lt;br&gt;
-jQueryをデフォルトで外すために&lt;code&gt;Ember.$()&lt;/code&gt;など非推奨化、&lt;code&gt;.volatile()&lt;/code&gt;と&lt;code&gt;.property()&lt;/code&gt;ではなくネイティブのgetter/setterを利用を推奨するようになるなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/emberjs/ember.js/releases/tag/v3.9.0&quot; title=&quot;Release v3.9.0 · emberjs/ember.js&quot;&gt;Release v3.9.0 · emberjs/ember.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://deprecations.emberjs.com/v3.x/&quot; title=&quot;Ember.js - Deprecations&quot;&gt;Ember.js - Deprecations&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;eslint-v6-0-0-alpha-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v6.0.0-alpha.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2019/04/eslint-v6.0.0-alpha.0-released&quot; title=&quot;ESLint v6.0.0-alpha.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2019/04/eslint-v6.0.0-alpha.0-released&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ESLint 6.0.0アルファリリース。&lt;br&gt;
-インストールしたプラグインの読み込み方法の変更、&lt;code&gt;eslint:recommended&lt;/code&gt;の更新、ルールのデフォルトの挙動を一部変更など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/274347ff9473b26b575a&quot; title=&quot;ESLint v6.0.0 の変更点まとめ - Qiita&quot;&gt;ESLint v6.0.0 の変更点まとめ - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v11-14-0-current-node-js&quot;&gt;Node v11.14.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.14.0/&quot; title=&quot;Node v11.14.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v11.14.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 11.14.0リリース。&lt;br&gt;
-&lt;code&gt;fs.promises&lt;/code&gt;がStableに、&lt;code&gt;readline&lt;/code&gt;の&lt;code&gt;Symbol.asyncIterator&lt;/code&gt;対応がStableになるなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v7-0-1-reduxjs-react-redux&quot;&gt;Release v7.0.1 · reduxjs/react-redux&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/reduxjs/react-redux/releases/tag/v7.0.1&quot; title=&quot;Release v7.0.1 · reduxjs/react-redux&quot;&gt;github.com/reduxjs/react-redux/releases/tag/v7.0.1&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React-Redux 7.0リリース。 &lt;code&gt;connect&lt;/code&gt;が&lt;code&gt;React.memo&lt;/code&gt;とHooks　APIを使うように、Subscriptionの動作を変更、&lt;code&gt;batch&lt;/code&gt;APIの追加、&lt;code&gt;store&lt;/code&gt;をPropsとして渡せる機能をテストのために再実装など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;prettier-1-17-more-quotes-options-and-support-for-shared-configs-prettier&quot;&gt;Prettier 1.17: More quotes options and support for shared configs · Prettier&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://prettier.io/blog/2019/04/12/1.17.0.html&quot; title=&quot;Prettier 1.17: More quotes options and support for shared configs · Prettier&quot;&gt;prettier.io/blog/2019/04/12/1.17.0.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Prettier 1.17リリース。&lt;br&gt;
-オブジェクトのquote設定をする&lt;code&gt;--quote-props&lt;/code&gt;の追加、shared configのサポート、TypeScript 3.4の&lt;code&gt;readonly&lt;/code&gt;修飾子をサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;form-validation-in-under-an-hour-with-vuelidate-css-tricks&quot;&gt;Form Validation in Under an Hour with Vuelidate | CSS-Tricks&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://css-tricks.com/form-validation-in-under-an-hour-with-vuelidate/&quot; title=&quot;Form Validation in Under an Hour with Vuelidate | CSS-Tricks&quot;&gt;css-tricks.com/form-validation-in-under-an-hour-with-vuelidate/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;VueのフォームバリデーターライブラリのVuelidateについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;catsnake11-webpack-ops-webpack-bundle-visualization-optimization-config-tool&quot;&gt;CatSnake11/Webpack-Ops: 📁 Webpack bundle visualization // optimization // config tool&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/CatSnake11/Webpack-Ops&quot; title=&quot;CatSnake11/Webpack-Ops: 📁 Webpack bundle visualization // optimization // config tool&quot;&gt;github.com/CatSnake11/Webpack-Ops&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpackダッシュボードツール。&lt;br&gt;
-bundle結果のビジュアライズ、最適化設定をテストして設定ファイルの生成などを行える&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;commenthol-date-holidays-worldwide-holidays&quot;&gt;commenthol/date-holidays: worldwide holidays&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/commenthol/date-holidays&quot; title=&quot;commenthol/date-holidays: worldwide holidays&quot;&gt;github.com/commenthol/date-holidays&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;祝日判定ライブラリ。&lt;br&gt;
-各国ごとの祝日の定義を持っている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;niklasvh-html2canvas-screenshots-with-javascript&quot;&gt;niklasvh/html2canvas: Screenshots with JavaScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/niklasvh/html2canvas&quot; title=&quot;niklasvh/html2canvas: Screenshots with JavaScript&quot;&gt;github.com/niklasvh/html2canvas&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;HTMLをCanvasに描画してHTMLのスクリーンショットを撮るJavaScriptライブラリ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;seek-oss-playroom-design-with-jsx-powered-by-your-own-component-library&quot;&gt;seek-oss/playroom: Design with JSX, powered by your own component library.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/seek-oss/playroom&quot; title=&quot;seek-oss/playroom: Design with JSX, powered by your own component library.&quot;&gt;github.com/seek-oss/playroom&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JSX/Reactのコンポーネントプレイグラウンドツール。&lt;br&gt;
-さまざまなViewportでプレビューしながらコンポーネントのプロトタイピングができる&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;packem-packem-a-precompiled-javascript-module-bundler&quot;&gt;packem/packem: 📦⚡ A precompiled JavaScript module bundler&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/packem/packem&quot; title=&quot;packem/packem: 📦⚡ A precompiled JavaScript module bundler&quot;&gt;github.com/packem/packem&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Rust&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Rust製のJavaScriptモジュールBundler。&lt;br&gt;
-JavaScriptプラグインを書いて拡張もできる。&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Mon, 15 Apr 2019 09:37:33 +0900</pubDate>
-        <link>https://jser.info/2019/04/15/jquery-3.4.0sizzleeslint-6.0.0-areact-redux-7.0hooks/</link>
-        <guid isPermaLink="true">https://jser.info/2019/04/15/jquery-3.4.0sizzleeslint-6.0.0-areact-redux-7.0hooks/</guid>
-        
-        <category>jquery</category>
-        
-        <category>ESLint</category>
-        
-        <category>redux</category>
         
         
         <category>JSer</category>

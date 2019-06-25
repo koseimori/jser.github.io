@@ -1,0 +1,394 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-06-25のJS: ESLint 6.0.0、Vue Function API、Google検索とService Worker - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/06/25/eslint-6.0.0vue-function-apigoogleservice-worker/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-06-25のJS: ESLint 6.0.0、Vue Function API、Google検索とService Worker"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-06-25のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://v8.dev/blog/v8-release-76">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">V8 release v7.6 · V8</amp-fit-text>
+            <p class="item-contents">V8 7.6リリース。
+<code>JSON.parse</code>、<code>Object.freeze</code>された配列のパフォーマンス改善。
+ES Proposalの<code>Promise.allSettled</code>の実装、<code>BigInt</code>と<code>Intl.DateTimeFormat</code>の対応改善など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 release v7.6 · V8" href="https://v8.dev/blog/v8-release-76" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.npmjs.org/post/185680936500/protecting-package-publishers-npm-token-security">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">The npm Blog — Protecting Package Publishers: npm Token Security...</amp-fit-text>
+            <p class="item-contents">GitHubにnpmのtokenが誤って公開された場合に自動的にrevokeされるようになった。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The npm Blog — Protecting Package Publishers: npm Token Security..." href="https://blog.npmjs.org/post/185680936500/protecting-package-publishers-npm-token-security" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blogs.windows.com/msedgedev/2019/06/19/introducing-microsoft-edge-preview-builds-for-windows-7-windows-8-and-windows-8-1/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Introducing Microsoft Edge preview builds for Windows 7, Windows 8, and Windows 8.1 - Microsoft Edge Blog</amp-fit-text>
+            <p class="item-contents">Chromium版MSEdgeのプレビュービルドがWindows 7、8、8.1に対応した。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introducing Microsoft Edge preview builds for Windows 7, Windows 8, and Windows 8.1 - Microsoft Edge Blog" href="https://blogs.windows.com/msedgedev/2019/06/19/introducing-microsoft-edge-preview-builds-for-windows-7-windows-8-and-windows-8-1/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://eslint.org/blog/2019/06/eslint-v6.0.0-released">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ESLint v6.0.0 released -</amp-fit-text>
+            <p class="item-contents">ESLint 6.0.0リリース。
+<code>eslint:recommended</code>のルール更新、プラグインの読み込み時の動作変更、不正な設定値のチェックの厳密化、正規表現をオプション値として受け付ける場合に<code>u</code>フラグをデフォルトとするように変更など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ESLint v6.0.0 released -" href="https://eslint.org/blog/2019/06/eslint-v6.0.0-released" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/@toastui/release-news-toast-ui-grid-4-0-is-finally-here-585934ddf091">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">\[Release News\] TOAST UI Grid 4.0 is Finally Here! - TOAST UI - Medium</amp-fit-text>
+            <p class="item-contents">Preactを使ったグリッドUIライブラリのTOASTUI Grid 4.0リリース。
+ファイルサイズの削減、TypeScriptに書き換え、Column Virtual Scrollの対応など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="\[Release News\] TOAST UI Grid 4.0 is Finally Here! - TOAST UI - Medium" href="https://medium.com/@toastui/release-news-toast-ui-grid-4-0-is-finally-here-585934ddf091" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/vuejs/rfcs/blob/function-apis/active-rfcs/0000-function-api.md">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">rfcs/0000-function-api.md at function-apis · vuejs/rfcs</amp-fit-text>
+            <p class="item-contents">VueにReact HooksのようなFunction-basedコンポーネントを導入するRFCが公開された。
+Vue 2.x、3.xを対象に後方互換性を保った新しい機能として追加するProposal。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="rfcs/0000-function-api.md at function-apis · vuejs/rfcs" href="https://github.com/vuejs/rfcs/blob/function-apis/active-rfcs/0000-function-api.md" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://codyhouse.co/blog/post/css-custom-properties-vs-sass-variables">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Why we prefer CSS Custom Properties to SASS variables | CodyHouse</amp-fit-text>
+            <p class="item-contents">Sassの変数とCSS Custom Propertiesの役割の違いについて。
+CSS Custom Propertiesを使った場合の利点についてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Why we prefer CSS Custom Properties to SASS variables | CodyHouse" href="https://codyhouse.co/blog/post/css-custom-properties-vs-sass-variables" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://tech.mercari.com/entry/2019/06/18/190000">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React-axe で React アプリケーションのアクセシビリティを向上させる - Mercari Engineering Blog</amp-fit-text>
+            <p class="item-contents">React-axeでReactアプリケーションのアクセシビリティについてをチェックすることについて。
+React-axeで自動的にチェックできる項目とできない項目についてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React-axe で React アプリケーションのアクセシビリティを向上させる - Mercari Engineering Blog" href="https://tech.mercari.com/entry/2019/06/18/190000" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://web.dev/google-search-sw/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Bringing service workers to Google Search  |  web.dev</amp-fit-text>
+            <p class="item-contents">Google検索でのService Worker利用と工夫について。
+Navigation Preloadでのオーバーヘッドの対応、SWのScopeの問題とルーティング、SWでクッキーが扱えない問題の対応、ユーザー毎にSWスクリプトの動的作成。
+SWスクリプトの<code>Cache-Control</code>の設定、アプリに合わせたSWの設定についてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Bringing service workers to Google Search  |  web.dev" href="https://web.dev/google-search-sw/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://v8.dev/features/array-flat-flatmap">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Array.prototype.flat and Array.prototype.flatMap · V8</amp-fit-text>
+            <p class="item-contents">ES2019で入る予定のArray#flatとArray#flatMapの使い方について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Array.prototype.flat and Array.prototype.flatMap · V8" href="https://v8.dev/features/array-flat-flatmap" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/yankouskia/get-browser/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">yankouskia/get-browser: 💻 Lightweight tool to identify the browser (+ mobile/desktop detection)📱</amp-fit-text>
+            <p class="item-contents">UserAgentベースのブラウザ判定ライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="yankouskia/get-browser: 💻 Lightweight tool to identify the browser (+ mobile/desktop detection)📱" href="https://github.com/yankouskia/get-browser/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/pirix-gh/ts-toolbelt">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">pirix-gh/ts-toolbelt: 👷 Higher type safety for TypeScript</amp-fit-text>
+            <p class="item-contents">TypeScriptの型ユーティリティライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="pirix-gh/ts-toolbelt: 👷 Higher type safety for TypeScript" href="https://github.com/pirix-gh/ts-toolbelt" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/daybrush/scenejs">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">daybrush/scenejs: 🎬 Scene.js is JavaScript &amp; CSS timeline-based animation library</amp-fit-text>
+            <p class="item-contents">CSS Animationベースのアニメーションライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="daybrush/scenejs: 🎬 Scene.js is JavaScript &amp; CSS timeline-based animation library" href="https://github.com/daybrush/scenejs" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/microsoft/just">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">microsoft/just: The task library that just works</amp-fit-text>
+            <p class="item-contents">Task Runner/Build library。
+<code>just-task</code>ではgulpのようにタスクを定義して実行できる。<code>just-scripts</code>というTypeScript/Jest/webpackなどを簡単に扱えるビルドライブラリが用意されている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="microsoft/just: The task library that just works" href="https://github.com/microsoft/just" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
