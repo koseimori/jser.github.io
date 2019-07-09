@@ -5,9 +5,221 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 05 Jul 2019 21:13:09 +0900</pubDate>
-    <lastBuildDate>Fri, 05 Jul 2019 21:13:09 +0900</lastBuildDate>
+    <pubDate>Tue, 09 Jul 2019 12:51:50 +0900</pubDate>
+    <lastBuildDate>Tue, 09 Jul 2019 12:51:50 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-07-09のJS: Babel 7.5.0(Dynamic Import)、Next.js 9(Dynamic routing)、React Native 0.60</title>
+        <description>&lt;p&gt;JSer.info #443 - Babel 7.5.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/babel/babel/releases/tag/v7.5.0&quot;&gt;Release v7.5.0 · babel/babel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://babeljs.io/blog/2019/07/03/7.5.0&quot;&gt;7.5.0 Released: dynamic import and F# pipelines · Babel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;現在&lt;a href=&quot;https://github.com/tc39/proposals/blob/master/stage-1-proposals.md&quot;&gt;Stage 1 Proposals&lt;/a&gt;である&lt;a href=&quot;https://github.com/tc39/proposal-pipeline-operator&quot;&gt;Pipeline Operator&lt;/a&gt;の変換がサポートされています。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rwaldron/tc39-notes/tree/master/meetings/2019-06&quot;&gt;2019年6月のTC39 Meeting&lt;/a&gt;でDynamic Importが&lt;a href=&quot;https://github.com/tc39/proposals/blob/master/finished-proposals.md&quot;&gt;Stage 4&lt;/a&gt;となりました。（ES2020にDynamic Importが入る）&lt;br&gt;
+そのため、Babelでも&lt;a href=&quot;https://babeljs.io/docs/en/babel-preset-env&quot;&gt;@babel/preset-env&lt;/a&gt;がDynamic Importをデフォルトでサポートするようになりました。&lt;br&gt;
+（今までは別途プラグインが必要になっていた）&lt;/p&gt;
+
+&lt;p&gt;また、&lt;code&gt;babel/plugin-transform-typescript&lt;/code&gt;が&lt;code&gt;allowNamespaces&lt;/code&gt;というオプションでTypeScriptの&lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/namespaces.html&quot;&gt;namespaces&lt;/a&gt;を試験的にサポートしています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Reactを使ったフレームワークであるNext.js 9がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nextjs.org/blog/next-9&quot;&gt;Blog - Next.js 9 | Next.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Next.js 6で&lt;code&gt;@zeit/next-typescript&lt;/code&gt;を使ったTypeScriptが入っていましたが、Next.js 9でTypeScriptのビルトインサポートしています。&lt;br&gt;
+また、&lt;a href=&quot;https://www.npmjs.com/package/path-to-regexp&quot;&gt;path-to-regexp&lt;/a&gt;形式でDynamically Routingのサポート、&lt;code&gt;api/&lt;/code&gt;に置いたファイルがAPIになるAPI Routesのサポートしています。&lt;br&gt;
+その他にもページごとのconfigを設定できるようになり、ビルドの最適化などが含まれています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v7-5-0-babel-babel&quot;&gt;Release v7.5.0 · babel/babel&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/babel/babel/releases/tag/v7.5.0&quot; title=&quot;Release v7.5.0 · babel/babel&quot;&gt;github.com/babel/babel/releases/tag/v7.5.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Babel 7.5.0リリース。&lt;br&gt;
+dynamic importのサポートを&lt;code&gt;@babel/preset-env&lt;/code&gt;に追加、&lt;br&gt;
+&lt;code&gt;babel-plugin-transform-typescript&lt;/code&gt;がnamespaceをサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://babeljs.io/blog/2019/07/03/7.5.0&quot; title=&quot;7.5.0 Released: dynamic import and F# pipelines · Babel&quot;&gt;7.5.0 Released: dynamic import and F# pipelines · Babel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-0-7-0-markedjs-marked&quot;&gt;Release 0.7.0 · markedjs/marked&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/markedjs/marked/releases/tag/v0.7.0&quot; title=&quot;Release 0.7.0 · markedjs/marked&quot;&gt;github.com/markedjs/marked/releases/tag/v0.7.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Markdown&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;marked 0.7.0リリース。&lt;br&gt;
+XSS脆弱性を修正、&lt;code&gt;sanitize&lt;/code&gt;と&lt;code&gt;sanitizer&lt;/code&gt;オプションを非推奨化しDOMPurifyなどの外部ライブラリの利用を推奨するように変更。&lt;br&gt;
+TableサポートをGFMオプションに移動など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-react-native-0-60-react-native&quot;&gt;Announcing React Native 0.60 · React Native&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://facebook.github.io/react-native/blog/2019/07/03/version-60&quot; title=&quot;Announcing React Native 0.60 · React Native&quot;&gt;facebook.github.io/react-native/blog/2019/07/03/version-60&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;iOS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Android&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Native 0.60リリース。&lt;br&gt;
+アクセシビリティの改善、スタート画面の変更、AndroidXのサポート、CocoaPodsの対応改善、コアからコミュニティに移動した&lt;code&gt;NetInfo&lt;/code&gt;、&lt;code&gt;WebView&lt;/code&gt;、&lt;code&gt;Geolocation&lt;/code&gt;を削除など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/react-native-community/releases/blob/master/CHANGELOG.md#060&quot; title=&quot;releases/CHANGELOG.md at master · react-native-community/releases&quot;&gt;releases/CHANGELOG.md at master · react-native-community/releases&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;blog-next-js-9-next-js&quot;&gt;Blog - Next.js 9 | Next.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nextjs.org/blog/next-9&quot; title=&quot;Blog - Next.js 9 | Next.js&quot;&gt;nextjs.org/blog/next-9&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Next.js 9リリース。&lt;br&gt;
+TypeScriptのビルトインサポート、Next.jsのコアをTypeScriptで書き直し、Dynamically Routingのサポート、&lt;code&gt;api/&lt;/code&gt;でAPI Routesのサポート。&lt;br&gt;
+また、ページごとのconfigをサポート、ビルドの最適化など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v12-6-0-current-node-js&quot;&gt;Node v12.6.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.6.0/&quot; title=&quot;Node v12.6.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.6.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 12.6.0リリース。&lt;br&gt;
+&lt;code&gt;child_process.exec&lt;/code&gt;/&lt;code&gt;execFile&lt;/code&gt;の返すPromiseオブジェクトが&lt;code&gt;child&lt;/code&gt;プロパティを持つように、&lt;code&gt;process.resourceUsage()&lt;/code&gt;の追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;automatically-detect-memory-leaks-with-puppeteer-article-by-christoph-guttandin-media-codings&quot;&gt;Automatically detect memory leaks with Puppeteer - Article by Christoph Guttandin - Media Codings&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://media-codings.com/articles/automatically-detect-memory-leaks-with-puppeteer&quot; title=&quot;Automatically detect memory leaks with Puppeteer - Article by Christoph Guttandin - Media Codings&quot;&gt;media-codings.com/articles/automatically-detect-memory-leaks-with-puppeteer&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Puppeteerを使ってウェブページのメモリリークテストを書く方法について。&lt;br&gt;
+&lt;code&gt;page.queryObjects&lt;/code&gt;を使って処理前後のHeapにあるオブジェクトの数を比較することでテストする方法について&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageevaluatehandlepagefunction-args&quot; title=&quot;page.evaluateHandle(pageFunction\[, ...args\])&quot;&gt;page.evaluateHandle(pageFunction[, ...args])&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagequeryobjectsprototypehandle&quot; title=&quot;page.queryObjects(prototypeHandle)&quot;&gt;page.queryObjects(prototypeHandle)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/chrisguttandin/standardized-audio-context/blob/master/test/integration/memory.js&quot; title=&quot;standardized-audio-context/memory.js at master · chrisguttandin/standardized-audio-context&quot;&gt;standardized-audio-context/memory.js at master · chrisguttandin/standardized-audio-context&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;request-destination-blog&quot;&gt;Request.destinationでリソースの種類別にキャッシュ戦略 | フロントエンドBlog | ミツエーリンクス&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.mitsue.co.jp/knowledge/blog/frontend/201907/05_0944.html&quot; title=&quot;Request.destinationでリソースの種類別にキャッシュ戦略 | フロントエンドBlog | ミツエーリンクス&quot;&gt;www.mitsue.co.jp/knowledge/blog/frontend/201907/05_0944.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Fetch&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Fetch APIの&lt;code&gt;Request.destination&lt;/code&gt;について。&lt;br&gt;
+Service Workerで取得先のリソースの種類に応じたキャッシュの切り分けなどについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;using-slots-in-vue-js-smashing-magazine&quot;&gt;Using Slots In Vue.js — Smashing Magazine&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2019/07/using-slots-vue-js/&quot; title=&quot;Using Slots In Vue.js — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2019/07/using-slots-vue-js/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;VueのSlotについての記事。&lt;br&gt;
+&lt;code&gt;&amp;lt;slot&amp;gt;&lt;/code&gt;の使い方、&lt;code&gt;v-slot&lt;/code&gt;ディレクトティブ、Scoped Slotについて。&lt;br&gt;
+また再利用可能なコンポーネントの書き方についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;fetch-api-building-a-fetch-polyfill-from-scratch-for-fun-and-promise&quot;&gt;Fetch API: Building a Fetch Polyfill From Scratch (For Fun and Promise)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.valentinog.com/blog/fetch-api/&quot; title=&quot;Fetch API: Building a Fetch Polyfill From Scratch (For Fun and Promise)&quot;&gt;www.valentinog.com/blog/fetch-api/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Fetch&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Fetch APIの簡単なPolyfillを書きながら、Fetch APIとPromiseについて学ぶ記事。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;css-custom-properties-in-the-cascade-smashing-magazine&quot;&gt;CSS Custom Properties In The Cascade — Smashing Magazine&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2019/07/css-custom-properties-cascade/&quot; title=&quot;CSS Custom Properties In The Cascade — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2019/07/css-custom-properties-cascade/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSS Custom Propertiesについての記事。&lt;br&gt;
+コンポーネント側の変数の定義とカスケーディング、コンポーネントとCSS Custom Propertiesなど応用的な内容&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;tilk-digitaljs-teaching-focused-digital-circuit-simulator&quot;&gt;tilk/digitaljs: Teaching-focused digital circuit simulator&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/tilk/digitaljs&quot; title=&quot;tilk/digitaljs: Teaching-focused digital circuit simulator&quot;&gt;github.com/tilk/digitaljs&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ブラウザで動作する教育用の電子回路シミュレータ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jsdoctypeparser-jsdoctypeparser-parser-module-for-jsdoc-or-closure-compiler-format-type-annotation&quot;&gt;jsdoctypeparser/jsdoctypeparser: Parser module for JsDoc or Closure Compiler format type-annotation.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jsdoctypeparser/jsdoctypeparser&quot; title=&quot;jsdoctypeparser/jsdoctypeparser: Parser module for JsDoc or Closure Compiler format type-annotation.&quot;&gt;github.com/jsdoctypeparser/jsdoctypeparser&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JSDoc&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JSDocパーサライブラリ。&lt;br&gt;
+Closure Compiler形式、TypeScript形式などに対応していていて、JSDOcをパースしてASTを出力する。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;greggman-twgl-js-a-tiny-webgl-helper-library&quot;&gt;greggman/twgl.js: A Tiny WebGL helper Library&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/greggman/twgl.js&quot; title=&quot;greggman/twgl.js: A Tiny WebGL helper Library&quot;&gt;github.com/greggman/twgl.js&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebGLヘルパーライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;frenic-csstype-strict-typescript-and-flow-types-for-style-based-on-mdn-data&quot;&gt;frenic/csstype: Strict TypeScript and Flow types for style based on MDN data&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/frenic/csstype&quot; title=&quot;frenic/csstype: Strict TypeScript and Flow types for style based on MDN data&quot;&gt;github.com/frenic/csstype&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;MDNのデータをつかいCSSプロパティのTypeScript型定義を生成したライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 09 Jul 2019 12:28:23 +0900</pubDate>
+        <link>https://jser.info/2019/07/09/babel-7.5.0dynamic-importnext.js-9dynamic-routingreact-native-0.60/</link>
+        <guid isPermaLink="true">https://jser.info/2019/07/09/babel-7.5.0dynamic-importnext.js-9dynamic-routingreact-native-0.60/</guid>
+        
+        <category>Babel</category>
+        
+        <category>Next.js</category>
+        
+        <category>ReactNative</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-07-04のJS: npm 6.9.2、ECMAScript 2019リリース、Dark Mode</title>
@@ -2427,293 +2639,6 @@ React NativeでネイティブなWindowsアプリ(UWP)を作成するフレー�
         <category>WebGL</category>
         
         <category>gulp</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-04-30のJS: Node.js 12.0.0(Node.js 6.xはEOL)、Electron 5.0.0、Pixi.js 5.0.0(WebGL by default)</title>
-        <description>&lt;p&gt;JSer.info #433 - Node.jsの新しいメジャーバージョンである12.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.0.0/&quot;&gt;Node v12.0.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/introducing-node-js-12-76c41a1b3f3f&quot; title=&quot;Introducing Node.js 12 – Node.js Foundation – Medium&quot;&gt;Introducing Node.js 12 – Node.js Foundation – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;V8 7.4へアップデート、TLS 1.3のサポート、http parserが&lt;code&gt;llhttp&lt;/code&gt;に変更、&lt;code&gt;os.type()&lt;/code&gt;の追加などが行われています。&lt;br&gt;
-また、Node.js 11.xで追加された試験的な機能としてWorker Threads、Diagnostic Reports、Heap Dumps、ES Modulesのサポート、&lt;code&gt;fs.promises&lt;/code&gt;のStable化なども含まれています。&lt;/p&gt;
-
-&lt;p&gt;Experimentalな機能については次の記事を参照してみると良さそうです。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodesource.com/blog/experimental-features-in-node.js&quot;&gt;Update on Experimental Features in Node.js - NodeSource&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;12.0.0で見つかった&lt;code&gt;new Date().toLocaleString()&lt;/code&gt;の問題と令和をサポートしたNode v12.1.0も既にリリースされています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.1.0/&quot;&gt;Node v12.1.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/node/issues/27379&quot;&gt;Node.js crash with a fatal error on Date#toLocaleString · Issue #27379 · nodejs/node&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Node.js 12.xがLTS(Long Term Support)となるのは2019-10-22からの予定です。&lt;br&gt;
-また、Node.js 6.xは2019-04-30でEOL(End-of-life)となったため、現在のLTSはNode.js 8.xと10.xとなります。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/Release&quot;&gt;nodejs/Release: Node.js Foundation Release Working Group&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Electron 5.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/electron/electron/releases/tag/v5.0.0&quot;&gt;Release electron v5.0.0 · electron/electron&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://electronjs.org/blog/electron-5-0&quot;&gt;Electron 5.0.0 | Electron Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Chromium 73、Node 12.0.0にアップデートされています。&lt;br&gt;
-Cookies APIなどさまざまなAPIがPromise対応、BrowserWindowで複数のBrowserViewをサポート、iframeに対してnode integrationの設定ができるようになるといった変更が含まれています。&lt;/p&gt;
-
-&lt;p&gt;また破壊的な変更として、パッケージアプリはデフォルトでアプリケーションメニューが作成され&lt;code&gt;window-all-closed&lt;/code&gt;のハンドリングが行われるようになっています。&lt;br&gt;
-また、セキュリティ的な理由から&lt;code&gt;nodeIntegration&lt;/code&gt;や&lt;code&gt;webViewTag&lt;/code&gt;はデフォルトで&lt;code&gt;false&lt;/code&gt;に変更されています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;2DグラフィックライブラリであるPixiJS 5.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/pixijs/pixi.js/releases/tag/v5.0.0&quot;&gt;Release v5.0.0 · pixijs/pixi.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/goodboy-digital/pixijs-v5-lands-5e112d84e510&quot;&gt;PixiJS v5 lands – Goodboy Digital – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;今まではCanvasを使った&lt;code&gt;CanvasRender&lt;/code&gt;がデフォルトでしたが、5.0.0からはWebGLがデフォルトのレンダーに変更されています。&lt;br&gt;
-これにあわせて&lt;code&gt;CanvasRender&lt;/code&gt;は&lt;code&gt;pixi.js&lt;/code&gt;パッケージからは外され、&lt;code&gt;CanvasRender&lt;/code&gt;を利用する場合は&lt;code&gt;pixi.js-legacy&lt;/code&gt;パッケージを利用するように変更されています。&lt;/p&gt;
-
-&lt;p&gt;また、今まではglobalに&lt;code&gt;PIXI&lt;/code&gt;オブジェクトを自動で作成していましたが、5.0.0から自動的には作らないように修正されました。&lt;br&gt;
-その他にもRendererのシグネチャの変更、&lt;code&gt;PIXI.Mesh&lt;/code&gt;の追加、Graphics Holesの対応改善などが行われています。&lt;/p&gt;
-
-&lt;p&gt;マイグレーションガイドも次のページに公開されているので合わせて読むとよさそうです。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/pixijs/pixi.js/wiki/v5-Migration-Guide&quot;&gt;v5 Migration Guide · pixijs/pixi.js Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v3-0-0-facebook-create-react-app&quot;&gt;Release v3.0.0 · facebook/create-react-app&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/create-react-app/releases/tag/v3.0.0&quot; title=&quot;Release v3.0.0 · facebook/create-react-app&quot;&gt;github.com/facebook/create-react-app/releases/tag/v3.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;create-react-app v3.0.0リリース。&lt;br&gt;
-Jest 24、React Hooks、ESLintでTypeScriptをLintするように、&lt;code&gt;tsconfig.json&lt;/code&gt;の&lt;code&gt;baseUrl&lt;/code&gt;をサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-electron-v5-0-0-electron-electron&quot;&gt;Release electron v5.0.0 · electron/electron&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/electron/electron/releases/tag/v5.0.0&quot; title=&quot;Release electron v5.0.0 · electron/electron&quot;&gt;github.com/electron/electron/releases/tag/v5.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Electron v5.0.0リリース。&lt;br&gt;
-Chromium 73、Node 12.0.0にアップデート。&lt;br&gt;
-&lt;code&gt;ELECTRON_DISABLE_SANDBOX&lt;/code&gt;でsandboxの無効化に対応。&lt;br&gt;
-Cookies APIのPromise対応、BrowserWindowで複数のBrowserViewをサポート、iframeに対してnode integrationの設定ができるようになるなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-74-web-google-developers&quot;&gt;New in Chrome 74  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/04/nic74&quot; title=&quot;New in Chrome 74  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/04/nic74&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 74の変更点について。&lt;br&gt;
-private class fieldsの対応、&lt;code&gt;prefers-reduced-motion&lt;/code&gt;のサポート、feature policy apiのサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v12-0-0-current-node-js&quot;&gt;Node v12.0.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.0.0/&quot; title=&quot;Node v12.0.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.0.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 12.0.0リリース。&lt;br&gt;
-V8 7.4へアップデート、TLS 1.3のサポート、http parserが&lt;code&gt;llhttp&lt;/code&gt;に変更、&lt;code&gt;os.type()&lt;/code&gt;の追加など。&lt;br&gt;
-試験的な機能としてWorker Threads、Diagnostic Reports、Heap Dumps、ES Modulesのサポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/introducing-node-js-12-76c41a1b3f3f&quot; title=&quot;Introducing Node.js 12 – Node.js Foundation – Medium&quot;&gt;Introducing Node.js 12 – Node.js Foundation – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://2ality.com/2019/04/nodejs-esm-impl.html&quot; title=&quot;The new ECMAScript module support in Node.js 12&quot;&gt;The new ECMAScript module support in Node.js 12&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v1-15-0-googlechrome-puppeteer&quot;&gt;Release v1.15.0 · GoogleChrome/puppeteer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/puppeteer/releases/tag/v1.15.0&quot; title=&quot;Release v1.15.0 · GoogleChrome/puppeteer&quot;&gt;github.com/GoogleChrome/puppeteer/releases/tag/v1.15.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Puppeteer 1.15.0リリース。&lt;br&gt;
-Chromium 75.0.3765.0へアップデート、&lt;code&gt;puppeteer.devices&lt;/code&gt;と&lt;code&gt;puppeteer.errors&lt;/code&gt;の追加、リクエストInterceptionの問題を修正など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;documentation-changelog-md-at-master-documentationjs-documentation&quot;&gt;documentation/CHANGELOG.md at master · documentationjs/documentation&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/documentationjs/documentation/blob/master/CHANGELOG.md#1010-2019-04-25&quot; title=&quot;documentation/CHANGELOG.md at master · documentationjs/documentation&quot;&gt;github.com/documentationjs/documentation/blob/master/CHANGELOG.md#1010-2019-04-25&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;コードからドキュメントを生成するツールであるdocumentationjs 10.1.0リリース。&lt;br&gt;
-TypeScriptをサポート&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;color-accessibility-tools-and-resources-to-help-you-design-inclusive-products-by-st-phanie-walter-ux-designer-mobile-expert&quot;&gt;Color accessibility: tools and resources to help you design inclusive products, by Stéphanie Walter - UX designer &amp;amp; Mobile Expert.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://stephaniewalter.design/blog/color-accessibility-tools-resources-to-design-inclusive-products/&quot; title=&quot;Color accessibility: tools and resources to help you design inclusive products, by Stéphanie Walter - UX designer &amp;amp; Mobile Expert.&quot;&gt;stephaniewalter.design/blog/color-accessibility-tools-resources-to-design-inclusive-products/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;アクセシビリティとカラー、コントラスト関係のツールやリソースのまとめ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;comparing-jvm-alternatives-to-javascript&quot;&gt;Comparing JVM alternatives to JavaScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://renato.athaydes.com/posts/comparing-jvm-alternatives-to-js.html&quot; title=&quot;Comparing JVM alternatives to JavaScript&quot;&gt;renato.athaydes.com/posts/comparing-jvm-alternatives-to-js.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Java&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaからJavaScriptに変換するツールの比較記事。&lt;br&gt;
-パフォーマンス、コードファイルサイズ、コード行数について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;addyosmani-com-native-image-lazy-loading-for-the-web&quot;&gt;AddyOsmani.com - Native image lazy-loading for the web!&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://addyosmani.com/blog/lazy-loading/&quot; title=&quot;AddyOsmani.com - Native image lazy-loading for the web!&quot;&gt;addyosmani.com/blog/lazy-loading/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;画像やiframeの遅延ロードなどを行う&lt;code&gt;loading&lt;/code&gt;属性について。&lt;br&gt;
-属性値として&lt;code&gt;lazy&lt;/code&gt;、&lt;code&gt;eager&lt;/code&gt;、&lt;code&gt;auto&lt;/code&gt;が設定できることやFeature Detection、Fallbackの書き方についてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;faast-js-serverless-batch-computing-made-simple&quot;&gt;faast.js · Serverless batch computing made simple&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://faastjs.org/&quot; title=&quot;faast.js · Serverless batch computing made simple&quot;&gt;faastjs.org/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;serverless&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;serverlessを使ったバッチ処理を行うフレームワーク。&lt;br&gt;
-バッチの各処理を関数としてローカル、AWS lambda、Google Cloud Functionsで実行できる。またデプロイやクリーンアップのワークフローを管理できる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://faastjs.org/docs/comparison&quot; title=&quot;faast.js vs other · faast.js&quot;&gt;faast.js vs other · faast.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;pixijs-v5-lands-goodboy-digital-medium&quot;&gt;PixiJS v5 lands – Goodboy Digital – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/goodboy-digital/pixijs-v5-lands-5e112d84e510&quot; title=&quot;PixiJS v5 lands – Goodboy Digital – Medium&quot;&gt;medium.com/goodboy-digital/pixijs-v5-lands-5e112d84e510&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;game&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;PixiJS 5.0.0リリース。&lt;br&gt;
-WebGLがデフォルトとなり、Cnavas版は&lt;code&gt;pixi.js-legacy&lt;/code&gt;として提供されるように。&lt;br&gt;
-globalに&lt;code&gt;PIXI&lt;/code&gt;オブジェクトを追加しないでimportできるように。&lt;br&gt;
-Rendererのシグネチャの変更、&lt;code&gt;PIXI.Mesh&lt;/code&gt;の追加、Graphics Holesの対応改善など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/pixijs/pixi.js/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · pixijs/pixi.js&quot;&gt;Release v5.0.0 · pixijs/pixi.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/pixijs/pixi.js/wiki/v5-Migration-Guide&quot; title=&quot;v5 Migration Guide · pixijs/pixi.js Wiki&quot;&gt;v5 Migration Guide · pixijs/pixi.js Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;typescript-ast-viewer&quot;&gt;TypeScript AST Viewer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://ts-ast-viewer.com/&quot; title=&quot;TypeScript AST Viewer&quot;&gt;ts-ast-viewer.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;AST&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScriptのコードのASTビューアツール。&lt;br&gt;
-コードを生成するASTのコードも出力される&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;infinitered-gluegun-a-delightful-toolkit-for-building-node-powered-clis&quot;&gt;infinitered/gluegun: A delightful toolkit for building Node-powered CLIs.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/infinitered/gluegun&quot; title=&quot;infinitered/gluegun: A delightful toolkit for building Node-powered CLIs.&quot;&gt;github.com/infinitered/gluegun&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsのコマンドラインツール向けのフレームワーク。&lt;br&gt;
-コマンドのテンプレート、コマンドライン引数のパースやハンドリング、Util処理などを含んでいる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;gkozlenko-node-video-lib-node-js-video-library-mp4-flv-parser-hls-muxer&quot;&gt;gkozlenko/node-video-lib: Node.js Video Library / MP4 &amp;amp; FLV parser / HLS muxer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/gkozlenko/node-video-lib&quot; title=&quot;gkozlenko/node-video-lib: Node.js Video Library / MP4 &amp;amp; FLV parser / HLS muxer&quot;&gt;github.com/gkozlenko/node-video-lib&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HLS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;依存がないMP4とFLVのパーサ、HLS muxerライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;oreilly-japan-node-js-2&quot;&gt;O&amp;#39;Reilly Japan - Node.jsデザインパターン 第2版&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.oreilly.co.jp/books/9784873118734/&quot; title=&quot;O&amp;#39;Reilly Japan - Node.jsデザインパターン 第2版&quot;&gt;www.oreilly.co.jp/books/9784873118734/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2019年05月18日発売&lt;br&gt;
-Node.jsのデザインパターンについての書籍&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.marlin-arms.com/support/nodejs-design-patterns/&quot; title=&quot;Node.jsデザインパターン 第2版 サポートページ — マーリンアームズ株式会社&quot;&gt;Node.jsデザインパターン 第2版 サポートページ — マーリンアームズ株式会社&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;programming-typescript-oreilly-media&quot;&gt;Programming TypeScript - O&amp;#39;Reilly Media&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://shop.oreilly.com/product/0636920158059.do&quot; title=&quot;Programming TypeScript - O&amp;#39;Reilly Media&quot;&gt;shop.oreilly.com/product/0636920158059.do&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScriptについての入門書&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 30 Apr 2019 12:33:48 +0900</pubDate>
-        <link>https://jser.info/2019/04/30/node.js-12.0.0node.js-6.xeolelectron-5.0.0pixi.js-5.0.0webgl-by-default/</link>
-        <guid isPermaLink="true">https://jser.info/2019/04/30/node.js-12.0.0node.js-6.xeolelectron-5.0.0pixi.js-5.0.0webgl-by-default/</guid>
-        
-        <category>Node.js</category>
-        
-        <category>Electron</category>
-        
-        <category>Canvas</category>
-        
-        <category>WebGL</category>
         
         
         <category>JSer</category>

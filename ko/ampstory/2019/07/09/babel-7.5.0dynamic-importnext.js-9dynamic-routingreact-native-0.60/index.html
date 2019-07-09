@@ -1,0 +1,398 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-07-09のJS: Babel 7.5.0(Dynamic Import)、Next.js 9(Dynamic routing)、React Native 0.60 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/07/09/babel-7.5.0dynamic-importnext.js-9dynamic-routingreact-native-0.60/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-07-09のJS: Babel 7.5.0(Dynamic Import)、Next.js 9(Dynamic routing)、React Native 0.60"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-07-09のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/babel/babel/releases/tag/v7.5.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v7.5.0 · babel/babel</amp-fit-text>
+            <p class="item-contents">Babel 7.5.0リリース。
+dynamic importのサポートを<code>@babel/preset-env</code>に追加、
+<code>babel-plugin-transform-typescript</code>がnamespaceをサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v7.5.0 · babel/babel" href="https://github.com/babel/babel/releases/tag/v7.5.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/markedjs/marked/releases/tag/v0.7.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 0.7.0 · markedjs/marked</amp-fit-text>
+            <p class="item-contents">marked 0.7.0リリース。
+XSS脆弱性を修正、<code>sanitize</code>と<code>sanitizer</code>オプションを非推奨化しDOMPurifyなどの外部ライブラリの利用を推奨するように変更。
+TableサポートをGFMオプションに移動など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 0.7.0 · markedjs/marked" href="https://github.com/markedjs/marked/releases/tag/v0.7.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://facebook.github.io/react-native/blog/2019/07/03/version-60">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing React Native 0.60 · React Native</amp-fit-text>
+            <p class="item-contents">React Native 0.60リリース。
+アクセシビリティの改善、スタート画面の変更、AndroidXのサポート、CocoaPodsの対応改善、コアからコミュニティに移動した<code>NetInfo</code>、<code>WebView</code>、<code>Geolocation</code>を削除など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing React Native 0.60 · React Native" href="https://facebook.github.io/react-native/blog/2019/07/03/version-60" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nextjs.org/blog/next-9">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Blog - Next.js 9 | Next.js</amp-fit-text>
+            <p class="item-contents">Next.js 9リリース。
+TypeScriptのビルトインサポート、Next.jsのコアをTypeScriptで書き直し、Dynamically Routingのサポート、<code>api/</code>でAPI Routesのサポート。
+また、ページごとのconfigをサポート、ビルドの最適化など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Blog - Next.js 9 | Next.js" href="https://nextjs.org/blog/next-9" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v12.6.0/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v12.6.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 12.6.0リリース。
+<code>child_process.exec</code>/<code>execFile</code>の返すPromiseオブジェクトが<code>child</code>プロパティを持つように、<code>process.resourceUsage()</code>の追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v12.6.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v12.6.0/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://media-codings.com/articles/automatically-detect-memory-leaks-with-puppeteer">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Automatically detect memory leaks with Puppeteer - Article by Christoph Guttandin - Media Codings</amp-fit-text>
+            <p class="item-contents">Puppeteerを使ってウェブページのメモリリークテストを書く方法について。
+<code>page.queryObjects</code>を使って処理前後のHeapにあるオブジェクトの数を比較することでテストする方法について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Automatically detect memory leaks with Puppeteer - Article by Christoph Guttandin - Media Codings" href="https://media-codings.com/articles/automatically-detect-memory-leaks-with-puppeteer" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.mitsue.co.jp/knowledge/blog/frontend/201907/05_0944.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Request.destinationでリソースの種類別にキャッシュ戦略 | フロントエンドBlog | ミツエーリンクス</amp-fit-text>
+            <p class="item-contents">Fetch APIの<code>Request.destination</code>について。
+Service Workerで取得先のリソースの種類に応じたキャッシュの切り分けなどについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Request.destinationでリソースの種類別にキャッシュ戦略 | フロントエンドBlog | ミツエーリンクス" href="https://www.mitsue.co.jp/knowledge/blog/frontend/201907/05_0944.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.smashingmagazine.com/2019/07/using-slots-vue-js/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Using Slots In Vue.js — Smashing Magazine</amp-fit-text>
+            <p class="item-contents">VueのSlotについての記事。
+<code>&lt;slot&gt;</code>の使い方、<code>v-slot</code>ディレクトティブ、Scoped Slotについて。
+また再利用可能なコンポーネントの書き方についてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Using Slots In Vue.js — Smashing Magazine" href="https://www.smashingmagazine.com/2019/07/using-slots-vue-js/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.valentinog.com/blog/fetch-api/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Fetch API: Building a Fetch Polyfill From Scratch (For Fun and Promise)</amp-fit-text>
+            <p class="item-contents">Fetch APIの簡単なPolyfillを書きながら、Fetch APIとPromiseについて学ぶ記事。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Fetch API: Building a Fetch Polyfill From Scratch (For Fun and Promise)" href="https://www.valentinog.com/blog/fetch-api/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.smashingmagazine.com/2019/07/css-custom-properties-cascade/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">CSS Custom Properties In The Cascade — Smashing Magazine</amp-fit-text>
+            <p class="item-contents">CSS Custom Propertiesについての記事。
+コンポーネント側の変数の定義とカスケーディング、コンポーネントとCSS Custom Propertiesなど応用的な内容
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="CSS Custom Properties In The Cascade — Smashing Magazine" href="https://www.smashingmagazine.com/2019/07/css-custom-properties-cascade/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/tilk/digitaljs">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">tilk/digitaljs: Teaching-focused digital circuit simulator</amp-fit-text>
+            <p class="item-contents">ブラウザで動作する教育用の電子回路シミュレータ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="tilk/digitaljs: Teaching-focused digital circuit simulator" href="https://github.com/tilk/digitaljs" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jsdoctypeparser/jsdoctypeparser">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">jsdoctypeparser/jsdoctypeparser: Parser module for JsDoc or Closure Compiler format type-annotation.</amp-fit-text>
+            <p class="item-contents">JSDocパーサライブラリ。
+Closure Compiler形式、TypeScript形式などに対応していていて、JSDOcをパースしてASTを出力する。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jsdoctypeparser/jsdoctypeparser: Parser module for JsDoc or Closure Compiler format type-annotation." href="https://github.com/jsdoctypeparser/jsdoctypeparser" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/greggman/twgl.js">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">greggman/twgl.js: A Tiny WebGL helper Library</amp-fit-text>
+            <p class="item-contents">WebGLヘルパーライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="greggman/twgl.js: A Tiny WebGL helper Library" href="https://github.com/greggman/twgl.js" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/frenic/csstype">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">frenic/csstype: Strict TypeScript and Flow types for style based on MDN data</amp-fit-text>
+            <p class="item-contents">MDNのデータをつかいCSSプロパティのTypeScript型定義を生成したライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="frenic/csstype: Strict TypeScript and Flow types for style based on MDN data" href="https://github.com/frenic/csstype" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
