@@ -5,9 +5,218 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 10 Jul 2019 13:08:21 +0900</pubDate>
-    <lastBuildDate>Wed, 10 Jul 2019 13:08:21 +0900</lastBuildDate>
+    <pubDate>Fri, 12 Jul 2019 11:54:09 +0900</pubDate>
+    <lastBuildDate>Fri, 12 Jul 2019 11:54:09 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-07-09: Babel 7.5.0(Dynamic Import), Next.js 9(Dynamic routing), React Native 0.60</title>
+        <description>&lt;p&gt;JSer.info #443 - Babel 7.5.0이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/babel/babel/releases/tag/v7.5.0&quot;&gt;Release v7.5.0 · babel/babel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://babeljs.io/blog/2019/07/03/7.5.0&quot;&gt;7.5.0 Released: dynamic import and F# pipelines · Babel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;현재 &lt;a href=&quot;https://github.com/tc39/proposals/blob/master/stage-1-proposals.md&quot;&gt;Stage 1 Proposals&lt;/a&gt;인 &lt;a href=&quot;https://github.com/tc39/proposal-pipeline-operator&quot;&gt;Pipeline Operator&lt;/a&gt; 변환을 지원합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rwaldron/tc39-notes/tree/master/meetings/2019-06&quot;&gt;2019년 6월 TC39 Meeting&lt;/a&gt;에서 Dynamic Import가 &lt;a href=&quot;https://github.com/tc39/proposals/blob/master/finished-proposals.md&quot;&gt;Stage 4&lt;/a&gt;가 됐습니다(ES2020에 Dynamic Import가 들어갑니다). &lt;br&gt;
+따라서 Babel의 &lt;a href=&quot;https://babeljs.io/docs/en/babel-preset-env&quot;&gt;@babel/preset-env&lt;/a&gt;에서 Dynamic Import를 기본적으로 지원합니다(지금까지는 별도의 플러그인이 필요했습니다)&lt;/p&gt;
+
+&lt;p&gt;또, &lt;code&gt;babel/plugin-transform-typescript&lt;/code&gt;에서 &lt;code&gt;allowNamespaces&lt;/code&gt; 옵션으로 TypeScript의 &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/namespaces.html&quot;&gt;namespaces&lt;/a&gt;를 실험적으로 지원합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;React를 사용한 프레임워크 Next.js 9가 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nextjs.org/blog/next-9&quot;&gt;Blog - Next.js 9 | Next.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Next.js 6에서 &lt;code&gt;@zeit/next-typescript&lt;/code&gt;를 사용해 TypeScript를 지원했지만 Next.js 9에서는 TypeScript를 내장(빌트인)하여 지원합니다.&lt;br&gt;
+또, &lt;a href=&quot;https://www.npmjs.com/package/path-to-regexp&quot;&gt;path-to-regexp&lt;/a&gt; 형식으로 Dynamically Routing 지원, &lt;code&gt;api/&lt;/code&gt; 내의 파일을 API URL로 맺어(map)주는 API Routes를 지원합니다.&lt;br&gt;
+그 외에도 페이지 별 config를 설정할 수 있도록 변경됐고 빌드 최적화가 이뤄졌습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v7-5-0-babel-babel&quot;&gt;Release v7.5.0 · babel/babel&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/babel/babel/releases/tag/v7.5.0&quot; title=&quot;Release v7.5.0 · babel/babel&quot;&gt;github.com/babel/babel/releases/tag/v7.5.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Babel 7.5.0이 릴리스됐습니다.&lt;br&gt;
+dynamic import을 &lt;code&gt;@babel/preset-env&lt;/code&gt;에 추가했습니다.&lt;br&gt;
+&lt;code&gt;babel-plugin-transform-typescript&lt;/code&gt;에서 namespace를 지원합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://babeljs.io/blog/2019/07/03/7.5.0&quot; title=&quot;7.5.0 Released: dynamic import and F# pipelines · Babel&quot;&gt;7.5.0 Released: dynamic import and F# pipelines · Babel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-0-7-0-markedjs-marked&quot;&gt;Release 0.7.0 · markedjs/marked&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/markedjs/marked/releases/tag/v0.7.0&quot; title=&quot;Release 0.7.0 · markedjs/marked&quot;&gt;github.com/markedjs/marked/releases/tag/v0.7.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Markdown&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;marked 0.7.0이 릴리스됐습니다.&lt;br&gt;
+XSS 취약점을 수정했고 &lt;code&gt;sanitize&lt;/code&gt;과 &lt;code&gt;sanitizer&lt;/code&gt; 옵션을 대신 DOMPurify 등의 외부 라이브러리 사용을 권장하며 Table 지원을 GFM 옵션으로 옮겼습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-react-native-0-60-react-native&quot;&gt;Announcing React Native 0.60 · React Native&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://facebook.github.io/react-native/blog/2019/07/03/version-60&quot; title=&quot;Announcing React Native 0.60 · React Native&quot;&gt;facebook.github.io/react-native/blog/2019/07/03/version-60&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;iOS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Android&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Native 0.60이 릴리스됐습니다.&lt;br&gt;
+접근성 개선됐고 시작 화면이 변경됐습니다. 또, AndroidX 지원하며 CocoaPods 대응 개선됐고 코어에서 커뮤니티로 옮겨진 &lt;code&gt;NetInfo&lt;/code&gt;, &lt;code&gt;WebView&lt;/code&gt;, &lt;code&gt;Geolocation&lt;/code&gt;을 삭제했습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/react-native-community/releases/blob/master/CHANGELOG.md#060&quot; title=&quot;releases/CHANGELOG.md at master · react-native-community/releases&quot;&gt;releases/CHANGELOG.md at master · react-native-community/releases&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;blog-next-js-9-next-js&quot;&gt;Blog - Next.js 9 | Next.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nextjs.org/blog/next-9&quot; title=&quot;Blog - Next.js 9 | Next.js&quot;&gt;nextjs.org/blog/next-9&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Next.js 9가 릴리스됐습니다.&lt;br&gt;
+TypeScript를 내장(빌트인) 지원하며 Next.js의 코어 부분을 TypeScript로 재작성했습니다. 그리고 Dynamically Routing과 &lt;code&gt;api/&lt;/code&gt;로 API Routes 지원합니다.&lt;br&gt;
+또, 페이지 별 config를 지원하고 빌드 최적화가 이뤄졌습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v12-6-0-current-node-js&quot;&gt;Node v12.6.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.6.0/&quot; title=&quot;Node v12.6.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.6.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 12.6.0이 릴리스됐습니다.&lt;br&gt;
+&lt;code&gt;child_process.exec&lt;/code&gt;/&lt;code&gt;execFile&lt;/code&gt;가 반환하는 Promise 객체에 &lt;code&gt;child&lt;/code&gt; 프로퍼티를 추가했고 &lt;code&gt;process.resourceUsage()&lt;/code&gt;가 추가됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;automatically-detect-memory-leaks-with-puppeteer-article-by-christoph-guttandin-media-codings&quot;&gt;Automatically detect memory leaks with Puppeteer - Article by Christoph Guttandin - Media Codings&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://media-codings.com/articles/automatically-detect-memory-leaks-with-puppeteer&quot; title=&quot;Automatically detect memory leaks with Puppeteer - Article by Christoph Guttandin - Media Codings&quot;&gt;media-codings.com/articles/automatically-detect-memory-leaks-with-puppeteer&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Puppeteer를 사용해 웹 페이지의 메모리 릭 테스트를 작성하는 방법을 이야기합니다.&lt;br&gt;
+&lt;code&gt;page.queryObjects&lt;/code&gt;를 사용해 처리 전과 후의 Heap에 있는 객체를 비교하여 테스트하는 방법을 소개합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageevaluatehandlepagefunction-args&quot; title=&quot;page.evaluateHandle(pageFunction\[, ...args\])&quot;&gt;page.evaluateHandle(pageFunction[, ...args])&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagequeryobjectsprototypehandle&quot; title=&quot;page.queryObjects(prototypeHandle)&quot;&gt;page.queryObjects(prototypeHandle)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/chrisguttandin/standardized-audio-context/blob/master/test/integration/memory.js&quot; title=&quot;standardized-audio-context/memory.js at master · chrisguttandin/standardized-audio-context&quot;&gt;standardized-audio-context/memory.js at master · chrisguttandin/standardized-audio-context&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;request-destination-blog&quot;&gt;Request.destination으로 리소스 종류 별 캐시 전략 | 프런트엔드 Blog | 미츠에링크&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.mitsue.co.jp/knowledge/blog/frontend/201907/05_0944.html&quot; title=&quot;Request.destination으로 리소스 종류 별 캐시 전략 | 프런트엔드 Blog | 미츠에링크&quot;&gt;www.mitsue.co.jp/knowledge/blog/frontend/201907/05_0944.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Fetch&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Fetch API의 &lt;code&gt;Request.destination&lt;/code&gt;를 소개하고 Service Worker에서 가져온 리소스의 종류를 판단하여 캐시 전략을 다르게 하는 방법을 소개합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;using-slots-in-vue-js-smashing-magazine&quot;&gt;Using Slots In Vue.js — Smashing Magazine&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2019/07/using-slots-vue-js/&quot; title=&quot;Using Slots In Vue.js — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2019/07/using-slots-vue-js/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vue의 Slot을 소개합니다.&lt;br&gt;
+&lt;code&gt;&amp;lt;slot&amp;gt;&lt;/code&gt; 사용 방법, &lt;code&gt;v-slot&lt;/code&gt; 디렉티브, Scoped Slot에 대해서 자세히 작성돼 있습니다.&lt;br&gt;
+또, 재사용 가능한 컴포넌트를 작성하는 방법도 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;fetch-api-building-a-fetch-polyfill-from-scratch-for-fun-and-promise&quot;&gt;Fetch API: Building a Fetch Polyfill From Scratch (For Fun and Promise)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.valentinog.com/blog/fetch-api/&quot; title=&quot;Fetch API: Building a Fetch Polyfill From Scratch (For Fun and Promise)&quot;&gt;www.valentinog.com/blog/fetch-api/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Fetch&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Fetch API의 간단한 Polyfill를 만들어보면서 Fetch API와 Promise에 대해 이해할 수 있는 글입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;css-custom-properties-in-the-cascade-smashing-magazine&quot;&gt;CSS Custom Properties In The Cascade — Smashing Magazine&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2019/07/css-custom-properties-cascade/&quot; title=&quot;CSS Custom Properties In The Cascade — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2019/07/css-custom-properties-cascade/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSS Custom Properties에 대한 글입니다.&lt;br&gt;
+컴포넌트 쪽 변수 정의 방법과 캐스케이딩에 대해서 소개하고 컴포넌트와 CSS Custom Properties 활용 방법 등 응용적인 내용이 정리돼 있습니다. &lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;tilk-digitaljs-teaching-focused-digital-circuit-simulator&quot;&gt;tilk/digitaljs: Teaching-focused digital circuit simulator&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/tilk/digitaljs&quot; title=&quot;tilk/digitaljs: Teaching-focused digital circuit simulator&quot;&gt;github.com/tilk/digitaljs&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;브라우저에서 동작하는 교육용 전자회로 시뮬레이터입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jsdoctypeparser-jsdoctypeparser-parser-module-for-jsdoc-or-closure-compiler-format-type-annotation&quot;&gt;jsdoctypeparser/jsdoctypeparser: Parser module for JsDoc or Closure Compiler format type-annotation.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jsdoctypeparser/jsdoctypeparser&quot; title=&quot;jsdoctypeparser/jsdoctypeparser: Parser module for JsDoc or Closure Compiler format type-annotation.&quot;&gt;github.com/jsdoctypeparser/jsdoctypeparser&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JSDoc&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JSDoc 파서 라이브러리입니다.&lt;br&gt;
+Closure Compiler 형식, TypeScript 형식 등을 지원하며 JSDoc를 파싱해 AST를 만들어 반환합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;greggman-twgl-js-a-tiny-webgl-helper-library&quot;&gt;greggman/twgl.js: A Tiny WebGL helper Library&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/greggman/twgl.js&quot; title=&quot;greggman/twgl.js: A Tiny WebGL helper Library&quot;&gt;github.com/greggman/twgl.js&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebGL 헬퍼 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;frenic-csstype-strict-typescript-and-flow-types-for-style-based-on-mdn-data&quot;&gt;frenic/csstype: Strict TypeScript and Flow types for style based on MDN data&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/frenic/csstype&quot; title=&quot;frenic/csstype: Strict TypeScript and Flow types for style based on MDN data&quot;&gt;github.com/frenic/csstype&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;MDN 데이터를 기반으로 CSS 프로퍼티의 TypeScript 형 정의를 제공하는 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 09 Jul 2019 12:28:23 +0900</pubDate>
+        <link>https://jser.info/ko/2019/07/09/babel-7.5.0dynamic-importnext.js-9dynamic-routingreact-native-0.60/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2019/07/09/babel-7.5.0dynamic-importnext.js-9dynamic-routingreact-native-0.60/</guid>
+        
+        <category>Babel</category>
+        
+        <category>Next.js</category>
+        
+        <category>ReactNative</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-07-04: npm 6.9.2, ECMAScript 2019 릴리스, Dark Mode</title>
@@ -2417,245 +2626,6 @@ JavaScript로 플러그인을 만들어 확장도 할 수 있습니다.&lt;/p&gt
         <category>ESLint</category>
         
         <category>redux</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-04-09: Chromium 기반 Microsoft Edge 버전 공개, `request` 모듈 메인터넌스 모드로 전환될 예정</title>
-        <description>&lt;p&gt;JSer.info #430 - &lt;a href=&quot;https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/&quot;&gt;2018년 12월에 공지&lt;/a&gt; 한대로 Chromium을 이용한 Microsoft Edge(MSEdge) 프리뷰 버전이 공개됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/windowsexperience/2019/04/08/microsoft-edge-preview-builds-the-next-step-in-our-oss-journey/&quot; title=&quot;Microsoft Edge preview builds: The next step in our OSS journey | Windows Experience Blog&quot;&gt;Microsoft Edge preview builds: The next step in our OSS journey | Windows Experience Blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/04/08/microsoft-edge-preview-channel-details/&quot;&gt;What to expect in the new Microsoft Edge Insider Channels - Microsoft Edge Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;현재 Windows 10 PC 용만 공개했으며 이후 Windows 7, Windows 8.1, macOS 등도 대응할 예정입니다.&lt;br&gt;
-&lt;a href=&quot;https://www.microsoftedgeinsider.com/en-us/download/&quot;&gt;Microsoft Edge Insider&lt;/a&gt;에서 Beta, Dev, Canary 세 가지 빌드 버전을 공개합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/MicrosoftEdge/MSEdge/blob/master/README.md&quot;&gt;Microsoft Edge and Chromium Open Source: Our Intent&lt;/a&gt; 문서나 &lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/04/08/microsoft-edge-preview-channel-details/&quot;&gt;What to expect in the new Microsoft Edge Insider Channels - Microsoft Edge Blog&lt;/a&gt;에 Chromium의 어디를 어떻게 컨트리뷰션할 것인지 작성돼 있습니다.&lt;br&gt;
-웹 표준의 컨트리뷰션에 관한 계획은 &lt;a href=&quot;https://github.com/MicrosoftEdge/MSEdgeExplainers&quot;&gt;MSEdgeExplainers&lt;/a&gt;에 작성돼 있으며 이미 HTML Modules와 관련한 내용이 커밋돼 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/whatwg/html/pull/4505&quot;&gt;[WIP] Introduce HTML Modules by dandclark · Pull Request #4505 · whatwg/html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/ewfRSdqcOd8/w_Fr6rJ3DQAJ&quot;&gt;Intent to Implement: HTML Modules - Google 그룹스&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;또, 릴리스 기사에는 새로운 Edge의 User Agent도 소개돼 있는데 호환성을 위해 &lt;code&gt;Edg&lt;/code&gt;(Edge가 아닌) 문자열을 사용하고 있는 것 같습니다.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.48 Safari/537.36 Edg/74.1.96.24
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;hr&gt;
-
-&lt;p&gt;Node.js의 HTTP 라이브러리로 유명한 &lt;a href=&quot;https://github.com/request/request&quot;&gt;request&lt;/a&gt; 모듈의 메인터넌스 전환 계획이 공지됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3142&quot;&gt;Request’s Past, Present and Future · Issue #3142 · request/request&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;앞으로 새로운 기능이나 비호환적 변경 사항 없이 유지보수 차원의 수정만 합니다.&lt;br&gt;
-또, 비권장 공지와 다른 라이브러리로 이전하는 방법 게재에 대한 안건은 해당 이슈에서 계속 논의 중입니다.&lt;/p&gt;
-
-&lt;p&gt;request를 대체할 수 있는 라이브러리는 다음 이슈에서 논의되고 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3143&quot;&gt;Alternative libraries to request · Issue #3143 · request/request&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;request&lt;/code&gt; 모듈에 관심있는 분은 살펴보시길 바랍니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2-6-0-nuxt-nuxt-js&quot;&gt;Release v2.6.0 · nuxt/nuxt.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.6.0&quot; title=&quot;Release v2.6.0 · nuxt/nuxt.js&quot;&gt;github.com/nuxt/nuxt.js/releases/tag/v2.6.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Nuxt.js v2.6.0이 릴리스됐습니다.&lt;br&gt;
-core-js 2와 3을 지원하며 2.5에 적용된 &lt;code&gt;ready()&lt;/code&gt;의 비호환적 변경 사항을 되돌렸(revert)습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-3-13-1-nodeca-js-yaml&quot;&gt;Release 3.13.1 · nodeca/js-yaml&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nodeca/js-yaml/releases/tag/3.13.1&quot; title=&quot;Release 3.13.1 · nodeca/js-yaml&quot;&gt;github.com/nodeca/js-yaml/releases/tag/3.13.1&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;js-yaml 3.13.1이 릴리스됐습니다.&lt;br&gt;
-&lt;code&gt;load()&lt;/code&gt;로 yaml 파일을 읽어들일 때 파일 내 악의적으로 작성된 코드가 실행되는 취약점을 수정했습니다. &lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://snyk.io/vuln/SNYK-JS-JSYAML-174129&quot; title=&quot;Arbitrary Code Execution in js-yaml | Snyk&quot;&gt;Arbitrary Code Execution in js-yaml | Snyk&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nodeca/js-yaml/pull/480&quot; title=&quot;Fix possible code execution in (already unsafe) load() by rlidwka · Pull Request #480 · nodeca/js-yaml&quot;&gt;Fix possible code execution in (already unsafe) load() by rlidwka · Pull Request #480 · nodeca/js-yaml&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;request-s-past-present-and-future-issue-3142-request-request&quot;&gt;Request’s Past, Present and Future · Issue #3142 · request/request&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/request/request/issues/3142&quot; title=&quot;Request’s Past, Present and Future · Issue #3142 · request/request&quot;&gt;github.com/request/request/issues/3142&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js의 HTTP 라이브러리인 &lt;code&gt;request&lt;/code&gt; 모듈이 메인터넌스 모드로 전환됩니다.&lt;br&gt;
-새로운 기능 추가나 비호환적 변경 사항 없이 유지보수 차원의 수정만 이뤄집니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3143&quot; title=&quot;Alternative libraries to request · Issue #3143 · request/request&quot;&gt;Alternative libraries to request · Issue #3143 · request/request&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;microsoft-edge-preview-builds-the-next-step-in-our-oss-journey-windows-experience-blog&quot;&gt;Microsoft Edge preview builds: The next step in our OSS journey | Windows Experience Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/windowsexperience/2019/04/08/microsoft-edge-preview-builds-the-next-step-in-our-oss-journey/&quot; title=&quot;Microsoft Edge preview builds: The next step in our OSS journey | Windows Experience Blog&quot;&gt;blogs.windows.com/windowsexperience/2019/04/08/microsoft-edge-preview-builds-the-next-step-in-our-oss-journey/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chromium을 사용한 Microsoft Edge 프리뷰 버전이 릴리스됐습니다. Beta, Dev, Canary 버전을 빌드해 제공하며 향후 macOS도 지원될 예정입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/04/08/microsoft-edge-preview-channel-details/#veEezTt4cKDiSZ0P.97&quot; title=&quot;What to expect in the new Microsoft Edge Insider Channels - Microsoft Edge Blog&quot;&gt;What to expect in the new Microsoft Edge Insider Channels - Microsoft Edge Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;2019-pwa&quot;&gt;아메브로 2019: 목소리 블로그에서의 PWA(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.cyberagent.co.jp/blog/archives/20506/&quot; title=&quot;アメブロ2019: こえのブログでのPWA&quot;&gt;developers.cyberagent.co.jp/blog/archives/20506/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;목소리 블로그에 적용한 프런트엔드 기술 소개 기사입니다.&lt;br&gt;
-Fastly CDN의 전체 URL 구조, Cloud Speech-to-Text를 사용한 입력, 사운드 파일을 vmsg를 사용해 클라이언트에서 인코딩 한 후 업로드 하는 방법과 웹 컴포넌트 등에 대해서 이야기합니다.&lt;br&gt;
-또, 첫방문과 재방문 시 최적화 방식과 performance budget 설정도 소개합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-webkit-features-in-safari-12-1-webkit&quot;&gt;New WebKit Features in Safari 12.1 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8718/new-webkit-features-in-safari-12-1/&quot; title=&quot;New WebKit Features in Safari 12.1 | WebKit&quot;&gt;webkit.org/blog/8718/new-webkit-features-in-safari-12-1/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari 12.1의 WebKit 관련 변경 사항이 정리돼 있습니다.&lt;br&gt;
-다크 모드를 지원하며 ITP 2.1로 갱신됐습니다. Payment Request API와 WebRTC의 개선이 이뤄졌고 EME API/MSE 대응, Intersection Observer, Web Sharer API 대응, Web Inspect 개선 등이 이뤄졌습니다. &lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;scroll-anchoring-in-firefox-66-mozilla-hacks-the-web-developer-blog&quot;&gt;Scroll Anchoring in Firefox 66 - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/03/scroll-anchoring-in-firefox-66/&quot; title=&quot;Scroll Anchoring in Firefox 66 - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2019/03/scroll-anchoring-in-firefox-66/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSS Scroll Anchoring에 관한 글이며 어떻게 작동하는지 소개합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;managing-z-index-in-a-component-based-web-application-smashing-magazine&quot;&gt;Managing Z-Index In A Component-Based Web Application — Smashing Magazine&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2019/04/z-index-component-based-web-application/&quot; title=&quot;Managing Z-Index In A Component-Based Web Application — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2019/04/z-index-component-based-web-application/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;컴포넌트 기반 웹 애플리케이션에서 z-index를 관리하는 방법을 소개합니다.&lt;br&gt;
-Stacking Context, z-index 관리, 오버레이에 적용하는 요령을 설명합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;docker-node-bestpractices-md-at-master-nodejs-docker-node&quot;&gt;docker-node/BestPractices.md at master · nodejs/docker-node&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md&quot; title=&quot;docker-node/BestPractices.md at master · nodejs/docker-node&quot;&gt;github.com/nodejs/docker-node/blob/master/docs/BestPractices.md&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Docker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Docker에서의 Node.js 베스트 프랙티스를 정리한 문서입니다.&lt;br&gt;
-환경 변수, Ctrl + C 시그널이 보내지지 않는 문제, yarn 업데이트, root 관련 설정, &lt;code&gt;CMD&lt;/code&gt;으로 npm run-script 경유하지 않고 직접 실행하는 방법 등을 소개합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jeffijoe-typesync-install-missing-typescript-typings-for-dependencies-in-your-package-json&quot;&gt;jeffijoe/typesync: Install missing TypeScript typings for dependencies in your package.json.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jeffijoe/typesync&quot; title=&quot;jeffijoe/typesync: Install missing TypeScript typings for dependencies in your package.json.&quot;&gt;github.com/jeffijoe/typesync&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;toll&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;package.json&lt;/code&gt;에 등록된 패키지와 관련된 @types 패키지를 일괄 설치해주는 도구입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;typeless-js-typeless-a-complete-toolkit-for-building-scalable-react-apps-with-typescript&quot;&gt;typeless-js/typeless: A complete toolkit for building scalable React apps with Typescript.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/typeless-js/typeless&quot; title=&quot;typeless-js/typeless: A complete toolkit for building scalable React apps with Typescript.&quot;&gt;github.com/typeless-js/typeless&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Redux의 전형적인 구조를 내재화 한 React + Redux + Rxjs를 기본 구조로 한 상태 관리 라이브러리입니다.&lt;br&gt;
-React Hooks를 지원하고 React에 맞춘 라이프사이클 액션을 제공합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;codex-team-editor-js-a-block-styled-editor-with-clean-json-output&quot;&gt;codex-team/editor.js: A block-styled editor with clean JSON output&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/codex-team/editor.js&quot; title=&quot;codex-team/editor.js: A block-styled editor with clean JSON output&quot;&gt;github.com/codex-team/editor.js&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;editor&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;블록 스타일의 에디터 라이브러리입니다.&lt;br&gt;
-각 블록 단위를 알아보기 쉽게 JSON으로 출력할 수 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;mgechev-codelyzer-static-analysis-for-angular-projects&quot;&gt;mgechev/codelyzer: Static analysis for Angular projects.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/mgechev/codelyzer&quot; title=&quot;mgechev/codelyzer: Static analysis for Angular projects.&quot;&gt;github.com/mgechev/codelyzer&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TSLint를 사용한 Angular 컴포넌트 용 Lint 규칙 세트입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;home-prevue&quot;&gt;Home | PreVue&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://prevue.io/&quot; title=&quot;Home | PreVue&quot;&gt;prevue.io/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;design&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Vue.js를 사용한 UI 프로토타이핑 도구입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;kognise-water-css-a-just-add-css-collection-of-styles-to-make-simple-websites-just-a-little-nicer&quot;&gt;kognise/water.css: A just-add-css collection of styles to make simple websites just a little nicer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/kognise/water.css&quot; title=&quot;kognise/water.css: A just-add-css collection of styles to make simple websites just a little nicer&quot;&gt;github.com/kognise/water.css&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;HTML 요소의 기본 스타일을 정의한 라이브러리입니다.&lt;br&gt;
-요소에 스타일을 제공하기 위해서 특정한 CSS 클래스를 정의하지 않습니다. &lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;leebyron-react-loops-react-loops-works-with-react-hooks-as-part-of-the-react-velcro-architecture&quot;&gt;leebyron/react-loops: React Loops works with React Hooks as part of the React Velcro Architecture&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/leebyron/react-loops&quot; title=&quot;leebyron/react-loops: React Loops works with React Hooks as part of the React Velcro Architecture&quot;&gt;github.com/leebyron/react-loops&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;for 루프 제어를 제공하는 React 컴포넌트 라이브러리입니다.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 09 Apr 2019 09:14:01 +0900</pubDate>
-        <link>https://jser.info/ko/2019/04/09/chromiummicrosoft-edge-request/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2019/04/09/chromiummicrosoft-edge-request/</guid>
-        
-        <category>Chrome</category>
-        
-        <category>MSEdge</category>
-        
-        <category>Node.js</category>
-        
-        <category>HTTP</category>
         
         
         <category>JSer</category>
