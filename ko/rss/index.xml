@@ -5,9 +5,258 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 16 Jul 2019 13:57:03 +0900</pubDate>
-    <lastBuildDate>Tue, 16 Jul 2019 13:57:03 +0900</lastBuildDate>
+    <pubDate>Fri, 19 Jul 2019 10:46:56 +0900</pubDate>
+    <lastBuildDate>Fri, 19 Jul 2019 10:46:56 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-07-16: Firefox 68.0, Hermes(JS Engine for React Native), PageSpeed Insights 5</title>
+        <description>&lt;p&gt;JSer.info #444 - Firefox 68.0이 릴리스 됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/68.0/releasenotes/&quot;&gt;Firefox 68.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/68&quot;&gt;Firefox 68 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/07/firefox-68-bigints-contrast-checks-and-the-quantumbar/&quot;&gt;Firefox 68: BigInts, Contrast Checks, and the QuantumBar - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Firefox 68에서 법인을 위한 기업용 &lt;a href=&quot;https://www.mozilla.org/en-US/firefox/organizations/&quot;&gt;Firefox Extended Support Release&lt;/a&gt;(ESR)도 함께 갱신됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/68.0esr/releasenotes/&quot;&gt;Firefox ESR 68.0esr, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Firefox 68의 개발자 도구에 Accessibility Checks 기능이 추가됐고 ECMAScript 2020에 도입될 예정인 Bigints를 지원합니다.&lt;br&gt;
+웹 호환성을 위해 IE의 &lt;code&gt;CSS#addRule()&lt;/code&gt;과 &lt;code&gt;CSS#removeRule()&lt;/code&gt;, Safari의 &lt;code&gt;-webkit-line-clamp&lt;/code&gt; CSS 프로퍼티를 구현했습니다.&lt;br&gt;
+또, CSS Scroll Snapping 사양에 맞춰 기능을 변경했습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;React Navtive의 Android 용 JavaScript 엔진인 Hermes가 공개됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/hermes&quot;&gt;facebook/hermes: Hermes is a small and lightweight JavaScript engine optimized for running React Native on Android.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://code.fb.com/android/hermes/&quot;&gt;Hermes: A new open source JavaScript engine optimized for mobile apps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;React Native에 최적화 된 자바스크립트 엔진으로 React Native 0.60.2부터 동의(Opt-in) 하에 이용할 수 있습니다. &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react-native/docs/hermes/&quot;&gt;Enabling Hermes · React Native&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hermes는 TTI(Time To Interact), APK 파일 크기, 메모리 소비의 개선에 목적을 두고 개발됐습니다.&lt;br&gt;
+자바스크립트의 코드를 AOT(ahead-of-time)에서 바이트코드로 컴파일하고 실행 시에는 바이트코드를 이용해 실행하여 TTI(애플리케이션을 이용할 수 있는 상태까지의 시간) 을 개선합니다.&lt;/p&gt;
+
+&lt;p&gt;또, 현시점에서 Hermes는 JIT(Just-in-time)을 의도적으로 구현하지 않아 처리 속도는 기존 형식과 조금 다를 수 있습니다.&lt;br&gt;
+V8도 JIT-less 모드를 가지고 있지만 조금 문맥이 다르기 때문에 굳이 TTI와 메모리 소비를 줄이기 위해서 사용하지 않은 것 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://v8.dev/blog/jitless&quot;&gt;JIT-less V8 · V8&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hermes는 디버그 빌드 시엔 AOT 컴파일 하지 않기 때문에 성능을 비교할 때 주의할 필요가 있습니다. &lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://calibreapp.com/blog/how-pagespeed-works/&quot;&gt;How Google Pagespeed works: Improve Your Score and Search Engine Ranking&lt;/a&gt;에서는 5월에 업데이트 된 PageSpeed Insights를 소개합니다.&lt;/p&gt;
+
+&lt;p&gt;PageSpeed Insights의 점수는 &lt;a href=&quot;https://github.com/GoogleChrome/lighthouse&quot;&gt;Lighthouse&lt;/a&gt;의 &amp;quot;Performance&amp;quot; 점수를 그대로 이어받는다는 사실과 그 스코어가 어떻게 계산되는지 소개합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/speed/docs/insights/release_notes&quot;&gt;Release Notes  |  PageSpeed Insights  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.google.com/document/d/11hXs4zZXxGdxRFYueWh1JDh45wiSzMc9TQ9z6NVqB0g/preview&quot;&gt;[PUBLIC] PSI now with Lighthouse v5 - Google 문서&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;firefox-68-0-see-all-new-features-updates-and-fixes&quot;&gt;Firefox 68.0, See All New Features, Updates and Fixes&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/68.0/releasenotes/&quot; title=&quot;Firefox 68.0, See All New Features, Updates and Fixes&quot;&gt;www.mozilla.org/en-US/firefox/68.0/releasenotes/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Firefox 68.0이 릴리스됐습니다. 이는 Firefox ESR이 되는 버전입니다.&lt;br&gt;
+개발자 도구의 네트워크 패널에서 특정 URL을 거부할 수 있으며 Android 버전에서 Visual Viewport API를 활성화했습니다. 또, CSS Scroll Snap을 사양에 맞춰 수정했습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/07/firefox-68-bigints-contrast-checks-and-the-quantumbar/&quot; title=&quot;Firefox 68: BigInts, Contrast Checks, and the QuantumBar - Mozilla Hacks - the Web developer blog&quot;&gt;Firefox 68: BigInts, Contrast Checks, and the QuantumBar - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/68&quot; title=&quot;Firefox 68 for developers - Mozilla | MDN&quot;&gt;Firefox 68 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-87-webkit&quot;&gt;Release Notes for Safari Technology Preview 87 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9414/release-notes-for-safari-technology-preview-87/&quot; title=&quot;Release Notes for Safari Technology Preview 87 | WebKit&quot;&gt;webkit.org/blog/9414/release-notes-for-safari-technology-preview-87/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview 87이 릴리스됐습니다.&lt;br&gt;
+&lt;code&gt;console.countReset&lt;/code&gt;, &lt;code&gt;console.timeLog&lt;/code&gt;가 구현됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v1-0-0-quasarframework-quasar&quot;&gt;Release v1.0.0 · quasarframework/quasar&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/quasarframework/quasar/releases/tag/v1.0.0&quot; title=&quot;Release v1.0.0 · quasarframework/quasar&quot;&gt;github.com/quasarframework/quasar/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vue 기반의 UI 프레임워크 Quasar 1.0.0이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/quasar-framework/quasar-1-0-4bc696d60c1b&quot; title=&quot;Quasar 1.0&quot;&gt;Quasar 1.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webdriver-is-coming-to-safari-in-ios-13-webkit&quot;&gt;WebDriver is Coming to Safari in iOS 13 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9395/webdriver-is-coming-to-safari-in-ios-13/&quot; title=&quot;WebDriver is Coming to Safari in iOS 13 | WebKit&quot;&gt;webkit.org/blog/9395/webdriver-is-coming-to-safari-in-ios-13/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webdriver&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;iOS 13의 Safari에서 WebDriver를 지원합니다. 이에 대한 내용이 상세히 작성돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;snyk-research-team-discovers-severe-prototype-pollution-security-vulnerabilities-affecting-all-versions-of-lodash-snyk&quot;&gt;Snyk research team discovers severe prototype pollution security vulnerabilities affecting all versions of lodash | Snyk&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://snyk.io/blog/snyk-research-team-discovers-severe-prototype-pollution-security-vulnerabilities-affecting-all-versions-of-lodash/&quot; title=&quot;Snyk research team discovers severe prototype pollution security vulnerabilities affecting all versions of lodash | Snyk&quot;&gt;snyk.io/blog/snyk-research-team-discovers-severe-prototype-pollution-security-vulnerabilities-affecting-all-versions-of-lodash/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;lodash 4.17.12에서 수정된 Prototype Pollution 취약성에 대해 이야기합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jovi0608.hatenablog.com/entry/2018/10/19/083725&quot; title=&quot;Node.js에 있어 프로토타입 오염 공격은 무엇인가 - 한가한 일기&quot;&gt;Node.js에 있어 프로토타입 오염 공격은 무엇인가 - 한가한 일기(일본어)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lodash/lodash/wiki/Changelog#v41712&quot; title=&quot;Changelog · lodash/lodash Wiki&quot;&gt;Changelog · lodash/lodash Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;web-components-update-more-time-to-upgrade-to-v1-apis-web-google-developers&quot;&gt;Web Components update: more time to upgrade to v1 APIs  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/07/web-components-time-to-upgrade&quot; title=&quot;Web Components update: more time to upgrade to v1 APIs  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/07/web-components-time-to-upgrade&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome의 Web Components v0 API 폐지 절차에 대해 작성돼 있습니다.&lt;br&gt;
+Chrome 80에서 삭제할 예정이며 명령 줄 플래그로 테스트하는 방법과 Polyfill 등도 소개합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;yomguithereals-shenanigans-implementing-an-efficient-lru-cache-in-javascript&quot;&gt;Yomguithereal&amp;#39;s Shenanigans - Implementing an efficient LRU cache in JavaScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://yomguithereal.github.io/posts/lru-cache&quot; title=&quot;Yomguithereal&amp;#39;s Shenanigans - Implementing an efficient LRU cache in JavaScript&quot;&gt;yomguithereal.github.io/posts/lru-cache&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;algorithm&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScript에서의 LRU 구현에 관해 소개합니다.&lt;br&gt;
+Double Linked List 구조와 Map을 사용한 구현 방법을 소개하며 LRU의 갱신 비용 대부분은 삭제 시 발생한다는 점 등을 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;normalize-css-or-css-reset-elad-shechter-medium&quot;&gt;Normalize CSS or CSS Reset?! - Elad Shechter - Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@elad/normalize-css-or-css-reset-9d75175c5d1e&quot; title=&quot;Normalize CSS or CSS Reset?! - Elad Shechter - Medium&quot;&gt;medium.com/@elad/normalize-css-or-css-reset-9d75175c5d1e&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSS 아키텍처를 주제로 한 글입니다.&lt;br&gt;
+CSS Reset과 Normalize의 접근법 비교, 파일 구성, 여러개의 사이트를 위한 레이어 구성 등을 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;lesnitsky-webgl-month-daily-webgl-tutorials&quot;&gt;lesnitsky/webgl-month: 🎓 Daily WebGL tutorials&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/lesnitsky/webgl-month&quot; title=&quot;lesnitsky/webgl-month: 🎓 Daily WebGL tutorials&quot;&gt;github.com/lesnitsky/webgl-month&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebGL 튜토리얼 입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;how-google-pagespeed-works-improve-your-score-and-search-engine-ranking&quot;&gt;How Google Pagespeed works: Improve Your Score and Search Engine Ranking&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://calibreapp.com/blog/how-pagespeed-works/&quot; title=&quot;How Google Pagespeed works: Improve Your Score and Search Engine Ranking&quot;&gt;calibreapp.com/blog/how-pagespeed-works/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Google의 PageSpeed Insights(PSI) 5.0에 대한 글입니다.&lt;br&gt;
+PSI 5.0의 점수는 Lighthouse와 동일한 점과 Lighthouse의 점수 측정 방식, TTI 영향 등에 대해 작성돼 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/speed/docs/insights/release_notes&quot; title=&quot;Release Notes  |  PageSpeed Insights  |  Google Developers&quot;&gt;Release Notes  |  PageSpeed Insights  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;easygraphql&quot;&gt;EasyGraphQL&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://easygraphql.com/&quot; title=&quot;EasyGraphQL&quot;&gt;easygraphql.com/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;GraphQL 툴킷입니다.&lt;br&gt;
+GraphQL의 서버, 목, 테스트 도구, 트레이싱 라이브러리 등이 정리돼 있습니다.&lt;br&gt;
+또, 파이어폭스나 now에서 GraphQL를 구동시키는 도구도 공개하고 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;quickjs-javascript-engine&quot;&gt;QuickJS Javascript Engine&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bellard.org/quickjs/&quot; title=&quot;QuickJS Javascript Engine&quot;&gt;bellard.org/quickjs/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;software&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;C언어&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ES2019 사양을 구현한 자바스크립트 엔진입니다.&lt;br&gt;
+C로 구현돼 있고 외부의 어떤 자원을 의존하지 않습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;paulrosen-abcjs-javascript-for-rendering-abc-music-notation&quot;&gt;paulrosen/abcjs: javascript for rendering abc music notation&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/paulrosen/abcjs&quot; title=&quot;paulrosen/abcjs: javascript for rendering abc music notation&quot;&gt;github.com/paulrosen/abcjs&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;SVG를 기반으로 악보를 그려주는 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;facebook-hermes-hermes-is-a-small-and-lightweight-javascript-engine-optimized-for-running-react-native-on-android&quot;&gt;facebook/hermes: Hermes is a small and lightweight JavaScript engine optimized for running React Native on Android.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/hermes&quot; title=&quot;facebook/hermes: Hermes is a small and lightweight JavaScript engine optimized for running React Native on Android.&quot;&gt;github.com/facebook/hermes&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Android&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Native의 Android 용 자바스크립트 엔진입니다.&lt;br&gt;
+자바스크립트를 레지스터 기반의 바이트코드로 컴파일하여 모바일에서 빠르게 구동시키는 것에 목적을 두고 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 16 Jul 2019 09:08:12 +0900</pubDate>
+        <link>https://jser.info/ko/2019/07/16/firefox-68.0hermesjs-engine-for-react-nativepagespeed-insights-5/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2019/07/16/firefox-68.0hermesjs-engine-for-react-nativepagespeed-insights-5/</guid>
+        
+        <category>Firefox</category>
+        
+        <category>JavaScript</category>
+        
+        <category>ReactNavtive</category>
+        
+        <category>Performance</category>
+        
+        <category>Google</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-07-09: Babel 7.5.0(Dynamic Import), Next.js 9(Dynamic routing), React Native 0.60</title>
@@ -2421,211 +2670,6 @@ mocha나 jest 등의 여러 테스트 프레임워크와 연동해 동작합니�
         <category>CSP</category>
         
         <category>security</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-04-15: jQuery 3.4.0(Sizzle), ESLint 6.0.0 α, react-redux 7.0(Hooks)</title>
-        <description>&lt;p&gt;JSer.info #431 - jQuery 3.4.0이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://blog.jquery.com/2019/04/10/jquery-3-4-0-released/&quot;&gt;jQuery 3.4.0 Released | Official jQuery Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;jQuery를 이용해 &lt;code&gt;script&lt;/code&gt; 태그를 작성하면 &lt;code&gt;nonce&lt;/code&gt; 속성이나 &lt;code&gt;nomodule&lt;/code&gt; 속성이 무시됐지만 3.4.0에서 이 문제가 수정됐습니다.&lt;br&gt;
-함께 &lt;code&gt;jQuery.extend&lt;/code&gt;에 있었던 프로토타입 오염(prototype pollution) 취약점이 수정됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jovi0608.hatenablog.com/entry/2018/10/19/083725&quot;&gt;Node.js에 있어 프로토타입 오염 공격이란 무엇인가 - 천천히 쓰는 일기&lt;/a&gt;(일본어)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;또, 3.4.0 부터 jQuery의 CSS 셀렉터 엔진인 &lt;a href=&quot;https://github.com/jquery/sizzle&quot;&gt;Sizzle&lt;/a&gt;의 독자적인 셀렉터를 비권장됩니다.&lt;br&gt;
-&lt;code&gt;:first&lt;/code&gt;, &lt;code&gt;:last&lt;/code&gt;, &lt;code&gt;:eq&lt;/code&gt;, &lt;code&gt;:even&lt;/code&gt;, &lt;code&gt;:odd&lt;/code&gt;, &lt;code&gt;:lt&lt;/code&gt;, &lt;code&gt;:gt&lt;/code&gt;, &lt;code&gt;:nth&lt;/code&gt;이 이에 해당합니다.&lt;br&gt;
-jQuery 4.0.0에서 Sizzle을 삭제할 예정이며 위 셀렉터는 비표준으로 &lt;code&gt;querySelectorAll&lt;/code&gt;에서 사용할 수 없기 때문에 비권장됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;ESLint 6.0.0 알파 버전이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://eslint.org/blog/2019/04/eslint-v6.0.0-alpha.0-released&quot;&gt;ESLint v6.0.0-alpha.0 released - ESLint - Pluggable JavaScript linter&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://eslint.org/docs/6.0.0/user-guide/migrating-to-6.0.0&quot;&gt;Migrating to v6.0.0 - ESLint - Pluggable JavaScript linter&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/274347ff9473b26b575a&quot;&gt;ESLint v6.0.0 변경 사항 정리 - Qiita&lt;/a&gt;(일본어)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;설치된 플러그인을 불러오는 방법이 변경됐기 때문에 전역에 ESLint를 설치해 사용하고 있다면 플러그인은 해당하는 프로젝트 로컬에 설치해야 합니다. 자세한 내용은 마이그레이션 가이드 문서를 참고하세요.&lt;br&gt;
-그리고 &lt;code&gt;eslint:recommended&lt;/code&gt;가 수정됐고 규칙의 기본 설정이 일부 변경됐으며 설정 파일 유효성 검사가 좀 더 엄격하게 이뤄지도록 변경됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;React-Redux 7.0이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/reduxjs/react-redux/releases/tag/v7.0.1&quot;&gt;Release v7.0.1 · reduxjs/react-redux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;connect&lt;/code&gt; 내부가 &lt;code&gt;React.memo&lt;/code&gt;와 Hooks API를 사용해 구현됐습니다.&lt;br&gt;
-따라서 React-Redux 7는 React 16.8.4 이상의 환경을 요구하게 됐습니다.&lt;br&gt;
-또, Hooks API를 사용한 커스텀 훅 &lt;code&gt;useRedux()&lt;/code&gt;도 향후 구현해 제공할 예정입니다.&lt;/p&gt;
-
-&lt;p&gt;이 외로 Subscription의 동작 변경, &lt;code&gt;batch&lt;/code&gt; API 추가, &lt;code&gt;store&lt;/code&gt;를 Props로 전달하는 기능을 시험하기 위한 재구현이 이뤄졌습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jquery-3-4-0-released-official-jquery-blog&quot;&gt;jQuery 3.4.0 Released | Official jQuery Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.jquery.com/2019/04/10/jquery-3-4-0-released/&quot; title=&quot;jQuery 3.4.0 Released | Official jQuery Blog&quot;&gt;blog.jquery.com/2019/04/10/jquery-3-4-0-released/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;jQuery 3.4.0이 릴리스됐습니다.&lt;br&gt;
-script 태그 작성 시 &lt;code&gt;nomodule&lt;/code&gt;와 &lt;code&gt;nonce&lt;/code&gt;를 지원하며 &lt;code&gt;Object.prototype&lt;/code&gt; 오염 취약점이 수정됐고 Sizzle이 독자적으로 지원하는 CSS 셀렉터가 비권장됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ember-js-ember-3-9-released&quot;&gt;Ember.js - Ember 3.9 Released&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/04/10/ember-3-9-released.html&quot; title=&quot;Ember.js - Ember 3.9 Released&quot;&gt;blog.emberjs.com/2019/04/10/ember-3-9-released.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Ember 3.9가 릴리스됐습니다.&lt;br&gt;
-jQuery를 기본 환경에서 제거하기 위해 &lt;code&gt;Ember.$()&lt;/code&gt; 등이 비권장됐고 &lt;code&gt;.volatile()&lt;/code&gt;와 &lt;code&gt;.property()&lt;/code&gt;가 아닌 네이티브 getter/setter를 이용하도록 변경됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/emberjs/ember.js/releases/tag/v3.9.0&quot; title=&quot;Release v3.9.0 · emberjs/ember.js&quot;&gt;Release v3.9.0 · emberjs/ember.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://deprecations.emberjs.com/v3.x/&quot; title=&quot;Ember.js - Deprecations&quot;&gt;Ember.js - Deprecations&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;eslint-v6-0-0-alpha-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v6.0.0-alpha.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2019/04/eslint-v6.0.0-alpha.0-released&quot; title=&quot;ESLint v6.0.0-alpha.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2019/04/eslint-v6.0.0-alpha.0-released&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ESLint 6.0.0 알파 버전이 릴리스됐습니다.&lt;br&gt;
-설치된 플러그인을 불러오는 방법이 변경됐습니다. 그리고 &lt;code&gt;eslint:recommended&lt;/code&gt;가 수정됐고 규칙의 기본 설정이 일부 변경됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/274347ff9473b26b575a&quot; title=&quot;ESLint v6.0.0 の変更点まとめ - Qiita&quot;&gt;ESLint v6.0.0 の変更点まとめ - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v11-14-0-current-node-js&quot;&gt;Node v11.14.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v11.14.0/&quot; title=&quot;Node v11.14.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v11.14.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 11.14.0이 릴리스됐습니다.&lt;br&gt;
-&lt;code&gt;fs.promises&lt;/code&gt;와 &lt;code&gt;readline&lt;/code&gt;의 &lt;code&gt;Symbol.asyncIterator&lt;/code&gt; 대응이 Stable로 전환됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v7-0-1-reduxjs-react-redux&quot;&gt;Release v7.0.1 · reduxjs/react-redux&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/reduxjs/react-redux/releases/tag/v7.0.1&quot; title=&quot;Release v7.0.1 · reduxjs/react-redux&quot;&gt;github.com/reduxjs/react-redux/releases/tag/v7.0.1&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React-Redux 7.0이 릴리스됐습니다. &lt;code&gt;connect&lt;/code&gt;가 &lt;code&gt;React.memo&lt;/code&gt;와 Hooks　API를 사용해 구현됐으며 Subscription의 동작 변경이 이뤄졌습니다. 또, &lt;code&gt;batch&lt;/code&gt; API가 추가됐고, &lt;code&gt;store&lt;/code&gt;를 Props으로 전달하는 기능을 시험하기 위해 재작성됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;prettier-1-17-more-quotes-options-and-support-for-shared-configs-prettier&quot;&gt;Prettier 1.17: More quotes options and support for shared configs · Prettier&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://prettier.io/blog/2019/04/12/1.17.0.html&quot; title=&quot;Prettier 1.17: More quotes options and support for shared configs · Prettier&quot;&gt;prettier.io/blog/2019/04/12/1.17.0.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Prettier 1.17이 릴리스됐습니다.&lt;br&gt;
-객체의 quote을 설정 하는 &lt;code&gt;--quote-props&lt;/code&gt;가 추가됐으며 shared config를 지원하고 TypeScript 3.4의 &lt;code&gt;readonly&lt;/code&gt; 수식자를 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;form-validation-in-under-an-hour-with-vuelidate-css-tricks&quot;&gt;Form Validation in Under an Hour with Vuelidate | CSS-Tricks&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://css-tricks.com/form-validation-in-under-an-hour-with-vuelidate/&quot; title=&quot;Form Validation in Under an Hour with Vuelidate | CSS-Tricks&quot;&gt;css-tricks.com/form-validation-in-under-an-hour-with-vuelidate/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Vue의 폼 검증 라이브러리인 Vuelidate를 소개하는 글입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;catsnake11-webpack-ops-webpack-bundle-visualization-optimization-config-tool&quot;&gt;CatSnake11/Webpack-Ops: 📁 Webpack bundle visualization // optimization // config tool&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/CatSnake11/Webpack-Ops&quot; title=&quot;CatSnake11/Webpack-Ops: 📁 Webpack bundle visualization // optimization // config tool&quot;&gt;github.com/CatSnake11/Webpack-Ops&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpack 대시보드 애플리케이션입니다.&lt;br&gt;
-bundle 결과 시각화, 최적화 플러그인을 애플리케이션 내에서 실행해보거나 설정 파일을 UI로 쉽게 생성할 수 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;commenthol-date-holidays-worldwide-holidays&quot;&gt;commenthol/date-holidays: worldwide holidays&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/commenthol/date-holidays&quot; title=&quot;commenthol/date-holidays: worldwide holidays&quot;&gt;github.com/commenthol/date-holidays&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;공휴일을 판정하는 라이브러리입니다.&lt;br&gt;
-각국에 대한 공휴일 정보를 갖고 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;niklasvh-html2canvas-screenshots-with-javascript&quot;&gt;niklasvh/html2canvas: Screenshots with JavaScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/niklasvh/html2canvas&quot; title=&quot;niklasvh/html2canvas: Screenshots with JavaScript&quot;&gt;github.com/niklasvh/html2canvas&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;HTML 랜더링 결과를 Canvas에 그려 스크린샷을 찍을 수 있는 자바스크립트 라이브러리입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;seek-oss-playroom-design-with-jsx-powered-by-your-own-component-library&quot;&gt;seek-oss/playroom: Design with JSX, powered by your own component library.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/seek-oss/playroom&quot; title=&quot;seek-oss/playroom: Design with JSX, powered by your own component library.&quot;&gt;github.com/seek-oss/playroom&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JSX/React 컴포넌트 플레이그라운드 도구입니다.&lt;br&gt;
-여러 표현 범위(viewport)에서 실행해보면서 컴포넌트를 프로토타이핑 할 수 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;packem-packem-a-precompiled-javascript-module-bundler&quot;&gt;packem/packem: 📦⚡ A precompiled JavaScript module bundler&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/packem/packem&quot; title=&quot;packem/packem: 📦⚡ A precompiled JavaScript module bundler&quot;&gt;github.com/packem/packem&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Rust&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Rust로 개발한 JavaScript 모듈 번들러입니다.&lt;br&gt;
-JavaScript로 플러그인을 만들어 확장도 할 수 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;저장소엔 Rust 코드가 없습니다. 개발자가 개인 저장소에서 따로 관리하고 있는 것 같습니다(&lt;a href=&quot;https://github.com/packem/packem/issues/4&quot;&gt;참고&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Mon, 15 Apr 2019 09:37:33 +0900</pubDate>
-        <link>https://jser.info/ko/2019/04/15/jquery-3.4.0sizzleeslint-6.0.0-areact-redux-7.0hooks/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2019/04/15/jquery-3.4.0sizzleeslint-6.0.0-areact-redux-7.0hooks/</guid>
-        
-        <category>jquery</category>
-        
-        <category>ESLint</category>
-        
-        <category>redux</category>
         
         
         <category>JSer</category>
