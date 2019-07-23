@@ -1,0 +1,437 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-07-23のJS: TypeScript 3.6 Beta、postMessageとパフォーマンス、Node.js 12の変更点 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/07/23/typescript-3.6-betapostmessagenode.js-12/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-07-23のJS: TypeScript 3.6 Beta、postMessageとパフォーマンス、Node.js 12の変更点"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-07-23のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://blog.emberjs.com/2019/07/15/ember-3-11-released.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Ember.js - Ember 3.11 Released</amp-fit-text>
+            <p class="item-contents">Ember 3.11リリース。
+<code>...attributes</code>構文のサポート、<code></code> helper、<code></code> modifierの追加。
+<code>Function.prototype.observes</code>の非推奨化など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Ember.js - Ember 3.11 Released" href="https://blog.emberjs.com/2019/07/15/ember-3-11-released.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://yarnpkg.com/blog/2019/07/12/recommended-security-update/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Recommended security update | Yarn Blog</amp-fit-text>
+            <p class="item-contents">Yarn 1.17.3リリース。
+<code>*.yarnpkg.com</code>、<code>*.npmjs.org</code>, <code>*.npmjs.com</code>のレジストリに対する通信は自動的にhttpsで通信するようにする修正
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Recommended security update | Yarn Blog" href="https://yarnpkg.com/blog/2019/07/12/recommended-security-update/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://devblogs.microsoft.com/typescript/announcing-typescript-3-6-beta/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing TypeScript 3.6 Beta | TypeScript</amp-fit-text>
+            <p class="item-contents">TypeScript 3.6 ベータリリース。
+Generator/Iteratorの型改善、 Array Spreadの変換の改善、Promiseの<code>await</code>忘れなどのエラー表示改善など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing TypeScript 3.6 Beta | TypeScript" href="https://devblogs.microsoft.com/typescript/announcing-typescript-3-6-beta/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/laverdet/isolated-vm">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">laverdet/isolated-vm: Secure &amp; isolated JS environments for nodejs</amp-fit-text>
+            <p class="item-contents">V8 Isolateを使ってNode.jsからJavaScriptを隔離した環境で実行するライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="laverdet/isolated-vm: Secure &amp; isolated JS environments for nodejs" href="https://github.com/laverdet/isolated-vm" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://dmitripavlutin.com/use-react-memo-wisely/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Use React.memo() wisely</amp-fit-text>
+            <p class="item-contents"><code>React.memo()</code>の役割と使い方について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Use React.memo() wisely" href="https://dmitripavlutin.com/use-react-memo-wisely/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://portswigger.net/daily-swig/google-deprecates-xss-auditor-for-chrome">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Google deprecates XSS Auditor for Chrome | The Daily Swig</amp-fit-text>
+            <p class="item-contents">MSEdgeに続いてChromeのXSS Auditorも非推奨となることについて。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Google deprecates XSS Auditor for Chrome | The Daily Swig" href="https://portswigger.net/daily-swig/google-deprecates-xss-auditor-for-chrome" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://2ality.com/2019/07/private-class-fields.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ES proposal: private class fields</amp-fit-text>
+            <p class="item-contents">ECMAScript Proposalのprivate class fieldsについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ES proposal: private class fields" href="https://2ality.com/2019/07/private-class-fields.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://dassur.ma/things/is-postmessage-slow/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Is postMessage slow? — DasSur.ma</amp-fit-text>
+            <p class="item-contents"><code>postMessage</code>のパフォーマンスについての記事。Structured Clone algorithmとJSONシリアライズでのパフォーマンス比較。
+ImmerJSを使った送信するオブジェクトの最小化、ArrayBufferのtransferableなバイナリフォーマットのパフォーマンス。
+100kbまではオブジェクト、それ以上のサイズならバイナリを検討することについて。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Is postMessage slow? — DasSur.ma" href="https://dassur.ma/things/is-postmessage-slow/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://ceblog.mediba.jp/post/186341145447/webperf-measuring-with-lighthouse-and-datadog">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Datadog と Lighthouse を利用した WebPerf の継続的計測 | mediba Creator × Engineer Blog</amp-fit-text>
+            <p class="item-contents">Lighthouseで計測した値をDatadogに保存してメトリクスの可視化を行う方法について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Datadog と Lighthouse を利用した WebPerf の継続的計測 | mediba Creator × Engineer Blog" href="https://ceblog.mediba.jp/post/186341145447/webperf-measuring-with-lighthouse-and-datadog" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://v8.dev/features/weak-references">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Weak references and finalizers · V8</amp-fit-text>
+            <p class="item-contents"><code>WeakMap</code>、<code>WeakSet</code>のweakの動作について。
+またECMAScript Proposalである<code>WeakRef</code>と<code>FinalizationGroup</code>について。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Weak references and finalizers · V8" href="https://v8.dev/features/weak-references" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.logrocket.com/node-js-12/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node.js 12: The future of server-side JavaScript - LogRocket Blog</amp-fit-text>
+            <p class="item-contents">Node.js 12の主な変更点について。
+V8の更新によるパフォーマンス改善、TLS 1.3の対応、ヒープサイズがメモリサイズによって決まるように、HTTPパーサの改善、Diagnostic reportsやheap dumpの同梱など。
+また<code>worker_thread</code>のexperimentalフラグが外れ、試験的な機能としてES modulesの対応など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node.js 12: The future of server-side JavaScript - LogRocket Blog" href="https://blog.logrocket.com/node-js-12/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://csp.withgoogle.com/docs/index.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Introduction - Content Security Policy</amp-fit-text>
+            <p class="item-contents">CSP(Content Security Policy)についての解説サイト。
+CSPとはどのようにXSSを防ぐのか、使う理由/使わない理由、CSPの設定、FAQなどが書かれている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Introduction - Content Security Policy" href="https://csp.withgoogle.com/docs/index.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/IntrinsicLabs/osgood">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">IntrinsicLabs/osgood: Osgood is a secure, fast, and simple platform for running JavaScript HTTP servers.</amp-fit-text>
+            <p class="item-contents">Rustで書かれたV8ベースのHTTPサーバ。ルーティングのハンドラはWorkerとして実行され、リクエストに対するレスポンスを返す
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="IntrinsicLabs/osgood: Osgood is a secure, fast, and simple platform for running JavaScript HTTP servers." href="https://github.com/IntrinsicLabs/osgood" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/zerobias/effector">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">zerobias/effector: The state manager ☄️</amp-fit-text>
+            <p class="item-contents">ステート管理ライブラリ。
+EventsやEffectsを使い、StoreのStateを更新という一連の流れの名前空間を管理するDomainのAPIを提供しています。
+VueやReactなどUIフレームワーク向けのアダプターも提供しています。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="zerobias/effector: The state manager ☄️" href="https://github.com/zerobias/effector" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/gajus/lightship">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">gajus/lightship: Abstracts readiness/ liveness checks and graceful shutdown of Node.js services running in Kubernetes.</amp-fit-text>
+            <p class="item-contents">Kubernetesのヘルスチェックなどに対する抽象層を提供するNode.jsライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="gajus/lightship: Abstracts readiness/ liveness checks and graceful shutdown of Node.js services running in Kubernetes." href="https://github.com/gajus/lightship" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/ehmicky/test-each">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ehmicky/test-each: 🤖 Repeat tests. Repeat tests. Repeat tests.</amp-fit-text>
+            <p class="item-contents">Data Driven Testingを行うためのヘルパーライブラリ。
+データからテストケースを作成するためのイテレートやSeed値を元にしたランダムな値を生成してテストできる
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ehmicky/test-each: 🤖 Repeat tests. Repeat tests. Repeat tests." href="https://github.com/ehmicky/test-each" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
