@@ -5,9 +5,251 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 30 Jul 2019 11:46:57 +0900</pubDate>
-    <lastBuildDate>Tue, 30 Jul 2019 11:46:57 +0900</lastBuildDate>
+    <pubDate>Thu, 01 Aug 2019 17:35:35 +0900</pubDate>
+    <lastBuildDate>Thu, 01 Aug 2019 17:35:35 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-07-30: mithril.js 2, Electron 6, React 입문 가이드</title>
+        <description>&lt;p&gt;JSer.info #446 - 싱글 페이지 애플리케이션 용 자바스크립트 프레임워크인 &lt;a href=&quot;https://github.com/MithrilJS/mithril.js&quot;&gt;Mithril&lt;/a&gt; 2가 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/MithrilJS/mithril.js/releases/tag/v2.0.1&quot;&gt;Release v2.0.1 · MithrilJS/mithril.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;비호환적 변경 사항으로 &lt;code&gt;m.redraw()&lt;/code&gt;가 기본적으로 비동기로 동작하며 대신에 &lt;code&gt;m.redraw.sync()&lt;/code&gt;가 추가됐습니다. &lt;br&gt;
+이 외로 &lt;code&gt;m.withAttr&lt;/code&gt;가 삭제됐으며 &lt;code&gt;m.request&lt;/code&gt;가 반환하는 Promise가 서버 에러인 경우에도 reject 되지 않도록 변경됐고 IE10 이하 지원이 종료됐습니다.&lt;br&gt;
+또, &lt;code&gt;m.request&lt;/code&gt;에서 &lt;code&gt;timeout&lt;/code&gt;이나 &lt;code&gt;responseType&lt;/code&gt;을 지원하는 등의 기능 추가도 이뤄졌습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Electron 6.0.0이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/electron/electron/releases/tag/v6.0.0&quot;&gt;Release electron v6.0.0 · electron/electron&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://electronjs.org/releases/stable&quot;&gt;Stable Releases | Electron&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Chromium 76로 갱신됐으며 Cookies API에서 Promise를 지원합니다. macOS에서 Touch ID로 인증할 수 있는 &lt;code&gt;SystemPreferences.promptTouchID()&lt;/code&gt;가 추가됐습니다.&lt;br&gt;
+또, sandboxed renderers 내에서 사용이 비권장된 &lt;code&gt;fs&lt;/code&gt;와 &lt;code&gt;child_process&lt;/code&gt; 등을 직접 &lt;code&gt;require&lt;/code&gt;할 수 있는 동작이 삭제됐습니다.&lt;br&gt;
+대신 명시적으로 &lt;code&gt;remote.require&lt;/code&gt;를 사용합니다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-diff&quot; data-lang=&quot;diff&quot;&gt;&lt;span class=&quot;gd&quot;&gt;- require('fs');
+&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+ require('electron').remote.require('fs')
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://electronjs.org/blog/electron-5-0#automatic-modules-with-sandboxed-webcontents&quot;&gt;Electron 5.0.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/electron/electron/pull/15957&quot;&gt;chore: remove deprecated modules internally using remote.require in sandboxed renderer context by miniak · Pull Request #15957 · electron/electron&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2019/06/chrome-76-beta-dark-mode-payments-new.html&quot; title=&quot;Chromium Blog: Chrome 76 Beta: dark mode, payments, new PWA features and more&quot;&gt;Chromium Blog: Chrome 76 Beta: dark mode, payments, new PWA features and more&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;React 입문자 용 가이드 문서 &lt;a href=&quot;https://jscomplete.com/learn/complete-intro-react&quot;&gt;The Complete Introduction to React&lt;/a&gt;가 공개됐습니다.&lt;br&gt;
+기본적인 React의 개념, JSX, 컴포넌트, Hooks API 등 샘플 코드를 실행해보며 학습할 수 있도록 작성돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v2-0-1-mithriljs-mithril-js&quot;&gt;Release v2.0.1 · MithrilJS/mithril.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/MithrilJS/mithril.js/releases/tag/v2.0.1&quot; title=&quot;Release v2.0.1 · MithrilJS/mithril.js&quot;&gt;github.com/MithrilJS/mithril.js/releases/tag/v2.0.1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;mithril.js 2.0이 릴리스됐습니다.&lt;br&gt;
+비호환적 변경 사항으로 &lt;code&gt;m.redraw()&lt;/code&gt;가 기본적으로 비동기로 동작하며 대신해 사용할 수 있는 &lt;code&gt;m.redraw.sync()&lt;/code&gt;가 추가됐으며 &lt;code&gt;m.withAttr&lt;/code&gt;가 삭제됐습니다.&lt;br&gt;
+또, &lt;code&gt;m.request&lt;/code&gt;에서 &lt;code&gt;timeout&lt;/code&gt;와 &lt;code&gt;responseType&lt;/code&gt;을 지원하며 IE10 이하 버전 지원을 종료했습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v12-7-0-current-node-js&quot;&gt;Node v12.7.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.7.0/&quot; title=&quot;Node v12.7.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.7.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node v12.7.0이 릴리스됐습니다.&lt;br&gt;
+npm 6.10.0으로 갱신, &lt;code&gt;pkg-exports&lt;/code&gt; Proposal 실험적 지원, Policy를 검증하는 &lt;code&gt;--policy-integrity=sri&lt;/code&gt; 옵션 추가.&lt;br&gt;
+또, Docker의 Memory 제한(linux cgroups의 설정)을 정확하게 가져올 수 있도록 수정됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v5-2-0-googlechrome-lighthouse&quot;&gt;Release v5.2.0 · GoogleChrome/lighthouse&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse/releases/tag/v5.2.0&quot; title=&quot;Release v5.2.0 · GoogleChrome/lighthouse&quot;&gt;github.com/GoogleChrome/lighthouse/releases/tag/v5.2.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Lighthouse 5.2.0이 릴리스됐습니다.&lt;br&gt;
+Chrome 77에 탑재 될 예정입니다. 서드 파티 스크립트의 성능 영향을 표시할 수 있고 메인 스레드의 총 블로킹 시간을 측정할 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/patrickhulce/third-party-web&quot; title=&quot;patrickhulce/third-party-web: Data on third party entities and their impact on the web.&quot;&gt;patrickhulce/third-party-web: Data on third party entities and their impact on the web.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v4-38-0-webpack-webpack&quot;&gt;Release v4.38.0 · webpack/webpack&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/webpack/webpack/releases/tag/v4.38.0&quot; title=&quot;Release v4.38.0 · webpack/webpack&quot;&gt;github.com/webpack/webpack/releases/tag/v4.38.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webpack v4.38.0이 릴리스됐습니다.&lt;br&gt;
+ProgressPlugin의 성능이 개선됐고, chunk graph 생성 시 부모 자식 관계를 추적하는 식으로 인크리멘탈 빌드 시의 chunk 생성 성능이 개선됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v2-0-0-vuetifyjs-vuetify&quot;&gt;Release v2.0.0 · vuetifyjs/vuetify&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/vuetifyjs/vuetify/releases/tag/v2.0.0&quot; title=&quot;Release v2.0.0 · vuetifyjs/vuetify&quot;&gt;github.com/vuetifyjs/vuetify/releases/tag/v2.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vue의 Material Design UI 라이브러리 Vuetify 2.0이 릴리스됐습니다.&lt;br&gt;
+Material Design 2에 대응하고 새로운 컴포넌트가 추가됐습니다.&lt;br&gt;
+1.5에서의 마이그레이션 가이드도 함께 공개됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-electron-v6-0-0-electron-electron&quot;&gt;Release electron v6.0.0 · electron/electron&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/electron/electron/releases/tag/v6.0.0&quot; title=&quot;Release electron v6.0.0 · electron/electron&quot;&gt;github.com/electron/electron/releases/tag/v6.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Electron 6.0.0이 릴리스됐습니다.&lt;br&gt;
+Chromium 76으로 갱신, Cookies API에서 Promise 지원, macOS에서 Touch ID로 인증할 수 있는 &lt;code&gt;promptTouchID()&lt;/code&gt;가 추가됐습니다.&lt;br&gt;
+sandboxed renderers에서 사용이 비권장 됐던 &lt;code&gt;require(&amp;#39;fs&amp;#39;)&lt;/code&gt; 등 require 할 수 있는 동작 삭제됐으며 대신 명시적으로 &lt;code&gt;remote.require&lt;/code&gt; 를 사용해야합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2019/06/chrome-76-beta-dark-mode-payments-new.html&quot; title=&quot;Chromium Blog: Chrome 76 Beta: dark mode, payments, new PWA features and more&quot;&gt;Chromium Blog: Chrome 76 Beta: dark mode, payments, new PWA features and more&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;whats-new-in-devtools-chrome-77-web-google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 77)  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/07/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 77)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/07/devtools&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 77 개발자 도구 변경 사항이 정리돼 있습니다.&lt;br&gt;
+요소의 스타일을 복사할 수 있으며 Layout Instability 가시화 기능이 추가됐고 Lighthouse 5.1로 갱신, 네트워크 패널에 Prefetch cache가 출력되도록 개선됐습니다.&lt;br&gt;
+또, Push 통지 등을 Application 패널에서 확인할 수도 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;understanding-service-worker-life-cycle-vipul-nema-medium&quot;&gt;Understanding service worker life cycle - Vipul Nema - Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@vipulnema2610/understanding-service-worker-life-cycle-b6580aa4eb50&quot; title=&quot;Understanding service worker life cycle - Vipul Nema - Medium&quot;&gt;medium.com/@vipulnema2610/understanding-service-worker-life-cycle-b6580aa4eb50&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Service Worker의 라이프사이클을 설명하는 글입니다&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;keeping-things-fresh-with-stale-while-revalidate-web-dev&quot;&gt;Keeping things fresh with stale-while-revalidate  |  web.dev&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/stale-while-revalidate/&quot; title=&quot;Keeping things fresh with stale-while-revalidate  |  web.dev&quot;&gt;web.dev/stale-while-revalidate/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 75와 Firefox 68에서 지원하는 &lt;code&gt;stale-while-revalidate&lt;/code&gt; HTTP 헤더 지원에 대해서 작성돼 있습니다.&lt;br&gt;
+일정 시간은 캐시를 이용하지만 동시에 백그라운드에서 갱신를 갱신하도록 합니다.&lt;/p&gt;
+
+&lt;p&gt;글에선 &lt;code&gt;Cache-Control: max-age=1, stale-while-revalidate=59&lt;/code&gt;의 동작 원리도 설명하며 유즈케이스를 소개합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;modern-script-loading&quot;&gt;Modern Script Loading&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jasonformat.com/modern-script-loading/&quot; title=&quot;Modern Script Loading&quot;&gt;jasonformat.com/modern-script-loading/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;scirpt 요소에서 ES Module에 대응한 모던 빌드와 legacy 빌드를 반별하는 방법이 소개돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-npm-blog-monorepos-and-npm&quot;&gt;The npm Blog — Monorepos and npm&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.npmjs.org/post/186494959890/monorepos-and-npm&quot; title=&quot;The npm Blog — Monorepos and npm&quot;&gt;blog.npmjs.org/post/186494959890/monorepos-and-npm&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm와 lerna를 이용한 monorepo 관리에 대해 이야기합니다. &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lerna/lerna&quot; title=&quot;lerna/lerna: A tool for managing JavaScript projects with multiple packages.&quot;&gt;lerna/lerna: A tool for managing JavaScript projects with multiple packages.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-complete-introduction-to-react&quot;&gt;The Complete Introduction to React&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jscomplete.com/learn/complete-intro-react&quot; title=&quot;The Complete Introduction to React&quot;&gt;jscomplete.com/learn/complete-intro-react&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React 초심자 용으로 작성된 가이드 문서입니다.&lt;br&gt;
+React의 기본적인 작성법, JSX, 컴포넌트, Hooks API, 사용자 입력을 다루는 방법, 사이드 이펙트 관리 등에 대해 설명돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;scrapbox-serviceworker-cache-daiiz&quot;&gt;Scrapbox의 ServiceWorker와 Cache 활용 - daiiz(일본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://scrapbox.io/daiiz/Scrapbox%E3%81%A7%E3%81%AEServiceWorker%E3%81%A8Cache%E3%81%AE%E6%B4%BB%E7%94%A8&quot; title=&quot;Scrapbox의 ServiceWorker와 Cache 활용 - daiiz&quot;&gt;scrapbox.io/daiiz/Scrapbox%E3%81%A7%E3%81%AEServiceWorker%E3%81%A8Cache%E3%81%AE%E6%B4%BB%E7%94%A8&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Service Worker를 사용한 캐시 전략을 소개합니다.&lt;br&gt;
+&lt;code&gt;request.destination&lt;/code&gt;을 사용한 요청 판별법, Quota의 용량과 사용량, &lt;code&gt;X-Serviceworker-Cache&lt;/code&gt; 응답 헤더로 인한 캐시 판정, 캐시의 갱신 등에 대해 작성돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;cube-js-cube-js-cube-js-open-source-analytics-framework&quot;&gt;cube-js/cube.js: 📊 Cube.js - Open Source Analytics Framework&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/cube-js/cube.js&quot; title=&quot;cube-js/cube.js: 📊 Cube.js - Open Source Analytics Framework&quot;&gt;github.com/cube-js/cube.js&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;데이터베이스&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Analytics 프레임워크 입니다.&lt;br&gt;
+분석 데이터를 저장할 수 있으며 해석을 담당하는 백엔드와 분석한 데이터를 그래프로 출력하는 기능 그리고 검색을 위한 프런트엔드를 제공합니다.&lt;br&gt;
+데이터베이스는 MySQL, Postgres, BigQuert, redshift 등을 대응하고 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;도서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-js-jonathanwexler&quot;&gt;입문 Node.js 프로그래밍(저: JonathanWexler, 저: 요시카와 쿠니오, 역: 요시카와 쿠니오) | 상영사 책(일본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.shoeisha.co.jp/book/detail/9784798158624&quot; title=&quot;입문 Node.js 프로그래밍(저: JonathanWexler, 저: 요시카와 쿠니오, 역: 요시카와 쿠니오) | 상영사 책&quot;&gt;www.shoeisha.co.jp/book/detail/9784798158624&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;翻訳&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2019년 09월 25일 출간 예정인 Get Programming with Node.js의 번역서입니다.&lt;br&gt;
+ES2015를 기반으로 한 Node.js 입문 도서입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 30 Jul 2019 09:18:44 +0900</pubDate>
+        <link>https://jser.info/ko/2019/07/30/mithril.js-2electron-6react/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2019/07/30/mithril.js-2electron-6react/</guid>
+        
+        <category>mithril</category>
+        
+        <category>Electron</category>
+        
+        <category>React</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-07-23: TypeScript 3.6 Beta, postMessage와 성능, Node.js 12의 변경 사항</title>
@@ -2304,291 +2546,6 @@ React Native로 네이티브 Windows 애플리케이션(UWP)를 개발할 수 �
         <category>WebGL</category>
         
         <category>gulp</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-04-30: Node.js 12.0.0(Node.js 6.x는 EOL), Electron 5.0.0, Pixi.js 5.0.0(WebGL by default)</title>
-        <description>&lt;p&gt;JSer.info #433 - Node.js의 새로운 메이저 버전인 12.0.0이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.0.0/&quot;&gt;Node v12.0.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/introducing-node-js-12-76c41a1b3f3f&quot; title=&quot;Introducing Node.js 12 – Node.js Foundation – Medium&quot;&gt;Introducing Node.js 12 – Node.js Foundation – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;V8 7.4로 갱신, TLS 1.3 지원, http parser를 &lt;code&gt;llhttp&lt;/code&gt;로 변경, &lt;code&gt;os.type()&lt;/code&gt; 추가 등 여러 변경 사항이 있습니다.&lt;br&gt;
-또, Node.js 11.x에 추가된 시험적 기능인 Worker Threads、, iagnostic Reports, Heap Dumps, ES Modules를 지원하며 &lt;code&gt;fs.promises&lt;/code&gt;를 Stable로 전환했습니다.&lt;/p&gt;
-
-&lt;p&gt;시험적(experimental) 기능에 관해서는 다음 글을 참고하시길 바랍니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodesource.com/blog/experimental-features-in-node.js&quot;&gt;Update on Experimental Features in Node.js - NodeSource&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;12.0.0에서 발견된 &lt;code&gt;new Date().toLocaleString()&lt;/code&gt;의 문제를 수정하고 일본의 연호(令和)를 지원하는 Node v12.1.0도 이어서 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.1.0/&quot;&gt;Node v12.1.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/node/issues/27379&quot;&gt;Node.js crash with a fatal error on Date#toLocaleString · Issue #27379 · nodejs/node&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Node.js 12.x가 LTS(Long Term Support)가 되는 시점은 2019-10-22으로 예정돼 있습니다.&lt;br&gt;
-또, Node.js 6.x는 2019-04-30에 EOL(End-of-life)가 됐으며 현시점 LTS는 Node.js 8.x과 10.x 입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/Release&quot;&gt;nodejs/Release: Node.js Foundation Release Working Group&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Electron 5.0.0이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/electron/electron/releases/tag/v5.0.0&quot;&gt;Release electron v5.0.0 · electron/electron&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://electronjs.org/blog/electron-5-0&quot;&gt;Electron 5.0.0 | Electron Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Chromium 73, Node 12.0.0으로 갱신됐습니다.&lt;br&gt;
-Cookies API를 비롯 여러 API가 Promise를 대응하며 BrowserWindow에서 여러 BrowserView를 지원하고 iframe에 대응해 node integration을 설정 할 수 있도록 변경됐습니다.&lt;br&gt;
-또 비호환적 변경 사항으로 패키지 애플리케이션은 기본적으로 애플리케이션 메뉴가 작성되며 &lt;code&gt;window-all-closed&lt;/code&gt;의 핸들링을 행하도록 수정됐습니다.&lt;br&gt;
-보안적인 이유로 &lt;code&gt;nodeIntegration&lt;/code&gt;와 &lt;code&gt;webViewTag&lt;/code&gt;는 기본 &lt;code&gt;false&lt;/code&gt;로 설정되도록 변경됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;2D 그래픽 라이브러리인 PixiJS 5.0.0이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/pixijs/pixi.js/releases/tag/v5.0.0&quot;&gt;Release v5.0.0 · pixijs/pixi.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/goodboy-digital/pixijs-v5-lands-5e112d84e510&quot;&gt;PixiJS v5 lands – Goodboy Digital – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;지금까지는 Canvas를 사용한 &lt;code&gt;CanvasRender&lt;/code&gt;가 기본이었지만 5.0.0에서는 WebGL이 기본 렌더링으로 변경됐습니다.&lt;br&gt;
-이에 맞춰 &lt;code&gt;CanvasRender&lt;/code&gt;는 &lt;code&gt;pixi.js&lt;/code&gt;에서 제거됐으며 、&lt;code&gt;CanvasRender&lt;/code&gt; 사용할 경우엔 &lt;code&gt;pixi.js-legacy&lt;/code&gt; 패키지를 사용하도록 변경됐습니다.&lt;/p&gt;
-
-&lt;p&gt;또, 지금까지 global에 &lt;code&gt;PIXI&lt;/code&gt; 객체를 자동으로 생성했지만 5.0.0부터는 자동으로 생성되지 않습니다.&lt;br&gt;
-이 밖에 Render의 시그니처 변경, &lt;code&gt;PIXI.Mesh&lt;/code&gt; 추가, Graphics Holes 대응 개선이 이뤄졌습니다.&lt;/p&gt;
-
-&lt;p&gt;마이그레이션 가이드도 공개됐으니 함께 살펴보면 좋을 것 같습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/pixijs/pixi.js/wiki/v5-Migration-Guide&quot;&gt;v5 Migration Guide · pixijs/pixi.js Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v3-0-0-facebook-create-react-app&quot;&gt;Release v3.0.0 · facebook/create-react-app&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/create-react-app/releases/tag/v3.0.0&quot; title=&quot;Release v3.0.0 · facebook/create-react-app&quot;&gt;github.com/facebook/create-react-app/releases/tag/v3.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;create-react-app v3.0.0이 릴리스됐습니다.&lt;br&gt;
-Jest 24로 갱신됐고 React Hooks를 사용하며 ESLint로 TypeScript를 Lint 하도록 변경됐습니다. 또, &lt;code&gt;tsconfig.json&lt;/code&gt;의 &lt;code&gt;baseUrl&lt;/code&gt;을 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-electron-v5-0-0-electron-electron&quot;&gt;Release electron v5.0.0 · electron/electron&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/electron/electron/releases/tag/v5.0.0&quot; title=&quot;Release electron v5.0.0 · electron/electron&quot;&gt;github.com/electron/electron/releases/tag/v5.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Electron v5.0.0이 릴리스됐습니다.&lt;br&gt;
-Chromium 73, Node 12.0.0으로 갱신됐습니다.&lt;br&gt;
-&lt;code&gt;ELECTRON_DISABLE_SANDBOX&lt;/code&gt;로 sandbox 기능을 끌 수 있습니다.&lt;br&gt;
-Cookies API를 비롯 여러 API가 Promise를 대응하며 BrowserWindow에서 여러 BrowserView를 지원하고 iframe에 대응해 node integration을 설정 할 수 있도록 변경됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-74-web-google-developers&quot;&gt;New in Chrome 74  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/04/nic74&quot; title=&quot;New in Chrome 74  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/04/nic74&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 74의 변경 사항이 정리돼 있습니다.&lt;br&gt;
-private class fields, &lt;code&gt;prefers-reduced-motion&lt;/code&gt;, feature policy api 등을 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v12-0-0-current-node-js&quot;&gt;Node v12.0.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.0.0/&quot; title=&quot;Node v12.0.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.0.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 12.0.0이 릴리스됐습니다.&lt;br&gt;
-V8 7.4로 갱신, TLS 1.3 지원, http parser를 &lt;code&gt;llhttp&lt;/code&gt;로 변경, &lt;code&gt;os.type()&lt;/code&gt; 추가 등 여러 변경 사항이 있습니다.&lt;br&gt;
-또, Node.js 11.x에 추가된 시험적 기능인 Worker Threads、, iagnostic Reports, Heap Dumps, ES Modules를 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/introducing-node-js-12-76c41a1b3f3f&quot; title=&quot;Introducing Node.js 12 – Node.js Foundation – Medium&quot;&gt;Introducing Node.js 12 – Node.js Foundation – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://2ality.com/2019/04/nodejs-esm-impl.html&quot; title=&quot;The new ECMAScript module support in Node.js 12&quot;&gt;The new ECMAScript module support in Node.js 12&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v1-15-0-googlechrome-puppeteer&quot;&gt;Release v1.15.0 · GoogleChrome/puppeteer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/puppeteer/releases/tag/v1.15.0&quot; title=&quot;Release v1.15.0 · GoogleChrome/puppeteer&quot;&gt;github.com/GoogleChrome/puppeteer/releases/tag/v1.15.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Puppeteer 1.15.0이 릴리스됐습니다.&lt;br&gt;
-Chromium 75.0.3765.0으로 갱신됐으며 &lt;code&gt;puppeteer.devices&lt;/code&gt;와 &lt;code&gt;puppeteer.errors&lt;/code&gt; 추가됐고 Request Interception 문제가 수정됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;documentation-changelog-md-at-master-documentationjs-documentation&quot;&gt;documentation/CHANGELOG.md at master · documentationjs/documentation&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/documentationjs/documentation/blob/master/CHANGELOG.md#1010-2019-04-25&quot; title=&quot;documentation/CHANGELOG.md at master · documentationjs/documentation&quot;&gt;github.com/documentationjs/documentation/blob/master/CHANGELOG.md#1010-2019-04-25&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;코드를 토대 문서를 생성하는 도구 documentationjs 10.1.0이 릴리스됐습니다.&lt;br&gt;
-TypeScript를 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;color-accessibility-tools-and-resources-to-help-you-design-inclusive-products-by-st-phanie-walter-ux-designer-mobile-expert&quot;&gt;Color accessibility: tools and resources to help you design inclusive products, by Stéphanie Walter - UX designer &amp;amp; Mobile Expert.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://stephaniewalter.design/blog/color-accessibility-tools-resources-to-design-inclusive-products/&quot; title=&quot;Color accessibility: tools and resources to help you design inclusive products, by Stéphanie Walter - UX designer &amp;amp; Mobile Expert.&quot;&gt;stephaniewalter.design/blog/color-accessibility-tools-resources-to-design-inclusive-products/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;접근성과 색상, 콘트라스트 관련 도구와 리소스가 정리돼 있는 글입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;comparing-jvm-alternatives-to-javascript&quot;&gt;Comparing JVM alternatives to JavaScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://renato.athaydes.com/posts/comparing-jvm-alternatives-to-js.html&quot; title=&quot;Comparing JVM alternatives to JavaScript&quot;&gt;renato.athaydes.com/posts/comparing-jvm-alternatives-to-js.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Java&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Java에서 JavaScript로 변환하는 도구 비교 글입니다.&lt;br&gt;
-성능, 파일 크기, 코드 행 수 등으로 비교하고 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;addyosmani-com-native-image-lazy-loading-for-the-web&quot;&gt;AddyOsmani.com - Native image lazy-loading for the web!&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://addyosmani.com/blog/lazy-loading/&quot; title=&quot;AddyOsmani.com - Native image lazy-loading for the web!&quot;&gt;addyosmani.com/blog/lazy-loading/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;이미지 혹은 iframe을 지연 로드하는 &lt;code&gt;loading&lt;/code&gt; 속성에 대한 글입니다.&lt;br&gt;
-속성 값 &lt;code&gt;lazy&lt;/code&gt;, &lt;code&gt;eager&lt;/code&gt;, &lt;code&gt;auto&lt;/code&gt;을 각각 설명하고 Feature Detection과 Fallback하는 방법에 대해서도 작성돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;faast-js-serverless-batch-computing-made-simple&quot;&gt;faast.js · Serverless batch computing made simple&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://faastjs.org/&quot; title=&quot;faast.js · Serverless batch computing made simple&quot;&gt;faastjs.org/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;serverless&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;serverless를 사용해 배치를 처리하는 프레임워크입니다.&lt;br&gt;
-배치의 각 처리를 함수로 로컬, AWS lambda、Google Cloud Functions에서 실행할 수 있으며 배포나 클린업 관련 워크플로우를 관리할 수 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://faastjs.org/docs/comparison&quot; title=&quot;faast.js vs other · faast.js&quot;&gt;faast.js vs other · faast.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;pixijs-v5-lands-goodboy-digital-medium&quot;&gt;PixiJS v5 lands – Goodboy Digital – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/goodboy-digital/pixijs-v5-lands-5e112d84e510&quot; title=&quot;PixiJS v5 lands – Goodboy Digital – Medium&quot;&gt;medium.com/goodboy-digital/pixijs-v5-lands-5e112d84e510&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;game&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;PixiJS 5.0.0이 릴리스됐습니다.&lt;br&gt;
-WebGL이 기본 렌더러로 변경됐으며 Cnavas 버전은 &lt;code&gt;pixi.js-legacy&lt;/code&gt;를 이용해 사용합니다.&lt;br&gt;
-global에 &lt;code&gt;PIXI&lt;/code&gt; 객체 두지않고 import 할 수 있도록 변경됐습니다.&lt;br&gt;
-Renderer 시그니쳐가 변경됐고 &lt;code&gt;PIXI.Mesh&lt;/code&gt;가 추가됐으며 Graphics Holes 대응이 개선됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/pixijs/pixi.js/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · pixijs/pixi.js&quot;&gt;Release v5.0.0 · pixijs/pixi.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/pixijs/pixi.js/wiki/v5-Migration-Guide&quot; title=&quot;v5 Migration Guide · pixijs/pixi.js Wiki&quot;&gt;v5 Migration Guide · pixijs/pixi.js Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;typescript-ast-viewer&quot;&gt;TypeScript AST Viewer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://ts-ast-viewer.com/&quot; title=&quot;TypeScript AST Viewer&quot;&gt;ts-ast-viewer.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;AST&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 코드의 AST 뷰어 도구입니다.&lt;br&gt;
-코드를 생성하는 AST 실행 코드도 함께 출력됩니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;infinitered-gluegun-a-delightful-toolkit-for-building-node-powered-clis&quot;&gt;infinitered/gluegun: A delightful toolkit for building Node-powered CLIs.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/infinitered/gluegun&quot; title=&quot;infinitered/gluegun: A delightful toolkit for building Node-powered CLIs.&quot;&gt;github.com/infinitered/gluegun&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 명령줄 개발을 위한 프레임워크입니다.&lt;br&gt;
-명령어 템플릿, 명령줄 인수 전달과 핸들링, Util 처리 등을 제공합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;gkozlenko-node-video-lib-node-js-video-library-mp4-flv-parser-hls-muxer&quot;&gt;gkozlenko/node-video-lib: Node.js Video Library / MP4 &amp;amp; FLV parser / HLS muxer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/gkozlenko/node-video-lib&quot; title=&quot;gkozlenko/node-video-lib: Node.js Video Library / MP4 &amp;amp; FLV parser / HLS muxer&quot;&gt;github.com/gkozlenko/node-video-lib&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HLS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;의존 라이브러리 없는 MP4와 FLV 파서 및 HLS muxer 라이브러리입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;도서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;oreilly-japan-node-js-2&quot;&gt;O&amp;#39;Reilly Japan - Node.js 디자인패턴 제2판(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.oreilly.co.jp/books/9784873118734/&quot; title=&quot;O&amp;#39;Reilly Japan - Node.js 디자인패턴 제2판&quot;&gt;www.oreilly.co.jp/books/9784873118734/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2019년 5월 18일 출간 예정인 Node.js 디자인 패턴을 주제로 한 도서입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.marlin-arms.com/support/nodejs-design-patterns/&quot; title=&quot;Node.js 디자인패턴 제2판 서포트 페이지 - 마린 암즈 주식회사&quot;&gt;Node.js 디자인패턴 제2판 서포트 페이지 - 마린 암즈 주식회사&lt;/a&gt;(일본어)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;programming-typescript-oreilly-media&quot;&gt;Programming TypeScript - O&amp;#39;Reilly Media&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://shop.oreilly.com/product/0636920158059.do&quot; title=&quot;Programming TypeScript - O&amp;#39;Reilly Media&quot;&gt;shop.oreilly.com/product/0636920158059.do&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript을 주제로 한 입문 서적입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 30 Apr 2019 12:33:48 +0900</pubDate>
-        <link>https://jser.info/ko/2019/04/30/node.js-12.0.0node.js-6.xeolelectron-5.0.0pixi.js-5.0.0webgl-by-default/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2019/04/30/node.js-12.0.0node.js-6.xeolelectron-5.0.0pixi.js-5.0.0webgl-by-default/</guid>
-        
-        <category>Node.js</category>
-        
-        <category>Electron</category>
-        
-        <category>Canvas</category>
-        
-        <category>WebGL</category>
         
         
         <category>JSer</category>
