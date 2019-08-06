@@ -1,0 +1,400 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-08-06のJS: Chrome 76、React 16.9、Slack Desktopのリファクタリング - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/08/06/chrome-76react-16.9slack-desktop/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-08-06のJS: Chrome 76、React 16.9、Slack Desktopのリファクタリング"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-08-06のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://developers.google.com/web/updates/2019/07/nic76">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">New in Chrome 76  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">Chrome 76リリース。
+Stage 4となった<code>Promise.allSettled()</code>の実装、<code>Blob#text()</code>/<code>Blob#arrayBuffer()</code>/<code>Blob#stream()</code>の追加。
+Fetch Metadataリクエストヘッダ(<code>Sec-Fetch-*</code>)の実装、フラグ付きでCookieのデフォルトが<code>SameSite=Lax</code>となる変更が入るなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="New in Chrome 76  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2019/07/nic76" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0-alpha.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Workbox v5.0.0-alpha.0 · GoogleChrome/workbox</amp-fit-text>
+            <p class="item-contents">Service WorkerフレームワークのWorkbox 5αリリース。
+Service WorkerのRuntimeをCDNからではなく、ローカルを生成したものを使うように。
+<code>injectManifest</code>で置換されるプレースホルダが<code>[]</code>から<code>self.__WB_MANIFEST</code>に変更など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Workbox v5.0.0-alpha.0 · GoogleChrome/workbox" href="https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0-alpha.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/preactjs/preact/releases/tag/10.0.0-rc.1">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 10.0.0-rc.1 Biggus Fixus · preactjs/preact</amp-fit-text>
+            <p class="item-contents">Preact 10.0.0 RC1リリース。
+Preact 8.xから10へのマイグレーションガイドが公開された。
+またメンテナンスリリースとして8.5.0も公開された
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 10.0.0-rc.1 Biggus Fixus · preactjs/preact" href="https://github.com/preactjs/preact/releases/tag/10.0.0-rc.1" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/facebook/react/pull/16254">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Changelog for 16.9 (TODO: add date) by gaearon · Pull Request #16254 · facebook/react</amp-fit-text>
+            <p class="item-contents">React 16.9 RC.0リリース。
+<code>&lt;React.Profiler&gt;</code>の追加、非推奨となっていた<code>UNSAFE_*</code>のライフサイクルメソッドに対する警告の表示、<code>&lt;a href="javascript:"&gt;</code>に対して警告を出すように。
+また、DevToolsで<code>useState</code>の編集、Suspenseのトグル表示に対応、テスト用の<code>act</code>がAsync対応など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Changelog for 16.9 (TODO: add date) by gaearon · Pull Request #16254 · facebook/react" href="https://github.com/facebook/react/pull/16254" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://slack.engineering/rebuilding-slack-on-the-desktop-308d6fe94ae4">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">When a rewrite isn’t: rebuilding Slack on the desktop</amp-fit-text>
+            <p class="item-contents">Slack Desktopのアーキテクチャをどのようにリファクタリングしたかについて。
+jQuery+SignalからReact+Reduxへの移行。
+既存のコードベースを維持しつつ、徐々にモダンへ移行していく戦略について。
+名前空間オブジェクトとモジュールの混在時における相互運用性。古いコードは新しいコードを直接importできず、新しいコードは古いコードを直接importできないという<code>legacy-interop</code>の概念の導入。
+Multi workspaceを意識した書き換えによってメモリ使用量の削減の効果などがあったことについてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="When a rewrite isn’t: rebuilding Slack on the desktop" href="https://slack.engineering/rebuilding-slack-on-the-desktop-308d6fe94ae4" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://tech.smarthr.jp/entry/2019/08/01/151100">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">プロダクト間共通の React コンポーネントライブラリを運用する話 - SmartHR Tech Blog</amp-fit-text>
+            <p class="item-contents">アプリケーション間の共通UIをライブラリ化することについて。
+React + TypeScript + Styled Componentsでの実装、Storybookでのプレビューやreg-suitでの回帰テストについてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="プロダクト間共通の React コンポーネントライブラリを運用する話 - SmartHR Tech Blog" href="https://tech.smarthr.jp/entry/2019/08/01/151100" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/WebMemex/freeze-dry">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">WebMemex/freeze-dry: Snapshots a web page to get it as a static, self-contained HTML document.</amp-fit-text>
+            <p class="item-contents">ウェブサイトのDOMとリソースのスナップショットを取るライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WebMemex/freeze-dry: Snapshots a web page to get it as a static, self-contained HTML document." href="https://github.com/WebMemex/freeze-dry" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/harttle/liquidjs">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">harttle/liquidjs: A shopify compatible Liquid template engine in pure JavaScript.</amp-fit-text>
+            <p class="item-contents">Liquid互換のテンプレートエンジンのJavaScript実装
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="harttle/liquidjs: A shopify compatible Liquid template engine in pure JavaScript." href="https://github.com/harttle/liquidjs" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/unshiftio/url-parse">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">unshiftio/url-parse: Small footprint URL parser that works seamlessly across Node.js and browser environments.</amp-fit-text>
+            <p class="item-contents">Browser、Node.js、Workerで動くURLパースライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="unshiftio/url-parse: Small footprint URL parser that works seamlessly across Node.js and browser environments." href="https://github.com/unshiftio/url-parse" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Arkweid/lefthook">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Arkweid/lefthook: Fast and powerful Git hooks manager for any type of projects.</amp-fit-text>
+            <p class="item-contents">Git Hooksをymlで管理できるツール。
+Node.jsやRubyなどパッケージマネージャーでインストールできる
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Arkweid/lefthook: Fast and powerful Git hooks manager for any type of projects." href="https://github.com/Arkweid/lefthook" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/daybrush/moveable">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">daybrush/moveable: ↔️ ↕️ 🔄 Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable!</amp-fit-text>
+            <p class="item-contents">要素のドラッグ、リサイズなどのイベントハンドリングを扱うライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="daybrush/moveable: ↔️ ↕️ 🔄 Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable!" href="https://github.com/daybrush/moveable" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.atdatabases.org/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">@Databases · Database libraries for Node.js that protect you from SQL Injection</amp-fit-text>
+            <p class="item-contents">Tagged Template LiteralベースのSQLクエリエスケープライブラリ。
+Tagged Template Literalで書いたSQL文からクエリとパラメータを分解して取り出し、その結果をデータベースエンジンにわたすことで安全なSQLエスケープを行う目的。
+Postgres、MySQL、SQLiteなどに対応してる
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="@Databases · Database libraries for Node.js that protect you from SQL Injection" href="https://www.atdatabases.org/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/kerimdzhanov/dotenv-flow">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">kerimdzhanov/dotenv-flow: Loads environment variables from .env.\[development|test|production\]\[.local\] files for Node.js® projects.</amp-fit-text>
+            <p class="item-contents"><code>.env</code>や<code>.env.development</code>ファイルなどを環境によって読み分けるライブラリ。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="kerimdzhanov/dotenv-flow: Loads environment variables from .env.\[development|test|production\]\[.local\] files for Node.js® projects." href="https://github.com/kerimdzhanov/dotenv-flow" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://exploringjs.com/impatient-js/index.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScript for impatient programmers</amp-fit-text>
+            <p class="item-contents">Dr.AxelのJavaScript入門本
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript for impatient programmers" href="https://exploringjs.com/impatient-js/index.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

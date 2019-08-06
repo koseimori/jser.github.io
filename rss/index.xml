@@ -5,9 +5,262 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 01 Aug 2019 17:35:23 +0900</pubDate>
-    <lastBuildDate>Thu, 01 Aug 2019 17:35:23 +0900</lastBuildDate>
+    <pubDate>Tue, 06 Aug 2019 11:34:34 +0900</pubDate>
+    <lastBuildDate>Tue, 06 Aug 2019 11:34:34 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-08-06のJS: Chrome 76、React 16.9、Slack Desktopのリファクタリング</title>
+        <description>&lt;p&gt;JSer.info #447 - Chrome 76がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/07/nic76&quot;&gt;New in Chrome 76  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/06/chrome-76-deps-rems&quot;&gt;Deprecations and removals in Chrome 76  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#milestone%3D76&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Stage 4となった&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled&quot;&gt;&lt;code&gt;Promise.allSettled()&lt;/code&gt;&lt;/a&gt;の実装、&lt;code&gt;Blob#text()&lt;/code&gt;/&lt;code&gt;Blob#arrayBuffer()&lt;/code&gt;/&lt;code&gt;Blob#stream()&lt;/code&gt;のサポートが追加されています。&lt;br&gt;
+また、Async Clipboard APIで画像のサポートが追加されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/07/image-support-for-async-clipboard&quot;&gt;Image Support for the Async Clipboard API  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Fetch Metadataリクエストヘッダ(&lt;code&gt;Sec-Fetch-*&lt;/code&gt;)の実装、フラグ付きでCookieのデフォルトが&lt;code&gt;SameSite=Lax&lt;/code&gt;となる変更が入っています。&lt;br&gt;
+SameSite CookieがデフォルトとなるのはChrome 80の予定で、詳細は次の記事で解説されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://web.dev/samesite-cookies-explained&quot;&gt;SameSite cookies explained  |  web.dev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;React 16.9のRC版がリリースされています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/react/pull/16254&quot;&gt;Changelog for 16.9 (TODO: add date) by gaearon · Pull Request #16254 · facebook/react&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;試験的に実装されていた&lt;code&gt;&amp;lt;React.Profiler&amp;gt;&lt;/code&gt;がStableな機能としてサポートされました。&lt;br&gt;
+プロファイルについては次の記事もあわせて読むとよさそうです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html&quot;&gt;Introducing the React Profiler – React Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;非推奨となっていた&lt;code&gt;UNSAFE_componentWillMount&lt;/code&gt;などの&lt;code&gt;UNSAFE_*&lt;/code&gt;のライフサイクルメソッドに対して警告出すようになっています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html&quot;&gt;Update on Async Rendering – React Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;またXSSの攻撃に使われる&lt;code&gt;&amp;lt;a href=&amp;quot;javascript:&amp;quot;&amp;gt;&lt;/code&gt;など&lt;code&gt;javascript:&lt;/code&gt;スキームに対して警告を出すようになっています。&lt;br&gt;
+これに類似する仕組みやEmberやAngularにも実装されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/react/pull/15047&quot;&gt;Warn for javascript: URLs in DOM sinks by sebmarkbage · Pull Request #15047 · facebook/react&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.emberjs.com/2014/12/23/ember-1-9-1-released.html&quot;&gt;Ember.js - Ember.js 1.9.1 Released&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://angular.io/guide/security&quot;&gt;Angular - Security&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.notion.so/DOM-XSS-Trusted-Types-Angular-8e9535e4effb445c96a54eb68c56dc47&quot;&gt;DOMのXSSを防ぐTrusted TypesとAngularのセキュリティ機構&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;その他としてDevToolsで&lt;code&gt;useState&lt;/code&gt;の編集、Suspenseのトグル表示に対応などの開発者ツールの改善や、テスト用の&lt;code&gt;act&lt;/code&gt;関数がAsync Functionに対応などが含まれています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-in-chrome-76-web-google-developers&quot;&gt;New in Chrome 76  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/07/nic76&quot; title=&quot;New in Chrome 76  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/07/nic76&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 76リリース。&lt;br&gt;
+Stage 4となった&lt;code&gt;Promise.allSettled()&lt;/code&gt;の実装、&lt;code&gt;Blob#text()&lt;/code&gt;/&lt;code&gt;Blob#arrayBuffer()&lt;/code&gt;/&lt;code&gt;Blob#stream()&lt;/code&gt;の追加。&lt;br&gt;
+Fetch Metadataリクエストヘッダ(&lt;code&gt;Sec-Fetch-*&lt;/code&gt;)の実装、フラグ付きでCookieのデフォルトが&lt;code&gt;SameSite=Lax&lt;/code&gt;となる変更が入るなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#milestone%3D76&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/06/chrome-76-deps-rems&quot; title=&quot;Deprecations and removals in Chrome 76  |  Web  |  Google Developers&quot;&gt;Deprecations and removals in Chrome 76  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/w3c/webappsec-fetch-metadata&quot; title=&quot;w3c/webappsec-fetch-metadata: WebAppSec has adopted sec-metadata as fetch-metadata&quot;&gt;w3c/webappsec-fetch-metadata: WebAppSec has adopted sec-metadata as fetch-metadata&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-workbox-v5-0-0-alpha-0-googlechrome-workbox&quot;&gt;Release Workbox v5.0.0-alpha.0 · GoogleChrome/workbox&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0-alpha.0&quot; title=&quot;Release Workbox v5.0.0-alpha.0 · GoogleChrome/workbox&quot;&gt;github.com/GoogleChrome/workbox/releases/tag/v5.0.0-alpha.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Service WorkerフレームワークのWorkbox 5αリリース。&lt;br&gt;
+Service WorkerのRuntimeをCDNからではなく、ローカルを生成したものを使うように。&lt;br&gt;
+&lt;code&gt;injectManifest&lt;/code&gt;で置換されるプレースホルダが&lt;code&gt;[]&lt;/code&gt;から&lt;code&gt;self.__WB_MANIFEST&lt;/code&gt;に変更など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-10-0-0-rc-1-biggus-fixus-preactjs-preact&quot;&gt;Release 10.0.0-rc.1 Biggus Fixus · preactjs/preact&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/preactjs/preact/releases/tag/10.0.0-rc.1&quot; title=&quot;Release 10.0.0-rc.1 Biggus Fixus · preactjs/preact&quot;&gt;github.com/preactjs/preact/releases/tag/10.0.0-rc.1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Preact 10.0.0 RC1リリース。&lt;br&gt;
+Preact 8.xから10へのマイグレーションガイドが公開された。&lt;br&gt;
+またメンテナンスリリースとして8.5.0も公開された&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/preactjs/preact/releases/tag/v8.5.0&quot; title=&quot;Release v8.5.0 · preactjs/preact&quot;&gt;Release v8.5.0 · preactjs/preact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;changelog-for-16-9-todo-add-date-by-gaearon-pull-request-16254-facebook-react&quot;&gt;Changelog for 16.9 (TODO: add date) by gaearon · Pull Request #16254 · facebook/react&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/react/pull/16254&quot; title=&quot;Changelog for 16.9 (TODO: add date) by gaearon · Pull Request #16254 · facebook/react&quot;&gt;github.com/facebook/react/pull/16254&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React 16.9 RC.0リリース。&lt;br&gt;
+&lt;code&gt;&amp;lt;React.Profiler&amp;gt;&lt;/code&gt;の追加、非推奨となっていた&lt;code&gt;UNSAFE_*&lt;/code&gt;のライフサイクルメソッドに対する警告の表示、&lt;code&gt;&amp;lt;a href=&amp;quot;javascript:&amp;quot;&amp;gt;&lt;/code&gt;に対して警告を出すように。&lt;br&gt;
+また、DevToolsで&lt;code&gt;useState&lt;/code&gt;の編集、Suspenseのトグル表示に対応、テスト用の&lt;code&gt;act&lt;/code&gt;がAsync対応など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://example.com/&quot; title=&quot;Warn for javascript: URLs in DOM sinks by sebmarkbage · Pull Request #15047 · facebook/react&quot;&gt;Warn for javascript: URLs in DOM sinks by sebmarkbage · Pull Request #15047 · facebook/react&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;when-a-rewrite-isn-t-rebuilding-slack-on-the-desktop&quot;&gt;When a rewrite isn’t: rebuilding Slack on the desktop&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://slack.engineering/rebuilding-slack-on-the-desktop-308d6fe94ae4&quot; title=&quot;When a rewrite isn’t: rebuilding Slack on the desktop&quot;&gt;slack.engineering/rebuilding-slack-on-the-desktop-308d6fe94ae4&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;slack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;refacoring&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Slack Desktopのアーキテクチャをどのようにリファクタリングしたかについて。&lt;br&gt;
+jQuery+SignalからReact+Reduxへの移行。&lt;br&gt;
+既存のコードベースを維持しつつ、徐々にモダンへ移行していく戦略について。&lt;br&gt;
+名前空間オブジェクトとモジュールの混在時における相互運用性。古いコードは新しいコードを直接importできず、新しいコードは古いコードを直接importできないという&lt;code&gt;legacy-interop&lt;/code&gt;の概念の導入。&lt;br&gt;
+Multi workspaceを意識した書き換えによってメモリ使用量の削減の効果などがあったことについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-smarthr-tech-blog&quot;&gt;プロダクト間共通の React コンポーネントライブラリを運用する話 - SmartHR Tech Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tech.smarthr.jp/entry/2019/08/01/151100&quot; title=&quot;プロダクト間共通の React コンポーネントライブラリを運用する話 - SmartHR Tech Blog&quot;&gt;tech.smarthr.jp/entry/2019/08/01/151100&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;アプリケーション間の共通UIをライブラリ化することについて。&lt;br&gt;
+React + TypeScript + Styled Componentsでの実装、Storybookでのプレビューやreg-suitでの回帰テストについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webmemex-freeze-dry-snapshots-a-web-page-to-get-it-as-a-static-self-contained-html-document&quot;&gt;WebMemex/freeze-dry: Snapshots a web page to get it as a static, self-contained HTML document.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/WebMemex/freeze-dry&quot; title=&quot;WebMemex/freeze-dry: Snapshots a web page to get it as a static, self-contained HTML document.&quot;&gt;github.com/WebMemex/freeze-dry&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ウェブサイトのDOMとリソースのスナップショットを取るライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;harttle-liquidjs-a-shopify-compatible-liquid-template-engine-in-pure-javascript&quot;&gt;harttle/liquidjs: A shopify compatible Liquid template engine in pure JavaScript.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/harttle/liquidjs&quot; title=&quot;harttle/liquidjs: A shopify compatible Liquid template engine in pure JavaScript.&quot;&gt;github.com/harttle/liquidjs&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;template&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Liquid互換のテンプレートエンジンのJavaScript実装&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;unshiftio-url-parse-small-footprint-url-parser-that-works-seamlessly-across-node-js-and-browser-environments&quot;&gt;unshiftio/url-parse: Small footprint URL parser that works seamlessly across Node.js and browser environments.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/unshiftio/url-parse&quot; title=&quot;unshiftio/url-parse: Small footprint URL parser that works seamlessly across Node.js and browser environments.&quot;&gt;github.com/unshiftio/url-parse&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Browser、Node.js、Workerで動くURLパースライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;arkweid-lefthook-fast-and-powerful-git-hooks-manager-for-any-type-of-projects&quot;&gt;Arkweid/lefthook: Fast and powerful Git hooks manager for any type of projects.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Arkweid/lefthook&quot; title=&quot;Arkweid/lefthook: Fast and powerful Git hooks manager for any type of projects.&quot;&gt;github.com/Arkweid/lefthook&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Git Hooksをymlで管理できるツール。&lt;br&gt;
+Node.jsやRubyなどパッケージマネージャーでインストールできる&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;daybrush-moveable-moveable-draggable-resizable-scalable-rotatable-warpable&quot;&gt;daybrush/moveable: ↔️ ↕️ 🔄 Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable!&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/daybrush/moveable&quot; title=&quot;daybrush/moveable: ↔️ ↕️ 🔄 Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable!&quot;&gt;github.com/daybrush/moveable&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;要素のドラッグ、リサイズなどのイベントハンドリングを扱うライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;databases-database-libraries-for-node-js-that-protect-you-from-sql-injection&quot;&gt;@Databases · Database libraries for Node.js that protect you from SQL Injection&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.atdatabases.org/&quot; title=&quot;@Databases · Database libraries for Node.js that protect you from SQL Injection&quot;&gt;www.atdatabases.org/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;SQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Tagged Template LiteralベースのSQLクエリエスケープライブラリ。&lt;br&gt;
+Tagged Template Literalで書いたSQL文からクエリとパラメータを分解して取り出し、その結果をデータベースエンジンにわたすことで安全なSQLエスケープを行う目的。&lt;br&gt;
+Postgres、MySQL、SQLiteなどに対応してる&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;kerimdzhanov-dotenv-flow-loads-environment-variables-from-env-development-test-production-local-files-for-node-js-projects&quot;&gt;kerimdzhanov/dotenv-flow: Loads environment variables from .env.[development|test|production][.local] files for Node.js® projects.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/kerimdzhanov/dotenv-flow&quot; title=&quot;kerimdzhanov/dotenv-flow: Loads environment variables from .env.\[development|test|production\]\[.local\] files for Node.js® projects.&quot;&gt;github.com/kerimdzhanov/dotenv-flow&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.env&lt;/code&gt;や&lt;code&gt;.env.development&lt;/code&gt;ファイルなどを環境によって読み分けるライブラリ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;javascript-for-impatient-programmers&quot;&gt;JavaScript for impatient programmers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://exploringjs.com/impatient-js/index.html&quot; title=&quot;JavaScript for impatient programmers&quot;&gt;exploringjs.com/impatient-js/index.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Dr.AxelのJavaScript入門本&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 06 Aug 2019 10:52:28 +0900</pubDate>
+        <link>https://jser.info/2019/08/06/chrome-76react-16.9slack-desktop/</link>
+        <guid isPermaLink="true">https://jser.info/2019/08/06/chrome-76react-16.9slack-desktop/</guid>
+        
+        <category>Chrome</category>
+        
+        <category>React</category>
+        
+        <category>Slack</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-07-30のJS: mithril.js 2、Electron 6、React入門ガイド</title>
@@ -2261,281 +2514,6 @@ UIの刷新、&lt;code&gt;npm star&lt;/code&gt;/&lt;code&gt;npm profile&lt;/code
         <category>npm</category>
         
         <category>registry</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-05-28のJS: express 4.17.0、Firefox 67.0、TypeScriptのstrictNullCheckを有効化するステップ</title>
-        <description>&lt;p&gt;JSer.info #437 - Node.jsサーバフレームワークのexpress 4.17.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/expressjs/express/releases/tag/4.17.0&quot;&gt;Release 4.17.0 · expressjs/express&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ビルトインmiddlewareとしてBodyをBufferへパースする&lt;code&gt;express.raw&lt;/code&gt;、Bodyをテキストにパースする&lt;code&gt;express.text&lt;/code&gt;の追加されています。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これはもともとbodyParserにあったものがexposeされてた形になっています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/expressjs/express/pull/3455&quot;&gt;expose text middleware of bodyparser by ilyapx · Pull Request #3455 · expressjs/express&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/expressjs/express/pull/3708&quot;&gt;Expose bodyParser.raw on express by amitzur · Pull Request #3708 · expressjs/express&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ただし、これらのmiddlewareは現在開発中の5.0では別の場所に移動する可能もありそうです。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/expressjs/discussions/issues/78&quot;&gt;Export location of express built-in middlewares · Issue #78 · expressjs/discussions&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/expressjs/express/milestone/11&quot;&gt;5.0 Milestone&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Firefox 67.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/67.0/releasenotes/&quot;&gt;Firefox 67.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Mozilla/Firefox/Releases/67&quot;&gt;Firefox 67 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.com/ja/versions/67/&quot;&gt;Firefox 67 サイト互換性情報 | Firefox サイト互換性情報&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;開発者ツールやブラウザのパフォーマンスが改善されています。&lt;br&gt;
-開発者ツールについては次のページで詳しく解説されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/05/faster-smarter-javascript-debugging-in-firefox/&quot;&gt;Faster smarter JavaScript debugging in Firefox DevTools - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また、あまり利用されていなかったことを理由に開発者ツールからCanvas debugger、Web Audio Editor、Shader editorが削除されています。&lt;br&gt;
-代替ツールについても紹介されているので、詳しくは次のページをみてください。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Tools/Deprecated_tools&quot;&gt;Deprecated tools - Firefox Developer Tools | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;その他にもCSSの&lt;code&gt;prefers-color-scheme&lt;/code&gt;のサポート、&lt;code&gt;Cross-Origin-Opener-Policy&lt;/code&gt; HTTPヘッダのサポート、private modeでlocalStorageへのアクセス時に例外が発生しなくするといった変更が含まれています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.com/ja/docs/2019/window-localstorage-no-longer-throws-securityerror-when-blocked-due-to-privacy-settings/&quot;&gt;window.localStorage がプライバシー設定によってブロックされた場合に SecurityError を投げなくなりました | Firefox サイト互換性情報&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v12-3-0-current-node-js&quot;&gt;Node v12.3.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.3.0/&quot; title=&quot;Node v12.3.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.3.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js v12.3.0リリース。&lt;br&gt;
-&lt;code&gt;wasm&lt;/code&gt;ファイルをimportできる&lt;code&gt;--experimental-wasm-modules&lt;/code&gt;オプションの追加、&lt;code&gt;Readable.from&lt;/code&gt;の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ember-js-ember-3-10-released&quot;&gt;Ember.js - Ember 3.10 Released&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/05/21/ember-3-10-released.html&quot; title=&quot;Ember.js - Ember 3.10 Released&quot;&gt;blog.emberjs.com/2019/05/21/ember-3-10-released.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Ember 3.10リリース。&lt;br&gt;
-ネストしたコンポーネントやビルトインコンポーネントを&lt;code&gt;&amp;lt;Input /&amp;gt;&lt;/code&gt;のようにAngle bracketで記述できるように、Decoratorのサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-4-17-0-expressjs-express&quot;&gt;Release 4.17.0 · expressjs/express&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/expressjs/express/releases/tag/4.17.0&quot; title=&quot;Release 4.17.0 · expressjs/express&quot;&gt;github.com/expressjs/express/releases/tag/4.17.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;express 4.17.0リリース。 middlewareとしてBodyをBufferへパースする&lt;code&gt;express.raw&lt;/code&gt;、Bodyをテキストにパースする&lt;code&gt;express.text&lt;/code&gt;の追加。&lt;br&gt;
-&lt;code&gt;X-Forwarded-Host&lt;/code&gt;でカンマ区切りの複数Hostに対応など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;firefox-67-0-see-all-new-features-updates-and-fixes&quot;&gt;Firefox 67.0, See All New Features, Updates and Fixes&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/67.0/releasenotes/&quot; title=&quot;Firefox 67.0, See All New Features, Updates and Fixes&quot;&gt;www.mozilla.org/en-US/firefox/67.0/releasenotes/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 67.0リリース。&lt;br&gt;
-パフォーマンスや開発者ツールの改善、&lt;code&gt;Cross-Origin-Opener-Policy&lt;/code&gt;の実装。&lt;br&gt;
-開発者ツールからCanvas debugger、Web Audio Editor、Shader editorを削除など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Mozilla/Firefox/Releases/67&quot; title=&quot;Firefox 67 for developers - Mozilla | MDN&quot;&gt;Firefox 67 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Tools/Deprecated_tools&quot; title=&quot;Deprecated tools - Firefox Developer Tools | MDN&quot;&gt;Deprecated tools - Firefox Developer Tools | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.com/ja/versions/67/&quot; title=&quot;Firefox 67 サイト互換性情報 | Firefox サイト互換性情報&quot;&gt;Firefox 67 サイト互換性情報 | Firefox サイト互換性情報&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;folding-the-dom-josh-w-comeaus-blog&quot;&gt;Folding the DOM - Josh W. Comeau&amp;#39;s Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.joshwcomeau.com/posts/folding-the-dom/&quot; title=&quot;Folding the DOM - Josh W. Comeau&amp;#39;s Blog&quot;&gt;www.joshwcomeau.com/posts/folding-the-dom/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSSを使って画像の折りたたみ表現を実装していくチュートリアル。&lt;br&gt;
-Position、Transform、Perspectiveを組み合わせて折りたたみのアニメーションを実装していく話&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;strict-null-checking-the-visual-studio-code-codebase&quot;&gt;Strict null checking the Visual Studio Code codebase&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://code.visualstudio.com/blogs/2019/05/23/strict-null&quot; title=&quot;Strict null checking the Visual Studio Code codebase&quot;&gt;code.visualstudio.com/blogs/2019/05/23/strict-null&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;VSCode&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;VSCodeのコードベースでTypeScriptのstrict null checkを有効化した話。&lt;br&gt;
-&lt;code&gt;strictNullCheck&lt;/code&gt;が&lt;code&gt;false&lt;/code&gt;のときによく起きていた問題と1800ファイルあるコードをどのように修正していったかについて。&lt;br&gt;
-&lt;code&gt;strictNullCheck&lt;/code&gt;を有効化した&lt;code&gt;tsconfig.json&lt;/code&gt;を作り、&lt;code&gt;files&lt;/code&gt;に追加しながら修正していった&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;graphics-team-ships-webrender-mvp-mozilla-gfx-team-blog&quot;&gt;Graphics Team ships WebRender MVP! – Mozilla Gfx Team Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://mozillagfx.wordpress.com/2019/05/21/graphics-team-ships-webrender-mvp/&quot; title=&quot;Graphics Team ships WebRender MVP! – Mozilla Gfx Team Blog&quot;&gt;mozillagfx.wordpress.com/2019/05/21/graphics-team-ships-webrender-mvp/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 67でNVIDIAのグラフィックカードを利用してるユーザー(4%)向けて、GPUベースのレンダラであるWebRenderをロールアウトしていくリリーススケジュールについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;handling-errors-in-vue-js&quot;&gt;Handling Errors in Vue.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.raymondcamden.com/2019/05/01/handling-errors-in-vuejs&quot; title=&quot;Handling Errors in Vue.js&quot;&gt;www.raymondcamden.com/2019/05/01/handling-errors-in-vuejs&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Vueでのエラーハンドリングについての記事。&lt;br&gt;
-&lt;code&gt;Vue.config.errorHandler&lt;/code&gt;、&lt;code&gt;Vue.config.warnHandler&lt;/code&gt;、&lt;code&gt;renderError&lt;/code&gt;、&lt;code&gt;errorCaptured&lt;/code&gt;について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;paint-holding-reducing-the-flash-of-white-on-same-origin-navigations-web-google-developers&quot;&gt;Paint Holding - reducing the flash of white on same-origin navigations  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/05/paint-holding&quot; title=&quot;Paint Holding - reducing the flash of white on same-origin navigations  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/05/paint-holding&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;dart&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 76でページ遷移時にページを真っ白にするのではなく、最後の描画を維持した状態で切り替わるようにするPaint Holdingという仕組みが入るという話&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;spa-hub-web&quot;&gt;SPAにおける状態管理: 関数型のアプローチも取り入れるフロントエンド系アーキテクチャの変遷 - エンジニアHub｜若手Webエンジニアのキャリアを考える！&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://employment.en-japan.com/engineerhub/entry/2019/05/23/103000&quot; title=&quot;SPAにおける状態管理: 関数型のアプローチも取り入れるフロントエンド系アーキテクチャの変遷 - エンジニアHub｜若手Webエンジニアのキャリアを考える！&quot;&gt;employment.en-japan.com/engineerhub/entry/2019/05/23/103000&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;SPAにおける状態管理の変化について。&lt;br&gt;
-Backbone.jsでのModel/View/Controller、Two Way Data-Binding、Fluxなどの状態管理の問題と解決したことについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;webassembly-at-ebay-a-real-world-use-case&quot;&gt;WebAssembly at eBay: A Real-World Use Case&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ebayinc.com/stories/blogs/tech/webassembly-at-ebay-a-real-world-use-case/&quot; title=&quot;WebAssembly at eBay: A Real-World Use Case&quot;&gt;www.ebayinc.com/stories/blogs/tech/webassembly-at-ebay-a-real-world-use-case/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebAssemblyのユースケースとしてバーコードリーダを実装した話。&lt;br&gt;
-C++からemscriptenでコンパイルしたwasmを使うことで、JavaScriptの実装よりもFPSが上がった。&lt;br&gt;
-しかし、カメラの特性により認識率がいまいち上がらず、C++の実装2つとJavaScriptの実装を組み合わせて利用した話&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;wagerfield-parallax-parallax-engine-that-reacts-to-the-orientation-of-a-smart-device&quot;&gt;wagerfield/parallax: Parallax Engine that reacts to the orientation of a smart device&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/wagerfield/parallax&quot; title=&quot;wagerfield/parallax: Parallax Engine that reacts to the orientation of a smart device&quot;&gt;github.com/wagerfield/parallax&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ブラウザのViewportのサイズやスクロール、マウスの動きなどの変化を監視できるライブラリ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;projectfluent-fluent-js-javascript-implementation-of-project-fluent&quot;&gt;projectfluent/fluent.js: JavaScript implementation of Project Fluent&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/projectfluent/fluent.js&quot; title=&quot;projectfluent/fluent.js: JavaScript implementation of Project Fluent&quot;&gt;github.com/projectfluent/fluent.js&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ローカライズフレームワーク。&lt;br&gt;
-FTLという構文で記述し、&lt;code&gt;Intl&lt;/code&gt;オブジェクトをベースにしたローカライズを行う。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;yankouskia-hurried-javascript-library-for-parallel-code-execution&quot;&gt;yankouskia/hurried: ⚡️ JavaScript library for parallel code execution&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/yankouskia/hurried&quot; title=&quot;yankouskia/hurried: ⚡️ JavaScript library for parallel code execution&quot;&gt;github.com/yankouskia/hurried&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;worker_thread&lt;/code&gt;モジュールを使ったNode.js向けのThreadライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;azu-exponential-backoff-generator-exponential-backoff-generator-provide-robust-retry-function&quot;&gt;azu/exponential-backoff-generator: Exponential backoff generator. Provide robust retry function.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/azu/exponential-backoff-generator&quot; title=&quot;azu/exponential-backoff-generator: Exponential backoff generator. Provide robust retry function.&quot;&gt;github.com/azu/exponential-backoff-generator&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Generatorを使ったExponential backoffライブラリ。&lt;br&gt;
-async/awaitと組み合わせて非同期処理のリトライを&lt;code&gt;for...of&lt;/code&gt;で記述できる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;sghall-react-vertex-react-vertex-hooks-based-webgl-library-for-react&quot;&gt;sghall/react-vertex: React Vertex | Hooks-based WebGL library for React&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/sghall/react-vertex&quot; title=&quot;sghall/react-vertex: React Vertex | Hooks-based WebGL library for React&quot;&gt;github.com/sghall/react-vertex&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;HooksベースなWebGLを扱うReactコンポーネント&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;rocketseat-unform-reactjs-form-library-to-create-uncontrolled-form-structures-with-nested-fields-validations-and-much-more&quot;&gt;Rocketseat/unform: ReactJS form library to create uncontrolled form structures with nested fields, validations and much more!&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Rocketseat/unform&quot; title=&quot;Rocketseat/unform: ReactJS form library to create uncontrolled form structures with nested fields, validations and much more!&quot;&gt;github.com/Rocketseat/unform&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Uncontrolledなフォームを扱うReactコンポーネント。&lt;br&gt;
-バリデーション、構造的なデータ、リセットなどの機能を提供している&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;vitalets-await-timeout-a-promise-based-api-for-settimeout-cleartimeout&quot;&gt;vitalets/await-timeout: A Promise-based API for setTimeout / clearTimeout&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/vitalets/await-timeout&quot; title=&quot;vitalets/await-timeout: A Promise-based API for setTimeout / clearTimeout&quot;&gt;github.com/vitalets/await-timeout&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Promises&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Promiseベースの&lt;code&gt;setTimeout&lt;/code&gt;、&lt;code&gt;clearTimeout&lt;/code&gt;のラッパーライブラリ。&lt;br&gt;
-既存のPromiseオブジェクトてもタイムアウトを設定できる&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 28 May 2019 10:02:25 +0900</pubDate>
-        <link>https://jser.info/2019/05/28/express-4.17.0firefox-67.0typescriptstrictnullcheck/</link>
-        <guid isPermaLink="true">https://jser.info/2019/05/28/express-4.17.0firefox-67.0typescriptstrictnullcheck/</guid>
-        
-        <category>express</category>
-        
-        <category>node.js</category>
-        
-        <category>firefox</category>
-        
-        <category>TypeScript</category>
         
         
         <category>JSer</category>
