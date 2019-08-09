@@ -5,9 +5,262 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 06 Aug 2019 11:44:03 +0900</pubDate>
-    <lastBuildDate>Tue, 06 Aug 2019 11:44:03 +0900</lastBuildDate>
+    <pubDate>Fri, 09 Aug 2019 14:58:44 +0900</pubDate>
+    <lastBuildDate>Fri, 09 Aug 2019 14:58:44 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-08-06: Chrome 76, React 16.9, Slack Desktop 리팩터링</title>
+        <description>&lt;p&gt;JSer.info #447 - Chrome 76이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/07/nic76&quot;&gt;New in Chrome 76  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/06/chrome-76-deps-rems&quot;&gt;Deprecations and removals in Chrome 76  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#milestone%3D76&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Stage 4가 된 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled&quot;&gt;&lt;code&gt;Promise.allSettled()&lt;/code&gt;&lt;/a&gt;가 구현됐고 &lt;code&gt;Blob#text()&lt;/code&gt; / &lt;code&gt;Blob#arrayBuffer()&lt;/code&gt; / &lt;code&gt;Blob#stream()&lt;/code&gt;을 지원합니다.&lt;br&gt;
+또, Async Clipboard API에서 이미지 관련 기능을 지원합니다. 아래 문서를 참고하세요.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/07/image-support-for-async-clipboard&quot;&gt;Image Support for the Async Clipboard API  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Fetch Metadata 요청 헤더(&lt;code&gt;Sec-Fetch-*&lt;/code&gt;) 구현, Cookie가 기본적으로 &lt;code&gt;SameSite=Lax&lt;/code&gt;로 설정되는 변경이 포함됐습니다. 관련해서 추가된 플래그(same-site-by-default-cookies)를 활성화해야 동작합니다. &lt;br&gt;
+Chrome 80에서 SameSite Cookie가 기본이 될 예정입니다. 다음 문서에 자세히 설명돼 있으니 관심있는 분은 참고하시길 바랍니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://web.dev/samesite-cookies-explained&quot;&gt;SameSite cookies explained  |  web.dev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;React 16.9 RC 버전이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/react/pull/16254&quot;&gt;Changelog for 16.9 (TODO: add date) by gaearon · Pull Request #16254 · facebook/react&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;실험적으로 구현돼 있던 &lt;code&gt;&amp;lt;React.Profiler&amp;gt;&lt;/code&gt;가 Stable로 지원됩니다.&lt;br&gt;
+프로파일에 대해서는 아래 글을 함께 살펴보시면 좋을 것 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html&quot;&gt;Introducing the React Profiler – React Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;비권장하는 &lt;code&gt;UNSAFE_componentWillMount&lt;/code&gt; 등 &lt;code&gt;UNSAFE_*&lt;/code&gt;가 붙은 라이프 사이클 메서드를 사용할 시 경고를 출력하도록 변경됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html&quot;&gt;Update on Async Rendering – React Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;또 XSS에 사용되는 &lt;code&gt;&amp;lt;a href=&amp;quot;javascript:&amp;quot;&amp;gt;&lt;/code&gt; 등 &lt;code&gt;javascript:&lt;/code&gt; 스킴에 대해서도 경고를 출력합니다.&lt;br&gt;
+이와 비슷한 기능은 Ember나 Angular도 구현돼 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/react/pull/15047&quot;&gt;Warn for javascript: URLs in DOM sinks by sebmarkbage · Pull Request #15047 · facebook/react&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.emberjs.com/2014/12/23/ember-1-9-1-released.html&quot;&gt;Ember.js - Ember.js 1.9.1 Released&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://angular.io/guide/security&quot;&gt;Angular - Security&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.notion.so/DOM-XSS-Trusted-Types-Angular-8e9535e4effb445c96a54eb68c56dc47&quot;&gt;DOM의 XSS를 막는 Trusted Types과 Angular의 보안 기구&lt;/a&gt;(일본어)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이 외로 DevTools에서 &lt;code&gt;useState&lt;/code&gt; 편집 기능과 Suspense 토글 기능을 지원하는 등 개발자 도구가 개선됐고 테스트 용 &lt;code&gt;act&lt;/code&gt; 함수에서 비동기 함수를 지원하는 등 다양한 변경 사항이 포함됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-in-chrome-76-web-google-developers&quot;&gt;New in Chrome 76  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/07/nic76&quot; title=&quot;New in Chrome 76  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/07/nic76&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 76이 릴리스됐습니다.&lt;br&gt;
+Stage 4가 된 &lt;code&gt;Promise.allSettled()&lt;/code&gt;가 구현됐고 &lt;code&gt;Blob#text()&lt;/code&gt; / &lt;code&gt;Blob#arrayBuffer()&lt;/code&gt; / &lt;code&gt;Blob#stream()&lt;/code&gt;를 지원합니다 &lt;br&gt;
+또, Fetch Metadata 요청 헤더(&lt;code&gt;Sec-Fetch-*&lt;/code&gt;)가 구현됐고 관련 플래그를 추가해 Cookie가 기본적으로 &lt;code&gt;SameSite=Lax&lt;/code&gt;로 설정되는 변경히 포함됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#milestone%3D76&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/06/chrome-76-deps-rems&quot; title=&quot;Deprecations and removals in Chrome 76  |  Web  |  Google Developers&quot;&gt;Deprecations and removals in Chrome 76  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/w3c/webappsec-fetch-metadata&quot; title=&quot;w3c/webappsec-fetch-metadata: WebAppSec has adopted sec-metadata as fetch-metadata&quot;&gt;w3c/webappsec-fetch-metadata: WebAppSec has adopted sec-metadata as fetch-metadata&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-workbox-v5-0-0-alpha-0-googlechrome-workbox&quot;&gt;Release Workbox v5.0.0-alpha.0 · GoogleChrome/workbox&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0-alpha.0&quot; title=&quot;Release Workbox v5.0.0-alpha.0 · GoogleChrome/workbox&quot;&gt;github.com/GoogleChrome/workbox/releases/tag/v5.0.0-alpha.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Service Worker 프레임워크 Workbox 5α가 릴리스됐습니다.&lt;br&gt;
+Service Worker의 코드를 CDN이 아니라 사용할 코드만 로컬 번들해서 사용할 수 있도록 하는 &lt;code&gt;generateSW&lt;/code&gt; 모드가 추가됐습니다.&lt;br&gt;
+&lt;code&gt;injectManifest&lt;/code&gt;에서 치환되는 플레이스 홀더가 &lt;code&gt;[]&lt;/code&gt;에서 &lt;code&gt;self.__WB_MANIFEST&lt;/code&gt;로 변경됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-10-0-0-rc-1-biggus-fixus-preactjs-preact&quot;&gt;Release 10.0.0-rc.1 Biggus Fixus · preactjs/preact&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/preactjs/preact/releases/tag/10.0.0-rc.1&quot; title=&quot;Release 10.0.0-rc.1 Biggus Fixus · preactjs/preact&quot;&gt;github.com/preactjs/preact/releases/tag/10.0.0-rc.1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Preact 10.0.0 RC1이 릴리스됐습니다.&lt;br&gt;
+Preact 8.x에서 10으로의 마이그레이션 가이드가 공개됐습니다.&lt;br&gt;
+또, 메인터넌스 버전 8.5.0도 함께 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/preactjs/preact/releases/tag/v8.5.0&quot; title=&quot;Release v8.5.0 · preactjs/preact&quot;&gt;Release v8.5.0 · preactjs/preact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;changelog-for-16-9-todo-add-date-by-gaearon-pull-request-16254-facebook-react&quot;&gt;Changelog for 16.9 (TODO: add date) by gaearon · Pull Request #16254 · facebook/react&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/react/pull/16254&quot; title=&quot;Changelog for 16.9 (TODO: add date) by gaearon · Pull Request #16254 · facebook/react&quot;&gt;github.com/facebook/react/pull/16254&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React 16.9 RC.0이 릴리스됐습니다.&lt;br&gt;
+&lt;code&gt;&amp;lt;React.Profiler&amp;gt;&lt;/code&gt;가 추가됐고 비권장하는 &lt;code&gt;UNSAFE_*&lt;/code&gt;가 붙은 라이프 사이클 메서드를 사용하거나 XSS에 사용되는 &lt;code&gt;&amp;lt;a href=&amp;quot;javascript:&amp;quot;&amp;gt;&lt;/code&gt;를 사용할 시 경고가 출력되도록 변경됐습니다.&lt;br&gt;
+또, DevTools에 &lt;code&gt;useState&lt;/code&gt; 편집, Suspense 토글 관련 기능이 추가됐고 테스트 용&lt;code&gt;act&lt;/code&gt; 함수에서 비동기를 지원합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://example.com/&quot; title=&quot;Warn for javascript: URLs in DOM sinks by sebmarkbage · Pull Request #15047 · facebook/react&quot;&gt;Warn for javascript: URLs in DOM sinks by sebmarkbage · Pull Request #15047 · facebook/react&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;when-a-rewrite-isn-t-rebuilding-slack-on-the-desktop&quot;&gt;When a rewrite isn’t: rebuilding Slack on the desktop&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://slack.engineering/rebuilding-slack-on-the-desktop-308d6fe94ae4&quot; title=&quot;When a rewrite isn’t: rebuilding Slack on the desktop&quot;&gt;slack.engineering/rebuilding-slack-on-the-desktop-308d6fe94ae4&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;slack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;refacoring&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Slack Desktop 아키텍처를 어떻게 리팩터링 했는지 설명합니다.&lt;br&gt;
+jQuery + Signal 구조에서 React + Redux 구조로 이전했습니다.&lt;br&gt;
+기존 코드 베이스를 유지하면서 점진적으로 모던한 환경으로 이전하는 전략에 대해서 이야기합니다.&lt;br&gt;
+이름 공간 객체와 모듈 방식이 혼재할 때의 상호 운용성을 고려해 낡은 코드는 새로운 코드를 직접 import할 수 없고 새로운 코드는 낡은 코드를 직접 import 할 수 없다는 &lt;code&gt;legacy-interop&lt;/code&gt; 개념을 도입하여 진행했습니다.&lt;br&gt;
+Multi workspace를 고려해 재작성했으며 그로인해 메모리 사용량 절약 효과가 있었다고 말합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-smarthr-tech-blog&quot;&gt;프로덕트 간 공통의 React 컴포넌트 라이브러리를 운용하기 - SmartHR Tech Blog(일본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tech.smarthr.jp/entry/2019/08/01/151100&quot; title=&quot;프로덕트 간 공통의 React 컴포넌트 라이브러리를 운용하기 - SmartHR Tech Blog&quot;&gt;tech.smarthr.jp/entry/2019/08/01/151100&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;애플리케이션 간 공통 UI를 라이브러리화 하는 방안에 대해 이야기합니다.&lt;br&gt;
+React + TypeScript + Styled Components로 구현하고 Storybook를 이용해 프리뷰를 제공, reg-suit로 회귀 테스트를 운영하는 방법이 소개돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webmemex-freeze-dry-snapshots-a-web-page-to-get-it-as-a-static-self-contained-html-document&quot;&gt;WebMemex/freeze-dry: Snapshots a web page to get it as a static, self-contained HTML document.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/WebMemex/freeze-dry&quot; title=&quot;WebMemex/freeze-dry: Snapshots a web page to get it as a static, self-contained HTML document.&quot;&gt;github.com/WebMemex/freeze-dry&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;웹 사이트의 DOM과 리소스를 스냅샷 찍을 수 있는 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;harttle-liquidjs-a-shopify-compatible-liquid-template-engine-in-pure-javascript&quot;&gt;harttle/liquidjs: A shopify compatible Liquid template engine in pure JavaScript.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/harttle/liquidjs&quot; title=&quot;harttle/liquidjs: A shopify compatible Liquid template engine in pure JavaScript.&quot;&gt;github.com/harttle/liquidjs&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;template&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Liquid 호환 템플릿 엔진의 자바스크립트 구현체입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;unshiftio-url-parse-small-footprint-url-parser-that-works-seamlessly-across-node-js-and-browser-environments&quot;&gt;unshiftio/url-parse: Small footprint URL parser that works seamlessly across Node.js and browser environments.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/unshiftio/url-parse&quot; title=&quot;unshiftio/url-parse: Small footprint URL parser that works seamlessly across Node.js and browser environments.&quot;&gt;github.com/unshiftio/url-parse&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Browser, Node.js, Worker에서 동작하는 URL 파서 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;arkweid-lefthook-fast-and-powerful-git-hooks-manager-for-any-type-of-projects&quot;&gt;Arkweid/lefthook: Fast and powerful Git hooks manager for any type of projects.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Arkweid/lefthook&quot; title=&quot;Arkweid/lefthook: Fast and powerful Git hooks manager for any type of projects.&quot;&gt;github.com/Arkweid/lefthook&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Git Hooks를 yml으로 관리할 수 있는 도구입니다.&lt;br&gt;
+Node.js나 Ruby 등의 패키지 매니저로 설치 및 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;daybrush-moveable-moveable-draggable-resizable-scalable-rotatable-warpable&quot;&gt;daybrush/moveable: ↔️ ↕️ 🔄 Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable!&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/daybrush/moveable&quot; title=&quot;daybrush/moveable: ↔️ ↕️ 🔄 Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable!&quot;&gt;github.com/daybrush/moveable&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;요소 끌기(drag), 리사이즈 등의 이벤트 핸들링을 다루는 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;databases-database-libraries-for-node-js-that-protect-you-from-sql-injection&quot;&gt;@Databases · Database libraries for Node.js that protect you from SQL Injection&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.atdatabases.org/&quot; title=&quot;@Databases · Database libraries for Node.js that protect you from SQL Injection&quot;&gt;www.atdatabases.org/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;SQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Tagged Template Literal 기반의 SQL 쿼리 이스케이프 라이브러리입니다.&lt;br&gt;
+Tagged Template Literal로 작성한 SQL 문에서 쿼리와 파라미터를 분해 및 추출하고 그 결과를 데이터베이스 엔진에 전달하여 안전하게 SQL 이스케이프를 수행하는데 목적을 두고 있습니다.&lt;br&gt;
+Postgres, MySQL, SQLite 등을 지원합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;kerimdzhanov-dotenv-flow-loads-environment-variables-from-env-development-test-production-local-files-for-node-js-projects&quot;&gt;kerimdzhanov/dotenv-flow: Loads environment variables from .env.[development|test|production][.local] files for Node.js® projects.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/kerimdzhanov/dotenv-flow&quot; title=&quot;kerimdzhanov/dotenv-flow: Loads environment variables from .env.\[development|test|production\]\[.local\] files for Node.js® projects.&quot;&gt;github.com/kerimdzhanov/dotenv-flow&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.env&lt;/code&gt;나 &lt;code&gt;.env.development&lt;/code&gt; 파일 등을 환경에 따라 적절히 읽어들이는 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;도서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;javascript-for-impatient-programmers&quot;&gt;JavaScript for impatient programmers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://exploringjs.com/impatient-js/index.html&quot; title=&quot;JavaScript for impatient programmers&quot;&gt;exploringjs.com/impatient-js/index.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Dr.Axel의 자바스크립트 입문 서적입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 06 Aug 2019 10:52:28 +0900</pubDate>
+        <link>https://jser.info/ko/2019/08/06/chrome-76react-16.9slack-desktop/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2019/08/06/chrome-76react-16.9slack-desktop/</guid>
+        
+        <category>Chrome</category>
+        
+        <category>React</category>
+        
+        <category>Slack</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-07-30: mithril.js 2, Electron 6, React 입문 가이드</title>
@@ -2296,256 +2549,6 @@ Alias, Cache, Fragments 등을 지원합니다.&lt;/p&gt;
         <category>GitHub</category>
         
         <category>npm</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-05-07: Chrome 75 Beta(Low Latency Canvas), Babylon.js 4.0(WebGL)</title>
-        <description>&lt;p&gt;JSer.info #434 - Chrome 75 베타 버전이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2019/05/chrome-75-beta-low-latency-canvas.html&quot;&gt;Chromium Blog: Chrome 75 Beta: low latency canvas contexts, sharing files, and numeric separators&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#milestone%3D75&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Canvas Context에 저지연(low latency) 렌더링을 위한 &lt;code&gt;desynchronized&lt;/code&gt; 옵션이 추가됐습니다.&lt;br&gt;
-&lt;code&gt;desynchronized&lt;/code&gt; 옵션은 아래 문서에 잘 소개돼 있으니 참고하시기 바랍니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/05/desynchronized&quot;&gt;Low-latency rendering with the desynchronized hint  |  Web  |  Google Developers&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/whatwg/html/issues/2659&quot;&gt;Add a low latency mode for OffscreenCanvas · Issue #2659 · whatwg/html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Web Share API에서 파일을 지원하며 ES Proposal의 &lt;a href=&quot;https://github.com/tc39/proposal-numeric-separator&quot;&gt;Numeric separators&lt;/a&gt;를 지원합니다.&lt;br&gt;
-또, CSP의 디렉티브 &lt;code&gt;script-src-attr&lt;/code&gt;, &lt;code&gt;script-src-elem&lt;/code&gt;, &lt;code&gt;style-src-attr&lt;/code&gt;, &lt;code&gt;style-src-elem&lt;/code&gt; 등 4개가 추가됐습니다.&lt;br&gt;
-&lt;a href=&quot;https://www.chromestatus.com/feature/Discussion%20to%20add%20it%20to%20spec:%20https://github.com/whatwg/html/issues/1237&quot;&gt;HTMLVideoElement.playsInline&lt;/a&gt;와 Cache-Control의 &lt;code&gt;stale-while-revalidate&lt;/code&gt; 등도 지원합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;stale-while-revalidate&lt;/code&gt;에 대해서는 아래 문서를 참고하시기 바랍니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://csswizardry.com/2019/03/cache-control-for-civilians/&quot;&gt;What stale-while-revalidate provides is a grace period (defined by us) in which the browser is permitted to use an out of date (stale) asset while we’re checking for a newer version.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;WebGL 기반의 3D 게임 프레임워크인 Babylon.js 4.0이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@babylonjs/babylon-js-4-0-is-here-d725b5b02e9b&quot;&gt;Babylon.js 4.0 Is Here! – Babylon.js – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/BabylonJS/Babylon.js/releases/tag/v4.0.0&quot;&gt;Release 4.0.0 · BabylonJS/Babylon.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Visual Scene Inspector가 추가돼 &lt;a href=&quot;https://doc.babylonjs.com/features/playground_debuglayer&quot;&gt;inspector&lt;/a&gt;의 디버깅 기능이 한층 강화됐습니다.&lt;br&gt;
-또, 번들 시 불필요한 모듈이 제거되도록 개선됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://doc.babylonjs.com/features/es6_support&quot;&gt;ES6 - Babylon.js Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;이어 성능 개선이 이뤄졌고 물리 엔진인 &lt;a href=&quot;https://github.com/kripken/ammo.js/&quot;&gt;ammo.js&lt;/a&gt;를 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://doc.babylonjs.com/how_to/using_the_physics_engine&quot;&gt;Use a Physics Engine - Babylon.js Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jquery-3-4-1-triggering-focus-events-in-ie-and-finding-root-elements-in-ios-10-official-jquery-blog&quot;&gt;jQuery 3.4.1: triggering focus events in IE and finding root elements in iOS 10 | Official jQuery Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.jquery.com/2019/05/01/jquery-3-4-1-triggering-focus-events-in-ie-and-finding-root-elements-in-ios-10/&quot; title=&quot;jQuery 3.4.1: triggering focus events in IE and finding root elements in iOS 10 | Official jQuery Blog&quot;&gt;blog.jquery.com/2019/05/01/jquery-3-4-1-triggering-focus-events-in-ie-and-finding-root-elements-in-ios-10/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;jQuery 3.4.1이 릴리스됐습니다.&lt;br&gt;
-IE10-IE11에서의 &lt;code&gt;trigger&lt;/code&gt; 문제, iOS 10.0-10.2에서의 click 문제, AMD로 jQuery를 불러올 때 발생하는 문제 등이 수정됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-81-webkit&quot;&gt;Release Notes for Safari Technology Preview 81 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8834/release-notes-for-safari-technology-preview-81/&quot; title=&quot;Release Notes for Safari Technology Preview 81 | WebKit&quot;&gt;webkit.org/blog/8834/release-notes-for-safari-technology-preview-81/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webkit&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 81 릴리스됐습니다.&lt;br&gt;
-인쇄 용 스타일로 &lt;code&gt;@page&lt;/code&gt;에 의한 margin을 지원하며 &lt;code&gt;frame-ancestors&lt;/code&gt; CSP를 &lt;code&gt;X-Frame-Options&lt;/code&gt; 헤더 보다 더 우선하도록 변경됐고 &lt;code&gt;requestAnimationFrame&lt;/code&gt;의 실행 시점 문제가 수정됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://bugs.webkit.org/show_bug.cgi?id=177484&quot; title=&quot;177484 – requestAnimationFrame should execute before the next frame&quot;&gt;177484 – requestAnimationFrame should execute before the next frame&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;chromium-blog-chrome-75-beta-low-latency-canvas-contexts-sharing-files-and-numeric-separators&quot;&gt;Chromium Blog: Chrome 75 Beta: low latency canvas contexts, sharing files, and numeric separators&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.chromium.org/2019/05/chrome-75-beta-low-latency-canvas.html&quot; title=&quot;Chromium Blog: Chrome 75 Beta: low latency canvas contexts, sharing files, and numeric separators&quot;&gt;blog.chromium.org/2019/05/chrome-75-beta-low-latency-canvas.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 75 베타가 릴리스됐습니다.&lt;br&gt;
-Canvas에 저지연 렌더링을 위한 &lt;code&gt;desynchronized&lt;/code&gt; 옵션 추가, Web Share에서 파일 지원, ES Proposal의 Numeric separators를 지원합니다.&lt;br&gt;
-CSP의 &lt;code&gt;script-src-attr&lt;/code&gt; 디렉티브와 Cache-Control의 &lt;code&gt;stale-while-revalidate&lt;/code&gt;를 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#milestone%3D75&quot; title=&quot;Chrome Platform Status&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/05/desynchronized&quot; title=&quot;Low-latency rendering with the desynchronized hint  |  Web  |  Google Developers&quot;&gt;Low-latency rendering with the desynchronized hint  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-7-0-0-websockets-ws&quot;&gt;Release 7.0.0 · websockets/ws&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/websockets/ws/releases/tag/7.0.0&quot; title=&quot;Release 7.0.0 · websockets/ws&quot;&gt;github.com/websockets/ws/releases/tag/7.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebSocket&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebSocket 클라이언트 &amp;amp; 서버 &lt;code&gt;ws&lt;/code&gt; 7.0.0이 릴리스됐습니다.&lt;br&gt;
-Node.js 6 지원을 종료했고 생성자에서 Node.js의 &lt;code&gt;url&lt;/code&gt; 객체가 아닌 &lt;code&gt;URL&lt;/code&gt; 객체를 전달받도록 변경됐습니다.&lt;br&gt;
-&lt;code&gt;readyState&lt;/code&gt;가 &lt;code&gt;OPEN&lt;/code&gt;이 아닌 경우의 &lt;code&gt;ping&lt;/code&gt;, &lt;code&gt;pong&lt;/code&gt; 동작이 변경됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v4-0-0-facebook-relay&quot;&gt;Release v4.0.0 · facebook/relay&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/relay/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · facebook/relay&quot;&gt;github.com/facebook/relay/releases/tag/v4.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GraphQL과 React 용 프레임워크인 Relay 4.0.0이 릴리스됐습니다.&lt;br&gt;
-Container의 인수로 &lt;code&gt;graphql&lt;/code&gt; tag를 전달하는게 아닌 객체를 전달하도록 변경됐고 client schema extensions를 모두 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.facebook.com/videos/2019/building-the-new-facebookcom-with-react-graphql-and-relay/&quot; title=&quot;Building the New facebook.com with React, GraphQL and Relay&quot;&gt;Building the New facebook.com with React, GraphQL and Relay&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;microsoft-edge-all-the-news-from-build-2019-microsoft-edge-blog&quot;&gt;Microsoft Edge – All the news from Build 2019 - Microsoft Edge Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/05/06/edge-chromium-build-2019-pwa-ie-mode-devtools/&quot; title=&quot;Microsoft Edge – All the news from Build 2019 - Microsoft Edge Blog&quot;&gt;blogs.windows.com/msedgedev/2019/05/06/edge-chromium-build-2019-pwa-ie-mode-devtools/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;IE&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chromium 기반의 MSEdge에는 서드 파티 트레킹의 블록이 가능한 Privacy Tools와 방문한 사이트를 자동으로 IE 호환 모드로 실행하는 기능이 탑재될 예정입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;babylon-js-4-0-is-here-babylon-js-medium&quot;&gt;Babylon.js 4.0 Is Here! – Babylon.js – Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@babylonjs/babylon-js-4-0-is-here-d725b5b02e9b&quot; title=&quot;Babylon.js 4.0 Is Here! – Babylon.js – Medium&quot;&gt;medium.com/@babylonjs/babylon-js-4-0-is-here-d725b5b02e9b&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebGL 기반 3D 게임 프레임워크 Babylon.js 4.0.0이 릴리스됐습니다. Visual Scene Inspector 도입, 파일 크기와 성능의 개선, 물리 엔진인 Ammo.js를 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;hyper-blog&quot;&gt;Hyper Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hyper.is/blog&quot; title=&quot;Hyper Blog&quot;&gt;hyper.is/blog&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;software&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Electron 기반의 터미널 애플리케이션인 Hyper 3가 릴리스됐습니다. &lt;code&gt;hterm&lt;/code&gt;에서 &lt;code&gt;xterm.js&lt;/code&gt;으로 변경하여 WebGL Renderer를 사용하도록 개선됐으며 IPC의 배치 처리를 이용해 성능을 개선했습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;stub-navigator-api-in-end-to-end-tests-better-world-by-better-software&quot;&gt;Stub navigator API in end-to-end tests | Better world by better software&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://glebbahmutov.com/blog/stub-navigator-api/&quot; title=&quot;Stub navigator API in end-to-end tests | Better world by better software&quot;&gt;glebbahmutov.com/blog/stub-navigator-api/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Cypress를 사용해 Battery status API을 Stub하여 테스트하는 방법을 소개하는 튜토리얼 글입니다.&lt;br&gt;
-&lt;code&gt;navigator&lt;/code&gt;를 어떻게 stub해 테스트할 수 있는지 소개합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-css-handbook-a-handy-guide-to-css-for-developers&quot;&gt;The CSS Handbook: a handy guide to CSS for developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.freecodecamp.org/the-css-handbook-a-handy-guide-to-css-for-developers-b56695917d11&quot; title=&quot;The CSS Handbook: a handy guide to CSS for developers&quot;&gt;medium.freecodecamp.org/the-css-handbook-a-handy-guide-to-css-for-developers-b56695917d11&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSS를 주제로한 가이드 문서입니다.&lt;br&gt;
-기본적인 CSS의 속성 소개부터 unit, 레이아웃, 애니메이션 등 CSS와 관련한 기술이 폭넓게 정리돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;revisiting-prefers-reduced-motion-the-reduced-motion-media-query-css-tricks&quot;&gt;Revisiting prefers-reduced-motion, the reduced motion media query | CSS-Tricks&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/&quot; title=&quot;Revisiting prefers-reduced-motion, the reduced motion media query | CSS-Tricks&quot;&gt;css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;animation&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSS의 &lt;code&gt;prefers-reduced-motion&lt;/code&gt; 미디어쿼리에 대한 소개와 사용 방법이 작성돼 있습니다.&lt;br&gt;
-접근성, 프로그레시브/인핸스먼트(enhancement)에 대한 생각, CSS Variables을 조합한 구현 방법 등을 소개합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;optimizing-performance-with-resource-hints-smashing-magazine&quot;&gt;Optimizing Performance With Resource Hints — Smashing Magazine&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2019/04/optimization-performance-resource-hints/&quot; title=&quot;Optimizing Performance With Resource Hints — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2019/04/optimization-performance-resource-hints/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Resource Hints에 관한 소개글입니다.&lt;br&gt;
-&lt;code&gt;dns-prefetch&lt;/code&gt;, &lt;code&gt;preconnect&lt;/code&gt;, &lt;code&gt;prefetch&lt;/code&gt;, &lt;code&gt;prerender&lt;/code&gt;를 각각 어떤 경우에 이용하는지 그리고 &lt;code&gt;as&lt;/code&gt; 속성에 대해 작성돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;gulp4-gulpfile-node-qiita&quot;&gt;gulp4 재입문 gulpfile의 분할과 node 모듈 이용 - Qiita(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://qiita.com/masato_makino/items/ad11058e1a8a009abbdf&quot; title=&quot;gulp4 재입문 gulpfile의 분할과 node 모듈 이용 - Qiita&quot;&gt;qiita.com/masato_makino/items/ad11058e1a8a009abbdf&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;gulp4 기반 입문 글입니다.&lt;br&gt;
-gulp task 정의 방법, 태스크 파일의 분리, gulp 플러그인과 Node 모듈에 대해서 이야기합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;oclif-cli-ux-cli-io-utilities&quot;&gt;oclif/cli-ux: CLI IO utilities&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/oclif/cli-ux&quot; title=&quot;oclif/cli-ux: CLI IO utilities&quot;&gt;github.com/oclif/cli-ux&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;터미널 CLI 인터페이스를 만들 수 있는 Node.js 라이브러리입니다.&lt;br&gt;
-prompt나 confirm 등의 대화형 조작, URL 링크 출력, spinner, 애너테이션, table 출력 등을 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;laconia-create-well-crafted-serverless-applications-effortlessly&quot;&gt;Laconia · Create well-crafted serverless applications, effortlessly&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://laconiajs.io/&quot; title=&quot;Laconia · Create well-crafted serverless applications, effortlessly&quot;&gt;laconiajs.io/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js의 serverlsss 프레임워크 입니다. Hexagonal Architecture 기반으로 의존을 외부에서 주입할 수 있는 구조로 테스트하기 쉽게 돼 있습니다.&lt;br&gt;
-Long Task 용 배치 처리하는 모듈도 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;microsoft-react-native-windows-a-framework-for-building-native-windows-apps-with-react&quot;&gt;microsoft/react-native-windows: A framework for building native Windows apps with React.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Microsoft/react-native-windows&quot; title=&quot;microsoft/react-native-windows: A framework for building native Windows apps with React.&quot;&gt;github.com/Microsoft/react-native-windows&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;windows&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React Native for Windows.&lt;br&gt;
-React Native로 네이티브 Windows 애플리케이션(UWP)를 개발할 수 있는 프레임워크입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 07 May 2019 10:19:40 +0900</pubDate>
-        <link>https://jser.info/ko/2019/05/07/chrome-75-betalow-latency-canvasbabylon.js-4.0webgl/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2019/05/07/chrome-75-betalow-latency-canvasbabylon.js-4.0webgl/</guid>
-        
-        <category>Chrome</category>
-        
-        <category>WebGL</category>
-        
-        <category>gulp</category>
         
         
         <category>JSer</category>
