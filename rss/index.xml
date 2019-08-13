@@ -5,9 +5,264 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 09 Aug 2019 14:58:32 +0900</pubDate>
-    <lastBuildDate>Fri, 09 Aug 2019 14:58:32 +0900</lastBuildDate>
+    <pubDate>Tue, 13 Aug 2019 11:28:41 +0900</pubDate>
+    <lastBuildDate>Tue, 13 Aug 2019 11:28:41 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-08-13のJS: React 16.9.0正式リリース、Image lazy-loading、Web API in Node.js</title>
+        <description>&lt;p&gt;JSer.info #448 - 先週RC版が公開されたReact 16.9.0の正式版がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactjs.org/blog/2019/08/08/react-v16.9.0.html&quot;&gt;React v16.9.0 and the Roadmap Update – React Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;次のコンポーネントのライフサイクルメソッドに警告を表示するようになりました。&lt;br&gt;
+これらのメソッドはReact 17.xで削除されます。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;componentWillMount&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;componentWillReceiveProps&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;componentWillUpdate&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これらのライフサイクルメソッドは、&lt;a href=&quot;https://github.com/reactjs/react-codemod&quot;&gt;react-codemod&lt;/a&gt;の&lt;a href=&quot;https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles&quot;&gt;rename-unsafe-lifecycles&lt;/a&gt;を使うことで&lt;code&gt;UNSAFE_*&lt;/code&gt; prefixのライフサイクルメソッドにリネームできます。&lt;br&gt;
+この&lt;code&gt;UNSAFE_*&lt;/code&gt; prefixのライフサイクルメソッドは17.xでも動作が維持されます。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;componentWillMount&lt;/code&gt; → &lt;code&gt;UNSAFE_componentWillMount&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;componentWillReceiveProps&lt;/code&gt; → &lt;code&gt;UNSAFE_componentWillReceiveProps&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;componentWillUpdate&lt;/code&gt; → &lt;code&gt;UNSAFE_componentWillUpdate&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、去年の記事で公開されていたReactのロードマップがアップデートされたことについてもかかれています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html&quot;&gt;Update on Async Rendering – React Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以前のロードマップでは、Concurrent Mode と Suspense は別々のリリースとする予定でしたが、同時にリリースする方向で再編しているようです。&lt;br&gt;
+詳しくは&lt;a href=&quot;https://reactjs.org/blog/2019/08/08/react-v16.9.0.html&quot;&gt;React v16.9.0 and the Roadmap Update – React Blog&lt;/a&gt;を参照してください。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/native-lazy-loading/&quot;&gt;Native lazy-loading for the web  |  web.dev&lt;/a&gt;という記事では、&lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt;や&lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;で利用できるようになる&lt;code&gt;loading&lt;/code&gt;属性について紹介されています。&lt;/p&gt;
+
+&lt;p&gt;次のように&lt;code&gt;loading&lt;/code&gt;属性を指定することで、実際にViewportに入ってから画像の読み込みを行う遅延ロードができます。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;img src=&quot;...&quot; loading=&quot;lazy&quot; width=&quot;200&quot; height=&quot;200&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;記事では、&lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt;や&lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;での&lt;code&gt;loading&lt;/code&gt;属性の動作やこの機能をサポートしているかの判定方法、印刷時の挙動など細かい話もかかれています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;changelog-for-16-9-todo-add-date-by-gaearon-pull-request-16254-facebook-react&quot;&gt;Changelog for 16.9 (TODO: add date) by gaearon · Pull Request #16254 · facebook/react&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/react/pull/16254&quot; title=&quot;Changelog for 16.9 (TODO: add date) by gaearon · Pull Request #16254 · facebook/react&quot;&gt;github.com/facebook/react/pull/16254&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React 16.9 RC.0リリース。&lt;br&gt;
+&lt;code&gt;&amp;lt;React.Profiler&amp;gt;&lt;/code&gt;の追加、非推奨となっていた&lt;code&gt;UNSAFE_*&lt;/code&gt;のライフサイクルメソッドに対する警告を表示、&lt;code&gt;&amp;lt;a href=&amp;quot;javascript:&amp;quot;&amp;gt;&lt;/code&gt;に対して警告を出すように。&lt;br&gt;
+また、DevToolsで&lt;code&gt;useState&lt;/code&gt;の編集、Suspenseのトグル表示に対応、テスト用の&lt;code&gt;act&lt;/code&gt;がAsync対応など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://example.com/&quot; title=&quot;Warn for javascript: URLs in DOM sinks by sebmarkbage · Pull Request #15047 · facebook/react&quot;&gt;Warn for javascript: URLs in DOM sinks by sebmarkbage · Pull Request #15047 · facebook/react&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;testcafe-v1-4-0-released-testcafe&quot;&gt;TestCafe v1.4.0 Released | TestCafe&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devexpress.github.io/testcafe/blog/testcafe-v1-4-0-released.html&quot; title=&quot;TestCafe v1.4.0 Released | TestCafe&quot;&gt;devexpress.github.io/testcafe/blog/testcafe-v1-4-0-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TestCafe v1.4.0リリース。&lt;br&gt;
+Testページに対してスクリプトファイルを追加できるようになるなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-89-webkit&quot;&gt;Release Notes for Safari Technology Preview 89 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9497/release-notes-for-safari-technology-preview-89/&quot; title=&quot;Release Notes for Safari Technology Preview 89 | WebKit&quot;&gt;webkit.org/blog/9497/release-notes-for-safari-technology-preview-89/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview 89リリース。&lt;br&gt;
+&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;の&lt;code&gt;referrerpolicy&lt;/code&gt;属性をサポート、&lt;code&gt;console.screenshot&lt;/code&gt;で&lt;code&gt;ImageData&lt;/code&gt;などをコンソールへの出力をサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-v16-9-0-and-the-roadmap-update-react-blog&quot;&gt;React v16.9.0 and the Roadmap Update – React Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://reactjs.org/blog/2019/08/08/react-v16.9.0.html&quot; title=&quot;React v16.9.0 and the Roadmap Update – React Blog&quot;&gt;reactjs.org/blog/2019/08/08/react-v16.9.0.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React 16.9.0リリース。&lt;br&gt;
+非推奨となっていたコンポーネントのライフサイクルメソッドに警告を表示するように、&lt;code&gt;&amp;lt;a href&amp;gt;&lt;/code&gt;に&lt;code&gt;javascript:&lt;/code&gt;スキームのURLを指定した場合に警告を表示するように。&lt;br&gt;
+コンポーネントのテストを行う&lt;code&gt;act()&lt;/code&gt;関数がAsync Functionwをサポート、&lt;code&gt;&amp;lt;React.Profiler&amp;gt;&lt;/code&gt;コンポーネントの追加など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html&quot; title=&quot;Update on Async Rendering – React Blog&quot;&gt;Update on Async Rendering – React Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v3-1-0-facebook-create-react-app&quot;&gt;Release v3.1.0 · facebook/create-react-app&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/create-react-app/releases/tag/v3.1.0&quot; title=&quot;Release v3.1.0 · facebook/create-react-app&quot;&gt;github.com/facebook/create-react-app/releases/tag/v3.1.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;create-react-app 3.1.0リリース。&lt;br&gt;
+ESLint 6のサポート、ESLintの設定カスタマイズの対応、&lt;code&gt;IMAGE_INLINE_SIZE_LIMIT&lt;/code&gt;の環境変数対応など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v1-0-0-webpack-contrib-style-loader&quot;&gt;Release v1.0.0 · webpack-contrib/style-loader&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/webpack-contrib/style-loader/releases/tag/v1.0.0&quot; title=&quot;Release v1.0.0 · webpack-contrib/style-loader&quot;&gt;github.com/webpack-contrib/style-loader/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webpackのCSSを扱うloaderであるstyle-loader 1.0.0リリース。&lt;br&gt;
+&lt;code&gt;injectType&lt;/code&gt;オプションのサポート、&lt;code&gt;convertToAbsoluteUrls&lt;/code&gt;や&lt;code&gt;transform&lt;/code&gt;オプションの削除、&lt;code&gt;attrs&lt;/code&gt;を&lt;code&gt;attributes&lt;/code&gt;にリネームなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;es-proposal-globalthis&quot;&gt;ES proposal: `globalThis`&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://2ality.com/2019/08/global-this.html&quot; title=&quot;ES proposal: \`globalThis\`&quot;&gt;2ality.com/2019/08/global-this.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ECMAScript Proposalの&lt;code&gt;globalThis&lt;/code&gt;の解説。&lt;br&gt;
+グローバルスコープを参照するための仕様で、&lt;code&gt;this&lt;/code&gt;との動きの違い、各実行環境で&lt;code&gt;globalThis&lt;/code&gt;が参照するオブジェクトについてなど。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;native-lazy-loading-for-the-web-web-dev&quot;&gt;Native lazy-loading for the web  |  web.dev&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/native-lazy-loading/&quot; title=&quot;Native lazy-loading for the web  |  web.dev&quot;&gt;web.dev/native-lazy-loading/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt;や&lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;の&lt;code&gt;loading&lt;/code&gt;属性での遅延ロードについて。&lt;br&gt;
+&lt;code&gt;loading&lt;/code&gt;属性のFeature Detect、Polyfill、Chrome for AndroidのLite mode(Data Saver)の対応についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;getting-more-out-of-vue-async-components-abdelrahman-blog&quot;&gt;Getting More Out of Vue Async Components - Abdelrahman&amp;#39; Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://logaretm.com/blog/getting-more-out-of-vue-async-components/&quot; title=&quot;Getting More Out of Vue Async Components - Abdelrahman&amp;#39; Blog&quot;&gt;logaretm.com/blog/getting-more-out-of-vue-async-components/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vueでのコンポーネントの非同期ロードの活用方法について。&lt;br&gt;
+非同期コンポーネントを使ってコンテンツに必要なコンポーネントだけをロードする方法について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;interesting-use-cases-for-javascript-bitwise-operators-logrocket-blog&quot;&gt;Interesting use cases for JavaScript bitwise operators - LogRocket Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.logrocket.com/interesting-use-cases-for-javascript-bitwise-operators/&quot; title=&quot;Interesting use cases for JavaScript bitwise operators - LogRocket Blog&quot;&gt;blog.logrocket.com/interesting-use-cases-for-javascript-bitwise-operators/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptのビット演算子について。&lt;br&gt;
+ビット演算を利用したフラグ管理の実装についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;how-to-reduce-your-vue-js-bundle-size-with-webpack-dev-community&quot;&gt;How to Reduce Your Vue.JS Bundle Size With Webpack - DEV Community 👩‍💻👨‍💻&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://dev.to/ratracegrad/how-to-reduce-your-vue-js-bundle-size-with-webpack-4gpf&quot; title=&quot;How to Reduce Your Vue.JS Bundle Size With Webpack - DEV Community 👩‍💻👨‍💻&quot;&gt;dev.to/ratracegrad/how-to-reduce-your-vue-js-bundle-size-with-webpack-4gpf&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Webpackを使ったVue.jsで書いたアプリケーションのbundleサイズの最適化についての記事。&lt;br&gt;
+webpack-bundle-analyzerを使っての分析、不要なものをbundleから外すようにする方法などについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;part-d70e820f4b2127ff&quot;&gt;クライアントサイドからサーバサイドまで破壊するテンプレートエンジンを利用した攻撃と対策&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://azu.github.io/slide/2019/template-engine/template-engine-security.html&quot; title=&quot;クライアントサイドからサーバサイドまで破壊するテンプレートエンジンを利用した攻撃と対策&quot;&gt;azu.github.io/slide/2019/template-engine/template-engine-security.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;template&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;テンプレートとセキュリティについてのスライド。&lt;br&gt;
+テンプレートエンジンの種類、クライアントサイド/サーバサイドのテンプレートを使った脆弱性、テンプレートを機能として提供する場合の問題についてなど。&lt;br&gt;
+古典的なサーバサイドレンダリングとVue等テンプレートを持つのクライアントサイドレンダリングを組み合わせたときの発生しやすい問題についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;joyee-cheung-web-apis-in-node-js-core-past-present-and-future&quot;&gt;Joyee Cheung: Web APIs in Node.js Core: Past, Present, and Future&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://2019.jsconf.eu/joyee-cheung/web-apis-in-nodejs-core-past-present-and-future.html&quot; title=&quot;Joyee Cheung: Web APIs in Node.js Core: Past, Present, and Future&quot;&gt;2019.jsconf.eu/joyee-cheung/web-apis-in-nodejs-core-past-present-and-future.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js CoreとWeb標準のAPIについての発表の動画と書き起こし。&lt;br&gt;
+Node.js Coreに&lt;code&gt;URL&lt;/code&gt;やPerformance APIなどのWeb API互換の実装がされていることや、なぜそのような互換実装が行われているのかについて。&lt;br&gt;
+また、どのように実装するものを決めているかについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;pika-ci-cd&quot;&gt;Pika CI/CD&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.pika.dev/cicd/&quot; title=&quot;Pika CI/CD&quot;&gt;www.pika.dev/cicd/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ci&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Pull Requestごとにnpmパッケージを作成できるPikaのGitHub App。&lt;br&gt;
+Pull Requestごとに固有のパッケージを作成してテストできる&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;epicmaxco-vuestic-admin-free-and-beautiful-vue-js-admin-template&quot;&gt;epicmaxco/vuestic-admin: Free and Beautiful Vue.js Admin Template&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/epicmaxco/vuestic-admin&quot; title=&quot;epicmaxco/vuestic-admin: Free and Beautiful Vue.js Admin Template&quot;&gt;github.com/epicmaxco/vuestic-admin&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vueを使った管理画面テンプレート&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;javascript-for-impatient-programmers&quot;&gt;JavaScript for impatient programmers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://exploringjs.com/impatient-js/index.html&quot; title=&quot;JavaScript for impatient programmers&quot;&gt;exploringjs.com/impatient-js/index.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Dr.AxelのJavaScript入門本&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 13 Aug 2019 10:50:05 +0900</pubDate>
+        <link>https://jser.info/2019/08/13/react-16.9.0image-lazy-loadingweb-api-in-node.js/</link>
+        <guid isPermaLink="true">https://jser.info/2019/08/13/react-16.9.0image-lazy-loadingweb-api-in-node.js/</guid>
+        
+        <category>React</category>
+        
+        <category>WebPlatformAPI</category>
+        
+        <category>Node.js</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-08-06のJS: Chrome 76、React 16.9、Slack Desktopのリファクタリング</title>
@@ -2221,299 +2476,6 @@ TypeSctiptとNext.js、Nuxt.jsについての書籍&lt;/p&gt;
         <category>Safari</category>
         
         <category>npm</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-06-04のJS: async.js 3.0.0(async/await対応)、AVA 2.0.0、Verdaccio 4(npm registry)</title>
-        <description>&lt;p&gt;JSer.info #438 - 非同期処理のフローを扱うライブラリである&lt;a href=&quot;https://github.com/caolan/async&quot;&gt;Async&lt;/a&gt; 3がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/caolan/async/blob/master/CHANGELOG.md#v300&quot;&gt;https://github.com/caolan/async/blob/master/CHANGELOG.md#v300&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Async 3.0.0では&lt;code&gt;async.mapLimit&lt;/code&gt;などのAsyncのメソッドがPromiseを返すように変更されています。&lt;br&gt;
-これにより、&lt;code&gt;async.mapLimit&lt;/code&gt;などのメソッドが&lt;code&gt;async&lt;/code&gt;/&lt;code&gt;await&lt;/code&gt;と組み合わせて利用できるようになっています。&lt;br&gt;
-&lt;a href=&quot;https://github.com/caolan/async/blob/master/CHANGELOG.md#v230&quot;&gt;2.3.0&lt;/a&gt;で&lt;a href=&quot;https://github.com/caolan/async/pull/1390&quot;&gt;引数にAsync Functionを渡せる&lt;/a&gt;ようになっていました。さらに今回のリリースで&lt;code&gt;async.*&lt;/code&gt;のメソッドにコールバック関数を渡さなかった場合は、Promiseを返すようになっています。&lt;/p&gt;
-
-&lt;p&gt;比較してみると次のようになると思います。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// DUMMY CODES&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;async&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;urls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://example.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...];&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// 2.3.0 &amp;lt;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mapLimit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;urls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;asyncify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// 2.3.0 &amp;gt;=&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mapLimit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;urls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// 3.0.0 &amp;gt;=&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mapLimit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;urls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;また3.0でコードベースもES2015ベースとなったため、ES2015をサポートしていない実行環境はサポート外となっています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Node.jsのテストフレームワークである&lt;a href=&quot;https://github.com/avajs/ava&quot;&gt;AVA&lt;/a&gt; 2.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v2.0.0&quot;&gt;Release 2.0.0 · avajs/ava&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Node.js 8.9.4以降のサポートのみとなっています。&lt;br&gt;
-破壊的な変更としては、snapshotが作られていない場合はCIで失敗するように、assertionメッセージが文字列ではない場合は例外を投げるようになるといった変更が含まれています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;OSSなnpm package registry serverの実装である&lt;a href=&quot;https://verdaccio.org/&quot;&gt;Verdaccio&lt;/a&gt; 4がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://verdaccio.org/blog/2019/05/19/15-verdaccio-4-release.html&quot;&gt;Verdaccio 4 released !!! · Verdaccio&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://verdaccio.org/&quot;&gt;Verdaccio&lt;/a&gt;はもともと&lt;a href=&quot;https://github.com/rlidwka/sinopia&quot;&gt;sinopia&lt;/a&gt;というnpm registry serverをforkしたもので、&lt;br&gt;
-今回のリリースでsinopia時代の実装やウェブUIを刷新しています。&lt;br&gt;
-検索UI、Register情報、パッケージの詳細画面などのUIが変更されています。&lt;/p&gt;
-
-&lt;p&gt;同じくnpm package registryの話題として、&lt;a href=&quot;https://www.npmjs.com/about&quot;&gt;npm inc&lt;/a&gt;の元CTOである@&lt;a href=&quot;https://github.com/ceejbot&quot;&gt;ceejbot&lt;/a&gt;が&lt;a href=&quot;https://github.com/entropic-dev/entropic&quot;&gt;Entropic&lt;/a&gt;というFederatedなnpm package registryを作成するという発表が&lt;a href=&quot;https://2019.jsconf.eu/&quot;&gt;JSConf EU 2019&lt;/a&gt;でありました。&lt;br&gt;
-なぜ新しいnpm package registryを作ろうとしているかについてはJSConf EUの動画とスライドが上がっているので見てみるとよさそうです。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=MO8hZlgK5zc&amp;list=PL37ZVnwpeshHwJPVBqEnZild7QHWhdufu&amp;index=3&amp;t=0s&quot;&gt;The economics of open source by C J Silverio | JSConf EU 2019 - YouTube&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/ceejbot/economics-of-package-management&quot;&gt;ceejbot/economics-of-package-management: ceejbot&amp;#39;s talk from JSConfEU 2019&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;async-changelog-md-at-master-caolan-async&quot;&gt;async/CHANGELOG.md at master · caolan/async&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/caolan/async/blob/master/CHANGELOG.md#v300&quot; title=&quot;async/CHANGELOG.md at master · caolan/async&quot;&gt;github.com/caolan/async/blob/master/CHANGELOG.md#v300&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;async 3.0.0リリース。&lt;br&gt;
-&lt;code&gt;async&lt;/code&gt;モジュールのメソッドがcallbackを指定していない場合に、Promiseを返すように、コレクションメソッドでAsync Generatorのサポート、&lt;code&gt;cargoQueue&lt;/code&gt;の追加など。&lt;br&gt;
-また、ES2015のコードベースになったため、古いブラウザやNode 4以下のサポート終了。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v10-16-0-lts-node-js&quot;&gt;Node v10.16.0 (LTS) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v10.16.0/&quot; title=&quot;Node v10.16.0 (LTS) | Node.js&quot;&gt;nodejs.org/en/blog/release/v10.16.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node v10.16.0(LTS)リリース。&lt;br&gt;
-npm 6.9.0への更新、&lt;code&gt;zlib&lt;/code&gt;モジュールのbrotliサポートのバックポート、&lt;code&gt;events&lt;/code&gt;モジュールの&lt;code&gt;once&lt;/code&gt;メソッドのバックポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;w3c-and-whatwg-to-work-together-to-advance-the-open-web-platform-w3c-blog&quot;&gt;W3C and WHATWG to work together to advance the open Web platform | W3C Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.w3.org/blog/2019/05/w3c-and-whatwg-to-work-together-to-advance-the-open-web-platform/&quot; title=&quot;W3C and WHATWG to work together to advance the open Web platform | W3C Blog&quot;&gt;www.w3.org/blog/2019/05/w3c-and-whatwg-to-work-together-to-advance-the-open-web-platform/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;W3C&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WHATWG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;W3CはHTMLとDOMに関する標準策定をやめ、WHATWGが策定しているLiving Standardを共同で策定していくことに合意した。&lt;br&gt;
-また、WHATWGはレビュードラフトと呼ばれる定期的なスナップショットをだし、これをW3Cプロセスに従う形で勧告まで進めるなどのプロセスの変更について書かれている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem&quot;&gt;Version 8 of Angular — Smaller bundles, CLI APIs, and alignment with the ecosystem&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27&quot; title=&quot;Version 8 of Angular — Smaller bundles, CLI APIs, and alignment with the ecosystem&quot;&gt;blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Angular 8.0.0リリース。&lt;br&gt;
-modern build(es2015)とlegacy build(es5)を出し分けロードするDifferential Loadingの有効化。&lt;br&gt;
-Route ConfigでDynamic Importsを使うように、CLI向けにBuilders APIの追加。&lt;br&gt;
-Ivyを&lt;code&gt;enableIvy&lt;/code&gt;で試せるようになるなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.angular.io/introducing-cli-builders-d012d4489f1b&quot; title=&quot;Introducing CLI Builders – Angular Blog&quot;&gt;Introducing CLI Builders – Angular Blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/angular/angular/blob/master/CHANGELOG.md#800-2019-05-28&quot; title=&quot;angular/CHANGELOG.md at master · angular/angular&quot;&gt;angular/CHANGELOG.md at master · angular/angular&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-83-webkit&quot;&gt;Release Notes for Safari Technology Preview 83 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8967/release-notes-for-safari-technology-preview-83/&quot; title=&quot;Release Notes for Safari Technology Preview 83 | WebKit&quot;&gt;webkit.org/blog/8967/release-notes-for-safari-technology-preview-83/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 83リリース。&lt;br&gt;
-WebAuthNのデフォルト有効化、CSSの&lt;code&gt;line-break: anywhere&lt;/code&gt;、&lt;code&gt;display: flow-root&lt;/code&gt;のサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v0-19-0-axios-axios&quot;&gt;Release v0.19.0 · axios/axios&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/axios/axios/releases/tag/v0.19.0&quot; title=&quot;Release v0.19.0 · axios/axios&quot;&gt;github.com/axios/axios/releases/tag/v0.19.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;axios 0.19.0リリース。&lt;br&gt;
-Node.jsでレスポンスがgzipなどでかつ204の場合に例外が発生する問題を修正、&lt;code&gt;maxContentLength&lt;/code&gt;の設定を無視してリクエストを継続するDosにつながる問題を修正など。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/axios/axios/releases/tag/v0.18.1&quot; title=&quot;Release v0.18.1 · axios/axios&quot;&gt;Release v0.18.1 · axios/axios&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/axios/axios/pull/1485&quot; title=&quot;Destroy stream on exceeding maxContentLength (fixes #1098) by resure · Pull Request #1485 · axios/axios&quot;&gt;Destroy stream on exceeding maxContentLength (fixes #1098) by resure · Pull Request #1485 · axios/axios&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-typescript-3-5-typescript&quot;&gt;Announcing TypeScript 3.5 | TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-5/&quot; title=&quot;Announcing TypeScript 3.5 | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-5/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.5リリース。&lt;br&gt;
-型チェックのパフォーマンス改善、&lt;code&gt;--incremental&lt;/code&gt;ビルドのパフォーマンス改善、&lt;code&gt;Omit&lt;/code&gt;ヘルパー型の追加など。&lt;br&gt;
-破壊的な変更として型パラメータの型が不明な場合の型が&lt;code&gt;{}&lt;/code&gt;から&lt;code&gt;unknown&lt;/code&gt;へ変更など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/What&amp;#x27;s-new-in-TypeScript#typescript-35&quot; title=&quot;What&amp;amp;#x27;s new in TypeScript · microsoft/TypeScript Wiki&quot;&gt;What&amp;#39;s new in TypeScript · microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Breaking-Changes#typescript-35&quot; title=&quot;Breaking Changes · microsoft/TypeScript Wiki&quot;&gt;Breaking Changes · microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/vvakame/items/e7bbaff54db8fbf986bb&quot; title=&quot;TypeScript v3.5.1 変更点 - Qiita&quot;&gt;TypeScript v3.5.1 変更点 - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2-8-0-nuxt-nuxt-js&quot;&gt;Release v2.8.0 · nuxt/nuxt.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.8.0&quot; title=&quot;Release v2.8.0 · nuxt/nuxt.js&quot;&gt;github.com/nuxt/nuxt.js/releases/tag/v2.8.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Nuxt.js 2.8.0リリース。&lt;br&gt;
-SSRログの表示を改善、ビルド中のインジケータ表示の改善など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-2-0-0-avajs-ava&quot;&gt;Release 2.0.0 · avajs/ava&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v2.0.0&quot; title=&quot;Release 2.0.0 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v2.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AVA 2.0.0リリース。&lt;br&gt;
-Node.js 8.9.4以降のサポート、snapshotが作られていない場合はCIで失敗するように、assertionメッセージが文字列ではない場合は例外を投げるようになるなど。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;verdaccio-4-released-verdaccio&quot;&gt;Verdaccio 4 released !!! · Verdaccio&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://verdaccio.org/blog/2019/05/19/15-verdaccio-4-release.html&quot; title=&quot;Verdaccio 4 released !!! · Verdaccio&quot;&gt;verdaccio.org/blog/2019/05/19/15-verdaccio-4-release.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npm registry serverのOSS実装であるVerdaccio 4リリース。&lt;br&gt;
-UIの刷新、&lt;code&gt;npm star&lt;/code&gt;/&lt;code&gt;npm profile&lt;/code&gt;のサポート、JWTサポート、Pluginsサポートの改善など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;whats-new-in-devtools-chrome-76-web-google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 76)  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/05/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 76)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/05/devtools&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 76の開発者ツールの変更点について。&lt;br&gt;
-ネットワークパネル設定のUIの変更、WebSocketメッセージをHARファイルとしてエクスポートできるように、合計メモリ消費量のリアルタイム表示、Background Fetchのデバッグ機能など。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript&quot;&gt;イメージで伝われ！図解JavaScriptの非同期処理 - メモを揉め&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://memowomome.hatenablog.com/entry/js_async_viz&quot; title=&quot;イメージで伝われ！図解JavaScriptの非同期処理 - メモを揉め&quot;&gt;memowomome.hatenablog.com/entry/js_async_viz&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptの同期処理と非同期処理の動作の違い、非同期処理の実装方法や考え方について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jsconf-eu-2019-youtube&quot;&gt;JSConf EU 2019 - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PL37ZVnwpeshHwJPVBqEnZild7QHWhdufu&quot; title=&quot;JSConf EU 2019 - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PL37ZVnwpeshHwJPVBqEnZild7QHWhdufu&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;イベント&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JSConf EU 2019の動画まとめ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://2019.jsconf.eu/&quot; title=&quot;JSConf EU 2019&quot;&gt;JSConf EU 2019&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;zdog-round-flat-designer-friendly-pseudo-3d-engine-for-canvas-and-svg&quot;&gt;Zdog · Round, flat, designer-friendly pseudo-3D engine for canvas and SVG&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://zzz.dog/&quot; title=&quot;Zdog · Round, flat, designer-friendly pseudo-3D engine for canvas and SVG&quot;&gt;zzz.dog/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;擬似的な3D描画を行うCanvas、SVGライブラリ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;atomicojs-atomico-small-library-for-the-creation-of-interfaces-based-on-web-components-only-using-functions-and-hooks&quot;&gt;atomicojs/atomico: Small library for the creation of interfaces based on web-components, only using functions and hooks.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/atomicojs/atomico&quot; title=&quot;atomicojs/atomico: Small library for the creation of interfaces based on web-components, only using functions and hooks.&quot;&gt;github.com/atomicojs/atomico&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Web ComponentsベースのJSXでのDOM定義とReact HooksライクなAPIを提供するライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;mholt-papaparse-fast-and-powerful-csv-delimited-text-parser-that-gracefully-handles-large-files-and-malformed-input&quot;&gt;mholt/PapaParse: Fast and powerful CSV (delimited text) parser that gracefully handles large files and malformed input&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/mholt/PapaParse&quot; title=&quot;mholt/PapaParse: Fast and powerful CSV (delimited text) parser that gracefully handles large files and malformed input&quot;&gt;github.com/mholt/PapaParse&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSVパーサライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 04 Jun 2019 09:22:44 +0900</pubDate>
-        <link>https://jser.info/2019/06/04/async.js-3.0.0asyncawaitava-2.0.0verdaccio-4npm-registry/</link>
-        <guid isPermaLink="true">https://jser.info/2019/06/04/async.js-3.0.0asyncawaitava-2.0.0verdaccio-4npm-registry/</guid>
-        
-        <category>node.js</category>
-        
-        <category>testing</category>
-        
-        <category>npm</category>
-        
-        <category>registry</category>
         
         
         <category>JSer</category>
