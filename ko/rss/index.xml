@@ -5,9 +5,309 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 20 Aug 2019 14:33:20 +0900</pubDate>
-    <lastBuildDate>Tue, 20 Aug 2019 14:33:20 +0900</lastBuildDate>
+    <pubDate>Thu, 22 Aug 2019 13:16:25 +0900</pubDate>
+    <lastBuildDate>Thu, 22 Aug 2019 13:16:25 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-08-20: Parcel 2.0.0 α, npm의 로드맵, 새로운 React DevTools</title>
+        <description>&lt;p&gt;JSer.info #449 - Bundler인 Parcel 2.0.0 α 버전이 공개됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@devongovett/parcel-2-0-0-alpha-1-is-here-8b160c6e3f7e&quot;&gt;🚀 Parcel 2.0.0-alpha.1 is here! 📦 - devongovett - Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Parcel 2에서는 플러그인 및 설정을 이용한 확장을 유연하게 할 수 있도록 개선됐습니다.&lt;br&gt;
+다음과 같은 처리를 플러그인으로 할 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Resolvers&lt;/li&gt;
+&lt;li&gt;Transformers&lt;/li&gt;
+&lt;li&gt;Bundlers&lt;/li&gt;
+&lt;li&gt;Namers&lt;/li&gt;
+&lt;li&gt;Runtimes&lt;/li&gt;
+&lt;li&gt;Packagers&lt;/li&gt;
+&lt;li&gt;Optimizers&lt;/li&gt;
+&lt;li&gt;Validators&lt;/li&gt;
+&lt;li&gt;Reporters&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;기본적인 설정은 &lt;code&gt;@parcel/config-default&lt;/code&gt;라는 패키지에서 관리되며&lt;br&gt;
+설정을 변경하고 싶을 경우 &lt;code&gt;.parcelrc&lt;/code&gt; 파일에 플러그인에 대한 설정을 작성합니다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;extends&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@parcel/config-default&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;transforms&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;*.dart&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;parcel-transform-dart&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;또, multiple targets과 bundle splitting 등도 지원합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;React DevTools v4가 릴리스 돼 관련해 새로워진 기능 소개 문서가 함께 공개됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactjs.org/blog/2019/08/15/new-react-devtools.html&quot;&gt;Introducing the New React DevTools – React Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/react/blob/master/packages/react-devtools/CHANGELOG.md#400-august-15-2019&quot;&gt;react/CHANGELOG.md at master · facebook/react&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;성능 개선, 컴포넌트 스택, 필터, 컴포넌트의 프로파일, 렌더링 관계 시각화, Hooks 지원 개선 등이 이뤄졌습니다. &lt;br&gt;
+&lt;a href=&quot;https://addons.mozilla.org/ja/firefox/addon/react-devtools/&quot;&gt;Firefox&lt;/a&gt;와 &lt;a href=&quot;https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi&quot;&gt;Chrome&lt;/a&gt;에서 각 확장 프로그램으로 이용할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;또, React DevTools는 독립된 라이브러리(확장 프로그램이 아닌)로 사용할 수도 있습니다.&lt;br&gt;
+아래 독립 버전을 기반으로 개발된 React DevTools 튜토리얼 문서가 있으니 참고하시길 바랍니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://react-devtools-tutorial.now.sh/&quot;&gt;React DevTools tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;npm 로드맵이 &lt;a href=&quot;https://blog.npmjs.org/post/186983646370/npm-cli-roadmap-summer-2019&quot;&gt;The npm Blog — npm CLI Roadmap - Summer 2019&lt;/a&gt;를 통해 공개됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/npm/cli/wiki/Roadmap&quot;&gt;Roadmap · npm/cli Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;v6에서는 자잘한 버그를 중점으로 수정하며 v7에서는 설치 로직을 크게 변경할 예정이라고 합니다.&lt;br&gt;
+v7에서는 yarn과 같은 workspaces 지원, &lt;code&gt;peerDependencies&lt;/code&gt;를 설치하도록 변경, &lt;a href=&quot;https://yarnpkg.com/lang/ja/docs/selective-version-resolutions/&quot;&gt;yarn의 resolutions&lt;/a&gt;과 비슷한 시스템 지원, &lt;code&gt;yarn.lock&lt;/code&gt; 호환 등이 이뤄질 전망입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;yarn.lock&lt;/code&gt; 호환과 관련한 아키텍처 변경에 대해서는 다음 이슈에 정리돼 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/npm/rfcs/pull/38&quot;&gt;rfc: Don&amp;#39;t add metadata to package.json by isaacs · Pull Request #38 · npm/rfcs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;또, v8에서는 &lt;a href=&quot;https://github.com/npm/tink&quot;&gt;tink&lt;/a&gt;와의 병합을 검토할 것이라고 합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;v8-release-v7-7-v8&quot;&gt;V8 release v7.7 · V8&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://v8.dev/blog/v8-release-77&quot; title=&quot;V8 release v7.7 · V8&quot;&gt;v8.dev/blog/v8-release-77&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;V8 v7.7이 릴리스됐습니다.&lt;br&gt;
+메모리 사용량 최적화, WebAssembly의 백그라운드 컴파일의 병렬화 개선, &lt;code&gt;Error#stack&lt;/code&gt; 작성 관련 성능 개선 등이 이뤄졌습니다.&lt;br&gt;
+또, &lt;code&gt;Intl.NumberFormat&lt;/code&gt; API를 지원합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v2-0-0-typescript-eslint-typescript-eslint&quot;&gt;Release v2.0.0 · typescript-eslint/typescript-eslint&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/typescript-eslint/typescript-eslint/releases/tag/v2.0.0&quot; title=&quot;Release v2.0.0 · typescript-eslint/typescript-eslint&quot;&gt;github.com/typescript-eslint/typescript-eslint/releases/tag/v2.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;typescript-eslint v2.0.0이 릴리스됐습니다.&lt;br&gt;
+Node.js 6의 지원 죵료, 비권장 됐던 &lt;code&gt;prefer-interface&lt;/code&gt;와 &lt;code&gt;no-triple-slash-reference&lt;/code&gt; 삭제, recommended 설정이 변경됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;parcel-2-0-0-alpha-1-is-here-devongovett-medium&quot;&gt;🚀 Parcel 2.0.0-alpha.1 is here! 📦 - devongovett - Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@devongovett/parcel-2-0-0-alpha-1-is-here-8b160c6e3f7e&quot; title=&quot;🚀 Parcel 2.0.0-alpha.1 is here! 📦 - devongovett - Medium&quot;&gt;medium.com/@devongovett/parcel-2-0-0-alpha-1-is-here-8b160c6e3f7e&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Parcel 2.0.0-alpha.1이 릴리스됐습니다.&lt;br&gt;
+&lt;code&gt;.parcelrc&lt;/code&gt;에서 플러그인에 대한 옵션을 설정할 수 있도록 개선됐으며 multiple targets와 bundle splitting를 지원합니다.&lt;br&gt;
+또, 브라우저의 실행 등을 고려해 파일 시스템 추상 레이어를 추가 했습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;august-2019-security-releases-node-js&quot;&gt;August 2019 Security Releases | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/vulnerability/aug-2019-security-releases/&quot; title=&quot;August 2019 Security Releases | Node.js&quot;&gt;nodejs.org/en/blog/vulnerability/aug-2019-security-releases/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;HTTP/2 구현과 관련된 DoS 공격 취약점 수정 버전이 각 Node.js 버전에 릴리스 됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v8.16.1/&quot; title=&quot;Node v8.16.1 (LTS) | Node.js&quot;&gt;Node v8.16.1 (LTS) | Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v10.16.3/&quot; title=&quot;Node v10.16.3 (LTS) | Node.js&quot;&gt;Node v10.16.3 (LTS) | Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.8.1/&quot; title=&quot;Node v12.8.1 (Current) | Node.js&quot;&gt;Node v12.8.1 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Netflix/security-bulletins/blob/master/advisories/third-party/2019-002.md&quot; title=&quot;security-bulletins/2019-002.md at master · Netflix/security-bulletins&quot;&gt;security-bulletins/2019-002.md at master · Netflix/security-bulletins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jvn.jp/vu/JVNVU98433488/&quot; title=&quot;JVNVU#98433488: HTTP/2의 구현에 대한 서비스 운영 방해(DoS) 공격 방법&quot;&gt;JVNVU#98433488: HTTP/2의 구현에 대한 서비스 운영 방해(DoS) 공격 수법&lt;/a&gt;(일본어)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-typescript-3-6-rc-typescript&quot;&gt;Announcing TypeScript 3.6 RC | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-6-rc/&quot; title=&quot;Announcing TypeScript 3.6 RC | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-6-rc/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 3.6 RC가 릴리스 됐습니다.&lt;br&gt;
+Generators의 타입과 관련한 기능이 개선됐고 Array Spread의 동작이 사양에 맞춰 개선됐습니다. 그리고 Promise 관련한 타입 에러가 개선됐습니다.&lt;br&gt;
+또, &lt;code&gt;--target es2015&lt;/code&gt; 이상에서 Unicode 변수명 지원하며 Ambient Classes와 Function이 병합 가능하도록 변경됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-2-3-0-avajs-ava&quot;&gt;Release 2.3.0 · avajs/ava&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v2.3.0&quot; title=&quot;Release 2.3.0 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v2.3.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;AVA 2.3.0이 릴리스됐습니다.&lt;br&gt;
+ECMAScript Proposal의 Stage 3와 4 구문을 포함한 코드를 인식할 수 있도록 개선됐으며 TypeScript 타입 정의 관련 Generics 타입 매개변수의 초기값이 &lt;code&gt;{}&lt;/code&gt;에서 &lt;code&gt;unknown&lt;/code&gt;로 변경됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;eslint-v6-2-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v6.2.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2019/08/eslint-v6.2.0-released&quot; title=&quot;ESLint v6.2.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2019/08/eslint-v6.2.0-released&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ESLint v6.2.0이 릴리스됐습니다.&lt;br&gt;
+ECMAScript 2020에 도입될 예정인 Dynamic Import와 &lt;code&gt;BigInt&lt;/code&gt;를 지원하며 &lt;code&gt;function-call-argument-newline&lt;/code&gt; 규칙이 추가 됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-npm-blog-npm-cli-roadmap-summer-2019&quot;&gt;The npm Blog — npm CLI Roadmap - Summer 2019&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.npmjs.org/post/186983646370/npm-cli-roadmap-summer-2019&quot; title=&quot;The npm Blog — npm CLI Roadmap - Summer 2019&quot;&gt;blog.npmjs.org/post/186983646370/npm-cli-roadmap-summer-2019&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm cli의 로드맵에 대한 글입니다.&lt;br&gt;
+v6에서는 자잘한 버그를 중점으로 수정하며 v7에서는 설치 로직을 크게 변경할 예정이라고 합니다.&lt;br&gt;
+v7에서는 yarn과 같은 workspaces를 지원하며 &lt;code&gt;peerDependencies&lt;/code&gt;를 설치하도록 변경합니다. 그리고 resolutions 지원, &lt;code&gt;yarn.lock&lt;/code&gt; 호환이 예정돼 있습니다.&lt;br&gt;
+v8에서는 &lt;a href=&quot;https://github.com/npm/tink&quot;&gt;tink&lt;/a&gt;와의 병합이 진행될 것으로 보입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;nullish-coalescing-optional-chaining-blog-jxck-io&quot;&gt;Nullish Coalescing과 Optional Chaining | blog.jxck.io(일본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.jxck.io/entries/2019-08-14/nullish-coalescing-optional-chaining.html&quot; title=&quot;Nullish Coalescing と Optional Chaining | blog.jxck.io&quot;&gt;blog.jxck.io/entries/2019-08-14/nullish-coalescing-optional-chaining.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ECMAScript Proposal Stage 3의 Nullish Coalescing과 Optional Chaining를 소개합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;largest-contentful-paint-web-dev&quot;&gt;Largest Contentful Paint  |  web.dev&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/largest-contentful-paint/&quot; title=&quot;Largest Contentful Paint  |  web.dev&quot;&gt;web.dev/largest-contentful-paint/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome77에서 사용할 수 있는 Largest Contentful Paint (LCP) API를 소개하는 글입니다. Viewport 내에서 큰 컨텐츠가 표시되기 까지의 시간을 나타내는 지표와 함께 PerformanceObserver나 Element Timing API를 사용해 값을 취득하는 방법에 대해 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introducing-the-new-react-devtools-react-blog&quot;&gt;Introducing the New React DevTools – React Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://reactjs.org/blog/2019/08/15/new-react-devtools.html&quot; title=&quot;Introducing the New React DevTools – React Blog&quot;&gt;reactjs.org/blog/2019/08/15/new-react-devtools.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React의 새로운 개발자 도구를 튜토리얼과 함께 소개합니다.&lt;br&gt;
+React DevTools 4.0.0에서는 성능 개선, 컴포넌트 스택, 필터, 렌더링 관계 시각화, Hooks 지원 개선 등이 이뤄졌습니다.&lt;br&gt;
+또, Suspense 지원이나 &amp;quot;Why did this render?&amp;quot; 기능이 추가 됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://react-devtools-tutorial.now.sh/&quot; title=&quot;React DevTools tutorial&quot;&gt;React DevTools tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/react/blob/master/packages/react-devtools/CHANGELOG.md#400-august-15-2019&quot; title=&quot;react/CHANGELOG.md at master · facebook/react&quot;&gt;react/CHANGELOG.md at master · facebook/react&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introduction-to-svelte&quot;&gt;Introduction to Svelte&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://daveceddia.com/svelte-intro/&quot; title=&quot;Introduction to Svelte&quot;&gt;daveceddia.com/svelte-intro/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;UI 프레임워크인 Svelte를 소개합니다.&lt;br&gt;
+Svelte의 특징이 정리돼 있습니다.&lt;br&gt;
+컴파일, 리액티브한 변경, 이벤트 헨들러 작성법, 미사용 CSS에 관한 경고 출력 기능 등에 대해서 정리 돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;divjoy-the-react-codebase-generator&quot;&gt;Divjoy - The React Codebase Generator&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://divjoy.com/&quot; title=&quot;Divjoy - The React Codebase Generator&quot;&gt;divjoy.com/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSS 프레임워크, JavaScript 프레임워크, 인증 기반, Mail, 폼, 접근 해석 등의 조합을 선택해 웹 사이트 개발 템플릿을 생성할 수 있는 제너레이터 도구입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;goldbergyoni-javascript-testing-best-practices-comprehensive-and-exhaustive-javascript-node-js-testing-best-practices-august-2019&quot;&gt;goldbergyoni/javascript-testing-best-practices: 📗🌐 🚢 Comprehensive and exhaustive JavaScript &amp;amp; Node.js testing best practices (August 2019)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/goldbergyoni/javascript-testing-best-practices&quot; title=&quot;goldbergyoni/javascript-testing-best-practices: 📗🌐 🚢 Comprehensive and exhaustive JavaScript &amp;amp; Node.js testing best practices (August 2019)&quot;&gt;github.com/goldbergyoni/javascript-testing-best-practices&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScript 테스트에 관한 문서입니다.&lt;br&gt;
+테스트의 구조, 백엔드, 프런트엔드, CI 등에 대해서 작성돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ai-size-limit-calculate-the-real-cost-to-run-your-js-app-or-lib-to-keep-good-performance-show-error-in-pull-request-if-the-cost-exceeds-the-limit&quot;&gt;ai/size-limit: Calculate the real cost to run your JS app or lib to keep good performance. Show error in pull request if the cost exceeds the limit.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ai/size-limit/&quot; title=&quot;ai/size-limit: Calculate the real cost to run your JS app or lib to keep good performance. Show error in pull request if the cost exceeds the limit.&quot;&gt;github.com/ai/size-limit/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;파일 크기의 한계를 지정해 그 크기를 넘었는지 테스트할 수 있는 도구입니다.&lt;br&gt;
+애플리케이션, 큰 라이브러리, 작은 라이브러리 전용의 프리셋을 제공합니다.&lt;br&gt;
+파일 크기와 불러오는데 걸리는 시간을 테스트 할 수 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ehmicky-nve-run-any-node-js-version&quot;&gt;ehmicky/nve: Run any Node.js version&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ehmicky/nve&quot; title=&quot;ehmicky/nve: Run any Node.js version&quot;&gt;github.com/ehmicky/nve&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js의 버전을 지정해 스크립트를 실행할 수 있는 명령줄 도구입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;도서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-mespeak-js-2-0&quot;&gt;&lt;Now Go Bang!&gt; Announcing meSpeak.js 2.0&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.masswerk.at/nowgobang/2019/mespeak_2_0&quot; title=&quot;&amp;lt;Now Go Bang!&amp;gt; Announcing meSpeak.js 2.0&quot;&gt;www.masswerk.at/nowgobang/2019/mespeak_2_0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;audio&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;C++&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Text to Speech 라이브러리 meSpeak.js 2.0이 릴리스됐습니다.&lt;br&gt;
+Emscripten를 사용해 C++에서 JavaScript로 컴파일한 speak.js를 기반으로 모듈러 설계가 돼 있습니다.&lt;br&gt;
+WebWorker를 대응하며 음성 / 언어 정의 불러오기 기능을 지원합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/kripken/speak.js&quot; title=&quot;kripken/speak.js: Text-to-Speech in JavaScript using eSpeak&quot;&gt;kripken/speak.js: Text-to-Speech in JavaScript using eSpeak&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 20 Aug 2019 10:27:49 +0900</pubDate>
+        <link>https://jser.info/ko/2019/08/20/parcel-2.0.0-anpmreact-devtools/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2019/08/20/parcel-2.0.0-anpmreact-devtools/</guid>
+        
+        <category>Parcel</category>
+        
+        <category>npm</category>
+        
+        <category>React</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-08-06: Chrome 76, React 16.9, Slack Desktop 리팩터링</title>
@@ -2247,308 +2547,6 @@ React Hooks를 대응하며 기반 컴포넌트를 제공합니다. &lt;/p&gt;
         <category>Firefox</category>
         
         <category>Accessibility</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-05-14: Google I/O 2019、GitHub Package Registry(npm, Docker, etc)</title>
-        <description>&lt;p&gt;JSer.info #435 - &lt;a href=&quot;https://events.google.com/io/&quot;&gt;Google I/O 2019&lt;/a&gt;의 이벤트 영상 또는 관련한 정보가 공개되고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;Google I/O의 웹과 관련한 세션 영상은 아래 유튜브를 통해 공개됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=rUUazNIZW7I&amp;list=PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i&quot;&gt;Web at Google I/O 2019 - YouTube&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Google 검색 크롤링에 사용되고 있는 렌더링 엔진이 Chrome 41에서 최신 버전(현재 74)의 Chromium 기반으로 갱신됩니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html&quot;&gt;Official Google Webmaster Central Blog: The new evergreen Googlebot&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;lighthouse 5.0.0이 릴리스됐습니다. Wordpress 등 특정 스택에 대한 정보를 출력하는 Stack Packs가 추가됐고 Performance budgets을 대응했으며 Lighthouse plugins 구조가 추가됐습니다. 이어 Performance budgets 정의 파일을 생성하는 &lt;a href=&quot;https://perf-budget-calculator.firebaseapp.com/&quot;&gt;Performance Budget Calculator&lt;/a&gt; 도구도 공개됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse/releases/tag/v5.0.0&quot;&gt;Release v5.0.0 · GoogleChrome/lighthouse&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;또, 구글이 운영하고 있는 &lt;a href=&quot;https://web.dev/&quot;&gt;web.dev&lt;/a&gt;에 &lt;a href=&quot;https://web.dev/blog&quot;&gt;Blog&lt;/a&gt;나 &lt;a href=&quot;https://web.dev/react&quot;&gt;React&lt;/a&gt; 애플리케이션 최적화에 관한 튜토리얼 등이 추가됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;GitHub가 &lt;a href=&quot;https://github.com/features/package-registry&quot;&gt;GitHub Package Registry&lt;/a&gt;라는 패키지 등록 서비스의 베타 버전을 공개했습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.blog/2019-05-10-introducing-github-package-registry/&quot;&gt;Introducing GitHub Package Registry - The GitHub Blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/features/package-registry&quot;&gt;GitHub Package Registry: Your packages, at home with their code&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;GitHub Package Registry는 npm이나 RubyGems, Docker 등에 대응한 public / private registry 서비스입니다.&lt;br&gt;
-현재는 베타이며 &lt;a href=&quot;https://github.com/features/package-registry/signup&quot;&gt;GitHub Package Registry의 signup&lt;/a&gt;를 통해 가입하여 사용해 볼 수 있습니다(pre-release).&lt;br&gt;
-자세한 내용은 아래 문서를 참고하시길 바랍니다. npm 패키지를 GitHub의 User 또는 Organization 명을 붙여 scoped module로 공개할 수 있는 것 같습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://help.github.com/en/articles/about-github-package-registry&quot;&gt;About GitHub Package Registry - GitHub Help&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://help.github.com/en/articles/configuring-npm-for-use-with-github-package-registry&quot;&gt;Configuring NPM for use with GitHub Package Registry - GitHub Help&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;GitHub Package Registry로 배포하는 데모 영상도 있으니 관심 있는 분은 함께 살펴보면 될 거 같습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Video: &lt;a href=&quot;https://www.pscp.tv/w/1jMKgvMEggwxL&quot;&gt;GitHub: &amp;quot;Introducing GitHub Package Registry&amp;quot;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v5-0-0-googlechrome-lighthouse&quot;&gt;Release v5.0.0 · GoogleChrome/lighthouse&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · GoogleChrome/lighthouse&quot;&gt;github.com/GoogleChrome/lighthouse/releases/tag/v5.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Lighthouse 5.0.0이 릴리스됐습니다.&lt;br&gt;
-Wordpress 등 특정 스택에 대한 정보를 출력하는 Stack Packs가 추가됐고, Performance budgets을 대응했으며 Lighthouse plugins 구조가 추가됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse-stack-packs&quot; title=&quot;GoogleChrome/lighthouse-stack-packs: Lighthouse Stack Packs&quot;&gt;GoogleChrome/lighthouse-stack-packs: Lighthouse Stack Packs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/tools/lighthouse/audits/budgets&quot; title=&quot;Performance Budgets (Keep Request Counts Low And File Sizes Small)  |  Tools for Web Developers  |  Google Developers&quot;&gt;Performance Budgets (Keep Request Counts Low And File Sizes Small)  |  Tools for Web Developers  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse/blob/master/docs/plugins.md#plugin-config&quot; title=&quot;lighthouse/plugins.md at master · GoogleChrome/lighthouse&quot;&gt;lighthouse/plugins.md at master · GoogleChrome/lighthouse&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;official-google-webmaster-central-blog-the-new-evergreen-googlebot&quot;&gt;Official Google Webmaster Central Blog: The new evergreen Googlebot&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html&quot; title=&quot;Official Google Webmaster Central Blog: The new evergreen Googlebot&quot;&gt;webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;search&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Google 검색 bot이 최신 버전의 Chromium 렌더링 엔진 기반으로 갱신됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/search/docs/guides/fix-search-javascript&quot; title=&quot;Fix Search-related JavaScript problems  |  Search  |  Google Developers&quot;&gt;Fix Search-related JavaScript problems  |  Search  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v12-2-0-current-node-js&quot;&gt;Node v12.2.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.2.0/&quot; title=&quot;Node v12.2.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.2.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 12.2.0이 릴리스됐습니다.&lt;br&gt;
-&lt;code&gt;--trace-tls&lt;/code&gt; 옵션이 추가됐으며 &lt;code&gt;Module.createRequireFromPath()&lt;/code&gt;를 비권장화 했고 &lt;code&gt;URL&lt;/code&gt; 객체나 URL 문자열 등으로 require 함수를 만들 수 있는 &lt;code&gt;module.createRequire&lt;/code&gt;가 추가됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;comlink-changelog-md-at-master-googlechromelabs-comlink&quot;&gt;comlink/CHANGELOG.md at master · GoogleChromeLabs/comlink&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChromeLabs/comlink/blob/master/CHANGELOG.md#v3---v4&quot; title=&quot;comlink/CHANGELOG.md at master · GoogleChromeLabs/comlink&quot;&gt;github.com/GoogleChromeLabs/comlink/blob/master/CHANGELOG.md#v3---v4&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ES Proxy를 사용한 Worker 라이브러리 Comlink 4.0.0이 릴리스됐습니다.&lt;br&gt;
-Node.js의 &lt;code&gt;worker_thread&lt;/code&gt;를 지원하며 일부 API의 이름이 변경됐고 성능이 개선됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://twitter.com/DasSurma/status/1127266398185484288&quot; title=&quot;Surma on Twitter: &amp;amp;amp;quot;I sneakily released Comlink v4 just before #io19! ➡️Smaller than v3 (~1.1kb) 🗜 ➡️10x faster on low-end devices (we needed that for https://t.co/TQBh7GNv2g!) 🏎💨 ➡️Better API naming 💫 ➡️Better folder structure 🙏 ➡️Support for workers in Node 11+ 🤯 https://t.co/v4PNytvkfq… https://t.co/mksFf7uxPu&amp;amp;amp;quot;&quot;&gt;Surma on Twitter: &amp;quot;I sneakily released Comlink v4 just before #io19! ➡️Smaller than v3 (~1.1kb) 🗜 ➡️10x faster on low-end devices (we needed that for https://t.co/TQBh7GNv2g!) 🏎💨 ➡️Better API naming 💫 ➡️Better folder structure 🙏 ➡️Support for workers in Node 11+ 🤯 https://t.co/v4PNytvkfq… https://t.co/mksFf7uxPu&amp;quot;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v1-16-0-googlechrome-puppeteer&quot;&gt;Release v1.16.0 · GoogleChrome/puppeteer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/puppeteer/releases/tag/v1.16.0&quot; title=&quot;Release v1.16.0 · GoogleChrome/puppeteer&quot;&gt;github.com/GoogleChrome/puppeteer/releases/tag/v1.16.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Puppeteer 1.16.0이 릴리스됐습니다.&lt;br&gt;
-&lt;code&gt;browser.isConnected()&lt;/code&gt;, &lt;code&gt;target.worker()&lt;/code&gt;를 지원하며 &lt;code&gt;accessibility.snapshot()&lt;/code&gt;에 &lt;code&gt;root&lt;/code&gt; 옵션이 추가됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introducing-github-package-registry-the-github-blog&quot;&gt;Introducing GitHub Package Registry - The GitHub Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.blog/2019-05-10-introducing-github-package-registry/&quot; title=&quot;Introducing GitHub Package Registry - The GitHub Blog&quot;&gt;github.blog/2019-05-10-introducing-github-package-registry/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;github&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHub의 패키지 등록 서비스 베타 버전이 공개됐습니다.&lt;br&gt;
-npm, gem, docker 등을 지원하며 GitHub의 Team 퍼미션에 따라 관리할 수 있는 private registry 입니다.&lt;br&gt;
-GitHub Package Registry에 등록한 모듈은 GitHub의 Release나 검색에도 표현됩니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/features/package-registry&quot; title=&quot;GitHub Package Registry: Your packages, at home with their code&quot;&gt;GitHub Package Registry: Your packages, at home with their code&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;aws-lambda-adds-support-for-node-js-v10&quot;&gt;AWS Lambda adds support for Node.js v10&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/jp/about-aws/whats-new/2019/05/aws_lambda_adds_support_for_node_js_v10/&quot; title=&quot;AWS Lambda adds support for Node.js v10&quot;&gt;aws.amazon.com/jp/about-aws/whats-new/2019/05/aws_lambda_adds_support_for_node_js_v10/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;aws&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Lambda&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AWS Lambda가 Node.js 10을 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;samesite-cookies-explained-web-dev&quot;&gt;SameSite cookies explained  |  web.dev&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/samesite-cookies-explained/&quot; title=&quot;SameSite cookies explained  |  web.dev&quot;&gt;web.dev/samesite-cookies-explained/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;SameSite&lt;/code&gt; Cookie에 대한 설명글입니다. &lt;code&gt;SameSite&lt;/code&gt;의 설정 값인 &lt;code&gt;Strict&lt;/code&gt;, &lt;code&gt;Lax&lt;/code&gt;, &lt;code&gt;None&lt;/code&gt;의 각 동작 방식을 소개합니다.&lt;br&gt;
-Chrome 76에서 &lt;code&gt;SameSite&lt;/code&gt;를 미지정한 경우 &lt;code&gt;SameSite=Lax&lt;/code&gt;를 기본으로하는 시범적 플래그가 추가돼 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://laboradian.com/same-site-cookies/&quot; title=&quot;HTTP 쿠키를 모다 안전하게 하는 SameSite 속성에 관하여 (Same-site Cookies) | 라보라디언&quot;&gt;HTTP 쿠키를 모다 안전하게 하는 SameSite 속성에 관하여 (Same-site Cookies) | 라보라디언&lt;/a&gt;(일본어)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-web-dev&quot;&gt;React  |  web.dev&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/react&quot; title=&quot;React  |  web.dev&quot;&gt;web.dev/react&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;web.dev의 React 웹 애플리케이션 최적화에 관한 튜토리얼입니다.&lt;br&gt;
-Bundle size, 무한 리스트, Service Worker, 프리 렌더링, 접근성 등에 관해 작성돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;a-guide-to-node-js-logging-twilio&quot;&gt;A Guide to Node.js Logging - Twilio&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.twilio.com/blog/guide-node-js-logging&quot; title=&quot;A Guide to Node.js Logging - Twilio&quot;&gt;www.twilio.com/blog/guide-node-js-logging&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 환경에서 로그를 출력하는 방법에 대한 글입니다.&lt;br&gt;
-Console API, pino를 사용한 로그 출력, 라이브러리의 로그, chalk 등으로 꾸며진 로그를 평범하게 출력하는 방법 등에 대해 작성돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;web-at-google-i-o-2019-youtube&quot;&gt;Web at Google I/O 2019 - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i&quot; title=&quot;Web at Google I/O 2019 - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PLNYkxOF6rcIATmAmz7HcCzongGvQEtx8i&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;イベント&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Google I/O 2019 웹 세션 영상이 정리돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ng-conf-2019-youtube&quot;&gt;ng-conf 2019 - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLOETEcp3DkCpimylVKTDe968yNmNIajlR&quot; title=&quot;ng-conf 2019 - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PLOETEcp3DkCpimylVKTDe968yNmNIajlR&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;イベント&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Angular 컨퍼런스 ng-confg 2019의 영상이 정리돼 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nitayneeman.com/posts/all-talks-from-ng-conf-2019/&quot; title=&quot;Angular - All Talks from ng-conf 2019&quot;&gt;Angular - All Talks from ng-conf 2019&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.notion.so/ng-conf-2019-Note-10b9443262a54fb9bd8586cc25a449c7&quot; title=&quot;ng-conf 2019 Note&quot;&gt;ng-conf 2019 Note&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-js-v12-kng6-speaker-deck&quot;&gt;Node.js v12의 신경 쓰이는 변경 사항 / #kng6 - Speaker Deck(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/masashi/number-kng6&quot; title=&quot;Node.js v12의 신경 쓰이는 변경 사항 / #kng6 - Speaker Deck&quot;&gt;speakerdeck.com/masashi/number-kng6&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 12의 변경 사항이 정리돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;wapm-webassembly-package-manager&quot;&gt;wapm | WebAssembly Package Manager&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://wapm.io/&quot; title=&quot;wapm | WebAssembly Package Manager&quot;&gt;wapm.io/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebAssembly의 패키지 매니저 또는 저장소입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;microsoft-frontend-bootcamp-frontend-workshop-from-html-css-js-to-typescript-react-redux&quot;&gt;microsoft/frontend-bootcamp: Frontend Workshop from HTML/CSS/JS to TypeScript/React/Redux&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Microsoft/frontend-bootcamp&quot; title=&quot;microsoft/frontend-bootcamp: Frontend Workshop from HTML/CSS/JS to TypeScript/React/Redux&quot;&gt;github.com/Microsoft/frontend-bootcamp&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Microsoft의 프런트엔드 워크샵 교재입니다.&lt;br&gt;
-HTML, CSS, JavaScript, TypeScript를 다루는 2일 분량의 컨텐츠입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;data-third-party-web&quot;&gt;Data | Third-Party Web&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.thirdpartyweb.today/&quot; title=&quot;Data | Third-Party Web&quot;&gt;www.thirdpartyweb.today/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;HTTP Archive의 크롤링 데이터를 기반으로 서드 파티 스크립트의 영향도를 시각화한 사이트입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;manzinello-mailgo-mailgo-a-different-mailto-wip&quot;&gt;manzinello/mailgo: 💌 mailgo, a different mailto (WIP)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/manzinello/mailgo&quot; title=&quot;manzinello/mailgo: 💌 mailgo, a different mailto (WIP)&quot;&gt;github.com/manzinello/mailgo&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;mail&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;mailto:&lt;/code&gt; 링크를 클릭했을 때 메뉴를 출력하는 라이브러리입니다.&lt;br&gt;
-메뉴를 이용해 Gmail, Outlook으로 열거나 주소를 복사할 수 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;victorvoid-dinoql-a-customizable-graphql-style-query-language-for-interacting-with-javascript-objects&quot;&gt;victorvoid/dinoql: A customizable GraphQL style query language for interacting with JavaScript objects.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/victorvoid/dinoql&quot; title=&quot;victorvoid/dinoql: A customizable GraphQL style query language for interacting with JavaScript objects.&quot;&gt;github.com/victorvoid/dinoql&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GraphQL 구문으로 객체로부터 데이터를 가져올 수 있는 쿼리 라이브러리입니다.&lt;br&gt;
-Alias, Cache, Fragments 등을 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;msgpack-msgpack-javascript-messagepack-for-javascript-ecma-262&quot;&gt;msgpack/msgpack-javascript: MessagePack for JavaScript/ECMA-262&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/msgpack/msgpack-javascript&quot; title=&quot;msgpack/msgpack-javascript: MessagePack for JavaScript/ECMA-262&quot;&gt;github.com/msgpack/msgpack-javascript&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MessagePack의 JavaScript 구현체입니다.&lt;br&gt;
-ブラウザ와 Node.js 모두 동작하며 Async Iterator를 사용해 스트림 처리를 할 수 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://gfx.hatenablog.com/entry/2019/05/07/102341&quot; title=&quot;TypeScript로 MessagePack encoder/decoder를 구현했다 - Islands in the byte stream&quot;&gt;TypeScript로 MessagePack encoder/decoder를 구현했다 - Islands in the byte stream&lt;/a&gt;(일본어)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 14 May 2019 10:14:26 +0900</pubDate>
-        <link>https://jser.info/ko/2019/05/14/google-io-2019github-package-registrynpm-docker-etc/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2019/05/14/google-io-2019github-package-registrynpm-docker-etc/</guid>
-        
-        <category>Google</category>
-        
-        <category>Chrome</category>
-        
-        <category>GitHub</category>
-        
-        <category>npm</category>
         
         
         <category>JSer</category>
