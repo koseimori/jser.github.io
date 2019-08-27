@@ -5,9 +5,259 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 22 Aug 2019 13:16:13 +0900</pubDate>
-    <lastBuildDate>Thu, 22 Aug 2019 13:16:13 +0900</lastBuildDate>
+    <pubDate>Tue, 27 Aug 2019 12:31:21 +0900</pubDate>
+    <lastBuildDate>Tue, 27 Aug 2019 12:31:21 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-08-27のJS: Nuxt.js 2.9.0(TypeScript)、ChromiumベースのMSEdge βリリース、data-fns 2.0.0</title>
+        <description>&lt;p&gt;JSer.info #450 - Vue.jsをつかったフレームワークであるNuxt.js 2.9.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.9.0&quot;&gt;Release v2.9.0 · nuxt/nuxt.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.5.0&quot;&gt;v2.5.0&lt;/a&gt;で本体に統合されたTypeScriptサポートがリファクタリングされ、TypeScript関係の処理がコアからパッケージとして分離されています。&lt;br&gt;
+この変更により一部パッケージの入れ替えが必要になっているため、2.8からのマイグレーション方法については次のページに書かれています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://typescript.nuxtjs.org/&quot;&gt;Nuxt TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://typescript.nuxtjs.org/migration.html&quot;&gt;Migration from Nuxt 2.8 | Nuxt TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Dateを扱うライブラリであるdate-fns 2.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/date-fns/date-fns/releases/tag/v2.0.0&quot;&gt;Release v2.0.0 · date-fns/date-fns&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;破壊的な変更として、それぞれの関数が直接日付文字列を扱うのではなく、Dateオブジェクトを扱うように変更されています。&lt;br&gt;
+そのため、文字列ではなく、文字列を&lt;code&gt;parse&lt;/code&gt;や&lt;code&gt;parseISO&lt;/code&gt;でDateオブジェクトに変換してから渡す必要があります。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.date-fns.org/post/we-cut-date-fns-v2-minimal-build-size-down-to-300-bytes-and-now-its-the-smallest-date-library-18f2nvh2z0yal&quot;&gt;We cut date-fns v2 minimal build size down to 300 bytes, and now it&amp;#39;s the smallest date library - date-fns&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Before v2.0.0&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;addDays&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'2016-01-01'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// v2.0.0 onward&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;addDays&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parseISO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'2016-01-01'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;また、&lt;code&gt;format&lt;/code&gt;関数を仕様変更、Direct requireするモジュール名をcamelCaseに変更、一部関数名や引数の順番の変更、&lt;code&gt;unit&lt;/code&gt;オプションの値の変更などが含まれています。&lt;br&gt;
+変更点の詳細は次のCHANGELOGにまとめられています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/date-fns/date-fns/blob/master/CHANGELOG.md#200---2019-08-20&quot;&gt;date-fns/CHANGELOG.md at master · date-fns/date-fns&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v2-9-0-nuxt-nuxt-js&quot;&gt;Release v2.9.0 · nuxt/nuxt.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.9.0&quot; title=&quot;Release v2.9.0 · nuxt/nuxt.js&quot;&gt;github.com/nuxt/nuxt.js/releases/tag/v2.9.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Nuxt.js 2.9.0リリース。&lt;br&gt;
+Node.js 8.9.0未満のサポート終了、TypeScriptサポートをコアから分離、vue-meta 2.0.0にアップデートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://typescript.nuxtjs.org/&quot; title=&quot;Nuxt TypeScript&quot;&gt;Nuxt TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://typescript.nuxtjs.org/migration.html&quot; title=&quot;Migration from Nuxt 2.8 | Nuxt TypeScript&quot;&gt;Migration from Nuxt 2.8 | Nuxt TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v12-9-0-current-node-js&quot;&gt;Node v12.9.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.9.0/&quot; title=&quot;Node v12.9.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.9.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 12.9.0リリース。&lt;br&gt;
+V8 7.6へアップデート、&lt;code&gt;stream&lt;/code&gt;のReadbleStreamに&lt;code&gt;readableEnded&lt;/code&gt;、WritableStreaに&lt;code&gt;writableEnded&lt;/code&gt;プロパティの追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;microsoft-edge-insider-channels&quot;&gt;Microsoft Edge Insider Channels&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.microsoftedgeinsider.com/en-us/download&quot; title=&quot;Microsoft Edge Insider Channels&quot;&gt;www.microsoftedgeinsider.com/en-us/download&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ChromiumのMicrosoft Edgeのベータ版がリリースされた&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-styled-components-v5-beast-mode-styled-components-medium&quot;&gt;Announcing styled-components v5: Beast Mode 💪🔥 - 💅 styled-components - Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/styled-components/announcing-styled-components-v5-beast-mode-389747abd987&quot; title=&quot;Announcing styled-components v5: Beast Mode 💪🔥 - 💅 styled-components - Medium&quot;&gt;medium.com/styled-components/announcing-styled-components-v5-beast-mode-389747abd987&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;styled-components v5 ベータリリース。&lt;br&gt;
+破壊的な変更はなし。パフォーマンスの改善、React DevToolsの対応改善、RTLのサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-6-11-0-announcements-npm-forum&quot;&gt;Release: 6.11.0 - 📣 announcements - npm forum&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://npm.community/t/release-6-11-0/9572&quot; title=&quot;Release: 6.11.0 - 📣 announcements - npm forum&quot;&gt;npm.community/t/release-6-11-0/9572&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm 6.11.0リリース。&lt;br&gt;
+peerDependenciesをOptionalと明示できる&lt;code&gt;peerDependenciesMeta&lt;/code&gt;フィールドの追加。インストール時の警告を抑制できる&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/npm/cli/pull/224&quot; title=&quot;Implements peerDependenciesMeta by arcanis · Pull Request #224 · npm/cli&quot;&gt;Implements peerDependenciesMeta by arcanis · Pull Request #224 · npm/cli&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/rfcs/pull/105&quot; title=&quot;Optional Peer Dependencies by arcanis · Pull Request #105 · yarnpkg/rfcs&quot;&gt;Optional Peer Dependencies by arcanis · Pull Request #105 · yarnpkg/rfcs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v2-0-0-date-fns-date-fns&quot;&gt;Release v2.0.0 · date-fns/date-fns&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/date-fns/date-fns/releases/tag/v2.0.0&quot; title=&quot;Release v2.0.0 · date-fns/date-fns&quot;&gt;github.com/date-fns/date-fns/releases/tag/v2.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;date-fns 2.0.0リリース。&lt;br&gt;
+日付文字列の代わりに&lt;code&gt;parseISO&lt;/code&gt;などでパースしたオブジェクトを受け取るように変更、&lt;code&gt;format&lt;/code&gt;関数を仕様変更、モジュール名をcamelCaseに変更、関数名や引数の順番の変更など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://gist.github.com/kossnocorp/a307a464760b405bb78ef5020a4ab136#v200&quot; title=&quot;date-fns v2 pre-releases change log&quot;&gt;date-fns v2 pre-releases change log&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://example.com/&quot; title=&quot;date-fns/CHANGELOG.md at master · date-fns/date-fns&quot;&gt;date-fns/CHANGELOG.md at master · date-fns/date-fns&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;learning-css-by-reading-specs&quot;&gt;Learning CSS by reading specs&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.chenhuijing.com/blog/learning-css-by-reading-specifications/&quot; title=&quot;Learning CSS by reading specs&quot;&gt;www.chenhuijing.com/blog/learning-css-by-reading-specifications/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;spec&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSSの仕様でCSSを学ぶ話&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;promise-allsettled-promise-any-blog-jxck-io&quot;&gt;Promise.allSettled と Promise.any | blog.jxck.io&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.jxck.io/entries/2019-08-20/promise-allsettled-any.html&quot; title=&quot;Promise.allSettled と Promise.any | blog.jxck.io&quot;&gt;blog.jxck.io/entries/2019-08-20/promise-allsettled-any.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Promises&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ECMAScript Proposalの&lt;code&gt;Promise.allSettled&lt;/code&gt;と&lt;code&gt;Promise.any&lt;/code&gt;を含めたPromiseの状態に対するハンドリングについてのまとめ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;progressive-web-apps-in-multi-origin-sites-web-dev&quot;&gt;Progressive Web Apps in multi-origin sites  |  web.dev&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/multi-origin-pwas/&quot; title=&quot;Progressive Web Apps in multi-origin sites  |  web.dev&quot;&gt;web.dev/multi-origin-pwas/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;クロスオリジンなサイト間でのPWAについて。&lt;br&gt;
+Service Worker、キャッシュ、Promptなどについて。&lt;br&gt;
+複数のoriginでのPWAは難しい問題について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;puppeteer-css-cybozu-inside-out&quot;&gt;Puppeteerで不要なCSSを消す - Cybozu Inside Out | サイボウズエンジニアのブログ&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.cybozu.io/entry/2019/08/20/170000&quot; title=&quot;Puppeteerで不要なCSSを消す - Cybozu Inside Out | サイボウズエンジニアのブログ&quot;&gt;blog.cybozu.io/entry/2019/08/20/170000&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;AST&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;PuppeteerでCSSカバレッジを取り、PostCSSでCSSを編集して使われてないCSSを削除する話&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;using-native-javascript-modules-in-production-today-philip-walton&quot;&gt;Using Native JavaScript Modules in Production Today — Philip Walton&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://philipwalton.com/articles/using-native-javascript-modules-in-production-today/&quot; title=&quot;Using Native JavaScript Modules in Production Today — Philip Walton&quot;&gt;philipwalton.com/articles/using-native-javascript-modules-in-production-today/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ES moduleをそのまま使うための他クニックについての話。&lt;br&gt;
+RollupをつかってnpmモジュールごとにES moduleのchunkを作成し、&lt;code&gt;&amp;lt;script module&lt;/code&gt;でのロード、&lt;code&gt;modulepreload&lt;/code&gt;でのpreload。&lt;br&gt;
+Dynamic Importでの動的ロードとpolyfill、ES moduleをサポートしてない環境への&lt;code&gt;&amp;lt;script nonmodule&amp;gt;&lt;/code&gt;での読み込みについてなど。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;clean-code-typescript-typescript&quot;&gt;clean-code-typescript | TypeScriptの為のクリーンコード&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://msakamaki.github.io/clean-code-typescript/&quot; title=&quot;clean-code-typescript | TypeScriptの為のクリーンコード&quot;&gt;msakamaki.github.io/clean-code-typescript/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;翻訳&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;clean-code-typescriptの翻訳&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/labs42io/clean-code-typescript&quot; title=&quot;labs42io/clean-code-typescript: Clean Code concepts adapted for TypeScript&quot;&gt;labs42io/clean-code-typescript: Clean Code concepts adapted for TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;nodegui-nodegui-a-library-for-building-cross-platform-native-desktop-applications-with-javascript-and-css-like-styling&quot;&gt;nodegui/nodegui: A library for building cross-platform native desktop applications with JavaScript and CSS like styling.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nodegui/nodegui&quot; title=&quot;nodegui/nodegui: A library for building cross-platform native desktop applications with JavaScript and CSS like styling.&quot;&gt;github.com/nodegui/nodegui&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;GUI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsのQtバインディングライブラリ。&lt;br&gt;
+Qtを使ったGUIをNode.jsから作成できる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.atulr.com/nodegui-intro/&quot; title=&quot;🐕 Announcing NodeGUI and React NodeGUI - Build native desktop apps with Javascript and CSS 🎉 | Blog&quot;&gt;🐕 Announcing NodeGUI and React NodeGUI - Build native desktop apps with Javascript and CSS 🎉 | Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;pagemap-mini-map-for-web-pages-larsjung-de&quot;&gt;pagemap · mini map for web pages · larsjung.de&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://larsjung.de/pagemap/&quot; title=&quot;pagemap · mini map for web pages · larsjung.de&quot;&gt;larsjung.de/pagemap/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;canvas&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Canvasを使ってウェブサイトのminimapを描画するライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;parcel-bundler-watcher-a-native-c-node-module-for-querying-and-subscribing-to-filesystem-events&quot;&gt;parcel-bundler/watcher: 👀 A native C++ Node module for querying and subscribing to filesystem events&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/parcel-bundler/watcher&quot; title=&quot;parcel-bundler/watcher: 👀 A native C++ Node module for querying and subscribing to filesystem events&quot;&gt;github.com/parcel-bundler/watcher&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;C++&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;C++で書かれたファイル監視のNode.jsライブラリ。Parcelで利用されている。&lt;br&gt;
+監視しているファイルの状態をsnapshotで保存でき、watcherが起動してないときの差分も検出できる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;googlechromelabs-dynamic-import-polyfill-a-fast-tiny-polyfill-for-dynamic-import-that-works-in-all-module-supporting-browsers&quot;&gt;GoogleChromeLabs/dynamic-import-polyfill: A fast, tiny polyfill for dynamic import() that works in all module-supporting browsers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChromeLabs/dynamic-import-polyfill&quot; title=&quot;GoogleChromeLabs/dynamic-import-polyfill: A fast, tiny polyfill for dynamic import() that works in all module-supporting browsers&quot;&gt;github.com/GoogleChromeLabs/dynamic-import-polyfill&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;polyfill&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Dynamic &lt;code&gt;import()&lt;/code&gt;のpolyfillライブラリ。&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 27 Aug 2019 11:24:00 +0900</pubDate>
+        <link>https://jser.info/2019/08/27/nuxt.js-2.9.0typescriptchromiummsedge-bdata-fns-2.0.0/</link>
+        <guid isPermaLink="true">https://jser.info/2019/08/27/nuxt.js-2.9.0typescriptchromiummsedge-bdata-fns-2.0.0/</guid>
+        
+        <category>Nuxt.js</category>
+        
+        <category>MSEdge</category>
+        
+        <category>date</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-08-20のJS: Parcel 2.0.0 α、npmのロードマップ、新しいReact DevTools</title>
@@ -2263,263 +2513,6 @@ SWスクリプトの&lt;code&gt;Cache-Control&lt;/code&gt;の設定、アプリ�
         <category>Vue</category>
         
         <category>ServiceWorker</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-06-17のJS: react-redux 7.1.0(Hooksサポート)、Pika CDN、State of CSS 2019</title>
-        <description>&lt;p&gt;JSer.info #440 - ReactのRedux向けバインディングのreact-redux 7.1.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/reduxjs/react-redux/releases/tag/v7.1.0&quot;&gt;Release v7.1.0 · reduxjs/react-redux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;7.1.0ではReact Hooksに対応しています。&lt;br&gt;
-React Hooksで扱える&lt;code&gt;useSelector&lt;/code&gt;というAPIが追加されています。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'react'&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useSelector&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'react-redux'&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CounterComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;counter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useSelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;詳しくは次のドキュメントで解説されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://react-redux.js.org/next/api/hooks&quot;&gt;Hooks · React Redux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.pika.dev/cdn&quot;&gt;Pika CDN&lt;/a&gt;というnpmに公開されているES Module形式のパッケージをURLから読み込めるウェブサービスが公開されています。&lt;/p&gt;
-
-&lt;p&gt;Pika CDNで読み込めるのは&lt;code&gt;package.json&lt;/code&gt;の&lt;code&gt;module&lt;/code&gt;フィールドに対応したパッケージのみとなっています。&lt;br&gt;
-パッケージの&lt;code&gt;module&lt;/code&gt;フィールドへの対応は、このサービス自身が出している&lt;a href=&quot;https://github.com/pikapkg/web&quot;&gt;@pika/web&lt;/a&gt;や&lt;a href=&quot;https://github.com/rollup/rollup/wiki/pkg.module&quot;&gt;pkg.module&lt;/a&gt;などを参照すると良さそうです。&lt;/p&gt;
-
-&lt;p&gt;また、読み込むパッケージはブラウザのUserAgentを元に最適化されたものが配布されるようになっているようです。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://2019.stateofcss.com/&quot;&gt;The State of CSS 2019&lt;/a&gt;のアンケート結果が公開されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://2019.stateofcss.com/features/&quot;&gt;機能&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://2019.stateofcss.com/units-and-selectors/&quot;&gt;単位、CSSセレクタ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://2019.stateofcss.com/technologies/&quot;&gt;プリプロセッサ、フレームワーク、CSS in JS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;などについてのアンケート結果が公開されています。&lt;br&gt;
-主にアメリカ、イギリス、ドイツ、フランス、カナダあたりの回答で半分を占めていますが、CSSに興味がある人は見てみると面白いかもしれません。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2-5-0-fastify-fastify&quot;&gt;Release v2.5.0 · fastify/fastify&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/fastify/fastify/releases/tag/v2.5.0&quot; title=&quot;Release v2.5.0 · fastify/fastify&quot;&gt;github.com/fastify/fastify/releases/tag/v2.5.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsウェブフレームワークのfastify 2.5.0リリース。&lt;br&gt;
-レスポンスタイムを取得できる&lt;code&gt;Reply#getResponseTime&lt;/code&gt;の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v7-1-0-reduxjs-react-redux&quot;&gt;Release v7.1.0 · reduxjs/react-redux&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/reduxjs/react-redux/releases/tag/v7.1.0&quot; title=&quot;Release v7.1.0 · reduxjs/react-redux&quot;&gt;github.com/reduxjs/react-redux/releases/tag/v7.1.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React-Redux 7.1.0リリース。&lt;br&gt;
-React Hooksに正式対応、&lt;code&gt;useSelector&lt;/code&gt;の第2引数に&lt;code&gt;deps&lt;/code&gt;オプションの追加など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://react-redux.js.org/next/api/hooks&quot; title=&quot;Hooks · React Redux&quot;&gt;Hooks · React Redux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v0-101-0-facebook-flow&quot;&gt;Release v0.101.0 · facebook/flow&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/flow/releases/tag/v0.101.0&quot; title=&quot;Release v0.101.0 · facebook/flow&quot;&gt;github.com/facebook/flow/releases/tag/v0.101.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;FlowType v0.101.0リリース。&lt;br&gt;
-inexact object syntaxである&lt;code&gt;...&lt;/code&gt;のlintに対応、関数の型パラメータのデフォルト型を指定可能になるなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/flow-type/on-the-roadmap-exact-objects-by-default-16b72933c5cf&quot; title=&quot;On the Roadmap: Exact Objects by Default – Flow – Medium&quot;&gt;On the Roadmap: Exact Objects by Default – Flow – Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/babel/babel/pull/10084&quot; title=&quot;flow - allow type parameter defaults in function declarations by tanhauhau · Pull Request #10084 · babel/babel&quot;&gt;flow - allow type parameter defaults in function declarations by tanhauhau · Pull Request #10084 · babel/babel&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-85-webkit&quot;&gt;Release Notes for Safari Technology Preview 85 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9281/release-notes-for-safari-technology-preview-85/&quot; title=&quot;Release Notes for Safari Technology Preview 85 | WebKit&quot;&gt;webkit.org/blog/9281/release-notes-for-safari-technology-preview-85/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 85リリース。&lt;br&gt;
-Pointer Eventsの対応改善、&lt;code&gt;Promise.allSettled&lt;/code&gt;の実装、ES PropoaslのNumeric Separatorを実装など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-75-web-google-developers&quot;&gt;New in Chrome 75  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/06/nic75&quot; title=&quot;New in Chrome 75  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/06/nic75&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 75リリース。&lt;br&gt;
-低遅延Canvasを利用できる&lt;code&gt;desynchronized&lt;/code&gt;オプションのサポート、Web Share APIがファイルをサポート、ES ProposalのNumeric separatorのサポート。&lt;br&gt;
-また、&lt;code&gt;playsInline&lt;/code&gt;のサポート、HTTPヘッダの&lt;code&gt;stale-while-revalidate&lt;/code&gt;レスポンスディレティブのサポート、CSPで&lt;code&gt;script-src-attr&lt;/code&gt;ディレクティブなどを追加など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers-jp.googleblog.com/2019/06/chrome-75.html&quot; title=&quot;Google Developers Japan: Chrome 75: 低遅延キャンバス コンテキスト、ファイル共有、数値セパレータ&quot;&gt;Google Developers Japan: Chrome 75: 低遅延キャンバス コンテキスト、ファイル共有、数値セパレータ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;typescript-playground-the-unofficial-playground-for-advanced-typescript-users&quot;&gt;TypeScript Playground | The unofficial playground for advanced TypeScript users&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://playground.type-puzzle.org/&quot; title=&quot;TypeScript Playground | The unofficial playground for advanced TypeScript users&quot;&gt;playground.type-puzzle.org/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;@types/*&lt;/code&gt;モジュールの型も解決できるTypeScript  Playground&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.leko.jp/post/introduce-the-new-typescript-playground-for-advanced-use/&quot; title=&quot;「外部パッケージの型定義もインストールし推論できるTypeScript playgroundを作った」という題で登壇してきました＋スライドの補足 | WEB EGG&quot;&gt;「外部パッケージの型定義もインストールし推論できるTypeScript playgroundを作った」という題で登壇してきました＋スライドの補足 | WEB EGG&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;how-to-use-the-web-share-api-css-tricks&quot;&gt;How to Use the Web Share API | CSS-Tricks&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://css-tricks.com/how-to-use-the-web-share-api/&quot; title=&quot;How to Use the Web Share API | CSS-Tricks&quot;&gt;css-tricks.com/how-to-use-the-web-share-api/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Web Share APIの使い方についての記事。サポートブラウザやFeature Detect、APIの使い方について。&lt;br&gt;
-またサポートしていない場合のFallbackについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;unpacking-hoisting&quot;&gt;Unpacking hoisting&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://2ality.com/2019/05/unpacking-hoisting.html&quot; title=&quot;Unpacking hoisting&quot;&gt;2ality.com/2019/05/unpacking-hoisting.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;var&lt;/code&gt;や&lt;code&gt;function&lt;/code&gt;などのHoistingの動作を別の角度から解説した記事。&lt;br&gt;
-ES2015からはスコープのTopに移動するという説明になっているという話。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-modern-pwa-cheat-sheet-by-maximiliano-firtman-jsconf-eu-2019-youtube&quot;&gt;The modern PWA Cheat Sheet by Maximiliano Firtman | JSConf EU 2019 - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=cybhV88KLfI&quot; title=&quot;The modern PWA Cheat Sheet by Maximiliano Firtman | JSConf EU 2019 - YouTube&quot;&gt;www.youtube.com/watch?v&amp;#x3D;cybhV88KLfI&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;PWA&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;PWAについての発表動画。&lt;br&gt;
-ライフサイクル、Web API、iOS、Web APKsやアプリとしての配布についてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;pika-cdn-pika&quot;&gt;Pika CDN - Pika&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.pika.dev/cdn&quot; title=&quot;Pika CDN - Pika&quot;&gt;www.pika.dev/cdn&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ES Moduleに対応したnpmモジュールCDNサービス。&lt;br&gt;
-UA別に最適化したビルド結果のパッケージを返すことができる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-state-of-css-2019&quot;&gt;The State of CSS 2019&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://2019.stateofcss.com/&quot; title=&quot;The State of CSS 2019&quot;&gt;2019.stateofcss.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;アンケート&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;State of CSS 2019のアンケート結果。&lt;br&gt;
-FlexboxやGridなどのレイアウト、単位、Pre &amp;amp; Post Processors、エディタやツールなどの利用についてのアンケート結果&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;tradingview-lightweight-charts-financial-lightweight-charts-built-with-html5-canvas&quot;&gt;tradingview/lightweight-charts: Financial lightweight charts built with HTML5 canvas&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/tradingview/lightweight-charts&quot; title=&quot;tradingview/lightweight-charts: Financial lightweight charts built with HTML5 canvas&quot;&gt;github.com/tradingview/lightweight-charts&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;グラフ&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Financial Chartライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;nikersify-jay-supercharged-javascript-repl&quot;&gt;nikersify/jay: 😎 Supercharged JavaScript REPL&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nikersify/jay&quot; title=&quot;nikersify/jay: 😎 Supercharged JavaScript REPL&quot;&gt;github.com/nikersify/jay&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;require&lt;/code&gt;で外部npmモジュールの自動インストール、&lt;code&gt;require&lt;/code&gt;キャッシュの破棄などの機能を含んだNode REPL。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;josdejong-workerpool-offload-tasks-to-a-pool-of-workers-on-node-js-and-in-the-browser&quot;&gt;josdejong/workerpool: Offload tasks to a pool of workers on node.js and in the browser&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/josdejong/workerpool&quot; title=&quot;josdejong/workerpool: Offload tasks to a pool of workers on node.js and in the browser&quot;&gt;github.com/josdejong/workerpool&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ブラウザのWeb WorkerやNode.jsの&lt;code&gt;worker_threads&lt;/code&gt;に対応したWorker Poolライブラリ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;typescript-typescript&quot;&gt;仕事ですぐに使えるTypeScript — 仕事ですぐに使えるTypeScript ドキュメント&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://future-architect.github.io/typescript-guide/index.html&quot; title=&quot;仕事ですぐに使えるTypeScript — 仕事ですぐに使えるTypeScript ドキュメント&quot;&gt;future-architect.github.io/typescript-guide/index.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScriptについて学ぶためのドキュメント。&lt;br&gt;
-基本的なJavaScriptの書き方、型の書き方、アプリケーションの作成についてなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://future-architect.github.io/articles/20190612/&quot; title=&quot;TypeScript教育用コンテンツ公開のお知らせ | Future Tech Blog - フューチャーアーキテクト&quot;&gt;TypeScript教育用コンテンツ公開のお知らせ | Future Tech Blog - フューチャーアーキテクト&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Mon, 17 Jun 2019 10:22:37 +0900</pubDate>
-        <link>https://jser.info/2019/06/17/react-redux-7.1.0hookspika-cdnstate-of-css-2019/</link>
-        <guid isPermaLink="true">https://jser.info/2019/06/17/react-redux-7.1.0hookspika-cdnstate-of-css-2019/</guid>
-        
-        <category>Redux</category>
-        
-        <category>React</category>
-        
-        <category>ESModules</category>
-        
-        <category>CSS</category>
         
         
         <category>JSer</category>

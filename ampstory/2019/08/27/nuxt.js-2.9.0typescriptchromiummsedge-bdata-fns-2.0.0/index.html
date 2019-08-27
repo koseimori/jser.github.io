@@ -1,0 +1,435 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-08-27のJS: Nuxt.js 2.9.0(TypeScript)、ChromiumベースのMSEdge βリリース、data-fns 2.0.0 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/08/27/nuxt.js-2.9.0typescriptchromiummsedge-bdata-fns-2.0.0/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-08-27のJS: Nuxt.js 2.9.0(TypeScript)、ChromiumベースのMSEdge βリリース、data-fns 2.0.0"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-08-27のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/nuxt/nuxt.js/releases/tag/v2.9.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v2.9.0 · nuxt/nuxt.js</amp-fit-text>
+            <p class="item-contents">Nuxt.js 2.9.0リリース。
+Node.js 8.9.0未満のサポート終了、TypeScriptサポートをコアから分離、vue-meta 2.0.0にアップデートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v2.9.0 · nuxt/nuxt.js" href="https://github.com/nuxt/nuxt.js/releases/tag/v2.9.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v12.9.0/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v12.9.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 12.9.0リリース。
+V8 7.6へアップデート、<code>stream</code>のReadbleStreamに<code>readableEnded</code>、WritableStreaに<code>writableEnded</code>プロパティの追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v12.9.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v12.9.0/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.microsoftedgeinsider.com/en-us/download">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Microsoft Edge Insider Channels</amp-fit-text>
+            <p class="item-contents">ChromiumのMicrosoft Edgeのベータ版がリリースされた
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Microsoft Edge Insider Channels" href="https://www.microsoftedgeinsider.com/en-us/download" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/styled-components/announcing-styled-components-v5-beast-mode-389747abd987">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing styled-components v5: Beast Mode 💪🔥 - 💅 styled-components - Medium</amp-fit-text>
+            <p class="item-contents">styled-components v5 ベータリリース。
+破壊的な変更はなし。パフォーマンスの改善、React DevToolsの対応改善、RTLのサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing styled-components v5: Beast Mode 💪🔥 - 💅 styled-components - Medium" href="https://medium.com/styled-components/announcing-styled-components-v5-beast-mode-389747abd987" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://npm.community/t/release-6-11-0/9572">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release: 6.11.0 - 📣 announcements - npm forum</amp-fit-text>
+            <p class="item-contents">npm 6.11.0リリース。
+peerDependenciesをOptionalと明示できる<code>peerDependenciesMeta</code>フィールドの追加。インストール時の警告を抑制できる
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release: 6.11.0 - 📣 announcements - npm forum" href="https://npm.community/t/release-6-11-0/9572" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/date-fns/date-fns/releases/tag/v2.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v2.0.0 · date-fns/date-fns</amp-fit-text>
+            <p class="item-contents">date-fns 2.0.0リリース。
+日付文字列の代わりに<code>parseISO</code>などでパースしたオブジェクトを受け取るように変更、<code>format</code>関数を仕様変更、モジュール名をcamelCaseに変更、関数名や引数の順番の変更など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v2.0.0 · date-fns/date-fns" href="https://github.com/date-fns/date-fns/releases/tag/v2.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.chenhuijing.com/blog/learning-css-by-reading-specifications/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Learning CSS by reading specs</amp-fit-text>
+            <p class="item-contents">CSSの仕様でCSSを学ぶ話
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Learning CSS by reading specs" href="https://www.chenhuijing.com/blog/learning-css-by-reading-specifications/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.jxck.io/entries/2019-08-20/promise-allsettled-any.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Promise.allSettled と Promise.any | blog.jxck.io</amp-fit-text>
+            <p class="item-contents">ECMAScript Proposalの<code>Promise.allSettled</code>と<code>Promise.any</code>を含めたPromiseの状態に対するハンドリングについてのまとめ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Promise.allSettled と Promise.any | blog.jxck.io" href="https://blog.jxck.io/entries/2019-08-20/promise-allsettled-any.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://web.dev/multi-origin-pwas/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Progressive Web Apps in multi-origin sites  |  web.dev</amp-fit-text>
+            <p class="item-contents">クロスオリジンなサイト間でのPWAについて。
+Service Worker、キャッシュ、Promptなどについて。
+複数のoriginでのPWAは難しい問題について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Progressive Web Apps in multi-origin sites  |  web.dev" href="https://web.dev/multi-origin-pwas/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.cybozu.io/entry/2019/08/20/170000">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Puppeteerで不要なCSSを消す - Cybozu Inside Out | サイボウズエンジニアのブログ</amp-fit-text>
+            <p class="item-contents">PuppeteerでCSSカバレッジを取り、PostCSSでCSSを編集して使われてないCSSを削除する話
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Puppeteerで不要なCSSを消す - Cybozu Inside Out | サイボウズエンジニアのブログ" href="https://blog.cybozu.io/entry/2019/08/20/170000" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://philipwalton.com/articles/using-native-javascript-modules-in-production-today/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Using Native JavaScript Modules in Production Today — Philip Walton</amp-fit-text>
+            <p class="item-contents">ES moduleをそのまま使うための他クニックについての話。
+RollupをつかってnpmモジュールごとにES moduleのchunkを作成し、<code>&lt;script module</code>でのロード、<code>modulepreload</code>でのpreload。
+Dynamic Importでの動的ロードとpolyfill、ES moduleをサポートしてない環境への<code>&lt;script nonmodule&gt;</code>での読み込みについてなど。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Using Native JavaScript Modules in Production Today — Philip Walton" href="https://philipwalton.com/articles/using-native-javascript-modules-in-production-today/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://msakamaki.github.io/clean-code-typescript/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">clean-code-typescript | TypeScriptの為のクリーンコード</amp-fit-text>
+            <p class="item-contents">clean-code-typescriptの翻訳
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="clean-code-typescript | TypeScriptの為のクリーンコード" href="https://msakamaki.github.io/clean-code-typescript/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/nodegui/nodegui">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">nodegui/nodegui: A library for building cross-platform native desktop applications with JavaScript and CSS like styling.</amp-fit-text>
+            <p class="item-contents">Node.jsのQtバインディングライブラリ。
+Qtを使ったGUIをNode.jsから作成できる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="nodegui/nodegui: A library for building cross-platform native desktop applications with JavaScript and CSS like styling." href="https://github.com/nodegui/nodegui" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://larsjung.de/pagemap/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">pagemap · mini map for web pages · larsjung.de</amp-fit-text>
+            <p class="item-contents">Canvasを使ってウェブサイトのminimapを描画するライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="pagemap · mini map for web pages · larsjung.de" href="https://larsjung.de/pagemap/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/parcel-bundler/watcher">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">parcel-bundler/watcher: 👀 A native C++ Node module for querying and subscribing to filesystem events</amp-fit-text>
+            <p class="item-contents">C++で書かれたファイル監視のNode.jsライブラリ。Parcelで利用されている。
+監視しているファイルの状態をsnapshotで保存でき、watcherが起動してないときの差分も検出できる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="parcel-bundler/watcher: 👀 A native C++ Node module for querying and subscribing to filesystem events" href="https://github.com/parcel-bundler/watcher" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/GoogleChromeLabs/dynamic-import-polyfill">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">GoogleChromeLabs/dynamic-import-polyfill: A fast, tiny polyfill for dynamic import() that works in all module-supporting browsers</amp-fit-text>
+            <p class="item-contents">Dynamic <code>import()</code>のpolyfillライブラリ。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="GoogleChromeLabs/dynamic-import-polyfill: A fast, tiny polyfill for dynamic import() that works in all module-supporting browsers" href="https://github.com/GoogleChromeLabs/dynamic-import-polyfill" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
