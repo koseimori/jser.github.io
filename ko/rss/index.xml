@@ -5,9 +5,269 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 17 Sep 2019 11:59:02 +0900</pubDate>
-    <lastBuildDate>Tue, 17 Sep 2019 11:59:02 +0900</lastBuildDate>
+    <pubDate>Thu, 19 Sep 2019 16:14:04 +0900</pubDate>
+    <lastBuildDate>Thu, 19 Sep 2019 16:14:04 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-09-17: Chrome 77, TypeScript 3.7 로그맵, Can I use and MDN</title>
+        <description>&lt;p&gt;JSer.info #453 - Chrome 77가 릴리스 됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/09/nic77&quot;&gt;New in Chrome 77  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Chrome 77에서는 &lt;code&gt;PerformanceObserver&lt;/code&gt; 내에서 페이지의 큰 변경을 감지할 수 있는 Largest Contentful Paint(LCP)을 지원합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://web.dev/largest-contentful-paint/&quot;&gt;Largest Contentful Paint  |  web.dev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;외에도 &lt;code&gt;formdata&lt;/code&gt; 이벤트, &lt;code&gt;formAssociated&lt;/code&gt; 속성을 지원합니다.&lt;br&gt;
+또, 주소바에 표시되고 있던 EV 증명서 정보가 상세 패널 쪽으로 이동됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.troyhunt.com/extended-validation-certificates-are-really-really-dead/&quot;&gt;Troy Hunt: Extended Validation Certificates are (Really, Really) Dead&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://groups.google.com/a/chromium.org/forum/#!msg/security-dev/h1bTcoTpfeI/jUTk1z7VAAAJ&quot;&gt;Upcoming Change to Chrome&amp;#39;s Identity Indicators - Google 그룹스&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/microsoft/TypeScript/issues/33352&quot;&gt;TypeScript 3.7 Iteration Plan · Issue #33352 · microsoft/TypeScript&lt;/a&gt; 이슈에 TypeScript 3.7의 로드맵이 공개돼 있습니다.&lt;/p&gt;
+
+&lt;p&gt;ECMAScript Private Fields, Optional Chaining, Nullish Coalescing, Top-Level await 등 현재 Stage3인 제안을 대응할 예정입니다.&lt;br&gt;
+또, 지금까지 제한돼 있던 &lt;code&gt;--declaration&lt;/code&gt;과 &lt;code&gt;--allowJs&lt;/code&gt; 조합이나 &lt;code&gt;--declaration&lt;/code&gt;과 &lt;code&gt;--isolatedModules&lt;/code&gt;와의 조합도 지원할 예정이라고 합니다.&lt;br&gt;
+이 외로 &lt;code&gt;typescript&lt;/code&gt; 패키지 크기 최적화, &lt;code&gt;@types&lt;/code&gt; 패키지를 GitHub Package Registry에도 배포할 수 있도록 변경됩니다. 그리고 핸드북도 각 변경 사항에 맞춰 개정될 예정입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/09/caniuse-and-mdn-compat-data-collaboration/&quot;&gt;Caniuse and MDN compatibility data collaboration - Mozilla Hacks - the Web developer blog&lt;/a&gt;에는 &lt;a href=&quot;https://github.com/mdn/browser-compat-data&quot;&gt;MDN compat data&lt;/a&gt;와 &lt;a href=&quot;https://caniuse.com/&quot;&gt;Can I use...&lt;/a&gt;의 공동 작업에 대해서 정리돼 있습니다.&lt;/p&gt;
+
+&lt;p&gt;두 서비스 모두 기능 등에 대한 브라우저 지원 상황을 정리한 데이터지만 목적이 다르기 때문에 데이터의 특성이 조금씩 다릅니다. &lt;br&gt;
+MDN은 모든 세세한 기능에 대한 호환성(compatibility) 데이터를, Can I use...는 큰 기능을 중점으로 브라우저 지원 여부를 정리합니다. &lt;br&gt;
+따라서 Can I use...에는 포함되지 않는 데이터도 많이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이번 공동 작업으로 &lt;a href=&quot;https://caniuse.com/&quot;&gt;Can I use...&lt;/a&gt;가 &lt;a href=&quot;https://github.com/mdn/browser-compat-data&quot;&gt;MDN compat data&lt;/a&gt;의 데이터를 사용해 기능에 관한 브라우저 정보도 지원 상황을 표시할 수 있도록 됐습니다(현재 양쪽의 데이터를 검색한 결과가 각각 노출됨).&lt;/p&gt;
+
+&lt;p&gt;또, 비슷한 사이트로 각 메일 클라이언트 별 이용할 수 있는 HTML이나 CSS 지원 상황 정리한 Can i email...이라는 사이트도 다른 개발자에 의해 공개됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.caniemail.com/&quot;&gt;Can I email… Support tables for HTML and CSS in emails&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;typescript-3-7-iteration-plan-issue-33352-microsoft-typescript&quot;&gt;TypeScript 3.7 Iteration Plan · Issue #33352 · microsoft/TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/microsoft/TypeScript/issues/33352&quot; title=&quot;TypeScript 3.7 Iteration Plan · Issue #33352 · microsoft/TypeScript&quot;&gt;github.com/microsoft/TypeScript/issues/33352&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 3.7의 로드맵이 공개됐습니다.&lt;br&gt;
+ECMAScript Private Fields, Optional Chaining, Nullish Coalescing 및 &lt;code&gt;--declaration&lt;/code&gt;과 &lt;code&gt;--allowJs&lt;/code&gt; 속성 조합 등에 대한 대응이 이뤄집니다.&lt;br&gt;
+또, &lt;code&gt;typescript&lt;/code&gt; 패키지 크기 최적화, &lt;code&gt;@types&lt;/code&gt; 패키지를 GitHub Package Registry에도 배포할 수 있도록 변경되며 여러 변경 사항에 맞춰 핸드북도 개정될 예정입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-dompurify-2-0-0-cure53-dompurify&quot;&gt;Release DOMPurify 2.0.0 · cure53/DOMPurify&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/cure53/DOMPurify/releases/tag/2.0.0&quot; title=&quot;Release DOMPurify 2.0.0 · cure53/DOMPurify&quot;&gt;github.com/cure53/DOMPurify/releases/tag/2.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;DOMpurify 2.0.0이 릴리스 됐습니다.&lt;br&gt;
+Trusted Types를 사용할 수 있는 경우에도 &lt;code&gt;RETURN_TRUSTED_TYPE&lt;/code&gt; 옵션을 전달 했을 때만 Trusted Types을 사용하도록 변경됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;google-developers-blog-flutter-news-from-gdd-china-uniting-flutter-on-web-and-mobile-and-introducing-flutter-1-9&quot;&gt;Google Developers Blog: Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1&quot; title=&quot;Google Developers Blog: Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9&quot;&gt;developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m&amp;#x3D;1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Flutter&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Flutter 1.9가 릴리스 됐습니다.&lt;br&gt;
+웹 지원이 메인 저장소에 합쳐(merge)졌습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;eslint-v6-4-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v6.4.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2019/09/eslint-v6.4.0-released&quot; title=&quot;ESLint v6.4.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2019/09/eslint-v6.4.0-released&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ESLint 6.4.0이 릴리스 됐습니다.&lt;br&gt;
+&lt;code&gt;no-import-assign&lt;/code&gt;, &lt;code&gt;prefer-regex-literals&lt;/code&gt;, &lt;code&gt;default-param-last&lt;/code&gt; 규칙이 추가됐습니다.&lt;br&gt;
+&lt;code&gt;enforceForClassMembers&lt;/code&gt; 옵션으로 일부 규칙을 클래스 구문에도 적용할 수 있도록 변경됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/4164b162fb37dcc443a1&quot; title=&quot;ESLint v6.4.0 - Qiita&quot;&gt;ESLint v6.4.0 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v4-0-0-immerjs-immer&quot;&gt;Release v4.0.0 · immerjs/immer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/immerjs/immer/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · immerjs/immer&quot;&gt;github.com/immerjs/immer/releases/tag/v4.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Immer 4.0.0이 릴리스 됐습니다.&lt;br&gt;
+development mode 일 때 모든 값이 deep frozen 된 상태로 저장되도록 변경됐습니다.&lt;br&gt;
+또, 웹 사이트의 문서가 개편됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://immerjs.github.io/immer/docs/introduction&quot; title=&quot;Introduction to Immer · Immer&quot;&gt;Introduction to Immer · Immer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-2-4-0-avajs-ava&quot;&gt;Release 2.4.0 · avajs/ava&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v2.4.0&quot; title=&quot;Release 2.4.0 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v2.4.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;AVA 2.4.0이 릴리스 됐습니다.&lt;br&gt;
+&lt;code&gt;t.try()&lt;/code&gt;를 플래그를 붙여 지원합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;how-to-build-a-plugin-system-on-the-web-and-also-sleep-well-at-night&quot;&gt;How to build a plugin system on the web and also sleep well at night&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.figma.com/blog/how-we-built-the-figma-plugin-system/&quot; title=&quot;How to build a plugin system on the web and also sleep well at night&quot;&gt;www.figma.com/blog/how-we-built-the-figma-plugin-system/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;plugin&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;플러그인으로 추가되는 서드파티 코드를 안전하게 웹 브라우저에서 실행할 수 있도록 하는 구조에 대해서 이야기합니다. &lt;br&gt;
+&lt;code&gt;&amp;lt;inline-iframe&amp;gt;&lt;/code&gt;과 자바스크립트 인터프리터 이용하는 방법, Proposal의 Realms(shim)을 사용한 샌드박스 등을 소개합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-realms&quot; title=&quot;tc39/proposal-realms: ECMAScript Proposal, specs, and reference implementation for Realms&quot;&gt;tc39/proposal-realms: ECMAScript Proposal, specs, and reference implementation for Realms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Agoric/realms-shim&quot; title=&quot;Agoric/realms-shim: Spec-compliant shim for Realms TC39 Proposal&quot;&gt;Agoric/realms-shim: Spec-compliant shim for Realms TC39 Proposal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;caniuse-and-mdn-compatibility-data-collaboration-mozilla-hacks-the-web-developer-blog&quot;&gt;Caniuse and MDN compatibility data collaboration - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/09/caniuse-and-mdn-compat-data-collaboration/&quot; title=&quot;Caniuse and MDN compatibility data collaboration - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2019/09/caniuse-and-mdn-compat-data-collaboration/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;MDN Compat Data를 Can I Use의 웹 사이트에서 제공합니다.&lt;br&gt;
+이제 Can I Use에서 MDN의 데이터를 기반으로 기능 및 지원 브라우저 상황을 함께 볼 수 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-lighter-v8-v8&quot;&gt;A lighter V8 · V8&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://v8.dev/blog/v8-lite&quot; title=&quot;A lighter V8 · V8&quot;&gt;v8.dev/blog/v8-lite&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;V8의 Lite mode를 소개합니다.&lt;br&gt;
+메모리가 적은 디바이스 용 모드로 메모리 소비를 크게 줄이는 것을 목표로 하고 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webgpu-and-wsl-in-safari-webkit&quot;&gt;WebGPU and WSL in Safari | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9528/webgpu-and-wsl-in-safari/&quot; title=&quot;WebGPU and WSL in Safari | WebKit&quot;&gt;webkit.org/blog/9528/webgpu-and-wsl-in-safari/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview 91부터 베타로 지원 되고있는 WebGPU API와 WSL에 대해 작성돼 있습니다.&lt;br&gt;
+WebGPU의 파이프라이느처리 최적화, 런타임 성능, Web Shading Language(WSL) 등을 소개합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;x3d-declarative-3d-for-the-modern-web&quot;&gt;X3D: Declarative 3D for the Modern Web&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.scottlogic.com/2019/08/27/declarative-3d-for-the-modern-web.html&quot; title=&quot;X3D: Declarative 3D for the Modern Web&quot;&gt;blog.scottlogic.com/2019/08/27/declarative-3d-for-the-modern-web.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;3D&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;선언적으로 3D를 표현하는 X3D라는 사양과 X3DOM 구현에 대해서 이야기합니다.&lt;br&gt;
+SVG 처럼 HTML 내에 태그를 작성하여 3D를 표현할 수 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-in-chrome-77-web-google-developers&quot;&gt;New in Chrome 77  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/09/nic77&quot; title=&quot;New in Chrome 77  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/09/nic77&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 77 릴리스 됐습니다.&lt;br&gt;
+Largest Contentful Paint(LCP), &lt;code&gt;formdata&lt;/code&gt; 이벤트, &lt;code&gt;formAssociated&lt;/code&gt; 프로퍼티를 지원합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://web.dev/more-capable-form-controls/&quot; title=&quot;More capable form controls  |  web.dev&quot;&gt;More capable form controls  |  web.dev&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;can-i-email-support-tables-for-html-and-css-in-emails&quot;&gt;Can I email… Support tables for HTML and CSS in emails&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.caniemail.com/&quot; title=&quot;Can I email… Support tables for HTML and CSS in emails&quot;&gt;www.caniemail.com/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;mail&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;메일 내에서 특정 HTML 태그와 CSS를 사용할 수 있는지, 메일 클라이언트 지원 상황을 검색할 수 있는 서비스입니다. &lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;nanosql-2&quot;&gt;nanoSQL 2&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nanosql.io/&quot; title=&quot;nanoSQL 2&quot;&gt;nanosql.io/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;SQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;SQL builder 라이브러리입니다.&lt;br&gt;
+인메모리, 브라우저의 IndexedDB나 Localstorage, Node.js의 MySQL이나 Redix 등 다양한 데이터베이스를 지원합니다. &lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;도서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;web-development-with-node-and-express-2nd-edition-oreilly-media&quot;&gt;Web Development with Node and Express, 2nd Edition - O&amp;#39;Reilly Media&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://shop.oreilly.com/product/0636920261216.do&quot; title=&quot;Web Development with Node and Express, 2nd Edition - O&amp;#39;Reilly Media&quot;&gt;shop.oreilly.com/product/0636920261216.do&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2019년 10월 출간 예정인 Node.js와 Express를 주제로한 도서입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;daumann-ecmascript-new-features-list-a-comprehensive-list-of-new-es-features-including-es2015-es6-es2016-es7-es2017-es8-es2018-es9-es2019-es10&quot;&gt;daumann/ECMAScript-new-features-list: A comprehensive list of new ES features, including ES2015 (ES6), ES2016 (ES7), ES2017 (ES8), ES2018 (ES9), ES2019 (ES10)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/daumann/ECMAScript-new-features-list&quot; title=&quot;daumann/ECMAScript-new-features-list: A comprehensive list of new ES features, including ES2015 (ES6), ES2016 (ES7), ES2017 (ES8), ES2018 (ES9), ES2019 (ES10)&quot;&gt;github.com/daumann/ECMAScript-new-features-list&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ECMAScript 버전 별 추가된 기능 및 구문과 샘플 코드가 정리돼 있는 저장소입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 17 Sep 2019 09:03:38 +0900</pubDate>
+        <link>https://jser.info/ko/2019/09/17/chrome-77typescript-3.7can-i-use-and-mdn/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2019/09/17/chrome-77typescript-3.7can-i-use-and-mdn/</guid>
+        
+        <category>Chrome</category>
+        
+        <category>TypeScript</category>
+        
+        <category>MDN</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-08-20: Parcel 2.0.0 α, npm의 로드맵, 새로운 React DevTools</title>
@@ -2275,278 +2535,6 @@ SSR의 로그 출력 방식과 빌드 중 인디케이터 표현 방법이 개�
         <category>npm</category>
         
         <category>registry</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-05-21: TypeScript 3.5 RC, Firefox DevTools 개선, Accessibility Insights(접근성 테스트)</title>
-        <description>&lt;p&gt;JSer.info #436 - TypeScript 3.5 RC가 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-5-rc/&quot;&gt;Announcing TypeScript 3.5 RC | TypeScript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/issues/30555&quot;&gt;TypeScript 3.5 Iteration Plan · Issue #30555 · microsoft/TypeScript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Breaking-Changes#typescript-35&quot;&gt;Breaking Changes · microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;타입 검사와 &lt;code&gt;--incremental&lt;/code&gt; 옵션을 사용한 빌드 성능이 개선됐습니다.&lt;br&gt;
-또, &lt;code&gt;Omit&lt;/code&gt; 헬퍼 타입이 &lt;code&gt;lib.d.ts&lt;/code&gt;에 추가됐고 Union 타입과 관련한 프로퍼티 검사도 함께 개선됐습니다.&lt;/p&gt;
-
-&lt;p&gt;비호환 변경사항으로 Generic type parameter의 기본이 &lt;code&gt;{}&lt;/code&gt;에서 &lt;code&gt;unknown&lt;/code&gt;으로 변경됐습니다.&lt;/p&gt;
-
-&lt;p&gt;버전 3.4 까지는 다음과 같이 아무것도 &lt;code&gt;extends&lt;/code&gt;하지 않는 &lt;code&gt;T&lt;/code&gt;일 경우 &lt;code&gt;{}&lt;/code&gt;를 이용하여 오류를 피했습니다.&lt;br&gt;
-하지만 3.5부터는 &lt;code&gt;T&lt;/code&gt;가 &lt;code&gt;unknown&lt;/code&gt; 타입으로 취급돼 해당 문제가 해결됩니다.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ts&quot; data-lang=&quot;ts&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()]&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//           ~~~~~~~~ error! Property 'toString' does not exist on type 'T'.&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;여전히 명시적으로 &lt;code&gt;T&lt;/code&gt;의 기본 타입을 &lt;code&gt;{}&lt;/code&gt; 선언해 해결할 수도 있습니다.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ts&quot; data-lang=&quot;ts&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;또, &lt;code&gt;tsconfig.json&lt;/code&gt;를 &lt;code&gt;target:es5&lt;/code&gt;로 설정한 경우 &lt;code&gt;Object.keys&lt;/code&gt;가 원시 타입 인수를 허용하지 않도록 수정됐습니다.&lt;br&gt;
-이는 ES5에서 &lt;code&gt;Object.keys(10)&lt;/code&gt;와 같이 작성할 경우 예외가 발생해야 한다는 조건이 ECMAScript의 사양이기 때문에 이를 따른 것입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://gist.github.com/teppeis/c50743a60832560aa1df&quot;&gt;Break the Web: Object staticメソッドがES6で仕様変更になった件について&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;이 외에도 몇 가지 비호환 변경사항이 있으니 &lt;a href=&quot;https://github.com/Microsoft/TypeScript/wiki/Breaking-Changes#typescript-35&quot;&gt;Breaking Changes&lt;/a&gt;을 살펴보시길 바랍니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://accessibilityinsights.io/&quot;&gt;Accessibility Insights&lt;/a&gt; 공식사이트와 함께 웹과 윈도우즈 애플리케이션을 위한 접근성 테스트 도구가 공개됐습니다.&lt;br&gt;
-웹 용으로는 크롬 확장 플러그인과 최근 &lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/05/20/microsoft-edge-macos-canary-preview/&quot;&gt;macOS 버전도 공개된&lt;/a&gt; MSEdge의 Inside Preview 브라우저의 확장 플러그인도 함께 공개됐습니다.&lt;/p&gt;
-
-&lt;p&gt;FastPass와 Assessment, 두 가지 시나리오에 대한 접근성 테스트를 지원하며 자동으로 검사하거나 시나리오를 바탕으로 수동으로도 검사할 수 있습니다.&lt;br&gt;
-또, 탭 키를 이용한 포커스 이동 가시성, 색상 테스트, WAI-ARIA의 Landmarks 표시 등 접근성 테스트를 위한 보조 기능도 제공합니다. &lt;/p&gt;
-
-&lt;p&gt;다음 페이지에 사용 방법이 설명돼 있으니 관심 있는 분은 함께 살펴보면 좋을 것 같습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://accessibilityinsights.io/docs/en/web/overview&quot;&gt;Accessibility Insights for Web · Accessibility Insights&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v3-14-0-lerna-lerna&quot;&gt;Release v3.14.0 · lerna/lerna&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/lerna/lerna/releases/tag/v3.14.0&quot; title=&quot;Release v3.14.0 · lerna/lerna&quot;&gt;github.com/lerna/lerna/releases/tag/v3.14.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;monorepo&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;monorepo 관리 도구 lerna 3.14.0이 릴리스됐습니다.&lt;br&gt;
-npm publish 시 이중 인증(OTP)과 &lt;code&gt;--conventional-prerelease&lt;/code&gt;, &lt;code&gt;--conventional-graduate&lt;/code&gt;를 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2-7-0-nuxt-nuxt-js&quot;&gt;Release v2.7.0 · nuxt/nuxt.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nuxt/nuxt.js/releases/tag/v2.7.0&quot; title=&quot;Release v2.7.0 · nuxt/nuxt.js&quot;&gt;github.com/nuxt/nuxt.js/releases/tag/v2.7.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Nuxt.js 2.7.0이 릴리스됐습니다.&lt;br&gt;
-서버 사이드의 로그도 브라우저 콘솔에 출력되며 &lt;code&gt;store/&lt;/code&gt; 디렉티브 파일 감시 기능이 개선됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/potato4d/items/43b4f17c73aebc7a2154&quot; title=&quot;Nuxt.js v2.7.0 の変更点と注目のポイントまとめ - Qiita&quot;&gt;Nuxt.js v2.7.0의 변경 사항과 주목할 지점 정리 - Qiita&lt;/a&gt;(일본어)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-typescript-3-5-rc-typescript&quot;&gt;Announcing TypeScript 3.5 RC | TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-5-rc/&quot; title=&quot;Announcing TypeScript 3.5 RC | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-5-rc/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.5 RC가 릴리스됐습니다.&lt;br&gt;
-타입 검사와 빌드 성능이 개선됐고 &lt;code&gt;Omit&lt;/code&gt; 헬퍼 타입이 추가됐으며 Union 타입이 개선됐습니다.&lt;br&gt;
-비호환 변경사항으로 Generic type parameter의 기본이 &lt;code&gt;{}&lt;/code&gt;에서 &lt;code&gt;unknown&lt;/code&gt;으로 변경됐으며 &lt;code&gt;target:es5&lt;/code&gt;으로 설정 시 &lt;code&gt;Object.keys&lt;/code&gt;가 원시 타입을 허용하지 않도록 수정됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;v8-release-v7-5-v8&quot;&gt;V8 release v7.5 · V8&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://v8.dev/blog/v8-release-75&quot; title=&quot;V8 release v7.5 · V8&quot;&gt;v8.dev/blog/v8-release-75&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;V8 v7.5가 릴리스됐습니다.&lt;br&gt;
-WebAssembly 컴파일 결과를 암묵적으로 캐시하도록 변경됐고 ECMAScript Proposal의 Numeric separators가 구현됐습니다.&lt;br&gt;
-네트워크에서 스크립트를 읽어드리며 파싱할 때 메인스레드에 의해 차단(block)되는 문제가 개선됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-82-webkit&quot;&gt;Release Notes for Safari Technology Preview 82 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/8921/release-notes-for-safari-technology-preview-82/&quot; title=&quot;Release Notes for Safari Technology Preview 82 | WebKit&quot;&gt;webkit.org/blog/8921/release-notes-for-safari-technology-preview-82/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webkit&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 82가 릴리스됐습니다.&lt;br&gt;
-Fetch API의 &lt;code&gt;keepAlive&lt;/code&gt; 지원하며 Web GPU API를 &lt;code&gt;navigator.gpu&lt;/code&gt;로 옮겼습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introducing-the-first-microsoft-edge-preview-builds-for-macos-microsoft-edge-blog&quot;&gt;Introducing the first Microsoft Edge preview builds for macOS - Microsoft Edge Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/05/20/microsoft-edge-macos-canary-preview/&quot; title=&quot;Introducing the first Microsoft Edge preview builds for macOS - Microsoft Edge Blog&quot;&gt;blogs.windows.com/msedgedev/2019/05/20/microsoft-edge-macos-canary-preview/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;mac&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MSEdge의 macOS 버전이 Insider Preview를 통해 릴리스됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;typescript-3-0-the-unknown-type-marius-schulz&quot;&gt;TypeScript 3.0: The unknown Type — Marius Schulz&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://mariusschulz.com/blog/typescript-3-0-the-unknown-type&quot; title=&quot;TypeScript 3.0: The unknown Type — Marius Schulz&quot;&gt;mariusschulz.com/blog/typescript-3-0-the-unknown-type&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.0에 도입된 &lt;code&gt;unknown&lt;/code&gt; 타입을 소개합니다.&lt;br&gt;
-&lt;code&gt;any&lt;/code&gt; 타입과의 차이점, &lt;code&gt;unknown&lt;/code&gt;에 대해 임의로 조작이 불가능한 점, &lt;code&gt;unknown&lt;/code&gt; 타입의 범위를 좁혀(narrowing) 사용하는 방법 등에 대해 작성돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;faster-smarter-javascript-debugging-in-firefox-devtools-mozilla-hacks-the-web-developer-blog&quot;&gt;Faster smarter JavaScript debugging in Firefox DevTools - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/05/faster-smarter-javascript-debugging-in-firefox/&quot; title=&quot;Faster smarter JavaScript debugging in Firefox DevTools - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2019/05/faster-smarter-javascript-debugging-in-firefox/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 67의 개발자 도구의 변경 사항이 정리돼 있습니다.&lt;br&gt;
-불러오기(load) 성능과 중단점 기능이 개선됐습니다. 로그포인트(logpoints) 기능을 지원하며 웹 워커 스크립트로의 전환 시 성능 개선, 소스맵을 활용한 구체적인 내용 출력 개선 등이 이뤄졌습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;const-assertions-are-the-killer-new-typescript-feature&quot;&gt;const assertions are the killer new TypeScript feature&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.logrocket.com/const-assertions-are-the-killer-new-typescript-feature-b73451f35802&quot; title=&quot;const assertions are the killer new TypeScript feature&quot;&gt;blog.logrocket.com/const-assertions-are-the-killer-new-typescript-feature-b73451f35802&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.4에서 도입된 const assertion을 소개합니다.&lt;br&gt;
-리터럴의 타입 확대를 방지하거나 객체 속성을 &lt;code&gt;readonly&lt;/code&gt;로 선언할 수 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;google-fonts-is-adding-font-display-zachleat-com&quot;&gt;Google Fonts is Adding font-display 🎉—zachleat.com&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.zachleat.com/web/google-fonts-display/&quot; title=&quot;Google Fonts is Adding font-display 🎉—zachleat.com&quot;&gt;www.zachleat.com/web/google-fonts-display/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;fonts&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Google Fonts의 &lt;code&gt;display&lt;/code&gt; 파라메터를 이용한 &lt;code&gt;font-display&lt;/code&gt; 프로퍼티 지정 기능에 대한 소개 글입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://t32k.me/mol/log/font-display-swap/&quot; title=&quot;display&amp;amp;#x3D;swapとはなにか - MOL&quot;&gt;display=swapとはなにか - MOL&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;kabuku-developers-blog&quot;&gt;[웹 프론트엔드] 상태 갱신 로직을 프레임워크에서 떼어(독립)내다 | Kabuku Developers Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.kabuku.co.jp/developers/framework-agnostic-state-modification&quot; title=&quot;\[웹 프론트엔드\] 상태 갱신 로직을 프레임워크에서 떼어(독립)내다 | Kabuku Developers Blog&quot;&gt;www.kabuku.co.jp/developers/framework-agnostic-state-modification&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;immer를 사용해 구현한 상태 갱신 로직을 Angular, Vue, React 등의 프레임워크 내에 위치시키는 방법을 소개합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;js-dos-shibuya-xss-techtalk-11-speaker-deck&quot;&gt;JS에서의 DoS/ Shibuya.XSS techtalk #11 - Speaker Deck&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/masatokinugawa/shibuya-dot-xss-techtalk-number-11&quot; title=&quot;JS에서의 DoS/ Shibuya.XSS techtalk #11 - Speaker Deck&quot;&gt;speakerdeck.com/masatokinugawa/shibuya-dot-xss-techtalk-number-11&lt;/a&gt;(일본어)&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;자바스크립트에서 예외가 발생하는 패턴이나 노드에서 크래시가 발생하는 경우에 대한 사례 연구 슬라이드 자료입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;dassur-ma-raw-webassembly&quot;&gt;DasSur.ma – Raw WebAssembly&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://dassur.ma/things/raw-wasm/&quot; title=&quot;DasSur.ma – Raw WebAssembly&quot;&gt;dassur.ma/things/raw-wasm/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebAssembly가 stack-based VM 형식으로 어떻게 동작하는지 살펴보는 글입니다.&lt;br&gt;
-WebAssembly text 형식인 wat를 직접 작성하며 WebAssembly에서의 모듈 정의, 함수의 정의와 호출, 메모리 확보, wasm 불러오기 등에 대해 설명합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/WebAssembly/Understanding_the_text_format&quot; title=&quot;Understanding WebAssembly text format - WebAssembly | MDN&quot;&gt;Understanding WebAssembly text format - WebAssembly | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;accessibility-insights&quot;&gt;Accessibility Insights&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://accessibilityinsights.io/&quot; title=&quot;Accessibility Insights&quot;&gt;accessibilityinsights.io/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;windows&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Extension&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;접근성을 검사하는 브라우저 확장 도구입니다.&lt;br&gt;
-접근성 검사 항목을 일목요연하게 살펴볼 수 있고 FastPass와 Assessment 두 가지 시나리오 기반의 테스트를 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/accessibility-insights-web&quot; title=&quot;microsoft/accessibility-insights-web: Accessibility Insights for Web&quot;&gt;microsoft/accessibility-insights-web: Accessibility Insights for Web&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=U6NY8Cxym5g&quot; title=&quot;Introduction to Accessibility Insights for Web - YouTube&quot;&gt;Introduction to Accessibility Insights for Web - YouTube&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;inside-microsoft-s-surprise-decision-to-work-with-google-on-its-edge-browser-the-verge&quot;&gt;Inside Microsoft’s surprise decision to work with Google on its Edge browser - The Verge&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.theverge.com/2019/5/6/18527550/microsoft-chromium-edge-google-history-collaboration&quot; title=&quot;Inside Microsoft’s surprise decision to work with Google on its Edge browser - The Verge&quot;&gt;www.theverge.com/2019/5/6/18527550/microsoft-chromium-edge-google-history-collaboration&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;インタビュー&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;OSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;MS&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MSEdge가 Chromium 기반으로 변경된 배경이 작성돼 있습니다.&lt;br&gt;
-저조한 Edge의 이용률, 최신 기능 구현 지연 등의 문제를 해결하는 하나의 선택 사항이었으나 조직개편이 이뤄지고 Septagon라는 프로토타입과 전환에 대한 공표가 이뤄지면서 실제 작업이 시작된 배경이 자세히 정리돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;reakit&quot;&gt;Reakit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://reakit.io/&quot; title=&quot;Reakit&quot;&gt;reakit.io/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;접근성을 고려한 리액트 컴포넌트 라이브러리입니다.&lt;br&gt;
-React Hooks를 대응하며 기반 컴포넌트를 제공합니다. &lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;esxjs-esx-like-jsx-but-native-and-fast&quot;&gt;esxjs/esx: Like JSX, but native and fast&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/esxjs/esx&quot; title=&quot;esxjs/esx: Like JSX, but native and fast&quot;&gt;github.com/esxjs/esx&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;jsx&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JSX 스러운 문법을 지원하는 Tagged Template 라이브러리입니다.&lt;br&gt;
-또, 리액트를 esx 구문으로 변환하는 바벨 플러그인도 제공해 리액트의 SSR 템플릿 엔진으로도 이용할 수 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 21 May 2019 11:19:30 +0900</pubDate>
-        <link>https://jser.info/ko/2019/05/21/typescript-3.5-rcfirefox-devtoolsaccessibility-insights/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2019/05/21/typescript-3.5-rcfirefox-devtoolsaccessibility-insights/</guid>
-        
-        <category>TypeScript</category>
-        
-        <category>Firefox</category>
-        
-        <category>Accessibility</category>
         
         
         <category>JSer</category>
