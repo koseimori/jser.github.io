@@ -1,0 +1,420 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-09-30のJS: React 16.10.0、Node.js 12.11.0(worker_thread)、ネットワークリクエストとUI更新の競合 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/09/30/455draft/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-09-30のJS: React 16.10.0、Node.js 12.11.0(worker_thread)、ネットワークリクエストとUI更新の競合"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-09-30のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://reacttraining.com/blog/react-router-v5-1/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">React Training: React Router v5.1</amp-fit-text>
+            <p class="item-contents">React Router 5.1リリース。
+Hooks APIの追加サポート。
+<code>useParams</code>、<code>useLocation</code>、<code>useHistory</code>などのAPIが追加されている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="React Training: React Router v5.1" href="https://reacttraining.com/blog/react-router-v5-1/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://facebook.github.io/react-native/blog/2019/09/18/version-0.61">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing React Native 0.61 with Fast Refresh · React Native</amp-fit-text>
+            <p class="item-contents">React Native 0.61リリース。
+Fast Refresh = live reload + hot reloading。
+<code>use_frameworks!</code>を使った場合のCocoapodの問題を修正、React 16.9へアップデート、<code>useWindowDimensions</code> Hook APIの追加など。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing React Native 0.61 with Fast Refresh · React Native" href="https://facebook.github.io/react-native/blog/2019/09/18/version-0.61" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/facebook/react/releases/tag/v16.10.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 16.10.0 (September 27, 2019) · facebook/react</amp-fit-text>
+            <p class="item-contents">React 16.10.0リリース。
+ExperimentalなSchedulerのメモリ消費の改善、<code>requestAnimationFrame</code>ではなく<code>postMessage</code>を使ったより短いインターバルでのチェックの実装。
+<code>useSubscription</code>のバグ修正など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 16.10.0 (September 27, 2019) · facebook/react" href="https://github.com/facebook/react/releases/tag/v16.10.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://v8.dev/blog/v8-release-78">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">V8 release v7.8 · V8</amp-fit-text>
+            <p class="item-contents">V8 v7.8リリース。
+Script StreamingによるJavaScriptのロードパフォーマンスの改善、オブジェクトのDestructuringのパフォーマンス改善。
+またV8 APIとしてWebAssembly C/C++ APIを公式にサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 release v7.8 · V8" href="https://v8.dev/blog/v8-release-78" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v12.11.0/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v12.11.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node v12.11.0リリース。
+V8 7.7へアップデート、<code>worker_thread</code>モジュールがStableになるなど。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v12.11.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v12.11.0/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/gpujs/gpu.js/releases/tag/2.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v2 Cosmic Jellyfish · gpujs/gpu.js</amp-fit-text>
+            <p class="item-contents">gpu.js 2.0.0リリース。
+Video inputのサポート、<code>gpu.setInjectedNative()</code>の追加、<code>mode</code>オプションに<code>dev</code>を追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v2 Cosmic Jellyfish · gpujs/gpu.js" href="https://github.com/gpujs/gpu.js/releases/tag/2.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://sebastienlorber.com/handling-api-request-race-conditions-in-react">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Handling API request race conditions in React</amp-fit-text>
+            <p class="item-contents">ネットワークの遅延などにより複数のリクエストが送信され、リクエストが成功タイミングとUIの状態が一致しなくなる問題について。
+Reactを例に、リクエストに問題があった場合にどのように問題を回避するかについて書かれている。
+不要なレスポンスを無視、リクエストをキャンセルなどの実装方法について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Handling API request race conditions in React" href="https://sebastienlorber.com/handling-api-request-race-conditions-in-react" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.valentinog.com/blog/typescript/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">TypeScript Tutorial for Beginners: The Missing Guide (2019)</amp-fit-text>
+            <p class="item-contents">初心者向けのTypeScriptチュートリアル。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="TypeScript Tutorial for Beginners: The Missing Guide (2019)" href="https://www.valentinog.com/blog/typescript/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://jeffrafter.com/working-with-github-actions/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Working with GitHub Actions | Jeff Rafter</amp-fit-text>
+            <p class="item-contents">Node.js + TypeScriptでGitHub Actionsを作成するチュートリアル。
+<code>@actions/core</code>の使い方やGitHub APIへのリクエスト、デバッグ方法、テスト方法などについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Working with GitHub Actions | Jeff Rafter" href="https://jeffrafter.com/working-with-github-actions/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://dev.to/valeriopisapia/why-your-angular-app-is-not-working-7-common-mistakes-2ba1">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Why Your Angular App Is Not Working: 7 Common Mistakes - DEV Community 👩‍💻👨‍💻</amp-fit-text>
+            <p class="item-contents">Angularアプリでよくある間違いとその修正方法について
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Why Your Angular App Is Not Working: 7 Common Mistakes - DEV Community 👩‍💻👨‍💻" href="https://dev.to/valeriopisapia/why-your-angular-app-is-not-working-7-common-mistakes-2ba1" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.swyx.io/writing/js-tooling/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">swyx Writing | Why JavaScript Tooling Sucks</amp-fit-text>
+            <p class="item-contents">JavaScriptのツールがなぜ難しいのかについての話。
+JavaScriptの始まり、巨大なコミュニティ、ターゲットの変遷、ボトムアップ、オーナーシップやsemver、ツールを作る人と使う人、Fundingの問題、良い所なども含めて書かれている。
+JavaScriptアプリケーションの97%はnpmから来ているため、OSSの問題はJavaScriptの問題と見られることについてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="swyx Writing | Why JavaScript Tooling Sucks" href="https://www.swyx.io/writing/js-tooling/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webtest.app">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Webtest.app - Testing websites with and without adblocker</amp-fit-text>
+            <p class="item-contents">ウェブサイトにuBlock OriginなどのAdblockを経由した場合のブロックされたリクエストやCookie、ページサイズ、パフォーマンスメトリクスの比較結果を計測するツール
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Webtest.app - Testing websites with and without adblocker" href="https://webtest.app" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/chroventer/endb">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">chroventer/endb: Simple key-value database with multi adapter support</amp-fit-text>
+            <p class="item-contents">MySQLやRedisなどをバックエンドにできるKVSライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="chroventer/endb: Simple key-value database with multi adapter support" href="https://github.com/chroventer/endb" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/oframe/ogl">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">oframe/ogl: Minimal WebGL framework</amp-fit-text>
+            <p class="item-contents">WebGLフレームワーク。
+抽象度は低めで、Math/Core/Extrasのモジュールから構成される
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="oframe/ogl: Minimal WebGL framework" href="https://github.com/oframe/ogl" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/valentinogagliardi/Little-JavaScript-Book">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">valentinogagliardi/Little-JavaScript-Book: The Little JavaScript Book</amp-fit-text>
+            <p class="item-contents">JavaScriptについての書籍
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="valentinogagliardi/Little-JavaScript-Book: The Little JavaScript Book" href="https://github.com/valentinogagliardi/Little-JavaScript-Book" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>

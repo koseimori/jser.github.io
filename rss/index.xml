@@ -5,9 +5,239 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 24 Sep 2019 21:20:18 +0900</pubDate>
-    <lastBuildDate>Tue, 24 Sep 2019 21:20:18 +0900</lastBuildDate>
+    <pubDate>Tue, 01 Oct 2019 08:49:06 +0900</pubDate>
+    <lastBuildDate>Tue, 01 Oct 2019 08:49:06 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-09-30のJS: React 16.10.0、Node.js 12.11.0(worker_thread)、ネットワークリクエストとUI更新の競合</title>
+        <description>&lt;p&gt;JSer.info #455 - React 16.10.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/facebook/react/releases/tag/v16.10.0&quot;&gt;Release 16.10.0 (September 27, 2019) · facebook/react&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/react/issues/16396&quot;&gt;useSubScriptに関するバグ&lt;/a&gt;や&lt;a href=&quot;https://github.com/facebook/react/pull/16359&quot;&gt;Hooks APIでメモ化が上手く動かないエッジケースの修正&lt;/a&gt;など細かいバグ修正が中心です。&lt;/p&gt;
+
+&lt;p&gt;また、現在experimentalとして実装されている&lt;a href=&quot;https://github.com/facebook/react/tree/master/packages/scheduler&quot;&gt;scheduler&lt;/a&gt;のメモリ効率の改善やメッセージループに&lt;code&gt;requestAnimationFrame&lt;/code&gt;ではなく&lt;code&gt;postMessage&lt;/code&gt;を使った実装の追加なども行われています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://philippspiess.com/scheduling-in-react/&quot;&gt;Scheduling in React | Philipp Spiess&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Node.js 12.11.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.11.0/&quot;&gt;Node v12.11.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Node.js 12.11.0ではChrome 77相当のV8 7.7.299.11にアップデートサれています。 &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://v8.dev/blog/v8-release-77&quot;&gt;V8 release v7.7 · V8&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、Node.jsで並列処理ができる&lt;a href=&quot;https://nodejs.org/api/worker_threads.html&quot;&gt;&lt;code&gt;worker_thread&lt;/code&gt;&lt;/a&gt;モジュールがStableとなりました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sebastienlorber.com/handling-api-request-race-conditions-in-react&quot;&gt;Handling API request race conditions in React&lt;/a&gt;という記事では、ネットワークリクエストでUIを更新する場合などに発生するrace conditionsについて書かれています。&lt;/p&gt;
+
+&lt;p&gt;単純にリクエストに成功したらUIを更新するという処理を書いた場合に、&lt;br&gt;
+ネットワークの遅延などにより複数のリクエストが送信され、リクエストが成功タイミングとUIの状態が一致しなくなる問題が発生する場合があります。&lt;/p&gt;
+
+&lt;p&gt;Reactを例に、リクエストに問題があった場合にどのように問題を回避するかについて書かれていて、&lt;br&gt;
+不要なレスポンスを無視、リクエストをキャンセルなどの実装方法についても紹介されています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-training-react-router-v5-1&quot;&gt;React Training: React Router v5.1&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://reacttraining.com/blog/react-router-v5-1/&quot; title=&quot;React Training: React Router v5.1&quot;&gt;reacttraining.com/blog/react-router-v5-1/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Router 5.1リリース。&lt;br&gt;
+Hooks APIの追加サポート。&lt;br&gt;
+&lt;code&gt;useParams&lt;/code&gt;、&lt;code&gt;useLocation&lt;/code&gt;、&lt;code&gt;useHistory&lt;/code&gt;などのAPIが追加されている。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-react-native-0-61-with-fast-refresh-react-native&quot;&gt;Announcing React Native 0.61 with Fast Refresh · React Native&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://facebook.github.io/react-native/blog/2019/09/18/version-0.61&quot; title=&quot;Announcing React Native 0.61 with Fast Refresh · React Native&quot;&gt;facebook.github.io/react-native/blog/2019/09/18/version-0.61&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;iOS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Android&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Native 0.61リリース。&lt;br&gt;
+Fast Refresh = live reload + hot reloading。&lt;br&gt;
+&lt;code&gt;use_frameworks!&lt;/code&gt;を使った場合のCocoapodの問題を修正、React 16.9へアップデート、&lt;code&gt;useWindowDimensions&lt;/code&gt; Hook APIの追加など。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-16-10-0-september-27-2019-facebook-react&quot;&gt;Release 16.10.0 (September 27, 2019) · facebook/react&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/react/releases/tag/v16.10.0&quot; title=&quot;Release 16.10.0 (September 27, 2019) · facebook/react&quot;&gt;github.com/facebook/react/releases/tag/v16.10.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React 16.10.0リリース。&lt;br&gt;
+ExperimentalなSchedulerのメモリ消費の改善、&lt;code&gt;requestAnimationFrame&lt;/code&gt;ではなく&lt;code&gt;postMessage&lt;/code&gt;を使ったより短いインターバルでのチェックの実装。&lt;br&gt;
+&lt;code&gt;useSubscription&lt;/code&gt;のバグ修正など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;v8-release-v7-8-v8&quot;&gt;V8 release v7.8 · V8&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://v8.dev/blog/v8-release-78&quot; title=&quot;V8 release v7.8 · V8&quot;&gt;v8.dev/blog/v8-release-78&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;V8 v7.8リリース。&lt;br&gt;
+Script StreamingによるJavaScriptのロードパフォーマンスの改善、オブジェクトのDestructuringのパフォーマンス改善。&lt;br&gt;
+またV8 APIとしてWebAssembly C/C++ APIを公式にサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v12-11-0-current-node-js&quot;&gt;Node v12.11.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.11.0/&quot; title=&quot;Node v12.11.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.11.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node v12.11.0リリース。&lt;br&gt;
+V8 7.7へアップデート、&lt;code&gt;worker_thread&lt;/code&gt;モジュールがStableになるなど。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v2-cosmic-jellyfish-gpujs-gpu-js&quot;&gt;Release v2 Cosmic Jellyfish · gpujs/gpu.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/gpujs/gpu.js/releases/tag/2.0.0&quot; title=&quot;Release v2 Cosmic Jellyfish · gpujs/gpu.js&quot;&gt;github.com/gpujs/gpu.js/releases/tag/2.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;gpu.js 2.0.0リリース。&lt;br&gt;
+Video inputのサポート、&lt;code&gt;gpu.setInjectedNative()&lt;/code&gt;の追加、&lt;code&gt;mode&lt;/code&gt;オプションに&lt;code&gt;dev&lt;/code&gt;を追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;handling-api-request-race-conditions-in-react&quot;&gt;Handling API request race conditions in React&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sebastienlorber.com/handling-api-request-race-conditions-in-react&quot; title=&quot;Handling API request race conditions in React&quot;&gt;sebastienlorber.com/handling-api-request-race-conditions-in-react&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ネットワークの遅延などにより複数のリクエストが送信され、リクエストが成功タイミングとUIの状態が一致しなくなる問題について。&lt;br&gt;
+Reactを例に、リクエストに問題があった場合にどのように問題を回避するかについて書かれている。&lt;br&gt;
+不要なレスポンスを無視、リクエストをキャンセルなどの実装方法について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;typescript-tutorial-for-beginners-the-missing-guide-2019&quot;&gt;TypeScript Tutorial for Beginners: The Missing Guide (2019)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.valentinog.com/blog/typescript/&quot; title=&quot;TypeScript Tutorial for Beginners: The Missing Guide (2019)&quot;&gt;www.valentinog.com/blog/typescript/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;初心者向けのTypeScriptチュートリアル。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;working-with-github-actions-jeff-rafter&quot;&gt;Working with GitHub Actions | Jeff Rafter&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jeffrafter.com/working-with-github-actions/&quot; title=&quot;Working with GitHub Actions | Jeff Rafter&quot;&gt;jeffrafter.com/working-with-github-actions/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Github&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Actions&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js + TypeScriptでGitHub Actionsを作成するチュートリアル。&lt;br&gt;
+&lt;code&gt;@actions/core&lt;/code&gt;の使い方やGitHub APIへのリクエスト、デバッグ方法、テスト方法などについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;why-your-angular-app-is-not-working-7-common-mistakes-dev-community&quot;&gt;Why Your Angular App Is Not Working: 7 Common Mistakes - DEV Community 👩‍💻👨‍💻&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://dev.to/valeriopisapia/why-your-angular-app-is-not-working-7-common-mistakes-2ba1&quot; title=&quot;Why Your Angular App Is Not Working: 7 Common Mistakes - DEV Community 👩‍💻👨‍💻&quot;&gt;dev.to/valeriopisapia/why-your-angular-app-is-not-working-7-common-mistakes-2ba1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Angularアプリでよくある間違いとその修正方法について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;swyx-writing-why-javascript-tooling-sucks&quot;&gt;swyx Writing | Why JavaScript Tooling Sucks&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.swyx.io/writing/js-tooling/&quot; title=&quot;swyx Writing | Why JavaScript Tooling Sucks&quot;&gt;www.swyx.io/writing/js-tooling/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;community&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;opinion&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptのツールがなぜ難しいのかについての話。&lt;br&gt;
+JavaScriptの始まり、巨大なコミュニティ、ターゲットの変遷、ボトムアップ、オーナーシップやsemver、ツールを作る人と使う人、Fundingの問題、良い所なども含めて書かれている。&lt;br&gt;
+JavaScriptアプリケーションの97%はnpmから来ているため、OSSの問題はJavaScriptの問題と見られることについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webtest-app-testing-websites-with-and-without-adblocker&quot;&gt;Webtest.app - Testing websites with and without adblocker&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webtest.app&quot; title=&quot;Webtest.app - Testing websites with and without adblocker&quot;&gt;webtest.app&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ウェブサイトにuBlock OriginなどのAdblockを経由した場合のブロックされたリクエストやCookie、ページサイズ、パフォーマンスメトリクスの比較結果を計測するツール&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;chroventer-endb-simple-key-value-database-with-multi-adapter-support&quot;&gt;chroventer/endb: Simple key-value database with multi adapter support&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/chroventer/endb&quot; title=&quot;chroventer/endb: Simple key-value database with multi adapter support&quot;&gt;github.com/chroventer/endb&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;MySQLやRedisなどをバックエンドにできるKVSライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;oframe-ogl-minimal-webgl-framework&quot;&gt;oframe/ogl: Minimal WebGL framework&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/oframe/ogl&quot; title=&quot;oframe/ogl: Minimal WebGL framework&quot;&gt;github.com/oframe/ogl&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebGLフレームワーク。&lt;br&gt;
+抽象度は低めで、Math/Core/Extrasのモジュールから構成される&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;valentinogagliardi-little-javascript-book-the-little-javascript-book&quot;&gt;valentinogagliardi/Little-JavaScript-Book: The Little JavaScript Book&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/valentinogagliardi/Little-JavaScript-Book&quot; title=&quot;valentinogagliardi/Little-JavaScript-Book: The Little JavaScript Book&quot;&gt;github.com/valentinogagliardi/Little-JavaScript-Book&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptについての書籍&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Mon, 30 Sep 2019 09:47:47 +0900</pubDate>
+        <link>https://jser.info/2019/09/30/455draft/</link>
+        <guid isPermaLink="true">https://jser.info/2019/09/30/455draft/</guid>
+        
+        <category>React</category>
+        
+        <category>Node</category>
+        
+        <category>API</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-09-24のJS: Safari 13、Chrome 78 Beta(Native File System trial)、Storybook 5.2(CSF)</title>
@@ -2291,234 +2521,6 @@ ES2015をベースにしたNode.js入門本&lt;/p&gt;
         <category>Electron</category>
         
         <category>React</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-07-23のJS: TypeScript 3.6 Beta、postMessageとパフォーマンス、Node.js 12の変更点</title>
-        <description>&lt;p&gt;JSer.info #445 - TypeScript 3.6 Betaがリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-6-beta/&quot;&gt;Announcing TypeScript 3.6 Beta | TypeScript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/TypeScript/issues/202&quot;&gt;Roadmap · microsoft/TypeScript Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Generator/Iteratorの型改善、 次のようなArray Spreadの変換においてエッジケースで仕様との挙動の違いがあった問題が修正されています。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ts&quot; data-lang=&quot;ts&quot;&gt;&lt;span class=&quot;p&quot;&gt;[...&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;また、Promiseの&lt;code&gt;await&lt;/code&gt;忘れなどから起きる型の不一致に関するエラー表示改善なども含まれています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://dassur.ma/things/is-postmessage-slow/&quot;&gt;Is postMessage slow? — DasSur.ma&lt;/a&gt;という記事では&lt;code&gt;postMessage&lt;/code&gt;で送信するペイロードのパフォーマンスについて書かれています。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;postMessage&lt;/code&gt;の仕様ではオブジェクトを送る際にStructured Clone algorithmでのシリアライズの仕組みが含まれています。&lt;br&gt;
-Structured Clone algorithmと&lt;code&gt;JSON.stringify&lt;/code&gt;/&lt;code&gt;JSON.parse&lt;/code&gt;とのパフォーマンスの比較やImmerJSを使って送るオブジェクト自体を小さくする方法に紹介されています。&lt;/p&gt;
-
-&lt;p&gt;また、&lt;code&gt;ArrayBuffer&lt;/code&gt;などはTransferable型であるため、シリアライズのコストがなく送ることができるためサイズが大きな場合は優位な点や&lt;br&gt;
-WebAssembly、SharedArrayBufferについても触れています。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;postMessage&lt;/code&gt;で送るペイロードとしてオブジェクトとバイナリをどちらを使うかの基準や計測したデータについても書かれています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ember-js-ember-3-11-released&quot;&gt;Ember.js - Ember 3.11 Released&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/07/15/ember-3-11-released.html&quot; title=&quot;Ember.js - Ember 3.11 Released&quot;&gt;blog.emberjs.com/2019/07/15/ember-3-11-released.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Ember 3.11リリース。&lt;br&gt;
-&lt;code&gt;...attributes&lt;/code&gt;構文のサポート、&lt;code&gt;helper、&lt;/code&gt; modifierの追加。&lt;br&gt;
-&lt;code&gt;Function.prototype.observes&lt;/code&gt;の非推奨化など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;recommended-security-update-yarn-blog&quot;&gt;Recommended security update | Yarn Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://yarnpkg.com/blog/2019/07/12/recommended-security-update/&quot; title=&quot;Recommended security update | Yarn Blog&quot;&gt;yarnpkg.com/blog/2019/07/12/recommended-security-update/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Yarn 1.17.3リリース。&lt;br&gt;
-&lt;code&gt;*.yarnpkg.com&lt;/code&gt;、&lt;code&gt;*.npmjs.org&lt;/code&gt;, &lt;code&gt;*.npmjs.com&lt;/code&gt;のレジストリに対する通信は自動的にhttpsで通信するようにする修正&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-typescript-3-6-beta-typescript&quot;&gt;Announcing TypeScript 3.6 Beta | TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-6-beta/&quot; title=&quot;Announcing TypeScript 3.6 Beta | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-6-beta/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.6 ベータリリース。&lt;br&gt;
-Generator/Iteratorの型改善、 Array Spreadの変換の改善、Promiseの&lt;code&gt;await&lt;/code&gt;忘れなどのエラー表示改善など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;laverdet-isolated-vm-secure-isolated-js-environments-for-nodejs&quot;&gt;laverdet/isolated-vm: Secure &amp;amp; isolated JS environments for nodejs&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/laverdet/isolated-vm&quot; title=&quot;laverdet/isolated-vm: Secure &amp;amp; isolated JS environments for nodejs&quot;&gt;github.com/laverdet/isolated-vm&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;V8 Isolateを使ってNode.jsからJavaScriptを隔離した環境で実行するライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;use-react-memo-wisely&quot;&gt;Use React.memo() wisely&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://dmitripavlutin.com/use-react-memo-wisely/&quot; title=&quot;Use React.memo() wisely&quot;&gt;dmitripavlutin.com/use-react-memo-wisely/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;React.memo()&lt;/code&gt;の役割と使い方について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;google-deprecates-xss-auditor-for-chrome-the-daily-swig&quot;&gt;Google deprecates XSS Auditor for Chrome | The Daily Swig&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://portswigger.net/daily-swig/google-deprecates-xss-auditor-for-chrome&quot; title=&quot;Google deprecates XSS Auditor for Chrome | The Daily Swig&quot;&gt;portswigger.net/daily-swig/google-deprecates-xss-auditor-for-chrome&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;XSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MSEdgeに続いてChromeのXSS Auditorも非推奨となることについて。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;es-proposal-private-class-fields&quot;&gt;ES proposal: private class fields&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://2ality.com/2019/07/private-class-fields.html&quot; title=&quot;ES proposal: private class fields&quot;&gt;2ality.com/2019/07/private-class-fields.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proposal&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ECMAScript Proposalのprivate class fieldsについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;is-postmessage-slow-dassur-ma&quot;&gt;Is postMessage slow? — DasSur.ma&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://dassur.ma/things/is-postmessage-slow/&quot; title=&quot;Is postMessage slow? — DasSur.ma&quot;&gt;dassur.ma/things/is-postmessage-slow/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;postMessage&lt;/code&gt;のパフォーマンスについての記事。Structured Clone algorithmとJSONシリアライズでのパフォーマンス比較。&lt;br&gt;
-ImmerJSを使った送信するオブジェクトの最小化、ArrayBufferのtransferableなバイナリフォーマットのパフォーマンス。&lt;br&gt;
-100kbまではオブジェクト、それ以上のサイズならバイナリを検討することについて。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;datadog-lighthouse-webperf-mediba-creator-engineer-blog&quot;&gt;Datadog と Lighthouse を利用した WebPerf の継続的計測 | mediba Creator × Engineer Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://ceblog.mediba.jp/post/186341145447/webperf-measuring-with-lighthouse-and-datadog&quot; title=&quot;Datadog と Lighthouse を利用した WebPerf の継続的計測 | mediba Creator × Engineer Blog&quot;&gt;ceblog.mediba.jp/post/186341145447/webperf-measuring-with-lighthouse-and-datadog&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Lighthouseで計測した値をDatadogに保存してメトリクスの可視化を行う方法について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;weak-references-and-finalizers-v8&quot;&gt;Weak references and finalizers · V8&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://v8.dev/features/weak-references&quot; title=&quot;Weak references and finalizers · V8&quot;&gt;v8.dev/features/weak-references&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proposal&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;WeakMap&lt;/code&gt;、&lt;code&gt;WeakSet&lt;/code&gt;のweakの動作について。&lt;br&gt;
-またECMAScript Proposalである&lt;code&gt;WeakRef&lt;/code&gt;と&lt;code&gt;FinalizationGroup&lt;/code&gt;について。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-weakrefs&quot; title=&quot;tc39/proposal-weakrefs: WeakRefs&quot;&gt;tc39/proposal-weakrefs: WeakRefs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-js-12-the-future-of-server-side-javascript-logrocket-blog&quot;&gt;Node.js 12: The future of server-side JavaScript - LogRocket Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.logrocket.com/node-js-12/&quot; title=&quot;Node.js 12: The future of server-side JavaScript - LogRocket Blog&quot;&gt;blog.logrocket.com/node-js-12/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 12の主な変更点について。&lt;br&gt;
-V8の更新によるパフォーマンス改善、TLS 1.3の対応、ヒープサイズがメモリサイズによって決まるように、HTTPパーサの改善、Diagnostic reportsやheap dumpの同梱など。&lt;br&gt;
-また&lt;code&gt;worker_thread&lt;/code&gt;のexperimentalフラグが外れ、試験的な機能としてES modulesの対応など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introduction-content-security-policy&quot;&gt;Introduction - Content Security Policy&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://csp.withgoogle.com/docs/index.html&quot; title=&quot;Introduction - Content Security Policy&quot;&gt;csp.withgoogle.com/docs/index.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;XSS&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSP(Content Security Policy)についての解説サイト。&lt;br&gt;
-CSPとはどのようにXSSを防ぐのか、使う理由/使わない理由、CSPの設定、FAQなどが書かれている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;intrinsiclabs-osgood-osgood-is-a-secure-fast-and-simple-platform-for-running-javascript-http-servers&quot;&gt;IntrinsicLabs/osgood: Osgood is a secure, fast, and simple platform for running JavaScript HTTP servers.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/IntrinsicLabs/osgood&quot; title=&quot;IntrinsicLabs/osgood: Osgood is a secure, fast, and simple platform for running JavaScript HTTP servers.&quot;&gt;github.com/IntrinsicLabs/osgood&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Rust&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Rustで書かれたV8ベースのHTTPサーバ。ルーティングのハンドラはWorkerとして実行され、リクエストに対するレスポンスを返す&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://dev.to/tlhunter/introducing-osgood-4k1m&quot; title=&quot;Introducing Osgood - DEV Community 👩‍💻👨‍💻&quot;&gt;Introducing Osgood - DEV Community 👩‍💻👨‍💻&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;zerobias-effector-the-state-manager&quot;&gt;zerobias/effector: The state manager ☄️&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/zerobias/effector&quot; title=&quot;zerobias/effector: The state manager ☄️&quot;&gt;github.com/zerobias/effector&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ステート管理ライブラリ。&lt;br&gt;
-EventsやEffectsを使い、StoreのStateを更新という一連の流れの名前空間を管理するDomainのAPIを提供しています。&lt;br&gt;
-VueやReactなどUIフレームワーク向けのアダプターも提供しています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;gajus-lightship-abstracts-readiness-liveness-checks-and-graceful-shutdown-of-node-js-services-running-in-kubernetes&quot;&gt;gajus/lightship: Abstracts readiness/ liveness checks and graceful shutdown of Node.js services running in Kubernetes.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/gajus/lightship&quot; title=&quot;gajus/lightship: Abstracts readiness/ liveness checks and graceful shutdown of Node.js services running in Kubernetes.&quot;&gt;github.com/gajus/lightship&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Kubernetes&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Kubernetesのヘルスチェックなどに対する抽象層を提供するNode.jsライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ehmicky-test-each-repeat-tests-repeat-tests-repeat-tests&quot;&gt;ehmicky/test-each: 🤖 Repeat tests. Repeat tests. Repeat tests.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/ehmicky/test-each&quot; title=&quot;ehmicky/test-each: 🤖 Repeat tests. Repeat tests. Repeat tests.&quot;&gt;github.com/ehmicky/test-each&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Data Driven Testingを行うためのヘルパーライブラリ。&lt;br&gt;
-データからテストケースを作成するためのイテレートやSeed値を元にしたランダムな値を生成してテストできる&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 23 Jul 2019 10:11:39 +0900</pubDate>
-        <link>https://jser.info/2019/07/23/typescript-3.6-betapostmessagenode.js-12/</link>
-        <guid isPermaLink="true">https://jser.info/2019/07/23/typescript-3.6-betapostmessagenode.js-12/</guid>
-        
-        <category>TypeScript</category>
-        
-        <category>performance</category>
-        
-        <category>Node.js</category>
         
         
         <category>JSer</category>
