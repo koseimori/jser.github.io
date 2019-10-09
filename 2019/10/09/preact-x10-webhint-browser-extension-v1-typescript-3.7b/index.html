@@ -197,14 +197,14 @@ Preact 9.xはスキップしてPreact 10.xになっています。</p>
 <span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s2">"preact/compat"</span><span class="p">;</span>
 </code></pre></div>
 <p>また、preact本体はdefault exportをやめたため、named importをして使う形に変更されています。</p>
-<div class="highlight"><pre><code class="language-" data-lang="">// Preact 8.x
-import Preact from "preact";
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Preact 8.x</span>
+<span class="k">import</span> <span class="nx">Preact</span> <span class="k">from</span> <span class="s2">"preact"</span><span class="p">;</span>
 
-// Preact X
-import * as preact from "preact";
+<span class="c1">// Preact X</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">preact</span> <span class="k">from</span> <span class="s2">"preact"</span><span class="p">;</span>
 
-// Preferred: Named exports (works in 8.x and Preact X)
-import { h, Component } from "preact";
+<span class="c1">// Preferred: Named exports (works in 8.x and Preact X)</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">h</span><span class="p">,</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"preact"</span><span class="p">;</span>
 </code></pre></div>
 <p>Preact 8.xから10.xへのマイグレーションガイドも公開されているので、合わせて見てください。</p>
 
