@@ -5,9 +5,275 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 04 Oct 2019 16:02:31 +0900</pubDate>
-    <lastBuildDate>Fri, 04 Oct 2019 16:02:31 +0900</lastBuildDate>
+    <pubDate>Wed, 09 Oct 2019 10:22:57 +0900</pubDate>
+    <lastBuildDate>Wed, 09 Oct 2019 10:22:57 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-10-09のJS: Preact X(10)、webhint browser extension v1、TypeScript 3.7β</title>
+        <description>&lt;p&gt;JSer.info #456 - React互換のAPIを持つPreact X(10.0.0)がリリースされました。&lt;br&gt;
+Preact 9.xはスキップしてPreact 10.xになっています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/preactjs/preact/releases/tag/10.0.0&quot;&gt;Release Preact X - Virtuous DOM and the Fragments of Suspense · preactjs/preact&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://preactjs.com/guide/v10/whats-new/&quot;&gt;What&amp;#39;s new in Preact X | Preact: Fast 3kb React alternative with the same ES6 API. Components &amp;amp; Virtual DOM.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Preact Xでは、Fragments、componentDidCatch、Hooks(&lt;code&gt;preact/hooks&lt;/code&gt;)、createContext、CSS Custom Propertiesの対応などが含まれています。&lt;br&gt;
+&lt;a href=&quot;https://preactjs.com/guide/v10/hooks/&quot;&gt;Hooks&lt;/a&gt;はPreactのコアには含まれていませんが、&lt;code&gt;preact/hooks&lt;/code&gt;または&lt;code&gt;preact/compat&lt;/code&gt;をインポートすることで対応しています。&lt;/p&gt;
+
+&lt;p&gt;また、いままでは別モジュールとなっていた&lt;code&gt;preact-compat&lt;/code&gt;が&lt;a href=&quot;https://preactjs.com/guide/v10/switching-to-preact&quot;&gt;&lt;code&gt;preact/compat&lt;/code&gt;&lt;/a&gt;という形でインポートするように変更されています。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Preact 8.x&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;preact-compat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Preact X&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;preact/compat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;また、preact本体はdefault exportをやめたため、named importをして使う形に変更されています。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;// Preact 8.x
+import Preact from &quot;preact&quot;;
+
+// Preact X
+import * as preact from &quot;preact&quot;;
+
+// Preferred: Named exports (works in 8.x and Preact X)
+import { h, Component } from &quot;preact&quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Preact 8.xから10.xへのマイグレーションガイドも公開されているので、合わせて見てください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://preactjs.com/guide/v10/upgrade-guide/&quot;&gt;Upgrading from Preact 8.x | Preact: Fast 3kb React alternative with the same ES6 API. Components &amp;amp; Virtual DOM.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;ウェブサイト向けのLintツールである&lt;a href=&quot;https://webhint.io/&quot;&gt;webhint&lt;/a&gt;のブラウザ拡張版がv1となりました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/09/30/announcing-the-webhint-v1-browser-extension-for-microsoft-edge/#U2qsHqfdpdTkuKGc.97&quot;&gt;Announcing the webhint v1 browser extension for Microsoft Edge - Microsoft Edge Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/webhint/announcing-the-webhint-browser-extension-abb22f4cfeb&quot;&gt;beta版&lt;/a&gt;からの追加点として、&lt;br&gt;
+MDN browser compat dataを使ったクロスブラウザの互換情報の表示、カラーコントラストについてのHintの追加などが含まれています。&lt;/p&gt;
+
+&lt;p&gt;Chrome(lighthouse)のAuditとの違いとして、webhintはクロスブラウザに関するチェックをあげています。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The webhint extension doesn’t replace the existing audits tab you’ll find in the developer tools for Chrome and the new Chromium-based Edge browser. While there is a little overlap in the information provided, webhint and Lighthouse serve different purposes, and you may find yourself using both. One distinguishing feature of webhint that it’s meant to provide cross-browser insights, including compatibility with Safari, IE, Opera, and so on.&lt;br&gt;
+-- &lt;a href=&quot;https://medium.com/webhint/announcing-the-webhint-browser-extension-abb22f4cfeb&quot;&gt;https://medium.com/webhint/announcing-the-webhint-browser-extension-abb22f4cfeb&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;TypeScript 3.7 Betaがリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-7-beta/&quot;&gt;Announcing TypeScript 3.7 Beta | TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/microsoft/TypeScript/issues/33352&quot;&gt;TypeScript 3.7 Iteration Plan · Issue #33352 · microsoft/TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ECMAScriptのStage 3 Proposalである&lt;a href=&quot;https://github.com/tc39/proposal-optional-chaining&quot;&gt;Optional Chaining&lt;/a&gt;と&lt;a href=&quot;https://github.com/tc39/proposal-nullish-coalescing&quot;&gt;Nullish Coalescing&lt;/a&gt;がサポートされています。&lt;br&gt;
+また、&lt;code&gt;asserts&lt;/code&gt;によるコントールフロー制御を行うAssertion Functionsがサポートされています。&lt;br&gt;
+その他には、&lt;code&gt;--declaration&lt;/code&gt;と&lt;code&gt;--allowJs&lt;/code&gt;の組み合わせのサポートが含まれています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-preact-x-virtuous-dom-and-the-fragments-of-suspense-preactjs-preact&quot;&gt;Release Preact X - Virtuous DOM and the Fragments of Suspense · preactjs/preact&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/preactjs/preact/releases/tag/10.0.0&quot; title=&quot;Release Preact X - Virtuous DOM and the Fragments of Suspense · preactjs/preact&quot;&gt;github.com/preactjs/preact/releases/tag/10.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Preact X(10.0.0)リリース。&lt;br&gt;
+&lt;code&gt;Fragments&lt;/code&gt;、&lt;code&gt;componentDidCatch&lt;/code&gt;、&lt;code&gt;createContext&lt;/code&gt;のサポート、Hooks APIのサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://preactjs.com/guide/v10/whats-new/&quot; title=&quot;What&amp;amp;#x27;s new in Preact X | Preact: Fast 3kb React alternative with the same ES6 API. Components &amp;amp;amp; Virtual DOM.&quot;&gt;What&amp;#39;s new in Preact X | Preact: Fast 3kb React alternative with the same ES6 API. Components &amp;amp; Virtual DOM.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://preactjs.com/guide/v10/upgrade-guide/&quot; title=&quot;Upgrading from Preact 8.x | Preact: Fast 3kb React alternative with the same ES6 API. Components &amp;amp;amp; Virtual DOM.&quot;&gt;Upgrading from Preact 8.x | Preact: Fast 3kb React alternative with the same ES6 API. Components &amp;amp; Virtual DOM.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v3-2-0-facebook-create-react-app&quot;&gt;Release v3.2.0 · facebook/create-react-app&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/create-react-app/releases/tag/v3.2.0&quot; title=&quot;Release v3.2.0 · facebook/create-react-app&quot;&gt;github.com/facebook/create-react-app/releases/tag/v3.2.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;create-react-app 3.2.0リリース。&lt;br&gt;
+&lt;code&gt;yarn build --profile&lt;/code&gt;でproduction buildでのプロファイル対応、&lt;code&gt;TSC_COMPILE_ON_ERROR&lt;/code&gt;のサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;vuejs-vue-next&quot;&gt;vuejs/vue-next&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/vuejs/vue-next&quot; title=&quot;vuejs/vue-next&quot;&gt;github.com/vuejs/vue-next&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Github&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vue 3候補のソースコードが公開された&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-typescript-3-7-beta-typescript&quot;&gt;Announcing TypeScript 3.7 Beta | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-7-beta/&quot; title=&quot;Announcing TypeScript 3.7 Beta | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-7-beta/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 3.7 Betaリリース。&lt;br&gt;
+Optional Chaining、Nullish Coalescing、Assertion Functionsのサポート。&lt;br&gt;
+&lt;code&gt;--declaration&lt;/code&gt;と&lt;code&gt;--allowJs&lt;/code&gt;の組み合わせのサポート、TypeScriptファイル内で&lt;code&gt;// @ts-nocheck&lt;/code&gt;の追加など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/microsoft/TypeScript/issues/33352&quot; title=&quot;TypeScript 3.7 Iteration Plan · Issue #33352 · microsoft/TypeScript&quot;&gt;TypeScript 3.7 Iteration Plan · Issue #33352 · microsoft/TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v5-5-0-googlechrome-lighthouse&quot;&gt;Release v5.5.0 · GoogleChrome/lighthouse&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse/releases/tag/v5.5.0&quot; title=&quot;Release v5.5.0 · GoogleChrome/lighthouse&quot;&gt;github.com/GoogleChrome/lighthouse/releases/tag/v5.5.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Lighthouse 5.5.0リリース。&lt;br&gt;
+Largest Contentful Paint(LCP)のサポート&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;version-1-0-released-node-red&quot;&gt;Version 1.0 released : Node-RED&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodered.org/blog/2019/09/30/version-1-0-released&quot; title=&quot;Version 1.0 released : Node-RED&quot;&gt;nodered.org/blog/2019/09/30/version-1-0-released&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;IoT&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;フローベースのビジュアルエディタを使って、Node.jsで動くプログラムを作成できるツールキットであるNode-RED 1.0リリース。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-the-webhint-v1-browser-extension-for-microsoft-edge-microsoft-edge-blog&quot;&gt;Announcing the webhint v1 browser extension for Microsoft Edge - Microsoft Edge Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/09/30/announcing-the-webhint-v1-browser-extension-for-microsoft-edge/&quot; title=&quot;Announcing the webhint v1 browser extension for Microsoft Edge - Microsoft Edge Blog&quot;&gt;blogs.windows.com/msedgedev/2019/09/30/announcing-the-webhint-v1-browser-extension-for-microsoft-edge/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Extension&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webhint browser extension 1.0.0リリース。&lt;br&gt;
+プラグインでカスタマイズできるウェブサイト向けのLintツールのブラウザ拡張版。&lt;br&gt;
+MDN browser compat dataを使ったクロスブラウザの互換情報の表示、カラーコントラストについてのHintの追加など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webhint.io/&quot; title=&quot;webhint, the hinting engine for web best practices&quot;&gt;webhint, the hinting engine for web best practices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/webhint/the-webhint-browser-extension-v1-release-df9044ddaf69&quot;&gt;webhint browser extension&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-2019-edition&quot;&gt;I created the exact same app in React and Vue. Here are the differences. [2019 Edition]&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-2019-edition-42ba2cab9e56&quot; title=&quot;I created the exact same app in React and Vue. Here are the differences. \[2019 Edition\]&quot;&gt;medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-2019-edition-42ba2cab9e56&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ReactとVueでのTodoアプリを例にした比較。&lt;br&gt;
+React Hooksに対応したバージョン&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;fixing-layout-instability-web-dev&quot;&gt;Fixing layout instability  |  web.dev&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/fixing-layout-instability/&quot; title=&quot;Fixing layout instability  |  web.dev&quot;&gt;web.dev/fixing-layout-instability/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;PerformanceObserver&lt;/code&gt;でCumulative Layout Shift (CLS)を計測し、どのようなレイアウトの変化が起きてるのかをWebPageTestで確認する方法について。&lt;br&gt;
+また、実際にプレースホルダーデータを使ってlayout instabilityを修正する方法について。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://dev.to/chromiumdev/measuring-cumulative-layout-shift-cls-in-webpagetest-5cle&quot; title=&quot;Measuring Cumulative Layout Shift (CLS) in WebPageTest - DEV Community 👩‍💻👨‍💻&quot;&gt;Measuring Cumulative Layout Shift (CLS) in WebPageTest - DEV Community 👩‍💻👨‍💻&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;how-to-read-a-web-page-test-waterfall-chart-frontend-web-developer-oxfordshire-uk-matt-hobbs&quot;&gt;How to read a Web Page Test waterfall chart - Frontend Web Developer, Oxfordshire, UK - Matt Hobbs&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nooshu.github.io/blog/2019/10/02/how-to-read-a-wpt-waterfall-chart/&quot; title=&quot;How to read a Web Page Test waterfall chart - Frontend Web Developer, Oxfordshire, UK - Matt Hobbs&quot;&gt;nooshu.github.io/blog/2019/10/02/how-to-read-a-wpt-waterfall-chart/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebPageTestのウォーターフォールチャートの読み方について。&lt;br&gt;
+図の要素ごとに解説やHTTP/1.1とHTTP/2での流れの違いなどについて書かれている&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;accessibility-support&quot;&gt;Accessibility Support&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://a11ysupport.io/&quot; title=&quot;Accessibility Support&quot;&gt;a11ysupport.io/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WAI-ARIA&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;スクリーンリーダごとのWAI-ARIAなどのアクセシビリティサポート状況についてまとめているサイト。&lt;br&gt;
+Can I Use...のアクセシビリティ版&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;cevek-ttypescript-over-typescript-tool-to-use-custom-transformers-in-the-tsconfig-json&quot;&gt;cevek/ttypescript: Over TypeScript tool to use custom transformers in the tsconfig.json&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/cevek/ttypescript&quot; title=&quot;cevek/ttypescript: Over TypeScript tool to use custom transformers in the tsconfig.json&quot;&gt;github.com/cevek/ttypescript&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;plugin&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScriptでのコンパイル処理に対して、プラグインで変換処理を追加できるコンパイラーの実装&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;algolia-shipjs-take-control-of-what-is-going-to-be-your-next-release&quot;&gt;algolia/shipjs: Take control of what is going to be your next release.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/algolia/shipjs&quot; title=&quot;algolia/shipjs: Take control of what is going to be your next release.&quot;&gt;github.com/algolia/shipjs&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CI &lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;リリースの準備とリリースを行うツール。&lt;br&gt;
+semantic-releaseとは異なりすべてを自動で行うのではなく、Pull Requestを作成して、手動で確認やCHANGELOGの更新をしてからリリースを行うといったプロセスが取れる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;fengyuanchen-cropperjs-javascript-image-cropper&quot;&gt;fengyuanchen/cropperjs: JavaScript image cropper.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/fengyuanchen/cropperjs&quot; title=&quot;fengyuanchen/cropperjs: JavaScript image cropper.&quot;&gt;github.com/fengyuanchen/cropperjs&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Image Cropperライブラリ。&lt;br&gt;
+画像の切り抜き、回転、移動などができる画像加工を行うライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;bin-huang-prray-promisified-array-comes-with-async-method-supports-such-as-mapasync-and-it-is-compatible-with-normal-array&quot;&gt;Bin-Huang/prray: &amp;quot;Promisified&amp;quot; Array, comes with async method supports(such as mapAsync). And it is compatible with normal array.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Bin-Huang/prray&quot; title=&quot;Bin-Huang/prray: \&amp;quot;Promisified\&amp;quot; Array, comes with async method supports(such as mapAsync). And it is compatible with normal array.&quot;&gt;github.com/Bin-Huang/prray&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Promises&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;コールバック関数にAsync Functionを取るArrayの実装ライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Wed, 09 Oct 2019 09:17:09 +0900</pubDate>
+        <link>https://jser.info/2019/10/09/preact-x10-webhint-browser-extension-v1-typescript-3.7b/</link>
+        <guid isPermaLink="true">https://jser.info/2019/10/09/preact-x10-webhint-browser-extension-v1-typescript-3.7b/</guid>
+        
+        <category>Preact</category>
+        
+        <category>webhint</category>
+        
+        <category>typescript</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-09-30のJS: React 16.10.0、Node.js 12.11.0(worker_thread)、ネットワークリクエストとUI更新の競合</title>
@@ -2277,250 +2543,6 @@ Postgres、MySQL、SQLiteなどに対応してる&lt;/p&gt;
         <category>React</category>
         
         <category>Slack</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-07-30のJS: mithril.js 2、Electron 6、React入門ガイド</title>
-        <description>&lt;p&gt;JSer.info #446 - シングルページアプリケーション向けのJavaScriptフレームワークである&lt;a href=&quot;https://github.com/MithrilJS/mithril.js&quot;&gt;Mithril&lt;/a&gt; 2がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/MithrilJS/mithril.js/releases/tag/v2.0.1&quot;&gt;Release v2.0.1 · MithrilJS/mithril.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;破壊的変更として&lt;code&gt;m.redraw()&lt;/code&gt;がデフォルトで非同期となり、代わりに&lt;code&gt;m.redraw.sync()&lt;/code&gt;が追加されています。&lt;br&gt;
-その他にも&lt;code&gt;m.withAttr&lt;/code&gt;の削除、&lt;code&gt;m.request&lt;/code&gt;が返すPromiseがサーバエラーの場合にもrejectされないように変更、IE10以下のサポート終了なども含まれています。&lt;br&gt;
-また、&lt;code&gt;m.request&lt;/code&gt;が&lt;code&gt;timeout&lt;/code&gt;や&lt;code&gt;responseType&lt;/code&gt;のサポートなどの機能追加も含まれています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Electron 6.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/electron/electron/releases/tag/v6.0.0&quot;&gt;Release electron v6.0.0 · electron/electron&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://electronjs.org/releases/stable&quot;&gt;Stable Releases | Electron&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Chromium 76へのアップデートやCookies APIでPromiseのサポート、macOSでTouch IDでの認証を行う&lt;code&gt;SystemPreferences.promptTouchID()&lt;/code&gt;の追加などが行われています。&lt;br&gt;
-また、sandboxed renderersでの利用が非推奨となっていた&lt;code&gt;fs&lt;/code&gt;や&lt;code&gt;child_process&lt;/code&gt;などを直接&lt;code&gt;require&lt;/code&gt;できる挙動が削除されています。&lt;br&gt;
-代わりに明示的な &lt;code&gt;remote.require&lt;/code&gt; を使う必要があります。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-diff&quot; data-lang=&quot;diff&quot;&gt;&lt;span class=&quot;gd&quot;&gt;- require('fs');
-&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+ require('electron').remote.require('fs')
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://electronjs.org/blog/electron-5-0#automatic-modules-with-sandboxed-webcontents&quot;&gt;Electron 5.0.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/electron/electron/pull/15957&quot;&gt;chore: remove deprecated modules internally using remote.require in sandboxed renderer context by miniak · Pull Request #15957 · electron/electron&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2019/06/chrome-76-beta-dark-mode-payments-new.html&quot; title=&quot;Chromium Blog: Chrome 76 Beta: dark mode, payments, new PWA features and more&quot;&gt;Chromium Blog: Chrome 76 Beta: dark mode, payments, new PWA features and more&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jscomplete.com/learn/complete-intro-react&quot;&gt;The Complete Introduction to React&lt;/a&gt;というドキュメントでは、React入門者向けのガイドが公開されています。&lt;/p&gt;
-
-&lt;p&gt;基本的なReactの概念、JSX、コンポーネント、Hooks APIなどサンプルコードを動かしながら学べるようになっています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2-0-1-mithriljs-mithril-js&quot;&gt;Release v2.0.1 · MithrilJS/mithril.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/MithrilJS/mithril.js/releases/tag/v2.0.1&quot; title=&quot;Release v2.0.1 · MithrilJS/mithril.js&quot;&gt;github.com/MithrilJS/mithril.js/releases/tag/v2.0.1&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;mithril.js 2.0リリース。&lt;br&gt;
-破壊的変更として&lt;code&gt;m.redraw()&lt;/code&gt;がデフォルトで非同期となり&lt;code&gt;m.redraw.sync()&lt;/code&gt;の追加、&lt;code&gt;m.withAttr&lt;/code&gt;の削除など。&lt;br&gt;
-また、&lt;code&gt;m.request&lt;/code&gt;が&lt;code&gt;timeout&lt;/code&gt;や&lt;code&gt;responseType&lt;/code&gt;のサポート、IE10以下のサポート終了など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v12-7-0-current-node-js&quot;&gt;Node v12.7.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.7.0/&quot; title=&quot;Node v12.7.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.7.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node v12.7.0リリース。&lt;br&gt;
-npm 6.10.0へアップデート、&lt;code&gt;pkg-exports&lt;/code&gt; Proposalの試験的サポート、Policyのチェックを行う&lt;code&gt;--policy-integrity=sri&lt;/code&gt;オプションの追加。&lt;br&gt;
-また、DockerのMemory制限(linux cgroupsでの設定)を正しく取得するように修正など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v5-2-0-googlechrome-lighthouse&quot;&gt;Release v5.2.0 · GoogleChrome/lighthouse&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse/releases/tag/v5.2.0&quot; title=&quot;Release v5.2.0 · GoogleChrome/lighthouse&quot;&gt;github.com/GoogleChrome/lighthouse/releases/tag/v5.2.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Lighthouse 5.2.0リリース。&lt;br&gt;
-Chrome 77に搭載予定。サードパーティスクリプトのパフォーマンスへの影響を表示できるように、メインスレッドの合計ブロック時間の計測など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/patrickhulce/third-party-web&quot; title=&quot;patrickhulce/third-party-web: Data on third party entities and their impact on the web.&quot;&gt;patrickhulce/third-party-web: Data on third party entities and their impact on the web.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v4-38-0-webpack-webpack&quot;&gt;Release v4.38.0 · webpack/webpack&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/webpack/webpack/releases/tag/v4.38.0&quot; title=&quot;Release v4.38.0 · webpack/webpack&quot;&gt;github.com/webpack/webpack/releases/tag/v4.38.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpack v4.38.0 リリース。&lt;br&gt;
-ProgressPluginのパフォーマンス改善、chunk graphを生成時に親子関係を追跡することでインクリメントビルド時のchunk生成パフォーマンスを改善など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2-0-0-vuetifyjs-vuetify&quot;&gt;Release v2.0.0 · vuetifyjs/vuetify&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/vuetifyjs/vuetify/releases/tag/v2.0.0&quot; title=&quot;Release v2.0.0 · vuetifyjs/vuetify&quot;&gt;github.com/vuetifyjs/vuetify/releases/tag/v2.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;VueでMaterial Designを行うUIライブラリのVuetify 2.0リリース。&lt;br&gt;
-Material Design 2に対応、新しいコンポーネントの追加など。&lt;br&gt;
-1.5からのマイグレーションガイドも併せて公開されている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-electron-v6-0-0-electron-electron&quot;&gt;Release electron v6.0.0 · electron/electron&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/electron/electron/releases/tag/v6.0.0&quot; title=&quot;Release electron v6.0.0 · electron/electron&quot;&gt;github.com/electron/electron/releases/tag/v6.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Electron 6.0.0リリース。&lt;br&gt;
-Chromium 76へのアップデート、Cookies APIでPromiseのサポート、macOSでTouch IDでの認証を行う&lt;code&gt;promptTouchID()&lt;/code&gt;の追加など。&lt;br&gt;
-sandboxed renderersで非推奨となっていた&lt;code&gt;require(&amp;#39;fs&amp;#39;)&lt;/code&gt;などでrequireできる挙動の削除など。代わりに明示的な &lt;code&gt;remote.require&lt;/code&gt; を使う必要がある。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2019/06/chrome-76-beta-dark-mode-payments-new.html&quot; title=&quot;Chromium Blog: Chrome 76 Beta: dark mode, payments, new PWA features and more&quot;&gt;Chromium Blog: Chrome 76 Beta: dark mode, payments, new PWA features and more&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;whats-new-in-devtools-chrome-77-web-google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 77)  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/07/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 77)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/07/devtools&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 77の開発者ツールの更新点について。&lt;br&gt;
-要素のスタイルをコピーできるよう、Layout Instabilityの可視化、Lighthouse 5.1へのアップデート、ネットワークパネルにPrefetch cacheの表示が出るように。&lt;br&gt;
-また、Push通知などがApplicationパネルで確認できるようになるなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;understanding-service-worker-life-cycle-vipul-nema-medium&quot;&gt;Understanding service worker life cycle - Vipul Nema - Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@vipulnema2610/understanding-service-worker-life-cycle-b6580aa4eb50&quot; title=&quot;Understanding service worker life cycle - Vipul Nema - Medium&quot;&gt;medium.com/@vipulnema2610/understanding-service-worker-life-cycle-b6580aa4eb50&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Service Workerのライフサイクルの解説&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;keeping-things-fresh-with-stale-while-revalidate-web-dev&quot;&gt;Keeping things fresh with stale-while-revalidate  |  web.dev&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/stale-while-revalidate/&quot; title=&quot;Keeping things fresh with stale-while-revalidate  |  web.dev&quot;&gt;web.dev/stale-while-revalidate/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 75とFirefox 68でサポートされた&lt;code&gt;stale-while-revalidate&lt;/code&gt; HTTPヘッダサポートについて。&lt;br&gt;
-一定時間はキャッシュを利用するが、同時にバックグラウンドでキャッシュを更新する。&lt;br&gt;
-&lt;code&gt;Cache-Control: max-age=1, stale-while-revalidate=59&lt;/code&gt;の挙動解説やユースケースなどについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;modern-script-loading&quot;&gt;Modern Script Loading&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jasonformat.com/modern-script-loading/&quot; title=&quot;Modern Script Loading&quot;&gt;jasonformat.com/modern-script-loading/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;scirpt要素でES Moduleに対応したモダンビルドとlegacyビルドの読み分けについて。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-npm-blog-monorepos-and-npm&quot;&gt;The npm Blog — Monorepos and npm&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.npmjs.org/post/186494959890/monorepos-and-npm&quot; title=&quot;The npm Blog — Monorepos and npm&quot;&gt;blog.npmjs.org/post/186494959890/monorepos-and-npm&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npmを使ったmonorepoについて。&lt;br&gt;
-lernaを使ったmonorepoの管理について紹介されている&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/lerna/lerna&quot; title=&quot;lerna/lerna: A tool for managing JavaScript projects with multiple packages.&quot;&gt;lerna/lerna: A tool for managing JavaScript projects with multiple packages.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-complete-introduction-to-react&quot;&gt;The Complete Introduction to React&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jscomplete.com/learn/complete-intro-react&quot; title=&quot;The Complete Introduction to React&quot;&gt;jscomplete.com/learn/complete-intro-react&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React初心者向けに書かれたガイド。&lt;br&gt;
-Reactの基本的な書き方、JSX、コンポーネント、Hooks API、ユーザー入力の扱い方、副作用の管理についてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;scrapbox-serviceworker-cache-daiiz&quot;&gt;ScrapboxでのServiceWorkerとCacheの活用 - daiiz&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://scrapbox.io/daiiz/Scrapbox%E3%81%A7%E3%81%AEServiceWorker%E3%81%A8Cache%E3%81%AE%E6%B4%BB%E7%94%A8&quot; title=&quot;ScrapboxでのServiceWorkerとCacheの活用 - daiiz&quot;&gt;scrapbox.io/daiiz/Scrapbox%E3%81%A7%E3%81%AEServiceWorker%E3%81%A8Cache%E3%81%AE%E6%B4%BB%E7%94%A8&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Service Workerを使ったキャッシュ戦略についてのスライド。&lt;br&gt;
-&lt;code&gt;request.destination&lt;/code&gt;を使ったリクエスト判定、Quotaの容量と使用量、&lt;code&gt;X-Serviceworker-Cache&lt;/code&gt;のレスポンスヘッダでのキャッシュ判定、キャッシュの更新についてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;cube-js-cube-js-cube-js-open-source-analytics-framework&quot;&gt;cube-js/cube.js: 📊 Cube.js - Open Source Analytics Framework&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/cube-js/cube.js&quot; title=&quot;cube-js/cube.js: 📊 Cube.js - Open Source Analytics Framework&quot;&gt;github.com/cube-js/cube.js&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;データベース&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Analyticsフレームワーク。&lt;br&gt;
-分析データを保存、解析するためのバックエンドと分析したデータをグラフ表示、検索するためのフロントエンドを持つフレームワーク。&lt;br&gt;
-データベースはMySQL、Postgres、BigQuery、redshiftなどの各種データベースに対応している。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-js-jonathanwexler&quot;&gt;入門Node.jsプログラミング（JonathanWexler 吉川邦夫 吉川邦夫）｜翔泳社の本&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.shoeisha.co.jp/book/detail/9784798158624&quot; title=&quot;入門Node.jsプログラミング（JonathanWexler 吉川邦夫 吉川邦夫）｜翔泳社の本&quot;&gt;www.shoeisha.co.jp/book/detail/9784798158624&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;翻訳&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2019年09月25日発売&lt;br&gt;
-Get Programming with Node.jsの翻訳本。&lt;br&gt;
-ES2015をベースにしたNode.js入門本&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 30 Jul 2019 09:18:44 +0900</pubDate>
-        <link>https://jser.info/2019/07/30/mithril.js-2electron-6react/</link>
-        <guid isPermaLink="true">https://jser.info/2019/07/30/mithril.js-2electron-6react/</guid>
-        
-        <category>mithril</category>
-        
-        <category>Electron</category>
-        
-        <category>React</category>
         
         
         <category>JSer</category>
