@@ -1,0 +1,378 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-10-15のJS: webpack 5β、Next.js(create-next-app)、Same-Site Cookies - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/10/15/webpack-5bnext.jscreate-next-appsame-site-cookies/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-10-15のJS: webpack 5β、Next.js(create-next-app)、Same-Site Cookies"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-10-15のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://blogs.bing.com/webmaster/october-2019/The-new-evergreen-Bingbot-simplifying-SEO-by-leveraging-Microsoft-Edge">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">The new evergreen Bingbot simplifying SEO by leveraging Microsoft Edge | Webmaster Blog</amp-fit-text>
+            <p class="item-contents">BingがChromiumベースのMSEdgeを採用。
+クロールするBingbotがChrome相当になり、定期的に最新のStableにアップデートされる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="The new evergreen Bingbot simplifying SEO by leveraging Microsoft Edge | Webmaster Blog" href="https://blogs.bing.com/webmaster/october-2019/The-new-evergreen-Bingbot-simplifying-SEO-by-leveraging-Microsoft-Edge" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/zeit/next.js/releases/tag/v9.1.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v9.1.0 · zeit/next.js</amp-fit-text>
+            <p class="item-contents">Next.js 9.1.0リリース。
+<code>src/pages</code>ディレクトリのサポート、<code>next export</code>で<code>public/</code>ディレクトリへ出力できるように
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v9.1.0 · zeit/next.js" href="https://github.com/zeit/next.js/releases/tag/v9.1.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/webpack/webpack/issues/9802">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">webpack 5 beta feedback · Issue #9802 · webpack/webpack</amp-fit-text>
+            <p class="item-contents">webpack 5βリリース。
+Node.jsコアモジュールの自動Polyfillの削除、Long TermキャッシュのためにChunkとModule Idのハッシュアルゴリズムの変更、オプション名の変更など。
+ファイルシステムキャッシュ設定の追加、Tree Shakingの改善、<code>output.ecmaVersion</code>オプションの追加。
+また試験的な機能として、<code>asset</code> module typeの追加、Top Level <code>await</code>のサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="webpack 5 beta feedback · Issue #9802 · webpack/webpack" href="https://github.com/webpack/webpack/issues/9802" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v12.12.0/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v12.12.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 12.12.0リリース。
+<code>fs.opendir()</code>、<code>fs.Dir</code>の追加、<code>--enable-source-maps</code>でのスタックトレースのSource Mapサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v12.12.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v12.12.0/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nextjs.org/blog/create-next-app">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Blog - Introducing Create Next App | Next.js</amp-fit-text>
+            <p class="item-contents"><code>create-next-app</code>がNext.jsの公式プロジェクトになった。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Blog - Introducing Create Next App | Next.js" href="https://nextjs.org/blog/create-next-app" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://v8.dev/features/top-level-await">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Top-level await · V8</amp-fit-text>
+            <p class="item-contents">Top-level <code>await</code>について。
+Top-level <code>await</code>のユースケースや実行順序などの挙動についてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Top-level await · V8" href="https://v8.dev/features/top-level-await" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://textslashplain.com/2019/09/30/same-site-cookies-by-default/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Same-Site Cookies By Default | text/plain</amp-fit-text>
+            <p class="item-contents">Chrome 80でされるSameSite=Laxのデフォルト化について。
+CookieのSecurityとPrivacyの問題、Same-Site Cookiesの目的、CSRF攻撃からの保護、HTTPOnly属性やSecure属性について。
+またSame-Siteがデフォルトとなった場合の実際の影響や他のブラウザの対応、2分間の緩和についてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Same-Site Cookies By Default | text/plain" href="https://textslashplain.com/2019/09/30/same-site-cookies-by-default/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.logrocket.com/whats-new-in-chrome-78/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">What&#039;s new in Chrome 78 - LogRocket Blog</amp-fit-text>
+            <p class="item-contents">Chrome 78の変更点について。
+CSS opacityの<code>%</code>サポート、ES ProposalのOptional Chaining、<code>unload</code>時の制限、User Timing Lv3、WebSocketStreamのサポートなど。
+Origin TrialとしてサポートされたNative File System APIやSMS Receiver APIについてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="What&#039;s new in Chrome 78 - LogRocket Blog" href="https://blog.logrocket.com/whats-new-in-chrome-78/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/masashi/number-v-kansai-11">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Vue.js Performance Tips / #v\_kansai 11 - Speaker Deck</amp-fit-text>
+            <p class="item-contents">Vue.jsアプリのパフォーマンス改善についてのスライド。
+IntersectionObserverを使った表示サれたことの検知、画像の遅延ロード、Hydrationの遅延実行などについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Vue.js Performance Tips / #v\_kansai 11 - Speaker Deck" href="https://speakerdeck.com/masashi/number-v-kansai-11" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/lirantal/is-website-vulnerable">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">lirantal/is-website-vulnerable: finds publicly known security vulnerabilities in a website&#039;s frontend JavaScript libraries</amp-fit-text>
+            <p class="item-contents">指定したURLに脆弱性のあるライブラリが使われているかを判定するツール。
+Synxベースの脆弱性判定をしている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="lirantal/is-website-vulnerable: finds publicly known security vulnerabilities in a website&#039;s frontend JavaScript libraries" href="https://github.com/lirantal/is-website-vulnerable" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/leeoniya/uPlot">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">leeoniya/uPlot: An exceptionally fast, tiny time series chart</amp-fit-text>
+            <p class="item-contents">ファイルサイズが小さな時系列グラフライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="leeoniya/uPlot: An exceptionally fast, tiny time series chart" href="https://github.com/leeoniya/uPlot" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/devforth/painterro">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">devforth/painterro: Painterro - JavaScript painting plugin</amp-fit-text>
+            <p class="item-contents">画像エディタライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="devforth/painterro: Painterro - JavaScript painting plugin" href="https://github.com/devforth/painterro" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/luwes/sinuous">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">luwes/sinuous: Small, fast, reactive UI library</amp-fit-text>
+            <p class="item-contents"><code>htm</code>構文、Hyperscript、JSXに対応したUIライブラリ。
+observableな値監視の仕組みも提供し、小さなファイルサイズでUIを作成できるようにすることが目的
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="luwes/sinuous: Small, fast, reactive UI library" href="https://github.com/luwes/sinuous" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
