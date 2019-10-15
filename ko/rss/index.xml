@@ -5,9 +5,243 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 15 Oct 2019 10:32:18 +0900</pubDate>
-    <lastBuildDate>Tue, 15 Oct 2019 10:32:18 +0900</lastBuildDate>
+    <pubDate>Wed, 16 Oct 2019 00:21:12 +0900</pubDate>
+    <lastBuildDate>Wed, 16 Oct 2019 00:21:12 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-10-15のJS: webpack 5β、Next.js(create-next-app)、Same-Site Cookies</title>
+        <description>&lt;p&gt;JSer.info #457 - webpack 5β가 릴리스되어 베타 피드백을 받는 이슈가 함께 생성됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/webpack/webpack/issues/9802&quot;&gt;webpack 5 beta feedback · Issue #9802 · webpack/webpack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/webpack/changelog-v5/blob/master/README.md&quot;&gt;changelog-v5/README.md at master · webpack/changelog-v5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;webpack 5β의 비호환적 변경사항으로 Node.js 코어 모듈 자동 폴리필(automatic Node.js polyfills)을 삭제했고 장기적(long term) 캐시를 위해서 Chunk와 Module Id 해쉬 알고리즘을 변경했습니다. 또, 몇 가지 옵션명이 변경됐습니다. &lt;/p&gt;
+
+&lt;p&gt;그 외 기능적인 측면으로 파일 시스템 캐시 설정 추가, Tree Shaking 개선, &lt;code&gt;output.ecmaVersion&lt;/code&gt; 옵션이 추가됐습니다.&lt;br&gt;
+또 실험적 기능으로서 &lt;code&gt;asset&lt;/code&gt; module type이 추가됐고 Top Level &lt;code&gt;await&lt;/code&gt;를 지원합니다.&lt;/p&gt;
+
+&lt;p&gt;4.x에서 5.x로의 마이그레이션 가이드도 함께 공개됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/webpack/changelog-v5/blob/master/MIGRATION%20GUIDE.md&quot;&gt;changelog-v5/MIGRATION GUIDE.md at master · webpack/changelog-v5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;베타 피드벡 이슈에서는 버그나 성능 회귀(performance regression), Breaking Change에 대한 의견을 모집하고 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Next.js 9.1.0이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nextjs.org/blog/next-9-1&quot;&gt;Blog - Next.js 9.1 | Next.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/releases/tag/v9.1.0&quot;&gt;Release v9.1.0 · zeit/next.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Next.js 9.1.0에서는 &lt;code&gt;src/pages&lt;/code&gt; 디렉터리 지원하며 &lt;code&gt;public/&lt;/code&gt; 디렉터리를 이용해 정적 파일의 루트 서빙을 할 수 있게 됐습니다. 따라서 기존과 같이 &lt;code&gt;static/&lt;/code&gt;을 사용하면 비권장 메시지가 출력됩니다.&lt;br&gt;
+또, 다음과 같은 실험적 기능이 플래그가 붙어 구현됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Built-in CSS Support&lt;/li&gt;
+&lt;li&gt;Static Error Pages&lt;/li&gt;
+&lt;li&gt;Module / Nomodule 출력&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이 외로 지금까지 커뮤니티에서 관리하던 &lt;code&gt;create-next-app&lt;/code&gt;를 공식적으로 이관했습니다.&lt;br&gt;
+&lt;a href=&quot;https://github.com/zeit/next.js/tree/canary/examples&quot;&gt;공식 예제&lt;/a&gt; 문서도 &lt;code&gt;create-next-app&lt;/code&gt;을 사용하는 형태로 변경되는 것 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nextjs.org/blog/create-next-app&quot;&gt;Blog - Introducing Create Next App | Next.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://textslashplain.com/2019/09/30/same-site-cookies-by-default/&quot;&gt;Same-Site Cookies By Default | text/plain&lt;/a&gt;에는 Same-Site Cookie에 대해서 자세히 소개돼 있습니다.&lt;/p&gt;
+
+&lt;p&gt;Chrome 80에서 Cookie 기본 정책을 &lt;code&gt;SameSite=Lax&lt;/code&gt;로 변경할 예정이라는 소식과 함께 Same-Site Cookies의 목적과 실제 영향에 대해서 이야기 합니다.&lt;br&gt;
+CSRF 공격으로부터 방어적으로 도움이 되는 부분과 Cookie의 HTTPOnly 속성과 Secure 속성에 대해서도 작성돼 있습니다.&lt;br&gt;
+또 Same-Site가 기본이 돼 있을 경우 발생할 수 있는 영향과 다른 브라우저의 대응 현황에 대해서도 소개합니다. &lt;/p&gt;
+
+&lt;p&gt;Same-Site Cookies는 &lt;code&gt;SameSite=None&lt;/code&gt;이라고 설정하는 것으로 기능을 끌 수 있으나 &lt;a href=&quot;https://bugs.webkit.org/show_bug.cgi?id=198181&quot;&gt;Safari 12에서 &lt;code&gt;SameSite=None&lt;/code&gt;을 &lt;code&gt;SameSite=Strict&lt;/code&gt;&lt;/a&gt;으로 취급하는 버그가 있다는 사실과 디버깅하는 방법을 소개하는 등 이를 다룰때 발생할 수 있는 문제에 대해서도 언급합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-new-evergreen-bingbot-simplifying-seo-by-leveraging-microsoft-edge-webmaster-blog&quot;&gt;The new evergreen Bingbot simplifying SEO by leveraging Microsoft Edge | Webmaster Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.bing.com/webmaster/october-2019/The-new-evergreen-Bingbot-simplifying-SEO-by-leveraging-Microsoft-Edge&quot; title=&quot;The new evergreen Bingbot simplifying SEO by leveraging Microsoft Edge | Webmaster Blog&quot;&gt;blogs.bing.com/webmaster/october-2019/The-new-evergreen-Bingbot-simplifying-SEO-by-leveraging-Microsoft-Edge&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;SEO&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Bing 엔진으로 Chromium 기반의 MSEdge 채용했다는 소식입니다.&lt;br&gt;
+크롤링하는 Bingbot은 이제 Chrome과 상응하며 정기적으로 최신 안정버전으로 갱신됩니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v9-1-0-zeit-next-js&quot;&gt;Release v9.1.0 · zeit/next.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/zeit/next.js/releases/tag/v9.1.0&quot; title=&quot;Release v9.1.0 · zeit/next.js&quot;&gt;github.com/zeit/next.js/releases/tag/v9.1.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Next.js 9.1.0이 릴리스됐습니다.&lt;br&gt;
+&lt;code&gt;src/pages&lt;/code&gt; 디렉터리를 지원하고 &lt;code&gt;public/&lt;/code&gt; 디렉터리를 이용해 정적 파일의 루트 서빙을 할 수 있게 됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webpack-5-beta-feedback-issue-9802-webpack-webpack&quot;&gt;webpack 5 beta feedback · Issue #9802 · webpack/webpack&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/webpack/webpack/issues/9802&quot; title=&quot;webpack 5 beta feedback · Issue #9802 · webpack/webpack&quot;&gt;github.com/webpack/webpack/issues/9802&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webpack 5β가 릴리스됐습니다.&lt;br&gt;
+Node.js 코어 모듈 자동 폴리필(automatic Node.js polyfills)을 삭제했고 장기적(long term) 캐시를 위해서 Chunk와 Module Id 해쉬 알고리즘과 몇 가지 옵션명이 변경됐습니다.&lt;br&gt;
+파일 시스템 캐시 설정 추가, Tree Shaking 개선, &lt;code&gt;output.ecmaVersion&lt;/code&gt; 옵션이 추가됐습니다.&lt;br&gt;
+또 실험적 기능으로서 &lt;code&gt;asset&lt;/code&gt; module type이 추가됐고 Top Level &lt;code&gt;await&lt;/code&gt;를 지원합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/webpack/changelog-v5/blob/master/MIGRATION%20GUIDE.md&quot; title=&quot;changelog-v5/MIGRATION GUIDE.md at master · webpack/changelog-v5&quot;&gt;changelog-v5/MIGRATION GUIDE.md at master · webpack/changelog-v5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/webpack/changelog-v5/blob/master/README.md&quot; title=&quot;changelog-v5/README.md at master · webpack/changelog-v5&quot;&gt;changelog-v5/README.md at master · webpack/changelog-v5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v12-12-0-current-node-js&quot;&gt;Node v12.12.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.12.0/&quot; title=&quot;Node v12.12.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.12.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 12.12.0이 릴리스됐습니다.&lt;br&gt;
+&lt;code&gt;fs.opendir()&lt;/code&gt;, &lt;code&gt;fs.Dir&lt;/code&gt;이 추가됐고 &lt;code&gt;--enable-source-maps&lt;/code&gt;로 스택 트레이스 Source Map을 지원합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;blog-introducing-create-next-app-next-js&quot;&gt;Blog - Introducing Create Next App | Next.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nextjs.org/blog/create-next-app&quot; title=&quot;Blog - Introducing Create Next App | Next.js&quot;&gt;nextjs.org/blog/create-next-app&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;create-next-app&lt;/code&gt;가 Next.js의 공식 프로젝트로 이관됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;top-level-await-v8&quot;&gt;Top-level await · V8&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://v8.dev/features/top-level-await&quot; title=&quot;Top-level await · V8&quot;&gt;v8.dev/features/top-level-await&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Top-level &lt;code&gt;await&lt;/code&gt;을 주제로 한 글입니다.&lt;br&gt;
+Top-level &lt;code&gt;await&lt;/code&gt;의 유스케이스와 실행 순서 등 동작과 관련한 내용이 정리돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;same-site-cookies-by-default-text-plain&quot;&gt;Same-Site Cookies By Default | text/plain&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://textslashplain.com/2019/09/30/same-site-cookies-by-default/&quot; title=&quot;Same-Site Cookies By Default | text/plain&quot;&gt;textslashplain.com/2019/09/30/same-site-cookies-by-default/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 80에서 기본 정책으로 적용되는 SameSite=Lax에 대해서 이야기합니다.&lt;br&gt;
+Cookie의 Security와 Privacy 문제, Same-Site Cookies의 목적, CSRF 공격으로부터의 보호, HTTPOnly 속성과 Secure 속성에 대해서 작성돼 있습니다.&lt;br&gt;
+또, Same-Site가 기본 적용될 경우 실제 영향과 다른 브라우저의 대응 현황에 대해서도 소개하며 2분 완화(two minute mitigation) 전략에 대해서도 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;whats-new-in-chrome-78-logrocket-blog&quot;&gt;What&amp;#39;s new in Chrome 78 - LogRocket Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.logrocket.com/whats-new-in-chrome-78/&quot; title=&quot;What&amp;#39;s new in Chrome 78 - LogRocket Blog&quot;&gt;blog.logrocket.com/whats-new-in-chrome-78/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 78의 변경 사항이 정리돼 있습니다.&lt;br&gt;
+CSS opacity의 &lt;code&gt;%&lt;/code&gt;, Proposal의 Optional Chaining, &lt;code&gt;unload&lt;/code&gt; 시의 제한, User Timing Lv3, WebSocketStream 등을 지원합니다.&lt;br&gt;
+Origin Trial로써 지원되는 Native File System API와 SMS Receiver API도 소개합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;vue-js-performance-tips-v_kansai-11-speaker-deck&quot;&gt;Vue.js Performance Tips / #v_kansai 11 - Speaker Deck(일본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/masashi/number-v-kansai-11&quot; title=&quot;Vue.js Performance Tips / #v\_kansai 11 - Speaker Deck&quot;&gt;speakerdeck.com/masashi/number-v-kansai-11&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vue.js 애플리케이션의 성능 개선을 주제로 한 슬라이드입니다.&lt;br&gt;
+IntersectionObserver를 사용해 표시가 제대로 이뤄지는지 감지하는 방법과 이미지 지연 로드, Hydration의 지연 실행 등에 대해서 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;lirantal-is-website-vulnerable-finds-publicly-known-security-vulnerabilities-in-a-websites-frontend-javascript-libraries&quot;&gt;lirantal/is-website-vulnerable: finds publicly known security vulnerabilities in a website&amp;#39;s frontend JavaScript libraries&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/lirantal/is-website-vulnerable&quot; title=&quot;lirantal/is-website-vulnerable: finds publicly known security vulnerabilities in a website&amp;#39;s frontend JavaScript libraries&quot;&gt;github.com/lirantal/is-website-vulnerable&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;지정한 URL에서 취약성이 있는 라이브러리를 사용하고 있는지 검사하는 도구입니다.&lt;br&gt;
+Synx를 기반으로 취약성을 판정합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;leeoniya-uplot-an-exceptionally-fast-tiny-time-series-chart&quot;&gt;leeoniya/uPlot: An exceptionally fast, tiny time series chart&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/leeoniya/uPlot&quot; title=&quot;leeoniya/uPlot: An exceptionally fast, tiny time series chart&quot;&gt;github.com/leeoniya/uPlot&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;chart&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;파일 크기가 작은 시 계열 그래프 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;devforth-painterro-painterro-javascript-painting-plugin&quot;&gt;devforth/painterro: Painterro - JavaScript painting plugin&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/devforth/painterro&quot; title=&quot;devforth/painterro: Painterro - JavaScript painting plugin&quot;&gt;github.com/devforth/painterro&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Image&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;간단한 이미지 편집 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;luwes-sinuous-small-fast-reactive-ui-library&quot;&gt;luwes/sinuous: Small, fast, reactive UI library&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/luwes/sinuous&quot; title=&quot;luwes/sinuous: Small, fast, reactive UI library&quot;&gt;github.com/luwes/sinuous&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;jsx&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;htm&lt;/code&gt; 문법, Hyperscript, JSX에 대응한 UI 라이브러리입니다.&lt;br&gt;
+observable한 값 감시 시스템을 제공하며 작은 파일 크기로 UI를 만들 수 있도록 하는 것에 목적을 두고 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/developit/htm&quot; title=&quot;developit/htm: Hyperscript Tagged Markup: JSX alternative using standard tagged templates, with compiler support.&quot;&gt;developit/htm: Hyperscript Tagged Markup: JSX alternative using standard tagged templates, with compiler support.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 15 Oct 2019 09:48:55 +0900</pubDate>
+        <link>https://jser.info/ko/2019/10/15/webpack-5bnext.jscreate-next-appsame-site-cookies/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2019/10/15/webpack-5bnext.jscreate-next-appsame-site-cookies/</guid>
+        
+        <category>webpack</category>
+        
+        <category>Next.js</category>
+        
+        <category>Cookie</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-10-09: Preact X(10), webhint browser extension v1, TypeScript 3.7β</title>
@@ -2232,267 +2466,6 @@ Closure Compiler 형식, TypeScript 형식 등을 지원하며 JSDoc를 파싱�
         <category>Next.js</category>
         
         <category>ReactNative</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-07-04: npm 6.9.2, ECMAScript 2019 릴리스, Dark Mode</title>
-        <description>&lt;p&gt;JSer.info #442 - 잠시동안 &lt;a href=&quot;https://npm.community/t/release-npm-6-9-1-next-0/6296&quot;&gt;beta&lt;/a&gt;인 채로 릴리스가 멈춰있던 npm 6.9.1이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://npm.community/t/release-npm-6-9-1/8435&quot;&gt;Release: npm@6.9.1 - 📣 announcements - npm forum&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;npm token create&lt;/code&gt;나 &lt;code&gt;npm --global outdated&lt;/code&gt; 버그가 수정됐습니다.&lt;br&gt;
- 또, 6.9.1에 문제가 있어 이어서 6.9.2도 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://npm.community/t/release-npm-6-9-2/8464&quot;&gt;Release: npm@6.9.2 - 📣 announcements - npm forum&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://npm.community/t/npm-6-9-1-is-broken-due-to-git-folder-in-published-tarball/8454/13&quot;&gt;npm 6.9.1 is broken due to .git folder in published tarball - 🐞 bugs - npm forum&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;6.9.x에는 &lt;code&gt;.git&lt;/code&gt; 내에 있는 파일도 &lt;code&gt;main&lt;/code&gt; 필드의 파일명과 일치하면 npm publish에 포함되는 문제가 있었으나 6.10.0에서 수정된 것으로 보입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/npm/npm-packlist/issues/35&quot;&gt;Do not include &lt;code&gt;.git/index&lt;/code&gt; when the &lt;code&gt;main&lt;/code&gt; field in package.json is set to &lt;code&gt;index&lt;/code&gt; · Issue #35 · npm/npm-packlist&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ecma-international.org/news/index.html&quot;&gt;Ecma latest news&lt;/a&gt;에 따르면 &lt;br&gt;
-&amp;quot;ECMA-262 10th edition - ECMAScript® 2019 Language Specification&amp;quot;(ES2019)가 Ecma 총회에서 승인돼 정식 릴리스됐다고 합니다.&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;The 117th General Assembly held in Geneva, June 26, 2019, approved 8 new editions of Standards and a new Technical Report. Ecma International also welcomed 3 new members (more info on &lt;a href=&quot;https://t.co/pmvsh7rYED&quot;&gt;https://t.co/pmvsh7rYED&lt;/a&gt;).&lt;/p&gt;&amp;mdash; Ecma International (@EcmaIntl) &lt;a href=&quot;https://twitter.com/EcmaIntl/status/1143905778677506048?ref_src=twsrc%5Etfw&quot;&gt;June 26, 2019&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;이 ES2019는 스냅샷 느낌의 사양으로 최신 사양은 GitHub에서 공개 / 갱신되고 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://tc39.es/ecma262/&quot;&gt;https://tc39.es/ecma262/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/ecma262&quot;&gt;tc39/ecma262: Status, process, and documents for ECMA-262&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/prefers-color-scheme&quot;&gt;Hello Darkness, My Old Friend  |  web.dev&lt;/a&gt;에는 Dark Mode는 어떤 이점을 갖고 있는지 작성돼 있습니다.&lt;/p&gt;
-
-&lt;p&gt;접근성 도구로써의 긍정적 효과와 배터리 소비전력과의 관계 그리고 각 OS에서 Dark Mode를 설정하는 방법, 웹 사이트에서 Dark Mode를 어떻게 대응할 수 있는지 등에 대해 이야기합니다.&lt;br&gt;
-Media Query를 사용한 판정과 &lt;code&gt;prefers-color-scheme&lt;/code&gt;를 활용한 Dark Mode 대응, Dark Mode에 맞춰 이미지를 최적화하는 방법 등에 대해서도 소개돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-npm-6-9-1-announcements-npm-forum&quot;&gt;Release: &lt;a href=&quot;mailto:npm@6.9.1&quot;&gt;npm@6.9.1&lt;/a&gt; - 📣 announcements - npm forum&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://npm.community/t/release-npm-6-9-1/8435&quot; title=&quot;Release: npm@6.9.1 - 📣 announcements - npm forum&quot;&gt;npm.community/t/release-npm-6-9-1/8435&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npm 6.9.1이 릴리스됐습니다.&lt;br&gt;
-&lt;code&gt;npm token create&lt;/code&gt; 버그와 &lt;code&gt;npm --global outdated&lt;/code&gt;가 동작하지 않는 문제가 수정됐습니다.&lt;/p&gt;
-
-&lt;p&gt;하지만 6.9.1에서 문제가 발견돼 &lt;a href=&quot;https://npm.community/t/release-npm-6-9-2/8464&quot;&gt;npm@6.9.2&lt;/a&gt;도 이이서 릴리스됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v12-5-0-current-node-js&quot;&gt;Node v12.5.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.5.0/&quot; title=&quot;Node v12.5.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.5.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 12.5.0이 릴리스됐습니다.&lt;br&gt;
-V8 스냅샷을 기본적으로 활성화하고 기동(startup) 시간이 최적화 됐습니다. 또, V8과 OpenSSL의 버전이 갱신됐고 &lt;code&gt;worker.terminate()&lt;/code&gt;가 Promise를 반환하도록 변경됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-86-webkit&quot;&gt;Release Notes for Safari Technology Preview 86 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9375/release-notes-for-safari-technology-preview-86/&quot; title=&quot;Release Notes for Safari Technology Preview 86 | WebKit&quot;&gt;webkit.org/blog/9375/release-notes-for-safari-technology-preview-86/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 86이 릴리스됐습니다.&lt;br&gt;
-&lt;code&gt;String.prototype.matchAll&lt;/code&gt;괖 CSS의 &lt;code&gt;tab-size&lt;/code&gt; 프로퍼티를 지원하며 Web High Level Shading Language(WHLSL)을 실험적으로 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://webkit.org/blog/8482/web-high-level-shading-language/&quot; title=&quot;Web High Level Shading Language | WebKit&quot;&gt;Web High Level Shading Language | WebKit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;yarn-support-for-security-alerts-the-github-blog&quot;&gt;Yarn support for security alerts - The GitHub Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.blog/2019-07-02-yarn-support-for-security-alerts/&quot; title=&quot;Yarn support for security alerts - The GitHub Blog&quot;&gt;github.blog/2019-07-02-yarn-support-for-security-alerts/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Github&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHub Security Alert에서 yarn.lock을 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ecma-latest-news&quot;&gt;Ecma latest news&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ecma-international.org/news/index.html&quot; title=&quot;Ecma latest news&quot;&gt;www.ecma-international.org/news/index.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ECMAScript 2019가 Ecma 총회에서 승인돼 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.ecma-international.org/publications/standards/Ecma-262.htm&quot; title=&quot;Standard ECMA-262&quot;&gt;Standard ECMA-262&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-secret-of-good-electron-apps&quot;&gt;The Secret of Good Electron Apps&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jlongster.com/secret-of-good-electron-apps&quot; title=&quot;The Secret of Good Electron Apps&quot;&gt;jlongster.com/secret-of-good-electron-apps&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Electron 애플리케이션 패턴에 대한 글입니다.&lt;br&gt;
-메모리 소비를 줄이기 위해서 백그라운드 서버를 만들어 필요한 데이터를 불러와 반환하도록 하는 구조와 개발 시엔 디버깅을 효율적으로 하기 위해 백그라운드 서버 대신 다른 윈도우를 사용하는 방법이 작성돼 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/jlongster/electron-with-server-example&quot; title=&quot;jlongster/electron-with-server-example: An example Electron app with a backend server all wired up via IPC&quot;&gt;jlongster/electron-with-server-example: An example Electron app with a backend server all wired up via IPC&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-layout-instability-api-web-dev&quot;&gt;The Layout Instability API  |  web.dev&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/layout-instability-api&quot; title=&quot;The Layout Instability API  |  web.dev&quot;&gt;web.dev/layout-instability-api&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 74에 실험적으로 구현돼 Layout Instability API를 소개합니다. 이 API는 의도하지 않은 레이아웃의 변화를 감지합니다.&lt;br&gt;
-문서를 불러온 후 비동기 타이밍으로 요소의 위치가 변경되는 현상을 감지할 수 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/WICG/layout-instability&quot; title=&quot;WICG/layout-instability: A proposal for a Layout Instability specification&quot;&gt;WICG/layout-instability: A proposal for a Layout Instability specification&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;hello-darkness-my-old-friend-web-dev&quot;&gt;Hello Darkness, My Old Friend  |  web.dev&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/prefers-color-scheme&quot; title=&quot;Hello Darkness, My Old Friend  |  web.dev&quot;&gt;web.dev/prefers-color-scheme&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Dark Mode를 소개하는 글입니다.&lt;br&gt;
-접근성 도구로써의 긍정적 효과와 배터리 소비전력과의 관계 그리고 각 OS에서 Dark Mode를 설정하는 방법, 웹 사이트에서 Dark Mode를 어떻게 대응할 수 있는지 등에 대해 이야기합니다.&lt;br&gt;
-Media Query를 사용한 판정과 &lt;code&gt;prefers-color-scheme&lt;/code&gt;를 활용한 Dark Mode 대응, Dark Mode에 맞춰 이미지를 최적화하는 방법 등에 대해서도 소개돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;object-fromentries-v8&quot;&gt;Object.fromEntries · V8&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://v8.dev/features/object-fromentries&quot; title=&quot;Object.fromEntries · V8&quot;&gt;v8.dev/features/object-fromentries&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ES2019에 추가된 &lt;code&gt;Object.fromEntries&lt;/code&gt;를 소개하는 글입니다.&lt;br&gt;
-&lt;code&gt;fromEntries&lt;/code&gt;는 Iterable한 데이터에서 Object를 생성해 반환하는 API입니다.&lt;br&gt;
-Map과 Object 간 변환에 이용할 수 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-cost-of-javascript-in-2019-v8&quot;&gt;The cost of JavaScript in 2019 · V8&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://v8.dev/blog/cost-of-javascript-2019&quot; title=&quot;The cost of JavaScript in 2019 · V8&quot;&gt;v8.dev/blog/cost-of-javascript-2019&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;V8의 JavaScript 파싱 비용에 대한 소개 글입니다.&lt;br&gt;
-Main Thread와 Worker Thread, JSON 파싱 비용 등 다양한 관점에서 이야기합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;reinventing-firefox-for-android-a-preview-future-releases&quot;&gt;Reinventing Firefox for Android: a Preview - Future Releases&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.mozilla.org/futurereleases/2019/06/27/reinventing-firefox-for-android-a-preview/&quot; title=&quot;Reinventing Firefox for Android: a Preview - Future Releases&quot;&gt;blog.mozilla.org/futurereleases/2019/06/27/reinventing-firefox-for-android-a-preview/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Android&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GeckoView를 탑재한 Android 용 Firefox Preview가 공개됐습니다.&lt;br&gt;
-Firefox for Android와 비교해 성능이 개선됐으며 Tracking Protection이 기본적으로 활성화 됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/06/geckoview-in-2019/&quot; title=&quot;GeckoView in 2019 - Mozilla Hacks - the Web developer blog&quot;&gt;GeckoView in 2019 - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;analysis-of-an-exploited-npm-package-jarrod-overson-youtube&quot;&gt;Analysis of an Exploited NPM Package || Jarrod Overson - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=2cyib2MgvdM&quot; title=&quot;Analysis of an Exploited NPM Package || Jarrod Overson - YouTube&quot;&gt;www.youtube.com/watch?v&amp;#x3D;2cyib2MgvdM&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;event-stream@3.3.6&lt;/code&gt;과 &lt;code&gt;flatmap-stream&lt;/code&gt; 등 npm 패키지에 악성 코드가 포함된 사건을 주제로 한 발표 영상입니다.&lt;br&gt;
-어떤 공격 코드가 포함돼 있었는지 시간적으로 변화를 관찰하여 얻은 것과 영향 범위 등에 대해서 이야기합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://schneider.dev/blog/event-stream-vulnerability-explained/&quot; title=&quot;event-stream vulnerability explained - Zach Schneider&quot;&gt;event-stream vulnerability explained - Zach Schneider&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.npmjs.org/post/180565383195/details-about-the-event-stream-incident&quot; title=&quot;The npm Blog — Details about the event-stream incident&quot;&gt;The npm Blog — Details about the event-stream incident&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;abematv-css-is-too-fragile-solution-of-css-is-too-fragile-by-abematv-speaker-deck&quot;&gt;AbemaTV의 CSS is too fragile 문제 풀이 / Solution of &amp;quot;CSS is too fragile&amp;quot; by AbemaTV - Speaker Deck(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/kubosho/solution-of-css-is-too-fragile-by-abematv&quot; title=&quot;AbemaTV의 CSS is too fragile 문제 풀이 / Solution of &amp;quot;CSS is too fragile&amp;quot; by AbemaTV - Speaker Deck&quot;&gt;speakerdeck.com/kubosho/solution-of-css-is-too-fragile-by-abematv&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSS Modules에서 디렉터리 변경으로 발생하는 문제와 해결 방법을 주제로 한 슬라이드입니다.&lt;br&gt;
-불러오는 순서를 명시적으로 정의하여 불러오는 순서에 따라 스타일이 바뀌는 문제를 해결하는 방법을 소개합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;mixer-webpack-bundle-compare-a-tool-for-comparing-webpack-bundle-stats&quot;&gt;mixer/webpack-bundle-compare: A tool for comparing webpack bundle stats&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/mixer/webpack-bundle-compare&quot; title=&quot;mixer/webpack-bundle-compare: A tool for comparing webpack bundle stats&quot;&gt;github.com/mixer/webpack-bundle-compare&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpack의 bundle 파일을 분석하는 도구입니다.&lt;br&gt;
-webpack plugin으로 출력한 stats 파일을 불러와 분석하고 결과를 표현하는 대시보드 도구입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;adobe-ferrum-features-from-the-rust-language-in-javascript-provides-traits-type-classes-an-advanced-library-for-working-with-sequences-iterators-in-js&quot;&gt;adobe/ferrum: Features from the rust language in javascript: Provides Traits/Type classes &amp;amp; an advanced library for working with sequences/iterators in js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/adobe/ferrum&quot; title=&quot;adobe/ferrum: Features from the rust language in javascript: Provides Traits/Type classes &amp;amp; an advanced library for working with sequences/iterators in js&quot;&gt;github.com/adobe/ferrum&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Rust&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Rust에 영감을 받아 Symbol을 사용해 구현한 객체 시퀀스 / 이터레이터 라이브러리입니다.&lt;br&gt;
-Traits/Typeclasses 등을 제공합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Thu, 04 Jul 2019 09:58:09 +0900</pubDate>
-        <link>https://jser.info/ko/2019/07/04/npm-6.9.2ecmascript-2019dark-mode/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2019/07/04/npm-6.9.2ecmascript-2019dark-mode/</guid>
-        
-        <category>npm</category>
-        
-        <category>ECMAScript</category>
-        
-        <category>Chrome</category>
-        
-        <category>DarkMode</category>
         
         
         <category>JSer</category>
