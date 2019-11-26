@@ -5,9 +5,265 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 19 Nov 2019 11:43:36 +0900</pubDate>
-    <lastBuildDate>Tue, 19 Nov 2019 11:43:36 +0900</lastBuildDate>
+    <pubDate>Tue, 26 Nov 2019 12:08:52 +0900</pubDate>
+    <lastBuildDate>Tue, 26 Nov 2019 12:08:52 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-11-26のJS: Node.js 13.2.0(ES Modules)、jQueryがAMDからES Modulesへ</title>
+        <description>&lt;p&gt;JSer.info #463 - 開発版となるNode.js 13.2.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v13.2.0/&quot;&gt;Node v13.2.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;今までは&lt;code&gt;--experimental-modules&lt;/code&gt;というフラグ付きで起動したときのみ、&lt;a href=&quot;https://nodejs.org/api/esm.html&quot;&gt;ECMAScript Modules&lt;/a&gt;をサポートしていませんでした。&lt;br&gt;
+13.2.0からはこのフラグなしでも、デフォルトで拡張子が&lt;code&gt;.mjs&lt;/code&gt;のファイルや&lt;code&gt;package.json&lt;/code&gt;の&lt;code&gt;&amp;quot;type&amp;quot;&lt;/code&gt;フィールドが&lt;code&gt;&amp;quot;module&amp;quot;&lt;/code&gt;となっているパッケージをECMAScript Modulesとして&lt;code&gt;import&lt;/code&gt;できるようになりました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/esm.html&quot;&gt;ECMAScript Modules | Node.js v13.2.0 Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/announcing-core-node-js-support-for-ecmascript-modules-c5d6dc29b663&quot;&gt;Announcing core Node.js support for ECMAScript modules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;次のような&lt;a href=&quot;https://github.com/azu/node-mjs-example&quot;&gt;サンプルコード&lt;/a&gt;でECMAScript Modulesがフラグなしで実行できることが確認できます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;mod.mjs&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;index.mjs&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;./mod.mjs&quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Node.js 13.2.0からはこの&lt;code&gt;index.mjs&lt;/code&gt;を&lt;code&gt;--experimental-modules&lt;/code&gt;のフラグなしで実行できるうようになっています。&lt;br&gt;
+ただし、ExperimentalWarningは自動的に表示されます。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ node src/index.mjs
+(node:97312) ExperimentalWarning: The ESM module loader is experimental.
+3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+
+&lt;p&gt;まだリリースはされていませんが、jQueryのコードベースが&lt;a href=&quot;https://requirejs.org/docs/whyamd.html&quot;&gt;AMD&lt;/a&gt;からECMAScript Modulesを使ったコードに変更されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jquery/jquery/pull/4541&quot;&gt;Core: Migrate from AMD to ES modules 🎉 by mgol · Pull Request #4541 · jquery/jquery&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最終的な&lt;code&gt;jquery.js&lt;/code&gt;は&lt;a href=&quot;https://rollupjs.org&quot;&gt;rollup.js&lt;/a&gt;を使ってbundleしたものを配布する予定となっています。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;The &lt;a href=&quot;https://twitter.com/jquery?ref_src=twsrc%5Etfw&quot;&gt;@jquery&lt;/a&gt; source is now authored in ES6 modules![1] You can import from &lt;code&gt;src/jquery.js&lt;/code&gt; directly from the browser without any build process.[2]&lt;a href=&quot;https://twitter.com/RollupJS?ref_src=twsrc%5Etfw&quot;&gt;@RollupJS&lt;/a&gt; is used to create the final jquery.js file.&lt;br&gt;&lt;br&gt;[1] &lt;a href=&quot;https://t.co/mLGFF4n2WE&quot;&gt;&lt;a href=&quot;https://t.co/mLGFF4n2WE&quot;&gt;https://t.co/mLGFF4n2WE&lt;/a&gt;&lt;/a&gt;&lt;br&gt;[2] &lt;a href=&quot;https://t.co/uTWs7URXXW&quot;&gt;&lt;a href=&quot;https://t.co/uTWs7URXXW&quot;&gt;https://t.co/uTWs7URXXW&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;&amp;mdash; Michał Gołębiowski-Owczarek (@m&lt;em&gt;gol) &amp;lt;a href=&amp;quot;&lt;a href=&quot;https://twitter.com/m&quot;&gt;https://twitter.com/m&lt;/a&gt;&lt;/em&gt;gol/status/1196893162859573250?ref_src=twsrc%5Etfw&amp;quot;&amp;gt;November 19, 2019&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; &lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;core-migrate-from-amd-to-es-modules-by-mgol-pull-request-4541-jquery-jquery&quot;&gt;Core: Migrate from AMD to ES modules 🎉 by mgol · Pull Request #4541 · jquery/jquery&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jquery/jquery/pull/4541&quot; title=&quot;Core: Migrate from AMD to ES modules 🎉 by mgol · Pull Request #4541 · jquery/jquery&quot;&gt;github.com/jquery/jquery/pull/4541&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;jQueryのコードベースがAMDからES modulesに書き換えられた&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-96-webkit&quot;&gt;Release Notes for Safari Technology Preview 96 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9658/release-notes-for-safari-technology-preview-96/&quot; title=&quot;Release Notes for Safari Technology Preview 96 | WebKit&quot;&gt;webkit.org/blog/9658/release-notes-for-safari-technology-preview-96/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview 96リリース。&lt;br&gt;
+Web Animations APIをデフォルトで有効化、&lt;code&gt;navigator.clipboard.read()&lt;/code&gt;の実装など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v13-2-0-current-node-js&quot;&gt;Node v13.2.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v13.2.0/&quot; title=&quot;Node v13.2.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v13.2.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 13.2.0リリース。&lt;br&gt;
+&lt;code&gt;--experimental-modules&lt;/code&gt;のフラグが外れたため、デフォルトでES Modulesが利用できるように。&lt;br&gt;
+&lt;code&gt;worker_threads&lt;/code&gt;に&lt;code&gt;resourceLimits&lt;/code&gt;オプションの追加、&lt;code&gt;child_process&lt;/code&gt;などに&lt;code&gt;serialization&lt;/code&gt;オプションの追加など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/esm.html&quot; title=&quot;ECMAScript Modules | Node.js v13.2.0 Documentation&quot;&gt;ECMAScript Modules | Node.js v13.2.0 Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/announcing-core-node-js-support-for-ecmascript-modules-c5d6dc29b663&quot; title=&quot;Announcing core Node.js support for ECMAScript modules&quot;&gt;Announcing core Node.js support for ECMAScript modules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-js-12-x-runtime-now-available-in-aws-lambda-aws-compute-blog&quot;&gt;Node.js 12.x runtime now available in AWS Lambda | AWS Compute Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/jp/blogs/compute/node-js-12-x-runtime-now-available-in-aws-lambda/&quot; title=&quot;Node.js 12.x runtime now available in AWS Lambda | AWS Compute Blog&quot;&gt;aws.amazon.com/jp/blogs/compute/node-js-12-x-runtime-now-available-in-aws-lambda/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;aws&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Lambda&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;AWS LambdaがNode.js 12.xをサポート&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;testcafe-v1-7-0-released-testcafe&quot;&gt;TestCafe v1.7.0 Released | TestCafe&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devexpress.github.io/testcafe/blog/testcafe-v1-7-0-released.html&quot; title=&quot;TestCafe v1.7.0 Released | TestCafe&quot;&gt;devexpress.github.io/testcafe/blog/testcafe-v1-7-0-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TestCafe v1.7.0リリース。&lt;br&gt;
+テストコード内で実行してるブラウザやOSの情報を取得できる&lt;code&gt;t.browser&lt;/code&gt;オブジェクトのサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;web-framework-fastify-joins-openjs-foundation-as-an-incubating-project-openjs-foundation&quot;&gt;Web Framework Fastify Joins OpenJS Foundation as an Incubating Project - OpenJS Foundation&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://openjsf.org/blog/2019/11/20/web-framework-fastify-joins-openjs-foundation-as-an-incubating-project/&quot; title=&quot;Web Framework Fastify Joins OpenJS Foundation as an Incubating Project - OpenJS Foundation&quot;&gt;openjsf.org/blog/2019/11/20/web-framework-fastify-joins-openjs-foundation-as-an-incubating-project/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsのウェブアプリケーションフレームワークであるFastifyがOpenJS FoundationのIncubating Projectとなった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.fastify.io/&quot; title=&quot;Fastify, Fast and low overhead web framework, for Node.js&quot;&gt;Fastify, Fast and low overhead web framework, for Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;canjs-6-0&quot;&gt;CanJS 6.0&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.bitovi.com/blog/canjs-6.0&quot; title=&quot;CanJS 6.0&quot;&gt;www.bitovi.com/blog/canjs-6.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CanJS 6.0リリース。&lt;br&gt;
+WebComponentベースになり、コンポーネントのPropsの型システムの刷新、Proxyを使ったObservableObjectの仕組みなどが導入された。&lt;br&gt;
+マイグレーションガイドとツールも公開されている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://canjs.com/doc/migrate-6.html#MigratetoObservableObjectandObservableArrayformodels&quot; title=&quot;Migrating to CanJS 6 | upgrade | Guides | CanJS — Build CRUD apps in fewer lines of code.&quot;&gt;Migrating to CanJS 6 | upgrade | Guides | CanJS — Build CRUD apps in fewer lines of code.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://canjs.com/doc/guides/upgrade/using-codemods.html&quot; title=&quot;Using Codemods | upgrade | Guides | CanJS — Build CRUD apps in fewer lines of code.&quot;&gt;Using Codemods | upgrade | Guides | CanJS — Build CRUD apps in fewer lines of code.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;eslint-v6-7-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v6.7.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2019/11/eslint-v6.7.0-released&quot; title=&quot;ESLint v6.7.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2019/11/eslint-v6.7.0-released&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ESLint 6.7.0リリース。&lt;br&gt;
+ルールからSuggestionの候補を提供するAPIの追加、設定ファイルに&lt;code&gt;ignorePatterns&lt;/code&gt;を記述できるようになるなど。&lt;br&gt;
+また&lt;code&gt;no-constructor-return&lt;/code&gt;などのルールを新規に5つ追加など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/377b6ca6558dc253159b&quot; title=&quot;ESLint v6.7.0 - Qiita&quot;&gt;ESLint v6.7.0 - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;cropping-images-to-a-specific-aspect-ratio-with-javascript-pqina&quot;&gt;Cropping Images to a specific Aspect Ratio with JavaScript • PQINA&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pqina.nl/blog/cropping-images-to-an-aspect-ratio-with-javascript/&quot; title=&quot;Cropping Images to a specific Aspect Ratio with JavaScript • PQINA&quot;&gt;pqina.nl/blog/cropping-images-to-an-aspect-ratio-with-javascript/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Canvasを使って画像を切り抜きするチュートリアル。チュートリアルではカバーできてない画像を扱う際の問題についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;regular-expressions-in-javascript-lookaround-assertions-by-example&quot;&gt;Regular expressions in JavaScript: lookaround assertions by example&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://2ality.com/2019/10/regexp-lookaround-assertions.html&quot; title=&quot;Regular expressions in JavaScript: lookaround assertions by example&quot;&gt;2ality.com/2019/10/regexp-lookaround-assertions.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;RegExp&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptの正規表現の先読み/後読みのパターンについて。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;faster-apps-with-json-parse-chrome-dev-summit-2019-youtube&quot;&gt;Faster apps with JSON.parse (Chrome Dev Summit 2019) - YouTube&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ff4fgQxPaO0&quot; title=&quot;Faster apps with JSON.parse (Chrome Dev Summit 2019) - YouTube&quot;&gt;www.youtube.com/watch?v&amp;#x3D;ff4fgQxPaO0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JSON&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;オブジェクトリテラルより&lt;code&gt;JSON.parse&lt;/code&gt;した方が、パフォーマンスが良い理由についての解説動画。&lt;br&gt;
+JSONには出現するトークンが限定されているためオブジェクトリテラルよりパースが高速にできること、SSRでのユースケースなどについて紹介している。&lt;br&gt;
+10kB以上など大きなデータに関しては&lt;code&gt;JSON.parse&lt;/code&gt;を使うことを推奨している&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://v8.dev/blog/cost-of-javascript-2019#json&quot; title=&quot;The cost of JavaScript in 2019 · V8&quot;&gt;The cost of JavaScript in 2019 · V8&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;easydb&quot;&gt;EasyDB&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://easydb.io/&quot; title=&quot;EasyDB&quot;&gt;easydb.io/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;DB &lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;python&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsやPythonから24時間使えるKVSなDBを作ってくれるウェブサービス。&lt;br&gt;
+アカウントを作ると72時間使うことができ、永続化したい場合は$5/monthで利用できる。&lt;br&gt;
+ハッカソンなどの一時的なイベント向けのデータベースサービス。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;liyasthomas-postwoman-api-request-builder-a-free-fast-and-beautiful-alternative-to-postman-https-postwoman-io&quot;&gt;liyasthomas/postwoman: 👽 API request builder - A free, fast, and beautiful alternative to Postman &lt;a href=&quot;https://postwoman.io&quot;&gt;https://postwoman.io&lt;/a&gt; 🔥&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/liyasthomas/postwoman&quot; title=&quot;liyasthomas/postwoman: 👽 API request builder - A free, fast, and beautiful alternative to Postman https://postwoman.io 🔥&quot;&gt;github.com/liyasthomas/postwoman&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;API&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;REST API、WebSockets、GraphQLに対応したAPIへのリクエスト/レスポンスをテストできるツール。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jeremydaly-lambda-api-lightweight-web-framework-for-your-serverless-applications&quot;&gt;jeremydaly/lambda-api: Lightweight web framework for your serverless applications&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jeremydaly/lambda-api&quot; title=&quot;jeremydaly/lambda-api: Lightweight web framework for your serverless applications&quot;&gt;github.com/jeremydaly/lambda-api&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;aws&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Lambda&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;AWS Lambda向けのNode,jsフレームワーク。&lt;br&gt;
+依存がなく、HTTPメソッド対するルーティング、HTTPリクエスト/レスポンスに対する基本的な処理を持っている&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;test-driven-react-find-problems-early-fix-them-quickly-code-with-confidence-by-trevor-burnham-the-pragmatic-bookshelf&quot;&gt;Test-Driven React: Find Problems Early, Fix Them Quickly, Code with Confidence by Trevor Burnham | The Pragmatic Bookshelf&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pragprog.com/book/tbreact/test-driven-react&quot; title=&quot;Test-Driven React: Find Problems Early, Fix Them Quickly, Code with Confidence by Trevor Burnham | The Pragmatic Bookshelf&quot;&gt;pragprog.com/book/tbreact/test-driven-react&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;テスト駆動でのReactアプリケーション開発についての書籍&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 26 Nov 2019 11:19:47 +0900</pubDate>
+        <link>https://jser.info/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/</link>
+        <guid isPermaLink="true">https://jser.info/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/</guid>
+        
+        <category>Node.js</category>
+        
+        <category>jQuery</category>
+        
+        <category>Modules</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-11-19のJS: Front-End Tooling Survey 2019、Reactの作り方</title>
@@ -2203,267 +2459,6 @@ Backbone.ModelをただのJSONとして扱い、JSONのスナップショット�
         <category>Chrome</category>
         
         <category>Storybook</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-09-17のJS: Chrome 77、TypeScript 3.7のロードマップ、Can I use and MDN</title>
-        <description>&lt;p&gt;JSer.info #453 - Chrome 77がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/09/nic77&quot;&gt;New in Chrome 77  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Chrome 77では、&lt;code&gt;PerformanceObserver&lt;/code&gt;の中でページ内の大きな要素の変更があったことを監視するLargest Contentful Paint(LCP)がサポートされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/largest-contentful-paint/&quot;&gt;Largest Contentful Paint  |  web.dev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;その他にも&lt;code&gt;formdata&lt;/code&gt;イベント、&lt;code&gt;formAssociated&lt;/code&gt;プロパティのサポートなどが含まれています。&lt;br&gt;
-また、アドレスバーに表示されていたEV証明書の情報が詳細パネルの方に移動しています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.troyhunt.com/extended-validation-certificates-are-really-really-dead/&quot;&gt;Troy Hunt: Extended Validation Certificates are (Really, Really) Dead&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://groups.google.com/a/chromium.org/forum/#!msg/security-dev/h1bTcoTpfeI/jUTk1z7VAAAJ&quot;&gt;Upcoming Change to Chrome&amp;#39;s Identity Indicators - Google グループ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/microsoft/TypeScript/issues/33352&quot;&gt;TypeScript 3.7 Iteration Plan · Issue #33352 · microsoft/TypeScript&lt;/a&gt;というIssueでTypeScript 3.7のロードマップが公開されています。&lt;/p&gt;
-
-&lt;p&gt;ECMAScript Private Fields、Optional Chaining、Nullish Coalescing、Top-Level awaitなど現在Stage3のProposalに対応していく予定です。&lt;br&gt;
-また、今までは制限されていた&lt;code&gt;--declaration&lt;/code&gt;と&lt;code&gt;--allowJs&lt;/code&gt;の組合せや&lt;code&gt;--declaration&lt;/code&gt;と&lt;code&gt;--isolatedModules&lt;/code&gt;のの組み合わせに対応していく予定です。&lt;br&gt;
-その他として、&lt;code&gt;typescript&lt;/code&gt;パッケージサイズの削減、&lt;code&gt;@types&lt;/code&gt;パッケージをGitHub Package Registryにもpublishするようにし、ハンドブックの更新なども予定されています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/09/caniuse-and-mdn-compat-data-collaboration/&quot;&gt;Caniuse and MDN compatibility data collaboration - Mozilla Hacks - the Web developer blog&lt;/a&gt;という記事では、&lt;a href=&quot;https://github.com/mdn/browser-compat-data&quot;&gt;MDN compat data&lt;/a&gt;と&lt;a href=&quot;https://caniuse.com/&quot;&gt;Can I use...&lt;/a&gt;のコラボレーションについて書かれています。&lt;/p&gt;
-
-&lt;p&gt;どちらも機能などに対するブラウザのサポート状況をまとめたデータですが、目的が異なるためデータの特性が若干異なっています。&lt;br&gt;
-MDNはあらゆる機能に関する網羅性を持ったデータに対して、Can I use...はブラウザがサポートしているかに注目したデータとなっています。&lt;br&gt;
-そのため、Can I use...のデータには入っていない項目も多くありました。&lt;/p&gt;
-
-&lt;p&gt;今回のコラボレーションで、&lt;a href=&quot;https://caniuse.com/&quot;&gt;Can I use...&lt;/a&gt;が&lt;a href=&quot;https://github.com/mdn/browser-compat-data&quot;&gt;MDN compat data&lt;/a&gt;のデータを使って機能に関するブラウザのサポート状況を表示できるようになっています。（現在は両方のデータを検索した結果がそれぞれ表示される）&lt;/p&gt;
-
-&lt;p&gt;また、類似するサイトとしてメールクライアント別に利用できるHTMLやCSSなどのサポート状況をまとめたCan I email...というサイトも別の作者によって公開されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.caniemail.com/&quot;&gt;Can I email… Support tables for HTML and CSS in emails&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;typescript-3-7-iteration-plan-issue-33352-microsoft-typescript&quot;&gt;TypeScript 3.7 Iteration Plan · Issue #33352 · microsoft/TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/microsoft/TypeScript/issues/33352&quot; title=&quot;TypeScript 3.7 Iteration Plan · Issue #33352 · microsoft/TypeScript&quot;&gt;github.com/microsoft/TypeScript/issues/33352&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.7のロードマップ。&lt;br&gt;
-ECMAScript Private Fields、Optional Chaining、Nullish Coalescingへの対応、&lt;code&gt;--declaration&lt;/code&gt;と&lt;code&gt;--allowJs&lt;/code&gt;の組合せに対応など。&lt;br&gt;
-また&lt;code&gt;typescript&lt;/code&gt;パッケージサイズの削減、&lt;code&gt;@types&lt;/code&gt;パッケージをGitHub Package Registryにもpublishするようにし、ハンドブックの更新なども予定されている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-dompurify-2-0-0-cure53-dompurify&quot;&gt;Release DOMPurify 2.0.0 · cure53/DOMPurify&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/cure53/DOMPurify/releases/tag/2.0.0&quot; title=&quot;Release DOMPurify 2.0.0 · cure53/DOMPurify&quot;&gt;github.com/cure53/DOMPurify/releases/tag/2.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;DOMpurify 2.0.0リリース。&lt;br&gt;
-Trusted Typesが利用できる場合でも&lt;code&gt;RETURN_TRUSTED_TYPE&lt;/code&gt;オプションを渡したときのみ、Trusted Typesを使うように変更&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;google-developers-blog-flutter-news-from-gdd-china-uniting-flutter-on-web-and-mobile-and-introducing-flutter-1-9&quot;&gt;Google Developers Blog: Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1&quot; title=&quot;Google Developers Blog: Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9&quot;&gt;developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m&amp;#x3D;1&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Flutter&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Flutter 1.9 リリース。&lt;br&gt;
-Webサポートがメインリポジトリにマージされた。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;eslint-v6-4-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v6.4.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2019/09/eslint-v6.4.0-released&quot; title=&quot;ESLint v6.4.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2019/09/eslint-v6.4.0-released&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ESLint 6.4.0リリース。&lt;br&gt;
-&lt;code&gt;no-import-assign&lt;/code&gt;、&lt;code&gt;prefer-regex-literals&lt;/code&gt;、&lt;code&gt;default-param-last&lt;/code&gt;のルールを追加。&lt;br&gt;
-一部ルールが&lt;code&gt;enforceForClassMembers&lt;/code&gt;オプションでクラス構文をサポートするようになるなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/4164b162fb37dcc443a1&quot; title=&quot;ESLint v6.4.0 - Qiita&quot;&gt;ESLint v6.4.0 - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v4-0-0-immerjs-immer&quot;&gt;Release v4.0.0 · immerjs/immer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/immerjs/immer/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · immerjs/immer&quot;&gt;github.com/immerjs/immer/releases/tag/v4.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Immer 4.0.0リリース。&lt;br&gt;
-development modeでは、すべての値はdeep frozenされた状態で保存されるようになった。&lt;br&gt;
-またウェブサイトのドキュメント更新など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://immerjs.github.io/immer/docs/introduction&quot; title=&quot;Introduction to Immer · Immer&quot;&gt;Introduction to Immer · Immer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-2-4-0-avajs-ava&quot;&gt;Release 2.4.0 · avajs/ava&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v2.4.0&quot; title=&quot;Release 2.4.0 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v2.4.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AVA 2.4.0リリース。&lt;br&gt;
-&lt;code&gt;t.try()&lt;/code&gt;をフラグ付きでサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;how-to-build-a-plugin-system-on-the-web-and-also-sleep-well-at-night&quot;&gt;How to build a plugin system on the web and also sleep well at night&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.figma.com/blog/how-we-built-the-figma-plugin-system/&quot; title=&quot;How to build a plugin system on the web and also sleep well at night&quot;&gt;www.figma.com/blog/how-we-built-the-figma-plugin-system/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;plugin&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;プラグインとして追加されるサードパーティコードを安全にウェブブラウザで実行するための仕組みについて。&lt;br&gt;
-&lt;code&gt;&amp;lt;inline-iframe&amp;gt;&lt;/code&gt;、JavaScriptインタプリタの利用、ProposalのRealms(shim)を使ったサンドボックスについて&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-realms&quot; title=&quot;tc39/proposal-realms: ECMAScript Proposal, specs, and reference implementation for Realms&quot;&gt;tc39/proposal-realms: ECMAScript Proposal, specs, and reference implementation for Realms&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Agoric/realms-shim&quot; title=&quot;Agoric/realms-shim: Spec-compliant shim for Realms TC39 Proposal&quot;&gt;Agoric/realms-shim: Spec-compliant shim for Realms TC39 Proposal&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;caniuse-and-mdn-compatibility-data-collaboration-mozilla-hacks-the-web-developer-blog&quot;&gt;Caniuse and MDN compatibility data collaboration - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/09/caniuse-and-mdn-compat-data-collaboration/&quot; title=&quot;Caniuse and MDN compatibility data collaboration - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2019/09/caniuse-and-mdn-compat-data-collaboration/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MDN Compat DataをCan I Useのウェブサイトにマージ。&lt;br&gt;
-Can I Use上でMDNのデータを元にした機能やサポートブラウザが見られるようになった。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;a-lighter-v8-v8&quot;&gt;A lighter V8 · V8&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://v8.dev/blog/v8-lite&quot; title=&quot;A lighter V8 · V8&quot;&gt;v8.dev/blog/v8-lite&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;V8のLite modeについて。&lt;br&gt;
-メモリが少ないデバイス向けのモードで、消費メモリの削減を目的としている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;webgpu-and-wsl-in-safari-webkit&quot;&gt;WebGPU and WSL in Safari | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9528/webgpu-and-wsl-in-safari/&quot; title=&quot;WebGPU and WSL in Safari | WebKit&quot;&gt;webkit.org/blog/9528/webgpu-and-wsl-in-safari/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 91からベータサポートされているWebGPU APIとWSLについて。&lt;br&gt;
-WebGPUのパイプライン処理の最適化、ランタイムのパフォーマンス、Web Shading Language(WSL)について紹介されている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;x3d-declarative-3d-for-the-modern-web&quot;&gt;X3D: Declarative 3D for the Modern Web&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.scottlogic.com/2019/08/27/declarative-3d-for-the-modern-web.html&quot; title=&quot;X3D: Declarative 3D for the Modern Web&quot;&gt;blog.scottlogic.com/2019/08/27/declarative-3d-for-the-modern-web.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;3D&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;宣言的な3D表現を行うX3Dという仕様とX3DOMという実装について。&lt;br&gt;
-SVGのようにHTML中にタグを書くことで3D表示を行う&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-77-web-google-developers&quot;&gt;New in Chrome 77  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/09/nic77&quot; title=&quot;New in Chrome 77  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/09/nic77&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 77リリース。&lt;br&gt;
-Largest Contentful Paint(LCP)、&lt;code&gt;formdata&lt;/code&gt;イベント、&lt;code&gt;formAssociated&lt;/code&gt;プロパティのサポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/more-capable-form-controls/&quot; title=&quot;More capable form controls  |  web.dev&quot;&gt;More capable form controls  |  web.dev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;can-i-email-support-tables-for-html-and-css-in-emails&quot;&gt;Can I email… Support tables for HTML and CSS in emails&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.caniemail.com/&quot; title=&quot;Can I email… Support tables for HTML and CSS in emails&quot;&gt;www.caniemail.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;mail&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;メール内で特定のHTMLタグやCSSが利用できるかをメールクライアントのサポート状態を検索できるサービス。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;nanosql-2&quot;&gt;nanoSQL 2&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nanosql.io/&quot; title=&quot;nanoSQL 2&quot;&gt;nanosql.io/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;SQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;SQL builderライブラリ。&lt;br&gt;
-インメモリ、ブラウザのIndexedDBやLocalstorage、Node.jsからMySQLやRedixなどさまざまなデータべースに対して動作する&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;web-development-with-node-and-express-2nd-edition-oreilly-media&quot;&gt;Web Development with Node and Express, 2nd Edition - O&amp;#39;Reilly Media&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://shop.oreilly.com/product/0636920261216.do&quot; title=&quot;Web Development with Node and Express, 2nd Edition - O&amp;#39;Reilly Media&quot;&gt;shop.oreilly.com/product/0636920261216.do&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2019年10月発売&lt;br&gt;
-Node.jsとExpressについての書籍&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;daumann-ecmascript-new-features-list-a-comprehensive-list-of-new-es-features-including-es2015-es6-es2016-es7-es2017-es8-es2018-es9-es2019-es10&quot;&gt;daumann/ECMAScript-new-features-list: A comprehensive list of new ES features, including ES2015 (ES6), ES2016 (ES7), ES2017 (ES8), ES2018 (ES9), ES2019 (ES10)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/daumann/ECMAScript-new-features-list&quot; title=&quot;daumann/ECMAScript-new-features-list: A comprehensive list of new ES features, including ES2015 (ES6), ES2016 (ES7), ES2017 (ES8), ES2018 (ES9), ES2019 (ES10)&quot;&gt;github.com/daumann/ECMAScript-new-features-list&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ECMAScriptのバージョンごとに追加された機能/構文とサンプルコードをまとめたリポジトリ&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 17 Sep 2019 09:03:38 +0900</pubDate>
-        <link>https://jser.info/2019/09/17/chrome-77typescript-3.7can-i-use-and-mdn/</link>
-        <guid isPermaLink="true">https://jser.info/2019/09/17/chrome-77typescript-3.7can-i-use-and-mdn/</guid>
-        
-        <category>Chrome</category>
-        
-        <category>TypeScript</category>
-        
-        <category>MDN</category>
         
         
         <category>JSer</category>
