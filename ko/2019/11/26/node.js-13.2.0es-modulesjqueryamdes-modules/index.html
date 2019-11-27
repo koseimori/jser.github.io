@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>2019-11-26のJS: Node.js 13.2.0(ES Modules)、jQueryがAMDからES Modulesへ - JSer.info</title>
-    <meta name="description" content="JSer.info #463 - 開発版となるNode.js 13.2.0がリリースされました。">
+    <title>2019-11-26: Node.js 13.2.0(ES Modules), jQuery 코드 기반 AMD에서 ES Modules로 - JSer.info</title>
+    <meta name="description" content="JSer.info #463 - 개발 버전인 Node.js 13.2.0이 릴리스됐습니다.">
     
     <meta name="keywords" content="Node.js,jQuery,Modules" />
     
@@ -31,8 +31,8 @@
     
     
     
-    <link rel="canonical" href="https://jser.info/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jser.info/rss/">
+    <link rel="canonical" href="https://jser.info/ko/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jser.info/ko/rss/">
     <link rel="apple-touch-icon" sizes="57x57" href="/public/img/favicon/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/public/img/favicon/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/public/img/favicon/apple-touch-icon-72x72.png">
@@ -54,16 +54,16 @@
     <!-- JavaScript -->
     <script src="/public/js/switch-alt-link.js"></script>
     <!-- Open graph tags -->
-<meta name="twitter:card" content="JSer.info #463 - 開発版となるNode.js 13.2.0がリリースされました。" />
+<meta name="twitter:card" content="JSer.info #463 - 개발 버전인 Node.js 13.2.0이 릴리스됐습니다." />
 <meta name="twitter:site" content="@jser_info" />
 
 
-<meta property="og:title" content="2019-11-26のJS: Node.js 13.2.0(ES Modules)、jQueryがAMDからES Modulesへ">
+<meta property="og:title" content="2019-11-26: Node.js 13.2.0(ES Modules), jQuery 코드 기반 AMD에서 ES Modules로">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://jser.info/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">
+<meta property="og:url" content="https://jser.info/ko/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">
 <meta property="og:image" content="https://jser.info/media/logo.png">
 
-<meta property="og:description" content="JSer.info #463 - 開発版となるNode.js 13.2.0がリリースされました。">
+<meta property="og:description" content="JSer.info #463 - 개발 버전인 Node.js 13.2.0이 릴리스됐습니다.">
 <meta property="og:site_name" content="JSer.info">
 
 
@@ -120,17 +120,13 @@
              data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
     </a>
     <div class="global-header">
-    <h1 class="site-title"><a href="/"><img alt="JSer.info" src="/public/img/logo.png" /></a></h1>
-    <h2 class="site-description">JavaScriptの最新情報を紹介する週刊ブログ</h2>
+    <h1 class="site-title"><a href="/ko/"><img alt="JSer.info" src="/public/img/logo.png" /></a></h1>
+    <h2 class="site-description">JavaScript의 최신 소식을 소개하는 주간 블로그</h2>
     <nav class="lang-menu">
         <ul>
             <li><a href="/" data-alt-href="/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">日本語</a></li>
             <li><a href="/ko/" data-alt-href="/ko/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">한국어</a></li>
         </ul>
-        
-        <div>
-            <p>リアルタイム版は<a href="http://realtime.jser.info/" title="Realtime JSer.info">Realtime JSer.info</a></p>
-        </div>
         
     </nav>
 </div>
@@ -142,15 +138,17 @@
             <div class="post">
     <header>
         <div class="post-header">
-            <h1><a href="/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">2019-11-26のJS: Node.js 13.2.0(ES Modules)、jQueryがAMDからES Modulesへ</a></h1>
+            <h1><a href="/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">2019-11-26: Node.js 13.2.0(ES Modules), jQuery 코드 기반 AMD에서 ES Modules로</a></h1>
 
             <div class="pre-post-toolbar">
                 <span class="post-date">2019年11月26日</span>
                 
+                <span class="post-translator">Translator: U-Yeong Ju</span>
+                
                 <span class="svg-icon"><img src="/public/svg/github.svg"/></span>
-                <a class="btn edit-on-github" href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2019/2019-11-26-node.js-13.2.0es-modulesjqueryamdes-modules.md"><span class="edit-on-github-label"></span>Edit on GitHub</a>
+                <a class="btn edit-on-github" href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ko/_posts/2019/2019-11-26-node.js-13.2.0es-modulesjqueryamdes-modules.md"><span class="edit-on-github-label"></span>Edit on GitHub</a>
                 <span class="svg-icon"><img src="/public/svg/git.svg"/></span>
-                <a class="btn revision-on-github" href="https://github.com/jser/jser.github.io/commits/develop/_i18n/ja/_posts/2019/2019-11-26-node.js-13.2.0es-modulesjqueryamdes-modules.md"><span class="revision-on-github-label"></span>編集履歴を見る</a>
+                <a class="btn revision-on-github" href="https://github.com/jser/jser.github.io/commits/develop/_i18n/ko/_posts/2019/2019-11-26-node.js-13.2.0es-modulesjqueryamdes-modules.md"><span class="revision-on-github-label"></span>See Revisions</a>
             </div>
 
         </div>
@@ -164,13 +162,13 @@
     </li>
     <!-- Hatena -->
     <li>
-        <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-url="https://jser.info/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">
+        <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-url="https://jser.info/ko/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">
             <img src="https://b.st-hatena.com/images/entry-button/button-only.gif" alt="はてなブックマークに追加" width="20" height="20" style="border: none">
         </a>
     </li>
     <!-- Pocket -->
     <li>
-        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/"
+        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/ko/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/"
             data-pocket-count="horizontal" data-pocket-align="left">Pocket</a>
     </li>
 </ul>
@@ -178,21 +176,21 @@
         </div>
     </header>
     <article class="post-content">
-        <p>JSer.info #463 - 開発版となるNode.js 13.2.0がリリースされました。</p>
+        <p>JSer.info #463 - 개발 버전인 Node.js 13.2.0이 릴리스됐습니다.</p>
 
 <ul>
 <li><a href="https://nodejs.org/en/blog/release/v13.2.0/">Node v13.2.0 (Current) | Node.js</a></li>
 </ul>
 
-<p>今までは<code>--experimental-modules</code>というフラグ付きで起動したときのみ、<a href="https://nodejs.org/api/esm.html">ECMAScript Modules</a>をサポートしていました。<br>
-13.2.0からはこのフラグなしでも、デフォルトで拡張子が<code>.mjs</code>のファイルや<code>package.json</code>の<code>&quot;type&quot;</code>フィールドが<code>&quot;module&quot;</code>となっているパッケージをECMAScript Modulesとして<code>import</code>できるようになりました。</p>
+<p>지금까지 <code>--experimental-modules</code>라는 플래그를 붙였을 때만 동작하는 방식으로 <a href="https://nodejs.org/api/esm.html">ECMAScript Modules</a>를 지원했습니다.<br>
+13.2.0부터는 이 플래그 없이 기본적으로 확장자가 <code>.mjs</code>인 파일이나 <code>package.json</code>의 <code>&quot;type&quot;</code> 필드가 <code>&quot;module&quot;</code>로 선언돼 있는 패키지는 ECMAScript Modules로 <code>import</code> 되도록 변경됐습니다.</p>
 
 <ul>
 <li><a href="https://nodejs.org/api/esm.html">ECMAScript Modules | Node.js v13.2.0 Documentation</a></li>
 <li><a href="https://medium.com/@nodejs/announcing-core-node-js-support-for-ecmascript-modules-c5d6dc29b663">Announcing core Node.js support for ECMAScript modules</a></li>
 </ul>
 
-<p>次のような<a href="https://github.com/azu/node-mjs-example">サンプルコード</a>でECMAScript Modulesがフラグなしで実行できることが確認できます。</p>
+<p>아래와 같은 <a href="https://github.com/azu/node-mjs-example">샘플 코드</a>로 ECMAScript Modules를 플래그 없이 실행해 볼 수 있습니다.</p>
 
 <p><code>mod.mjs</code>:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">export</span> <span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
@@ -203,21 +201,21 @@
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">import</span> <span class="p">{</span> <span class="nx">add</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"./mod.mjs"</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
 </code></pre></div>
-<p>Node.js 13.2.0からはこの<code>index.mjs</code>を<code>--experimental-modules</code>のフラグなしで実行できるようになっています。<br>
-ただし、ExperimentalWarningは自動的に表示されます。</p>
+<p>Node.js 13.2.0부터는 이 <code>index.mjs</code>를 <code>--experimental-modules</code> 플래그 없이 실행할 수 있습니다.<br>
+단, 실행 시 ExperimentalWarning이 표시됩니다.</p>
 <div class="highlight"><pre><code class="language-" data-lang="">$ node src/index.mjs
 (node:97312) ExperimentalWarning: The ESM module loader is experimental.
 3
 </code></pre></div>
 <hr>
 
-<p>まだリリースはされていませんが、jQueryのコードベースが<a href="https://requirejs.org/docs/whyamd.html">AMD</a>からECMAScript Modulesを使ったコードに変更されています。</p>
+<p>아직 릴리스는 되지 않았지만 jQuery의 코드 기반이 <a href="https://requirejs.org/docs/whyamd.html">AMD</a>에서 ECMAScript Modules를 사용한 코드로 변경됐습니다.</p>
 
 <ul>
 <li><a href="https://github.com/jquery/jquery/pull/4541">Core: Migrate from AMD to ES modules 🎉 by mgol · Pull Request #4541 · jquery/jquery</a></li>
 </ul>
 
-<p>最終的な<code>jquery.js</code>は<a href="https://rollupjs.org">rollup.js</a>を使ってbundleしたものを配布する予定となっています。</p>
+<p>이후 <code>jquery.js</code>는 <a href="https://rollupjs.org">rollup.js</a>를 사용해 번들하여 배포할 예정이라고 합니다.</p>
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The <a href="https://twitter.com/jquery?ref_src=twsrc%5Etfw">@jquery</a> source is now authored in ES6 modules![1] You can import from `src/jquery.js` directly from the browser without any build process.[2]<a href="https://twitter.com/RollupJS?ref_src=twsrc%5Etfw">@RollupJS</a> is used to create the final jquery.js file.<br><br>[1] <a href="https://t.co/mLGFF4n2WE">https://t.co/mLGFF4n2WE</a><br>[2] <a href="https://t.co/uTWs7URXXW">https://t.co/uTWs7URXXW</a></p>&mdash; Michał Gołębiowski-Owczarek (@m_gol) <a href="https://twitter.com/m_gol/status/1196893162859573250?ref_src=twsrc%5Etfw">November 19, 2019</a></blockquote>
 
@@ -225,7 +223,7 @@
 
 <hr>
 
-<h1 class="site-genre">ヘッドライン</h1>
+<h1 class="site-genre">헤드라인</h1>
 
 <hr>
 
@@ -234,7 +232,7 @@
 <p><a href="https://github.com/jquery/jquery/pull/4541" title="Core: Migrate from AMD to ES modules 🎉 by mgol · Pull Request #4541 · jquery/jquery">github.com/jquery/jquery/pull/4541</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">jQuery</span> <span class="jser-tag">issue</span> <span class="jser-tag">module</span> <span class="jser-tag">news</span></p></p>
 
-<p>jQueryのコードベースがAMDからES modulesに書き換えられた</p>
+<p>jQuery 코드 기반이 AMD에서 ES modules로 재작성 됐습니다.</p>
 
 <hr>
 
@@ -243,8 +241,8 @@
 <p><a href="https://webkit.org/blog/9658/release-notes-for-safari-technology-preview-96/" title="Release Notes for Safari Technology Preview 96 | WebKit">webkit.org/blog/9658/release-notes-for-safari-technology-preview-96/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">safari</span> <span class="jser-tag">ReleaseNote</span></p></p>
 
-<p>Safari Technology Preview 96リリース。<br>
-Web Animations APIをデフォルトで有効化、<code>navigator.clipboard.read()</code>の実装など</p>
+<p>Safari Technology Preview 96이 릴리스됐습니다.<br>
+Web Animations API가 기본적으로 활성화됐으며 <code>navigator.clipboard.read()</code>가 구현됐습니다.</p>
 
 <hr>
 
@@ -253,9 +251,9 @@ Web Animations APIをデフォルトで有効化、<code>navigator.clipboard.rea
 <p><a href="https://nodejs.org/en/blog/release/v13.2.0/" title="Node v13.2.0 (Current) | Node.js">nodejs.org/en/blog/release/v13.2.0/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">node.js</span> <span class="jser-tag">ReleaseNote</span> <span class="jser-tag">module</span></p></p>
 
-<p>Node.js 13.2.0リリース。<br>
-<code>--experimental-modules</code>のフラグが外れたため、デフォルトでES Modulesが利用できるように。<br>
-<code>worker_threads</code>に<code>resourceLimits</code>オプションの追加、<code>child_process</code>などに<code>serialization</code>オプションの追加など</p>
+<p>Node.js 13.2.0이 릴리스됐습니다.<br>
+<code>--experimental-modules</code> 플래그가 제거돼 기본적으로 ES Modules를 사용할 수 있습니다.<br>
+<code>worker_threads</code>에 <code>resourceLimits</code> 옵션과 <code>child_process</code> 등에 <code>serialization</code> 옵션이 추가됐습니다.</p>
 
 <ul>
 <li><a href="https://nodejs.org/api/esm.html" title="ECMAScript Modules | Node.js v13.2.0 Documentation">ECMAScript Modules | Node.js v13.2.0 Documentation</a></li>
@@ -269,7 +267,7 @@ Web Animations APIをデフォルトで有効化、<code>navigator.clipboard.rea
 <p><a href="https://aws.amazon.com/jp/blogs/compute/node-js-12-x-runtime-now-available-in-aws-lambda/" title="Node.js 12.x runtime now available in AWS Lambda | AWS Compute Blog">aws.amazon.com/jp/blogs/compute/node-js-12-x-runtime-now-available-in-aws-lambda/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">aws</span> <span class="jser-tag">Lambda</span> <span class="jser-tag">node.js</span> <span class="jser-tag">news</span></p></p>
 
-<p>AWS LambdaがNode.js 12.xをサポート</p>
+<p>AWS Lambda가 Node.js 12.x를 지원합니다.</p>
 
 <hr>
 
@@ -278,8 +276,8 @@ Web Animations APIをデフォルトで有効化、<code>navigator.clipboard.rea
 <p><a href="https://devexpress.github.io/testcafe/blog/testcafe-v1-7-0-released.html" title="TestCafe v1.7.0 Released | TestCafe">devexpress.github.io/testcafe/blog/testcafe-v1-7-0-released.html</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">browser</span> <span class="jser-tag">testing</span> <span class="jser-tag">E2E</span> <span class="jser-tag">ReleaseNote</span></p></p>
 
-<p>TestCafe v1.7.0リリース。<br>
-テストコード内で実行してるブラウザやOSの情報を取得できる<code>t.browser</code>オブジェクトのサポートなど</p>
+<p>TestCafe v1.7.0이 릴리스 됐습니다.<br>
+테스트 코드 내에서 현재 실행 브라우저와 OS에 대한 정보를 취득 가능한 <code>t.browser</code>을 지원합니다.</p>
 
 <hr>
 
@@ -288,7 +286,7 @@ Web Animations APIをデフォルトで有効化、<code>navigator.clipboard.rea
 <p><a href="https://openjsf.org/blog/2019/11/20/web-framework-fastify-joins-openjs-foundation-as-an-incubating-project/" title="Web Framework Fastify Joins OpenJS Foundation as an Incubating Project - OpenJS Foundation">openjsf.org/blog/2019/11/20/web-framework-fastify-joins-openjs-foundation-as-an-incubating-project/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">node.js</span> <span class="jser-tag">library</span> <span class="jser-tag">news</span></p></p>
 
-<p>Node.jsのウェブアプリケーションフレームワークであるFastifyがOpenJS FoundationのIncubating Projectとなった。</p>
+<p>Node.js의 웹 애플리케이션 프레임워크인 Fastify가 OpenJS Foundation의 Incubating Project로 선정됐습니다.</p>
 
 <ul>
 <li><a href="https://www.fastify.io/" title="Fastify, Fast and low overhead web framework, for Node.js">Fastify, Fast and low overhead web framework, for Node.js</a></li>
@@ -301,9 +299,9 @@ Web Animations APIをデフォルトで有効化、<code>navigator.clipboard.rea
 <p><a href="https://www.bitovi.com/blog/canjs-6.0" title="CanJS 6.0">www.bitovi.com/blog/canjs-6.0</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">library</span> <span class="jser-tag">ReleaseNote</span></p></p>
 
-<p>CanJS 6.0リリース。<br>
-WebComponentベースになり、コンポーネントのPropsの型システムの刷新、Proxyを使ったObservableObjectの仕組みなどが導入された。<br>
-マイグレーションガイドとツールも公開されている。</p>
+<p>CanJS 6.0이 릴리스됐습니다.<br>
+WebComponent 기반으로 변경됐고 컴포넌트 Props의 타입 시스템이 개선됐습니다. 또, Proxy를 사용한 ObservableObject 구조 등이 도입됐습니다.<br>
+마이그레이션 가이드와 관련 도구도 함께 공개됐습니다.</p>
 
 <ul>
 <li><a href="https://canjs.com/doc/migrate-6.html#MigratetoObservableObjectandObservableArrayformodels" title="Migrating to CanJS 6 | upgrade | Guides | CanJS — Build CRUD apps in fewer lines of code.">Migrating to CanJS 6 | upgrade | Guides | CanJS — Build CRUD apps in fewer lines of code.</a></li>
@@ -317,9 +315,9 @@ WebComponentベースになり、コンポーネントのPropsの型システム
 <p><a href="https://eslint.org/blog/2019/11/eslint-v6.7.0-released" title="ESLint v6.7.0 released - ESLint - Pluggable JavaScript linter">eslint.org/blog/2019/11/eslint-v6.7.0-released</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">ESLint</span> <span class="jser-tag">ReleaseNote</span></p></p>
 
-<p>ESLint 6.7.0リリース。<br>
-ルールからSuggestionの候補を提供するAPIの追加、設定ファイルに<code>ignorePatterns</code>を記述できるようになるなど。<br>
-また<code>no-constructor-return</code>などのルールを新規に5つ追加など</p>
+<p>ESLint 6.7.0이 릴리스됐습니다.<br>
+규칙을 통해 Suggestion 후보를 제공하는 API가 추가됐고 설정 파일에 <code>ignorePatterns</code>을 작성할 수 있게 됐습니다.<br>
+또, <code>no-constructor-return</code> 등의 5개의 규칙이 신규로 추가됐습니다. </p>
 
 <ul>
 <li><a href="https://qiita.com/mysticatea/items/377b6ca6558dc253159b" title="ESLint v6.7.0 - Qiita">ESLint v6.7.0 - Qiita</a></li>
@@ -327,7 +325,7 @@ WebComponentベースになり、コンポーネントのPropsの型システム
 
 <hr>
 
-<h1 class="site-genre">アーティクル</h1>
+<h1 class="site-genre">아티클</h1>
 
 <hr>
 
@@ -336,7 +334,7 @@ WebComponentベースになり、コンポーネントのPropsの型システム
 <p><a href="https://pqina.nl/blog/cropping-images-to-an-aspect-ratio-with-javascript/" title="Cropping Images to a specific Aspect Ratio with JavaScript • PQINA">pqina.nl/blog/cropping-images-to-an-aspect-ratio-with-javascript/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">canvas</span> <span class="jser-tag">article</span></p></p>
 
-<p>Canvasを使って画像を切り抜きするチュートリアル。チュートリアルではカバーできてない画像を扱う際の問題についてなど</p>
+<p>Canvas를 사용해 이미지를 잘라내는 방법을 소개하는 튜토리얼 글입니다. 튜토리얼로는 수용할 수 없는 이미지를 다룰 때의 문제 등에 대해서도 작성돼 있습니다. </p>
 
 <hr>
 
@@ -345,11 +343,11 @@ WebComponentベースになり、コンポーネントのPropsの型システム
 <p><a href="https://2ality.com/2019/10/regexp-lookaround-assertions.html" title="Regular expressions in JavaScript: lookaround assertions by example">2ality.com/2019/10/regexp-lookaround-assertions.html</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">RegExp</span> <span class="jser-tag">article</span></p></p>
 
-<p>JavaScriptの正規表現の先読み/後読みのパターンについて。</p>
+<p>JavaScript 정규표현의 미리보기(lookahead)/돌아보기(lookbehind) 패턴에 대해 소개합니다.</p>
 
 <hr>
 
-<h1 class="site-genre">スライド、動画関係</h1>
+<h1 class="site-genre">슬라이드, 영상</h1>
 
 <hr>
 
@@ -358,9 +356,9 @@ WebComponentベースになり、コンポーネントのPropsの型システム
 <p><a href="https://www.youtube.com/watch?v=ff4fgQxPaO0" title="Faster apps with JSON.parse (Chrome Dev Summit 2019) - YouTube">www.youtube.com/watch?v&#x3D;ff4fgQxPaO0</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">JSON</span> <span class="jser-tag">performance</span> <span class="jser-tag">video</span></p></p>
 
-<p>オブジェクトリテラルより<code>JSON.parse</code>した方が、パフォーマンスが良い理由についての解説動画。<br>
-JSONには出現するトークンが限定されているためオブジェクトリテラルよりパースが高速にできること、SSRでのユースケースなどについて紹介している。<br>
-10kB以上など大きなデータに関しては<code>JSON.parse</code>を使うことを推奨している</p>
+<p>객체 리터럴 보다 <code>JSON.parse</code> 하는 편이 성능이 좋은 이유에 대해서 설명하는 동영상입니다.<br>
+JSON에는 출현할 토크가 한정돼 있기 때문에 객체 리터럴보다 파싱 속도를 더욱 빠르게 할 수 있다고 말하며 SSR에서의 유스케이스 관련해서도 소개합니다. <br>
+10kB 이상 큰 데이터는 <code>JSON.parse</code>를 사용할 것을 권장하고 있습니다.</p>
 
 <ul>
 <li><a href="https://v8.dev/blog/cost-of-javascript-2019#json" title="The cost of JavaScript in 2019 · V8">The cost of JavaScript in 2019 · V8</a></li>
@@ -368,7 +366,7 @@ JSONには出現するトークンが限定されているためオブジェク�
 
 <hr>
 
-<h1 class="site-genre">サイト、サービス、ドキュメント</h1>
+<h1 class="site-genre">사이트, 서비스, 문서</h1>
 
 <hr>
 
@@ -377,9 +375,9 @@ JSONには出現するトークンが限定されているためオブジェク�
 <p><a href="https://easydb.io/" title="EasyDB">easydb.io/</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">DB </span> <span class="jser-tag">webservice</span> <span class="jser-tag"> node</span> <span class="jser-tag">npm</span> <span class="jser-tag">python</span></p></p>
 
-<p>Node.jsやPythonから24時間使えるKVSなDBを作ってくれるウェブサービス。<br>
-アカウントを作ると72時間使うことができ、永続化したい場合は$5/monthで利用できる。<br>
-ハッカソンなどの一時的なイベント向けのデータベースサービス。</p>
+<p>Node.js나 Python에서 24시간 사용할 수 있는 KVS한 DB를 만들어주는 웹 서비스입니다. <br>
+계정을 만들면 72시간 사용할 수 있으며 영구로 사용할 경우엔 $5/month로 이용할 수 있습니다.<br>
+헤커톤 등의 일시적인 이벤트 용 데이터 베이스 서비스입니다.</p>
 
 <hr>
 
@@ -388,11 +386,11 @@ JSONには出現するトークンが限定されているためオブジェク�
 <p><a href="https://github.com/liyasthomas/postwoman" title="liyasthomas/postwoman: 👽 API request builder - A free, fast, and beautiful alternative to Postman https://postwoman.io 🔥">github.com/liyasthomas/postwoman</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">webservice</span> <span class="jser-tag">API</span> <span class="jser-tag">Tools</span></p></p>
 
-<p>REST API、WebSockets、GraphQLに対応したAPIへのリクエスト/レスポンスをテストできるツール。</p>
+<p>REST API, WebSockets, GraphQL를 지원하는 API의 요청 / 응답을 테스트할 수 있는 도구입니다.</p>
 
 <hr>
 
-<h1 class="site-genre">ソフトウェア、ツール、ライブラリ関係</h1>
+<h1 class="site-genre">소프트웨어, 도구, 라이브러리</h1>
 
 <hr>
 
@@ -401,12 +399,12 @@ JSONには出現するトークンが限定されているためオブジェク�
 <p><a href="https://github.com/jeremydaly/lambda-api" title="jeremydaly/lambda-api: Lightweight web framework for your serverless applications">github.com/jeremydaly/lambda-api</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag"> node</span> <span class="jser-tag">aws</span> <span class="jser-tag">Lambda</span> <span class="jser-tag">library</span></p></p>
 
-<p>AWS Lambda向けのNode.jsフレームワーク。<br>
-依存がなく、HTTPメソッドに対するルーティング、HTTPリクエスト/レスポンスに対する基本的な処理を持っている</p>
+<p>AWS Lambda 용 Node.js 프레임워크 입니다.<br>
+의존 라이브러리가 없으며 HTTP 메서드에 관한 라우팅, HTTP 요청 / 응답에 관한 기본적인 처리를 제공합니다.</p>
 
 <hr>
 
-<h1 class="site-genre">書籍関係</h1>
+<h1 class="site-genre">도서</h1>
 
 <hr>
 
@@ -415,7 +413,7 @@ JSONには出現するトークンが限定されているためオブジェク�
 <p><a href="https://pragprog.com/book/tbreact/test-driven-react" title="Test-Driven React: Find Problems Early, Fix Them Quickly, Code with Confidence by Trevor Burnham | The Pragmatic Bookshelf">pragprog.com/book/tbreact/test-driven-react</a><br>
 <p class="jser-tags jser-tag-icon"><span class="jser-tag">React</span> <span class="jser-tag">testing</span> <span class="jser-tag">book</span></p></p>
 
-<p>テスト駆動でのReactアプリケーション開発についての書籍</p>
+<p>테스트 주도 리액트 애플리케이션 개발을 주제로 한 서적입니다. </p>
 
 <hr>
 
@@ -424,18 +422,13 @@ JSONには出現するトークンが限定されているためオブジェク�
     <div class="post-post-toolbar">
         <span class="svg-icon"><img src="/public/svg/github.svg"/></span>
         <a class="btn edit-on-github"
-           href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2019/2019-11-26-node.js-13.2.0es-modulesjqueryamdes-modules.md"><span
-                class="edit-on-github-label"></span>この記事へ修正リクエストをする</a>
-        
-        <nav>
-            <span class="svg-icon"><img src="/public/svg/favorite.svg"/></span>
-            <span>JSer.infoへ記事を紹介したい場合は<a href="https://jser.info/support/">こちら</a>から</span>
-        </nav>
+           href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ko/_posts/2019/2019-11-26-node.js-13.2.0es-modulesjqueryamdes-modules.md"><span
+                class="edit-on-github-label"></span>Pull Request to this article</a>
         
         <nav class="tags"
              id="js-post-tags"
              data-post-tags='["Node.js","jQuery","Modules"]'>
-            <span><span class="svg-icon"><img src="/public/svg/tag.svg"/></span>タグ:</span>
+            <span><span class="svg-icon"><img src="/public/svg/tag.svg"/></span>Tags:</span>
             <ul>
                 
                 <li>Node.js</li>
@@ -458,23 +451,21 @@ JSONには出現するトークンが限定されているためオブジェク�
     </li>
     <!-- Hatena -->
     <li>
-        <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-url="https://jser.info/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">
+        <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-url="https://jser.info/ko/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">
             <img src="https://b.st-hatena.com/images/entry-button/button-only.gif" alt="はてなブックマークに追加" width="20" height="20" style="border: none">
         </a>
     </li>
     <!-- Pocket -->
     <li>
-        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/"
+        <a href="https://getpocket.com/save" class="pocket-btn" data-lang="ja" data-save-url="https://jser.info/ko/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/"
             data-pocket-count="horizontal" data-pocket-align="left">Pocket</a>
     </li>
 </ul>
 
 </div>
 <div class="disqus-embed" id="js-disqus-embed">
-    <button class="comment-button" id="js-comment-button">コメントを表示</button>
+    <button class="comment-button" id="js-comment-button">Show Comments</button>
 </div>
-
-<script async type="text/javascript" src="/public/build/related-item.js"></script>
 
 <script async type="text/javascript" src="/public/js/show-disqus.js"></script>
 <script>
@@ -511,21 +502,13 @@ JSONには出現するトークンが限定されているためオブジェク�
         <a class="social-icon__github" href="https://github.com/jser" title="GitHub">
             <img src="/public/svg/github.svg" alt="GitHub">
         </a>
-        <a class="social-icon__rss" href="https://jser.info/rss/" title="RSS Feed">
+        <a class="social-icon__rss" href="https://jser.info/ko/rss/" title="RSS Feed">
             <img src="/public/svg/feed.svg" alt="RSS">
         </a>
-        <a class="social-icon__feedly" href='https://feedly.com/i/subscription/feed%2Fhttps://jser.info/rss/'
+        <a class="social-icon__feedly" href='https://feedly.com/i/subscription/feed%2Fhttps://jser.info/ko/rss/'
             target='blank'>
             <img id='feedlyFollow' src='https://s3.feedly.com/img/follows/feedly-follow-square-flat-green_2x.png' alt='follow us in feedly'
                 width='28' height='28'></a>
-    </div>
-    
-    <div class="slack-bar">
-        <a class="social-icon__slack" href='https://get.slack.help/hc/ja/articles/218688467-Slack-%E3%81%AB-RSS-%E3%83%95%E3%82%A3%E3%83%BC%E3%83%89%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B'
-            target='blank'>
-            <img src="/public/svg/slack.svg" alt="Slack" width="50" height="50"/>
-            SlackにRSSを追加する
-        </a>
     </div>
     
     <nav>
@@ -541,46 +524,46 @@ JSONには出現するトークンが限定されているためオブジェク�
             </div>
         </div>
         <div class="side-menu">
-            <h1>ページ</h1>
+            <h1>페이지</h1>
             <ul>
-                <li><a class="page-link" href="https://jser.info/about/">JSer.infoについて</a></li>
+                <li><a class="page-link" href="https://jser.info/about/">JSer.info 소개</a></li>
                 <li><a class="page-link" href="https://jser.info/support/">Support</a></li>
             </ul>
         </div>
         <div class="side-menu">
-            <h1>最近の投稿</h1>
+            <h1>최신 글</h1>
             <ul>
                 
                 
-                <li><a class="page-link" href="/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">2019-11-26のJS: Node.js 13.2.0(ES Modules)、jQueryがAMDからES Modulesへ</a></li>
+                <li><a class="page-link" href="/ko/2019/11/26/node.js-13.2.0es-modulesjqueryamdes-modules/">2019-11-26: Node.js 13.2.0(ES Modules), jQuery 코드 기반 AMD에서 ES Modules로</a></li>
                 
                 
                 
-                <li><a class="page-link" href="/2019/11/19/front-end-tooling-survey-2019react/">2019-11-19のJS: Front-End Tooling Survey 2019、Reactの作り方</a></li>
+                <li><a class="page-link" href="/ko/2019/11/05/msedge-on-chromium-rcimmer-5.0.0speed-report-on-search-console/">2019-11-05: MSEdge on Chromium RC, Immer 5.0.0, Speed Report on Search Console</a></li>
                 
                 
                 
-                <li><a class="page-link" href="/2019/11/12/typescript-3.7babel-7.7.0npmweb-almanac/">2019-11-12のJS: TypeScript 3.7正式リリース、Babel 7.7.0、npmロードマップ、Web Almanac</a></li>
+                <li><a class="page-link" href="/ko/2019/10/29/node.js-13.0.0firefox-70.0electron-7.0.0/">2019-10-29: Node.js 13.0.0, Firefox 70.0, Electron 7.0.0</a></li>
                 
                 
                 
-                <li><a class="page-link" href="/2019/11/05/msedge-on-chromium-rcimmer-5.0.0speed-report-on-search-console/">2019-11-05のJS: MSEdge on Chromium RC、Immer 5.0.0、Speed Report on Search Console</a></li>
+                <li><a class="page-link" href="/ko/2019/10/22/node-v12.13.0-ltschrome-79wsl-2node.js/">2019-10-22: Node v12.13.0 (LTS), Chrome 79 개발자 도구의 변경사항, WSL2로 Node.js 입문</a></li>
                 
                 
                 
-                <li><a class="page-link" href="/2019/10/29/node.js-13.0.0firefox-70.0electron-7.0.0/">2019-10-29のJS: Node.js 13.0.0、Firefox 70.0、Electron 7.0.0</a></li>
+                <li><a class="page-link" href="/ko/2019/10/15/webpack-5bnext.jscreate-next-appsame-site-cookies/">2019-10-15: webpack 5β, Next.js(create-next-app), Same-Site Cookies</a></li>
                 
                 
                 
-                <li><a class="page-link" href="/2019/10/22/node-v12.13.0-ltschrome-79wsl-2node.js/">2019-10-22のJS: Node v12.13.0 (LTS)、Chrome 79の開発者ツールの変更点、WSL 2でNode.js入門</a></li>
+                <li><a class="page-link" href="/ko/2019/10/09/preact-x10-webhint-browser-extension-v1-typescript-3.7b/">2019-10-09: Preact X(10), webhint browser extension v1, TypeScript 3.7β</a></li>
                 
                 
                 
-                <li><a class="page-link" href="/2019/10/15/webpack-5bnext.jscreate-next-appsame-site-cookies/">2019-10-15のJS: webpack 5β、Next.js(create-next-app)、Same-Site Cookies</a></li>
+                <li><a class="page-link" href="/ko/2019/09/30/455draft/">2019-09-30: React 16.10.0, Node.js 12.11.0(worker_thread), 네트워크 요청과 UI 갱신의 경합(race)</a></li>
                 
                 
                 
-                <li><a class="page-link" href="/2019/10/09/preact-x10-webhint-browser-extension-v1-typescript-3.7b/">2019-10-09のJS: Preact X(10)、webhint browser extension v1、TypeScript 3.7β</a></li>
+                <li><a class="page-link" href="/ko/2019/09/17/chrome-77typescript-3.7can-i-use-and-mdn/">2019-09-17: Chrome 77, TypeScript 3.7 로드맵, Can I use and MDN</a></li>
                 
                 
             </ul>
