@@ -5,9 +5,267 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 27 Nov 2019 17:34:16 +0900</pubDate>
-    <lastBuildDate>Wed, 27 Nov 2019 17:34:16 +0900</lastBuildDate>
+    <pubDate>Tue, 03 Dec 2019 13:05:57 +0900</pubDate>
+    <lastBuildDate>Tue, 03 Dec 2019 13:05:57 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-12-03のJS: Got 10(Node.js HTTPクライアント)、FAB(Frontend Application Bundles)</title>
+        <description>&lt;p&gt;JSer.info #464 - Node.js向けのHTTPクライアントライブラリであるGot 10がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sindresorhus/got/releases/tag/v10.0.0&quot;&gt;Release v10.0.0 · sindresorhus/got&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TypeScriptで書き直されてバージョンで、Node.js 10以降がサポート対象となっています。&lt;br&gt;
+Node.js 12以降を対象にBrotliのサポート、DNS Cacheのオプションを追加なども行われています。&lt;br&gt;
+また、オプション名のリネームを中心に破壊的な変更も多く含んでいます。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;query&lt;/code&gt; -&amp;gt; &lt;code&gt;searchParams&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;baseUrl&lt;/code&gt; -&amp;gt; &lt;code&gt;prefixUrl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;encoding&lt;/code&gt; -&amp;gt; &lt;code&gt;responseType&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;その他にもリトライオプションの使い方の変更、リクエストとレスポンスにおけるJSONの扱い方の変更なども含まれています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://fab.dev/&quot;&gt;FAB — Frontend Application Bundles&lt;/a&gt;というコミュニティ仕様では、フロントエンドアプリケーションをHerokuやAWS Lambdaなどにデプロイする際のフォーマットについて決めています。&lt;/p&gt;
+
+&lt;p&gt;Gatsby、Next.js、Nuxt.jsなどのフレームワークごとにそのアプリケーションの出力形式が異なるため、現状でホスティング環境へデプロイするためにはそれぞれにあわせた設定が必要になります。&lt;br&gt;
+FABはその間となるFramework adaptersとなる中間フォーマットを定義して、フレームワークとホスティング環境の相互運用性の向上を試みるプロジェクトです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://fab.dev/kb/fab-structure&quot;&gt;FAB Structure&lt;/a&gt;では、アセットを配置する&lt;code&gt;_assets&lt;/code&gt;というディレクトリとNode.jsサーバとAPIを決めた&lt;code&gt;server.js&lt;/code&gt;をzipでパッケージングしたものが定義されています。&lt;/p&gt;
+
+&lt;p&gt;また&lt;a href=&quot;https://github.com/fab-spec/fab/issues&quot;&gt;さまざまIssue&lt;/a&gt;があるため、実際に利用されるようになるかはわかりませんが、&lt;br&gt;
+&lt;a href=&quot;https://linc.sh/&quot;&gt;Linc&lt;/a&gt;のCTOが主となって仕様を作っているようです。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-workbox-v5-0-0-rc-1-googlechrome-workbox&quot;&gt;Release Workbox v5.0.0-rc.1 · GoogleChrome/workbox&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0-rc.1&quot; title=&quot;Release Workbox v5.0.0-rc.1 · GoogleChrome/workbox&quot;&gt;github.com/GoogleChrome/workbox/releases/tag/v5.0.0-rc.1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Workbox 5.0.0 RC1リリース&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v10-0-0-sindresorhus-got&quot;&gt;Release v10.0.0 · sindresorhus/got&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sindresorhus/got/releases/tag/v10.0.0&quot; title=&quot;Release v10.0.0 · sindresorhus/got&quot;&gt;github.com/sindresorhus/got/releases/tag/v10.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js向けHTTPクライアントのGot 10.0.0リリース。&lt;br&gt;
+TypeScriptで書き直されたバージョン。&lt;br&gt;
+Node.js 10未満のサポート終了、&lt;code&gt;query&lt;/code&gt;を&lt;code&gt;searchParams&lt;/code&gt;にリネーム、&lt;code&gt;encoding&lt;/code&gt;を&lt;code&gt;responseType&lt;/code&gt;にリネーム、&lt;code&gt;json&lt;/code&gt;オプションの変更など。&lt;br&gt;
+DNS cacheのサポート、&lt;code&gt;maxRedirects&lt;/code&gt;オプションの追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;javascript-frameworks-security-report-2019-snyk&quot;&gt;JavaScript frameworks security report 2019 | Snyk&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://snyk.io/blog/javascript-frameworks-security-report-2019/&quot; title=&quot;JavaScript frameworks security report 2019 | Snyk&quot;&gt;snyk.io/blog/javascript-frameworks-security-report-2019/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Angular(JS)、React、jQueryについてのセキュリティレポート。&lt;br&gt;
+脆弱性の個数や影響範囲、脆弱性報告、セキュリティ機能についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;i-created-the-exact-same-app-in-vue-and-svelte-here-are-the-differences&quot;&gt;I created the exact same app in Vue and Svelte. Here are the differences.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-vue-and-svelte-here-are-the-differences-c649f8d4ce0a&quot; title=&quot;I created the exact same app in Vue and Svelte. Here are the differences.&quot;&gt;medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-vue-and-svelte-here-are-the-differences-c649f8d4ce0a&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;VueとSvelteで同じTodoアプリを作成しての比較記事。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-graalwasm-a-webassembly-engine-in-graalvm&quot;&gt;Announcing GraalWasm — a WebAssembly engine in GraalVM&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/graalvm/announcing-graalwasm-a-webassembly-engine-in-graalvm-25cd0400a7f2&quot; title=&quot;Announcing GraalWasm — a WebAssembly engine in GraalVM&quot;&gt;medium.com/graalvm/announcing-graalwasm-a-webassembly-engine-in-graalvm-25cd0400a7f2&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Java&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;VM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;GraalVMでWebAssemblyのサポート。&lt;br&gt;
+GraalVMのTrufle API使ってWebAssemblyバイナリに対するインタープリタを実装し、Wasmを実行できるようにしている。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;connor4312-cockatiel-a-resilience-and-transient-fault-handling-library-that-allows-developers-to-express-policies-such-as-backoff-retry-circuit-breaker-timeout-bulkhead-isolation-and-fallback-inspired-by-net-polly&quot;&gt;connor4312/cockatiel: A resilience and transient-fault-handling library that allows developers to express policies such as Backoff, Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback. Inspired by .NET Polly.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/connor4312/cockatiel&quot; title=&quot;connor4312/cockatiel: A resilience and transient-fault-handling library that allows developers to express policies such as Backoff, Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback. Inspired by .NET Polly.&quot;&gt;github.com/connor4312/cockatiel&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;.net&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;.NET Pollyをインスパイアしたエラーハンドリングと復帰処理ライブラリ。&lt;br&gt;
+バックオフアルゴリズム、キャンセル、リトライ、サーキットブレーカー、タイムアウト、同時呼び出しの制限、フォールバックなどを行う&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/App-vNext/Polly&quot; title=&quot;App-vNext/Polly: Polly is a .NET resilience and transient-fault-handling library that allows developers to express policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner. From version 6.0.1, Polly targets .NET Standard 1.1 and 2.0+.&quot;&gt;App-vNext/Polly: Polly is a .NET resilience and transient-fault-handling library that allows developers to express policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner. From version 6.0.1, Polly targets .NET Standard 1.1 and 2.0+.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;graphql-ec-improving-online-shopping-site-performance-which-using-the-graphql-speaker-deck&quot;&gt;GraphQLを用いたサイトに おけるパフォーマンス改善 （ECサイトを題材に）/ Improving online shopping site performance which using the GraphQL - Speaker Deck&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/nobuhikosawai/improving-online-shopping-site-performance-which-using-the-graphql&quot; title=&quot;GraphQLを用いたサイトに おけるパフォーマンス改善 （ECサイトを題材に）/ Improving online shopping site performance which using the GraphQL - Speaker Deck&quot;&gt;speakerdeck.com/nobuhikosawai/improving-online-shopping-site-performance-which-using-the-graphql&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;GraphQLのパフォーマンス改善についてのスライド。&lt;br&gt;
+Datadog APMを使ったサーバサイドのGraphQLのクエリトレースの読み方、フロントエンドの不必要なデータを取得するクエリの改善方法について。&lt;br&gt;
+クエリと画面を紐付けるためにFragmentとColocation&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.apollographql.com/docs/react/data/fragments/&quot; title=&quot;Using fragments - Client (React) - Apollo GraphQL Docs&quot;&gt;Using fragments - Client (React) - Apollo GraphQL Docs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;open-source-labs-reactime-chrome-extension-for-state-debugging-in-react-applications&quot;&gt;open-source-labs/reactime: Chrome extension for state debugging in React applications&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/open-source-labs/reactime&quot; title=&quot;open-source-labs/reactime: Chrome extension for state debugging in React applications&quot;&gt;github.com/open-source-labs/reactime&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Extension&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ReactアプリケーションのStateをデバッグするブラウザ拡張。&lt;br&gt;
+その時点のStateの表示、Stateの変化を記録して、特定の時点のStateを再現できる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;style-guide-redux&quot;&gt;Style Guide · Redux&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://redux.js.org/style-guide/style-guide&quot; title=&quot;Style Guide · Redux&quot;&gt;redux.js.org/style-guide/style-guide&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Reduxのスタイルについての公式ドキュメント。&lt;br&gt;
+Essential、Strongly Recommended、Recommendedの3つのカテゴリでスタイルに対するガイドをまとめている&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;who-can-use&quot;&gt;Who Can Use&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://whocanuse.com/&quot; title=&quot;Who Can Use&quot;&gt;whocanuse.com/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;背景色、文字色、文字サイズを指定してプレビューでき、コントラスト比やWCAGグレードを算出してくれるツール&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;fab-frontend-application-bundles&quot;&gt;FAB — Frontend Application Bundles&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://fab.dev/&quot; title=&quot;FAB — Frontend Application Bundles&quot;&gt;fab.dev/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;spec&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;フロントエンドアプリケーションをホスティングにデプロイする際のパッケージングや配信するNode.jsサーバについて決めた仕様。&lt;br&gt;
+フレームワークごとに出力形式が異なり、ホスティング環境ごとに設定が異なるのを補うための中間フォーマット&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/fab-spec/fab/tree/next/packages/fab-static&quot; title=&quot;@fab/static&quot;&gt;@fab/static&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;linc-the-perfect-ci-cd-pipeline-for-your-frontend&quot;&gt;Linc – The Perfect CI/CD Pipeline for your Frontend&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://linc.sh/&quot; title=&quot;Linc – The Perfect CI/CD Pipeline for your Frontend&quot;&gt;linc.sh/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CI &lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CD&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;フロントエンドアプリケーション向けのCI。CDウェブサービス。&lt;br&gt;
+&lt;a href=&quot;https://fab.dev/&quot;&gt;https://fab.dev/&lt;/a&gt; のパッケージをサポートしており、コミットごとテスト、アプリケーションのプレビューができる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;killedbyapixel-jsoncrush-compress-json-into-url-friendly-strings&quot;&gt;KilledByAPixel/JSONCrush: Compress JSON into URL friendly strings&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/KilledByAPixel/JSONCrush&quot; title=&quot;KilledByAPixel/JSONCrush: Compress JSON into URL friendly strings&quot;&gt;github.com/KilledByAPixel/JSONCrush&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JSON&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JSON文字列をURLセーフにエンコード/デコードするライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;grubersjoe-reflow-babel-plugin-to-transpile-flow-code-to-typescript-with-cli-wrapper&quot;&gt;grubersjoe/reflow: Babel plugin to transpile Flow code to TypeScript with CLI wrapper&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/grubersjoe/reflow&quot; title=&quot;grubersjoe/reflow: Babel plugin to transpile Flow code to TypeScript with CLI wrapper&quot;&gt;github.com/grubersjoe/reflow&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;FlowのコードをTypeScriptのコードに変換するCLI。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;billinghamj-fix-es-imports-fixes-your-es-import-paths-from-node-style-to-explicit-filenames&quot;&gt;billinghamj/fix-es-imports: Fixes your ES import paths - from Node-style to explicit filenames&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/billinghamj/fix-es-imports&quot; title=&quot;billinghamj/fix-es-imports: Fixes your ES import paths - from Node-style to explicit filenames&quot;&gt;github.com/billinghamj/fix-es-imports&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;require&lt;/code&gt;では省略可能なモジュールインポートの&lt;code&gt;index.js&lt;/code&gt;や拡張子を追加するツール。&lt;br&gt;
+ECMAScriptでは拡張子などは省略できないため、&lt;code&gt;import&lt;/code&gt;文を修正する目的のツール&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;neomjs-neo-the-webworkers-driven-ui-framework-beta-version&quot;&gt;neomjs/neo: The webworkers driven UI framework (BETA version)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/neomjs/neo&quot; title=&quot;neomjs/neo: The webworkers driven UI framework (BETA version)&quot;&gt;github.com/neomjs/neo&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebWorkerベースのUIフレームワーク。&lt;br&gt;
+Worker内でコンポーネントの処理を行う&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/neomjs/neo&quot; title=&quot;neomjs/neo: The webworkers driven UI framework (BETA version)&quot;&gt;neomjs/neo: The webworkers driven UI framework (BETA version)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/neomjs/neo/blob/dev/.github/VISION.md&quot; title=&quot;neo/VISION.md at dev · neomjs/neo&quot;&gt;neo/VISION.md at dev · neomjs/neo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;javascript-kids&quot;&gt;子どもから大人までスラスラ読める JavaScriptふりがなKidsプログラミング ゲームを作りながら楽しく学ぼう！ - インプレスブックス&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://book.impress.co.jp/books/1118101174&quot; title=&quot;子どもから大人までスラスラ読める JavaScriptふりがなKidsプログラミング ゲームを作りながら楽しく学ぼう！ - インプレスブックス&quot;&gt;book.impress.co.jp/books/1118101174&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptのコードと本文にふりがなをふったプログラミングの書籍&lt;br&gt;
+HTMLとJavaScriptを使ったゲームを作りながらプログラミングについてを学ぶ内容&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 03 Dec 2019 12:22:10 +0900</pubDate>
+        <link>https://jser.info/2019/12/03/got-10node.js-httpfabfrontend-application-bundles/</link>
+        <guid isPermaLink="true">https://jser.info/2019/12/03/got-10node.js-httpfabfrontend-application-bundles/</guid>
+        
+        <category>Node.js</category>
+        
+        <category>HTTP</category>
+        
+        <category>bundler</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-11-26のJS: Node.js 13.2.0(ES Modules)、jQueryがAMDからES Modulesへ</title>
@@ -2219,248 +2477,6 @@ JavaScriptアプリケーションの97%はnpmから来ているため、OSSの�
         <category>Node</category>
         
         <category>API</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-09-24のJS: Safari 13、Chrome 78 Beta(Native File System trial)、Storybook 5.2(CSF)</title>
-        <description>&lt;p&gt;JSer.info #454 - iOS 13、macOS 10.14.5(Mojave)に搭載されるSafari 13のリリースノートが公開されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/safari_release_notes/safari_13_release_notes&quot;&gt;Safari 13 Release Notes | Apple Developer Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Web Authentication APIを使ったFIDO2のセキュリティキーに対応、&lt;code&gt;__Secure-&lt;/code&gt;と&lt;code&gt;__Host-&lt;/code&gt;のクッキーprefixのサポート、Pointer EventsやVisual Viewport APIのサポートなどが行われています。&lt;br&gt;
-iOS 13のSafariでWebDriverのサポート、ITP 2.3へのアップデート、WebSQLの削除なども含まれています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://webkit.org/blog/9395/webdriver-is-coming-to-safari-in-ios-13/&quot;&gt;WebDriver is Coming to Safari in iOS 13 | WebKit&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://webkit.org/blog/9521/intelligent-tracking-prevention-2-3/&quot;&gt;Intelligent Tracking Prevention 2.3 | WebKit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Chrome 78 Betaがリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2019/09/chrome-78-beta-new-houdini-api-native.html&quot;&gt;Chromium Blog: Chrome 78 Beta: a new Houdini API, native file system access and more&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;CSS Custom Propertiesを使ったアニメーションのサポート、Native File System APIとSMS Receiver APIのorigin trialでのサポートが含まれています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/css-props-and-vals/&quot; title=&quot;Smarter custom properties with Houdini’s new API  |  web.dev&quot;&gt;Smarter custom properties with Houdini’s new API  |  web.dev&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/08/native-file-system&quot;&gt;The Native File System API: Simplifying access to local files  |  Web&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;WebSocketsにおけるArrayBufferのダウンロード速度の改善、&lt;code&gt;performance.mark&lt;/code&gt;などに対してメタデータを付与できるUser Timing API Level 3のサポートもふくまれています。&lt;br&gt;
-また、unload時にはポップアップやSync HXRが禁止されるなどの制限の追加、MSEdgeに引き続いてXSS Auditorが廃止されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://portswigger.net/daily-swig/google-deprecates-xss-auditor-for-chrome&quot;&gt;Google deprecates XSS Auditor for Chrome | The Daily Swig&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2018/10/04/edgehtml-18-october-2018-update/&quot;&gt;What’s new in Microsoft Edge in the Windows 10 October 2018 Update - Microsoft Edge Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;デザインシステムツールであるStorybook 5.2がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-2-794958b9b111&quot;&gt;Storybook 5.2 - Storybook - Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;UIコンポーネントに対してMDXを使ってドキュメントを書けるDocsPageという機能が追加されています。&lt;br&gt;
-詳しくは次の記事でも解説されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-docspage-e185bc3622bf&quot;&gt;Storybook DocsPage - Storybook - Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;今までは、&lt;code&gt;Stroy#add&lt;/code&gt;のようなAPIでストーリを記述する形式でした。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;storiesOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'atoms/Button'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'text'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Button&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)
-&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'emoji'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;😀😎👍💯&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Button&amp;gt;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Storybook 5.2ではこれに加えてComponent Story Format (CSF)というストーリの形式がサポートされました。&lt;br&gt;
-CSFはストーリーをモジュールとしてexportすることで表現できるようになっています。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'atoms/Button'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Button&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;emoji&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;😀😎👍💯&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Button&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;詳細は次の記事で書かれています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/component-story-format-66f4c32366df&quot;&gt;Component Story Format - Storybook - Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;moving-firefox-to-a-faster-4-week-release-cycle-mozilla-hacks-the-web-developer-blog&quot;&gt;Moving Firefox to a faster 4-week release cycle - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/09/moving-firefox-to-a-faster-4-week-release-cycle/&quot; title=&quot;Moving Firefox to a faster 4-week release cycle - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2019/09/moving-firefox-to-a-faster-4-week-release-cycle/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefoxのリリースサイクルが7週ごとから4週ごとへと変更される予定について。&lt;br&gt;
-一方でFirefox ESRのリリースサイクルは変更されない。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;safari-13-release-notes-apple-developer-documentation&quot;&gt;Safari 13 Release Notes | Apple Developer Documentation&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/safari_release_notes/safari_13_release_notes&quot; title=&quot;Safari 13 Release Notes | Apple Developer Documentation&quot;&gt;developer.apple.com/documentation/safari_release_notes/safari_13_release_notes&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari 13の変更点について。&lt;br&gt;
-FIDO2のセキュリティキー、&lt;code&gt;__Secure-&lt;/code&gt;と&lt;code&gt;__Host-&lt;/code&gt;のクッキーprefix、Pointer Events、Visual Viewport APIのサポートなど。&lt;br&gt;
-iOS 13のSafariでWebDriverのサポート、WebSQLの削除など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://webkit.org/blog/9395/webdriver-is-coming-to-safari-in-ios-13/&quot; title=&quot;WebDriver is Coming to Safari in iOS 13 | WebKit&quot;&gt;WebDriver is Coming to Safari in iOS 13 | WebKit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jasmine-3-5-0-md-at-master-jasmine-jasmine&quot;&gt;jasmine/3.5.0.md at master · jasmine/jasmine&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jasmine/jasmine/blob/master/release_notes/3.5.0.md&quot; title=&quot;jasmine/3.5.0.md at master · jasmine/jasmine&quot;&gt;github.com/jasmine/jasmine/blob/master/release_notes/3.5.0.md&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Jasmine 3.5リリース。&lt;br&gt;
-&lt;code&gt;toHaveBeenCalledWith&lt;/code&gt;のエラー結果の出力の改善、&lt;code&gt;resolveTo&lt;/code&gt;と&lt;code&gt;rejectWith&lt;/code&gt;の追加、カスタム非同期Matcherを定義する&lt;code&gt;addAsyncMatchers&lt;/code&gt;の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;chromium-blog-chrome-78-beta-a-new-houdini-api-native-file-system-access-and-more&quot;&gt;Chromium Blog: Chrome 78 Beta: a new Houdini API, native file system access and more&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.chromium.org/2019/09/chrome-78-beta-new-houdini-api-native.html&quot; title=&quot;Chromium Blog: Chrome 78 Beta: a new Houdini API, native file system access and more&quot;&gt;blog.chromium.org/2019/09/chrome-78-beta-new-houdini-api-native.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 78 Betaリリース。&lt;br&gt;
-CSS Custom Propertiesを使ったアニメーションのサポート、Native File System APIとSMS Receiver APIのorigin trialの開始など。&lt;br&gt;
-WebSocketsにおけるArrayBufferのダウンロード速度の改善、User Timing API Level 3のサポート。&lt;br&gt;
-また、Sync HXRがunload時などには禁止、XSS Auditorの削除など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/css-props-and-vals/&quot; title=&quot;Smarter custom properties with Houdini’s new API  |  web.dev&quot;&gt;Smarter custom properties with Houdini’s new API  |  web.dev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;storybook-5-2-storybook-medium&quot;&gt;Storybook 5.2 - Storybook - Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-5-2-794958b9b111&quot; title=&quot;Storybook 5.2 - Storybook - Medium&quot;&gt;medium.com/storybookjs/storybook-5-2-794958b9b111&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Storybook 5.2リリース。&lt;br&gt;
-MDXを使ったドキュメントを書けるDocsPageの追加、Storyをモジュールとして作れるCSFのサポート。&lt;br&gt;
-TypeScriptのサポート、React Hooksのサポート、 Standalone modeなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-docspage-e185bc3622bf&quot; title=&quot;Storybook DocsPage - Storybook - Medium&quot;&gt;Storybook DocsPage - Storybook - Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/component-story-format-66f4c32366df&quot; title=&quot;Component Story Format - Storybook - Medium&quot;&gt;Component Story Format - Storybook - Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;fresher-service-workers-by-default-web-google-developers&quot;&gt;Fresher service workers, by default  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/09/fresher-sw&quot; title=&quot;Fresher service workers, by default  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/09/fresher-sw&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 78では&lt;code&gt;importScript&lt;/code&gt;で読み込むファイルも変更があればHTTP Cacheはデフォルトで無視されるようになった。&lt;br&gt;
-Chrome 68で追加された&lt;code&gt;updateViaCache&lt;/code&gt;オプションを使ってHTTP Cache-Controlを見るかを制御できる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;practical-ways-to-write-better-javascript-stack-overflow-blog&quot;&gt;Practical Ways to Write Better JavaScript - Stack Overflow Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.blog/2019/09/12/practical-ways-to-write-better-javascript/&quot; title=&quot;Practical Ways to Write Better JavaScript - Stack Overflow Blog&quot;&gt;stackoverflow.blog/2019/09/12/practical-ways-to-write-better-javascript/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;より良いJavaScriptを書くためにどうするかという記事。&lt;br&gt;
-TypeScriptを使う、ES2015+の機能を活用する、分散を考える。&lt;br&gt;
-Lint、テストを行うなどについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;wikipedias-javascript-initialisation-on-a-budget&quot;&gt;✩ Wikipedia&amp;#39;s JavaScript initialisation on a budget&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://phabricator.wikimedia.org/phame/live/7/post/175/wikipedia_s_javascript_initialisation_on_a_budget/&quot; title=&quot;✩ Wikipedia&amp;#39;s JavaScript initialisation on a budget&quot;&gt;phabricator.wikimedia.org/phame/live/7/post/175/wikipedia_s_javascript_initialisation_on_a_budget/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;refacoring&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Wikipediaの初期表示に読み込むJavaScriptのファイルサイズを削減した話。&lt;br&gt;
-目標のbudgeを28KBと設定してどのように初期ロードのJavaScriptサイズを減らしていったかについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;intelligent-tracking-prevention-2-3-webkit&quot;&gt;Intelligent Tracking Prevention 2.3 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9521/intelligent-tracking-prevention-2-3/&quot; title=&quot;Intelligent Tracking Prevention 2.3 | WebKit&quot;&gt;webkit.org/blog/9521/intelligent-tracking-prevention-2-3/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;privacy&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari 13(iOS 13/macOS Catalina)に実装されたITP 2.3について。&lt;br&gt;
-CookieからLocalStorageに保存場所を移行したサードパーティトラッカーに対する制限の追加、&lt;code&gt;document.referrer&lt;/code&gt;にもeTLD+1の制限を追加、デバッグモードの改善など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;techniques-to-make-a-web-app-load-fast-even-on-a-feature-phone&quot;&gt;Techniques to make a web app load fast, even on a feature phone&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/load-faster-like-proxx/&quot; title=&quot;Techniques to make a web app load fast, even on a feature phone&quot;&gt;web.dev/load-faster-like-proxx/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;PROXXのローディングパフォーマンスに利用したテクニックの紹介記事。&lt;br&gt;
-WebPageTestを使ったリソースロードのwaterfall分析、コネクション数の削減、preload、prerendering、CSSのインライン化、Code Splittingなどについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;backbone-model-typing-to-destroy-backbone-model-speaker-deck&quot;&gt;Backbone.Model に 型をつけて剥がす - Typing to destroy Backbone.Model - Speaker Deck&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/fsubal/backbone-dot-model-ni-xing-wotuketebo-gasu-typing-to-destroy-backbone-dot-model?slide=34&quot; title=&quot;Backbone.Model に 型をつけて剥がす - Typing to destroy Backbone.Model - Speaker Deck&quot;&gt;speakerdeck.com/fsubal/backbone-dot-model-ni-xing-wotuketebo-gasu-typing-to-destroy-backbone-dot-model?slide&amp;#x3D;34&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;backbone.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;refacoring&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Backbone.Modelに型をつけてリファクタリングしていく話。&lt;br&gt;
-Backbone.ModelをただのJSONとして扱い、JSONのスナップショットに対してテスト行う&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;faboulaws-fakingoose-an-automatic-fixture-generator-for-mongoose-using-the-schema-definition&quot;&gt;faboulaws/fakingoose: An automatic fixture generator for mongoose using the schema definition&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/faboulaws/fakingoose&quot; title=&quot;faboulaws/fakingoose: An automatic fixture generator for mongoose using the schema definition&quot;&gt;github.com/faboulaws/fakingoose&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;データスキーマからダミデータを生成してくれるライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 24 Sep 2019 09:15:41 +0900</pubDate>
-        <link>https://jser.info/2019/09/24/safari-13-chrome-78-betanative-file-system-trial-storybook-5.2csf/</link>
-        <guid isPermaLink="true">https://jser.info/2019/09/24/safari-13-chrome-78-betanative-file-system-trial-storybook-5.2csf/</guid>
-        
-        <category>Safari</category>
-        
-        <category>Chrome</category>
-        
-        <category>Storybook</category>
         
         
         <category>JSer</category>

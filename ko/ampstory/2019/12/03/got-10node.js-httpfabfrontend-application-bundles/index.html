@@ -1,0 +1,459 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2019-12-03のJS: Got 10(Node.js HTTPクライアント)、FAB(Frontend Application Bundles) - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2019/12/03/got-10node.js-httpfabfrontend-application-bundles/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2019-12-03のJS: Got 10(Node.js HTTPクライアント)、FAB(Frontend Application Bundles)"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2019-12-03のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0-rc.1">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Workbox v5.0.0-rc.1 · GoogleChrome/workbox</amp-fit-text>
+            <p class="item-contents">Workbox 5.0.0 RC1リリース
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Workbox v5.0.0-rc.1 · GoogleChrome/workbox" href="https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0-rc.1" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/sindresorhus/got/releases/tag/v10.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v10.0.0 · sindresorhus/got</amp-fit-text>
+            <p class="item-contents">Node.js向けHTTPクライアントのGot 10.0.0リリース。
+TypeScriptで書き直されたバージョン。
+Node.js 10未満のサポート終了、<code>query</code>を<code>searchParams</code>にリネーム、<code>encoding</code>を<code>responseType</code>にリネーム、<code>json</code>オプションの変更など。
+DNS cacheのサポート、<code>maxRedirects</code>オプションの追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v10.0.0 · sindresorhus/got" href="https://github.com/sindresorhus/got/releases/tag/v10.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://snyk.io/blog/javascript-frameworks-security-report-2019/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScript frameworks security report 2019 | Snyk</amp-fit-text>
+            <p class="item-contents">Angular(JS)、React、jQueryについてのセキュリティレポート。
+脆弱性の個数や影響範囲、脆弱性報告、セキュリティ機能についてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript frameworks security report 2019 | Snyk" href="https://snyk.io/blog/javascript-frameworks-security-report-2019/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-vue-and-svelte-here-are-the-differences-c649f8d4ce0a">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">I created the exact same app in Vue and Svelte. Here are the differences.</amp-fit-text>
+            <p class="item-contents">VueとSvelteで同じTodoアプリを作成しての比較記事。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="I created the exact same app in Vue and Svelte. Here are the differences." href="https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-vue-and-svelte-here-are-the-differences-c649f8d4ce0a" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://medium.com/graalvm/announcing-graalwasm-a-webassembly-engine-in-graalvm-25cd0400a7f2">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing GraalWasm — a WebAssembly engine in GraalVM</amp-fit-text>
+            <p class="item-contents">GraalVMでWebAssemblyのサポート。
+GraalVMのTrufle API使ってWebAssemblyバイナリに対するインタープリタを実装し、Wasmを実行できるようにしている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing GraalWasm — a WebAssembly engine in GraalVM" href="https://medium.com/graalvm/announcing-graalwasm-a-webassembly-engine-in-graalvm-25cd0400a7f2" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/connor4312/cockatiel">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">connor4312/cockatiel: A resilience and transient-fault-handling library that allows developers to express policies such as Backoff, Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback. Inspired by .NET Polly.</amp-fit-text>
+            <p class="item-contents">.NET Pollyをインスパイアしたエラーハンドリングと復帰処理ライブラリ。
+バックオフアルゴリズム、キャンセル、リトライ、サーキットブレーカー、タイムアウト、同時呼び出しの制限、フォールバックなどを行う
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="connor4312/cockatiel: A resilience and transient-fault-handling library that allows developers to express policies such as Backoff, Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback. Inspired by .NET Polly." href="https://github.com/connor4312/cockatiel" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://speakerdeck.com/nobuhikosawai/improving-online-shopping-site-performance-which-using-the-graphql">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">GraphQLを用いたサイトに おけるパフォーマンス改善 （ECサイトを題材に）/ Improving online shopping site performance which using the GraphQL - Speaker Deck</amp-fit-text>
+            <p class="item-contents">GraphQLのパフォーマンス改善についてのスライド。
+Datadog APMを使ったサーバサイドのGraphQLのクエリトレースの読み方、フロントエンドの不必要なデータを取得するクエリの改善方法について。
+クエリと画面を紐付けるためにFragmentとColocation
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="GraphQLを用いたサイトに おけるパフォーマンス改善 （ECサイトを題材に）/ Improving online shopping site performance which using the GraphQL - Speaker Deck" href="https://speakerdeck.com/nobuhikosawai/improving-online-shopping-site-performance-which-using-the-graphql" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/open-source-labs/reactime">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">open-source-labs/reactime: Chrome extension for state debugging in React applications</amp-fit-text>
+            <p class="item-contents">ReactアプリケーションのStateをデバッグするブラウザ拡張。
+その時点のStateの表示、Stateの変化を記録して、特定の時点のStateを再現できる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="open-source-labs/reactime: Chrome extension for state debugging in React applications" href="https://github.com/open-source-labs/reactime" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://redux.js.org/style-guide/style-guide">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Style Guide · Redux</amp-fit-text>
+            <p class="item-contents">Reduxのスタイルについての公式ドキュメント。
+Essential、Strongly Recommended、Recommendedの3つのカテゴリでスタイルに対するガイドをまとめている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Style Guide · Redux" href="https://redux.js.org/style-guide/style-guide" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://whocanuse.com/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Who Can Use</amp-fit-text>
+            <p class="item-contents">背景色、文字色、文字サイズを指定してプレビューでき、コントラスト比やWCAGグレードを算出してくれるツール
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Who Can Use" href="https://whocanuse.com/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://fab.dev/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">FAB — Frontend Application Bundles</amp-fit-text>
+            <p class="item-contents">フロントエンドアプリケーションをホスティングにデプロイする際のパッケージングや配信するNode.jsサーバについて決めた仕様。
+フレームワークごとに出力形式が異なり、ホスティング環境ごとに設定が異なるのを補うための中間フォーマット
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="FAB — Frontend Application Bundles" href="https://fab.dev/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://linc.sh/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Linc – The Perfect CI/CD Pipeline for your Frontend</amp-fit-text>
+            <p class="item-contents">フロントエンドアプリケーション向けのCI。CDウェブサービス。
+https://fab.dev/ のパッケージをサポートしており、コミットごとテスト、アプリケーションのプレビューができる。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Linc – The Perfect CI/CD Pipeline for your Frontend" href="https://linc.sh/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/KilledByAPixel/JSONCrush">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">KilledByAPixel/JSONCrush: Compress JSON into URL friendly strings</amp-fit-text>
+            <p class="item-contents">JSON文字列をURLセーフにエンコード/デコードするライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="KilledByAPixel/JSONCrush: Compress JSON into URL friendly strings" href="https://github.com/KilledByAPixel/JSONCrush" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/grubersjoe/reflow">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">grubersjoe/reflow: Babel plugin to transpile Flow code to TypeScript with CLI wrapper</amp-fit-text>
+            <p class="item-contents">FlowのコードをTypeScriptのコードに変換するCLI。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="grubersjoe/reflow: Babel plugin to transpile Flow code to TypeScript with CLI wrapper" href="https://github.com/grubersjoe/reflow" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/billinghamj/fix-es-imports">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">billinghamj/fix-es-imports: Fixes your ES import paths - from Node-style to explicit filenames</amp-fit-text>
+            <p class="item-contents"><code>require</code>では省略可能なモジュールインポートの<code>index.js</code>や拡張子を追加するツール。
+ECMAScriptでは拡張子などは省略できないため、<code>import</code>文を修正する目的のツール
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="billinghamj/fix-es-imports: Fixes your ES import paths - from Node-style to explicit filenames" href="https://github.com/billinghamj/fix-es-imports" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/neomjs/neo">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">neomjs/neo: The webworkers driven UI framework (BETA version)</amp-fit-text>
+            <p class="item-contents">WebWorkerベースのUIフレームワーク。
+Worker内でコンポーネントの処理を行う
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="neomjs/neo: The webworkers driven UI framework (BETA version)" href="https://github.com/neomjs/neo" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://book.impress.co.jp/books/1118101174">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">子どもから大人までスラスラ読める JavaScriptふりがなKidsプログラミング ゲームを作りながら楽しく学ぼう！ - インプレスブックス</amp-fit-text>
+            <p class="item-contents">JavaScriptのコードと本文にふりがなをふったプログラミングの書籍
+HTMLとJavaScriptを使ったゲームを作りながらプログラミングについてを学ぶ内容
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="子どもから大人までスラスラ読める JavaScriptふりがなKidsプログラミング ゲームを作りながら楽しく学ぼう！ - インプレスブックス" href="https://book.impress.co.jp/books/1118101174" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
