@@ -5,9 +5,256 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 25 Dec 2019 12:25:05 +0900</pubDate>
-    <lastBuildDate>Wed, 25 Dec 2019 12:25:05 +0900</lastBuildDate>
+    <pubDate>Tue, 31 Dec 2019 20:11:05 +0900</pubDate>
+    <lastBuildDate>Tue, 31 Dec 2019 20:11:05 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-12-31のJS: Ember 3.15 Octane、TypeScriptで書いたLibraryを公開する手順</title>
+        <description>&lt;p&gt;JSer.info #468 - Ember 3.15がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/12/20/ember-3-15-released.html&quot;&gt;Ember.js - Ember 3.15 &amp;quot;Octane&amp;quot; Released&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ember.js 3.15での大きな変更点として&lt;a href=&quot;https://emberjs.com/editions/octane&quot;&gt;Octane Edition&lt;/a&gt;のリリースが含まれています。&lt;br&gt;
+EditionはEmberでのプログラミングモデルを表わす概念で、今の所Octane Editionのみとなっています。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;An edition represents a cohesive programming model, and releasing a new edition represents a shift in the programming model due to new features and concepts being added to Ember. Ember Octane is the first new edition that was added to Ember.&lt;br&gt;&lt;br&gt;
+-- &lt;a href=&quot;https://emberjs.com/editions/octane&quot;&gt;https://emberjs.com/editions/octane&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Octane Editionでは、主に次の3つが大きな変更点として導入されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Glimmer Componentsの導入
+
+&lt;ul&gt;
+&lt;li&gt;Before: Classic Components(&lt;code&gt;component.extend&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Element Modifiersでの振る舞いの実装
+
+&lt;ul&gt;
+&lt;li&gt;Before: mixin&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@tracked&lt;/code&gt;を使ったReactiveなモデルの実装
+
+&lt;ul&gt;
+&lt;li&gt;Before: &lt;code&gt;computed&lt;/code&gt;関数&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;今回のOctane Editionのリリースにあわせてチュートリアルなどの刷新、Dev Toolsのアップデートなども行われています。&lt;br&gt;
+詳しくは次の記事を参照してください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/12/20/octane-is-here.html&quot;&gt;Ember.js - Octane is Here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;少し前の記事ですが&lt;a href=&quot;https://www.jsmonday.dev/articles/18/publishing-a-typescript-library&quot;&gt;JSMonday - Publishing a TypeScript Library&lt;/a&gt;では、TypeScriptで書いたライブラリをnpmで公開、テストするまでの流れのチュートリアルが書かれています。&lt;/p&gt;
+
+&lt;p&gt;ディレクトリ構造や&lt;code&gt;tsc&lt;/code&gt;(TypeScript Compiler)でコンパイルするとどうなるかや、Jestを使ったテストやCoverageのとり方など一通りの流れが書かれています。&lt;/p&gt;
+
+&lt;p&gt;また、&lt;code&gt;package.json&lt;/code&gt;のフィールドや基本的な&lt;code&gt;npm&lt;/code&gt;コマンドの使い方、Semverなどから見たい場合は、次の記事も合わせて読むと良いかもしれません。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/segur/items/6eebb70ec2de03016dde&quot;&gt;初学者向けpackage.jsonハンズオン - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ember-js-ember-3-15-octane-released&quot;&gt;Ember.js - Ember 3.15 &amp;quot;Octane&amp;quot; Released&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/12/20/ember-3-15-released.html&quot; title=&quot;Ember.js - Ember 3.15 \&amp;quot;Octane\&amp;quot; Released&quot;&gt;blog.emberjs.com/2019/12/20/ember-3-15-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Ember&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Ember 3.15リリース。&lt;br&gt;
+Ember Octaneが正式リリースとなり、&lt;code&gt;ember new&lt;/code&gt;でのデフォルトとなった。&lt;br&gt;
+また&lt;code&gt;Component#isVisible&lt;/code&gt;、`&lt;code&gt;、&lt;/code&gt;window.ENV`が非推奨となった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/12/20/octane-is-here.html&quot; title=&quot;Ember.js - Octane is Here&quot;&gt;Ember.js - Octane is Here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-webkit-features-in-safari-13-webkit&quot;&gt;New WebKit Features in Safari 13 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9674/new-webkit-features-in-safari-13/&quot; title=&quot;New WebKit Features in Safari 13 | WebKit&quot;&gt;webkit.org/blog/9674/new-webkit-features-in-safari-13/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;iOS/iPad/macOSでのSafari 13の変更点についての紹介記事。&lt;br&gt;
+Pointer Events、Visual Viewport API、ITP(Intelligent Tracking Prevention)、FIDO2、WebDriverのサポートになどについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jsmonday-publishing-a-typescript-library&quot;&gt;JSMonday - Publishing a TypeScript Library&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.jsmonday.dev/articles/18/publishing-a-typescript-library&quot; title=&quot;JSMonday - Publishing a TypeScript Library&quot;&gt;www.jsmonday.dev/articles/18/publishing-a-typescript-library&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScriptでライブラリを書いて、npm publishするまでのチュートリアル。&lt;br&gt;
+TypeScriptの導入、Jestでのテスト、Codecovでのコードカバレッジ、npm run-scriptの設定など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;making-of-best-of-2019-johan-ronsse&quot;&gt;Making of: Best of 2019 – Johan Ronsse&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://johanronsse.be/2019/12/28/making-of-best-of-2019/&quot; title=&quot;Making of: Best of 2019 – Johan Ronsse&quot;&gt;johanronsse.be/2019/12/28/making-of-best-of-2019/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Development&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Best of 2019というサイトをどのように作ったかについての記事。&lt;br&gt;
+SvelteとCSSフレームワーク Ygdirを使った開発、Figmaを使ったデザイン、Notionを使ったコンテンツ管理などについて&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://ygdir.dev/&quot; title=&quot;Ygdir - Documentation&quot;&gt;Ygdir - Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;discovering-svelte-adding-editing-and-estimating-tasks-in-the-pomodoro-technique-app-barbarian-meets-coding&quot;&gt;Discovering Svelte: Adding, Editing and Estimating Tasks In The Pomodoro Technique App | Barbarian Meets Coding&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.barbarianmeetscoding.com/blog/2019/12/29/discovering-svelte-adding-some-tasks-and-pomodoros&quot; title=&quot;Discovering Svelte: Adding, Editing and Estimating Tasks In The Pomodoro Technique App | Barbarian Meets Coding&quot;&gt;www.barbarianmeetscoding.com/blog/2019/12/29/discovering-svelte-adding-some-tasks-and-pomodoros&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Svelte&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TODOアプリを作りながらSvelteについて学ぶ記事。&lt;br&gt;
+SvelteのLifeCyle hook、&lt;code&gt;$:&lt;/code&gt;のラベルを使ったReactiveな仕組みについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;package-json-qiita&quot;&gt;初学者向けpackage.jsonハンズオン - Qiita&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/segur/items/6eebb70ec2de03016dde&quot; title=&quot;初学者向けpackage.jsonハンズオン - Qiita&quot;&gt;qiita.com/segur/items/6eebb70ec2de03016dde&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;npm&lt;/code&gt;コマンドと&lt;code&gt;package.json&lt;/code&gt;についての初心者向けチュートリアル記事。&lt;br&gt;
+パッケージのインストール、アンインストール、SemVer、ロックファイルについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-js-cli-qiita&quot;&gt;Node.jsでのCLIの作り方と便利なライブラリまとめ - Qiita&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/toshi-toma/items/ea76b8894e7771d47e10&quot; title=&quot;Node.jsでのCLIの作り方と便利なライブラリまとめ - Qiita&quot;&gt;qiita.com/toshi-toma/items/ea76b8894e7771d47e10&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsでCLIを作る場合の作り方やCLI向けのライブラリについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-memo-30&quot;&gt;React.memo を使ったパフォーマンス最適化について - 30歳からのプログラミング&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://numb86-tech.hatenablog.com/entry/2019/12/20/222412&quot; title=&quot;React.memo を使ったパフォーマンス最適化について - 30歳からのプログラミング&quot;&gt;numb86-tech.hatenablog.com/entry/2019/12/20/222412&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;React.memo&lt;/code&gt;と&lt;code&gt;useCallback&lt;/code&gt;を使ったメモ化とパフォーマンスの最適化についての記事&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;base-web-visual-regression-testing&quot;&gt;Base Web - Visual Regression Testing&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://baseweb.design/blog/visual-regression-testing/&quot; title=&quot;Base Web - Visual Regression Testing&quot;&gt;baseweb.design/blog/visual-regression-testing/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Visual Regression Testingについての記事。&lt;br&gt;
+Visual Regression Testingの目的、導入する際の方法、ワークフローについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ember-js-octane-is-here&quot;&gt;Ember.js - Octane is Here&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/12/20/octane-is-here.html&quot; title=&quot;Ember.js - Octane is Here&quot;&gt;blog.emberjs.com/2019/12/20/octane-is-here.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Ember&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Ember 3.15で導入されたOctaneについて。&lt;br&gt;
+Glimmer Componentsの導入、Element ModifiersでのLifeCyleHooksを使った振る舞いの実装、&lt;code&gt;@tracked&lt;/code&gt;を使ったReactiveなモデルの実装など。&lt;br&gt;
+その他にはチュートリアルの刷新、Dev Toolsのアップデートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://ember-learn.github.io/ember-octane-vs-classic-cheat-sheet/&quot; title=&quot;Ember.js Classic vs Octane: a cheat sheet&quot;&gt;Ember.js Classic vs Octane: a cheat sheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://glimmerjs.com/&quot; title=&quot;Glimmer&quot;&gt;Glimmer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;bbc-peaks-js-javascript-ui-component-for-interacting-with-audio-waveforms&quot;&gt;bbc/peaks.js: JavaScript UI component for interacting with audio waveforms&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/bbc/peaks.js&quot; title=&quot;bbc/peaks.js: JavaScript UI component for interacting with audio waveforms&quot;&gt;github.com/bbc/peaks.js&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;sound&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;音声の波形を表示するUIコンポーネント。&lt;br&gt;
+Web Audioベースの波形生成と&lt;code&gt;audiowaveform&lt;/code&gt;を使い事前に音声波形を生成したものも利用できる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bbc/audiowaveform&quot; title=&quot;bbc/audiowaveform: C++ program to generate waveform data and render waveform images from audio files&quot;&gt;bbc/audiowaveform: C++ program to generate waveform data and render waveform images from audio files&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ganapativs-react-spectrum-generate-colorful-text-placeholders&quot;&gt;ganapativs/react-spectrum: Generate colorful text placeholders 🎨&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ganapativs/react-spectrum&quot; title=&quot;ganapativs/react-spectrum: Generate colorful text placeholders 🎨&quot;&gt;github.com/ganapativs/react-spectrum&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;カラフルなテキストプレースホルダを生成するReactコンポーネント&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;saitoeku3-use-lazyload-ref-custom-hook-to-use-lazy-load-easily&quot;&gt;saitoeku3/use-lazyload-ref: 🖼️Custom hook to use lazy load easily&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/saitoeku3/use-lazyload-ref&quot; title=&quot;saitoeku3/use-lazyload-ref: 🖼️Custom hook to use lazy load easily&quot;&gt;github.com/saitoeku3/use-lazyload-ref&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;src&lt;/code&gt;属性の遅延ロードを&lt;code&gt;ref&lt;/code&gt;と&lt;code&gt;data-src&lt;/code&gt;属性の指定することで行うReact Hooksを使ったライブラリ&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://example.com/&quot; title=&quot;React で簡単に遅延読み込みを実装できるライブラリを作りました - 陽気なサイとエクストリーム！&quot;&gt;React で簡単に遅延読み込みを実装できるライブラリを作りました - 陽気なサイとエクストリーム！&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-tesseract-js-v2-0-0-naptha-tesseract-js&quot;&gt;Release Tesseract.js v2.0.0 · naptha/tesseract.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/naptha/tesseract.js/releases/tag/v2.0.0&quot; title=&quot;Release Tesseract.js v2.0.0 · naptha/tesseract.js&quot;&gt;github.com/naptha/tesseract.js/releases/tag/v2.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;OCR&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Emscriptenを使ったOCRライブラリのTesseract.js 2.0リリース。&lt;br&gt;
+tesseract　v４．１へのアップデート、複数の原語の認識をサポート、画像フォーマット(png,jpg,bmpなど)のサポート、WebAssemblyやWebWorkerのサポートでパフォーマンス改善など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@jeromewus/why-i-refactor-tesseract-js-v2-50f750a9cfe2?&quot; title=&quot;Why I refactor tesseract.js v2? - Jerome Wu - Medium&quot;&gt;Why I refactor tesseract.js v2? - Jerome Wu - Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 31 Dec 2019 19:37:44 +0900</pubDate>
+        <link>https://jser.info/2019/12/31/ember-3.15-octanetypescriptlibrary/</link>
+        <guid isPermaLink="true">https://jser.info/2019/12/31/ember-3.15-octanetypescriptlibrary/</guid>
+        
+        <category>Ember</category>
+        
+        <category>TypeScript</category>
+        
+        <category>npm</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-12-25のJS: V8 v8.0、Chrome 80 beta、State of JavaScript(アンケート)</title>
@@ -374,7 +621,7 @@ npm 6.13.4、yarn 1.12.1でそれぞれ修正されている&lt;/p&gt;
 &lt;p&gt;npm 6.13.3以下に含まれていた脆弱性の対応のため、npm 6.13.4へのアップデートを含むNode.jsの各バージョンが2019-12-17リリースされる。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://example.com/&quot; title=&quot;The npm Blog — Binary Planting with the npm CLI&quot;&gt;The npm Blog — Binary Planting with the npm CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.npmjs.org/post/189618601100/binary-planting-with-the-npm-cli&quot; title=&quot;The npm Blog — Binary Planting with the npm CLI&quot;&gt;The npm Blog — Binary Planting with the npm CLI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/download/releases/&quot; title=&quot;Previous Releases | Node.js&quot;&gt;Previous Releases | Node.js&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -2328,240 +2575,6 @@ OreillyのJavaScript本(通称サイ本)の第7版&lt;/p&gt;
         <category>Firefox</category>
         
         <category>Electron</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-10-22のJS: Node v12.13.0 (LTS)、Chrome 79の開発者ツールの変更点、WSL 2でNode.js入門</title>
-        <description>&lt;p&gt;JSer.info #458 - Node.js 12.13.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.13.0/&quot;&gt;Node v12.13.0 (LTS) | Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Node.js 12.xのLTS(Long Term Support)となるバージョンで、Node.js 12.xは2022年4月までメンテナンスされます。&lt;br&gt;
-現在のLTSは8.x、10.x、12.xの3つとなり、8.xは2019年の12月でサポート終了となる予定です。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/Release&quot;&gt;nodejs/Release: Node.js Foundation Release Working Group&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;AWS Lambdaでは、Node.js 8.10の利用を非推奨にして廃止までのスケジュールがアナウンスされています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://gist.github.com/azu/84c21a3d8335ef797ccbff3d20ea8889&quot;&gt;Node.js 8.10 is EOL, please migrate your functions to a newer runtime version&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Node.js 12.13.0の変更点としては&lt;a href=&quot;https://npm.community/t/release-6-12-0/10436&quot;&gt;npm 6.12.0&lt;/a&gt;へのアップデートが含まれる程度になります。&lt;br&gt;
-また、Node.js 12のメジャーアップデートにおける変更点は次のページを参照してください。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.0.0/&quot;&gt;Node v12.0.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V12.md&quot;&gt;node/CHANGELOG_V12.md at master · nodejs/node&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://jser.info/2019/04/30/node.js-12.0.0node.js-6.xeolelectron-5.0.0pixi.js-5.0.0webgl-by-default/&quot;&gt;2019-04-30のJS: Node.js 12.0.0(Node.js 6.xはEOL)、Electron 5.0.0、Pixi.js 5.0.0(WebGL by default) - JSer.info&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/10/devtools&quot;&gt;What&amp;#39;s New In DevTools (Chrome 79)  |  Web  |  Google Developers&lt;/a&gt;ではChrome 79の開発者ツールの変更点について書かれています。&lt;/p&gt;
-
-&lt;p&gt;SameSite Cookieの導入なども予定されているため、ネットワークパネルにブロックされてるCookieの理由表示されるようになっています。&lt;br&gt;
-また、コードカバレッジ機能の改善、ネットワークリクエストのコールスタックの表示、インデントの設定が無視されていたバグの修正なども行われています。&lt;/p&gt;
-
-&lt;p&gt;Chrome 80でデフォルト値として&lt;code&gt;SameSite=Lax&lt;/code&gt;として導入される予定のSameSite Cookieについては次のページを参照してください。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/samesite-cookies-explained/&quot;&gt;SameSite cookies explained  |  web.dev&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://textslashplain.com/2019/09/30/same-site-cookies-by-default/&quot;&gt;Same-Site Cookies By Default | text/plain&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://speakerdeck.com/masashi/samesite-cookie&quot;&gt;SameSite Cookie - Speaker Deck&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v4-0-0-vuejs-vue-cli&quot;&gt;Release v4.0.0 · vuejs/vue-cli&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/vuejs/vue-cli/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · vuejs/vue-cli&quot;&gt;github.com/vuejs/vue-cli/releases/tag/v4.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Vue CLI 4.0.0リリース。&lt;br&gt;
-Nightwatch、Jest、PWAサポートの改善、依存のメジャーアップデートなどが含まれる&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://cli.vuejs.org/migrating-from-v3/&quot; title=&quot;Migrating from v3 | Vue CLI&quot;&gt;Migrating from v3 | Vue CLI&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v5-6-0-googlechrome-lighthouse&quot;&gt;Release v5.6.0 · GoogleChrome/lighthouse&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse/releases/tag/v5.6.0&quot; title=&quot;Release v5.6.0 · GoogleChrome/lighthouse&quot;&gt;github.com/GoogleChrome/lighthouse/releases/tag/v5.6.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;lighthouse v5.6.0リリース。&lt;br&gt;
-Stack packでAngular、React、AMP、Magentoのサポートし、フレームワーク固有のメトリクスの追加など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse-stack-packs&quot; title=&quot;GoogleChrome/lighthouse-stack-packs: Lighthouse Stack Packs&quot;&gt;GoogleChrome/lighthouse-stack-packs: Lighthouse Stack Packs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;testcafe-v1-6-0-released-testcafe&quot;&gt;TestCafe v1.6.0 Released | TestCafe&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://devexpress.github.io/testcafe/blog/testcafe-v1-6-0-released.html&quot; title=&quot;TestCafe v1.6.0 Released | TestCafe&quot;&gt;devexpress.github.io/testcafe/blog/testcafe-v1-6-0-released.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TestCafe 1.6.0リリース。&lt;br&gt;
-フルページスクリーンショットのサポート、スクリーンショットオプションの変更など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-94-webkit&quot;&gt;Release Notes for Safari Technology Preview 94 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9609/release-notes-for-safari-technology-preview-94/&quot; title=&quot;Release Notes for Safari Technology Preview 94 | WebKit&quot;&gt;webkit.org/blog/9609/release-notes-for-safari-technology-preview-94/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 94リリース。&lt;br&gt;
-CSS Shadow Partsの&lt;code&gt;::part()&lt;/code&gt;の疑似要素をサポート、httpsで&lt;code&gt;Cache-Control: no-store&lt;/code&gt;のHTTPヘッダで配信されたページもBFCacheに入るように変更など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v12-13-0-lts-node-js&quot;&gt;Node v12.13.0 (LTS) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.13.0/&quot; title=&quot;Node v12.13.0 (LTS) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.13.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 12.13.0リリース。&lt;br&gt;
-Node.js 12.xのLTS(Long Term Support)となるバージョンで、2022年4月までメンテナンスされる。&lt;br&gt;
-npm 6.12.0へのアップデートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/Release&quot; title=&quot;nodejs/Release: Node.js Foundation Release Working Group&quot;&gt;nodejs/Release: Node.js Foundation Release Working Group&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-electron-v7-0-0-electron-electron&quot;&gt;Release electron v7.0.0 · electron/electron&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/electron/electron/releases/tag/v7.0.0&quot; title=&quot;Release electron v7.0.0 · electron/electron&quot;&gt;github.com/electron/electron/releases/tag/v7.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Electron v7.0.0リリース。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;whats-new-in-devtools-chrome-79-web-google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 79)  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/10/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 79)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/10/devtools&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 79の開発者ツールについて。&lt;br&gt;
-ブロックされてるCookieの理由表示、コードカバレッジ機能の改善、ネットワークリクエストのコールスタックの表示など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;vanilla-javascript-and-html-no-frameworks-no-libraries-no-problem-dev-community&quot;&gt;Vanilla JavaScript and HTML - No frameworks. No libraries. No problem. - DEV Community 👩‍💻👨‍💻&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://dev.to/pluralsight/vanilla-javascript-and-html-no-frameworks-no-libraries-no-problem-2n99&quot; title=&quot;Vanilla JavaScript and HTML - No frameworks. No libraries. No problem. - DEV Community 👩‍💻👨‍💻&quot;&gt;dev.to/pluralsight/vanilla-javascript-and-html-no-frameworks-no-libraries-no-problem-2n99&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;フレームワークを使わずにDOM APIを使ってウェブページを作成するチュートリアル。&lt;br&gt;
-&lt;code&gt;&amp;lt;template&amp;gt;&lt;/code&gt;タグを使ったコンポーネントの作成、レンダリングなどについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;firefoxs-new-websocket-inspector-mozilla-hacks-the-web-developer-blog&quot;&gt;Firefox&amp;#39;s New WebSocket Inspector - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/10/firefoxs-new-websocket-inspector/&quot; title=&quot;Firefox&amp;#39;s New WebSocket Inspector - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2019/10/firefoxs-new-websocket-inspector/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebSocket&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 71の開発者ツールでWebSockets Inspectorが新しくなる。&lt;br&gt;
-WS protocolのデータがJSON、Socket.IO、SockJS等の場合にデータをInspectできるように、またWSトラフィックの停止と再開ボタンの追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;samesite-cookie-speaker-deck&quot;&gt;SameSite Cookie - Speaker Deck&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/masashi/samesite-cookie&quot; title=&quot;SameSite Cookie - Speaker Deck&quot;&gt;speakerdeck.com/masashi/samesite-cookie&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;SameSite Cookieについてのスライド。&lt;br&gt;
-SameSite CookieとCSRF、Cookieの属性、SameSite Cookieの動作とオプション(Strict, Lax, None)、ウェブサイトへの影響について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;developing-with-node-js-on-windows-microsoft-docs&quot;&gt;Developing with Node.js on Windows | Microsoft Docs&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/windows/nodejs/index&quot; title=&quot;Developing with Node.js on Windows | Microsoft Docs&quot;&gt;docs.microsoft.com/en-us/windows/nodejs/index&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;windows&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WSL 2を使ったWindows向けのNode.js開発のチュートリアル&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;middyjs-middy-the-stylish-node-js-middleware-engine-for-aws-lambda&quot;&gt;middyjs/middy: 🛵 The stylish Node.js middleware engine for AWS Lambda&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/middyjs/middy&quot; title=&quot;middyjs/middy: 🛵 The stylish Node.js middleware engine for AWS Lambda&quot;&gt;github.com/middyjs/middy&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;aws&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Lambda&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;aws lambdaのhandlerに対して前後に処理を加えられるmiddlewareライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;meriyah-meriyah-a-100-compliant-self-hosted-javascript-parser-https-meriyah-github-io-meriyah&quot;&gt;meriyah/meriyah: A 100% compliant, self-hosted javascript parser - &lt;a href=&quot;https://meriyah.github.io/meriyah&quot;&gt;https://meriyah.github.io/meriyah&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/meriyah/meriyah&quot; title=&quot;meriyah/meriyah: A 100% compliant, self-hosted javascript parser - https://meriyah.github.io/meriyah&quot;&gt;github.com/meriyah/meriyah&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;AST&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptのコードをESTree ASTフォーマットにパースできるJavaScriptパーサライブラリ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/buntis/buntis&quot; title=&quot;buntis/buntis: A 100% compliant, self-hosted typescript parser that emits an ESTree-compatible AST&quot;&gt;buntis/buntis: A 100% compliant, self-hosted typescript parser that emits an ESTree-compatible AST&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;vega-vega-lite-a-concise-grammar-of-interactive-graphics-built-on-vega&quot;&gt;vega/vega-lite: A concise grammar of interactive graphics, built on Vega.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/vega/vega-lite&quot; title=&quot;vega/vega-lite: A concise grammar of interactive graphics, built on Vega.&quot;&gt;github.com/vega/vega-lite&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;graphic&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;宣言的なデータでインタラクティブなグラフを作成できるライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 22 Oct 2019 11:50:26 +0900</pubDate>
-        <link>https://jser.info/2019/10/22/node-v12.13.0-ltschrome-79wsl-2node.js/</link>
-        <guid isPermaLink="true">https://jser.info/2019/10/22/node-v12.13.0-ltschrome-79wsl-2node.js/</guid>
-        
-        <category>Node.js</category>
-        
-        <category>Chrome</category>
-        
-        <category>Windows</category>
         
         
         <category>JSer</category>
