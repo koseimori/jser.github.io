@@ -5,9 +5,255 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 31 Dec 2019 20:19:18 +0900</pubDate>
-    <lastBuildDate>Tue, 31 Dec 2019 20:19:18 +0900</lastBuildDate>
+    <pubDate>Thu, 02 Jan 2020 18:46:47 +0900</pubDate>
+    <lastBuildDate>Thu, 02 Jan 2020 18:46:47 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2019-12-31: Ember 3.15 Octane, TypeScript로 작성한 Library를 공개하는 순서</title>
+        <description>&lt;p&gt;JSer.info #468 - Ember 3.15가 릴리스 됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/12/20/ember-3-15-released.html&quot;&gt;Ember.js - Ember 3.15 &amp;quot;Octane&amp;quot; Released&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ember.js 3.15의 큰 변경 사항으로 &lt;a href=&quot;https://emberjs.com/editions/octane&quot;&gt;Octane Edition&lt;/a&gt;이 릴리스에 포함됐습니다.&lt;br&gt;
+Edition은 Ember의 프로그래밍 모델을 나타내는 개념으로 현재는 Octane Edition 만 추가됐습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;An edition represents a cohesive programming model, and releasing a new edition represents a shift in the programming model due to new features and concepts being added to Ember. Ember Octane is the first new edition that was added to Ember.&lt;br&gt;&lt;br&gt;
+-- &lt;a href=&quot;https://emberjs.com/editions/octane&quot;&gt;https://emberjs.com/editions/octane&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Octane Edition의 큰 변경 사항으로는 다음 세 가지가 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Glimmer Components 도입
+
+&lt;ul&gt;
+&lt;li&gt;Before: Classic Components(&lt;code&gt;component.extend&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Element Modifiers의 동작 구현
+
+&lt;ul&gt;
+&lt;li&gt;Before: mixin&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@tracked&lt;/code&gt;를 사용한 Reactive한 모델 구현
+
+&lt;ul&gt;
+&lt;li&gt;Before: &lt;code&gt;computed&lt;/code&gt; 함수&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이번 Octane Edition 릴리스에 맞춰 튜토리얼 등도 개편됐으며 Dev Tools의 갱신도 이뤄졌습니다. 자세한 내용은 다음 글을 참고하시기 바랍니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/12/20/octane-is-here.html&quot;&gt;Ember.js - Octane is Here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;공개 된지 좀 된 글로 &lt;a href=&quot;https://www.jsmonday.dev/articles/18/publishing-a-typescript-library&quot;&gt;JSMonday - Publishing a TypeScript Library&lt;/a&gt;에는 라이브러리를 npm에 공개하고 테스트 까지의 과정이 튜토리얼 방식으로 소개돼 있습니다.&lt;/p&gt;
+
+&lt;p&gt;디렉터리 구조나 &lt;code&gt;tsc&lt;/code&gt;(TypeScript Compiler)로 컴파일하면 어떻게 되는지, Jest를 사용한 테스트나 Coverage를 높이는 방법 등 대략적인 흐름이 정리돼 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이어서 &lt;code&gt;package.json&lt;/code&gt; 필드와 기본적인 &lt;code&gt;npm&lt;/code&gt; 명령어 사용 방법, Semver 등에 대해서 살펴보고 싶은 분은 다음 기사를 찾고하면 도움이 될 것 같습니다. &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/segur/items/6eebb70ec2de03016dde&quot;&gt;초심자 용 package.json 핸즈온 - Qiita&lt;/a&gt;(일본어)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ember-js-ember-3-15-octane-released&quot;&gt;Ember.js - Ember 3.15 &amp;quot;Octane&amp;quot; Released&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/12/20/ember-3-15-released.html&quot; title=&quot;Ember.js - Ember 3.15 \&amp;quot;Octane\&amp;quot; Released&quot;&gt;blog.emberjs.com/2019/12/20/ember-3-15-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Ember&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Ember 3.15가 릴리스 됐습니다.&lt;br&gt;
+Ember Octane가 정식으로 릴리스돼 &lt;code&gt;ember new&lt;/code&gt;의 기본이 됐습니다.&lt;br&gt;
+또, &lt;code&gt;Component#isVisible&lt;/code&gt;, &lt;code&gt;partial&lt;/code&gt;, &lt;code&gt;window.ENV&lt;/code&gt;가 비권장 됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/12/20/octane-is-here.html&quot; title=&quot;Ember.js - Octane is Here&quot;&gt;Ember.js - Octane is Here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-webkit-features-in-safari-13-webkit&quot;&gt;New WebKit Features in Safari 13 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9674/new-webkit-features-in-safari-13/&quot; title=&quot;New WebKit Features in Safari 13 | WebKit&quot;&gt;webkit.org/blog/9674/new-webkit-features-in-safari-13/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;iOS / iPad / macOS 각 환경에 대한 Safari 13의 변경 사항이 소개돼 있습니다.&lt;br&gt;
+Pointer Events, Visual Viewport API, ITP(Intelligent Tracking Prevention), FIDO2, WebDriver의 지원 등에 대해서 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jsmonday-publishing-a-typescript-library&quot;&gt;JSMonday - Publishing a TypeScript Library&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.jsmonday.dev/articles/18/publishing-a-typescript-library&quot; title=&quot;JSMonday - Publishing a TypeScript Library&quot;&gt;www.jsmonday.dev/articles/18/publishing-a-typescript-library&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript로 라이브러리를 작성하고 npm publish 하기까지의 과정을 튜토리얼 방식으로 소개합니다.&lt;br&gt;
+TypeScript 도입, Jest 테스트, Codecov 커버리지, npm run-script 설정 등에 대해서 작성돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;making-of-best-of-2019-johan-ronsse&quot;&gt;Making of: Best of 2019 – Johan Ronsse&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://johanronsse.be/2019/12/28/making-of-best-of-2019/&quot; title=&quot;Making of: Best of 2019 – Johan Ronsse&quot;&gt;johanronsse.be/2019/12/28/making-of-best-of-2019/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Development&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Best of 2019이라는 사이트를 어떻게 만들었는지 소개하는 글입니다.&lt;br&gt;
+Svelte와 CSS 프레임워크 Ygdir를 사용해 개발, Figma를 사용한 디자인, Notion을 사용한 컨텐츠 관리 방법에 대해서 이야기합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://ygdir.dev/&quot; title=&quot;Ygdir - Documentation&quot;&gt;Ygdir - Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;discovering-svelte-adding-editing-and-estimating-tasks-in-the-pomodoro-technique-app-barbarian-meets-coding&quot;&gt;Discovering Svelte: Adding, Editing and Estimating Tasks In The Pomodoro Technique App | Barbarian Meets Coding&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.barbarianmeetscoding.com/blog/2019/12/29/discovering-svelte-adding-some-tasks-and-pomodoros&quot; title=&quot;Discovering Svelte: Adding, Editing and Estimating Tasks In The Pomodoro Technique App | Barbarian Meets Coding&quot;&gt;www.barbarianmeetscoding.com/blog/2019/12/29/discovering-svelte-adding-some-tasks-and-pomodoros&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Svelte&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TODO 애플리케이션을 만들어 보면서 Svelte에 대해서 학습하는 글입니다.&lt;br&gt;
+Svelte의 LifeCyle hook, &lt;code&gt;$:&lt;/code&gt; 라벨을 사용한 Reactive한 구조에 대해서 설명합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;package-json-qiita&quot;&gt;초심자 용 package.json 핸즈온 - Qiita(일본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/segur/items/6eebb70ec2de03016dde&quot; title=&quot;초심자 용 package.json 핸즈온 - Qiita&quot;&gt;qiita.com/segur/items/6eebb70ec2de03016dde&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;npm&lt;/code&gt; 명령어와 &lt;code&gt;package.json&lt;/code&gt;에 대해서 초심자를 대상으로 작성한 튜토리얼 글입니다.&lt;br&gt;
+패키지 설치와 제거, SemVer, Lock 파일에 대해서 소개합니다. &lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-js-cli-qiita&quot;&gt;Node.js에서 CLI를 만드는 방법과 편리한 라이브러리 정리 - Qiita(일본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/toshi-toma/items/ea76b8894e7771d47e10&quot; title=&quot;Node.js에서 CLI를 만드는 방법과 편리한 라이브러리 정리 - Qiita&quot;&gt;qiita.com/toshi-toma/items/ea76b8894e7771d47e10&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js로 CLI를 만들 경우 개발 방법과 CLI 용 라이브러리가 소개돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-memo-30&quot;&gt;React.memo를 사용한 성능 최적화에 대해서 - 30세 부터 프로그래밍(일본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://numb86-tech.hatenablog.com/entry/2019/12/20/222412&quot; title=&quot;React.memo를 사용한 성능 최적화에 대해서 - 30세 부터 프로그래밍&quot;&gt;numb86-tech.hatenablog.com/entry/2019/12/20/222412&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;React.memo&lt;/code&gt;와 &lt;code&gt;useCallback&lt;/code&gt;를 사용한 메모화와 성능 최적화에 대해서 소개돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;base-web-visual-regression-testing&quot;&gt;Base Web - Visual Regression Testing&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://baseweb.design/blog/visual-regression-testing/&quot; title=&quot;Base Web - Visual Regression Testing&quot;&gt;baseweb.design/blog/visual-regression-testing/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Visual Regression Testing을 소개하는 글입니다.&lt;br&gt;
+Visual Regression Testing의 목적, 도입 방법, 워크플로우 등에 대해서 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ember-js-octane-is-here&quot;&gt;Ember.js - Octane is Here&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.emberjs.com/2019/12/20/octane-is-here.html&quot; title=&quot;Ember.js - Octane is Here&quot;&gt;blog.emberjs.com/2019/12/20/octane-is-here.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Ember&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Ember 3.15에 도입된 Octane을 소개합니다.&lt;br&gt;
+Glimmer Components 도입, Element Modifiers에서 LifeCyleHooks를 사용한 동작 구현, &lt;code&gt;@tracked&lt;/code&gt;를 사용한 Reactive한 모델 구현 등이 이뤄졌습니다.&lt;br&gt;
+그 외 튜토리얼 개편, Dev Tools가 갱신됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://ember-learn.github.io/ember-octane-vs-classic-cheat-sheet/&quot; title=&quot;Ember.js Classic vs Octane: a cheat sheet&quot;&gt;Ember.js Classic vs Octane: a cheat sheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://glimmerjs.com/&quot; title=&quot;Glimmer&quot;&gt;Glimmer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;bbc-peaks-js-javascript-ui-component-for-interacting-with-audio-waveforms&quot;&gt;bbc/peaks.js: JavaScript UI component for interacting with audio waveforms&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/bbc/peaks.js&quot; title=&quot;bbc/peaks.js: JavaScript UI component for interacting with audio waveforms&quot;&gt;github.com/bbc/peaks.js&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;sound&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;음성의 파형을 출력하는 UI 컴포넌트입니다.&lt;br&gt;
+Web Audio 기반으로 파형을 생성하거나 &lt;code&gt;audiowaveform&lt;/code&gt;을 사용해 미리 음성 파형을 생성해 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bbc/audiowaveform&quot; title=&quot;bbc/audiowaveform: C++ program to generate waveform data and render waveform images from audio files&quot;&gt;bbc/audiowaveform: C++ program to generate waveform data and render waveform images from audio files&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ganapativs-react-spectrum-generate-colorful-text-placeholders&quot;&gt;ganapativs/react-spectrum: Generate colorful text placeholders 🎨&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ganapativs/react-spectrum&quot; title=&quot;ganapativs/react-spectrum: Generate colorful text placeholders 🎨&quot;&gt;github.com/ganapativs/react-spectrum&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;다채로운 텍스트 자리표시자(placeholder)를 생성하는 React 컴포넌트입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;saitoeku3-use-lazyload-ref-custom-hook-to-use-lazy-load-easily&quot;&gt;saitoeku3/use-lazyload-ref: 🖼️Custom hook to use lazy load easily&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/saitoeku3/use-lazyload-ref&quot; title=&quot;saitoeku3/use-lazyload-ref: 🖼️Custom hook to use lazy load easily&quot;&gt;github.com/saitoeku3/use-lazyload-ref&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ref&lt;/code&gt;와 &lt;code&gt;data-src&lt;/code&gt; 속성을 지정하여 &lt;code&gt;src&lt;/code&gt; 속성의 지연 로드를 할 수 있는 React Hooks를 사용한 라이브러리입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://example.com/&quot; title=&quot;React에서 간단하게 지연 로드할 수 있는 라이브러리를 만들었습니다 - 명랑한 사이와 익스트림!&quot;&gt;React에서 간단하게 지연 로드할 수 있는 라이브러리를 만들었습니다 - 명랑한 사이와 익스트림!&lt;/a&gt;(일본어)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-tesseract-js-v2-0-0-naptha-tesseract-js&quot;&gt;Release Tesseract.js v2.0.0 · naptha/tesseract.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/naptha/tesseract.js/releases/tag/v2.0.0&quot; title=&quot;Release Tesseract.js v2.0.0 · naptha/tesseract.js&quot;&gt;github.com/naptha/tesseract.js/releases/tag/v2.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;OCR&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Emscripten를 사용한 OCR라이브러리 Tesseract.js 2.0이 릴리스됐습니다.&lt;br&gt;
+tesseract　v4.1로 갱신, 여러개 원어 인식 지원, 이미지 포맷(png, jpg, bmp) 지원, WebAssembly나 WebWorker를 지원하여 성능 개선이 이뤄졌습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@jeromewus/why-i-refactor-tesseract-js-v2-50f750a9cfe2?&quot; title=&quot;Why I refactor tesseract.js v2? - Jerome Wu - Medium&quot;&gt;Why I refactor tesseract.js v2? - Jerome Wu - Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 31 Dec 2019 19:37:44 +0900</pubDate>
+        <link>https://jser.info/ko/2019/12/31/ember-3.15-octanetypescriptlibrary/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2019/12/31/ember-3.15-octanetypescriptlibrary/</guid>
+        
+        <category>Ember</category>
+        
+        <category>TypeScript</category>
+        
+        <category>npm</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2019-12-03: Got 10(Node.js HTTP 클라이언트), FAB(Frontend Application Bundles)</title>
@@ -2197,266 +2443,6 @@ JavaScript 애플리케이션의 97%는 npm을 토대로 구성되기 때문에 
         <category>Node</category>
         
         <category>API</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-09-17: Chrome 77, TypeScript 3.7 로드맵, Can I use and MDN</title>
-        <description>&lt;p&gt;JSer.info #453 - Chrome 77가 릴리스 됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/09/nic77&quot;&gt;New in Chrome 77  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Chrome 77에서는 &lt;code&gt;PerformanceObserver&lt;/code&gt; 내에서 페이지의 큰 변경을 감지할 수 있는 Largest Contentful Paint(LCP)을 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/largest-contentful-paint/&quot;&gt;Largest Contentful Paint  |  web.dev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;외에도 &lt;code&gt;formdata&lt;/code&gt; 이벤트, &lt;code&gt;formAssociated&lt;/code&gt; 속성을 지원합니다.&lt;br&gt;
-또, 주소바에 표시되고 있던 EV 증명서 정보가 상세 패널 쪽으로 이동됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.troyhunt.com/extended-validation-certificates-are-really-really-dead/&quot;&gt;Troy Hunt: Extended Validation Certificates are (Really, Really) Dead&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://groups.google.com/a/chromium.org/forum/#!msg/security-dev/h1bTcoTpfeI/jUTk1z7VAAAJ&quot;&gt;Upcoming Change to Chrome&amp;#39;s Identity Indicators - Google 그룹스&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/microsoft/TypeScript/issues/33352&quot;&gt;TypeScript 3.7 Iteration Plan · Issue #33352 · microsoft/TypeScript&lt;/a&gt; 이슈에 TypeScript 3.7의 로드맵이 공개돼 있습니다.&lt;/p&gt;
-
-&lt;p&gt;ECMAScript Private Fields, Optional Chaining, Nullish Coalescing, Top-Level await 등 현재 Stage3인 제안을 대응할 예정입니다.&lt;br&gt;
-또, 지금까지 제한돼 있던 &lt;code&gt;--declaration&lt;/code&gt;과 &lt;code&gt;--allowJs&lt;/code&gt; 조합이나 &lt;code&gt;--declaration&lt;/code&gt;과 &lt;code&gt;--isolatedModules&lt;/code&gt;와의 조합도 지원할 예정이라고 합니다.&lt;br&gt;
-이 외로 &lt;code&gt;typescript&lt;/code&gt; 패키지 크기 최적화, &lt;code&gt;@types&lt;/code&gt; 패키지를 GitHub Package Registry에도 배포할 수 있도록 변경됩니다. 그리고 핸드북도 각 변경 사항에 맞춰 개정될 예정입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/09/caniuse-and-mdn-compat-data-collaboration/&quot;&gt;Caniuse and MDN compatibility data collaboration - Mozilla Hacks - the Web developer blog&lt;/a&gt;에는 &lt;a href=&quot;https://github.com/mdn/browser-compat-data&quot;&gt;MDN compat data&lt;/a&gt;와 &lt;a href=&quot;https://caniuse.com/&quot;&gt;Can I use...&lt;/a&gt;의 공동 작업에 대해서 정리돼 있습니다.&lt;/p&gt;
-
-&lt;p&gt;두 서비스 모두 기능 등에 대한 브라우저 지원 상황을 정리한 데이터지만 목적이 다르기 때문에 데이터의 특성이 조금씩 다릅니다. &lt;br&gt;
-MDN은 모든 세세한 기능에 대한 호환성(compatibility) 데이터를, Can I use...는 큰 기능을 중점으로 브라우저 지원 여부를 정리합니다. &lt;br&gt;
-따라서 Can I use...에는 포함되지 않는 데이터도 많이 있습니다.&lt;/p&gt;
-
-&lt;p&gt;이번 공동 작업으로 &lt;a href=&quot;https://caniuse.com/&quot;&gt;Can I use...&lt;/a&gt;가 &lt;a href=&quot;https://github.com/mdn/browser-compat-data&quot;&gt;MDN compat data&lt;/a&gt;의 데이터를 사용해 기능에 관한 브라우저 정보도 지원 상황을 표시할 수 있도록 됐습니다(현재 양쪽의 데이터를 검색한 결과가 각각 노출됨).&lt;/p&gt;
-
-&lt;p&gt;또, 비슷한 사이트로 각 메일 클라이언트 별 이용할 수 있는 HTML이나 CSS 지원 상황 정리한 Can i email...이라는 사이트도 다른 개발자에 의해 공개됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.caniemail.com/&quot;&gt;Can I email… Support tables for HTML and CSS in emails&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;typescript-3-7-iteration-plan-issue-33352-microsoft-typescript&quot;&gt;TypeScript 3.7 Iteration Plan · Issue #33352 · microsoft/TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/microsoft/TypeScript/issues/33352&quot; title=&quot;TypeScript 3.7 Iteration Plan · Issue #33352 · microsoft/TypeScript&quot;&gt;github.com/microsoft/TypeScript/issues/33352&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.7의 로드맵이 공개됐습니다.&lt;br&gt;
-ECMAScript Private Fields, Optional Chaining, Nullish Coalescing 및 &lt;code&gt;--declaration&lt;/code&gt;과 &lt;code&gt;--allowJs&lt;/code&gt; 속성 조합 등에 대한 대응이 이뤄집니다.&lt;br&gt;
-또, &lt;code&gt;typescript&lt;/code&gt; 패키지 크기 최적화, &lt;code&gt;@types&lt;/code&gt; 패키지를 GitHub Package Registry에도 배포할 수 있도록 변경되며 여러 변경 사항에 맞춰 핸드북도 개정될 예정입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-dompurify-2-0-0-cure53-dompurify&quot;&gt;Release DOMPurify 2.0.0 · cure53/DOMPurify&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/cure53/DOMPurify/releases/tag/2.0.0&quot; title=&quot;Release DOMPurify 2.0.0 · cure53/DOMPurify&quot;&gt;github.com/cure53/DOMPurify/releases/tag/2.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;DOMpurify 2.0.0이 릴리스 됐습니다.&lt;br&gt;
-Trusted Types를 사용할 수 있는 경우에도 &lt;code&gt;RETURN_TRUSTED_TYPE&lt;/code&gt; 옵션을 전달 했을 때만 Trusted Types을 사용하도록 변경됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;google-developers-blog-flutter-news-from-gdd-china-uniting-flutter-on-web-and-mobile-and-introducing-flutter-1-9&quot;&gt;Google Developers Blog: Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1&quot; title=&quot;Google Developers Blog: Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9&quot;&gt;developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m&amp;#x3D;1&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Flutter&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Flutter 1.9가 릴리스 됐습니다.&lt;br&gt;
-웹 지원이 메인 저장소에 합쳐(merge)졌습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;eslint-v6-4-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v6.4.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2019/09/eslint-v6.4.0-released&quot; title=&quot;ESLint v6.4.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2019/09/eslint-v6.4.0-released&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ESLint 6.4.0이 릴리스 됐습니다.&lt;br&gt;
-&lt;code&gt;no-import-assign&lt;/code&gt;, &lt;code&gt;prefer-regex-literals&lt;/code&gt;, &lt;code&gt;default-param-last&lt;/code&gt; 규칙이 추가됐습니다.&lt;br&gt;
-&lt;code&gt;enforceForClassMembers&lt;/code&gt; 옵션으로 일부 규칙을 클래스 구문에도 적용할 수 있도록 변경됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/4164b162fb37dcc443a1&quot; title=&quot;ESLint v6.4.0 - Qiita&quot;&gt;ESLint v6.4.0 - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v4-0-0-immerjs-immer&quot;&gt;Release v4.0.0 · immerjs/immer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/immerjs/immer/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · immerjs/immer&quot;&gt;github.com/immerjs/immer/releases/tag/v4.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Immer 4.0.0이 릴리스 됐습니다.&lt;br&gt;
-development mode 일 때 모든 값이 deep frozen 된 상태로 저장되도록 변경됐습니다.&lt;br&gt;
-또, 웹 사이트의 문서가 개편됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://immerjs.github.io/immer/docs/introduction&quot; title=&quot;Introduction to Immer · Immer&quot;&gt;Introduction to Immer · Immer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-2-4-0-avajs-ava&quot;&gt;Release 2.4.0 · avajs/ava&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v2.4.0&quot; title=&quot;Release 2.4.0 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v2.4.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AVA 2.4.0이 릴리스 됐습니다.&lt;br&gt;
-&lt;code&gt;t.try()&lt;/code&gt;를 플래그를 붙여 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;how-to-build-a-plugin-system-on-the-web-and-also-sleep-well-at-night&quot;&gt;How to build a plugin system on the web and also sleep well at night&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.figma.com/blog/how-we-built-the-figma-plugin-system/&quot; title=&quot;How to build a plugin system on the web and also sleep well at night&quot;&gt;www.figma.com/blog/how-we-built-the-figma-plugin-system/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;plugin&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;플러그인으로 추가되는 서드파티 코드를 안전하게 웹 브라우저에서 실행할 수 있도록 하는 구조에 대해서 이야기합니다. &lt;br&gt;
-&lt;code&gt;&amp;lt;inline-iframe&amp;gt;&lt;/code&gt;과 자바스크립트 인터프리터 이용하는 방법, Proposal의 Realms(shim)을 사용한 샌드박스 등을 소개합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-realms&quot; title=&quot;tc39/proposal-realms: ECMAScript Proposal, specs, and reference implementation for Realms&quot;&gt;tc39/proposal-realms: ECMAScript Proposal, specs, and reference implementation for Realms&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Agoric/realms-shim&quot; title=&quot;Agoric/realms-shim: Spec-compliant shim for Realms TC39 Proposal&quot;&gt;Agoric/realms-shim: Spec-compliant shim for Realms TC39 Proposal&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;caniuse-and-mdn-compatibility-data-collaboration-mozilla-hacks-the-web-developer-blog&quot;&gt;Caniuse and MDN compatibility data collaboration - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/09/caniuse-and-mdn-compat-data-collaboration/&quot; title=&quot;Caniuse and MDN compatibility data collaboration - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2019/09/caniuse-and-mdn-compat-data-collaboration/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MDN Compat Data를 Can I Use의 웹 사이트에서 제공합니다.&lt;br&gt;
-이제 Can I Use에서 MDN의 데이터를 기반으로 기능 및 지원 브라우저 상황을 함께 볼 수 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;a-lighter-v8-v8&quot;&gt;A lighter V8 · V8&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://v8.dev/blog/v8-lite&quot; title=&quot;A lighter V8 · V8&quot;&gt;v8.dev/blog/v8-lite&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;V8의 Lite mode를 소개합니다.&lt;br&gt;
-메모리가 적은 디바이스 용 모드로 메모리 소비를 크게 줄이는 것을 목표로 하고 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;webgpu-and-wsl-in-safari-webkit&quot;&gt;WebGPU and WSL in Safari | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9528/webgpu-and-wsl-in-safari/&quot; title=&quot;WebGPU and WSL in Safari | WebKit&quot;&gt;webkit.org/blog/9528/webgpu-and-wsl-in-safari/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 91부터 베타로 지원 되고있는 WebGPU API와 WSL에 대해 작성돼 있습니다.&lt;br&gt;
-WebGPU의 파이프라이느처리 최적화, 런타임 성능, Web Shading Language(WSL) 등을 소개합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;x3d-declarative-3d-for-the-modern-web&quot;&gt;X3D: Declarative 3D for the Modern Web&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.scottlogic.com/2019/08/27/declarative-3d-for-the-modern-web.html&quot; title=&quot;X3D: Declarative 3D for the Modern Web&quot;&gt;blog.scottlogic.com/2019/08/27/declarative-3d-for-the-modern-web.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;3D&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;선언적으로 3D를 표현하는 X3D라는 사양과 X3DOM 구현에 대해서 이야기합니다.&lt;br&gt;
-SVG 처럼 HTML 내에 태그를 작성하여 3D를 표현할 수 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-77-web-google-developers&quot;&gt;New in Chrome 77  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2019/09/nic77&quot; title=&quot;New in Chrome 77  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2019/09/nic77&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 77 릴리스 됐습니다.&lt;br&gt;
-Largest Contentful Paint(LCP), &lt;code&gt;formdata&lt;/code&gt; 이벤트, &lt;code&gt;formAssociated&lt;/code&gt; 프로퍼티를 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/more-capable-form-controls/&quot; title=&quot;More capable form controls  |  web.dev&quot;&gt;More capable form controls  |  web.dev&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;can-i-email-support-tables-for-html-and-css-in-emails&quot;&gt;Can I email… Support tables for HTML and CSS in emails&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.caniemail.com/&quot; title=&quot;Can I email… Support tables for HTML and CSS in emails&quot;&gt;www.caniemail.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;mail&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;메일 내에서 특정 HTML 태그와 CSS를 사용할 수 있는지, 메일 클라이언트 지원 상황을 검색할 수 있는 서비스입니다. &lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;nanosql-2&quot;&gt;nanoSQL 2&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nanosql.io/&quot; title=&quot;nanoSQL 2&quot;&gt;nanosql.io/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;SQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;SQL builder 라이브러리입니다.&lt;br&gt;
-인메모리, 브라우저의 IndexedDB나 Localstorage, Node.js의 MySQL이나 Redix 등 다양한 데이터베이스를 지원합니다. &lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;도서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;web-development-with-node-and-express-2nd-edition-oreilly-media&quot;&gt;Web Development with Node and Express, 2nd Edition - O&amp;#39;Reilly Media&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://shop.oreilly.com/product/0636920261216.do&quot; title=&quot;Web Development with Node and Express, 2nd Edition - O&amp;#39;Reilly Media&quot;&gt;shop.oreilly.com/product/0636920261216.do&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2019년 10월 출간 예정인 Node.js와 Express를 주제로한 도서입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;daumann-ecmascript-new-features-list-a-comprehensive-list-of-new-es-features-including-es2015-es6-es2016-es7-es2017-es8-es2018-es9-es2019-es10&quot;&gt;daumann/ECMAScript-new-features-list: A comprehensive list of new ES features, including ES2015 (ES6), ES2016 (ES7), ES2017 (ES8), ES2018 (ES9), ES2019 (ES10)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/daumann/ECMAScript-new-features-list&quot; title=&quot;daumann/ECMAScript-new-features-list: A comprehensive list of new ES features, including ES2015 (ES6), ES2016 (ES7), ES2017 (ES8), ES2018 (ES9), ES2019 (ES10)&quot;&gt;github.com/daumann/ECMAScript-new-features-list&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ECMAScript 버전 별 추가된 기능 및 구문과 샘플 코드가 정리돼 있는 저장소입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 17 Sep 2019 09:03:38 +0900</pubDate>
-        <link>https://jser.info/ko/2019/09/17/chrome-77typescript-3.7can-i-use-and-mdn/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2019/09/17/chrome-77typescript-3.7can-i-use-and-mdn/</guid>
-        
-        <category>Chrome</category>
-        
-        <category>TypeScript</category>
-        
-        <category>MDN</category>
         
         
         <category>JSer</category>
