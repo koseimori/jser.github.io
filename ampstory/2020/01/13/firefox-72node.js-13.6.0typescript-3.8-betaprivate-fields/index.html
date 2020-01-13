@@ -1,0 +1,449 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2020-01-13のJS: Firefox 72、Node.js 13.6.0、TypeScript 3.8 Beta(Private Fields) - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2020/01/13/firefox-72node.js-13.6.0typescript-3.8-betaprivate-fields/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2020-01-13のJS: Firefox 72、Node.js 13.6.0、TypeScript 3.8 Beta(Private Fields)"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2020-01-13のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/preactjs/preact/releases/tag/10.2.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release throw new Preact(&#039;10.2.0&#039;) · preactjs/preact</amp-fit-text>
+            <p class="item-contents">Preact 10.2.0リリース。
+<code>useErrorBoundary</code> hookのサポート、<code>lazy()</code>がnamed exportsに対応など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release throw new Preact(&#039;10.2.0&#039;) · preactjs/preact" href="https://github.com/preactjs/preact/releases/tag/10.2.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hacks.mozilla.org/2020/01/firefox-72-our-first-song-of-2020/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Firefox 72 — our first song of 2020 - Mozilla Hacks - the Web developer blog</amp-fit-text>
+            <p class="item-contents">Firefox 72リリース。
+フラグ付きでコンソールのAsync Stack Traceの対応、CSSのShadow Parts(<code>::part()</code>)、CSS Motion Pathの対応。
+通知許可の求めるにはユーザーインタラクションのイベント内で行う必要があるように変更、Nullish coalescing operator、<code>formdata</code>イベントの対応など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Firefox 72 — our first song of 2020 - Mozilla Hacks - the Web developer blog" href="https://hacks.mozilla.org/2020/01/firefox-72-our-first-song-of-2020/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v12.14.1/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v12.14.1 (LTS) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 12.14.1リリース。
+<code>v8.serialize</code>と<code>v8.deserialize</code>がStable APIとなるなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v12.14.1 (LTS) | Node.js" href="https://nodejs.org/en/blog/release/v12.14.1/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://nodejs.org/en/blog/release/v13.6.0/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Node v13.6.0 (Current) | Node.js</amp-fit-text>
+            <p class="item-contents">Node.js 13.6.0リリース。
+正規表現にマッチするかをテストできる<code>assert.match()</code>と<code>assert.doesNotMatch()</code>の実装、
+<code>EventEmitter.on</code>のAsync Iterator対応。
+Streamに対する<code>fs</code>の実装を指定できるオプションの追加、<code>error</code>イベントを副作用なしに監視できる<code>EventEmitter.errorMonitor</code> Symbolを追加。
+<code>perf_hooks</code>モジュールがStable APIになるなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Node v13.6.0 (Current) | Node.js" href="https://nodejs.org/en/blog/release/v13.6.0/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/9689/release-notes-for-safari-technology-preview-98/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 98 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview 98 リリース。
+<code>OffscreenCanvas.convertToBlob</code>のサポート、CSSの<code>clamp()</code>のサポート。
+<code>beforeunload</code>や<code>unload</code>時の同期XHRが禁止される変更など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 98 | WebKit" href="https://webkit.org/blog/9689/release-notes-for-safari-technology-preview-98/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing TypeScript 3.8 Beta | TypeScript</amp-fit-text>
+            <p class="item-contents">TypeScript 3.8 Betaリリース。
+<code>import type</code>/<code>export type</code>で型定義だけをimport/exportできるように、Stage 3のECMAScript Private Fieldsに対応。
+Top-Level <code>await</code>に対応、<code>target</code>と<code>module</code>が<code>es2020</code>をサポート、<code>watchOptions</code>の追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing TypeScript 3.8 Beta | TypeScript" href="https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/date-fns/date-fns/releases/tag/v2.9.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v2.9.0 · date-fns/date-fns</amp-fit-text>
+            <p class="item-contents">date-fns 2.9.0リリース。
+<code>eachYearInterval</code>、<code>eachMonthInterval</code>、<code>isExists</code>の追加。
+オブジェクトでまとめてDateを操作する<code>add</code>と<code>sub</code>の追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v2.9.0 · date-fns/date-fns" href="https://github.com/date-fns/date-fns/releases/tag/v2.9.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://babeljs.io/blog/2020/01/11/7.8.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">7.8.0 Released: ECMAScript 2020, .mjs configuration files and @babel/cli improvements · Babel</amp-fit-text>
+            <p class="item-contents">Babel 7.8.0リリース。
+ES2020のサポートをデフォルト化、<code>babel.config.mjs</code>など設定ファイルの対応を整理、<code>--copy-ignored</code>と<code>--out-file-extension</code>のサポートなど。
+また 8.0.0に向けた準備などについて書かれている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="7.8.0 Released: ECMAScript 2020, .mjs configuration files and @babel/cli improvements · Babel" href="https://babeljs.io/blog/2020/01/11/7.8.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/jsdom/jsdom/releases/tag/16.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Version 16.0.0 · jsdom/jsdom</amp-fit-text>
+            <p class="item-contents">jsdom 16.0.0リリース。
+Node.js 10未満のサポート終了、<code>dom.runVMScript()</code>の廃止、<code>prototype</code>使った<code>Window</code>間のプロパティ共有の廃止など。<code>window.getSelection()</code>のサポート、Timerのメモリリークを修正など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Version 16.0.0 · jsdom/jsdom" href="https://github.com/jsdom/jsdom/releases/tag/16.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/pikapkg/snowpack/releases/tag/v1.0.1">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release V1 RELEASE! @pika/web is now Snowpack · pikapkg/snowpack</amp-fit-text>
+            <p class="item-contents">Snowpack 1.0.0リリース。
+インストール時にES Modulesとして読み込めるモジュールを配置することで、変更ごとにビルドしないでアプリケーション開発できることを目的にしている。
+<code>@pika/web</code>からSnowpackにリネーム、<code>--optimize</code>でのtree-shakingサポート等。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release V1 RELEASE! @pika/web is now Snowpack · pikapkg/snowpack" href="https://github.com/pikapkg/snowpack/releases/tag/v1.0.1" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webauthn.guide/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Guide to Web Authentication</amp-fit-text>
+            <p class="item-contents">Web Authenticationの基本的な目的や使い方について書かれた記事
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Guide to Web Authentication" href="https://webauthn.guide/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.chromium.org/2020/01/introducing-quieter-permission-ui-for.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Chromium Blog: Introducing quieter permission UI for notifications</amp-fit-text>
+            <p class="item-contents">Chrome 80で入る通知などのパーミッションデザインの変更について。
+Quiet UIと呼ばれる新しい許可UIの追加と設定方法について。
+またChrome UX Reportのデータをもとに、通知の受け入れ率が低いサイトは自動的にquieter promptsにする変更などが追加される予定。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Chromium Blog: Introducing quieter permission UI for notifications" href="https://blog.chromium.org/2020/01/introducing-quieter-permission-ui-for.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://web.dev/advancing-framework-ecosystem-cds-2019/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Advancing the web framework ecosystem</amp-fit-text>
+            <p class="item-contents">Chromeチームが最近取り組んでいるいウェブフレームワークの最適化ついて。
+Angular、Next.js、Nuxt.js、Babelについてのパフォーマンス最適化などの取り組みを紹介している
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Advancing the web framework ecosystem" href="https://web.dev/advancing-framework-ecosystem-cds-2019/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://alain.xyz/blog/raw-webgpu">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Raw WebGPU</amp-fit-text>
+            <p class="item-contents">WebKitやChromiumに試験的に実装されているWebGPUについてのチュートリアル。Vulkan、DirectX 12、Metalを扱うことを目的としたWeb API、基本的な使い方について解説している
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Raw WebGPU" href="https://alain.xyz/blog/raw-webgpu" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/qawolf/qawolf">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">qawolf/qawolf: 🐺Create browser tests 10x faster</amp-fit-text>
+            <p class="item-contents">PupeteerとJestを使ったテストフレームワーク。
+操作を記憶してテストケースとSelectorを作成でき、CIに実行結果の動画をアップロードのサポートなどをしている。
+Automatic waiting、Keyboard eventsなどをサポートしている
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="qawolf/qawolf: 🐺Create browser tests 10x faster" href="https://github.com/qawolf/qawolf" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/babel/preset-modules">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">babel/preset-modules: A Babel preset that targets modern browsers by fixing engine bugs (will be merged into preset-env eventually)</amp-fit-text>
+            <p class="item-contents">@babel/preset-envにマージされる予定の、Modern Browser向けの最適化を目的にしたBabel Preset。
+MSEdgeなどのES Modulesをサポートしているが一部構文にバグがあるケースなどにも対応している。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="babel/preset-modules: A Babel preset that targets modern browsers by fixing engine bugs (will be merged into preset-env eventually)" href="https://github.com/babel/preset-modules" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
