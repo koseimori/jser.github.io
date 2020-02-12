@@ -5,9 +5,266 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 05 Feb 2020 18:17:33 +0900</pubDate>
-    <lastBuildDate>Wed, 05 Feb 2020 18:17:33 +0900</lastBuildDate>
+    <pubDate>Wed, 12 Feb 2020 12:32:03 +0900</pubDate>
+    <lastBuildDate>Wed, 12 Feb 2020 12:32:03 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-02-12のJS: Electron 8.0.0、Angular 9、`request` module is deprecated</title>
+        <description>&lt;p&gt;JSer.info #474 - Electron 8.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.electronjs.org/blog/electron-8-0&quot;&gt;Electron 8.0.0 | Electron Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Chromium 80、V8 8.0、Node.js 12.13.0へとそれぞれアップデートされています。&lt;/p&gt;
+
+&lt;p&gt;またChromeビルトインのスペルチェッカーを利用できるように、IPCにV8の Structured Clone Algorithm(Node.jsでも&lt;a href=&quot;https://nodejs.org/api/v8.html#v8_serialization_api&quot;&gt;Serialization API&lt;/a&gt;として提供されている)を利用することでパフォーマンスの改善などが行われています。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;session.preconnect&lt;/code&gt;、&lt;code&gt;tray.displayBalloon&lt;/code&gt;、&lt;code&gt;contents.executeJavaScriptInIsolatedWorld&lt;/code&gt;などのAPI追加。&lt;/p&gt;
+
+&lt;p&gt;今回のリリースでElectron 5.xはEOL(End Of Support)となっています。&lt;br&gt;
+Electronは現在のバージョンを含めた3バージョンをサポートするポリシーとなっています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.electronjs.org/docs/tutorial/support&quot;&gt;Electron Support | Electron&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;スケジュールより少し遅れましたが、Angular 9リリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3&quot;&gt;Version 9 of Angular Now Available — Project Ivy has arrived!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;新しいCompilerとRuntimeの総称である&lt;a href=&quot;https://angular.io/guide/ivy&quot;&gt;Angular Ivy&lt;/a&gt;がデフォルトとなりました。&lt;br&gt;
+これによりbundleファイルサイズなどの改善やパフォーマンスなどが改善さｒています。&lt;/p&gt;
+
+&lt;p&gt;また、&lt;code&gt;TestBed&lt;/code&gt;の再実装によるテストパフォーマンスの改善、TypScript 3.7のサポートとテンプレートの型チェックオプションの追加、ビルドエラーやスタックトレースの改善なども行われています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Node.js向けのHTTPライブラリである&lt;a href=&quot;https://www.npmjs.com/package/request&quot;&gt;request&lt;/a&gt;モジュールがDeprecatedになりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jser.info/2019/04/09/chromiummicrosoft-edge-request/&quot;&gt;2019-04-09のJS: ChromiumベースのMicrosoft Edge プレビュー版公開、&lt;code&gt;request&lt;/code&gt;モジュールがメンテンスモードに移行の予定 - JSer.info&lt;/a&gt;で、メンテナンスモードとなっていましたが、今回でDeprecatedとなりました。&lt;/p&gt;
+
+&lt;p&gt;詳細については次のIssueにかかれています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3142#issuecomment-584745385&quot;&gt;Request’s Past, Present and Future · Issue #3142 · request/request&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;代替となるライブラリについては次のIssueでまとめられています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3143&quot;&gt;Alternative libraries to request · Issue #3143 · request/request&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;electron-8-0-0-electron-blog&quot;&gt;Electron 8.0.0 | Electron Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.electronjs.org/blog/electron-8-0&quot; title=&quot;Electron 8.0.0 | Electron Blog&quot;&gt;www.electronjs.org/blog/electron-8-0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Electron 8.0.0リリース。&lt;br&gt;
+Chromium 80、V8 8.0、Node.js 12.13.0へのアップデート。&lt;br&gt;
+Chromeビルトインのスペルチェッカーを利用できるように、IPCにV8の Structured Clone Algorithmを利用することでパフォーマンスの改善など。&lt;br&gt;
+&lt;code&gt;session.preconnect&lt;/code&gt;、&lt;code&gt;tray.displayBalloon&lt;/code&gt;、&lt;code&gt;contents.executeJavaScriptInIsolatedWorld&lt;/code&gt;などのAPI追加。&lt;br&gt;
+今回のリリースでElectron 5.xはEOL(End Of Support)となった。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-typescript-3-8-rc-typescript&quot;&gt;Announcing TypeScript 3.8 RC | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-rc/&quot; title=&quot;Announcing TypeScript 3.8 RC | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-8-rc/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 3.8RCリリース。&lt;br&gt;
+Type-Only Imports/Exports、ECMAScript Private Fields、Top-Level awaitのサポート。&lt;br&gt;
+また&lt;code&gt;checkJS&lt;/code&gt;におけるJSDocの&lt;code&gt;@public&lt;/code&gt;、&lt;code&gt;@private&lt;/code&gt;、&lt;code&gt;@protected&lt;/code&gt;をサポート、&lt;code&gt;watchOptions&lt;/code&gt;の追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-in-chrome-80-web-google-developers&quot;&gt;New in Chrome 80  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/02/nic80&quot; title=&quot;New in Chrome 80  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2020/02/nic80&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 80リリース。&lt;br&gt;
+WebWorkerで&lt;code&gt;type:&amp;quot;module&amp;quot;&lt;/code&gt;のサポート、Optional Chainingのサポート。&lt;br&gt;
+またOrigin TrialとしてContact Picker API、Notification triggers、Web Serialのサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-webkit&quot;&gt;Release Notes for Safari Technology Preview 💯 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10024/release-notes-for-safari-technology-preview-100/&quot; title=&quot;Release Notes for Safari Technology Preview 💯 | WebKit&quot;&gt;webkit.org/blog/10024/release-notes-for-safari-technology-preview-100/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview 100リリース。&lt;br&gt;
+Web Inspector Referenceへのリンクの追加、Web InspectorのCanvas Tab がGraphics Tabにリネームなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webkit.org/web-inspector/&quot; title=&quot;Web Inspector Reference | WebKit&quot;&gt;Web Inspector Reference | WebKit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;v8-runtime-overview-apps-script-google-developers&quot;&gt;V8 Runtime Overview  |  Apps Script  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/apps-script/guides/v8-runtime&quot; title=&quot;V8 Runtime Overview  |  Apps Script  |  Google Developers&quot;&gt;developers.google.com/apps-script/guides/v8-runtime&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GAS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Google Apps ScriptでV8が利用できるようになった&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-3-3-0-avajs-ava&quot;&gt;Release 3.3.0 · avajs/ava&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v3.3.0&quot; title=&quot;Release 3.3.0 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v3.3.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;AVA 3.3.0リリース。&lt;br&gt;
+ECMAScript Modulesなテストファイルに対応&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;version-9-of-angular-now-available-project-ivy-has-arrived&quot;&gt;Version 9 of Angular Now Available — Project Ivy has arrived!&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3&quot; title=&quot;Version 9 of Angular Now Available — Project Ivy has arrived!&quot;&gt;blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Angular 9リリース。&lt;br&gt;
+Ivyがデフォルトとなりbundleファイルサイズなどの改善、&lt;code&gt;TestBed&lt;/code&gt;の再実装でのテストパフォーマンスの改善、TypScript 3.7のサポートとテンプレートの型チェックオプションの追加。&lt;br&gt;
+ビルドエラーやスタックトレースの改善など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://angular.io/guide/ivy&quot; title=&quot;Angular - Angular Ivy&quot;&gt;Angular - Angular Ivy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v1-0-0-scala-js-scala-js&quot;&gt;Release v1.0.0 · scala-js/scala-js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/scala-js/scala-js/releases/tag/v1.0.0&quot; title=&quot;Release v1.0.0 · scala-js/scala-js&quot;&gt;github.com/scala-js/scala-js/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;scala&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Scala.js 1.0.0リリース&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;request-npm&quot;&gt;request - npm&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.npmjs.com/package/request&quot; title=&quot;request - npm&quot;&gt;www.npmjs.com/package/request&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js向けのHTTPクライアントである&lt;code&gt;request&lt;/code&gt;モジュールがDeprecatedとなった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3142#issuecomment-584745385&quot; title=&quot;Request’s Past, Present and Future · Issue #3142 · request/request&quot;&gt;Request’s Past, Present and Future · Issue #3142 · request/request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3143&quot; title=&quot;Alternative libraries to request · Issue #3143 · request/request&quot;&gt;Alternative libraries to request · Issue #3143 · request/request&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;serenity-js-serenity-js&quot;&gt;Serenity/JS | Serenity/JS&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://serenity-js.org/&quot; title=&quot;Serenity/JS | Serenity/JS&quot;&gt;serenity-js.org/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Acceptance testingフレームワーク。&lt;br&gt;
+Screenplay PatternでActorを中心にしたテストシナリオを書き、クロスブラウザでの受け入れテストを行う&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;tensorflow-js-for-react-native-is-here-the-tensorflow-blog&quot;&gt;TensorFlow.js for React Native is here! — The TensorFlow Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.tensorflow.org/2020/02/tensorflowjs-for-react-native-is-here.html&quot; title=&quot;TensorFlow.js for React Native is here! — The TensorFlow Blog&quot;&gt;blog.tensorflow.org/2020/02/tensorflowjs-for-react-native-is-here.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MachineLearning&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;mobile&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Tensorflow.js for React Nativeが一般公開された&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ecmascript-proposal-updates-2020-02-ecmascript-daily&quot;&gt;ECMAScript proposal updates @ 2020-02 | ECMAScript Daily&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ecmascript-daily.github.io/ecmascript/2020/02/11/ecmascript-proposal-update.md&quot; title=&quot;ECMAScript proposal updates @ 2020-02 | ECMAScript Daily&quot;&gt;ecmascript-daily.github.io/ecmascript/2020/02/11/ecmascript-proposal-update.md&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proposal&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2020年2月のTC39 MTGでのECMAScript Proposalの変更点まとめ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;use-cloudflare-javascript-workers-to-deploy-your-static-generated-site-ssg&quot;&gt;Use Cloudflare JavaScript Workers to Deploy Your Static Generated Site (SSG)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://levelup.gitconnected.com/use-cloudflare-javascript-workers-to-deploy-you-static-generated-site-ssg-1c518e078646&quot; title=&quot;Use Cloudflare JavaScript Workers to Deploy Your Static Generated Site (SSG)&quot;&gt;levelup.gitconnected.com/use-cloudflare-javascript-workers-to-deploy-you-static-generated-site-ssg-1c518e078646&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CloudflareのWorkersを使ったSSG(Static SIte Generator)の実装とデプロイについて。&lt;br&gt;
+Next.jsを使った例を紹介している&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;single-spa-single-spa-microfrontends-made-easy&quot;&gt;single-spa/single-spa: Microfrontends made easy&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/single-spa/single-spa&quot; title=&quot;single-spa/single-spa: Microfrontends made easy&quot;&gt;github.com/single-spa/single-spa&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MicroFrontend&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;各種フレームワーク向けのアダプターを用意してるMicrofrontendsフレームワーク。&lt;br&gt;
+それぞれのフレームワークを使ったアプリを同一ページで扱うために必要なライフサイクルを管理するフレームワーク。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;himenon-code-dependency-a-work-efficiency-tool-for-visualizing-code-dependencies-on-a-browser&quot;&gt;Himenon/code-dependency: A work efficiency tool for visualizing code dependencies on a browser.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Himenon/code-dependency&quot; title=&quot;Himenon/code-dependency: A work efficiency tool for visualizing code dependencies on a browser.&quot;&gt;github.com/Himenon/code-dependency&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;dependency-cruiserを使ったモジュールの依存関係図を生成してブラウザで表示できるツール&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/himenoglyph/items/f28a9905e3b30e6cb213&quot; title=&quot;dependency-cruiser&quot;&gt;dependency-cruiser&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;myliang-x-spreadsheet-a-web-based-javascript-canvas-spreadsheet&quot;&gt;myliang/x-spreadsheet: A web-based JavaScript（canvas） spreadsheet&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/myliang/x-spreadsheet&quot; title=&quot;myliang/x-spreadsheet: A web-based JavaScript（canvas） spreadsheet&quot;&gt;github.com/myliang/x-spreadsheet&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;canvas&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;依存のないSpreadSheetの実装ライブラリ。Canvasを使って描画をしている。&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Wed, 12 Feb 2020 11:42:09 +0900</pubDate>
+        <link>https://jser.info/2020/02/12/electron-8.0.0-angular-9-request-module-is-deprecated/</link>
+        <guid isPermaLink="true">https://jser.info/2020/02/12/electron-8.0.0-angular-9-request-module-is-deprecated/</guid>
+        
+        <category>Electron</category>
+        
+        <category>Angular</category>
+        
+        <category>node.js</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-02-05のJS: npm unpublish policy、yarn v2(berry) RCリリース</title>
@@ -2257,264 +2514,6 @@ IPLDでデータを定義している。&lt;/p&gt;
         <category>WebAssembly</category>
         
         <category>ECMAScript</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-12-03のJS: Got 10(Node.js HTTPクライアント)、FAB(Frontend Application Bundles)</title>
-        <description>&lt;p&gt;JSer.info #464 - Node.js向けのHTTPクライアントライブラリであるGot 10がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/sindresorhus/got/releases/tag/v10.0.0&quot;&gt;Release v10.0.0 · sindresorhus/got&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;TypeScriptで書き直されたバージョンで、Node.js 10以降がサポート対象となっています。&lt;br&gt;
-Node.js 12以降を対象にBrotliのサポート、DNS Cacheのオプションを追加なども行われています。&lt;br&gt;
-また、オプション名のリネームを中心に破壊的な変更も多く含んでいます。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;query&lt;/code&gt; -&amp;gt; &lt;code&gt;searchParams&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;baseUrl&lt;/code&gt; -&amp;gt; &lt;code&gt;prefixUrl&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;encoding&lt;/code&gt; -&amp;gt; &lt;code&gt;responseType&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;その他にもリトライオプションの使い方の変更、リクエストとレスポンスにおけるJSONの扱い方の変更なども含まれています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://fab.dev/&quot;&gt;FAB — Frontend Application Bundles&lt;/a&gt;というコミュニティ仕様では、フロントエンドアプリケーションをHerokuやAWS Lambdaなどにデプロイする際のフォーマットについて決めています。&lt;/p&gt;
-
-&lt;p&gt;Gatsby、Next.js、Nuxt.jsなどのフレームワークごとにそのアプリケーションの出力形式が異なるため、現状でホスティング環境へデプロイするためにはそれぞれにあわせた設定が必要になります。&lt;br&gt;
-FABはその間となるFramework adaptersとなる中間フォーマットを定義して、フレームワークとホスティング環境の相互運用性の向上を試みるプロジェクトです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://fab.dev/kb/fab-structure&quot;&gt;FAB Structure&lt;/a&gt;では、アセットを配置する&lt;code&gt;_assets&lt;/code&gt;というディレクトリとNode.jsサーバとAPIを決めた&lt;code&gt;server.js&lt;/code&gt;をzipでパッケージングしたものが定義されています。&lt;/p&gt;
-
-&lt;p&gt;また&lt;a href=&quot;https://github.com/fab-spec/fab/issues&quot;&gt;さまざまIssue&lt;/a&gt;があるため、実際に利用されるようになるかはわかりませんが、&lt;br&gt;
-&lt;a href=&quot;https://linc.sh/&quot;&gt;Linc&lt;/a&gt;のCTOが主となって仕様を作っているようです。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-workbox-v5-0-0-rc-1-googlechrome-workbox&quot;&gt;Release Workbox v5.0.0-rc.1 · GoogleChrome/workbox&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0-rc.1&quot; title=&quot;Release Workbox v5.0.0-rc.1 · GoogleChrome/workbox&quot;&gt;github.com/GoogleChrome/workbox/releases/tag/v5.0.0-rc.1&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Workbox 5.0.0 RC1リリース&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v10-0-0-sindresorhus-got&quot;&gt;Release v10.0.0 · sindresorhus/got&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/sindresorhus/got/releases/tag/v10.0.0&quot; title=&quot;Release v10.0.0 · sindresorhus/got&quot;&gt;github.com/sindresorhus/got/releases/tag/v10.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js向けHTTPクライアントのGot 10.0.0リリース。&lt;br&gt;
-TypeScriptで書き直されたバージョン。&lt;br&gt;
-Node.js 10未満のサポート終了、&lt;code&gt;query&lt;/code&gt;を&lt;code&gt;searchParams&lt;/code&gt;にリネーム、&lt;code&gt;encoding&lt;/code&gt;を&lt;code&gt;responseType&lt;/code&gt;にリネーム、&lt;code&gt;json&lt;/code&gt;オプションの変更など。&lt;br&gt;
-DNS cacheのサポート、&lt;code&gt;maxRedirects&lt;/code&gt;オプションの追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript-frameworks-security-report-2019-snyk&quot;&gt;JavaScript frameworks security report 2019 | Snyk&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://snyk.io/blog/javascript-frameworks-security-report-2019/&quot; title=&quot;JavaScript frameworks security report 2019 | Snyk&quot;&gt;snyk.io/blog/javascript-frameworks-security-report-2019/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Angular(JS)、React、jQueryについてのセキュリティレポート。&lt;br&gt;
-脆弱性の個数や影響範囲、脆弱性報告、セキュリティ機能についてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;i-created-the-exact-same-app-in-vue-and-svelte-here-are-the-differences&quot;&gt;I created the exact same app in Vue and Svelte. Here are the differences.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-vue-and-svelte-here-are-the-differences-c649f8d4ce0a&quot; title=&quot;I created the exact same app in Vue and Svelte. Here are the differences.&quot;&gt;medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-vue-and-svelte-here-are-the-differences-c649f8d4ce0a&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;VueとSvelteで同じTodoアプリを作成しての比較記事。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-graalwasm-a-webassembly-engine-in-graalvm&quot;&gt;Announcing GraalWasm — a WebAssembly engine in GraalVM&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/graalvm/announcing-graalwasm-a-webassembly-engine-in-graalvm-25cd0400a7f2&quot; title=&quot;Announcing GraalWasm — a WebAssembly engine in GraalVM&quot;&gt;medium.com/graalvm/announcing-graalwasm-a-webassembly-engine-in-graalvm-25cd0400a7f2&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Java&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;VM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GraalVMでWebAssemblyのサポート。&lt;br&gt;
-GraalVMのTrufle API使ってWebAssemblyバイナリに対するインタープリタを実装し、Wasmを実行できるようにしている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;connor4312-cockatiel-a-resilience-and-transient-fault-handling-library-that-allows-developers-to-express-policies-such-as-backoff-retry-circuit-breaker-timeout-bulkhead-isolation-and-fallback-inspired-by-net-polly&quot;&gt;connor4312/cockatiel: A resilience and transient-fault-handling library that allows developers to express policies such as Backoff, Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback. Inspired by .NET Polly.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/connor4312/cockatiel&quot; title=&quot;connor4312/cockatiel: A resilience and transient-fault-handling library that allows developers to express policies such as Backoff, Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback. Inspired by .NET Polly.&quot;&gt;github.com/connor4312/cockatiel&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;.net&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;.NET Pollyをインスパイアしたエラーハンドリングと復帰処理ライブラリ。&lt;br&gt;
-バックオフアルゴリズム、キャンセル、リトライ、サーキットブレーカー、タイムアウト、同時呼び出しの制限、フォールバックなどを行う&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/App-vNext/Polly&quot; title=&quot;App-vNext/Polly: Polly is a .NET resilience and transient-fault-handling library that allows developers to express policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner. From version 6.0.1, Polly targets .NET Standard 1.1 and 2.0+.&quot;&gt;App-vNext/Polly: Polly is a .NET resilience and transient-fault-handling library that allows developers to express policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner. From version 6.0.1, Polly targets .NET Standard 1.1 and 2.0+.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;graphql-ec-improving-online-shopping-site-performance-which-using-the-graphql-speaker-deck&quot;&gt;GraphQLを用いたサイトに おけるパフォーマンス改善 （ECサイトを題材に）/ Improving online shopping site performance which using the GraphQL - Speaker Deck&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/nobuhikosawai/improving-online-shopping-site-performance-which-using-the-graphql&quot; title=&quot;GraphQLを用いたサイトに おけるパフォーマンス改善 （ECサイトを題材に）/ Improving online shopping site performance which using the GraphQL - Speaker Deck&quot;&gt;speakerdeck.com/nobuhikosawai/improving-online-shopping-site-performance-which-using-the-graphql&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GraphQLのパフォーマンス改善についてのスライド。&lt;br&gt;
-Datadog APMを使ったサーバサイドのGraphQLのクエリトレースの読み方、フロントエンドの不必要なデータを取得するクエリの改善方法について。&lt;br&gt;
-クエリと画面を紐付けるためにFragmentとColocation&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.apollographql.com/docs/react/data/fragments/&quot; title=&quot;Using fragments - Client (React) - Apollo GraphQL Docs&quot;&gt;Using fragments - Client (React) - Apollo GraphQL Docs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;open-source-labs-reactime-chrome-extension-for-state-debugging-in-react-applications&quot;&gt;open-source-labs/reactime: Chrome extension for state debugging in React applications&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/open-source-labs/reactime&quot; title=&quot;open-source-labs/reactime: Chrome extension for state debugging in React applications&quot;&gt;github.com/open-source-labs/reactime&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Extension&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ReactアプリケーションのStateをデバッグするブラウザ拡張。&lt;br&gt;
-その時点のStateの表示、Stateの変化を記録して、特定の時点のStateを再現できる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;style-guide-redux&quot;&gt;Style Guide · Redux&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://redux.js.org/style-guide/style-guide&quot; title=&quot;Style Guide · Redux&quot;&gt;redux.js.org/style-guide/style-guide&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Reduxのスタイルについての公式ドキュメント。&lt;br&gt;
-Essential、Strongly Recommended、Recommendedの3つのカテゴリでスタイルに対するガイドをまとめている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;who-can-use&quot;&gt;Who Can Use&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://whocanuse.com/&quot; title=&quot;Who Can Use&quot;&gt;whocanuse.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;背景色、文字色、文字サイズを指定してプレビューでき、コントラスト比やWCAGグレードを算出してくれるツール&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;fab-frontend-application-bundles&quot;&gt;FAB — Frontend Application Bundles&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://fab.dev/&quot; title=&quot;FAB — Frontend Application Bundles&quot;&gt;fab.dev/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;spec&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;フロントエンドアプリケーションをホスティングにデプロイする際のパッケージングや配信するNode.jsサーバについて決めた仕様。&lt;br&gt;
-フレームワークごとに出力形式が異なり、ホスティング環境ごとに設定が異なるのを補うための中間フォーマット&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/fab-spec/fab/tree/next/packages/fab-static&quot; title=&quot;@fab/static&quot;&gt;@fab/static&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;linc-the-perfect-ci-cd-pipeline-for-your-frontend&quot;&gt;Linc – The Perfect CI/CD Pipeline for your Frontend&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://linc.sh/&quot; title=&quot;Linc – The Perfect CI/CD Pipeline for your Frontend&quot;&gt;linc.sh/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CI &lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CD&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;フロントエンドアプリケーション向けのCI。CDウェブサービス。&lt;br&gt;
-&lt;a href=&quot;https://fab.dev/&quot;&gt;https://fab.dev/&lt;/a&gt; のパッケージをサポートしており、コミットごとテスト、アプリケーションのプレビューができる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;killedbyapixel-jsoncrush-compress-json-into-url-friendly-strings&quot;&gt;KilledByAPixel/JSONCrush: Compress JSON into URL friendly strings&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/KilledByAPixel/JSONCrush&quot; title=&quot;KilledByAPixel/JSONCrush: Compress JSON into URL friendly strings&quot;&gt;github.com/KilledByAPixel/JSONCrush&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JSON&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JSON文字列をURLセーフにエンコード/デコードするライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;grubersjoe-reflow-babel-plugin-to-transpile-flow-code-to-typescript-with-cli-wrapper&quot;&gt;grubersjoe/reflow: Babel plugin to transpile Flow code to TypeScript with CLI wrapper&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/grubersjoe/reflow&quot; title=&quot;grubersjoe/reflow: Babel plugin to transpile Flow code to TypeScript with CLI wrapper&quot;&gt;github.com/grubersjoe/reflow&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;FlowのコードをTypeScriptのコードに変換するCLI。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;billinghamj-fix-es-imports-fixes-your-es-import-paths-from-node-style-to-explicit-filenames&quot;&gt;billinghamj/fix-es-imports: Fixes your ES import paths - from Node-style to explicit filenames&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/billinghamj/fix-es-imports&quot; title=&quot;billinghamj/fix-es-imports: Fixes your ES import paths - from Node-style to explicit filenames&quot;&gt;github.com/billinghamj/fix-es-imports&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;require&lt;/code&gt;では省略可能なモジュールインポートの&lt;code&gt;index.js&lt;/code&gt;や拡張子を追加するツール。&lt;br&gt;
-ECMAScriptでは拡張子などは省略できないため、&lt;code&gt;import&lt;/code&gt;文を修正する目的のツール&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;neomjs-neo-the-webworkers-driven-ui-framework-beta-version&quot;&gt;neomjs/neo: The webworkers driven UI framework (BETA version)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/neomjs/neo&quot; title=&quot;neomjs/neo: The webworkers driven UI framework (BETA version)&quot;&gt;github.com/neomjs/neo&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebWorkerベースのUIフレームワーク。&lt;br&gt;
-Worker内でコンポーネントの処理を行う&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/neomjs/neo&quot; title=&quot;neomjs/neo: The webworkers driven UI framework (BETA version)&quot;&gt;neomjs/neo: The webworkers driven UI framework (BETA version)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/neomjs/neo/blob/dev/.github/VISION.md&quot; title=&quot;neo/VISION.md at dev · neomjs/neo&quot;&gt;neo/VISION.md at dev · neomjs/neo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript-kids&quot;&gt;子どもから大人までスラスラ読める JavaScriptふりがなKidsプログラミング ゲームを作りながら楽しく学ぼう！ - インプレスブックス&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://book.impress.co.jp/books/1118101174&quot; title=&quot;子どもから大人までスラスラ読める JavaScriptふりがなKidsプログラミング ゲームを作りながら楽しく学ぼう！ - インプレスブックス&quot;&gt;book.impress.co.jp/books/1118101174&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptのコードと本文にふりがなをふったプログラミングの書籍&lt;br&gt;
-HTMLとJavaScriptを使ったゲームを作りながらプログラミングについてを学ぶ内容&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 03 Dec 2019 12:22:10 +0900</pubDate>
-        <link>https://jser.info/2019/12/03/got-10node.js-httpfabfrontend-application-bundles/</link>
-        <guid isPermaLink="true">https://jser.info/2019/12/03/got-10node.js-httpfabfrontend-application-bundles/</guid>
-        
-        <category>Node.js</category>
-        
-        <category>HTTP</category>
-        
-        <category>bundler</category>
         
         
         <category>JSer</category>

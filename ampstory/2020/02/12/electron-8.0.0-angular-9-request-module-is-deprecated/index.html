@@ -1,0 +1,439 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2020-02-12のJS: Electron 8.0.0、Angular 9、`request` module is deprecated - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2020/02/12/electron-8.0.0-angular-9-request-module-is-deprecated/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2020-02-12のJS: Electron 8.0.0、Angular 9、`request` module is deprecated"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2020-02-12のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://www.electronjs.org/blog/electron-8-0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Electron 8.0.0 | Electron Blog</amp-fit-text>
+            <p class="item-contents">Electron 8.0.0リリース。
+Chromium 80、V8 8.0、Node.js 12.13.0へのアップデート。
+Chromeビルトインのスペルチェッカーを利用できるように、IPCにV8の Structured Clone Algorithmを利用することでパフォーマンスの改善など。
+<code>session.preconnect</code>、<code>tray.displayBalloon</code>、<code>contents.executeJavaScriptInIsolatedWorld</code>などのAPI追加。
+今回のリリースでElectron 5.xはEOL(End Of Support)となった。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Electron 8.0.0 | Electron Blog" href="https://www.electronjs.org/blog/electron-8-0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-rc/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Announcing TypeScript 3.8 RC | TypeScript</amp-fit-text>
+            <p class="item-contents">TypeScript 3.8RCリリース。
+Type-Only Imports/Exports、ECMAScript Private Fields、Top-Level awaitのサポート。
+また<code>checkJS</code>におけるJSDocの<code>@public</code>、<code>@private</code>、<code>@protected</code>をサポート、<code>watchOptions</code>の追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Announcing TypeScript 3.8 RC | TypeScript" href="https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-rc/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2020/02/nic80">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">New in Chrome 80  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">Chrome 80リリース。
+WebWorkerで<code>type:"module"</code>のサポート、Optional Chainingのサポート。
+またOrigin TrialとしてContact Picker API、Notification triggers、Web Serialのサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="New in Chrome 80  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2020/02/nic80" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/10024/release-notes-for-safari-technology-preview-100/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 💯 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview 100リリース。
+Web Inspector Referenceへのリンクの追加、Web InspectorのCanvas Tab がGraphics Tabにリネームなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 💯 | WebKit" href="https://webkit.org/blog/10024/release-notes-for-safari-technology-preview-100/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/apps-script/guides/v8-runtime">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">V8 Runtime Overview  |  Apps Script  |  Google Developers</amp-fit-text>
+            <p class="item-contents">Google Apps ScriptでV8が利用できるようになった
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="V8 Runtime Overview  |  Apps Script  |  Google Developers" href="https://developers.google.com/apps-script/guides/v8-runtime" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/avajs/ava/releases/tag/v3.3.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 3.3.0 · avajs/ava</amp-fit-text>
+            <p class="item-contents">AVA 3.3.0リリース。
+ECMAScript Modulesなテストファイルに対応
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 3.3.0 · avajs/ava" href="https://github.com/avajs/ava/releases/tag/v3.3.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Version 9 of Angular Now Available — Project Ivy has arrived!</amp-fit-text>
+            <p class="item-contents">Angular 9リリース。
+Ivyがデフォルトとなりbundleファイルサイズなどの改善、<code>TestBed</code>の再実装でのテストパフォーマンスの改善、TypScript 3.7のサポートとテンプレートの型チェックオプションの追加。
+ビルドエラーやスタックトレースの改善など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Version 9 of Angular Now Available — Project Ivy has arrived!" href="https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/scala-js/scala-js/releases/tag/v1.0.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release v1.0.0 · scala-js/scala-js</amp-fit-text>
+            <p class="item-contents">Scala.js 1.0.0リリース
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release v1.0.0 · scala-js/scala-js" href="https://github.com/scala-js/scala-js/releases/tag/v1.0.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.npmjs.com/package/request">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">request - npm</amp-fit-text>
+            <p class="item-contents">Node.js向けのHTTPクライアントである<code>request</code>モジュールがDeprecatedとなった。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="request - npm" href="https://www.npmjs.com/package/request" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://serenity-js.org/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Serenity/JS | Serenity/JS</amp-fit-text>
+            <p class="item-contents">Acceptance testingフレームワーク。
+Screenplay PatternでActorを中心にしたテストシナリオを書き、クロスブラウザでの受け入れテストを行う
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Serenity/JS | Serenity/JS" href="https://serenity-js.org/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.tensorflow.org/2020/02/tensorflowjs-for-react-native-is-here.html">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">TensorFlow.js for React Native is here! — The TensorFlow Blog</amp-fit-text>
+            <p class="item-contents">Tensorflow.js for React Nativeが一般公開された
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="TensorFlow.js for React Native is here! — The TensorFlow Blog" href="https://blog.tensorflow.org/2020/02/tensorflowjs-for-react-native-is-here.html" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://ecmascript-daily.github.io/ecmascript/2020/02/11/ecmascript-proposal-update.md">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">ECMAScript proposal updates @ 2020-02 | ECMAScript Daily</amp-fit-text>
+            <p class="item-contents">2020年2月のTC39 MTGでのECMAScript Proposalの変更点まとめ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="ECMAScript proposal updates @ 2020-02 | ECMAScript Daily" href="https://ecmascript-daily.github.io/ecmascript/2020/02/11/ecmascript-proposal-update.md" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://levelup.gitconnected.com/use-cloudflare-javascript-workers-to-deploy-you-static-generated-site-ssg-1c518e078646">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Use Cloudflare JavaScript Workers to Deploy Your Static Generated Site (SSG)</amp-fit-text>
+            <p class="item-contents">CloudflareのWorkersを使ったSSG(Static SIte Generator)の実装とデプロイについて。
+Next.jsを使った例を紹介している
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Use Cloudflare JavaScript Workers to Deploy Your Static Generated Site (SSG)" href="https://levelup.gitconnected.com/use-cloudflare-javascript-workers-to-deploy-you-static-generated-site-ssg-1c518e078646" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/single-spa/single-spa">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">single-spa/single-spa: Microfrontends made easy</amp-fit-text>
+            <p class="item-contents">各種フレームワーク向けのアダプターを用意してるMicrofrontendsフレームワーク。
+それぞれのフレームワークを使ったアプリを同一ページで扱うために必要なライフサイクルを管理するフレームワーク。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="single-spa/single-spa: Microfrontends made easy" href="https://github.com/single-spa/single-spa" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Himenon/code-dependency">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Himenon/code-dependency: A work efficiency tool for visualizing code dependencies on a browser.</amp-fit-text>
+            <p class="item-contents">dependency-cruiserを使ったモジュールの依存関係図を生成してブラウザで表示できるツール
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Himenon/code-dependency: A work efficiency tool for visualizing code dependencies on a browser." href="https://github.com/Himenon/code-dependency" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/myliang/x-spreadsheet">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">myliang/x-spreadsheet: A web-based JavaScript（canvas） spreadsheet</amp-fit-text>
+            <p class="item-contents">依存のないSpreadSheetの実装ライブラリ。Canvasを使って描画をしている。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="myliang/x-spreadsheet: A web-based JavaScript（canvas） spreadsheet" href="https://github.com/myliang/x-spreadsheet" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
