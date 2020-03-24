@@ -5,9 +5,271 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 17 Mar 2020 13:04:22 +0900</pubDate>
-    <lastBuildDate>Tue, 17 Mar 2020 13:04:22 +0900</lastBuildDate>
+    <pubDate>Tue, 24 Mar 2020 10:53:16 +0900</pubDate>
+    <lastBuildDate>Tue, 24 Mar 2020 10:53:16 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-03-24のJS: Chrome 81のリリース延期、Babel 7.9.0、Prettier 2.0</title>
+        <description>&lt;p&gt;JSer.info #480 - 2020年3月17日にリリース予定だったChrome 81のリリースが延期されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2020/03/upcoming-chrome-releases.html&quot;&gt;Chromium Blog: Upcoming Chrome releases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://chromiumdash.appspot.com/schedule&quot;&gt;Chromium Dash&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;詳細については書かれていませんが、MSEdgeも同様にリリースを延期するようです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/ChromiumDev/status/1240680592087355394&quot;&gt;Chrome Developers on Twitter: &amp;quot;During this time, we will not promote Chrome 81 from beta to stable. We plan to begin shipping Dev channels again in the near future, and will continue shipping Canaries as planned.&amp;quot; / Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/MSEdgeDev/status/1241055996379664384&quot;&gt;Microsoft Edge Dev on Twitter: &amp;quot;In light of the current circumstances, the Edge team will pause updating the Stable channel to Edge 81 consistent with the Chromium Project. We are committed to continued security and stability updates to Edge 80. We’ll have more to share on this next week. https://t.co/nWfm87MEK2&amp;quot; / Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;またFirefox 74では既にTLS 1.0/1.1が廃止されていましたが、一部サイトがTLS 1.2に対応していないため、TLS 1.0と1.1を再有効化しています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/ja/docs/2020/tls-1-0-1-1-support-has-been-removed/&quot;&gt;TLS 1.0/1.1 対応が廃止されました (取り消し) | Firefox サイト互換性情報&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;同様にDTLS 1.0(Datagram Transport Layer Security 1.0)もFirefox 75で廃止予定でしたが、&lt;a href=&quot;https://github.com/jitsi/libjitsi&quot;&gt;libjitsi&lt;/a&gt;がDTLS 1.2に対応していないことを理由に再有効化する予定とのことです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/ja/docs/2020/dtls-1-0-support-in-webrtc-has-been-removed/&quot;&gt;WebRTC の DTLS 1.0 対応が廃止されました (取り消し) | Firefox サイト互換性情報&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jitsi/libjitsi/issues/441&quot;&gt;DTLS 1.2 support is missing · Issue #441 · jitsi/libjitsi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Babel 7.9.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://babeljs.io/blog/2020/03/16/7.9.0&quot;&gt;7.9.0 Released: Smaller preset-env output, Typescript 3.8 support and a new JSX transform · Babel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2020年4月に予定しているメジャーアップデートのBabel 8に向けた変更が含まれています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/babel/babel/issues/10746&quot;&gt;Babel 8 Release Plan · Issue #10746 · babel/babel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;@babel/preset-env&lt;/code&gt;で&lt;code&gt;esmodules: true&lt;/code&gt;をtargetにした場合の出力コードを小さくする&lt;code&gt;bugfixes&lt;/code&gt;というオプションが追加されました。&lt;br&gt;
+互換性のためにオプトインとなっていますが、このオプションはBabel 8ではデフォルトになる予定です。&lt;/p&gt;
+
+&lt;p&gt;TypeScript 3.8の&lt;code&gt;import type&lt;/code&gt;/&lt;code&gt;export type&lt;/code&gt;をサポート、Flowの&lt;code&gt;declare&lt;/code&gt;フィールドをサポートしています。&lt;br&gt;
+また、ReactのRFCとして出ている新しいJSXの変換に対応するオプションが追加されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/reactjs/rfcs/blob/createlement-rfc/text/0000-create-element-changes.md&quot;&gt;rfcs/0000-create-element-changes.md at createlement-rfc · reactjs/rfcs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Prettier 2.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://prettier.io/blog/2020/03/21/2.0.0.html&quot;&gt;Prettier 2.0 “2020” · Prettier&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TypeScript 3.8をサポート、CLIでファイル名に&lt;code&gt;*&lt;/code&gt;という文字そのものが含まれている場合をサポートされています。&lt;br&gt;
+Node.js 10未満のサポート終了し、デフォルト設定の一部変更といった破壊的な変更も含まれます。&lt;/p&gt;
+
+&lt;p&gt;次のオプションはそれぞれデフォルト値が変更されているので、オプションが指定されていなかった場合にフォーマット結果が変更されます。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;trailingComma&lt;/code&gt;:&lt;code&gt;es5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;arrowParens&lt;/code&gt;: &lt;code&gt;always&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;endOfLine&lt;/code&gt;: &lt;code&gt;lf&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、&lt;code&gt;.cjs&lt;/code&gt;拡張子のサポートや&lt;code&gt;--stdin&lt;/code&gt;フラグの削除などが行われています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;chrome-releases-upcoming-chrome-and-chrome-os-releases&quot;&gt;Chrome Releases: Upcoming Chrome and Chrome OS releases&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://chromereleases.googleblog.com/2020/03/upcoming-chrome-and-chrome-os-releases.html&quot; title=&quot;Chrome Releases: Upcoming Chrome and Chrome OS releases&quot;&gt;chromereleases.googleblog.com/2020/03/upcoming-chrome-and-chrome-os-releases.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2020年3月17日に予定していたChrome 81のリリースは延期。&lt;br&gt;
+今のところスケジュールは未定とのこと。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v7-0-0-nestjs-nest&quot;&gt;Release v7.0.0 · nestjs/nest&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nestjs/nest/releases/tag/v7.0.0&quot; title=&quot;Release v7.0.0 · nestjs/nest&quot;&gt;github.com/nestjs/nest/releases/tag/v7.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;NestJS 7リリース。&lt;br&gt;
+&lt;code&gt;type-graphql&lt;/code&gt;パッケージから&lt;code&gt;@nestjs/graphql&lt;/code&gt;パッケージに移行、&lt;br&gt;
+&lt;code&gt;ParseArrayPipe&lt;/code&gt;と&lt;code&gt;ParseBoolPipe&lt;/code&gt;のtransformer pipeを追加など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://trilon.io/blog/announcing-nestjs-7-whats-new&quot; title=&quot;Announcing NestJS 7: What’s New - Trilon Consulting&quot;&gt;Announcing NestJS 7: What’s New - Trilon Consulting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;7-9-0-released-smaller-preset-env-output-typescript-3-8-support-and-a-new-jsx-transform-babel&quot;&gt;7.9.0 Released: Smaller preset-env output, Typescript 3.8 support and a new JSX transform · Babel&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://babeljs.io/blog/2020/03/16/7.9.0&quot; title=&quot;7.9.0 Released: Smaller preset-env output, Typescript 3.8 support and a new JSX transform · Babel&quot;&gt;babeljs.io/blog/2020/03/16/7.9.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Babel 7.9.0リリース。&lt;br&gt;
+preset-envにmodule/npnmoduleパターンをサポートするオプションの追加。Babel 8.0でデフォルト化する予定。&lt;br&gt;
+TypeScript 3.8とFlow 0.120のサポート。ReactのRFCがでている新しいJSXの変換に対応など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;prettier-2-0-2020-prettier&quot;&gt;Prettier 2.0 “2020” · Prettier&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://prettier.io/blog/2020/03/21/2.0.0.html&quot; title=&quot;Prettier 2.0 “2020” · Prettier&quot;&gt;prettier.io/blog/2020/03/21/2.0.0.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Prettier 2.0リリース。&lt;br&gt;
+TypeScript 3.8をサポート、CLIでファイル名に&lt;code&gt;*&lt;/code&gt;が含まれている場合をサポート。&lt;br&gt;
+Node.js 10未満のサポート終了、デフォルト設定の一部変更など。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;trailingComma&lt;/code&gt;:&lt;code&gt;es5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;arrowParens&lt;/code&gt;: &lt;code&gt;always&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;endOfLine&lt;/code&gt;: &lt;code&gt;lf&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;npm-private-registry-github-packages-registry&quot;&gt;npmのprivate registryからGitHub Packages Registryに移行する&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tech.plaid.co.jp/npm-private-registry-to-github-packages-registry/&quot; title=&quot;npmのprivate registryからGitHub Packages Registryに移行する&quot;&gt;tech.plaid.co.jp/npm-private-registry-to-github-packages-registry/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Github&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Actions&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;GitHub Packages Registryへの移行記事。&lt;br&gt;
+npmとGitHubの同名スコープの衝突問題。GitHub ActionsでのGitHub Packages Registryへのpublishフロー、Registry変更時のパッケージの静的、動的なチェックについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-js-unhandled-rejections-exit-status-0-web-scratch&quot;&gt;Node.jsでUnhandled RejectionsのときにExit Statusが0となる問題を回避する | Web Scratch&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://efcl.info/2020/03/20/node-unhandled-rejections-exit-status/&quot; title=&quot;Node.jsでUnhandled RejectionsのときにExit Statusが0となる問題を回避する | Web Scratch&quot;&gt;efcl.info/2020/03/20/node-unhandled-rejections-exit-status/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsでのUnhandled Rejectionsの問題について。&lt;br&gt;
+意図しない正常終了を避ける方法としてのエラーハンドリング、&lt;code&gt;unhandledRejection&lt;/code&gt;イベント、&lt;code&gt;--unhandled-rejections&lt;/code&gt;オプションについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;implementing-single-file-web-components&quot;&gt;Implementing single-file Web Components&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ckeditor.com/blog/implementing-single-file-web-components/&quot; title=&quot;Implementing single-file Web Components&quot;&gt;ckeditor.com/blog/implementing-single-file-web-components/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebComponents&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Web ComponentsでVueのようなSingle file componentを実装する記事。&lt;br&gt;
+コンポーネントをFetchし、ファイル内をパースしてTemplate、CSS、JavaScriptを取りだす。&lt;br&gt;
+Scriptを&lt;code&gt;import&lt;/code&gt;するために、データURLからBlobを作成しModuleとして読み込むハックについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;luruke-browser-2020-things-you-can-do-with-a-browser-in-2020&quot;&gt;luruke/browser-2020: Things you can do with a browser in 2020 ☕️&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/luruke/browser-2020&quot; title=&quot;luruke/browser-2020: Things you can do with a browser in 2020 ☕️&quot;&gt;github.com/luruke/browser-2020&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ブラウザ/Chromeに実装されている新しいAPIについての概要をまとめたもの。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introduction-to-antv-jiazhe-wang-observable&quot;&gt;Introduction to AntV / Jiazhe Wang / Observable&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://observablehq.com/@jiazhewang/introduction-to-antv&quot; title=&quot;Introduction to AntV / Jiazhe Wang / Observable&quot;&gt;observablehq.com/@jiazhewang/introduction-to-antv&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;graphic&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;データビジュアライズライブラリのAntVについての紹介記事。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/antvis&quot; title=&quot;AntV team&quot;&gt;AntV team&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;tser-ts-playground-plugin&quot;&gt;TSerの遊び場：TS playground plugin&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://talks.leko.jp/our-toys-your-sandbox/#0&quot; title=&quot;TSerの遊び場：TS playground plugin&quot;&gt;talks.leko.jp/our-toys-your-sandbox/#0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;plugin&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript PlaygroundのPluginについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ryanelian-ts-polyfill-runtime-polyfills-for-typescript-libs-powered-by-core-js&quot;&gt;ryanelian/ts-polyfill: Runtime polyfills for TypeScript libs, powered by core-js!&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ryanelian/ts-polyfill&quot; title=&quot;ryanelian/ts-polyfill: Runtime polyfills for TypeScript libs, powered by core-js!&quot;&gt;github.com/ryanelian/ts-polyfill&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;tsconfig.jsonの&lt;code&gt;lib&lt;/code&gt;に合わせたpolyfillを提供するライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;elninotech-uppload-uppload-is-a-better-javascript-image-uploader-with-30-plugins&quot;&gt;elninotech/uppload: 📁 Uppload is a better JavaScript image uploader with 30+ plugins&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/elninotech/uppload&quot; title=&quot;elninotech/uppload: 📁 Uppload is a better JavaScript image uploader with 30+ plugins&quot;&gt;github.com/elninotech/uppload&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;プラグインで様々なサービスに対応している画像アップロードライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;luciopaiva-heapify-the-fastest-javascript-priority-queue-out-there-zero-dependencies&quot;&gt;luciopaiva/heapify: The fastest JavaScript priority queue out there. Zero dependencies.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/luciopaiva/heapify&quot; title=&quot;luciopaiva/heapify: The fastest JavaScript priority queue out there. Zero dependencies.&quot;&gt;github.com/luciopaiva/heapify&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;優先度付きキューの実装ライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-2019-web-almanac&quot;&gt;The 2019 Web Almanac&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://almanac.httparchive.org/ja/2019/&quot; title=&quot;The 2019 Web Almanac&quot;&gt;almanac.httparchive.org/ja/2019/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;web &lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;HTTP Archiveのデータ元にしたレポートであるWeb Almanacの日本語訳。&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 24 Mar 2020 09:35:22 +0900</pubDate>
+        <link>https://jser.info/2020/03/24/chrome-81babel-7.9.0prettier-2.0/</link>
+        <guid isPermaLink="true">https://jser.info/2020/03/24/chrome-81babel-7.9.0prettier-2.0/</guid>
+        
+        <category>Chrome</category>
+        
+        <category>Babel</category>
+        
+        <category>Prettier</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-03-17のJS: Next.js 9.3 、GitHubがnpm inc.を買収、JavaScriptの歴史</title>
@@ -2112,296 +2374,6 @@ Expires、Max-Age、Domain、Path，Secure属性、HttpOnly属性、SameSite属�
         <category>AVA</category>
         
         <category>Testing</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2020-01-13のJS: Firefox 72、Node.js 13.6.0、TypeScript 3.8 Beta(Private Fields)</title>
-        <description>&lt;p&gt;JSer.info #470 - Firefox 72がリリースされました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/01/firefox-72-our-first-song-of-2020/&quot;&gt;Firefox 72 — our first song of 2020 - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/72&quot;&gt;Firefox 72 for Developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/72.0/releasenotes/&quot;&gt;Firefox 72.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Firefox 72では開発者ツールの改善が行われ、デバッガーでプロパティにset/getに対するBreak Pointを設定できるようになっています。&lt;br&gt;
-また、コンソールでの非同期処理に対するスタックトレースが&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/developer/&quot;&gt;Developer Edition&lt;/a&gt;で有効化されています。&lt;/p&gt;
-
-&lt;p&gt;その他には、ES2020に入る予定の&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator&quot;&gt;Nullish coalescing operator&lt;/a&gt;のサポート、CSSのShadow Parts(&lt;code&gt;::part()&lt;/code&gt;)、CSS Motion Pathの対応なども含まれています。&lt;/p&gt;
-
-&lt;p&gt;またFirefox 72からは通知許可の求めるにはユーザーインタラクションのイベント内で行う必要があるように変更されています。&lt;br&gt;
-詳細は次の記事で紹介されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2019/11/upcoming-notification-permission-changes-in-firefox-72/&quot;&gt;Upcoming notification permission changes in Firefox 72 - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.mozilla.org/futurereleases/2019/11/04/restricting-notification-permission-prompts-in-firefox/&quot;&gt;Restricting Notification Permission Prompts in Firefox - Future Releases&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;少しアプローチは異なりますが、Chrome 80からopt-inでQuiet UIという新しい通知許可のUIが実装されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2020/01/introducing-quieter-permission-ui-for.html&quot;&gt;Chromium Blog: Introducing quieter permission UI for notifications&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;こちらはまだデフォルトでは入っていませんが、通知許可をより静かにする実験的なUIとなっています。&lt;br&gt;
-今後、&lt;a href=&quot;https://developers.google.com/web/tools/chrome-user-experience-report&quot;&gt;Chrome User Experience Report&lt;/a&gt;に基づいて許可率の低いサイトではデフォルトをQuiet UIにするといった変更を予定しているようです。&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Chrome 80+ Quiet UI(opt-in) for Notifications&lt;a href=&quot;https://t.co/YTCp4ny0Hv&quot;&gt;https://t.co/YTCp4ny0Hv&lt;/a&gt; &lt;a href=&quot;https://t.co/HEqsxyWTkh&quot;&gt;pic.twitter.com/HEqsxyWTkh&lt;/a&gt;&lt;/p&gt;&amp;mdash; azu (@azu_re) &lt;a href=&quot;https://twitter.com/azu_re/status/1216549874348384257?ref_src=twsrc%5Etfw&quot;&gt;January 13, 2020&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
-
-&lt;p&gt;どちらも過剰な通知許可を求めることで体験を悪くするサイトを抑制することが目的とされています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Node.jsの開発版であるv13.6.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v13.6.0/&quot;&gt;Node v13.6.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;正規表現にマッチするかをテストできる&lt;code&gt;assert.match()&lt;/code&gt;と&lt;code&gt;assert.doesNotMatch()&lt;/code&gt;が&lt;code&gt;assert&lt;/code&gt;モジュールに追加されています。&lt;br&gt;
-また、&lt;code&gt;EventEmitter.on&lt;/code&gt;のAsync Iterator対応、Streamに対する&lt;code&gt;fs&lt;/code&gt;の実装を指定できるオプションの追加、&lt;code&gt;error&lt;/code&gt;イベントを副作用なしに監視できる&lt;code&gt;EventEmitter.errorMonitor&lt;/code&gt; Symbolを追加なども行われています。&lt;/p&gt;
-
-&lt;p&gt;ブラウザの&lt;a href=&quot;https://developer.mozilla.org/docs/Web/API/User_Timing_API&quot;&gt;User Timing API&lt;/a&gt;や&lt;a href=&quot;https://developer.mozilla.org/docs/Web/API/PerformanceObserver&quot;&gt;PerformanceObserver&lt;/a&gt;に相当するAPIを提供する&lt;a href=&quot;https://nodejs.org/api/perf_hooks.html&quot;&gt;&lt;code&gt;perf_hooks&lt;/code&gt;&lt;/a&gt;モジュールがStable APIになるといった変更も含まれています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;TypeScript 3.8 Betaがリリースされました&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/&quot;&gt;Announcing TypeScript 3.8 Beta | TypeScript&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Flowにもあった&lt;code&gt;import type&lt;/code&gt;/&lt;code&gt;export type&lt;/code&gt;で型定義だけをimport/exportできるようになっています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://flow.org/en/docs/types/modules/&quot;&gt;Module Types | Flow&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;新しい構文のサポートとしてES Proposal Stage 3の&lt;a href=&quot;https://github.com/tc39/proposal-private-fields&quot;&gt;ECMAScript Private Fields&lt;/a&gt;に対応、同じくStage 3の&lt;a href=&quot;https://github.com/tc39/proposal-top-level-await&quot;&gt;Top-Level &lt;code&gt;await&lt;/code&gt;&lt;/a&gt;に対応しています。&lt;br&gt;
-TypeScriptには元々soft privateとしての&lt;code&gt;private&lt;/code&gt;修飾子がありましたが、今回実装されたhard privateであるPrivate Fieldsの違いについても解説されています。&lt;/p&gt;
-
-&lt;p&gt;その他として&lt;code&gt;target&lt;/code&gt;と&lt;code&gt;module&lt;/code&gt;が&lt;code&gt;es2020&lt;/code&gt;のサポートが追加され、&lt;code&gt;tsconfig.json&lt;/code&gt;に&lt;code&gt;watchOptions&lt;/code&gt;オプションが追加されています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-throw-new-preact-10-2-0-preactjs-preact&quot;&gt;Release throw new Preact(&amp;#39;10.2.0&amp;#39;) · preactjs/preact&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/preactjs/preact/releases/tag/10.2.0&quot; title=&quot;Release throw new Preact(&amp;#39;10.2.0&amp;#39;) · preactjs/preact&quot;&gt;github.com/preactjs/preact/releases/tag/10.2.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Preact 10.2.0リリース。&lt;br&gt;
-&lt;code&gt;useErrorBoundary&lt;/code&gt; hookのサポート、&lt;code&gt;lazy()&lt;/code&gt;がnamed exportsに対応など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;firefox-72-our-first-song-of-2020-mozilla-hacks-the-web-developer-blog&quot;&gt;Firefox 72 — our first song of 2020 - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/01/firefox-72-our-first-song-of-2020/&quot; title=&quot;Firefox 72 — our first song of 2020 - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2020/01/firefox-72-our-first-song-of-2020/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 72リリース。&lt;br&gt;
-フラグ付きでコンソールのAsync Stack Traceの対応、CSSのShadow Parts(&lt;code&gt;::part()&lt;/code&gt;)、CSS Motion Pathの対応。&lt;br&gt;
-通知許可の求めるにはユーザーインタラクションのイベント内で行う必要があるように変更、Nullish coalescing operator、&lt;code&gt;formdata&lt;/code&gt;イベントの対応など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/72&quot; title=&quot;Firefox 72 for Developers - Mozilla | MDN&quot;&gt;Firefox 72 for Developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/72.0/releasenotes/&quot; title=&quot;Firefox 72.0, See All New Features, Updates and Fixes&quot;&gt;Firefox 72.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/en-CA/versions/72/&quot; title=&quot;Firefox 72 Site Compatibility | Firefox Site Compatibility&quot;&gt;Firefox 72 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v12-14-1-lts-node-js&quot;&gt;Node v12.14.1 (LTS) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.14.1/&quot; title=&quot;Node v12.14.1 (LTS) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.14.1/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 12.14.1リリース。&lt;br&gt;
-&lt;code&gt;v8.serialize&lt;/code&gt;と&lt;code&gt;v8.deserialize&lt;/code&gt;がStable APIとなるなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v13-6-0-current-node-js&quot;&gt;Node v13.6.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v13.6.0/&quot; title=&quot;Node v13.6.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v13.6.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 13.6.0リリース。&lt;br&gt;
-正規表現にマッチするかをテストできる&lt;code&gt;assert.match()&lt;/code&gt;と&lt;code&gt;assert.doesNotMatch()&lt;/code&gt;の実装、&lt;br&gt;
-&lt;code&gt;EventEmitter.on&lt;/code&gt;のAsync Iterator対応。&lt;br&gt;
-Streamに対する&lt;code&gt;fs&lt;/code&gt;の実装を指定できるオプションの追加、&lt;code&gt;error&lt;/code&gt;イベントを副作用なしに監視できる&lt;code&gt;EventEmitter.errorMonitor&lt;/code&gt; Symbolを追加。&lt;br&gt;
-&lt;code&gt;perf_hooks&lt;/code&gt;モジュールがStable APIになるなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-98-webkit&quot;&gt;Release Notes for Safari Technology Preview 98 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9689/release-notes-for-safari-technology-preview-98/&quot; title=&quot;Release Notes for Safari Technology Preview 98 | WebKit&quot;&gt;webkit.org/blog/9689/release-notes-for-safari-technology-preview-98/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 98 リリース。&lt;br&gt;
-&lt;code&gt;OffscreenCanvas.convertToBlob&lt;/code&gt;のサポート、CSSの&lt;code&gt;clamp()&lt;/code&gt;のサポート。&lt;br&gt;
-&lt;code&gt;beforeunload&lt;/code&gt;や&lt;code&gt;unload&lt;/code&gt;時の同期XHRが禁止される変更など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-typescript-3-8-beta-typescript&quot;&gt;Announcing TypeScript 3.8 Beta | TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/&quot; title=&quot;Announcing TypeScript 3.8 Beta | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.8 Betaリリース。&lt;br&gt;
-&lt;code&gt;import type&lt;/code&gt;/&lt;code&gt;export type&lt;/code&gt;で型定義だけをimport/exportできるように、Stage 3のECMAScript Private Fieldsに対応。&lt;br&gt;
-Top-Level &lt;code&gt;await&lt;/code&gt;に対応、&lt;code&gt;target&lt;/code&gt;と&lt;code&gt;module&lt;/code&gt;が&lt;code&gt;es2020&lt;/code&gt;をサポート、&lt;code&gt;watchOptions&lt;/code&gt;の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2-9-0-date-fns-date-fns&quot;&gt;Release v2.9.0 · date-fns/date-fns&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/date-fns/date-fns/releases/tag/v2.9.0&quot; title=&quot;Release v2.9.0 · date-fns/date-fns&quot;&gt;github.com/date-fns/date-fns/releases/tag/v2.9.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;date-fns 2.9.0リリース。&lt;br&gt;
-&lt;code&gt;eachYearInterval&lt;/code&gt;、&lt;code&gt;eachMonthInterval&lt;/code&gt;、&lt;code&gt;isExists&lt;/code&gt;の追加。&lt;br&gt;
-オブジェクトでまとめてDateを操作する&lt;code&gt;add&lt;/code&gt;と&lt;code&gt;sub&lt;/code&gt;の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;7-8-0-released-ecmascript-2020-mjs-configuration-files-and-babel-cli-improvements-babel&quot;&gt;7.8.0 Released: ECMAScript 2020, .mjs configuration files and @babel/cli improvements · Babel&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://babeljs.io/blog/2020/01/11/7.8.0&quot; title=&quot;7.8.0 Released: ECMAScript 2020, .mjs configuration files and @babel/cli improvements · Babel&quot;&gt;babeljs.io/blog/2020/01/11/7.8.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Babel 7.8.0リリース。&lt;br&gt;
-ES2020のサポートをデフォルト化、&lt;code&gt;babel.config.mjs&lt;/code&gt;など設定ファイルの対応を整理、&lt;code&gt;--copy-ignored&lt;/code&gt;と&lt;code&gt;--out-file-extension&lt;/code&gt;のサポートなど。&lt;br&gt;
-また 8.0.0に向けた準備などについて書かれている&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/babel/babel/issues/10746&quot; title=&quot;Babel 8 Release Plan · Issue #10746 · babel/babel&quot;&gt;Babel 8 Release Plan · Issue #10746 · babel/babel&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-version-16-0-0-jsdom-jsdom&quot;&gt;Release Version 16.0.0 · jsdom/jsdom&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jsdom/jsdom/releases/tag/16.0.0&quot; title=&quot;Release Version 16.0.0 · jsdom/jsdom&quot;&gt;github.com/jsdom/jsdom/releases/tag/16.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;jsdom 16.0.0リリース。&lt;br&gt;
-Node.js 10未満のサポート終了、&lt;code&gt;dom.runVMScript()&lt;/code&gt;の廃止、&lt;code&gt;prototype&lt;/code&gt;使った&lt;code&gt;Window&lt;/code&gt;間のプロパティ共有の廃止など。&lt;code&gt;window.getSelection()&lt;/code&gt;のサポート、Timerのメモリリークを修正など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v1-release-pika-web-is-now-snowpack-pikapkg-snowpack&quot;&gt;Release V1 RELEASE! @pika/web is now Snowpack · pikapkg/snowpack&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/pikapkg/snowpack/releases/tag/v1.0.1&quot; title=&quot;Release V1 RELEASE! @pika/web is now Snowpack · pikapkg/snowpack&quot;&gt;github.com/pikapkg/snowpack/releases/tag/v1.0.1&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Snowpack 1.0.0リリース。&lt;br&gt;
-インストール時にES Modulesとして読み込めるモジュールを配置することで、変更ごとにビルドしないでアプリケーション開発できることを目的にしている。&lt;br&gt;
-&lt;code&gt;@pika/web&lt;/code&gt;からSnowpackにリネーム、&lt;code&gt;--optimize&lt;/code&gt;でのtree-shakingサポート等。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.snowpack.dev/&quot; title=&quot;Snowpack&quot;&gt;Snowpack&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;guide-to-web-authentication&quot;&gt;Guide to Web Authentication&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webauthn.guide/&quot; title=&quot;Guide to Web Authentication&quot;&gt;webauthn.guide/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAuthentication&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Web Authenticationの基本的な目的や使い方について書かれた記事&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;chromium-blog-introducing-quieter-permission-ui-for-notifications&quot;&gt;Chromium Blog: Introducing quieter permission UI for notifications&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.chromium.org/2020/01/introducing-quieter-permission-ui-for.html&quot; title=&quot;Chromium Blog: Introducing quieter permission UI for notifications&quot;&gt;blog.chromium.org/2020/01/introducing-quieter-permission-ui-for.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 80で入る通知などのパーミッションデザインの変更について。&lt;br&gt;
-Quiet UIと呼ばれる新しい許可UIの追加と設定方法について。&lt;br&gt;
-またChrome UX Reportのデータをもとに、通知の受け入れ率が低いサイトは自動的にquieter promptsにする変更などが追加される予定。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;advancing-the-web-framework-ecosystem&quot;&gt;Advancing the web framework ecosystem&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/advancing-framework-ecosystem-cds-2019/&quot; title=&quot;Advancing the web framework ecosystem&quot;&gt;web.dev/advancing-framework-ecosystem-cds-2019/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chromeチームが最近取り組んでいるいウェブフレームワークの最適化ついて。&lt;br&gt;
-Angular、Next.js、Nuxt.js、Babelについてのパフォーマンス最適化などの取り組みを紹介している&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;raw-webgpu&quot;&gt;Raw WebGPU&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://alain.xyz/blog/raw-webgpu&quot; title=&quot;Raw WebGPU&quot;&gt;alain.xyz/blog/raw-webgpu&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebKitやChromiumに試験的に実装されているWebGPUについてのチュートリアル。Vulkan、DirectX 12、Metalを扱うことを目的としたWeb API、基本的な使い方について解説している&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://gpuweb.github.io/gpuweb/&quot; title=&quot;WebGPU&quot;&gt;WebGPU&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;qawolf-qawolf-create-browser-tests-10x-faster&quot;&gt;qawolf/qawolf: 🐺Create browser tests 10x faster&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/qawolf/qawolf&quot; title=&quot;qawolf/qawolf: 🐺Create browser tests 10x faster&quot;&gt;github.com/qawolf/qawolf&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;PupeteerとJestを使ったテストフレームワーク。&lt;br&gt;
-操作を記憶してテストケースとSelectorを作成でき、CIに実行結果の動画をアップロードのサポートなどをしている。&lt;br&gt;
-Automatic waiting、Keyboard eventsなどをサポートしている&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.qawolf.com/&quot; title=&quot;QA Wolf&quot;&gt;QA Wolf&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;babel-preset-modules-a-babel-preset-that-targets-modern-browsers-by-fixing-engine-bugs-will-be-merged-into-preset-env-eventually&quot;&gt;babel/preset-modules: A Babel preset that targets modern browsers by fixing engine bugs (will be merged into preset-env eventually)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/babel/preset-modules&quot; title=&quot;babel/preset-modules: A Babel preset that targets modern browsers by fixing engine bugs (will be merged into preset-env eventually)&quot;&gt;github.com/babel/preset-modules&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;@babel/preset-envにマージされる予定の、Modern Browser向けの最適化を目的にしたBabel Preset。&lt;br&gt;
-MSEdgeなどのES Modulesをサポートしているが一部構文にバグがあるケースなどにも対応している。&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Mon, 13 Jan 2020 11:31:20 +0900</pubDate>
-        <link>https://jser.info/2020/01/13/firefox-72node.js-13.6.0typescript-3.8-betaprivate-fields/</link>
-        <guid isPermaLink="true">https://jser.info/2020/01/13/firefox-72node.js-13.6.0typescript-3.8-betaprivate-fields/</guid>
-        
-        <category>Firefox</category>
-        
-        <category>Node.js</category>
-        
-        <category>TypeScript</category>
         
         
         <category>JSer</category>
