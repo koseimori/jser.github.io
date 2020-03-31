@@ -5,9 +5,308 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 31 Mar 2020 08:52:06 +0900</pubDate>
-    <lastBuildDate>Tue, 31 Mar 2020 08:52:06 +0900</lastBuildDate>
+    <pubDate>Tue, 31 Mar 2020 09:36:56 +0900</pubDate>
+    <lastBuildDate>Tue, 31 Mar 2020 09:36:56 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-03-31のJS: TypeScript 3.9 Beta、Safari 13.1、CS Web Securityコース</title>
+        <description>&lt;p&gt;JSer.info #481 - TypeScript 3.9 Betaがリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-9-beta/&quot;&gt;Announcing TypeScript 3.9 Beta | TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;Promise.all&lt;/code&gt;の型改善、&lt;code&gt;awaited&lt;/code&gt; typeの追加、ビルドパフォーマンスの改善などが行われています。&lt;br&gt;
+また&lt;code&gt;// @ts-ignore&lt;/code&gt;のように型チェックを無視するのではなく、Type Errorとなることを期待する&lt;code&gt;// @ts-expect-error&lt;/code&gt;コメントディレクティブの追加が行われています。&lt;/p&gt;
+
+&lt;p&gt;その他には、&lt;code&gt;class&lt;/code&gt;のGetter/Setterをトランスパイルした際に&lt;code&gt;enumrable: true&lt;/code&gt;となっているのを、ECMAScript仕様に合わせて&lt;code&gt;enumerable: false&lt;/code&gt;に変更されています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;iOS13.4/iPadOS13.4/macOSでそれぞれSafari 13.1がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/safari_release_notes/safari_13_1_beta_release_notes&quot;&gt;Safari 13.1 Beta Release Notes | Apple Developer Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://support.apple.com/ja-jp/HT211104&quot;&gt;Safari 13.1 のセキュリティコンテンツについて - Apple サポート&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Safari 13.1ではNullish coalescing operator(&lt;code&gt;??&lt;/code&gt;)や&lt;code&gt;String.prototype.replaceAll&lt;/code&gt;がサポートされています。&lt;br&gt;
+また、Web Animations、Async Clipboard API、Resize Observer、Picture-in-Picture APIなどのAPIも追加されています。&lt;/p&gt;
+
+&lt;p&gt;その他には、新しいIntelligent Tracking Prevention(ITP)の仕組みが導入されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/&quot;&gt;Full Third-Party Cookie Blocking and More | WebKit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;過去のITPでは条件に基づくサードパーティクッキーのブロックでしたが、&lt;a href=&quot;https://arxiv.org/abs/2001.07421&quot;&gt;ITPの挙動を利用したトラッキングも可能であった&lt;/a&gt;ため、&lt;br&gt;
+Safari 13.1からサードパーティクッキーを完全にブロックする仕組みに変更されています。&lt;/p&gt;
+
+&lt;p&gt;また、&lt;code&gt;document.cookie&lt;/code&gt;、LocalStorage、Service Workerなどスクリプトから書き込めるストレージに7日間の上限が追加されました。&lt;br&gt;
+スクリプトからストレージに書き込み、そのサイトでユーザー操作がなくなってから7日間たつと、そのサイトのストレージを削除する仕組みとなっています。&lt;br&gt;
+この7-Day Capの制限もすべてのサイトに適用されますが、いくつかの例外があるようです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ホーム画面に追加されたウェブアプリケーションはこの制限がない&lt;/li&gt;
+&lt;li&gt;WKWebViewなどのWebViewではこの制限がない&lt;/li&gt;
+&lt;li&gt;Safariを起動していない日は日付をカウントしない&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;参考: &lt;a href=&quot;https://github.com/localForage/localForage/issues/943&quot;&gt;iOS 13.4 and Safari 13.1 persistent storage · Issue #943 · localForage/localForage&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;スタンフォード大学のウェブセキュリティコースの動画とスライドなど資料が公開されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://web.stanford.edu/class/cs253/&quot;&gt;CS253 - Web Security&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/feross&quot;&gt;Feross&lt;/a&gt;によるウェブセキュリティに関するコースで、ブラウザ/サーバ/ネットワークなどのセキュリティに関する講義となっています。&lt;br&gt;
+幅広くウェブのセキュリティについて扱っているので興味がある人は見てみるとよさそうです。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v1-3-0-reduxjs-redux-toolkit&quot;&gt;Release v1.3.0 · reduxjs/redux-toolkit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/reduxjs/redux-toolkit/releases/tag/v1.3.0&quot; title=&quot;Release v1.3.0 · reduxjs/redux-toolkit&quot;&gt;github.com/reduxjs/redux-toolkit/releases/tag/v1.3.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Redux Toolkit 1.3.0リリース。&lt;br&gt;
+ステートの正規化を管理を手助けする&lt;code&gt;createEntityAdapter&lt;/code&gt;、非同期処理のパターンを提供する&lt;code&gt;createAsyncThunk&lt;/code&gt;の追加。&lt;br&gt;
+Storeのmutationを検知してエラー通知する仕組みの追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;chrome-releases-chrome-and-chrome-os-release-updates&quot;&gt;Chrome Releases: Chrome and Chrome OS release updates&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://chromereleases.googleblog.com/2020/03/chrome-and-chrome-os-release-updates.html&quot; title=&quot;Chrome Releases: Chrome and Chrome OS release updates&quot;&gt;chromereleases.googleblog.com/2020/03/chrome-and-chrome-os-release-updates.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;延期していたChromeのリリーススケジュールについて。Chrome 82はキャンセルされ83に統合される予定。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Chrome 81: 2020-04-07&lt;/li&gt;
+&lt;li&gt;Chrome 82: キャンセル&lt;/li&gt;
+&lt;li&gt;Chrome 83: 2020-05-19&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v13-12-0-current-node-js&quot;&gt;Node v13.12.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v13.12.0/&quot; title=&quot;Node v13.12.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v13.12.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;rlee&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 13.12.0リリース。&lt;br&gt;
+npm 6.14.4へのアップデート、&lt;code&gt;Object.prototype.__proto__&lt;/code&gt;の書き込みを無効化する&lt;code&gt;--disable-proto&lt;/code&gt;オプションの追加など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/node/issues/31951&quot; title=&quot;Disable \_\_proto\_\_ · Issue #31951 · nodejs/node&quot;&gt;Disable __proto__ · Issue #31951 · nodejs/node&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-typescript-3-9-beta-typescript&quot;&gt;Announcing TypeScript 3.9 Beta | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-9-beta/&quot; title=&quot;Announcing TypeScript 3.9 Beta | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-9-beta/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScritp 3.9βリリース。&lt;br&gt;
+&lt;code&gt;Promise.all&lt;/code&gt;の型改善、&lt;code&gt;awaited&lt;/code&gt; typeの追加、ビルドパフォーマンスの改善、Type Errorとなることを期待する&lt;code&gt;// @ts-expect-error&lt;/code&gt;コメントの追加など。&lt;br&gt;
+また、ECMAScript仕様にあわせてGetter/Setterをトランスパイルするとenumerableだったのをnon-enumerableに変更するなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;version-9-1-of-angular-now-available-typescript-3-8-faster-builds-and-more&quot;&gt;Version 9.1 of Angular Now Available — TypeScript 3.8, faster builds, and more&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.angular.io/version-9-1-of-angular-now-available-typescript-3-8-faster-builds-and-more-eb292f989428&quot; title=&quot;Version 9.1 of Angular Now Available — TypeScript 3.8, faster builds, and more&quot;&gt;blog.angular.io/version-9-1-of-angular-now-available-typescript-3-8-faster-builds-and-more-eb292f989428&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Angular 9.1リリース。&lt;br&gt;
+TypeScript 3.8サポート、ビルドパフォーマンスの改善、&lt;code&gt;ng e2e&lt;/code&gt;が&lt;code&gt;grep&lt;/code&gt;オプションをサポート、rtlのサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;secretlint-api-web-scratch&quot;&gt;SecretlintでAPIトークンや秘密鍵などのコミットを防止する | Web Scratch&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://efcl.info/2020/03/24/secretlint/&quot; title=&quot;SecretlintでAPIトークンや秘密鍵などのコミットを防止する | Web Scratch&quot;&gt;efcl.info/2020/03/24/secretlint/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Docker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ファイル内にAWSやGCPなどのCredentialsを含んでいないかチェックできるLintツール。&lt;br&gt;
+DockerやNode.jsから利用できる。プロジェクトや個人環境にpre-commit hookで組み込んだり、CIでうっかり秘匿情報が入ってないかをチェックできる。&lt;br&gt;
+ルールはNode.jsで自作して追加できる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/secretlint/secretlint&quot; title=&quot;secretlint/secretlint: Pluggable linting tool to prevent committing credential.&quot;&gt;secretlint/secretlint: Pluggable linting tool to prevent committing credential.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;full-third-party-cookie-blocking-and-more-webkit&quot;&gt;Full Third-Party Cookie Blocking and More | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/&quot; title=&quot;Full Third-Party Cookie Blocking and More | WebKit&quot;&gt;webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;privacy&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;iOS 13.4、Safari 13.1のITPについて。&lt;br&gt;
+3rd-party cookieは基本的にブロック、LocalStorageを含むストレージは最後のインタラクションから7日後に削除され、&lt;code&gt;document.referrer&lt;/code&gt;はoriginのみとなった。&lt;br&gt;
+ストレージ削除のカウントのルールについてはホームに追加したアプリやSafariを起動していない日はカウントしないなどの例外がある&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;flexbox-note&quot;&gt;🐛よくハマったFlexboxのバグまとめ｜たかもそ｜note&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://note.com/takamoso/n/n32c4e6904cf7&quot; title=&quot;🐛よくハマったFlexboxのバグまとめ｜たかもそ｜note&quot;&gt;note.com/takamoso/n/n32c4e6904cf7&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSS Flexboxのブラウザの挙動の違いや仕様についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;what-s-new-in-react-query-v1-0-logrocket-blog&quot;&gt;What’s new in react-query v1.0 - LogRocket Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.logrocket.com/whats-new-in-react-query-v1-0/&quot; title=&quot;What’s new in react-query v1.0 - LogRocket Blog&quot;&gt;blog.logrocket.com/whats-new-in-react-query-v1-0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Hooksで非同期処理を扱うreact-query 1.0の変更点について&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tannerlinsley/react-query&quot; title=&quot;tannerlinsley/react-query: ⚛️ Hooks for fetching, caching and updating asynchronous data in React&quot;&gt;tannerlinsley/react-query: ⚛️ Hooks for fetching, caching and updating asynchronous data in React&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ui-fabric-is-evolving-into-fluent-ui-microsoft-365-developer-blog&quot;&gt;UI Fabric is evolving into Fluent UI - Microsoft 365 Developer Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.microsoft.com/en-us/office/blogs/ui-fabric-is-evolving-into-fluent-ui/&quot; title=&quot;UI Fabric is evolving into Fluent UI - Microsoft 365 Developer Blog&quot;&gt;developer.microsoft.com/en-us/office/blogs/ui-fabric-is-evolving-into-fluent-ui/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;MSのUIフレームワークであるUI FabricがFluent UIにリネームした。&lt;br&gt;
+パッケージネームも&lt;code&gt;@fluentui&lt;/code&gt;のscopeで公開されるが、互換性のために&lt;code&gt;@uifabric&lt;/code&gt;も公開され続ける。&lt;br&gt;
+また、今後のロードマップについて&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/microsoft/fluentui&quot; title=&quot;microsoft/fluentui: We&amp;amp;#x27;ve moved! UI Fabric is now Fluent UI - A set of React components for building Microsoft web experiences.&quot;&gt;microsoft/fluentui: We&amp;#39;ve moved! UI Fabric is now Fluent UI - A set of React components for building Microsoft web experiences.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;html-dom-common-tasks-of-managing-html-dom-with-vanilla-javascript&quot;&gt;HTML DOM - Common tasks of managing HTML DOM with vanilla JavaScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://htmldom.dev/&quot; title=&quot;HTML DOM - Common tasks of managing HTML DOM with vanilla JavaScript&quot;&gt;htmldom.dev/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ライブラリを使わずにDOM API使ってできることを逆引きリファレンス的に紹介しているサイト&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;cs253-web-security&quot;&gt;CS253 - Web Security&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.stanford.edu/class/cs253/&quot; title=&quot;CS253 - Web Security&quot;&gt;web.stanford.edu/class/cs253/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;web &lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;スタンフォード大学のWeb Securityコースのスライドと動画。&lt;br&gt;
+ブラウザからサーバまで攻撃/防御視点でのセキュリティについて学ぶ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;chrome-devtools-slidr-io&quot;&gt;Chrome DevTools // slidr.io&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://slidr.io/bmeurer/chrome-devtools#1&quot; title=&quot;Chrome DevTools // slidr.io&quot;&gt;slidr.io/bmeurer/chrome-devtools#1&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome DevToolsについてのスライド。&lt;br&gt;
+DevToolsのアーキテクチャ、機能の紹介など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;chrvadala-node-ble-bluetooth-low-energy-ble-library-written-with-pure-node-js-no-bindings-baked-by-bluez-via-dbus&quot;&gt;chrvadala/node-ble: Bluetooth Low Energy (BLE) library written with pure Node.js (no bindings) - baked by Bluez via DBus&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/chrvadala/node-ble&quot; title=&quot;chrvadala/node-ble: Bluetooth Low Energy (BLE) library written with pure Node.js (no bindings) - baked by Bluez via DBus&quot;&gt;github.com/chrvadala/node-ble&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Bluetooth&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Pure Node.jsなBLEライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;kriasoft-node-sqlite-at-v4&quot;&gt;kriasoft/node-sqlite at v4&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/kriasoft/node-sqlite/tree/v4&quot; title=&quot;kriasoft/node-sqlite at v4&quot;&gt;github.com/kriasoft/node-sqlite/tree/v4&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;SQLite&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsのSQLiteクライアントライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;heremaps-harp-gl-harp-gl-web-map-rendering-engine&quot;&gt;heremaps/harp.gl: harp.gl - web map rendering engine&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/heremaps/harp.gl&quot; title=&quot;heremaps/harp.gl: harp.gl - web map rendering engine&quot;&gt;github.com/heremaps/harp.gl&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;three.jsを使った3Dマップレンダリングエンジンライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;typescript-weekly&quot;&gt;TypeScript Weekly&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.typescript-weekly.com/&quot; title=&quot;TypeScript Weekly&quot;&gt;www.typescript-weekly.com/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;mail&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScriptについてのWeeklyメールマガジン&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;javascript-kindle-amazon&quot;&gt;初心者からちゃんとしたプロになる　JavaScript基礎入門 | 西畑 一馬, 須郷 晋也, 岡島 美咲, 扇 克至, 岩本 大樹 | 工学 | Kindleストア | Amazon&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B0863LYNQQ/&quot; title=&quot;初心者からちゃんとしたプロになる　JavaScript基礎入門 | 西畑 一馬, 須郷 晋也, 岡島 美咲, 扇 克至, 岩本 大樹 | 工学 | Kindleストア | Amazon&quot;&gt;www.amazon.co.jp/dp/B0863LYNQQ/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2020年3月25日発売&lt;br&gt;
+JavaScriptとVueについての書籍&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Mon, 30 Mar 2020 23:02:02 +0900</pubDate>
+        <link>https://jser.info/2020/03/30/typescript-3.9-beta-safari-13.1-cs-web-security/</link>
+        <guid isPermaLink="true">https://jser.info/2020/03/30/typescript-3.9-beta-safari-13.1-cs-web-security/</guid>
+        
+        <category>TypeScript</category>
+        
+        <category>Safari</category>
+        
+        <category>ITP</category>
+        
+        <category>Security</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-03-24のJS: Chrome 81のリリース延期、Babel 7.9.0、Prettier 2.0</title>
@@ -2145,237 +2444,6 @@ JavaScriptについてのクイズとその解説が掲載されている&lt;/p&
         <category>node</category>
         
         <category>puppeteer</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2020-01-21のJS: 新しいMicrosoft Edge(Chromium-based)、AVA 3.0リリース</title>
-        <description>&lt;p&gt;JSer.info #471 - Chromiumベースの新しいMicrosoft Edgeが正式リリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/edge&quot;&gt;Download New Microsoft Edge Browser | Microsoft&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/windowsexperience/2020/01/15/new-year-new-browser-the-new-microsoft-edge-is-out-of-preview-and-now-available-for-download/&quot;&gt;New year, new browser - The new Microsoft Edge is out of preview and now available for download | Windows Experience Blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2020/01/15/upgrading-new-microsoft-edge-79-chromium/&quot;&gt;Upgrading to the new Microsoft Edge - Microsoft Edge Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Windows 7+、macOSに対応していて、当初から発表されていたようにChromiumベースにしています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/&quot;&gt;Microsoft Edge: Making the web better through more open source collaboration | Windows Experience Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;エンジンは基本的にはChromeと同じとなりますが、ブラウザのUIやTracking Preventionなど機能的には異なる部分があります。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://microsoftedgewelcome.microsoft.com/privacy&quot;&gt;https://microsoftedgewelcome.microsoft.com/privacy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/12/03/improving-tracking-prevention-microsoft-edge-79/&quot;&gt;Improving Tracking Prevention in Microsoft Edge - Microsoft Edge Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;レンダリングエンジンがEdgeHTMLであった従来のMSEdgeの方はEdge Legacyと呼ぶようです。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://techcommunity.microsoft.com/t5/discussions/dev-channel-update-to-80-0-361-5-is-live/m-p/1070730&quot;&gt;Dev channel update to 80.0.361.5 is live - Microsoft Tech Community - 1070730&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Node.jsのテストフレームワークであるAVA 3.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v3.0.0&quot;&gt;Release 3.0.0 · avajs/ava&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/de/docs/guides/debugging-getting-started/&quot;&gt;node --inspect&lt;/a&gt;と連携する&lt;code&gt;ava debug&lt;/code&gt;コマンドの追加、Node.jsに対して引数を渡す&lt;code&gt;--node-arguments&lt;/code&gt;オプションの追加などが行われています。&lt;/p&gt;
-
-&lt;p&gt;破壊的な変更としてはNode 10未満のサポート終了、Babelが同梱ではなくなり別パッケージとしてインストールする形に変更されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/avajs/babel&quot;&gt;avajs/babel: Babel provider for AVA.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また、ES Modulesのサポートをしていくために&lt;code&gt;.cjs&lt;/code&gt;と&lt;code&gt;.mjs&lt;/code&gt;をテストファイルとして認識するようになっています。&lt;/p&gt;
-
-&lt;p&gt;ES Modules対応については次のProject Boardで追跡できます。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/orgs/avajs/projects/2&quot;&gt;ESM support&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v7-0-0-esm1-experimental-mochajs-mocha&quot;&gt;Release v7.0.0-esm1 (experimental) · mochajs/mocha&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/mochajs/mocha/releases/tag/v7.0.0-esm1&quot; title=&quot;Release v7.0.0-esm1 (experimental) · mochajs/mocha&quot;&gt;github.com/mochajs/mocha/releases/tag/v7.0.0-esm1&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MochaのES Modules対応のExperimental版がリリースされた&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-year-new-browser-the-new-microsoft-edge-is-out-of-preview-and-now-available-for-download-windows-experience-blog&quot;&gt;New year, new browser - The new Microsoft Edge is out of preview and now available for download | Windows Experience Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/windowsexperience/2020/01/15/new-year-new-browser-the-new-microsoft-edge-is-out-of-preview-and-now-available-for-download/&quot; title=&quot;New year, new browser - The new Microsoft Edge is out of preview and now available for download | Windows Experience Blog&quot;&gt;blogs.windows.com/windowsexperience/2020/01/15/new-year-new-browser-the-new-microsoft-edge-is-out-of-preview-and-now-available-for-download/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ChromiumベースのMicrosoft Edgeが公開された。&lt;br&gt;
-Windows 7+、macOSに対応したバージョンが配布されている。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2020/01/15/upgrading-new-microsoft-edge-79-chromium/&quot; title=&quot;Upgrading to the new Microsoft Edge - Microsoft Edge Blog&quot;&gt;Upgrading to the new Microsoft Edge - Microsoft Edge Blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/edge&quot; title=&quot;Download New Microsoft Edge Browser | Microsoft&quot;&gt;Download New Microsoft Edge Browser | Microsoft&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;mustache-js-changelog-md-at-master-janl-mustache-js&quot;&gt;mustache.js/CHANGELOG.md at master · janl/mustache.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/janl/mustache.js/blob/master/CHANGELOG.md#400--16-january-2020&quot; title=&quot;mustache.js/CHANGELOG.md at master · janl/mustache.js&quot;&gt;github.com/janl/mustache.js/blob/master/CHANGELOG.md#400--16-january-2020&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;テンプレートエンジンであるmustache 4.0.0リリース。&lt;br&gt;
-&lt;code&gt;.to_html()&lt;/code&gt;メソッドの削除、テンプレートのキャッシュの仕組みをカスタマイズできるようになるなど。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;testcafe-v1-8-0-released-testcafe&quot;&gt;TestCafe v1.8.0 Released | TestCafe&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://devexpress.github.io/testcafe/blog/testcafe-v1-8-0-released.html&quot; title=&quot;TestCafe v1.8.0 Released | TestCafe&quot;&gt;devexpress.github.io/testcafe/blog/testcafe-v1-8-0-released.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TestCafe v1.8.0リリース。&lt;br&gt;
-Chromium版MSEdgeをサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ecmascript-archives&quot;&gt;ECMAScript Archives&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ecma-international.org/archive/ecmascript/&quot; title=&quot;ECMAScript Archives&quot;&gt;www.ecma-international.org/archive/ecmascript/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;spec&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ECMAScript Archives Page。&lt;br&gt;
-過去のECMAScript仕様に関するTC39MTGのミーティングログのアーカイブやドキュメント。&lt;br&gt;
-1996年から2015年までのアーカイブ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;blog-next-js-9-2-next-js&quot;&gt;Blog - Next.js 9.2 | Next.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nextjs.org/blog/next-9-2&quot; title=&quot;Blog - Next.js 9.2 | Next.js&quot;&gt;nextjs.org/blog/next-9-2&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Next.js 9.2リリース。&lt;br&gt;
-ビルトインでCSSファイルをimportできるように、&lt;code&gt;.module.css&lt;/code&gt;でCSS Modulesとしてimportできるように。&lt;br&gt;
-Code Splittingに関するwebpackの設定を変更し、chunks作成時の戦略を変更など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-3-0-0-avajs-ava&quot;&gt;Release 3.0.0 · avajs/ava&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v3.0.0&quot; title=&quot;Release 3.0.0 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v3.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AVA 3リリース。&lt;br&gt;
-&lt;code&gt;ava debug&lt;/code&gt;コマンドの追加、&lt;code&gt;--node-arguments&lt;/code&gt;オプションの追加。&lt;br&gt;
-Node 10未満のサポート終了、Babelが同梱ではなくなり別パッケージとしてインストールする形に変更、ES Modulesのサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;reporting-api-reportingobserver-blog-jxck-io&quot;&gt;ブラウザで何が起こっているのかを知る Reporting API と ReportingObserver | blog.jxck.io&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.jxck.io/entries/2020-01-18/reporting.html&quot; title=&quot;ブラウザで何が起こっているのかを知る Reporting API と ReportingObserver | blog.jxck.io&quot;&gt;blog.jxck.io/entries/2020-01-18/reporting.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ブラウザで起きたエラーレポートなどを送信、監視するReporting APIとReportingObserverについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;cookie-30&quot;&gt;Cookie 概説 - 30歳からのプログラミング&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://numb86-tech.hatenablog.com/entry/2020/01/19/004420&quot; title=&quot;Cookie 概説 - 30歳からのプログラミング&quot;&gt;numb86-tech.hatenablog.com/entry/2020/01/19/004420&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ブラウザとexpressを使ったCookieの設定と属性などのCookieの仕組みについての解説記事。&lt;br&gt;
-Expires、Max-Age、Domain、Path，Secure属性、HttpOnly属性、SameSite属性についての解説&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;googlecloudplatform-wombat-dressing-room-proxy-designed-to-reduce-the-attack-surface-of-npm-publish&quot;&gt;GoogleCloudPlatform/wombat-dressing-room: proxy designed to reduce the attack surface of npm publish&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleCloudPlatform/wombat-dressing-room&quot; title=&quot;GoogleCloudPlatform/wombat-dressing-room: proxy designed to reduce the attack surface of npm publish&quot;&gt;github.com/GoogleCloudPlatform/wombat-dressing-room&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Github&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHubリポジトリに紐付いたnpm publishをするための認証トークンを発行するシステム。npm registryに対する2FA Proxy。&lt;br&gt;
-トークンと該当するGitHubのタグがある場合にのみpublishでき、トークンはパッケージごとに異なるため流出しても特定のパッケージのみに影響を抑える目的。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://opensource.googleblog.com/2020/01/wombat-dressing-room-npm-publication_10.html&quot; title=&quot;Wombat Dressing Room, an npm publication proxy on GCP | Google Open Source Blog&quot;&gt;Wombat Dressing Room, an npm publication proxy on GCP | Google Open Source Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;wasm3-wasm3-the-fastest-webassembly-interpreter&quot;&gt;wasm3/wasm3: 🚀 The fastest WebAssembly interpreter&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/wasm3/wasm3&quot; title=&quot;wasm3/wasm3: 🚀 The fastest WebAssembly interpreter&quot;&gt;github.com/wasm3/wasm3&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebAssemblyのインタープリター&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;logaretm-villus-a-tiny-and-fast-graphql-client-for-vue-js&quot;&gt;logaretm/villus: A tiny and fast GraphQL client for Vue.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/logaretm/villus&quot; title=&quot;logaretm/villus: A tiny and fast GraphQL client for Vue.js&quot;&gt;github.com/logaretm/villus&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Vue.js向けのGraphQLクライアントライブラリ。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://logaretm.com/blog/2020-01-11-announcing-villus/&quot; title=&quot;Announcing Villus - A tiny and fast GraphQL Client for Vue.js - Abdelrahman&amp;amp;#x27; Blog&quot;&gt;Announcing Villus - A tiny and fast GraphQL Client for Vue.js - Abdelrahman&amp;#39; Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;gjtorikian-isbinaryfile-detects-if-a-file-is-binary-in-node-js-similar-to-perls-b&quot;&gt;gjtorikian/isBinaryFile: Detects if a file is binary in Node.js. Similar to Perl&amp;#39;s -B&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/gjtorikian/isBinaryFile&quot; title=&quot;gjtorikian/isBinaryFile: Detects if a file is binary in Node.js. Similar to Perl&amp;#39;s -B&quot;&gt;github.com/gjtorikian/isBinaryFile&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ファイルがバイナリかどうかを判定するNode.jsライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 21 Jan 2020 11:07:39 +0900</pubDate>
-        <link>https://jser.info/2020/01/21/microsoft-edgechromium-basedava-3.0/</link>
-        <guid isPermaLink="true">https://jser.info/2020/01/21/microsoft-edgechromium-basedava-3.0/</guid>
-        
-        <category>MSEdge</category>
-        
-        <category>AVA</category>
-        
-        <category>Testing</category>
         
         
         <category>JSer</category>
