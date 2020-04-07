@@ -5,9 +5,267 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 31 Mar 2020 10:05:40 +0900</pubDate>
-    <lastBuildDate>Tue, 31 Mar 2020 10:05:40 +0900</lastBuildDate>
+    <pubDate>Tue, 07 Apr 2020 12:50:08 +0900</pubDate>
+    <lastBuildDate>Tue, 07 Apr 2020 12:50:08 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-04-07のJS: ES2020 Candidate、WebdriverIO v6、ブラウザのリリース情報の追い方</title>
+        <description>&lt;p&gt;JSer.info #482 - ECMAScript 2020のリリース候補が公開されました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/ecma262/releases/tag/es2020&quot;&gt;Release ES2020 Candidate · tc39/ecma262&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tc39.es/ecma262/2020/&quot;&gt;ES2020 Candidate&lt;/a&gt;はTC39での承認が通った形で、2020年6月にあるEcmaの&lt;a href=&quot;https://www.ecma-international.org/memento/ga.htm&quot;&gt;General Assembly&lt;/a&gt;で承認されると正式にECMAScript 2020としてリリースされます。&lt;/p&gt;
+
+&lt;p&gt;また、今回3月から4月にかけて行われたTC39ミーティングで&lt;code&gt;import.meta&lt;/code&gt;がStage 4となっています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://ecmascript-daily.github.io/ecmascript/2020/04/04/ecmascript-proposal-update&quot;&gt;ECMAScript proposal updates @ 2020-04 | ECMAScript Daily&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;そのため、&lt;code&gt;import.meta&lt;/code&gt;もギリギリES2020に含まれることになっています。&lt;br&gt;
+ES2020に含まれるProposalは次のページにまとめられています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposals/blob/master/finished-proposals.md&quot;&gt;proposals/finished-proposals.md at master · tc39/proposals&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://2ality.com/2019/12/ecmascript-2020.html&quot;&gt;ECMAScript 2020: the final feature set&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;WebdriverIO v6がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webdriver.io/blog/2020/03/26/webdriverio-v6-released.html&quot;&gt;WebdriverIO v6 Released · WebdriverIO&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;WebdriverIO v6では&lt;code&gt;devtools&lt;/code&gt;がデフォルト化されています。&lt;br&gt;
+WebdriverIOはWebdriver APIを使いますが、現状のWebdriver APIでは、接続したブラウザの開発者ツールを使うことができません。&lt;br&gt;
+そのため&lt;code&gt;devtools&lt;/code&gt;ではPuppeteerを統合することでこの問題を回避しています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webdriver.io/blog/2019/09/16/devtools.html&quot;&gt;Chrome DevTools as Automation Protocol · WebdriverIO&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Webdriver APIの方もMSEdge Teamが双方向通信のProposalを公開しています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/MicrosoftEdge/MSEdgeExplainers/tree/master/WebDriverRPC&quot;&gt;MSEdgeExplainers/WebDriverRPC at master · MicrosoftEdge/MSEdgeExplainers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;その他には、非推奨となった&lt;a href=&quot;https://github.com/request/request&quot;&gt;request&lt;/a&gt;の代わりに&lt;a href=&quot;https://github.com/sindresorhus/got&quot;&gt;got&lt;/a&gt;を使うことでパフォーマンスの改善やTypeScriptサポートなどが追加されています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;JSer.infoでもブラウザのリリース情報を追っていますが、ブラウザのリリース情報などの追い方をまとめたリンク集を公開しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://gist.github.com/azu/7e879fd0c4598476b93aecd4d8dbb511&quot;&gt;ブラウザ/セキュリティ/プライバシー周りの一次情報に近い二次情報の情報源をまとめたもの&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;実際にはもっと大量のリソースをベースに見てみていますが、情報源に近いところをまとめています。&lt;/p&gt;
+
+&lt;p&gt;これに合わせてブラウザの公式ブログやIssue、SNSなどをまとめたbrowser-resourcesも更新しています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/azu/browser-resources&quot;&gt;azu/browser-resources: A Collection of official Resources/Status/Issues for browsers.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;その他のものとしては、ブラウザ周りのRSSなどをまとめた次のサイトが追いやすいかもしれません。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://topicdeck.com/web-dev/browser-eng/chromium/&quot;&gt;Web Browser Eng&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/PaulKinlan/topicdeck&quot;&gt;PaulKinlan/topicdeck: An NPM module that hosts and aggregates collections of RSS feeds.&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Chromeチームの&lt;a href=&quot;https://github.com/PaulKinlan&quot;&gt;Paul Kinlan&lt;/a&gt;が管理している&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-es2020-candidate-tc39-ecma262&quot;&gt;Release ES2020 Candidate · tc39/ecma262&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/tc39/ecma262/releases/tag/es2020&quot; title=&quot;Release ES2020 Candidate · tc39/ecma262&quot;&gt;github.com/tc39/ecma262/releases/tag/es2020&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;spec&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ES2020のリリース候補が公開された。&lt;br&gt;
+&lt;code&gt;import.meta&lt;/code&gt;もES2020に含まれている。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webdriverio-v6-released-webdriverio&quot;&gt;WebdriverIO v6 Released · WebdriverIO&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webdriver.io/blog/2020/03/26/webdriverio-v6-released.html&quot; title=&quot;WebdriverIO v6 Released · WebdriverIO&quot;&gt;webdriver.io/blog/2020/03/26/webdriverio-v6-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webdriver&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebdriverIO v6リリース。&lt;br&gt;
+Node 8のサポート終了、Puppeteerの統合と&lt;code&gt;devtools&lt;/code&gt;パッケージのデフォルト化、&lt;code&gt;request&lt;/code&gt;から&lt;code&gt;got&lt;/code&gt;への移行によるパフォーマンスの改善、TypeScriptサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;chromium-blog-temporarily-rolling-back-samesite-cookie-changes&quot;&gt;Chromium Blog: Temporarily rolling back SameSite Cookie Changes&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.chromium.org/2020/04/temporarily-rolling-back-samesite.html&quot; title=&quot;Chromium Blog: Temporarily rolling back SameSite Cookie Changes&quot;&gt;blog.chromium.org/2020/04/temporarily-rolling-back-samesite.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 80で段階的にロールアウトされていたデフォルトをSameSite=Laxとする変更を、一時的にロールバックしてデフォルトを変更しないようにするとのこと。&lt;br&gt;
+再展開は夏を目標にしている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.chromium.org/updates/same-site&quot; title=&quot;SameSite Updates - The Chromium Projects&quot;&gt;SameSite Updates - The Chromium Projects&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-webkit-features-in-safari-13-1-webkit&quot;&gt;New WebKit Features in Safari 13.1 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10247/new-webkit-features-in-safari-13-1/&quot; title=&quot;New WebKit Features in Safari 13.1 | WebKit&quot;&gt;webkit.org/blog/10247/new-webkit-features-in-safari-13-1/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webkit&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari 13.1の変更点について。&lt;br&gt;
+iPadOS 13.4でのPointer Eventsの対応。Web Animations API、Async Clipboard API、ResizeObserver、Picture-in-Pictureのサポート。&lt;br&gt;
+ES ProposalのNullish coalesing operator(&lt;code&gt;??&lt;/code&gt;)のサポート、CSS Shadow Partsのサポート、ITPのアップデートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;part-5b56706e9a91398d&quot;&gt;ブラウザ/セキュリティ/プライバシー周りの一次情報に近い二次情報の情報源をまとめたもの&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com/azu/7e879fd0c4598476b93aecd4d8dbb511&quot; title=&quot;ブラウザ/セキュリティ/プライバシー周りの一次情報に近い二次情報の情報源をまとめたもの&quot;&gt;gist.github.com/azu/7e879fd0c4598476b93aecd4d8dbb511&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webkit&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ブラウザの新しいAPIやリリースなどの追い方や参考リソースのまとめ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ecmascript-proposal-updates-2020-04-ecmascript-daily&quot;&gt;ECMAScript proposal updates @ 2020-04 | ECMAScript Daily&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ecmascript-daily.github.io/ecmascript/2020/04/04/ecmascript-proposal-update&quot; title=&quot;ECMAScript proposal updates @ 2020-04 | ECMAScript Daily&quot;&gt;ecmascript-daily.github.io/ecmascript/2020/04/04/ecmascript-proposal-update&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proposal&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2020-03から2020-04にかけて行われたTC39MTGで変更があったProposalのまとめ。&lt;br&gt;
+&lt;code&gt;import.meta&lt;/code&gt;がStage 4となり、ECMAScript 2020に含まれる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/ecma262/releases/tag/es2020&quot; title=&quot;Release ES2020 Candidate · tc39/ecma262&quot;&gt;Release ES2020 Candidate · tc39/ecma262&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;lch-colors-in-css-what-why-and-how-lea-verou&quot;&gt;LCH colors in CSS: what, why, and how? | Lea Verou&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://lea.verou.me/2020/04/lch-colors-in-css-what-why-and-how/&quot; title=&quot;LCH colors in CSS: what, why, and how? | Lea Verou&quot;&gt;lea.verou.me/2020/04/lch-colors-in-css-what-why-and-how/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSS Color Modules Level 4で定義されているLCHカラーについて。&lt;br&gt;
+LCHとは何かやなぜ導入されているのかについて。RGBと比較してより多くの色にアクセスできる点などについて解説している&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;x-rtc-console-lealog&quot;&gt;フロントエンド x RTC界隈の最近とこれから - console.lealog();&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://lealog.hateblo.jp/entry/2020/04/02/094225&quot; title=&quot;フロントエンド x RTC界隈の最近とこれから - console.lealog();&quot;&gt;lealog.hateblo.jp/entry/2020/04/02/094225&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebRTC&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebRTC周りのWeb Platform APIのステータスやProposalについて。&lt;br&gt;
+WebTransport、WebRTC-QUIC、WebCodecs、WebSocketStreamなどの関連するAPIについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-quic-update-for-node-js&quot;&gt;A QUIC Update for Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.nearform.com/blog/a-quic-update-for-node-js/&quot; title=&quot;A QUIC Update for Node.js&quot;&gt;www.nearform.com/blog/a-quic-update-for-node-js/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;QUIC&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsでのQUICプロトコルの実装について。&lt;br&gt;
+QUICの概要や、Node.js Coreに追加する目的で実装している &lt;code&gt;quic&lt;/code&gt; モジュールについて&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/quic&quot; title=&quot;nodejs/quic: Exploring a QUIC implementation for Node.js core&quot;&gt;nodejs/quic: Exploring a QUIC implementation for Node.js core&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;engine262-engine262-an-implementation-of-ecma-262-in-javascript&quot;&gt;engine262/engine262: An implementation of ECMA-262 in JavaScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/engine262/engine262&quot; title=&quot;engine262/engine262: An implementation of ECMA-262 in JavaScript&quot;&gt;github.com/engine262/engine262&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;spec&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptによるECMAScript実装。&lt;br&gt;
+JavaScript開発者が新しい言語機能のプロトタイピングを簡単にできるようにするのが目的&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;lezer&quot;&gt;Lezer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://lezer.codemirror.net/&quot; title=&quot;Lezer&quot;&gt;lezer.codemirror.net/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;AST&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;インクリメンタルなパースを行うパーサシステムライブラリ。&lt;br&gt;
+文法を定義し、パースをインクリメンタルに行いエラー復帰なども対応したASTを生成するパーサジェネレータ。&lt;br&gt;
+エディタのシンタックスハイライトのような用途で利用でき、CodeMirrorチームによって開発されている。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;lirantal-npq-safely-install-packages-with-npm-or-yarn-by-auditing-them-as-part-of-your-install-process&quot;&gt;lirantal/npq: 🎖safely* install packages with npm or yarn by auditing them as part of your install process&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/lirantal/npq&quot; title=&quot;lirantal/npq: 🎖safely\* install packages with npm or yarn by auditing them as part of your install process&quot;&gt;github.com/lirantal/npq&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npmやyarnでパッケージをインストールする際に、パッケージのダウンロード数、READMEのうむ、インストールスクリプト、Snykでのチェックを行うCLI&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;keyboard-event-viewer&quot;&gt;Keyboard Event Viewer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://w3c.github.io/uievents/tools/key-event-viewer.html&quot; title=&quot;Keyboard Event Viewer&quot;&gt;w3c.github.io/uievents/tools/key-event-viewer.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Keyboard&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptのKeyboard Eventビューア&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;caroso1222-notyf-a-minimalistic-responsive-vanilla-javascript-library-to-show-toast-notifications&quot;&gt;caroso1222/notyf: 👻 A minimalistic, responsive, vanilla JavaScript library to show toast notifications.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/caroso1222/notyf&quot; title=&quot;caroso1222/notyf: 👻 A minimalistic, responsive, vanilla JavaScript library to show toast notifications.&quot;&gt;github.com/caroso1222/notyf&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;依存がないToast通知を行うUIライブラリ。&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 07 Apr 2020 10:38:40 +0900</pubDate>
+        <link>https://jser.info/2020/04/07/es2020-candidate-webdriverio-v6/</link>
+        <guid isPermaLink="true">https://jser.info/2020/04/07/es2020-candidate-webdriverio-v6/</guid>
+        
+        <category>ECMAScript</category>
+        
+        <category>WebDriver</category>
+        
+        <category>Browser</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-03-31のJS: TypeScript 3.9 Beta、Safari 13.1、CS Web Securityコース</title>
@@ -2239,211 +2497,6 @@ Programming TypeScriptの翻訳本&lt;/p&gt;
         <category>npm</category>
         
         <category>yarn</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2020-01-27のJS: Safari TP 99(Remove Flash)、AVA 3.1.0(TypeScript) playwright(Cross Browser Puppeteer)</title>
-        <description>&lt;p&gt;JSer.info #472 - Safari Technology Preview 99リリース。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://webkit.org/blog/9992/release-notes-for-safari-technology-preview-99/&quot;&gt;Release Notes for Safari Technology Preview 99 | WebKit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Safari Technology Preview 99ではAdobe Flashのサポートが削除されています。&lt;br&gt;
-また、今までは&lt;code&gt;-webkit-&lt;/code&gt; prefixがついていましたが、CSSの&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/CSS/image-set&quot;&gt;image-set()&lt;/a&gt;構文がサポートされました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;AVA 3.1.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v3.1.0&quot;&gt;Release 3.1.0 · avajs/ava&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;TypeScriptをサポートするために&lt;a href=&quot;https://github.com/avajs/typescript&quot;&gt;@ava/typescript&lt;/a&gt;というパッケージが追加されています。&lt;br&gt;
-仕組み的には、内部的にTypeScriptファイルをコンパイルするのではなく、コンパイル済みのファイルを読み込むようにパスを変更する仕組み的になっています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Puppeteerのクロスブラウザ版を目指すplaywrightが公開されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/microsoft/playwright&quot;&gt;microsoft/playwright: Node library to automate Chromium, Firefox and WebKit with a single API&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;基本的にはPuppeteerをベースにしていて、ChromiumだけではなくWebKitとFirefoxもサポートしています。&lt;br&gt;
-類似するものとしてはWebDriverですが、WebDriverよりも機能的なDriver、分かりやすいAPI、setTimeout-freeな自動化ができることを目的にしています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-htm-3-is-here-developit-htm&quot;&gt;Release 🎉 HTM 3 is here! · developit/htm&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/developit/htm/releases/tag/3.0.0&quot; title=&quot;Release 🎉 HTM 3 is here! · developit/htm&quot;&gt;github.com/developit/htm/releases/tag/3.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;HTM 3リリース。&lt;br&gt;
-StaticなTreeを判別してキャッシュ出来るように、Preact Xに対応、&lt;code&gt;babel-plugin-htm&lt;/code&gt;に自動importのオプションを追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v13-7-0-current-node-js&quot;&gt;Node v13.7.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v13.7.0/&quot; title=&quot;Node v13.7.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v13.7.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;sourcemap&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node v13.7.0リリース。&lt;br&gt;
-&lt;code&gt;module&lt;/code&gt;モジュールにSource Mapを扱うAPIを追加、&lt;code&gt;process&lt;/code&gt;に&lt;code&gt;uncaughtExceptionMonitor&lt;/code&gt;リスナーの追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-99-webkit&quot;&gt;Release Notes for Safari Technology Preview 99 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9992/release-notes-for-safari-technology-preview-99/&quot; title=&quot;Release Notes for Safari Technology Preview 99 | WebKit&quot;&gt;webkit.org/blog/9992/release-notes-for-safari-technology-preview-99/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 99リリース。&lt;br&gt;
-Flashのサポートを削除、CSSの&lt;code&gt;image-set()&lt;/code&gt;をサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;resizeobserver-in-webkit-webkit&quot;&gt;ResizeObserver in WebKit | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/9997/resizeobserver-in-webkit/&quot; title=&quot;ResizeObserver in WebKit | WebKit&quot;&gt;webkit.org/blog/9997/resizeobserver-in-webkit/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 80で実装されたResizeObserverについて。&lt;br&gt;
-ResizeObserverによる要素に対するリサイズの監視などの使い方、イベントが発生する流れについての解説、利用例などについて&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://webkit.org/blog/8825/release-notes-for-safari-technology-preview-80/&quot; title=&quot;Release Notes for Safari Technology Preview 80 | WebKit&quot;&gt;Release Notes for Safari Technology Preview 80 | WebKit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v4-8-0-pnpm-pnpm&quot;&gt;Release v4.8.0 · pnpm/pnpm&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/pnpm/pnpm/releases/tag/v4.8.0&quot; title=&quot;Release v4.8.0 · pnpm/pnpm&quot;&gt;github.com/pnpm/pnpm/releases/tag/v4.8.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;パッケージ管理ツールのpnpm 4.8.0リリース。&lt;br&gt;
-モジュールのインタラクティブアップデートを行う&lt;code&gt;pnpm update --interactive&lt;/code&gt;の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v1-30-0-rollup-rollup&quot;&gt;Release v1.30.0 · rollup/rollup&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/rollup/rollup/releases/tag/v1.30.0&quot; title=&quot;Release v1.30.0 · rollup/rollup&quot;&gt;github.com/rollup/rollup/releases/tag/v1.30.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Rollup 1.30.0リリース。&lt;br&gt;
-dynamic importsのsplit chunksのロジックの改善。&lt;br&gt;
-Code Splitting時にentry chunksで空importを行う最適化のためをON/OFFできるようにする&lt;code&gt;hoistTransitiveImports&lt;/code&gt;オプションの追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-3-1-0-avajs-ava&quot;&gt;Release 3.1.0 · avajs/ava&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v3.1.0&quot; title=&quot;Release 3.1.0 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v3.1.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AVA 3.1.0リリース。&lt;br&gt;
-&lt;code&gt;@ava/typescript&lt;/code&gt;パッケージでTypeScriptサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;debug-z-index-stacking-content-with-3d-view-in-the-microsoft-edge-devtools-microsoft-edge-blog&quot;&gt;Debug z-index stacking content with 3D View in the Microsoft Edge DevTools - Microsoft Edge Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2020/01/23/debug-z-index-3d-view-edge-devtools/&quot; title=&quot;Debug z-index stacking content with 3D View in the Microsoft Edge DevTools - Microsoft Edge Blog&quot;&gt;blogs.windows.com/msedgedev/2020/01/23/debug-z-index-3d-view-edge-devtools/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MSEdgeの開発者ツールに、&lt;code&gt;z-index&lt;/code&gt;のスタックコンテキストをビジュアライズする3D Views機能が実験的に実装された&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript-visualized-generators-and-iterators-dev-community&quot;&gt;💡🎁 JavaScript Visualized: Generators and Iterators - DEV Community 👩‍💻👨‍💻&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://dev.to/lydiahallie/javascript-visualized-generators-and-iterators-e36&quot; title=&quot;💡🎁 JavaScript Visualized: Generators and Iterators - DEV Community 👩‍💻👨‍💻&quot;&gt;dev.to/lydiahallie/javascript-visualized-generators-and-iterators-e36&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Generators、Iteratorsの動きをコードとコンソールの表示をあわせて見られるようにして解説している記事&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;replacing-mocha-with-jest&quot;&gt;Replacing Mocha with Jest&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://akoskm.com/2020/01/22/mocha-jest-react-testing.html&quot; title=&quot;Replacing Mocha with Jest&quot;&gt;akoskm.com/2020/01/22/mocha-jest-react-testing.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MochaからJestへのマイグレーション方法について。&lt;br&gt;
-Mochaの機能のJestでの代用方法について紹介されている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;inside-node-what-happens-when-we-execute-a-script&quot;&gt;Inside node: What happens when we execute a script?&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.s1h.org/inside-node-executing-a-script/&quot; title=&quot;Inside node: What happens when we execute a script?&quot;&gt;blog.s1h.org/inside-node-executing-a-script/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsでスクリプトを実行するまでにどのような処理が行われているのかをコードから見ていく記事。&lt;br&gt;
-&lt;code&gt;node&lt;/code&gt;のコマンドライン引数の処理、ファイルのロード、&lt;code&gt;module&lt;/code&gt;でのスクリプトをのコンパイル、libuvを使ったイベントループでのコード実行の流れについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;microsoft-playwright-node-library-to-automate-chromium-firefox-and-webkit-browsers&quot;&gt;microsoft/playwright: Node library to automate Chromium, Firefox and WebKit browsers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/microsoft/playwright&quot; title=&quot;microsoft/playwright: Node library to automate Chromium, Firefox and WebKit browsers&quot;&gt;github.com/microsoft/playwright&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webkit&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Selenium&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webdriver&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chromium、WebKit、Firefoxを操作できるNode.jsライブラリ。&lt;br&gt;
-Puppeteerと同じチームが開発していて、クロスブラウザ向けの抽象化されたAPIを提供する目的。&lt;br&gt;
-WebDriverよりも機能的なDriver、分かりやすいAPI、setTimeout-freeな自動化を目的としている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;puppeteer-sandbox-headless-chrome-playground&quot;&gt;Puppeteer Sandbox | Headless Chrome Playground&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://puppeteersandbox.com/&quot; title=&quot;Puppeteer Sandbox | Headless Chrome Playground&quot;&gt;puppeteersandbox.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ブラウザからPuppeteerを扱うコードを書いて実行結果を取得できるSandboxツール&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;all-questions-typeofnan-javascript-quizzes&quot;&gt;All questions | TypeOfNaN JavaScript Quizzes&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://quiz.typeofnan.dev/&quot; title=&quot;All questions | TypeOfNaN JavaScript Quizzes&quot;&gt;quiz.typeofnan.dev/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptに関するクイズサイト。&lt;br&gt;
-JavaScriptについてのクイズとその解説が掲載されている&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Mon, 27 Jan 2020 23:40:00 +0900</pubDate>
-        <link>https://jser.info/2020/01/27/safari-tp-99remove-flashava-3.1.0typescript-playwrightcross-browser-puppeteer/</link>
-        <guid isPermaLink="true">https://jser.info/2020/01/27/safari-tp-99remove-flashava-3.1.0typescript-playwrightcross-browser-puppeteer/</guid>
-        
-        <category>safari</category>
-        
-        <category>node</category>
-        
-        <category>puppeteer</category>
         
         
         <category>JSer</category>
