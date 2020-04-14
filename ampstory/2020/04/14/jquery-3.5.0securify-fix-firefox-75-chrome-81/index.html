@@ -1,0 +1,359 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story"
+            src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <title>2020-04-14のJS: jQuery 3.5.0(securify fix)、Firefox 75、Chrome 81 - JSer.info</title>
+    <link rel="canonical" href="https://jser.info/2020/04/14/jquery-3.5.0securify-fix-firefox-75-chrome-81/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        amp-story {
+            color: #000;
+        }
+
+        amp-story-page {
+            background-color: #fff;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 2.875em;
+            line-height: 1.174;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #000;
+        }
+
+        .item {
+            
+        }
+       
+        q {
+            font-weight: 300;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cover-img {
+            background: #2a8d9b;
+        }
+        
+        .title-wrapper {
+        }
+        
+        .story-title {
+            font-family: "Al Bayan",游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+            text-align: center;
+            font-weight:100;
+            font-size:48px;
+            padding: 0.5em 0.2em;
+            color: #fff;
+        }
+        
+        .item-title {
+        
+        }
+
+        .cta-layer-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .view-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 32px;
+            padding: 4px;
+            color: #2a8d9b;
+            border: 2px solid #2a8d9b;
+        }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+<amp-story standalone bookend-config-src="/ampstory/backend.json" 
+title="2020-04-14のJS: jQuery 3.5.0(securify fix)、Firefox 75、Chrome 81"
+publisher="JSer.info"
+publisher-logo-src="/public/img/jser-icon.png"
+poster-portrait-src="/public/img/logo-3x4.png">
+    
+<amp-story-page id="cover">
+    <amp-story-grid-layer template="fill">
+      <amp-img class="cover-img" src="/public/img/logo-vertical.png" width="900" height="1600">
+      </amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+        <div class="title-wrapper">
+            <h2 class="story-title">2020-04-14のJS</h2>
+        </div>
+    </amp-story-grid-layer>
+</amp-story-page>
+
+    
+<amp-story-page id="https://github.com/preactjs/preact/releases/tag/10.4.0">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release 10.4.0 · preactjs/preact</amp-fit-text>
+            <p class="item-contents">Preact 10.4.0リリース。
+vnodeの厳密な比較によるパフォーマンス改善、SSR時にhydrationがうまく行かなかった際のfallbackを追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release 10.4.0 · preactjs/preact" href="https://github.com/preactjs/preact/releases/tag/10.4.0" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">jQuery 3.5.0 Released! | Official jQuery Blog</amp-fit-text>
+            <p class="item-contents">jQuery 3.5.0リリース。
+<code>jQuery.htmlPrefilter</code>の正規表現のタグ展開によってXSSが発生する問題の修正。これによって<code>$("&lt;div&gt;&lt;div/&gt;&lt;/div&gt;")</code> のようなself-closedなタグと他のタグの組わせの挙動が変更される破壊的な変更も含まれる。
+4.0で削除される予定の<code>:even</code>と<code>:odd</code>の代わりに<code>.even()</code>と<code>.odd()</code>を追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="jQuery 3.5.0 Released! | Official jQuery Blog" href="https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://hacks.mozilla.org/2020/04/firefox-75-ambitions-for-april/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Firefox 75: Ambitions for April - Mozilla Hacks - the Web developer blog</amp-fit-text>
+            <p class="item-contents">Firefox 75リリース。
+開発者ツールのコンソールにInstant evaluation previewsの追加、Async Stack Traceの対応。
+<code>&lt;img loading=lazy&gt;</code>での画像の遅延ロードのサポート、CSSの<code>min()</code>/<code>max()</code>/<code>clamp()</code>のサポート、Web Animations APIの改善など。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Firefox 75: Ambitions for April - Mozilla Hacks - the Web developer blog" href="https://hacks.mozilla.org/2020/04/firefox-75-ambitions-for-april/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://developers.google.com/web/updates/2020/04/nic81">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">New in Chrome 81  |  Web  |  Google Developers</amp-fit-text>
+            <p class="item-contents">延期していたChrome 81リリース。
+次のChrome 82はスキップされ83が3週間早くリリースされる。
+Badging APIのサポート、Intl.DisplayNamesの実装、Origin TrialとしてWeb NFC APIの追加など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="New in Chrome 81  |  Web  |  Google Developers" href="https://developers.google.com/web/updates/2020/04/nic81" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/10264/release-notes-for-safari-technology-preview-104/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Release Notes for Safari Technology Preview 104 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari Technology Preview 104リリース。
+(macOSの開発版で)HTTP3をフラグ付きでサポート、CSSの<code>:is()</code>のサポート、WebRTC HEVC(H.265)のサポートなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Release Notes for Safari Technology Preview 104 | WebKit" href="https://webkit.org/blog/10264/release-notes-for-safari-technology-preview-104/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://webkit.org/blog/10266/web-animations-in-safari-13-1/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Web Animations in Safari 13.1 | WebKit</amp-fit-text>
+            <p class="item-contents">Safari 13.1でサポートされたWeb Animations APIについて
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Web Animations in Safari 13.1 | WebKit" href="https://webkit.org/blog/10266/web-animations-in-safari-13-1/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://web.dev/websocketstream/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">WebSocketStream: integrating streams with the WebSocket API</amp-fit-text>
+            <p class="item-contents">PromiseベースであるWebSocketStream APIについての記事。
+<code>ReadableStream</code>や<code>WritableStream</code>などの基本的な使い方、Backpressureについて、Streamの閉じ方についてなど
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="WebSocketStream: integrating streams with the WebSocket API" href="https://web.dev/websocketstream/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://web.dev/digging-into-the-privacy-sandbox/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Digging into the Privacy Sandbox</amp-fit-text>
+            <p class="item-contents">プライバシー保護に関するAPIセットであるPrivacy Sandboxについての紹介記事。
+現在のPrivacy Sandboxに関係するProposalの概要やゴール、関連する用語の解説など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Digging into the Privacy Sandbox" href="https://web.dev/digging-into-the-privacy-sandbox/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://itnext.io/under-the-hood-of-web-bundlers-e-g-webpack-926e868f7f5e">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Under-the-hood of web bundlers (e.g. Webpack) - ITNEXT</amp-fit-text>
+            <p class="item-contents">JavaScriptのBundlerについての発表動画の記事版。
+bundlerの行っていることの解説、小さなコンパイラを作りながらbundlerの動作の解説、実際にbundlerを使ってウェブアプリを出力するところまでを解説している。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Under-the-hood of web bundlers (e.g. Webpack) - ITNEXT" href="https://itnext.io/under-the-hood-of-web-bundlers-e-g-webpack-926e868f7f5e" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://docs.google.com/presentation/d/1AzBcuN-dmctk7v1IMZHivfpFAiXwCnsjyJS3wQ4sgE4/preview#slide=id.g82989a6582_1_134">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">電子情報学特論：Chromiumのアーキテクチャを解き明かす - Google スライド</amp-fit-text>
+            <p class="item-contents">Chromiumのプロセスアーキテクチャについてのスライド。
+マルチプロセスアーキテクチャ、埋め込みコンテンツでのSpectreのメモリ読み取り、iframeでのSite Isolation、ChromeのGCの実装についてなど。
+またレンダリング処理がParsing、Style、Layering、Rasterのステージに分けていて中間データをそれぞれ扱うことで動的な変更に対応している話など
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="電子情報学特論：Chromiumのアーキテクチャを解き明かす - Google スライド" href="https://docs.google.com/presentation/d/1AzBcuN-dmctk7v1IMZHivfpFAiXwCnsjyJS3wQ4sgE4/preview#slide=id.g82989a6582_1_134" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://github.com/Hopding/pdf-lib">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">Hopding/pdf-lib: Create and modify PDF documents in any JavaScript environment</amp-fit-text>
+            <p class="item-contents">PDFを作成できるNode.jsライブラリ
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="Hopding/pdf-lib: Create and modify PDF documents in any JavaScript environment" href="https://github.com/Hopding/pdf-lib" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+
+<amp-story-page id="https://www.amazon.co.jp/dp/4048930737/">
+    <amp-story-grid-layer template="vertical">
+        <div class="item">
+            <amp-fit-text width="200"
+                          height="120"
+                          layout="responsive"
+                          max-font-size="28"
+                          class="item-title">JavaScript Primer 迷わないための入門書 | azu, Suguru Inatomi |本 | 通販 | Amazon</amp-fit-text>
+            <p class="item-contents">2020年4月27日発売
+JavaScriptの入門書。
+https://jsprimer.net/ の書籍版。
+</p>
+        </div>
+    </amp-story-grid-layer>
+    <amp-story-cta-layer>
+        <div class="cta-layer-inner">
+            <a class="view-button" title="JavaScript Primer 迷わないための入門書 | azu, Suguru Inatomi |本 | 通販 | Amazon" href="https://www.amazon.co.jp/dp/4048930737/" target="_blank" rel="noopener">ページを見に行く</a>
+        </div>
+    </amp-story-cta-layer>
+</amp-story-page>
+
+</amp-story>
+</body>
+</html>
