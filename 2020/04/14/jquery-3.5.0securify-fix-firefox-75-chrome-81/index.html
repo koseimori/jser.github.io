@@ -187,7 +187,7 @@
 
 <p>また3.5.0はマイナーアップデートですが、非互換な変更を含むセキュリティアップデートが含まれています。<br>
 <a href="https://api.jquery.com/jQuery.htmlPrefilter/">jQuery.htmlPrefilter</a>では正規表現を使って、<code>$(&quot;&lt;div /&gt;&quot;)</code>のようなXHTMLのself-closeなタグを<code>$(&quot;&lt;div&gt;&lt;/div&gt;&quot;)</code>へと展開する処理が行われていました。<br>
-この正規表現での展開を使ったXSSが見つかったため、jQuery 3.5.0ではこの正規表現の展開を削除をしています。</p>
+この正規表現での展開を使ったXSSが見つかったため、jQuery 3.5.0ではこの正規表現による展開を削除しています。</p>
 
 <p>単一の<code>&lt;div /&gt;</code>のようなケースは特に違いはありません。</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;div/&gt;'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
