@@ -5,9 +5,308 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 20 Apr 2020 23:52:30 +0900</pubDate>
-    <lastBuildDate>Mon, 20 Apr 2020 23:52:30 +0900</lastBuildDate>
+    <pubDate>Tue, 21 Apr 2020 00:03:59 +0900</pubDate>
+    <lastBuildDate>Tue, 21 Apr 2020 00:03:59 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-04-20のJS: puppeteer 3.0.0、Chrome 83 Beta、Vue.js 3.0 Beta</title>
+        <description>&lt;p&gt;JSer.info #484 - Headless Chromeを扱うライブラリであるpuppeteer 3.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/puppeteer/puppeteer/releases/tag/v3.0.0&quot;&gt;Release v3.0.0 · puppeteer/puppeteer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Chromium 81.0.4044.0へアップデートされています。&lt;br&gt;
+また、&lt;a href=&quot;https://github.com/puppeteer/puppeteer/releases/tag/v2.1.0&quot;&gt;v2.1.0&lt;/a&gt;でFirefoxをサポートしていますが、インストール時に&lt;code&gt;PUPPETEER_PRODUCT=firefox npm install&lt;/code&gt;とすることでFirefox Nightlyのバイナリをダウンロードできるようになっています。&lt;/p&gt;
+
+&lt;p&gt;その他にはNode.js 8のサポート終了やコードベースをTypeScriptへマイグレーションしていくなどの変更が含まれています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Chrome 83 Betaがリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2020/04/chrome-83-beta-cross-site-scripting.html&quot;&gt;Chromium Blog: Chrome 83 Beta: Cross-site Scripting Protection, Improved Form Controls, and Safe Cross-origin Resource Sharing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jser.info/2020/04/14/jquery-3.5.0securify-fix-firefox-75-chrome-81/&quot;&gt;前回&lt;/a&gt;お伝えしていたようにChrom 82はスキップされ、Chrome 83は本来より3週間早くリリースされます。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features/schedule&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://chromiumdash.appspot.com/schedule&quot;&gt;Chromium Dash&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;CSPとしてTrusted Typeを指定できるように、Form UI/Accessibilityの改善、&lt;code&gt;Cross-Origin-Embedder-Policy&lt;/code&gt;(COEP)と&lt;code&gt;Cross-Origin-Opener-Policy&lt;/code&gt;(COOP)の実装などが行われています。詳細は次の記事で回折されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://web.dev/coop-coep/&quot;&gt;Making your website &amp;quot;cross-origin isolated&amp;quot; using COOP and COEP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Origin Trialとして&lt;a href=&quot;https://web.dev/native-file-system/&quot;&gt;新しいNative File System&lt;/a&gt;、&lt;a href=&quot;https://web.dev/monitor-total-page-memory-usage/&quot;&gt;&lt;code&gt;Performance.measureMemory()&lt;/code&gt;&lt;/a&gt;、&lt;a href=&quot;https://chromestatus.com/feature/6031161734201344&quot;&gt;&lt;code&gt;Scheduler.postTask()&lt;/code&gt;&lt;/a&gt;が追加されています。&lt;br&gt;
+その他には、ARIA Annotations 1.3 draftの対応、Barcode Detection API、CSSの&lt;code&gt;@supports selector()&lt;/code&gt;のサポートなども行われています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.google.com/presentation/d/1LHp-8hEtXEMSE1fd6YLAhYmtndQelQKbWlGggZKe4y8/edit#slide=id.p&quot;&gt;State of Vue Apr 16 2020&lt;/a&gt;というスライドでは現在開発中のVue 3のBeta版が公開されたことについて発表されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md#300-beta1-2020-04-16&quot;&gt;vue-next/CHANGELOG.md at master · vuejs/vue-next&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;このスライドでは、Vue 3の主な変更について書かれています。&lt;br&gt;
+Composition API、Fragment、Teleport、Suspense、Custom Renderer APIについて紹介されています。&lt;br&gt;
+また、Tree-shakingの対応によるファイルサイズの削減やTypeScriptのサポートについても書かれています。&lt;/p&gt;
+
+&lt;p&gt;Vue 3のロードマップについては次のProject Boardを参照してください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue/projects/6&quot;&gt;Roadmap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v13-13-0-current-node-js&quot;&gt;Node v13.13.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v13.13.0/&quot; title=&quot;Node v13.13.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v13.13.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 13.13.0リリース。&lt;br&gt;
+&lt;code&gt;fs.readv&lt;/code&gt;の追加、&lt;code&gt;fs.readSync&lt;/code&gt;に&lt;code&gt;offset&lt;/code&gt;と&lt;code&gt;length&lt;/code&gt;オプションの追加、&lt;code&gt;dns.ALL&lt;/code&gt;フラグの追加。&lt;br&gt;
+HTTPヘッダサイズのデフォルト値を8KBから16KBに変更など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v3-0-0-puppeteer-puppeteer&quot;&gt;Release v3.0.0 · puppeteer/puppeteer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/puppeteer/puppeteer/releases/tag/v3.0.0&quot; title=&quot;Release v3.0.0 · puppeteer/puppeteer&quot;&gt;github.com/puppeteer/puppeteer/releases/tag/v3.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Puppeteer 3.0.0リリース。&lt;br&gt;
+Chromium 81にアップデート、Firefox Nightlyのバイナリをインストールできるように、Node.js 8のサポート終了など。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;chromium-blog-chrome-83-beta-cross-site-scripting-protection-improved-form-controls-and-safe-cross-origin-resource-sharing&quot;&gt;Chromium Blog: Chrome 83 Beta: Cross-site Scripting Protection, Improved Form Controls, and Safe Cross-origin Resource Sharing&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.chromium.org/2020/04/chrome-83-beta-cross-site-scripting.html&quot; title=&quot;Chromium Blog: Chrome 83 Beta: Cross-site Scripting Protection, Improved Form Controls, and Safe Cross-origin Resource Sharing&quot;&gt;blog.chromium.org/2020/04/chrome-83-beta-cross-site-scripting.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 83 Betaリリース。&lt;br&gt;
+CSPとしてTrusted Typeを指定できるように、Form UI/Accessibilityの改善、COOPとCOEPの実装。&lt;br&gt;
+Origin Trialとして新しいNative File System、&lt;code&gt;Performance.measureMemory()&lt;/code&gt;、&lt;code&gt;Scheduler.postTask()&lt;/code&gt;の追加。&lt;br&gt;
+その他には、ARIA Annotations 1.3 draftの対応、Barcode Detection API、CSSの&lt;code&gt;@supports selector()&lt;/code&gt;のサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/10/15/form-controls-microsoft-edge-chromium/&quot; title=&quot;Improving form controls in Microsoft Edge and Chromium - Microsoft Edge Blog&quot;&gt;Improving form controls in Microsoft Edge and Chromium - Microsoft Edge Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://web.dev/coop-coep/&quot; title=&quot;Making your website &amp;amp;amp;quot;cross-origin isolated&amp;amp;amp;quot; using COOP and COEP&quot;&gt;Making your website &amp;quot;cross-origin isolated&amp;quot; using COOP and COEP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://web.dev/native-file-system/&quot; title=&quot;The Native File System API: Simplifying access to local files&quot;&gt;The Native File System API: Simplifying access to local files&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v1-7-0-pikapkg-snowpack&quot;&gt;Release v1.7.0 · pikapkg/snowpack&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/pikapkg/snowpack/releases/tag/v1.7.0&quot; title=&quot;Release v1.7.0 · pikapkg/snowpack&quot;&gt;github.com/pikapkg/snowpack/releases/tag/v1.7.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Snowpack 1.7.0リリース。&lt;br&gt;
+&lt;code&gt;--env&lt;/code&gt;のサポート、Babelプラグインの更新、JSXとTypeScriptのサポート。&lt;br&gt;
+また Snowpack 2.0に向けて変更予定について書かれている&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;addyosmani-com-profiling-react-js-performance&quot;&gt;AddyOsmani.com - Profiling React.js Performance&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://addyosmani.com/blog/profiling-react-js/&quot; title=&quot;AddyOsmani.com - Profiling React.js Performance&quot;&gt;addyosmani.com/blog/profiling-react-js/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Reactアプリのレンダリングパフォーマンスの計測方法について。&lt;br&gt;
+ExperimentalなReact Profiler API、Interaction tracingを使った方法。&lt;br&gt;
+PuppeteerやUser Timing API、Lighthouseを使ったReactに依存しない計測についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-tour-of-inline-caching-with-delete-webkit&quot;&gt;A Tour of Inline Caching with Delete | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10298/inline-caching-delete/&quot; title=&quot;A Tour of Inline Caching with Delete | WebKit&quot;&gt;webkit.org/blog/10298/inline-caching-delete/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webkit&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;delete&lt;/code&gt;演算子でプロパティを削除するオブジェクトの構造が変わって構造IDが変わることで、構造IDをkeyにしてキャッシュするInline Cachingが無効化されて遅くなる問題について。&lt;br&gt;
+JSCではこのdeleteによる削除遷移に対する最適化を行うことで、Emberのデバッグビルドのようなdeleteを多用するアプリでのパフォーマンスを改善したという話&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;making-your-website-cross-origin-isolated-using-coop-and-coep&quot;&gt;Making your website &amp;quot;cross-origin isolated&amp;quot; using COOP and COEP&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/coop-coep/&quot; title=&quot;Making your website \&amp;quot;cross-origin isolated\&amp;quot; using COOP and COEP&quot;&gt;web.dev/coop-coep/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;SharedArrayBuffer&lt;/code&gt;など高度な機能は&lt;code&gt;self.crossOriginIsolated&lt;/code&gt;が&lt;code&gt;true&lt;/code&gt;の場合に利用できる。&lt;br&gt;
+&lt;code&gt;crossOriginIsolated&lt;/code&gt;を有効にするには、&lt;code&gt;Cross-Origin-Embedder-Policy&lt;/code&gt;と&lt;code&gt;Cross-Origin-Opener-Policy&lt;/code&gt;の対応が必要という話。&lt;br&gt;
+&lt;code&gt;Cross-Origin-*&lt;/code&gt; HTTPヘッダーの動きについての解説&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/whatwg/html/pull/4734&quot; title=&quot;Raise the bar for SharedArrayBuffer via postMessage() by annevk · Pull Request #4734 · whatwg/html&quot;&gt;Raise the bar for SharedArrayBuffer via postMessage() by annevk · Pull Request #4734 · whatwg/html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.google.com/document/d/1zDlfvfTJ_9e8Jdc8ehuV4zMEu9ySMCiTGMS9y0GU92k/edit&quot; title=&quot;COOP and COEP explained - Google ドキュメント&quot;&gt;COOP and COEP explained - Google ドキュメント&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://web.dev/same-site-same-origin/&quot; title=&quot;Understanding &amp;amp;amp;quot;same-site&amp;amp;amp;quot; and &amp;amp;amp;quot;same-origin&amp;amp;amp;quot;&quot;&gt;Understanding &amp;quot;same-site&amp;quot; and &amp;quot;same-origin&amp;quot;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;speed-up-your-angular-app-14-angular-optimization-tips-grapecity&quot;&gt;Speed Up Your Angular App - 14 Angular Optimization Tips | GrapeCity&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.grapecity.com/blogs/14-ways-to-speed-up-your-angular-app&quot; title=&quot;Speed Up Your Angular App - 14 Angular Optimization Tips | GrapeCity&quot;&gt;www.grapecity.com/blogs/14-ways-to-speed-up-your-angular-app&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Angular 9を使ったアプリの最適化Tips。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;whats-new-in-ecmascript-2020-strict-mode&quot;&gt;What&amp;#39;s new in ECMAScript 2020 | Strict Mode&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.strictmode.io/articles/whats-new-es2020/&quot; title=&quot;What&amp;#39;s new in ECMAScript 2020 | Strict Mode&quot;&gt;www.strictmode.io/articles/whats-new-es2020/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ES2020で追加される構文やメソッドについての紹介記事&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;vime-js-vime-all-your-media-player-needs-in-one-place-a-modern-alternative-to-videojs-and-plyr-supports-html5-hls-dash-youtube-vimeo-dailymotion-and-more-to-come&quot;&gt;vime-js/vime: All your media player needs in one place - a modern alternative to Videojs and Plyr. Supports Html5, Hls, Dash, YouTube, Vimeo, Dailymotion and more to come.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/vime-js/vime&quot; title=&quot;vime-js/vime: All your media player needs in one place - a modern alternative to Videojs and Plyr. Supports Html5, Hls, Dash, YouTube, Vimeo, Dailymotion and more to come.&quot;&gt;github.com/vime-js/vime&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;プラグインで拡張できるVideoプレイヤーライブラリ。&lt;br&gt;
+機能ごとにモジュール化されているため、必要なモジュールだけを利用できる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;state-of-vue-apr-16-2020-google&quot;&gt;State of Vue Apr 16 2020 - Google スライド&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.google.com/presentation/d/1LHp-8hEtXEMSE1fd6YLAhYmtndQelQKbWlGggZKe4y8/edit#slide=id.p&quot; title=&quot;State of Vue Apr 16 2020 - Google スライド&quot;&gt;docs.google.com/presentation/d/1LHp-8hEtXEMSE1fd6YLAhYmtndQelQKbWlGggZKe4y8/edit#slide&amp;#x3D;id.p&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vue.js 3βリリースについてのスライド。&lt;br&gt;
+Vue 3の主な変更について。&lt;br&gt;
+Composition API、Fragment、Teleport、Suspense、Custom Renderer APIの対応など。&lt;br&gt;
+また、Tree-shakingの対応によるファイルサイズの削減やTypeScriptのサポートについて&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md#300-beta1-2020-04-16&quot; title=&quot;vue-next/CHANGELOG.md at master · vuejs/vue-next&quot;&gt;vue-next/CHANGELOG.md at master · vuejs/vue-next&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;vuln-cost-security-scanner-for-vs-code-snyk&quot;&gt;Vuln Cost - security scanner for VS Code | Snyk&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://snyk.io/security-scanner-vuln-cost/&quot; title=&quot;Vuln Cost - security scanner for VS Code | Snyk&quot;&gt;snyk.io/security-scanner-vuln-cost/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;VSCode&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;VSCodeで&lt;code&gt;require&lt;/code&gt;、&lt;code&gt;import&lt;/code&gt;しているモジュールの脆弱性の数を表示する拡張機能&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;css-via-inline-variables&quot;&gt;CSS via inline variables&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://codepen.io/WebReflection/pen/gOawwew&quot; title=&quot;CSS via inline variables&quot;&gt;codepen.io/WebReflection/pen/gOawwew&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;example&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;style&lt;/code&gt;属性にCSS Custom Propertiesを定義して、CSS側でCSS Custom Propertiesの変数の読み取りと初期値を指定するパターン。&lt;br&gt;
+利用側でCSS値をinjectできる仕組み&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/WebReflection/status/1252172398406877185&quot; title=&quot;(20) Andrea Giammarchi on Twitter: &amp;amp;amp;quot;a legitimate use case for inline style attribute is, imho, variables declarations: • if the user disabled CSS, no layout changes • it&amp;amp;#x27;s SSR compatible out of the box, no Shadow DOM needed • it doesn&amp;amp;#x27;t shadow !important, but you could add !important https://t.co/gBaPjlYvMS https://t.co/T5Tewjh2dD&amp;amp;amp;quot; / Twitter&quot;&gt;(20) Andrea Giammarchi on Twitter: &amp;quot;a legitimate use case for inline style attribute is, imho, variables declarations: • if the user disabled CSS, no layout changes • it&amp;#39;s SSR compatible out of the box, no Shadow DOM needed • it doesn&amp;#39;t shadow !important, but you could add !important https://t.co/gBaPjlYvMS https://t.co/T5Tewjh2dD&amp;quot; / Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;aeroheim-midori-library-for-animated-image-backgrounds&quot;&gt;aeroheim/midori: library for animated image backgrounds&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/aeroheim/midori&quot; title=&quot;aeroheim/midori: library for animated image backgrounds&quot;&gt;github.com/aeroheim/midori&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Canvas/WebGLを使った背景画像のアニメーションを描画するライブラリ。&lt;br&gt;
+読み込んだ背景画像に対してtransitionsやeffectsを設定できる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;yusufnb-verify-json-verify-json&quot;&gt;yusufnb/verify-json: verify-json&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yusufnb/verify-json&quot; title=&quot;yusufnb/verify-json: verify-json&quot;&gt;github.com/yusufnb/verify-json&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JSON&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JSONバリデーションライブラリ。&lt;br&gt;
+スキーマを定義してJSONオブジェクトをバリデーションできる&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;javascript-primer-azu-suguru-inatomi-amazon&quot;&gt;JavaScript Primer 迷わないための入門書 | azu, Suguru Inatomi |本 | 通販 | Amazon&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4048930737/&quot; title=&quot;JavaScript Primer 迷わないための入門書 | azu, Suguru Inatomi |本 | 通販 | Amazon&quot;&gt;www.amazon.co.jp/dp/4048930737/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;2020年4月27日発売&lt;br&gt;
+JavaScriptの入門書。&lt;br&gt;
+&lt;a href=&quot;https://jsprimer.net/&quot;&gt;https://jsprimer.net/&lt;/a&gt; の書籍版。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://efcl.info/2020/04/14/pre-jsprimer/&quot; title=&quot;JavaScript Primerの書籍版が4月27日に発売予定です！ | Web Scratch&quot;&gt;JavaScript Primerの書籍版が4月27日に発売予定です！ | Web Scratch&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;typescript-2-kindle-amazon&quot;&gt;速習 TypeScript 第2版 速習シリーズ | 山田祥寛 | 工学 | Kindleストア | Amazon&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B086JKVGPB/&quot; title=&quot;速習 TypeScript 第2版 速習シリーズ | 山田祥寛 | 工学 | Kindleストア | Amazon&quot;&gt;www.amazon.co.jp/dp/B086JKVGPB/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScriptについての電子書籍&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://codezine.jp/article/detail/12203&quot; title=&quot;【新刊紹介】『速習 TypeScript 第2版』発売、最新の3.8系にも対応：CodeZine（コードジン）&quot;&gt;【新刊紹介】『速習 TypeScript 第2版』発売、最新の3.8系にも対応：CodeZine（コードジン）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Mon, 20 Apr 2020 23:30:38 +0900</pubDate>
+        <link>https://jser.info/2020/04/20/puppeteer-3.0.0-chrome-83-beta-vue.js-3.0-beta/</link>
+        <guid isPermaLink="true">https://jser.info/2020/04/20/puppeteer-3.0.0-chrome-83-beta-vue.js-3.0-beta/</guid>
+        
+        <category>puppeteer</category>
+        
+        <category>Chrome</category>
+        
+        <category>Vue</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-04-14のJS: jQuery 3.5.0(securify fix)、Firefox 75、Chrome 81</title>
@@ -2282,263 +2581,6 @@ CommonJS/ES Modules、Source Map、Minifier、JSXなどに対応している&lt;
         <category>Firefox</category>
         
         <category>Node.js</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2020-02-12のJS: Electron 8.0.0、Angular 9、`request` module is deprecated</title>
-        <description>&lt;p&gt;JSer.info #474 - Electron 8.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.electronjs.org/blog/electron-8-0&quot;&gt;Electron 8.0.0 | Electron Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Chromium 80、V8 8.0、Node.js 12.13.0へとそれぞれアップデートされています。&lt;/p&gt;
-
-&lt;p&gt;またChromeビルトインのスペルチェッカーを利用できるように、IPCにV8の Structured Clone Algorithm(Node.jsでも&lt;a href=&quot;https://nodejs.org/api/v8.html#v8_serialization_api&quot;&gt;Serialization API&lt;/a&gt;として提供されている)を利用することでパフォーマンスの改善などが行われています。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;session.preconnect&lt;/code&gt;、&lt;code&gt;tray.displayBalloon&lt;/code&gt;、&lt;code&gt;contents.executeJavaScriptInIsolatedWorld&lt;/code&gt;などのAPI追加。&lt;/p&gt;
-
-&lt;p&gt;今回のリリースでElectron 5.xはEOL(End Of Support)となっています。&lt;br&gt;
-Electronは現在のバージョンを含めた3バージョンをサポートするポリシーとなっています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.electronjs.org/docs/tutorial/support&quot;&gt;Electron Support | Electron&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;スケジュールより少し遅れましたが、Angular 9リリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3&quot;&gt;Version 9 of Angular Now Available — Project Ivy has arrived!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;新しいCompilerとRuntimeの総称である&lt;a href=&quot;https://angular.io/guide/ivy&quot;&gt;Angular Ivy&lt;/a&gt;がデフォルトとなりました。&lt;br&gt;
-これによりbundleファイルサイズやパフォーマンスなどが改善されています。&lt;/p&gt;
-
-&lt;p&gt;また、&lt;code&gt;TestBed&lt;/code&gt;の再実装によるテストパフォーマンスの改善、TypScript 3.7のサポートとテンプレートの型チェックオプションの追加、ビルドエラーやスタックトレースの改善なども行われています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Node.js向けのHTTPライブラリである&lt;a href=&quot;https://www.npmjs.com/package/request&quot;&gt;request&lt;/a&gt;モジュールがDeprecatedになりました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jser.info/2019/04/09/chromiummicrosoft-edge-request/&quot;&gt;2019-04-09のJS: ChromiumベースのMicrosoft Edge プレビュー版公開、&lt;code&gt;request&lt;/code&gt;モジュールがメンテンスモードに移行の予定 - JSer.info&lt;/a&gt;で、メンテナンスモードとなっていましたが、今回でDeprecatedとなりました。&lt;/p&gt;
-
-&lt;p&gt;詳細については次のIssueにかかれています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3142#issuecomment-584745385&quot;&gt;Request’s Past, Present and Future · Issue #3142 · request/request&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;代替となるライブラリについては次のIssueでまとめられています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3143&quot;&gt;Alternative libraries to request · Issue #3143 · request/request&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;electron-8-0-0-electron-blog&quot;&gt;Electron 8.0.0 | Electron Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.electronjs.org/blog/electron-8-0&quot; title=&quot;Electron 8.0.0 | Electron Blog&quot;&gt;www.electronjs.org/blog/electron-8-0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Electron 8.0.0リリース。&lt;br&gt;
-Chromium 80、V8 8.0、Node.js 12.13.0へのアップデート。&lt;br&gt;
-Chromeビルトインのスペルチェッカーを利用できるように、IPCにV8の Structured Clone Algorithmを利用することでパフォーマンスの改善など。&lt;br&gt;
-&lt;code&gt;session.preconnect&lt;/code&gt;、&lt;code&gt;tray.displayBalloon&lt;/code&gt;、&lt;code&gt;contents.executeJavaScriptInIsolatedWorld&lt;/code&gt;などのAPI追加。&lt;br&gt;
-今回のリリースでElectron 5.xはEOL(End Of Support)となった。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-typescript-3-8-rc-typescript&quot;&gt;Announcing TypeScript 3.8 RC | TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-rc/&quot; title=&quot;Announcing TypeScript 3.8 RC | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-8-rc/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.8RCリリース。&lt;br&gt;
-Type-Only Imports/Exports、ECMAScript Private Fields、Top-Level awaitのサポート。&lt;br&gt;
-また&lt;code&gt;checkJS&lt;/code&gt;におけるJSDocの&lt;code&gt;@public&lt;/code&gt;、&lt;code&gt;@private&lt;/code&gt;、&lt;code&gt;@protected&lt;/code&gt;をサポート、&lt;code&gt;watchOptions&lt;/code&gt;の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-80-web-google-developers&quot;&gt;New in Chrome 80  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/02/nic80&quot; title=&quot;New in Chrome 80  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2020/02/nic80&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 80リリース。&lt;br&gt;
-WebWorkerで&lt;code&gt;type:&amp;quot;module&amp;quot;&lt;/code&gt;のサポート、Optional Chainingのサポート。&lt;br&gt;
-またOrigin TrialとしてContact Picker API、Notification triggers、Web Serialのサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-webkit&quot;&gt;Release Notes for Safari Technology Preview 💯 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10024/release-notes-for-safari-technology-preview-100/&quot; title=&quot;Release Notes for Safari Technology Preview 💯 | WebKit&quot;&gt;webkit.org/blog/10024/release-notes-for-safari-technology-preview-100/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 100リリース。&lt;br&gt;
-Web Inspector Referenceへのリンクの追加、Web InspectorのCanvas Tab がGraphics Tabにリネームなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://webkit.org/web-inspector/&quot; title=&quot;Web Inspector Reference | WebKit&quot;&gt;Web Inspector Reference | WebKit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;v8-runtime-overview-apps-script-google-developers&quot;&gt;V8 Runtime Overview  |  Apps Script  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/apps-script/guides/v8-runtime&quot; title=&quot;V8 Runtime Overview  |  Apps Script  |  Google Developers&quot;&gt;developers.google.com/apps-script/guides/v8-runtime&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GAS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Google Apps ScriptでV8が利用できるようになった&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-3-3-0-avajs-ava&quot;&gt;Release 3.3.0 · avajs/ava&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v3.3.0&quot; title=&quot;Release 3.3.0 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v3.3.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AVA 3.3.0リリース。&lt;br&gt;
-ECMAScript Modulesなテストファイルに対応&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;version-9-of-angular-now-available-project-ivy-has-arrived&quot;&gt;Version 9 of Angular Now Available — Project Ivy has arrived!&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3&quot; title=&quot;Version 9 of Angular Now Available — Project Ivy has arrived!&quot;&gt;blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Angular 9リリース。&lt;br&gt;
-Ivyがデフォルトとなりbundleファイルサイズなどの改善、&lt;code&gt;TestBed&lt;/code&gt;の再実装でのテストパフォーマンスの改善、TypScript 3.7のサポートとテンプレートの型チェックオプションの追加。&lt;br&gt;
-ビルドエラーやスタックトレースの改善など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://angular.io/guide/ivy&quot; title=&quot;Angular - Angular Ivy&quot;&gt;Angular - Angular Ivy&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v1-0-0-scala-js-scala-js&quot;&gt;Release v1.0.0 · scala-js/scala-js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/scala-js/scala-js/releases/tag/v1.0.0&quot; title=&quot;Release v1.0.0 · scala-js/scala-js&quot;&gt;github.com/scala-js/scala-js/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;scala&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Scala.js 1.0.0リリース&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;request-npm&quot;&gt;request - npm&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.npmjs.com/package/request&quot; title=&quot;request - npm&quot;&gt;www.npmjs.com/package/request&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js向けのHTTPクライアントである&lt;code&gt;request&lt;/code&gt;モジュールがDeprecatedとなった。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3142#issuecomment-584745385&quot; title=&quot;Request’s Past, Present and Future · Issue #3142 · request/request&quot;&gt;Request’s Past, Present and Future · Issue #3142 · request/request&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/request/request/issues/3143&quot; title=&quot;Alternative libraries to request · Issue #3143 · request/request&quot;&gt;Alternative libraries to request · Issue #3143 · request/request&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;serenity-js-serenity-js&quot;&gt;Serenity/JS | Serenity/JS&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://serenity-js.org/&quot; title=&quot;Serenity/JS | Serenity/JS&quot;&gt;serenity-js.org/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;E2E&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Acceptance testingフレームワーク。&lt;br&gt;
-Screenplay PatternでActorを中心にしたテストシナリオを書き、クロスブラウザでの受け入れテストを行う&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;tensorflow-js-for-react-native-is-here-the-tensorflow-blog&quot;&gt;TensorFlow.js for React Native is here! — The TensorFlow Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.tensorflow.org/2020/02/tensorflowjs-for-react-native-is-here.html&quot; title=&quot;TensorFlow.js for React Native is here! — The TensorFlow Blog&quot;&gt;blog.tensorflow.org/2020/02/tensorflowjs-for-react-native-is-here.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MachineLearning&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;mobile&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Tensorflow.js for React Nativeが一般公開された&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;ecmascript-proposal-updates-2020-02-ecmascript-daily&quot;&gt;ECMAScript proposal updates @ 2020-02 | ECMAScript Daily&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://ecmascript-daily.github.io/ecmascript/2020/02/11/ecmascript-proposal-update.md&quot; title=&quot;ECMAScript proposal updates @ 2020-02 | ECMAScript Daily&quot;&gt;ecmascript-daily.github.io/ecmascript/2020/02/11/ecmascript-proposal-update.md&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proposal&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2020年2月のTC39 MTGでのECMAScript Proposalの変更点まとめ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;use-cloudflare-javascript-workers-to-deploy-your-static-generated-site-ssg&quot;&gt;Use Cloudflare JavaScript Workers to Deploy Your Static Generated Site (SSG)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://levelup.gitconnected.com/use-cloudflare-javascript-workers-to-deploy-you-static-generated-site-ssg-1c518e078646&quot; title=&quot;Use Cloudflare JavaScript Workers to Deploy Your Static Generated Site (SSG)&quot;&gt;levelup.gitconnected.com/use-cloudflare-javascript-workers-to-deploy-you-static-generated-site-ssg-1c518e078646&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CloudflareのWorkersを使ったSSG(Static SIte Generator)の実装とデプロイについて。&lt;br&gt;
-Next.jsを使った例を紹介している&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;single-spa-single-spa-microfrontends-made-easy&quot;&gt;single-spa/single-spa: Microfrontends made easy&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/single-spa/single-spa&quot; title=&quot;single-spa/single-spa: Microfrontends made easy&quot;&gt;github.com/single-spa/single-spa&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MicroFrontend&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;各種フレームワーク向けのアダプターを用意してるMicrofrontendsフレームワーク。&lt;br&gt;
-それぞれのフレームワークを使ったアプリを同一ページで扱うために必要なライフサイクルを管理するフレームワーク。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;himenon-code-dependency-a-work-efficiency-tool-for-visualizing-code-dependencies-on-a-browser&quot;&gt;Himenon/code-dependency: A work efficiency tool for visualizing code dependencies on a browser.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Himenon/code-dependency&quot; title=&quot;Himenon/code-dependency: A work efficiency tool for visualizing code dependencies on a browser.&quot;&gt;github.com/Himenon/code-dependency&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;dependency-cruiserを使ったモジュールの依存関係図を生成してブラウザで表示できるツール&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/himenoglyph/items/f28a9905e3b30e6cb213&quot; title=&quot;dependency-cruiser&quot;&gt;dependency-cruiser&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;myliang-x-spreadsheet-a-web-based-javascript-canvas-spreadsheet&quot;&gt;myliang/x-spreadsheet: A web-based JavaScript（canvas） spreadsheet&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/myliang/x-spreadsheet&quot; title=&quot;myliang/x-spreadsheet: A web-based JavaScript（canvas） spreadsheet&quot;&gt;github.com/myliang/x-spreadsheet&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;canvas&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;依存のないSpreadSheetの実装ライブラリ。Canvasを使って描画をしている。&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Wed, 12 Feb 2020 11:42:09 +0900</pubDate>
-        <link>https://jser.info/2020/02/12/electron-8.0.0-angular-9-request-module-is-deprecated/</link>
-        <guid isPermaLink="true">https://jser.info/2020/02/12/electron-8.0.0-angular-9-request-module-is-deprecated/</guid>
-        
-        <category>Electron</category>
-        
-        <category>Angular</category>
-        
-        <category>node.js</category>
         
         
         <category>JSer</category>
