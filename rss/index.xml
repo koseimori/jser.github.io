@@ -5,9 +5,277 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 24 Apr 2020 12:57:34 +0900</pubDate>
-    <lastBuildDate>Fri, 24 Apr 2020 12:57:34 +0900</lastBuildDate>
+    <pubDate>Tue, 28 Apr 2020 10:42:08 +0900</pubDate>
+    <lastBuildDate>Tue, 28 Apr 2020 10:42:08 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-04-28のJS: Node.js 14.0.0、Got 11.0.0、Cost of JavaScript Frameworks</title>
+        <description>&lt;p&gt;JSer.info #485 - Node.js v14.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v14.0.0/&quot;&gt;Node v14.0.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/node-js-version-14-available-now-8170d384567e&quot;&gt;Node.js version 14 available now - Node.js - Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://shisama.hatenablog.com/entry/2020/04/22/011221&quot;&gt;Node.js v14の主な変更点 - 別にしんどくないブログ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Node.js 14は2020-10-20にLTSとなる予定のメジャーバージョンです。&lt;/p&gt;
+
+&lt;p&gt;V8 8.1へアップデート、クラッシュレポートなどを取得できる&lt;a href=&quot;https://nodejs.org/api/report.html&quot;&gt;Diagnostic Report&lt;/a&gt;がStableに、&lt;a href=&quot;https://nodejs.org/api/fs.html#fs_fs_promises_api&quot;&gt;&lt;code&gt;fs/promises&lt;/code&gt;&lt;/a&gt;の追加などが行われています。&lt;br&gt;
+またExperimentalとして&lt;a href=&quot;https://nodejs.org/api/wasi.html&quot;&gt;WASI&lt;/a&gt;のサポート、ECMAScript ModulesのExperimental Warningの削除(警告が出なくなっただけで&lt;a href=&quot;https://nodejs.org/api/esm.html&quot;&gt;StabilityはExperimental&lt;/a&gt;)なども行われています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Node.js向けのHTTPクライアントであるGot 11.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sindresorhus/got/releases/tag/v11.0.0&quot;&gt;Release v11.0.0 · sindresorhus/got&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Electronの&lt;code&gt;net&lt;/code&gt;モジュールのサポートを終了し、Pagination APIがStableとなっています。&lt;br&gt;
+また、オプトインですがHTTP/2のサポートが行われています。&lt;/p&gt;
+
+&lt;p&gt;その他には、&lt;a href=&quot;https://nodejs.org/api/http.html#http_class_http_agent&quot;&gt;&lt;code&gt;agent&lt;/code&gt;&lt;/a&gt;オプションを&lt;code&gt;http&lt;/code&gt;/&lt;code&gt;https&lt;/code&gt;/&lt;code&gt;http2&lt;/code&gt;と個別に指定できるようになり、&lt;br&gt;
+&lt;code&gt;dnsCache&lt;/code&gt;オプションの設定方法の変更などが行われています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://timkadlec.com/remembers/2020-04-21-the-cost-of-javascript-frameworks/&quot;&gt;The Cost of Javascript Frameworks - Web Performance Consulting | TimKadlec.com&lt;/a&gt;という記事では、&lt;a href=&quot;https://httparchive.org/&quot;&gt;HTTP Archive&lt;/a&gt;の&lt;a href=&quot;https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md&quot;&gt;データ&lt;/a&gt;を使ってフレームワークを利用しているサイトのメトリクスを比較しています。&lt;/p&gt;
+
+&lt;p&gt;jQuery、Vue、Angular、Reactを使っているサイトのファイルサイズ、モバイル/デスクトップでのCPU消費時間などのメトリクスをパーセンタイルで比較しています。&lt;br&gt;
+また複数のライブラリを組み合わせているサイト(主にjQuery+別のフレームワーク)と単独のフレームワークを使っているサイトでの傾向の違いについても書かれています。&lt;br&gt;
+React単独のサイトではJavaScriptが使用するメインスレッドのCPU処理時間のゆらぎが増える傾向についても触れています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;pr-javascript-primer&quot;&gt;[PR] JavaScript Primerが発売開始しました&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jsprimer.net/&quot;&gt;JavaScript Primer&lt;/a&gt;の書籍版が出版され、購入できるようになりました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4048930737/&quot;&gt;JavaScript Primer 迷わないための入門書 | azu, Suguru Inatomi |本 | 通販 | Amazon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;詳しくは次の記事で解説しています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://efcl.info/2020/04/27/jsprimer/&quot;&gt;JavaScript Primerを出版しました！/JavaScript Primerはなぜ書かれたのか？ | Web Scratch&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v11-0-0-sindresorhus-got&quot;&gt;Release v11.0.0 · sindresorhus/got&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sindresorhus/got/releases/tag/v11.0.0&quot; title=&quot;Release v11.0.0 · sindresorhus/got&quot;&gt;github.com/sindresorhus/got/releases/tag/v11.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js向けHTTPクライアントのGot 11.0.0リリース。&lt;br&gt;
+HTTP2をオプトインでサポート。&lt;br&gt;
+&lt;code&gt;electron.net&lt;/code&gt;のサポート終了、Pagination APIがStableに、&lt;code&gt;got.stream&lt;/code&gt;の&lt;code&gt;encoding&lt;/code&gt;オプションの変更、&lt;code&gt;dnsCache&lt;/code&gt;オプションの変更など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/szmarczak/cacheable-lookup&quot; title=&quot;szmarczak/cacheable-lookup: A cacheable dns.lookup(…) that respects TTL&quot;&gt;szmarczak/cacheable-lookup: A cacheable dns.lookup(…) that respects TTL&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v14-0-0-current-node-js&quot;&gt;Node v14.0.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v14.0.0/&quot; title=&quot;Node v14.0.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v14.0.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 14.0.0リリース。&lt;br&gt;
+V8 8.1へアップデート、Diagnostic ReportがStableに、&lt;code&gt;fs/promises&lt;/code&gt;の追加など。&lt;br&gt;
+ExperimentalとしてWASIのサポート、ECMAScript ModulesのExperimental Warningの削除など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/node-js-version-14-available-now-8170d384567e&quot; title=&quot;Node.js version 14 available now - Node.js - Medium&quot;&gt;Node.js version 14 available now - Node.js - Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://shisama.hatenablog.com/entry/2020/04/22/011221&quot; title=&quot;Node.js v14の主な変更点 - 別にしんどくないブログ&quot;&gt;Node.js v14の主な変更点 - 別にしんどくないブログ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-1-0-0-markedjs-marked&quot;&gt;Release 1.0.0 · markedjs/marked&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/markedjs/marked/releases/tag/v1.0.0&quot; title=&quot;Release 1.0.0 · markedjs/marked&quot;&gt;github.com/markedjs/marked/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Markdown&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Markdownパーサ、コンパイラのmarked 1.0.0リリース。&lt;br&gt;
+&lt;code&gt;marked.use&lt;/code&gt;でパーサに対してカスタマイズ処理ができるように&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;eslint-v7-0-0-rc-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v7.0.0-rc.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2020/04/eslint-v7.0.0-rc.0-released&quot; title=&quot;ESLint v7.0.0-rc.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2020/04/eslint-v7.0.0-rc.0-released&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ESLint v7.0.0-rc.0リリース。&lt;br&gt;
+非同期処理の対応をした新しいESLint APIの追加、Node関係のルールは&lt;code&gt;eslint-plugin-node&lt;/code&gt;が扱うためコアに含まれるNode関係のルールを非推奨化。&lt;br&gt;
+エラーレポート位置情報の修正など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mysticatea/eslint-plugin-node&quot; title=&quot;mysticatea/eslint-plugin-node: Additional ESLint&amp;amp;#x27;s rules for Node.js&quot;&gt;mysticatea/eslint-plugin-node: Additional ESLint&amp;#39;s rules for Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-10-0-0-highlightjs-highlight-js&quot;&gt;Release 10.0.0 · highlightjs/highlight.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/highlightjs/highlight.js/releases/tag/10.0.0&quot; title=&quot;Release 10.0.0 · highlightjs/highlight.js&quot;&gt;github.com/highlightjs/highlight.js/releases/tag/10.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;シンタックスハイライトライブラリのhighlight.js 10.0.0リリース。&lt;br&gt;
+コードベースをES2015似変更しIEのサポート終了。&lt;br&gt;
+&lt;code&gt;before:highlight&lt;/code&gt;、&lt;code&gt;after:highlight&lt;/code&gt; プラグインAPIの追加、それぞれの言語に&lt;code&gt;name&lt;/code&gt;属性を追加など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/highlightjs/highlight.js/blob/master/VERSION_10_BREAKING_CHANGES.md&quot; title=&quot;highlight.js/VERSION\_10\_BREAKING\_CHANGES.md at master · highlightjs/highlight.js&quot;&gt;highlight.js/VERSION_10_BREAKING_CHANGES.md at master · highlightjs/highlight.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-105-webkit&quot;&gt;Release Notes for Safari Technology Preview 105 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10428/release-notes-for-safari-technology-preview-105/&quot; title=&quot;Release Notes for Safari Technology Preview 105 | WebKit&quot;&gt;webkit.org/blog/10428/release-notes-for-safari-technology-preview-105/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webkit&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview 105リリース。&lt;br&gt;
+仕様に準拠して&lt;code&gt;type=module&lt;/code&gt;の&lt;code&gt;cross-origin&lt;/code&gt;のデフォルト値を&lt;code&gt;anonymous&lt;/code&gt;に変更。&lt;br&gt;
+Stage 3のES Proposalであるproposal-logical-assignmentを実装など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-logical-assignment&quot; title=&quot;tc39/proposal-logical-assignment: A proposal to combine Logical Operators and Assignment Expressions&quot;&gt;tc39/proposal-logical-assignment: A proposal to combine Logical Operators and Assignment Expressions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-fetch-v3-beta-is-out-antoni-kepinski-medium&quot;&gt;node-fetch v3 beta is out! - Antoni Kepinski - Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@kepinski/node-fetch-v3-beta-is-out-9fbb8091999&quot; title=&quot;node-fetch v3 beta is out! - Antoni Kepinski - Medium&quot;&gt;medium.com/@kepinski/node-fetch-v3-beta-is-out-9fbb8091999&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;node-fetch 3の変更予定について。&lt;br&gt;
+Node.js 10未満のサポート終了、&lt;code&gt;browser&lt;/code&gt;フィールドの削除、&lt;code&gt;res.textConverted()&lt;/code&gt;の削除。&lt;br&gt;
+Data URLのサポート、&lt;code&gt;Blob&lt;/code&gt;の実装、UTF8 URLハンドリングの改善、&lt;code&gt;highWaterMark&lt;/code&gt;オプションの追加など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/node-fetch/node-fetch&quot; title=&quot;node-fetch/node-fetch: A light-weight module that brings window.fetch to Node.js&quot;&gt;node-fetch/node-fetch: A light-weight module that brings window.fetch to Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-cost-of-javascript-frameworks-web-performance-consulting-timkadlec-com&quot;&gt;The Cost of Javascript Frameworks - Web Performance Consulting | TimKadlec.com&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://timkadlec.com/remembers/2020-04-21-the-cost-of-javascript-frameworks/&quot; title=&quot;The Cost of Javascript Frameworks - Web Performance Consulting | TimKadlec.com&quot;&gt;timkadlec.com/remembers/2020-04-21-the-cost-of-javascript-frameworks/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;HTTP Archiveのデータを元にjQuery、Vue、Angular、Reactを使っているサイトでのメトリクスの比較について。&lt;br&gt;
+それぞれのライブラリを利用しているサイトのファイルサイズ、モバイル/デスクトップでのCPU消費時間について。&lt;br&gt;
+またjQueryと組み合わせているサイトとそうでないサイトの比較。&lt;br&gt;
+React単独のサイトではメインスレッドのCPU処理が増える傾向について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-taste-of-webgpu-in-firefox-mozilla-hacks-the-web-developer-blog&quot;&gt;A Taste of WebGPU in Firefox - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/04/experimental-webgpu-in-firefox/&quot; title=&quot;A Taste of WebGPU in Firefox - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2020/04/experimental-webgpu-in-firefox/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebGPU&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Firebug&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebGPUについての記事。&lt;br&gt;
+WebGLとWebGPUの違い、コンテキストの分離、パイプラインの状態のカプセル化、バインディングモデルについて。&lt;br&gt;
+またFirefoxのWebGPU実装について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;zeit-swr-react-hooks-library-for-remote-data-fetching&quot;&gt;zeit/swr: React Hooks library for remote data fetching&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/zeit/swr&quot; title=&quot;zeit/swr: React Hooks library for remote data fetching&quot;&gt;github.com/zeit/swr&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Fetch&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;データの取得を扱うReact Hooksライブラリ。&lt;br&gt;
+データの取得、リトライ、&lt;code&gt;mutate&lt;/code&gt;による再取得、定期的な取得、SSRの対応、Suspenseの対応など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;developit-web-worker-consistent-web-workers-in-browser-and-node&quot;&gt;developit/web-worker: Consistent Web Workers in browser and Node.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/developit/web-worker&quot; title=&quot;developit/web-worker: Consistent Web Workers in browser and Node.&quot;&gt;github.com/developit/web-worker&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;UniversalなWebWorkerライブラリ。&lt;br&gt;
+Node.jsの&lt;code&gt;worker_threads&lt;/code&gt;とブラウザの&lt;code&gt;Worker&lt;/code&gt;に対応している。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ezhmd-opencv-wasm-precompiled-opencv-4-3-0-to-javascript-webassembly-for-node-js-environment&quot;&gt;ezhmd/opencv-wasm: Precompiled OpenCV 4.3.0 to JavaScript + WebAssembly for node.js environment&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ezhmd/opencv-wasm&quot; title=&quot;ezhmd/opencv-wasm: Precompiled OpenCV 4.3.0 to JavaScript + WebAssembly for node.js environment&quot;&gt;github.com/ezhmd/opencv-wasm&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;graphic&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;OpenCV.jsのWebAssemblyビルドをパッケージとして配布しているライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;bikeshaving-crank-write-jsx-driven-components-with-functions-promises-and-generators&quot;&gt;bikeshaving/crank: Write JSX-driven components with functions, promises and generators.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/bikeshaving/crank&quot; title=&quot;bikeshaving/crank: Write JSX-driven components with functions, promises and generators.&quot;&gt;github.com/bikeshaving/crank&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ReactのようにJSXでコンポーネントを扱うライブラリ。&lt;br&gt;
+非同期コンポーネントをPromiseとGeneratorを使って扱えるようにしている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://crank.js.org/blog/introducing-crank&quot; title=&quot;Crank.js | Introducing Crank&quot;&gt;Crank.js | Introducing Crank&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;mohebifar-vidact-a-compiler-that-converts-react-compatible-codes-to-vanillajs-with-no-virtual-dom&quot;&gt;mohebifar/vidact: A compiler that converts React-compatible codes to VanillaJS with no Virtual DOM&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/mohebifar/vidact&quot; title=&quot;mohebifar/vidact: A compiler that converts React-compatible codes to VanillaJS with no Virtual DOM&quot;&gt;github.com/mohebifar/vidact&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ReactライクなコードをプレーンなJavaScriptに変換するコンパイラとランタイム。&lt;br&gt;
+Svelteと似たコンセプトで、Babelプラインとして実装したコンパイラでReact/JSXなコードを同等のDOM表現に変換する目的&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;lukeed-rosetta-a-general-purpose-internationalization-library-in-292-bytes&quot;&gt;lukeed/rosetta: A general purpose internationalization library in 292 bytes&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/lukeed/rosetta&quot; title=&quot;lukeed/rosetta: A general purpose internationalization library in 292 bytes&quot;&gt;github.com/lukeed/rosetta&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;シンプルなローカライズライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 28 Apr 2020 09:54:23 +0900</pubDate>
+        <link>https://jser.info/2020/04/28/node.js-14.0.0-got-11.0.0-cost-of-javascript-frameworks/</link>
+        <guid isPermaLink="true">https://jser.info/2020/04/28/node.js-14.0.0-got-11.0.0-cost-of-javascript-frameworks/</guid>
+        
+        <category>Node.js</category>
+        
+        <category>HTTP</category>
+        
+        <category>Framework</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-04-20のJS: puppeteer 3.0.0、Chrome 83 Beta、Vue.js 3.0 Beta</title>
@@ -2346,241 +2614,6 @@ directive commentsにコメントを書けるように、&lt;code&gt;~/.eslintrc
         <category>TypeScript</category>
         
         <category>ESLint</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2020-02-18のJS: Firefox 73、Node.js 12.16.0(13.xからのバックポート)</title>
-        <description>&lt;p&gt;JSer.info #475 - Firefox 73がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/02/firefox-73-is-upon-us/&quot;&gt;Firefox 73 is upon us - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/73.0/releasenotes/&quot; title=&quot;Firefox 73.0, See All New Features, Updates and Fixes&quot;&gt;Firefox 73.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/73&quot; title=&quot;Firefox 73 for developers - Mozilla | MDN&quot;&gt;Firefox 73 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/versions/73/&quot; title=&quot;Firefox 73 Site Compatibility | Firefox Site Compatibility&quot;&gt;Firefox 73 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Formのvalidationを行ってからsubmitする&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/requestSubmit&quot;&gt;HTMLFormElement.requestSubmit()&lt;/a&gt;をフラグ付きでサポート、CSSの&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-block&quot;&gt;overscroll-behavior-block&lt;/a&gt;と&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-inline&quot;&gt;overscroll-behavior-inline&lt;/a&gt;をサポート。&lt;/p&gt;
-
-&lt;p&gt;開発者ツールのコンソールで、次のように&lt;code&gt;%c&lt;/code&gt;でのスタイル指定にbackground imageを指定できるようになりました。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%c Firefox'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`
-color: red; padding: 2px 2px 2px 20px; background: no-repeat  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAMAAADjcdz2AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAHRUExURQAAADQT0/+iBf9KEgCC/v0mLf04JuU+Lv8tK/8yJv90BP4rK8wMZv/NHtIQX9gZT/QgN+IbTf6XBf5QHv+tAPmnFvpuGv/mP//bOP7pSv3tVv/0FQCO/NopOsMGbvJPMscLaMUAaO0dQfk2J/giNd0WVLsDev9yD8QIbroDd9sVVP11HuceP/5fFughPv6ND//nPv+4G//ZM/+8JP+zCv/PLf/eOdZAY//qAP7hQ/3sMf7vRgA9yEdc3ABp+hKA/ZS2zv+MAACF/8aKqcPOo/9XGf89I/8hQPgfO/98CP+tAP+WAP60AP7MAOISZe4YWe0gQ/+BAP/AAv9SAItCav/8T//kLwBF1Px/H//vBwBf7fhTLv9PHf8oMvYdRv+ZDP9cAP9PFs1TTeFSQf/FEP/uPv/SJ/G3J/VJIbFpX6hEXF1Dif/pQ5+Lg1xyuvu8AAAAu85oYJlOYuRHKgAAlP+RAL1aowBX4U4rmFt/1EhBnZBzlf/1WSoYhv/8Otx9eXN/8piPwwBk8QA8uX5jojBUy/OOHjyO/7rSx1ly5gCX/wCS8Chx8ftvOip79pF4q16T5SGL++5uUtyOkPPUSwBz/+vaW513wp+7vgBO421lv+OTuBwAAABFdFJOUwAF/gv+/P0C/f785uEFxX37M/z9VP3+7Pf7/f79Pn9hYBbHsub0Vq+gXJ6kqf588IjiFPC2rl7fGPp4sKYkaI13/or6+26KYjUAAAESSURBVBjTY2BgZ2BnZAABKwsgmwGMGWzt7J0c6qyZwRxBPUab8ob2rg7pGgkRBl4GBv4A87J6ZxYZF2mpUHFmoAodjmAux04WmRmRUpKhBkAdHpzCERG9kyd2T4uUzBE3YtByZ3P1LJ00nYVlwpQwy1QzBj53TlextllRPX1TG30lwkwZeDw4M4ormsNnRjVV5gelGTPwxXGwBRdWtfS3huf5+qQYMmj4s7oBDfHyqS7I9RUNMmHQ9BPgSEzOKqotyU73YfISYWDkCQAqSQoJyRT1YmLSB7pMzU+A1S2BK7DUW0goXhvkOTl/Dw42YV0xrkBPdV6wdxVU3WM53WJco+UZoAGgyK+kws2tLMvAzs4AAPERO0Rc4hCeAAAAAElFTkSuQmCC')`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;その他の利用できるスタイルについては次のドキュメントにまとめられています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Console#Styling_console_output&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/API/Console#Styling_console_output&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Node.js 12.16.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.16.0/&quot;&gt;Node v12.16.0 (LTS) | Node.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;このLTSバージョンの更新では、開発版であるNode 13.xからのバックポートが色々と含まれています。&lt;br&gt;
-次の機能がExperimental APIとしてNode.js 12.16.0にバックポートされています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v13.6.0/&quot;&gt;Node v13.6.0&lt;/a&gt;で実装された&lt;a href=&quot;https://nodejs.org/api/assert.html#assert_assert_match_string_regexp_message&quot;&gt;&lt;code&gt;assert.match()&lt;/code&gt;&lt;/a&gt;と&lt;a href=&quot;https://nodejs.org/api/assert.html#assert_assert_doesnotmatch_string_regexp_message&quot;&gt;&lt;code&gt;assert.doesNotMatch()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v13.4.0/&quot;&gt;Node v13.4.0&lt;/a&gt;で実装された&lt;code&gt;EventEmitter&lt;/code&gt;の&lt;a href=&quot;https://nodejs.org/api/events.html#events_events_capturerejections&quot;&gt;&lt;code&gt;captureRejections&lt;/code&gt;&lt;/a&gt;オプション&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v13.3.0/&quot;&gt;Node v13.3.0&lt;/a&gt;で実装された&lt;code&gt;wasi&lt;/code&gt;コアモジュール&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また、同じようにNode 13.xから次のAPIがStable APIとしてNode.js 12.16.0にバックポートされています&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/events.html#events_events_on_emitter_eventname&quot;&gt;&lt;code&gt;EventEmitter.on&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/events.html#events_eventemitter_errormonitor&quot;&gt;&lt;code&gt;EventEmitter.errorMonitor&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/cli.html#cli_trace_exit&quot;&gt;&lt;code&gt;--trace-exit&lt;/code&gt;&lt;/a&gt; CLIフラグ&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/cli.html#cli_trace_uncaught&quot;&gt;&lt;code&gt;--trace-uncaught&lt;/code&gt;&lt;/a&gt; CLIフラグ&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;child_process&lt;/code&gt;と&lt;code&gt;cluster&lt;/code&gt;の&lt;a href=&quot;https://nodejs.org/api/child_process.html#child_process_advanced_serialization&quot;&gt;&lt;code&gt;{ serialization: &amp;quot;advanced&amp;quot; }&lt;/code&gt;&lt;/a&gt;オプション&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;その他では&lt;a href=&quot;https://nodejs.org/api/perf_hooks.html&quot;&gt;perf_hooks&lt;/a&gt;モジュールがStable APIとなっています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v12-16-0-lts-node-js&quot;&gt;Node v12.16.0 (LTS) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.16.0/&quot; title=&quot;Node v12.16.0 (LTS) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.16.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node 12.16.0リリース。&lt;br&gt;
-実験的な機能として&lt;code&gt;assert.match&lt;/code&gt;と&lt;code&gt;assert.doesNotMatch&lt;/code&gt;の追加。&lt;br&gt;
-&lt;code&gt;child_process&lt;/code&gt;が&lt;code&gt;serialization&lt;/code&gt;オプションをサポート、&lt;code&gt;--trace-exit&lt;/code&gt;、&lt;code&gt;--trace-uncaught&lt;/code&gt;の追加、&lt;code&gt;perf_hooks&lt;/code&gt;がStable APIとなるなど。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;chromium-blog-chrome-81-near-field-communications-augmented-reality-and-more&quot;&gt;Chromium Blog: Chrome 81: Near Field Communications, Augmented Reality, and More&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.chromium.org/2020/02/chrome-81-near-field-communications.html&quot; title=&quot;Chromium Blog: Chrome 81: Near Field Communications, Augmented Reality, and More&quot;&gt;blog.chromium.org/2020/02/chrome-81-near-field-communications.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 81 ベータリリース。&lt;br&gt;
-Original Trialとしてモバイル向けのWeb NFC、&lt;code&gt;scheduler.postTask&lt;/code&gt;のサポート、Mixed Contentの自動アップグレード、TLS 1.0と1.1の削除など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-ionic-5-the-ionic-blog&quot;&gt;Announcing Ionic 5! | The Ionic Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://ionicframework.com/blog/announcing-ionic-5/&quot; title=&quot;Announcing Ionic 5! | The Ionic Blog&quot;&gt;ionicframework.com/blog/announcing-ionic-5/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Ionic 5リリース。&lt;br&gt;
-iOS 13に合わせたデザインの更新、Ionic Animationsの追加、Ioniconsの更新、Angular 9のIvyへの対応&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.ionicframework.com/introducing-ionic-animations/&quot; title=&quot;Introducing Ionic Animations | The Ionic Blog&quot;&gt;Introducing Ionic Animations | The Ionic Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2-0-fullhuman-purgecss&quot;&gt;Release v2.0 · FullHuman/purgecss&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/FullHuman/purgecss/releases/tag/v2.0.5&quot; title=&quot;Release v2.0 · FullHuman/purgecss&quot;&gt;github.com/FullHuman/purgecss/releases/tag/v2.0.5&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;使われてないCSSを削除するPurgeCSS 2.0.0リリース。&lt;br&gt;
-非同期化、CSS Variablesの対応、Node.js 8以下のサポート終了&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/full-human/purgecss-2-0-c0e812e6c4f6&quot; title=&quot;PurgeCSS 2.0 - Full Human - Medium&quot;&gt;PurgeCSS 2.0 - Full Human - Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;firefox-73-is-upon-us-mozilla-hacks-the-web-developer-blog&quot;&gt;Firefox 73 is upon us - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/02/firefox-73-is-upon-us/&quot; title=&quot;Firefox 73 is upon us - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2020/02/firefox-73-is-upon-us/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 73リリース。&lt;br&gt;
-フラグ付きでHTMLFormElementに&lt;code&gt;requestSubmit&lt;/code&gt;メソッドの追加、開発者ツールのコンソールのスタイルでbackground imageをサポート、DNS over HTTPSのプロバイダーにNextDNSを追加&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/73.0/releasenotes/&quot; title=&quot;Firefox 73.0, See All New Features, Updates and Fixes&quot;&gt;Firefox 73.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/73&quot; title=&quot;Firefox 73 for developers - Mozilla | MDN&quot;&gt;Firefox 73 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/versions/73/&quot; title=&quot;Firefox 73 Site Compatibility | Firefox Site Compatibility&quot;&gt;Firefox 73 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;adding-notification-permission-data-to-the-chrome-user-experience-report&quot;&gt;Adding notification permission data to the Chrome User Experience Report&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/02/notification-permission-data-in-crux&quot; title=&quot;Adding notification permission data to the Chrome User Experience Report&quot;&gt;developers.google.com/web/updates/2020/02/notification-permission-data-in-crux&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome User Experience Reportに通知許諾ダイアログのデータが追加された&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;cookie-privacy-speaker-deck&quot;&gt;最新のブラウザで変わるCookieの取り扱いやPrivacyの考え方 - Speaker Deck&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/yosuke_furukawa/zui-xin-falseburauzadebian-warucookiefalsequ-rixi-iyaprivacyfalsekao-efang&quot; title=&quot;最新のブラウザで変わるCookieの取り扱いやPrivacyの考え方 - Speaker Deck&quot;&gt;speakerdeck.com/yosuke_furukawa/zui-xin-falseburauzadebian-warucookiefalsequ-rixi-iyaprivacyfalsekao-efang&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;privacy&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ブラウザのサードパーティクッキーやトラッキング防止周りの機能についてのスライド。&lt;br&gt;
-SafariのITP、FIrefoxのETP、SameSite Cookie。&lt;br&gt;
-CNAME CloakingやSafariの提案しているAd click attribution、ChromeのPrivacy Sandboxについてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;openchakra&quot;&gt;OpenChakra&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://openchakra.app/&quot; title=&quot;OpenChakra&quot;&gt;openchakra.app/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;GUI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;editor&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chakra UIを使ったサイトを構築できるビジュアルエディタ。D&amp;amp;Dでコンポーネントを組み立てでき、その結果をCodeSandboxにコードとして出力できる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://chakra-ui.com/&quot; title=&quot;Chakra UI | Design System built with React&quot;&gt;Chakra UI | Design System built with React&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;chakra-ui-design-system-built-with-react&quot;&gt;Chakra UI | Design System built with React&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://chakra-ui.com/&quot; title=&quot;Chakra UI | Design System built with React&quot;&gt;chakra-ui.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WAI-ARIA&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Reactを使ったUIコンポーネントライブラリ。&lt;br&gt;
-一貫性のある組み合わせが可能なコンポーネントを作ることを目的としていて、WAI-ARIAの対応、テーマ機能などを持っている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;evanw-esbuild-an-extremely-fast-javascript-bundler-and-minifier&quot;&gt;evanw/esbuild: An extremely fast JavaScript bundler and minifier&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/evanw/esbuild&quot; title=&quot;evanw/esbuild: An extremely fast JavaScript bundler and minifier&quot;&gt;github.com/evanw/esbuild&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;golang&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Go言語製のJavaScript Bundler。&lt;br&gt;
-CommonJS/ES Modules、Source Map、Minifier、JSXなどに対応している&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;volument-baretest-an-extremely-fast-and-simple-javascript-test-runner&quot;&gt;volument/baretest: An extremely fast and simple JavaScript test runner.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/volument/baretest&quot; title=&quot;volument/baretest: An extremely fast and simple JavaScript test runner.&quot;&gt;github.com/volument/baretest&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;自己実行可能なテストフレームワーク。&lt;br&gt;
-&lt;code&gt;test&lt;/code&gt;関数といくつかのライフサイクルを提供する小さなテストフレームワーク。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://volument.com/baretest&quot; title=&quot;Baretest — An extremely minimalistic alternative to Jest&quot;&gt;Baretest — An extremely minimalistic alternative to Jest&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;mirage-js-an-api-mocking-library-for-frontend-developers&quot;&gt;Mirage JS • An API mocking library for frontend developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://miragejs.com/&quot; title=&quot;Mirage JS • An API mocking library for frontend developers&quot;&gt;miragejs.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;APIモッキングライブラリ。&lt;br&gt;
-ブラウザで動くサーバを実装し、リクエストに対するレスポンスを定義できる。&lt;br&gt;
-&lt;code&gt;fetch&lt;/code&gt;や&lt;code&gt;XMLHttpRequest&lt;/code&gt;をインターセプトすることで実装している。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;fullcalendar-javascript-event-calendar&quot;&gt;FullCalendar - JavaScript Event Calendar&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://fullcalendar.io/&quot; title=&quot;FullCalendar - JavaScript Event Calendar&quot;&gt;fullcalendar.io/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;カレンダーUIライブラリ。&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 18 Feb 2020 10:52:14 +0900</pubDate>
-        <link>https://jser.info/2020/02/18/firefox-73-node.js-12.16.013.x/</link>
-        <guid isPermaLink="true">https://jser.info/2020/02/18/firefox-73-node.js-12.16.013.x/</guid>
-        
-        <category>Firefox</category>
-        
-        <category>Node.js</category>
         
         
         <category>JSer</category>
