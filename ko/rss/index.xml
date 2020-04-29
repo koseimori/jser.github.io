@@ -5,9 +5,278 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 28 Apr 2020 11:01:04 +0900</pubDate>
-    <lastBuildDate>Tue, 28 Apr 2020 11:01:04 +0900</lastBuildDate>
+    <pubDate>Wed, 29 Apr 2020 19:13:09 +0900</pubDate>
+    <lastBuildDate>Wed, 29 Apr 2020 19:13:09 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-04-28: Node.js 14.0.0, Got 11.0.0, Cost of JavaScript Frameworks</title>
+        <description>&lt;p&gt;JSer.info #485 - Node.js v14.0.0이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v14.0.0/&quot;&gt;Node v14.0.0 (Current) | Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/node-js-version-14-available-now-8170d384567e&quot;&gt;Node.js version 14 available now - Node.js - Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://shisama.hatenablog.com/entry/2020/04/22/011221&quot;&gt;Node.js v14의 주요 변경 사항 - 별로 힘들지 않는 블로그&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Node.js 14는 2020-10-20에 LTS가 될 예정인 메이저 버전입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nodejs/Release&quot;&gt;nodejs/Release: Node.js Release Working Group&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;V8 8.1로 갱신됐고 크래시 리포트 등을 취할 수 있는 &lt;a href=&quot;https://nodejs.org/api/report.html&quot;&gt;Diagnostic Report&lt;/a&gt;가 Stable로 변경됐으며 &lt;a href=&quot;https://nodejs.org/api/fs.html#fs_fs_promises_api&quot;&gt;&lt;code&gt;fs/promises&lt;/code&gt;&lt;/a&gt;가 추가됐습니다.&lt;br&gt;
+또, 실험적으로 &lt;a href=&quot;https://nodejs.org/api/wasi.html&quot;&gt;WASI&lt;/a&gt;를 지원하며 ECMAScript Modules의 Experimental Warning이 삭제(경고가 출력되지 않을 뿐 &lt;a href=&quot;https://nodejs.org/api/esm.html&quot;&gt;Stability는 Experimental&lt;/a&gt;)됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Node.js 용 HTTP 클라이언트 라이브러리 Got 11.0.0이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sindresorhus/got/releases/tag/v11.0.0&quot;&gt;Release v11.0.0 · sindresorhus/got&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Electron의 &lt;code&gt;net&lt;/code&gt; 모듈 지원이 종료됐으며 Pagination API가 Stable이 됐습니다.&lt;br&gt;
+또, 옵트인으로 HTTP/2를 지원합니다.&lt;/p&gt;
+
+&lt;p&gt;그 외로 &lt;a href=&quot;https://nodejs.org/api/http.html#http_class_http_agent&quot;&gt;&lt;code&gt;agent&lt;/code&gt;&lt;/a&gt; 옵션을 &lt;code&gt;http&lt;/code&gt; / &lt;code&gt;https&lt;/code&gt; / &lt;code&gt;http2&lt;/code&gt;로 별도로 지정할 수 있으며 &lt;code&gt;dnsCache&lt;/code&gt; 옵션 설정 방법이 변경됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://timkadlec.com/remembers/2020-04-21-the-cost-of-javascript-frameworks/&quot;&gt;The Cost of Javascript Frameworks - Web Performance Consulting | TimKadlec.com&lt;/a&gt;에서는 &lt;a href=&quot;https://httparchive.org/&quot;&gt;HTTP Archive&lt;/a&gt;의 &lt;a href=&quot;https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md&quot;&gt;데이터&lt;/a&gt;를 활용해 특정 프레임워크를 사용하고 있는 사이트를 비롯한 여러 지표가 정리돼 있습니다.&lt;/p&gt;
+
+&lt;p&gt;jQuery, Vue, Angular, React를 사용하고 있는 사이트의 파일 크기, 모바일 / 데스크탑에서의 CPU 소비 시간 등 여러 지표가 백분위수(percentile)로 비교돼 있습니다.&lt;br&gt;
+또, 여러개의 라이브러리를 조합하고 있는 사이트(주로 jQuery + 기타 프레임워크)와 프레임워크 하나만 사용하고 있는 사이트에 대해서(아마 그러한 사이트는 마이그레이션 중일 것)도 정리돼 있으며 React만 사용하는 사이트에서 자바스크립트가 사용하는 메인 스레드의 CPU 처리 시간 편차가 큰 부분도 함께 다루고 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;pr-javascript-primer&quot;&gt;[PR] JavaScript Primer를 발매했습니다.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jsprimer.net/&quot;&gt;JavaScript Primer&lt;/a&gt; 도서가 출판 돼 지금 구매할 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4048930737/&quot;&gt;JavaScript Primer 헤매지 않기 위한 입문서 | azu, Suguru Inatomi | 도서 | 통신판매 | Amazon&lt;/a&gt;(일본어)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;자세한 내용은 아래 글을 참고해주세요.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://efcl.info/2020/04/27/jsprimer/&quot;&gt;JavaScript Primer를 출판했습니다! / JavaScript Primer는 왜 작성됐는가? | Web Scratch&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v11-0-0-sindresorhus-got&quot;&gt;Release v11.0.0 · sindresorhus/got&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sindresorhus/got/releases/tag/v11.0.0&quot; title=&quot;Release v11.0.0 · sindresorhus/got&quot;&gt;github.com/sindresorhus/got/releases/tag/v11.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 용 HTTP 클라이언트 Got 11.0.0이 릴리스됐습니다.&lt;br&gt;
+HTTP2를 옵트인으로 지원합니다.&lt;br&gt;
+&lt;code&gt;electron.net&lt;/code&gt; 지원이 종료됐고 Pagination API가 Stable로 변경됐으며 &lt;code&gt;got.stream&lt;/code&gt;의 &lt;code&gt;encoding&lt;/code&gt; 옵션이 변경과 &lt;code&gt;dnsCache&lt;/code&gt; 옵션이 변경됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/szmarczak/cacheable-lookup&quot; title=&quot;szmarczak/cacheable-lookup: A cacheable dns.lookup(…) that respects TTL&quot;&gt;szmarczak/cacheable-lookup: A cacheable dns.lookup(…) that respects TTL&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v14-0-0-current-node-js&quot;&gt;Node v14.0.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v14.0.0/&quot; title=&quot;Node v14.0.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v14.0.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 14.0.0이 릴리스됐습니다.&lt;br&gt;
+V8 8.1으로 갱신됐고 Diagnostic Report가 Stable로 변경됐으며 &lt;code&gt;fs/promises&lt;/code&gt;가 추가됐습니다.&lt;br&gt;
+Experimental로 WASI를 지원하며 ECMAScript Modules의 Experimental Warning 메시지가 삭제됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@nodejs/node-js-version-14-available-now-8170d384567e&quot; title=&quot;Node.js version 14 available now - Node.js - Medium&quot;&gt;Node.js version 14 available now - Node.js - Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://shisama.hatenablog.com/entry/2020/04/22/011221&quot; title=&quot;Node.js v14의 주요 변경 사항 - 별로 힘들지 않은 블로그&quot;&gt;Node.js v14의 주요 변경 사항 - 별로 힘들지 않은 블로그&lt;/a&gt;(일본어)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-1-0-0-markedjs-marked&quot;&gt;Release 1.0.0 · markedjs/marked&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/markedjs/marked/releases/tag/v1.0.0&quot; title=&quot;Release 1.0.0 · markedjs/marked&quot;&gt;github.com/markedjs/marked/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Markdown&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Markdown 파서, 컴파일러 のmarked 1.0.0이 릴리스됐습니다.&lt;br&gt;
+&lt;code&gt;marked.use&lt;/code&gt;를 이용해 파서를 커스터마이즈 할 수 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;eslint-v7-0-0-rc-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v7.0.0-rc.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2020/04/eslint-v7.0.0-rc.0-released&quot; title=&quot;ESLint v7.0.0-rc.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2020/04/eslint-v7.0.0-rc.0-released&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ESLint v7.0.0-rc.0이 릴리스됐습니다.&lt;br&gt;
+비동기 처리에 대응한 새로운 ESLint API가 추가됐고 Node 관련 규칙을 &lt;code&gt;eslint-plugin-node&lt;/code&gt;에서 담당하기 때문에 코어에 포함된 Node 관련 규칙은 비권장됐습니다.&lt;br&gt;
+그 외로 에러 리포트의 위치 정보가 수정됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mysticatea/eslint-plugin-node&quot; title=&quot;mysticatea/eslint-plugin-node: Additional ESLint&amp;amp;#x27;s rules for Node.js&quot;&gt;mysticatea/eslint-plugin-node: Additional ESLint&amp;#39;s rules for Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-10-0-0-highlightjs-highlight-js&quot;&gt;Release 10.0.0 · highlightjs/highlight.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/highlightjs/highlight.js/releases/tag/10.0.0&quot; title=&quot;Release 10.0.0 · highlightjs/highlight.js&quot;&gt;github.com/highlightjs/highlight.js/releases/tag/10.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;신텍스 하이라이트 라이브러리 highlight.js 10.0.0이 릴리스됐습니다.&lt;br&gt;
+코드 기반이 ES2015로 변경됐으며 이에 맞춰 IE 지원이 종료됐습니다.&lt;br&gt;
+&lt;code&gt;before:highlight&lt;/code&gt;, &lt;code&gt;after:highlight&lt;/code&gt; 플러그인 API가 추가됐고 각 언어에 &lt;code&gt;name&lt;/code&gt; 속성이 추가됐습니다. &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/highlightjs/highlight.js/blob/master/VERSION_10_BREAKING_CHANGES.md&quot; title=&quot;highlight.js/VERSION\_10\_BREAKING\_CHANGES.md at master · highlightjs/highlight.js&quot;&gt;highlight.js/VERSION_10_BREAKING_CHANGES.md at master · highlightjs/highlight.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-105-webkit&quot;&gt;Release Notes for Safari Technology Preview 105 | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10428/release-notes-for-safari-technology-preview-105/&quot; title=&quot;Release Notes for Safari Technology Preview 105 | WebKit&quot;&gt;webkit.org/blog/10428/release-notes-for-safari-technology-preview-105/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webkit&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology Preview 105가 릴리스됐습니다.&lt;br&gt;
+사양에 맞춰 &lt;code&gt;type=module&lt;/code&gt;의 &lt;code&gt;cross-origin&lt;/code&gt; 기본 값이 &lt;code&gt;anonymous&lt;/code&gt;로 변경됐습니다.&lt;br&gt;
+Stage 3의 ES Proposal인 proposal-logical-assignment가 구현됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-logical-assignment&quot; title=&quot;tc39/proposal-logical-assignment: A proposal to combine Logical Operators and Assignment Expressions&quot;&gt;tc39/proposal-logical-assignment: A proposal to combine Logical Operators and Assignment Expressions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-fetch-v3-beta-is-out-antoni-kepinski-medium&quot;&gt;node-fetch v3 beta is out! - Antoni Kepinski - Medium&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@kepinski/node-fetch-v3-beta-is-out-9fbb8091999&quot; title=&quot;node-fetch v3 beta is out! - Antoni Kepinski - Medium&quot;&gt;medium.com/@kepinski/node-fetch-v3-beta-is-out-9fbb8091999&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;node-fetch 3의 변경 사항이 정리돼 있습니다.&lt;br&gt;
+Node.js 10 미만 버전이 지원 종료됐으며 &lt;code&gt;browser&lt;/code&gt; 필드, &lt;code&gt;res.textConverted()&lt;/code&gt;가 삭제됐습니다.&lt;br&gt;
+Data URL을 지원하며 &lt;code&gt;Blob&lt;/code&gt;이 구현됐습니다. 또, UTF8 URL 핸들링이 개선됐으며 &lt;code&gt;highWaterMark&lt;/code&gt; 옵션이 추가됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/node-fetch/node-fetch&quot; title=&quot;node-fetch/node-fetch: A light-weight module that brings window.fetch to Node.js&quot;&gt;node-fetch/node-fetch: A light-weight module that brings window.fetch to Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-cost-of-javascript-frameworks-web-performance-consulting-timkadlec-com&quot;&gt;The Cost of Javascript Frameworks - Web Performance Consulting | TimKadlec.com&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://timkadlec.com/remembers/2020-04-21-the-cost-of-javascript-frameworks/&quot; title=&quot;The Cost of Javascript Frameworks - Web Performance Consulting | TimKadlec.com&quot;&gt;timkadlec.com/remembers/2020-04-21-the-cost-of-javascript-frameworks/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;HTTP Archive 데이터를 기반으로 jQuery, Vue, Angular, React를 사용하고 있는 사이트의 지표를 분석한 글 입니다.&lt;br&gt;
+각각의 라이브러리를 사용하고 있는 사이트의 파일 파이즈, 모바일 / 데스크탑에서의 CPU 처리 시간 등에 대해 작성돼 있습니다.&lt;br&gt;
+또, jQuery를 포함하고 있는 사이트와 그렇지 않은 사이트를 비교하고 React 단독 사이트에서는 메인 스레드의 CPU 처리가 증가하는 경향에 대해 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-taste-of-webgpu-in-firefox-mozilla-hacks-the-web-developer-blog&quot;&gt;A Taste of WebGPU in Firefox - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/04/experimental-webgpu-in-firefox/&quot; title=&quot;A Taste of WebGPU in Firefox - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2020/04/experimental-webgpu-in-firefox/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebGPU&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Firebug&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebGPU에 관한 글입니다.&lt;br&gt;
+WebGL와 WebGPU의 차이점, 컨텍스트 분리, 파이프라인 상태 캡슐화, 바인딩 모델에 관해 정리돼 있습니다.&lt;br&gt;
+또, 파이어폭스의 WebGPU 구현 상황에 대해서도 정리돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;zeit-swr-react-hooks-library-for-remote-data-fetching&quot;&gt;zeit/swr: React Hooks library for remote data fetching&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/zeit/swr&quot; title=&quot;zeit/swr: React Hooks library for remote data fetching&quot;&gt;github.com/zeit/swr&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Fetch&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;데이터를 가져오는 방식을 제공하는 React Hooks 라이브러리입니다.&lt;br&gt;
+데이터 가져오기, 재시도, &lt;code&gt;mutate&lt;/code&gt;를 통한 재취득, 정기적으로 가져오기, SSR 대응, Suspense 대응 등 다양한 기능을 제공합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;developit-web-worker-consistent-web-workers-in-browser-and-node&quot;&gt;developit/web-worker: Consistent Web Workers in browser and Node.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/developit/web-worker&quot; title=&quot;developit/web-worker: Consistent Web Workers in browser and Node.&quot;&gt;github.com/developit/web-worker&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Universal한 WebWorker 라이브러리입니다.&lt;br&gt;
+Node.js의 &lt;code&gt;worker_threads&lt;/code&gt;와 브라우저의 &lt;code&gt;Worker&lt;/code&gt;에 대응하고 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ezhmd-opencv-wasm-precompiled-opencv-4-3-0-to-javascript-webassembly-for-node-js-environment&quot;&gt;ezhmd/opencv-wasm: Precompiled OpenCV 4.3.0 to JavaScript + WebAssembly for node.js environment&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ezhmd/opencv-wasm&quot; title=&quot;ezhmd/opencv-wasm: Precompiled OpenCV 4.3.0 to JavaScript + WebAssembly for node.js environment&quot;&gt;github.com/ezhmd/opencv-wasm&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;graphic&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;OpenCV.js의 WebAssembly 빌드를 패키지로 배포하고 있는 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;bikeshaving-crank-write-jsx-driven-components-with-functions-promises-and-generators&quot;&gt;bikeshaving/crank: Write JSX-driven components with functions, promises and generators.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/bikeshaving/crank&quot; title=&quot;bikeshaving/crank: Write JSX-driven components with functions, promises and generators.&quot;&gt;github.com/bikeshaving/crank&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React 처럼 JSX로 컴포넌트를 다루는 라이브러리입니다.&lt;br&gt;
+비동기 컴포넌트를 Promise와 Generator를 사용해 다룰 수 있도록 관련 기능을 제공합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://crank.js.org/blog/introducing-crank&quot; title=&quot;Crank.js | Introducing Crank&quot;&gt;Crank.js | Introducing Crank&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;mohebifar-vidact-a-compiler-that-converts-react-compatible-codes-to-vanillajs-with-no-virtual-dom&quot;&gt;mohebifar/vidact: A compiler that converts React-compatible codes to VanillaJS with no Virtual DOM&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/mohebifar/vidact&quot; title=&quot;mohebifar/vidact: A compiler that converts React-compatible codes to VanillaJS with no Virtual DOM&quot;&gt;github.com/mohebifar/vidact&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React스러운 코드를 순수 자바스크립트로 변환하는 컴파일러입니다. 빌드 시 대부분의 코드가 변환되며 런타임 상에서 컴포넌트를 갱신하기 위해 몇 가지 코드가 실행됩니다.&lt;br&gt;
+Svelte와 비슷한 컨셉이며 Babel 플러그인으로 제공됩니다. React / JSX 코드를 동일한 DOM 코드로 변환하는데 목적을 두고 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;lukeed-rosetta-a-general-purpose-internationalization-library-in-292-bytes&quot;&gt;lukeed/rosetta: A general purpose internationalization library in 292 bytes&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/lukeed/rosetta&quot; title=&quot;lukeed/rosetta: A general purpose internationalization library in 292 bytes&quot;&gt;github.com/lukeed/rosetta&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;간단한 로컬라이즈 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 28 Apr 2020 09:54:23 +0900</pubDate>
+        <link>https://jser.info/ko/2020/04/28/node.js-14.0.0-got-11.0.0-cost-of-javascript-frameworks/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2020/04/28/node.js-14.0.0-got-11.0.0-cost-of-javascript-frameworks/</guid>
+        
+        <category>Node.js</category>
+        
+        <category>HTTP</category>
+        
+        <category>Framework</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-04-20: puppeteer 3.0.0, Chrome 83 Beta, Vue.js 3.0 Beta</title>
@@ -2215,240 +2484,6 @@ FCP, LCP, FID, TTI, TBT, CLS에 관해 각각 설명하고 측정 방법과 개�
         <category>Survey</category>
         
         <category>React</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-11-05: MSEdge on Chromium RC, Immer 5.0.0, Speed Report on Search Console</title>
-        <description>&lt;p&gt;JSer.info #460 - Chromium 기반의 Microsoft Edge RC 버전이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/11/04/edge-chromium-release-candidate-get-ready/&quot;&gt;Getting your sites ready for the new Microsoft Edge - Microsoft Edge Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;로고가 새롭게 디자인됐습니다. 그리고 Microsoft Edge on Chromium은 이미 공개된 Microsoft Edge Insider Channels의 Canary, Dev, Beta로 테스트할 수 있습니다.&lt;br&gt;
-RC 릴리스 소식을 전하는 글에는 자동 테스트에 사용할 수 있는 웹 드라이버, 퍼펫티어를 소개하고 IE 드라이버 서버를 사용한 IE 모드 실행 및 활용 방법에 대해 작성돼 있습니다.&lt;br&gt;
-향후 개발 될 기능과 상황에 대해서는 아래 스테이터스, 익스플레너 문서를 참고하시길 바랍니다. &lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.microsoft.com/en-us/microsoft-edge/platform/status/crossdomainfontloading/&quot;&gt;Microsoft Edge web platform features status and roadmap - Microsoft Edge Development&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/MicrosoftEdge/MSEdgeExplainers&quot;&gt;MicrosoftEdge/MSEdgeExplainers: Home for explainer documents originated by the Microsoft Edge team&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;객체 상태를 불변(immutable)하게 변경하는 라이브러리인 Immer.js 5.0.0이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/immerjs/immer/releases/tag/v5.0.0&quot;&gt;Release v5.0.0 · immerjs/immer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;5.0.0에서는 &lt;code&gt;Map&lt;/code&gt;과 &lt;code&gt;Set&lt;/code&gt; 객체를 지원합니다.&lt;br&gt;
-자세한 내용은 아래 문서를 참고하시길 바랍니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://immerjs.github.io/immer/docs/complex-objects&quot;&gt;Working with classes · Immer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/immerjs/immer/issues/146&quot;&gt;Support for Set and Map · Issue #146 · immerjs/immer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Google Search Console에 Speed Report가 시험적으로 추가됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://webmasters.googleblog.com/2019/11/search-console-speed-report.html&quot;&gt;Official Google Webmaster Central Blog [EN]: Get faster with the new Speed report in Search Console&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/tools/chrome-user-experience-report&quot;&gt;Chrome User Experience Report&lt;/a&gt;의 데이터를 기반으로 속도에 관해 Low, Middle, Fast 세 가지 그룹으로 나눠 문제를 알려줍니다.&lt;br&gt;
-문제의 방법에 관한 자세한 내용은 &lt;a href=&quot;https://github.com/GoogleChrome/lighthouse&quot;&gt;Lighthouse&lt;/a&gt;의 기반이 되는 &lt;a href=&quot;https://developers.google.com/speed/pagespeed/insights/&quot;&gt;PageSpeed Insights&lt;/a&gt;로 이동하여 살펴볼 수 있는 형태로 돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;openjs-foundation-launches-new-professional-certification-program-to-support-the-future-of-node-js-development-openjs-foundation&quot;&gt;OpenJS Foundation launches new professional certification program to support the future of Node.js development - OpenJS Foundation&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://openjsf.org/blog/2019/10/22/openjs-foundation-launches-new-professional-certification-program-to-support-the-future-of-node-js-development/&quot; title=&quot;OpenJS Foundation launches new professional certification program to support the future of Node.js development - OpenJS Foundation&quot;&gt;openjsf.org/blog/2019/10/22/openjs-foundation-launches-new-professional-certification-program-to-support-the-future-of-node-js-development/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;OpenJS Foundation(Node.js Foundation)이 Node.js 애플리케이션 개발과 Node.js 서비스 개발에 대한 두 가지 인증 프로그램을 공개했습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v0-111-0-facebook-flow&quot;&gt;Release v0.111.0 · facebook/flow&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/flow/releases/tag/v0.111.0&quot; title=&quot;Release v0.111.0 · facebook/flow&quot;&gt;github.com/facebook/flow/releases/tag/v0.111.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;FlowType 0.111.0이 릴리스됐습니다.&lt;br&gt;
-Object spread 문법에 의한 객체 병합에 대한 타입 추론이 개선됐습니다.&lt;br&gt;
-재검사 시 성능을 높이는 시험적인 플래그로 &lt;code&gt;experimental.minimal_merge&lt;/code&gt;가 추가됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/flow-type/spreads-common-errors-fixes-9701012e9d58&quot; title=&quot;Now you can spread disjoint unions without getting errors!&quot;&gt;Now you can spread disjoint unions without getting errors!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-npm-blog-release-6-12-1&quot;&gt;The npm Blog — Release: 6.12.1&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.npmjs.org/post/188679949625/release-6121&quot; title=&quot;The npm Blog — Release: 6.12.1&quot;&gt;blog.npmjs.org/post/188679949625/release-6121&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npm 6.12.1이 릴리스됐습니다.&lt;br&gt;
-Node.js 13 지원과 관련한 버그가 수정됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v5-0-0-immerjs-immer&quot;&gt;Release v5.0.0 · immerjs/immer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/immerjs/immer/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · immerjs/immer&quot;&gt;github.com/immerjs/immer/releases/tag/v5.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Immer 5.0.0이 릴리스됐습니다.&lt;br&gt;
-Map과 Set을 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;getting-your-sites-ready-for-the-new-microsoft-edge-microsoft-edge-blog&quot;&gt;Getting your sites ready for the new Microsoft Edge - Microsoft Edge Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/11/04/edge-chromium-release-candidate-get-ready/&quot; title=&quot;Getting your sites ready for the new Microsoft Edge - Microsoft Edge Blog&quot;&gt;blogs.windows.com/msedgedev/2019/11/04/edge-chromium-release-candidate-get-ready/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MSEdge on Chromium RC 버전이 릴리스됐습니다.&lt;br&gt;
-WebDriver 대응, Puppeteer 대응, IEDriverServer 사용한 MSEdge의 IE 모드 실행 등이 소개돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;hands-on-guide-developing-deploying-node-js-apps-in-kubernetes&quot;&gt;Hands-on guide: developing &amp;amp; deploying Node.js apps in Kubernetes&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://learnk8s.io/nodejs-kubernetes-guide/&quot; title=&quot;Hands-on guide: developing &amp;amp; deploying Node.js apps in Kubernetes&quot;&gt;learnk8s.io/nodejs-kubernetes-guide/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Docker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;kubernetes&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Express + Mongo 구조의 Node.js 애플리케이션을 Docker로 실행한 후 minikube를 사용해 로컬의 Kubernates로 클러스터 및 스케일링을 테스트하는 튜토리얼 글입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;5-typescript-tips-to-improve-your-applications&quot;&gt;5 TypeScript tips to improve your applications&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nehalist.io/5-typescript-tips-to-improve-your-architecture/&quot; title=&quot;5 TypeScript tips to improve your applications&quot;&gt;nehalist.io/5-typescript-tips-to-improve-your-architecture/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 타입과 관련한 팁을 소개하는 글입니다.&lt;br&gt;
-Utility types, &lt;code&gt;unknown&lt;/code&gt; 타입 이용, Lookup Types, 라이브러리 타입 확장, 빌트인 타입에 대한 팁을 소개합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-conf-2019-youtube&quot;&gt;React Conf 2019 - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&quot; title=&quot;React Conf 2019 - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React Conf 2019 영상이 공개됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://conf.reactjs.org/&quot; title=&quot;React Conf 2019 - Fall 2019 in Lake Las Vegas, Nevada&quot;&gt;React Conf 2019 - Fall 2019 in Lake Las Vegas, Nevada&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;reacthooks-video-speaker-deck&quot;&gt;ReactHooks로゙video를 능숙하게 다루기 - Speaker Deck(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/narirou/reacthookstevideowocheng-rikonasu&quot; title=&quot;ReactHooks로゙video를 능숙하게 다루기 - Speaker Deck(일본어)&quot;&gt;speakerdeck.com/narirou/reacthookstevideowocheng-rikonasu&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React Hooks를 사용해 Video 플레이어를 만드는 방법을 소개하는 슬라이드입니다.&lt;br&gt;
-&lt;code&gt;&amp;lt;video&amp;gt;&lt;/code&gt; 요소가 갖는 복잡한 상태를 관리, 갱신 빈도에 맞춰 상태 분리, React Hooks 사용 방법 등에 대해서 이야기합니다.利用についてな&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;building-and-re-building-the-airbnb-design-system-maja-wichrowska-tae-kim-youtube&quot;&gt;Building (And Re-Building) the Airbnb Design System | Maja Wichrowska &amp;amp; Tae Kim - YouTube&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=fHQ1WSx41CA&amp;list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&amp;index=10&amp;t=0s&quot; title=&quot;Building (And Re-Building) the Airbnb Design System | Maja Wichrowska &amp;amp; Tae Kim - YouTube&quot;&gt;www.youtube.com/watch?v&amp;#x3D;fHQ1WSx41CA&amp;amp;list&amp;#x3D;PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&amp;amp;index&amp;#x3D;10&amp;amp;t&amp;#x3D;0s&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Design&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Airbnb 디자인 시스템의 과거와 현재 그리고 미래에 대한 발표 영상입니다.&lt;br&gt;
-처음엔 파편화(fragmentation) 문제가 있어 CSS-in-JS를 사용해 디자인을 DSL에 붙였더니 복잡해지고 성능 문제가 생겨서 유연성과 성능을 모두 만족하는 모듈 구조를 목표로 시스템을 재구축하고 있다는 이야기입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;samesite-cookie-recipes&quot;&gt;SameSite cookie recipes&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/samesite-cookie-recipes/&quot; title=&quot;SameSite cookie recipes&quot;&gt;web.dev/samesite-cookie-recipes/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;SameSite Cookies으로의 대응 방법에 대해 작성돼 있습니다.&lt;br&gt;
-SameSite=None에 대응 하고있지 않은 UA를 위해서 레거시한 Cookie와 SameSite 속성을 붙인 쿠키를 모두 전달하는 패턴이 소개돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;official-google-webmaster-central-blog-en-get-faster-with-the-new-speed-report-in-search-console&quot;&gt;Official Google Webmaster Central Blog [EN]: Get faster with the new Speed report in Search Console&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webmasters.googleblog.com/2019/11/search-console-speed-report.html&quot; title=&quot;Official Google Webmaster Central Blog \[EN\]: Get faster with the new Speed report in Search Console&quot;&gt;webmasters.googleblog.com/2019/11/search-console-speed-report.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;google&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;SEO&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Google Search Console에 Chrome UX Report를 사용한 속도에 관한 리포트가 일반 공개됐습니다.&lt;br&gt;
-PC, 모바일 별 속도를 Low, Middle, Fast으로 분류하고 문제의 원인과 개선 방법에 대한 정보를 제공하는 화면이 추가됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;mciastek-sal-performance-focused-lightweight-scroll-animation-library&quot;&gt;mciastek/sal: 🚀 Performance focused, lightweight scroll animation library 🚀&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/mciastek/sal&quot; title=&quot;mciastek/sal: 🚀 Performance focused, lightweight scroll animation library 🚀&quot;&gt;github.com/mciastek/sal&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;animation&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Intersection Observer를 사용한 스크롤 기반 애니메이션 라이브러리입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;mikro-orm-mikro-orm-typescript-orm-for-node-js-based-on-data-mapper-unit-of-work-and-identity-map-patterns-supports-mongodb-mysql-mariadb-postgresql-and-sqlite-databases&quot;&gt;mikro-orm/mikro-orm: TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns. Supports MongoDB, MySQL, MariaDB, PostgreSQL and SQLite databases.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/mikro-orm/mikro-orm&quot; title=&quot;mikro-orm/mikro-orm: TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns. Supports MongoDB, MySQL, MariaDB, PostgreSQL and SQLite databases.&quot;&gt;github.com/mikro-orm/mikro-orm&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;rnode&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;MySQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;MongoDB&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript로 작성한 MongoDB, MySQL, PostgreSQL 등을 지원하는 ORM 맵퍼 라이브러리입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;kroitor-asciichart-nice-looking-lightweight-console-ascii-line-charts-for-nodejs-browsers-and-terminal-no-dependencies&quot;&gt;kroitor/asciichart: Nice-looking lightweight console ASCII line charts ╭┈╯ for NodeJS, browsers and terminal, no dependencies&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/kroitor/asciichart&quot; title=&quot;kroitor/asciichart: Nice-looking lightweight console ASCII line charts ╭┈╯ for NodeJS, browsers and terminal, no dependencies&quot;&gt;github.com/kroitor/asciichart&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;graphic&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;콘솔 환경에 아스키(ascii) 꺾은선 그래프를 그릴 수 있는 라이브러리입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 05 Nov 2019 09:09:40 +0900</pubDate>
-        <link>https://jser.info/ko/2019/11/05/msedge-on-chromium-rcimmer-5.0.0speed-report-on-search-console/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2019/11/05/msedge-on-chromium-rcimmer-5.0.0speed-report-on-search-console/</guid>
-        
-        <category>MSEdge</category>
-        
-        <category>Google</category>
-        
-        <category>Library</category>
         
         
         <category>JSer</category>
