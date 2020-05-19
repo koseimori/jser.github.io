@@ -184,7 +184,7 @@
 </ul>
 
 <p><code>Promise.all</code>の型推論がされています。<br>
-また3.9 β時点では導入される予定だった<a href="https://github.com/microsoft/TypeScript/pull/35998"><code>awaited</code></a>は<a href="https://github.com/microsoft/TypeScript/issues/37897">問題が見つかった</a>ため、3.9時点では導入されないことになりました。</p>
+また3.9 β時点では導入される予定だった<a href="https://github.com/microsoft/TypeScript/pull/35998"><code>awaited</code></a>は<a href="https://github.com/microsoft/TypeScript/pull/37610">問題が見つかった</a>ため、<a href="https://github.com/microsoft/TypeScript/issues/37897">3.9時点では導入されない</a>ことになりました。</p>
 
 <p>その他にはビルドパフォーマンスの改善、Type Errorとなることを期待する<code>// @ts-expect-error</code>コメントの追加などが行われています。<br>
 JSへとコード変換における非互換な変更として、クラスのGetter/Setterを<code>enumerable: true</code>に変換するのではなく、<code>enumerable: false</code>に変換する変更が含まれています。<br>
@@ -227,7 +227,7 @@ Go言語ライクな<a href="https://deno.land/manual/standard_library">Standard
 <li><a href="https://medium.com/@arjunattam/fast-and-reliable-cross-browser-testing-with-playwright-155c0e8a821f">Fast and reliable cross-browser testing with Playwright 🎭</a></li>
 </ul>
 
-<p>PlaywrightはChromium、WebKit、Firefoxを一部<a href="https://github.com/microsoft/playwright/tree/master/browser_patches">Patch</a>をあててつつサポートしています。<br>
+<p>PlaywrightはChromium、WebKit、Firefoxをそれぞれに<a href="https://github.com/microsoft/playwright/tree/master/browser_patches">Patch</a>をあててつつサポートしています。<br>
 PuppeteerもChromium、Firefoxをサポートしていますが、<a href="https://chromedevtools.github.io/devtools-protocol/">Chrome DevTools Protocol</a>(CDP)に基づいたサポートとなっています。そのため、CDPそのものを扱っていないWebKitはPuppeteerではサポートされていません。</p>
 
 <p>Playwrightは、Puppeteerをforkしてこの辺の違いもカバーしクロスブラウザのテストフレームワークとして使うのに適したAPI/エミュレーション機能を持つことを目的としています。</p>
