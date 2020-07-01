@@ -5,9 +5,275 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 23 Jun 2020 15:22:16 +0900</pubDate>
-    <lastBuildDate>Tue, 23 Jun 2020 15:22:16 +0900</lastBuildDate>
+    <pubDate>Wed, 01 Jul 2020 09:19:33 +0900</pubDate>
+    <lastBuildDate>Wed, 01 Jul 2020 09:19:33 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-06-30のJS: Angular 10、TypeScript 4.0 Beta、Safari 14の変更点(Tracking Prevention)</title>
+        <description>&lt;p&gt;JSer.info #494 - Angular 10がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.angular.io/tagged/release-notes&quot;&gt;Version 10 of Angular Now Available - Angular Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/angular/angular/compare/10.0.0-rc.6...10.0.0&quot;&gt;angular/CHANGELOG.md at master · angular/angular&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.infoworld.com/article/3537449/whats-new-in-angular-10.html&quot;&gt;What’s new in Angular 10 | InfoWorld&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;依存するTypeScriptがそれぞれ&lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html&quot;&gt;TypeScript 3.9&lt;/a&gt;、&lt;a href=&quot;https://github.com/microsoft/tslib/releases/tag/2.0.0&quot;&gt;TSLib 2.0&lt;/a&gt;、&lt;a href=&quot;https://github.com/palantir/tslint/releases/tag/6.0.0&quot;&gt;TSLint 6&lt;/a&gt;にアップデートされています。&lt;/p&gt;
+
+&lt;p&gt;Angular MaterialにDate Range Pickerの追加されています。&lt;br&gt;
+CommonJSを取り込むと警告がでるようになりES Momodulesを使うことを推奨するようになりました。&lt;br&gt;
+&lt;code&gt;ng new&lt;/code&gt;に&lt;code&gt;--strict&lt;/code&gt;オプションの追加され、TypeScriptなどのビルド時の&lt;code&gt;strict&lt;/code&gt;フラグをまとめて有効化できるようになっています。&lt;br&gt;
+また新しいプロジェクトでのデフォルトのbrowserslistsが更新され、ES5のビルドを生成しないようになっています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;TypeScript 4.0 Betaがリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-beta/&quot;&gt;Announcing TypeScript 4.0 Beta | TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Variadic Tuple Types、Labeled Tuple Elements、コンストラクタからClass Propertyの推論ができるようになっています&lt;br&gt;
+また&lt;code&gt;catch&lt;/code&gt;節の変数（識別子）の型として&lt;code&gt;unknown&lt;/code&gt;を指定できるようになっています。&lt;br&gt;
+その他にはStage 3のlogical assignmentをサポート、&lt;code&gt;jsxFragmentFactory&lt;/code&gt;オプションのサポート、VSCodeで起動速度を向上させるためのPartial Editing Modeのサポートなどが含まれています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Safari 14のBetaが公開されていますが、同様の変更内容を含むSafari Technology Previewが公開されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webkit.org/blog/10875/release-notes-for-safari-technology-preview-109-with-safari-14-features/&quot;&gt;Release Notes for Safari Technology Preview 109 with Safari 14 Features | WebKit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/safari-release-notes/safari-14-beta-release-notes&quot;&gt;Safari 14 Beta Release Notes | Apple Developer Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、&lt;a href=&quot;https://webkit.org/tracking-prevention/&quot;&gt;Tracking Prevention in WebKit | WebKit&lt;/a&gt;というドキュメントでは、&lt;br&gt;
+Safariのトラッキング防止に関する用語の解説や具体的にブロックするものについて解説されています。&lt;br&gt;
+Fingerprintingが可能になる可能性があるため、次のAPIを実装する予定がないことについても書かれています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Web Bluetooth&lt;/li&gt;
+&lt;li&gt;Web MIDI API&lt;/li&gt;
+&lt;li&gt;Magnetometer API&lt;/li&gt;
+&lt;li&gt;Web NFC API&lt;/li&gt;
+&lt;li&gt;Device Memory API&lt;/li&gt;
+&lt;li&gt;Network Information API&lt;/li&gt;
+&lt;li&gt;Battery Status API&lt;/li&gt;
+&lt;li&gt;Ambient Light Sensor&lt;/li&gt;
+&lt;li&gt;HDCP Policy Check extension for EME&lt;/li&gt;
+&lt;li&gt;Proximity Sensor&lt;/li&gt;
+&lt;li&gt;WebHID&lt;/li&gt;
+&lt;li&gt;Serial API&lt;/li&gt;
+&lt;li&gt;Web USB&lt;/li&gt;
+&lt;li&gt;Geolocation Sensor (background geolocation)&lt;/li&gt;
+&lt;li&gt;User Idle Detection&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;FirefoxもこれらのAPIのうちいくつかに関しては&lt;code&gt;harmful&lt;/code&gt;という立場を示しています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://mozilla.github.io/standards-positions/&quot;&gt;Mozilla Specification Positions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;version-10-of-angular-now-available-angular-blog&quot;&gt;Version 10 of Angular Now Available - Angular Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.angular.io/version-10-of-angular-now-available-78960babd41&quot; title=&quot;Version 10 of Angular Now Available - Angular Blog&quot;&gt;blog.angular.io/version-10-of-angular-now-available-78960babd41&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Angular 10.0.0リリース。&lt;br&gt;
+Angular MaterialにDate Range Pickerの追加。&lt;br&gt;
+CommonJSを取り込むと警告がでるように、&lt;code&gt;ng new&lt;/code&gt;に&lt;code&gt;--strict&lt;/code&gt;オプションの追加、TypeScript 3.9へのアップデート、デフォルトのbrowserslistsの更新など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-typescript-4-0-beta-typescript&quot;&gt;Announcing TypeScript 4.0 Beta | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-beta/&quot; title=&quot;Announcing TypeScript 4.0 Beta | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-4-0-beta/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 4.0 Betaリリース。&lt;br&gt;
+Variadic Tuple Types、Labeled Tuple Elements、コンストラクタからClass Propertyの推論ができるように。&lt;br&gt;
+&lt;code&gt;catch&lt;/code&gt;節の変数が&lt;code&gt;any&lt;/code&gt;から&lt;code&gt;unknown&lt;/code&gt;に変更。&lt;br&gt;
+Stage 3のlogical assignmentをサポート、&lt;code&gt;jsxFragmentFactory&lt;/code&gt;オプションのサポート、VSCodeでPartial Editing Modeのサポートなど。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-109-with-safari-14-features-webkit&quot;&gt;Release Notes for Safari Technology Preview 109 with Safari 14 Features | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10875/release-notes-for-safari-technology-preview-109-with-safari-14-features/&quot; title=&quot;Release Notes for Safari Technology Preview 109 with Safari 14 Features | WebKit&quot;&gt;webkit.org/blog/10875/release-notes-for-safari-technology-preview-109-with-safari-14-features/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology 109リリース。&lt;br&gt;
+Safari 14の変更も含まれる。&lt;br&gt;
+WebExtensions、Private report、Web Authentication、private class fieldsのサポート。&lt;br&gt;
+Flashのサポート終了など。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/safari-release-notes/safari-14-beta-release-notes&quot; title=&quot;Safari 14 Beta Release Notes | Apple Developer Documentation&quot;&gt;Safari 14 Beta Release Notes | Apple Developer Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;hapi-js-on-twitter-some-un-hapi-and-joi-less-news-twitter&quot;&gt;hapi.js on Twitter: &amp;quot;Some un-hapi and joi-less news...&amp;quot; / Twitter&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/hapijs/status/1275887984114413569&quot; title=&quot;hapi.js on Twitter: \&amp;quot;Some un-hapi and joi-less news...\&amp;quot; / Twitter&quot;&gt;twitter.com/hapijs/status/1275887984114413569&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsフレームワークであるhapiのコア開発者がhapiの開発を終了するという宣言をした。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://app.slack.com/client/T6ATU7T16/C015JQPME23/thread/C015JQPME23-1593110366.302100&quot; title=&quot;Slack | end | hapi hour&quot;&gt;Slack | end | hapi hour&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://hapi.dev/&quot; title=&quot;hapi.dev - The simple, secure framework developers trust&quot;&gt;hapi.dev - The simple, secure framework developers trust&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;async-clipboard-api-webkit&quot;&gt;Async Clipboard API | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10855/async-clipboard-api/&quot; title=&quot;Async Clipboard API | WebKit&quot;&gt;webkit.org/blog/10855/async-clipboard-api/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari 13.1でサポートされたAsync Clipboard APIについて。&lt;br&gt;
+クリップボードの読み書き、Security/Privacyにおける制限について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;whats-new-in-devtools-chrome-85-web-google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 85)  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/06/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 85)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2020/06/devtools&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 85の開発者ツールの変更点について。&lt;br&gt;
+CSSOM経由で追加されたCSSを編集に対応、Lighthouse 6にアップデート、App shortcutsについての警告に対応、&lt;code&gt;respondWith&lt;/code&gt;がTimingタブに表示。&lt;br&gt;
+パフォーマンスパネルにJavaScriptのコンパイルキャッシュの情報を表示するようになるなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;refactoring-optional-chaining-into-a-large-codebase-lessons-learned-lea-verou&quot;&gt;Refactoring optional chaining into a large codebase: lessons learned – Lea Verou&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://lea.verou.me/2020/06/refactoring-optional-chaining-into-a-large-codebase-lessons-learned/&quot; title=&quot;Refactoring optional chaining into a large codebase: lessons learned – Lea Verou&quot;&gt;lea.verou.me/2020/06/refactoring-optional-chaining-into-a-large-codebase-lessons-learned/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;refacoring&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ES2020で入ったOptional Chainingを使ったリファクタリングについて。&lt;br&gt;
+Optional Chainingに書き換えできるパターン、書き換えてはいけないパターンについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-qiita&quot;&gt;Reactのレンダリングに関する完全ガイド - Qiita&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/hellokenta/items/6b795501a0a8921bb6b5&quot; title=&quot;Reactのレンダリングに関する完全ガイド - Qiita&quot;&gt;qiita.com/hellokenta/items/6b795501a0a8921bb6b5&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;translate&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Complete Guide to React Rendering Behaviorの翻訳。&lt;br&gt;
+レンダリングとコミットのフェーズ、レンダリングの動作、パフォーマンスの測定、再レンダリングのタイミングについてなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/&quot; title=&quot;Blogged Answers: A (Mostly) Complete Guide to React Rendering Behavior · Mark&amp;amp;#x27;s Dev Blog&quot;&gt;Blogged Answers: A (Mostly) Complete Guide to React Rendering Behavior · Mark&amp;#39;s Dev Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;tracking-prevention-in-webkit-webkit&quot;&gt;Tracking Prevention in WebKit | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/tracking-prevention/&quot; title=&quot;Tracking Prevention in WebKit | WebKit&quot;&gt;webkit.org/tracking-prevention/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;privacy&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safariのトラッキング防止について解説しているドキュメント。&lt;br&gt;
+First-Party、Third-PartyでのCookie、Storageの制限、Fingerprintingに利用できるため実装しないWeb API、ITPについてなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webkit.org/tracking-prevention-policy/&quot; title=&quot;Tracking Prevention Policy | WebKit&quot;&gt;Tracking Prevention Policy | WebKit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webpack-5-miniseries-tobias-koppers-webpack-youtube&quot;&gt;webpack 5 Miniseries - Tobias Koppers, webpack - YouTube&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=3c-RFpaiUT8&amp;list=PLyspMSh4XhLP-mqulUMcaqTbLo-ZJxSX5&amp;index=34&amp;t=0s&quot; title=&quot;webpack 5 Miniseries - Tobias Koppers, webpack - YouTube&quot;&gt;www.youtube.com/watch?v&amp;#x3D;3c-RFpaiUT8&amp;amp;list&amp;#x3D;PLyspMSh4XhLP-mqulUMcaqTbLo-ZJxSX5&amp;amp;index&amp;#x3D;34&amp;amp;t&amp;#x3D;0s&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webpack 5の変更についての紹介動画。&lt;br&gt;
+自動的なNode.jsのpolyfillの削除、生成コードのESバージョンを選択、ビルドのパフォーマンスやキャッシュの改善、最適化の改善やログの改善、Module Federationについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;openjs-world-2020-youtube&quot;&gt;OpenJS World 2020 - YouTube&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLyspMSh4XhLP-mqulUMcaqTbLo-ZJxSX5&quot; title=&quot;OpenJS World 2020 - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PLyspMSh4XhLP-mqulUMcaqTbLo-ZJxSX5&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Conference&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;OpenJS World 2020の動画一覧&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://events.linuxfoundation.org/openjs-world/&quot; title=&quot;OpenJS World | Linux Foundation Events&quot;&gt;OpenJS World | Linux Foundation Events&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ealush-vest-vest-effortless-validations&quot;&gt;ealush/vest: Vest - effortless validations&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ealush/vest&quot; title=&quot;ealush/vest: Vest - effortless validations&quot;&gt;github.com/ealush/vest&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;バリデーションライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;nastyox-rando-js-the-worlds-easiest-most-powerful-random-function&quot;&gt;nastyox/Rando.js: The world&amp;#39;s easiest, most powerful random function.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nastyox/Rando.js&quot; title=&quot;nastyox/Rando.js: The world&amp;#39;s easiest, most powerful random function.&quot;&gt;github.com/nastyox/Rando.js&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;指定範囲のランダムな値を生成するライブラリ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;talking-typescript-with-the-engineer-who-leads-the-team-stack-overflow-blog&quot;&gt;Talking TypeScript with the engineer who leads the team - Stack Overflow Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.blog/2020/06/15/talking-typescript-with-ryan-cavanaugh/&quot; title=&quot;Talking TypeScript with the engineer who leads the team - Stack Overflow Blog&quot;&gt;stackoverflow.blog/2020/06/15/talking-typescript-with-ryan-cavanaugh/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Interview&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Microsoft&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScriptのプロジェクトリードであるRyan Cavanaughのインタビュー。&lt;br&gt;
+作られた理由、Angularでの採用がターニングポイント、チーム構成、エディタとコンパイラサービス、JavaScriptのエコシステムについて&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 30 Jun 2020 00:29:41 +0900</pubDate>
+        <link>https://jser.info/2020/06/30/angular-10-typescript-4.0-beta-safari-14tracking-prevention/</link>
+        <guid isPermaLink="true">https://jser.info/2020/06/30/angular-10-typescript-4.0-beta-safari-14tracking-prevention/</guid>
+        
+        <category>Angular</category>
+        
+        <category>TypeScript</category>
+        
+        <category>Safari</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-06-23のJS: ECMAScript 2020リリース、Bootstrap 5 alpha、Safari 14 Beta</title>
@@ -2512,305 +2778,6 @@ Svelteと似たコンセプトで、Babelプラインとして実装したコン
         <category>HTTP</category>
         
         <category>Framework</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2020-04-20のJS: puppeteer 3.0.0、Chrome 83 Beta、Vue.js 3.0 Beta</title>
-        <description>&lt;p&gt;JSer.info #484 - Headless Chromeを扱うライブラリであるpuppeteer 3.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/puppeteer/puppeteer/releases/tag/v3.0.0&quot;&gt;Release v3.0.0 · puppeteer/puppeteer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Chromium 81.0.4044.0へアップデートされています。&lt;br&gt;
-また、&lt;a href=&quot;https://github.com/puppeteer/puppeteer/releases/tag/v2.1.0&quot;&gt;v2.1.0&lt;/a&gt;でFirefoxをサポートしていますが、インストール時に&lt;code&gt;PUPPETEER_PRODUCT=firefox npm install&lt;/code&gt;とすることでFirefox Nightlyのバイナリをダウンロードできるようになっています。&lt;/p&gt;
-
-&lt;p&gt;その他にはNode.js 8のサポート終了やコードベースをTypeScriptへマイグレーションしていくなどの変更が含まれています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Chrome 83 Betaがリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2020/04/chrome-83-beta-cross-site-scripting.html&quot;&gt;Chromium Blog: Chrome 83 Beta: Cross-site Scripting Protection, Improved Form Controls, and Safe Cross-origin Resource Sharing&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jser.info/2020/04/14/jquery-3.5.0securify-fix-firefox-75-chrome-81/&quot;&gt;前回&lt;/a&gt;お伝えしていたようにChrom 82はスキップされ、Chrome 83は本来より3週間早くリリースされます。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features/schedule&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://chromiumdash.appspot.com/schedule&quot;&gt;Chromium Dash&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;CSPとしてTrusted Typeを指定できるように、Form UI/Accessibilityの改善、&lt;code&gt;Cross-Origin-Embedder-Policy&lt;/code&gt;(COEP)と&lt;code&gt;Cross-Origin-Opener-Policy&lt;/code&gt;(COOP)の実装などが行われています。詳細は次の記事で解説されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/coop-coep/&quot;&gt;Making your website &amp;quot;cross-origin isolated&amp;quot; using COOP and COEP&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Origin Trialとして&lt;a href=&quot;https://web.dev/native-file-system/&quot;&gt;新しいNative File System&lt;/a&gt;、&lt;a href=&quot;https://web.dev/monitor-total-page-memory-usage/&quot;&gt;&lt;code&gt;Performance.measureMemory()&lt;/code&gt;&lt;/a&gt;、&lt;a href=&quot;https://chromestatus.com/feature/6031161734201344&quot;&gt;&lt;code&gt;Scheduler.postTask()&lt;/code&gt;&lt;/a&gt;が追加されています。&lt;br&gt;
-その他には、ARIA Annotations 1.3 draftの対応、Barcode Detection API、CSSの&lt;code&gt;@supports selector()&lt;/code&gt;のサポートなども行われています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.google.com/presentation/d/1LHp-8hEtXEMSE1fd6YLAhYmtndQelQKbWlGggZKe4y8/edit#slide=id.p&quot;&gt;State of Vue Apr 16 2020&lt;/a&gt;というスライドでは現在開発中のVue 3のBeta版が公開されたことについて発表されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md#300-beta1-2020-04-16&quot;&gt;vue-next/CHANGELOG.md at master · vuejs/vue-next&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;このスライドでは、Vue 3の主な変更について書かれています。&lt;br&gt;
-Composition API、Fragment、Teleport、Suspense、Custom Renderer APIについて紹介されています。&lt;br&gt;
-また、Tree-shakingの対応によるファイルサイズの削減やTypeScriptのサポートについても書かれています。&lt;/p&gt;
-
-&lt;p&gt;Vue 3のロードマップについては次のProject Boardを参照してください。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue/projects/6&quot;&gt;Roadmap&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v13-13-0-current-node-js&quot;&gt;Node v13.13.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v13.13.0/&quot; title=&quot;Node v13.13.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v13.13.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 13.13.0リリース。&lt;br&gt;
-&lt;code&gt;fs.readv&lt;/code&gt;の追加、&lt;code&gt;fs.readSync&lt;/code&gt;に&lt;code&gt;offset&lt;/code&gt;と&lt;code&gt;length&lt;/code&gt;オプションの追加、&lt;code&gt;dns.ALL&lt;/code&gt;フラグの追加。&lt;br&gt;
-HTTPヘッダサイズのデフォルト値を8KBから16KBに変更など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v3-0-0-puppeteer-puppeteer&quot;&gt;Release v3.0.0 · puppeteer/puppeteer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/puppeteer/puppeteer/releases/tag/v3.0.0&quot; title=&quot;Release v3.0.0 · puppeteer/puppeteer&quot;&gt;github.com/puppeteer/puppeteer/releases/tag/v3.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Puppeteer 3.0.0リリース。&lt;br&gt;
-Chromium 81にアップデート、Firefox Nightlyのバイナリをインストールできるように、Node.js 8のサポート終了など。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;chromium-blog-chrome-83-beta-cross-site-scripting-protection-improved-form-controls-and-safe-cross-origin-resource-sharing&quot;&gt;Chromium Blog: Chrome 83 Beta: Cross-site Scripting Protection, Improved Form Controls, and Safe Cross-origin Resource Sharing&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.chromium.org/2020/04/chrome-83-beta-cross-site-scripting.html&quot; title=&quot;Chromium Blog: Chrome 83 Beta: Cross-site Scripting Protection, Improved Form Controls, and Safe Cross-origin Resource Sharing&quot;&gt;blog.chromium.org/2020/04/chrome-83-beta-cross-site-scripting.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 83 Betaリリース。&lt;br&gt;
-CSPとしてTrusted Typeを指定できるように、Form UI/Accessibilityの改善、COOPとCOEPの実装。&lt;br&gt;
-Origin Trialとして新しいNative File System、&lt;code&gt;Performance.measureMemory()&lt;/code&gt;、&lt;code&gt;Scheduler.postTask()&lt;/code&gt;の追加。&lt;br&gt;
-その他には、ARIA Annotations 1.3 draftの対応、Barcode Detection API、CSSの&lt;code&gt;@supports selector()&lt;/code&gt;のサポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2019/10/15/form-controls-microsoft-edge-chromium/&quot; title=&quot;Improving form controls in Microsoft Edge and Chromium - Microsoft Edge Blog&quot;&gt;Improving form controls in Microsoft Edge and Chromium - Microsoft Edge Blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/coop-coep/&quot; title=&quot;Making your website &amp;amp;amp;quot;cross-origin isolated&amp;amp;amp;quot; using COOP and COEP&quot;&gt;Making your website &amp;quot;cross-origin isolated&amp;quot; using COOP and COEP&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/native-file-system/&quot; title=&quot;The Native File System API: Simplifying access to local files&quot;&gt;The Native File System API: Simplifying access to local files&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v1-7-0-pikapkg-snowpack&quot;&gt;Release v1.7.0 · pikapkg/snowpack&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/pikapkg/snowpack/releases/tag/v1.7.0&quot; title=&quot;Release v1.7.0 · pikapkg/snowpack&quot;&gt;github.com/pikapkg/snowpack/releases/tag/v1.7.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Snowpack 1.7.0リリース。&lt;br&gt;
-&lt;code&gt;--env&lt;/code&gt;のサポート、Babelプラグインの更新、JSXとTypeScriptのサポート。&lt;br&gt;
-また Snowpack 2.0に向けて変更予定について書かれている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;addyosmani-com-profiling-react-js-performance&quot;&gt;AddyOsmani.com - Profiling React.js Performance&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://addyosmani.com/blog/profiling-react-js/&quot; title=&quot;AddyOsmani.com - Profiling React.js Performance&quot;&gt;addyosmani.com/blog/profiling-react-js/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Reactアプリのレンダリングパフォーマンスの計測方法について。&lt;br&gt;
-ExperimentalなReact Profiler API、Interaction tracingを使った方法。&lt;br&gt;
-PuppeteerやUser Timing API、Lighthouseを使ったReactに依存しない計測についてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;a-tour-of-inline-caching-with-delete-webkit&quot;&gt;A Tour of Inline Caching with Delete | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10298/inline-caching-delete/&quot; title=&quot;A Tour of Inline Caching with Delete | WebKit&quot;&gt;webkit.org/blog/10298/inline-caching-delete/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webkit&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;delete&lt;/code&gt;演算子でプロパティを削除するオブジェクトの構造が変わって構造IDが変わることで、構造IDをkeyにしてキャッシュするInline Cachingが無効化されて遅くなる問題について。&lt;br&gt;
-JSCではこのdeleteによる削除遷移に対する最適化を行うことで、Emberのデバッグビルドのようなdeleteを多用するアプリでのパフォーマンスを改善したという話&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;making-your-website-cross-origin-isolated-using-coop-and-coep&quot;&gt;Making your website &amp;quot;cross-origin isolated&amp;quot; using COOP and COEP&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/coop-coep/&quot; title=&quot;Making your website \&amp;quot;cross-origin isolated\&amp;quot; using COOP and COEP&quot;&gt;web.dev/coop-coep/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;SharedArrayBuffer&lt;/code&gt;など高度な機能は&lt;code&gt;self.crossOriginIsolated&lt;/code&gt;が&lt;code&gt;true&lt;/code&gt;の場合に利用できる。&lt;br&gt;
-&lt;code&gt;crossOriginIsolated&lt;/code&gt;を有効にするには、&lt;code&gt;Cross-Origin-Embedder-Policy&lt;/code&gt;と&lt;code&gt;Cross-Origin-Opener-Policy&lt;/code&gt;の対応が必要という話。&lt;br&gt;
-&lt;code&gt;Cross-Origin-*&lt;/code&gt; HTTPヘッダーの動きについての解説&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/whatwg/html/pull/4734&quot; title=&quot;Raise the bar for SharedArrayBuffer via postMessage() by annevk · Pull Request #4734 · whatwg/html&quot;&gt;Raise the bar for SharedArrayBuffer via postMessage() by annevk · Pull Request #4734 · whatwg/html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.google.com/document/d/1zDlfvfTJ_9e8Jdc8ehuV4zMEu9ySMCiTGMS9y0GU92k/edit&quot; title=&quot;COOP and COEP explained - Google ドキュメント&quot;&gt;COOP and COEP explained - Google ドキュメント&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/same-site-same-origin/&quot; title=&quot;Understanding &amp;amp;amp;quot;same-site&amp;amp;amp;quot; and &amp;amp;amp;quot;same-origin&amp;amp;amp;quot;&quot;&gt;Understanding &amp;quot;same-site&amp;quot; and &amp;quot;same-origin&amp;quot;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;speed-up-your-angular-app-14-angular-optimization-tips-grapecity&quot;&gt;Speed Up Your Angular App - 14 Angular Optimization Tips | GrapeCity&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.grapecity.com/blogs/14-ways-to-speed-up-your-angular-app&quot; title=&quot;Speed Up Your Angular App - 14 Angular Optimization Tips | GrapeCity&quot;&gt;www.grapecity.com/blogs/14-ways-to-speed-up-your-angular-app&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Angular 9を使ったアプリの最適化Tips。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;whats-new-in-ecmascript-2020-strict-mode&quot;&gt;What&amp;#39;s new in ECMAScript 2020 | Strict Mode&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.strictmode.io/articles/whats-new-es2020/&quot; title=&quot;What&amp;#39;s new in ECMAScript 2020 | Strict Mode&quot;&gt;www.strictmode.io/articles/whats-new-es2020/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ES2020で追加される構文やメソッドについての紹介記事&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;vime-js-vime-all-your-media-player-needs-in-one-place-a-modern-alternative-to-videojs-and-plyr-supports-html5-hls-dash-youtube-vimeo-dailymotion-and-more-to-come&quot;&gt;vime-js/vime: All your media player needs in one place - a modern alternative to Videojs and Plyr. Supports Html5, Hls, Dash, YouTube, Vimeo, Dailymotion and more to come.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/vime-js/vime&quot; title=&quot;vime-js/vime: All your media player needs in one place - a modern alternative to Videojs and Plyr. Supports Html5, Hls, Dash, YouTube, Vimeo, Dailymotion and more to come.&quot;&gt;github.com/vime-js/vime&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;プラグインで拡張できるVideoプレイヤーライブラリ。&lt;br&gt;
-機能ごとにモジュール化されているため、必要なモジュールだけを利用できる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;state-of-vue-apr-16-2020-google&quot;&gt;State of Vue Apr 16 2020 - Google スライド&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.google.com/presentation/d/1LHp-8hEtXEMSE1fd6YLAhYmtndQelQKbWlGggZKe4y8/edit#slide=id.p&quot; title=&quot;State of Vue Apr 16 2020 - Google スライド&quot;&gt;docs.google.com/presentation/d/1LHp-8hEtXEMSE1fd6YLAhYmtndQelQKbWlGggZKe4y8/edit#slide&amp;#x3D;id.p&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Vue.js 3βリリースについてのスライド。&lt;br&gt;
-Vue 3の主な変更について。&lt;br&gt;
-Composition API、Fragment、Teleport、Suspense、Custom Renderer APIの対応など。&lt;br&gt;
-また、Tree-shakingの対応によるファイルサイズの削減やTypeScriptのサポートについて&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md#300-beta1-2020-04-16&quot; title=&quot;vue-next/CHANGELOG.md at master · vuejs/vue-next&quot;&gt;vue-next/CHANGELOG.md at master · vuejs/vue-next&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;vuln-cost-security-scanner-for-vs-code-snyk&quot;&gt;Vuln Cost - security scanner for VS Code | Snyk&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://snyk.io/security-scanner-vuln-cost/&quot; title=&quot;Vuln Cost - security scanner for VS Code | Snyk&quot;&gt;snyk.io/security-scanner-vuln-cost/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;VSCode&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;VSCodeで&lt;code&gt;require&lt;/code&gt;、&lt;code&gt;import&lt;/code&gt;しているモジュールの脆弱性の数を表示する拡張機能&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;css-via-inline-variables&quot;&gt;CSS via inline variables&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://codepen.io/WebReflection/pen/gOawwew&quot; title=&quot;CSS via inline variables&quot;&gt;codepen.io/WebReflection/pen/gOawwew&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;example&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;style&lt;/code&gt;属性にCSS Custom Propertiesを定義して、CSS側でCSS Custom Propertiesの変数の読み取りと初期値を指定するパターン。&lt;br&gt;
-利用側でCSS値をinjectできる仕組み&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://twitter.com/WebReflection/status/1252172398406877185&quot;&gt;Andrea Giammarchi on Twitter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;aeroheim-midori-library-for-animated-image-backgrounds&quot;&gt;aeroheim/midori: library for animated image backgrounds&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/aeroheim/midori&quot; title=&quot;aeroheim/midori: library for animated image backgrounds&quot;&gt;github.com/aeroheim/midori&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Canvas/WebGLを使った背景画像のアニメーションを描画するライブラリ。&lt;br&gt;
-読み込んだ背景画像に対してtransitionsやeffectsを設定できる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;yusufnb-verify-json-verify-json&quot;&gt;yusufnb/verify-json: verify-json&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/yusufnb/verify-json&quot; title=&quot;yusufnb/verify-json: verify-json&quot;&gt;github.com/yusufnb/verify-json&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JSON&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JSONバリデーションライブラリ。&lt;br&gt;
-スキーマを定義してJSONオブジェクトをバリデーションできる&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript-primer-azu-suguru-inatomi-amazon&quot;&gt;JavaScript Primer 迷わないための入門書 | azu, Suguru Inatomi |本 | 通販 | Amazon&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4048930737/&quot; title=&quot;JavaScript Primer 迷わないための入門書 | azu, Suguru Inatomi |本 | 通販 | Amazon&quot;&gt;www.amazon.co.jp/dp/4048930737/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2020年4月27日発売&lt;br&gt;
-JavaScriptの入門書。&lt;br&gt;
-&lt;a href=&quot;https://jsprimer.net/&quot;&gt;https://jsprimer.net/&lt;/a&gt; の書籍版。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://efcl.info/2020/04/14/pre-jsprimer/&quot; title=&quot;JavaScript Primerの書籍版が4月27日に発売予定です！ | Web Scratch&quot;&gt;JavaScript Primerの書籍版が4月27日に発売予定です！ | Web Scratch&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;typescript-2-kindle-amazon&quot;&gt;速習 TypeScript 第2版 速習シリーズ | 山田祥寛 | 工学 | Kindleストア | Amazon&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B086JKVGPB/&quot; title=&quot;速習 TypeScript 第2版 速習シリーズ | 山田祥寛 | 工学 | Kindleストア | Amazon&quot;&gt;www.amazon.co.jp/dp/B086JKVGPB/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScriptについての電子書籍&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://codezine.jp/article/detail/12203&quot; title=&quot;【新刊紹介】『速習 TypeScript 第2版』発売、最新の3.8系にも対応：CodeZine（コードジン）&quot;&gt;【新刊紹介】『速習 TypeScript 第2版』発売、最新の3.8系にも対応：CodeZine（コードジン）&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Mon, 20 Apr 2020 23:30:38 +0900</pubDate>
-        <link>https://jser.info/2020/04/20/puppeteer-3.0.0-chrome-83-beta-vue.js-3.0-beta/</link>
-        <guid isPermaLink="true">https://jser.info/2020/04/20/puppeteer-3.0.0-chrome-83-beta-vue.js-3.0-beta/</guid>
-        
-        <category>puppeteer</category>
-        
-        <category>Chrome</category>
-        
-        <category>Vue</category>
         
         
         <category>JSer</category>
