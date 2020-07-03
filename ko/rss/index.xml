@@ -5,9 +5,271 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 01 Jul 2020 09:19:42 +0900</pubDate>
-    <lastBuildDate>Wed, 01 Jul 2020 09:19:42 +0900</lastBuildDate>
+    <pubDate>Fri, 03 Jul 2020 17:46:27 +0900</pubDate>
+    <lastBuildDate>Fri, 03 Jul 2020 17:46:27 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-06-30: Angular 10, TypeScript 4.0 Beta, Safari 14 변경 사항(Tracking Prevention)</title>
+        <description>&lt;p&gt;JSer.info #494 - Angular 10이 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.angular.io/tagged/release-notes&quot;&gt;Version 10 of Angular Now Available - Angular Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/angular/angular/compare/10.0.0-rc.6...10.0.0&quot;&gt;angular/CHANGELOG.md at master · angular/angular&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.infoworld.com/article/3537449/whats-new-in-angular-10.html&quot;&gt;What’s new in Angular 10 | InfoWorld&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;의존하는 타입스크립트 관련 환경이 &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html&quot;&gt;TypeScript 3.9&lt;/a&gt;, &lt;a href=&quot;https://github.com/microsoft/tslib/releases/tag/2.0.0&quot;&gt;TSLib 2.0&lt;/a&gt;, &lt;a href=&quot;https://github.com/palantir/tslint/releases/tag/6.0.0&quot;&gt;TSLint 6&lt;/a&gt;으로 갱신됐습니다.&lt;/p&gt;
+
+&lt;p&gt;Angular Material에 Date Range Picker가 추가됐습니다.&lt;br&gt;
+CommonJS를 사용하면 경고가 출력되며 ES Modules 사용을 권장합니다.&lt;br&gt;
+&lt;code&gt;ng new&lt;/code&gt;에 &lt;code&gt;--strict&lt;/code&gt; 옵션이 추가돼 TypeScript 등의 빌드 시 &lt;code&gt;strict&lt;/code&gt; 플래그를 모아서 활성화할 수 있습니다.&lt;br&gt;
+또, 새로운 프로젝트의 기본 browserlists에서 오래된 브라우저를 제거하고 ES5 버전 빌드를 생성하지 않도록 변경됐습니다. &lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;TypeScript 4.0 Beta가 릴리스됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-beta/&quot;&gt;Announcing TypeScript 4.0 Beta | TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Variadic Tuple Types, Labeled Tuple Elements 등이 추가됐고 생성자를 토대로 Class Property 타입을 추론할 수 있도록 변경됐습니다.&lt;br&gt;
+또, &lt;code&gt;catch&lt;/code&gt; 정의 변수(식별자)의 타입으로 &lt;code&gt;unknown&lt;/code&gt;을 지정할 수 있게 됐습니다.&lt;br&gt;
+이 외에 Stage 3의 logical assignment, &lt;code&gt;jsxFragmentFactory&lt;/code&gt; 옵션, VSCode에서의 동작 속도를 향상 시키기 위한 Partial Editing Mode를 지원합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Safari 14 Beta가 공개돼 있으며 이와 동일한 변경 내용을 포함하는 Safari Technology Preview가 공개됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webkit.org/blog/10875/release-notes-for-safari-technology-preview-109-with-safari-14-features/&quot;&gt;Release Notes for Safari Technology Preview 109 with Safari 14 Features | WebKit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/safari-release-notes/safari-14-beta-release-notes&quot;&gt;Safari 14 Beta Release Notes | Apple Developer Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;또, &lt;a href=&quot;https://webkit.org/tracking-prevention/&quot;&gt;Tracking Prevention in WebKit | WebKit&lt;/a&gt; 문서에는 Safari의 트래킹 방지에 관한 용어 해설과 구체적으로 어떠한 것을 블록하는지 작성돼 있습니다.&lt;br&gt;
+Fingerprinting이 가능할 수 있기 때문에 다음 API를 구현할 예정이 없다는 내용도 작성돼 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Web Bluetooth&lt;/li&gt;
+&lt;li&gt;Web MIDI API&lt;/li&gt;
+&lt;li&gt;Magnetometer API&lt;/li&gt;
+&lt;li&gt;Web NFC API&lt;/li&gt;
+&lt;li&gt;Device Memory API&lt;/li&gt;
+&lt;li&gt;Network Information API&lt;/li&gt;
+&lt;li&gt;Battery Status API&lt;/li&gt;
+&lt;li&gt;Ambient Light Sensor&lt;/li&gt;
+&lt;li&gt;HDCP Policy Check extension for EME&lt;/li&gt;
+&lt;li&gt;Proximity Sensor&lt;/li&gt;
+&lt;li&gt;WebHID&lt;/li&gt;
+&lt;li&gt;Serial API&lt;/li&gt;
+&lt;li&gt;Web USB&lt;/li&gt;
+&lt;li&gt;Geolocation Sensor (background geolocation)&lt;/li&gt;
+&lt;li&gt;User Idle Detection&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Firefox도 이 API 중 몇가지에 대해서는 &lt;code&gt;harmful&lt;/code&gt;(해로운) 입장을 보이고 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://mozilla.github.io/standards-positions/&quot;&gt;Mozilla Specification Positions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;version-10-of-angular-now-available-angular-blog&quot;&gt;Version 10 of Angular Now Available - Angular Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.angular.io/version-10-of-angular-now-available-78960babd41&quot; title=&quot;Version 10 of Angular Now Available - Angular Blog&quot;&gt;blog.angular.io/version-10-of-angular-now-available-78960babd41&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Angular 10.0.0이 릴리스 됐습니다.&lt;br&gt;
+Angular Material에 Date Range Picker가 추가됐고, CommonJS를 사용하면 경고가 출력되도록 변경됐습니다. 또 &lt;code&gt;ng new&lt;/code&gt;에 &lt;code&gt;--strict&lt;/code&gt; 옵션 추가, TypeScript 3.9 갱신, 기본 browserslists 갱신이 이뤄졌습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-typescript-4-0-beta-typescript&quot;&gt;Announcing TypeScript 4.0 Beta | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-beta/&quot; title=&quot;Announcing TypeScript 4.0 Beta | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-4-0-beta/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 4.0 Beta가 릴리스됐습니다.&lt;br&gt;
+Variadic Tuple Types, Labeled Tuple Elements가 추가됐고 생성자를 토대로 Class Property를 추론할 수 있도록 변경됐습니다.&lt;br&gt;
+또, &lt;code&gt;catch&lt;/code&gt; 절의 변수가 &lt;code&gt;any&lt;/code&gt;에서 &lt;code&gt;unknown&lt;/code&gt;으로 변경됐고 Stage 3의 logical assignment, &lt;code&gt;jsxFragmentFactory&lt;/code&gt; 옵션을 지원하며 VSCode에서 Partial Editing Mode를 지원합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-notes-for-safari-technology-preview-109-with-safari-14-features-webkit&quot;&gt;Release Notes for Safari Technology Preview 109 with Safari 14 Features | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10875/release-notes-for-safari-technology-preview-109-with-safari-14-features/&quot; title=&quot;Release Notes for Safari Technology Preview 109 with Safari 14 Features | WebKit&quot;&gt;webkit.org/blog/10875/release-notes-for-safari-technology-preview-109-with-safari-14-features/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari Technology 109이 릴리스 됐습니다.&lt;br&gt;
+Safari 14의 변경 내용이 포함돼 있습니다.&lt;br&gt;
+WebExtensions, Private report, Web Authentication, private class fields를 지원하며 Flash 지원이 종료됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/safari-release-notes/safari-14-beta-release-notes&quot; title=&quot;Safari 14 Beta Release Notes | Apple Developer Documentation&quot;&gt;Safari 14 Beta Release Notes | Apple Developer Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;hapi-js-on-twitter-some-un-hapi-and-joi-less-news-twitter&quot;&gt;hapi.js on Twitter: &amp;quot;Some un-hapi and joi-less news...&amp;quot; / Twitter&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/hapijs/status/1275887984114413569&quot; title=&quot;hapi.js on Twitter: \&amp;quot;Some un-hapi and joi-less news...\&amp;quot; / Twitter&quot;&gt;twitter.com/hapijs/status/1275887984114413569&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 프레임워크인 hapi의 코어 개발자가 hapi 개발 종료를 선언했습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://app.slack.com/client/T6ATU7T16/C015JQPME23/thread/C015JQPME23-1593110366.302100&quot; title=&quot;Slack | end | hapi hour&quot;&gt;Slack | end | hapi hour&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://hapi.dev/&quot; title=&quot;hapi.dev - The simple, secure framework developers trust&quot;&gt;hapi.dev - The simple, secure framework developers trust&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;async-clipboard-api-webkit&quot;&gt;Async Clipboard API | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10855/async-clipboard-api/&quot; title=&quot;Async Clipboard API | WebKit&quot;&gt;webkit.org/blog/10855/async-clipboard-api/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari 13.1에서 지원하는 Async Clipboard API를 소개합니다.&lt;br&gt;
+클립보드 읽고 쓰기, Security / Privacy 제한에 대해 작성돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;whats-new-in-devtools-chrome-85-web-google-developers&quot;&gt;What&amp;#39;s New In DevTools (Chrome 85)  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/06/devtools&quot; title=&quot;What&amp;#39;s New In DevTools (Chrome 85)  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2020/06/devtools&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 85 개발자 도구의 변경 사항이 정리돼 있습니다.&lt;br&gt;
+CSSOM로 추가한 CSS를 편집할 수 있도록 지원하며 Lighthouse 6로 갱신됐고, App shortcuts에 대한 경고 대응, &lt;code&gt;respondWith&lt;/code&gt; 이벤트가 Timing 탭에 표시되도록 변경됐습니다.&lt;br&gt;
+퍼포먼스 패널에 자바스크립트 컴파일 캐시 정보를 표시합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;refactoring-optional-chaining-into-a-large-codebase-lessons-learned-lea-verou&quot;&gt;Refactoring optional chaining into a large codebase: lessons learned – Lea Verou&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://lea.verou.me/2020/06/refactoring-optional-chaining-into-a-large-codebase-lessons-learned/&quot; title=&quot;Refactoring optional chaining into a large codebase: lessons learned – Lea Verou&quot;&gt;lea.verou.me/2020/06/refactoring-optional-chaining-into-a-large-codebase-lessons-learned/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;refacoring&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ES2020에 들어간 Optional Chaining을 사용한 리팩터링 기법을 소개합니다.&lt;br&gt;
+Optional Chaining으로 수정할 수 있거나 수정할 수 없는 패턴에 대해서 작성돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-qiita&quot;&gt;React 렌더링 완벽 가이드 - Qiita(일본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/hellokenta/items/6b795501a0a8921bb6b5&quot; title=&quot;Reactのレンダリングに関する完全ガイド - Qiita&quot;&gt;qiita.com/hellokenta/items/6b795501a0a8921bb6b5&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;translate&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Complete Guide to React Rendering Behavior의 일본어 번역 문서입니다.&lt;br&gt;
+렌더링과 커밋의 단계, 렌더링 동작, 성능 측정, 리렌더링 타이밍에 대해서 이야기합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/&quot; title=&quot;Blogged Answers: A (Mostly) Complete Guide to React Rendering Behavior · Mark&amp;amp;#x27;s Dev Blog&quot;&gt;Blogged Answers: A (Mostly) Complete Guide to React Rendering Behavior · Mark&amp;#39;s Dev Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;tracking-prevention-in-webkit-webkit&quot;&gt;Tracking Prevention in WebKit | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/tracking-prevention/&quot; title=&quot;Tracking Prevention in WebKit | WebKit&quot;&gt;webkit.org/tracking-prevention/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;privacy&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Safari의 트래킹 방지에 대해 정리돼 있습니다.&lt;br&gt;
+First-Party, Third-Party에서의 Cookie, Storage 제한, Fingerprinting에 사용될 수 있어 구현하지 않는 Web API, ITP 등에 대해서 이야기합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://webkit.org/tracking-prevention-policy/&quot; title=&quot;Tracking Prevention Policy | WebKit&quot;&gt;Tracking Prevention Policy | WebKit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;webpack-5-miniseries-tobias-koppers-webpack-youtube&quot;&gt;webpack 5 Miniseries - Tobias Koppers, webpack - YouTube&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=3c-RFpaiUT8&amp;list=PLyspMSh4XhLP-mqulUMcaqTbLo-ZJxSX5&amp;index=34&amp;t=0s&quot; title=&quot;webpack 5 Miniseries - Tobias Koppers, webpack - YouTube&quot;&gt;www.youtube.com/watch?v&amp;#x3D;3c-RFpaiUT8&amp;amp;list&amp;#x3D;PLyspMSh4XhLP-mqulUMcaqTbLo-ZJxSX5&amp;amp;index&amp;#x3D;34&amp;amp;t&amp;#x3D;0s&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;webpack 5의 변경에 대해서 소개하는 영상입니다.&lt;br&gt;
+자동 Node.js 용 polyfill 삭제, 생성 코드의 ES 버전 선택, 빌드 성능 및 캐시 개선, 최적화 및 로그 개선, Module Federation을 소개합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;openjs-world-2020-youtube&quot;&gt;OpenJS World 2020 - YouTube&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLyspMSh4XhLP-mqulUMcaqTbLo-ZJxSX5&quot; title=&quot;OpenJS World 2020 - YouTube&quot;&gt;www.youtube.com/playlist?list&amp;#x3D;PLyspMSh4XhLP-mqulUMcaqTbLo-ZJxSX5&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Conference&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;OpenJS World 2020의 영상 목록입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://events.linuxfoundation.org/openjs-world/&quot; title=&quot;OpenJS World | Linux Foundation Events&quot;&gt;OpenJS World | Linux Foundation Events&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ealush-vest-vest-effortless-validations&quot;&gt;ealush/vest: Vest - effortless validations&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ealush/vest&quot; title=&quot;ealush/vest: Vest - effortless validations&quot;&gt;github.com/ealush/vest&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;검증(밸리데이션) 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;nastyox-rando-js-the-worlds-easiest-most-powerful-random-function&quot;&gt;nastyox/Rando.js: The world&amp;#39;s easiest, most powerful random function.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nastyox/Rando.js&quot; title=&quot;nastyox/Rando.js: The world&amp;#39;s easiest, most powerful random function.&quot;&gt;github.com/nastyox/Rando.js&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;지정한 범위 내에서 랜덤한 값을 생성하는 라이브러리입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;도서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;talking-typescript-with-the-engineer-who-leads-the-team-stack-overflow-blog&quot;&gt;Talking TypeScript with the engineer who leads the team - Stack Overflow Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.blog/2020/06/15/talking-typescript-with-ryan-cavanaugh/&quot; title=&quot;Talking TypeScript with the engineer who leads the team - Stack Overflow Blog&quot;&gt;stackoverflow.blog/2020/06/15/talking-typescript-with-ryan-cavanaugh/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Interview&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Microsoft&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 프로젝트 리더인 Ryan Cavanaugh의 인터뷰 글입니다.&lt;br&gt;
+만들게 된 계기, Angular 채용이 끼친 영향, 팀 구성, 에디터와 컴파일러 서비스, 자바스크립트 에코 시스템에 대해서 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 30 Jun 2020 00:29:41 +0900</pubDate>
+        <link>https://jser.info/ko/2020/06/30/angular-10-typescript-4.0-beta-safari-14tracking-prevention/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2020/06/30/angular-10-typescript-4.0-beta-safari-14tracking-prevention/</guid>
+        
+        <category>Angular</category>
+        
+        <category>TypeScript</category>
+        
+        <category>Safari</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-05-12: ESLint v7.0.0, Next.js 9.4, npm 7 변경 예정 사항</title>
@@ -2302,263 +2564,6 @@ tesseract　v4.1로 갱신, 여러개 원어 인식 지원, 이미지 포맷(png
         <category>TypeScript</category>
         
         <category>npm</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2019-12-03: Got 10(Node.js HTTP 클라이언트), FAB(Frontend Application Bundles)</title>
-        <description>&lt;p&gt;JSer.info #464 - Node.js 용 HTTP 클라이언트 라이브러리인 Got 10이 릴리스 됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/sindresorhus/got/releases/tag/v10.0.0&quot;&gt;Release v10.0.0 · sindresorhus/got&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;TypeScript로 재작성한 버전으로 Node.js 10 이상을 지원합니다.&lt;br&gt;
-Node.js 12 이후 버전에서는 Brotli도 지원하며 DNS Cache 옵션이 추가됐습니다.&lt;br&gt;
-또, 옵션명 변경을 중심으로 비호환 변경 사항도 많이 이뤄졌습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;query&lt;/code&gt; -&amp;gt; &lt;code&gt;searchParams&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;baseUrl&lt;/code&gt; -&amp;gt; &lt;code&gt;prefixUrl&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;encoding&lt;/code&gt; -&amp;gt; &lt;code&gt;responseType&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;이 외에도 재시도(retry) 옵션의 사용 방식이 변경됐으며 요청과 응답 내에서 JSON을 다루는 방식도 변경됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://fab.dev/&quot;&gt;FAB — Frontend Application Bundles&lt;/a&gt; 커뮤니티 사양에서는 프런트엔드 애플리케이션을 Heroku나 AWS Lambda 등에 배포(deploy) 할 때의 포멧에 대해 정의하고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;Gatsby, Next.js, Nuxt.js 등의 프레임워크 별 애플리케이션의 출력 형식이 다르기 때문에 여러 호스팅 환경에 배포하기 위해서는 각 환경에 맞는 별도의 설정이 필요하게 됩니다.&lt;br&gt;
-FAB는 그 사이에서 Framework adapters 역할의 중간 포맷을 정의하고 프레임워크와 호스팅 환경의 높은 상호 운용성을 달성하고자 하는 프로젝트입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://fab.dev/kb/fab-structure&quot;&gt;FAB Structure&lt;/a&gt;에는 에셋을 배치하는 &lt;code&gt;_assets&lt;/code&gt;이라는 디렉터리와 Node.js 서버와 API 정의한 &lt;code&gt;server.js&lt;/code&gt;를 zip으로 패키징하는 구조가 정의돼 있습니다.&lt;/p&gt;
-
-&lt;p&gt;하지만 &lt;a href=&quot;https://github.com/fab-spec/fab/issues&quot;&gt;다양한 Issue&lt;/a&gt;가 있기 때문에 실제로 이용되게 될지는 모르겠습니다. 현재 &lt;a href=&quot;https://linc.sh/&quot;&gt;Linc&lt;/a&gt;의 CTO가 주도하여 사양을 정의하고 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-workbox-v5-0-0-rc-1-googlechrome-workbox&quot;&gt;Release Workbox v5.0.0-rc.1 · GoogleChrome/workbox&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0-rc.1&quot; title=&quot;Release Workbox v5.0.0-rc.1 · GoogleChrome/workbox&quot;&gt;github.com/GoogleChrome/workbox/releases/tag/v5.0.0-rc.1&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Workbox 5.0.0 RC1이 릴리스 됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v10-0-0-sindresorhus-got&quot;&gt;Release v10.0.0 · sindresorhus/got&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/sindresorhus/got/releases/tag/v10.0.0&quot; title=&quot;Release v10.0.0 · sindresorhus/got&quot;&gt;github.com/sindresorhus/got/releases/tag/v10.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;HTTP&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 용 HTTP 클라이언트 Got 10.0.0이 릴리스됐습니다.&lt;br&gt;
-TypeScript로 재작성한 버전입니다.&lt;br&gt;
-Node.js 10 미만 지원 종료, &lt;code&gt;query&lt;/code&gt;를 &lt;code&gt;searchParams&lt;/code&gt;으로 이름 변경, &lt;code&gt;encoding&lt;/code&gt;를 &lt;code&gt;responseType&lt;/code&gt;으로 이름 변경, &lt;code&gt;json&lt;/code&gt; 옵션 변경 등이 이뤄졌습니다.&lt;br&gt;
-DNS cache를 지원하며 &lt;code&gt;maxRedirects&lt;/code&gt; 옵션이 추가됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript-frameworks-security-report-2019-snyk&quot;&gt;JavaScript frameworks security report 2019 | Snyk&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://snyk.io/blog/javascript-frameworks-security-report-2019/&quot; title=&quot;JavaScript frameworks security report 2019 | Snyk&quot;&gt;snyk.io/blog/javascript-frameworks-security-report-2019/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Angular(JS), React, jQuery와 관련한 보안 리포트가 정리돼 있습니다.&lt;br&gt;
-취약성 개수나 영향 범위, 취약성 보고, 보안 기능 등에 대해서 이야기합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;i-created-the-exact-same-app-in-vue-and-svelte-here-are-the-differences&quot;&gt;I created the exact same app in Vue and Svelte. Here are the differences.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-vue-and-svelte-here-are-the-differences-c649f8d4ce0a&quot; title=&quot;I created the exact same app in Vue and Svelte. Here are the differences.&quot;&gt;medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-vue-and-svelte-here-are-the-differences-c649f8d4ce0a&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Vue와 Svelte로 같은 Todo 애플리케이션을 작성하여 비교한 글입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-graalwasm-a-webassembly-engine-in-graalvm&quot;&gt;Announcing GraalWasm — a WebAssembly engine in GraalVM&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/graalvm/announcing-graalwasm-a-webassembly-engine-in-graalvm-25cd0400a7f2&quot; title=&quot;Announcing GraalWasm — a WebAssembly engine in GraalVM&quot;&gt;medium.com/graalvm/announcing-graalwasm-a-webassembly-engine-in-graalvm-25cd0400a7f2&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Java&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;VM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GraalVM에서 WebAssembly를 지원합니다.&lt;br&gt;
-GraalVM의 Trufle API를 사용해 WebAssembly 바이너리 인터프리터를 구현하고 wasm을 실행할 수 있도록 제공하고 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;connor4312-cockatiel-a-resilience-and-transient-fault-handling-library-that-allows-developers-to-express-policies-such-as-backoff-retry-circuit-breaker-timeout-bulkhead-isolation-and-fallback-inspired-by-net-polly&quot;&gt;connor4312/cockatiel: A resilience and transient-fault-handling library that allows developers to express policies such as Backoff, Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback. Inspired by .NET Polly.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/connor4312/cockatiel&quot; title=&quot;connor4312/cockatiel: A resilience and transient-fault-handling library that allows developers to express policies such as Backoff, Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback. Inspired by .NET Polly.&quot;&gt;github.com/connor4312/cockatiel&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;.net&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;.NET Polly에 영감을 받아 개발한 에러 핸들링 복귀 처리 라이브러리입니다.&lt;br&gt;
-백 오프 알고리즘, 취소, 재시도, 서킷 브레이커, 타임아웃, 동시 호출 제한, 폴백 등을 수행합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/App-vNext/Polly&quot; title=&quot;App-vNext/Polly: Polly is a .NET resilience and transient-fault-handling library that allows developers to express policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner. From version 6.0.1, Polly targets .NET Standard 1.1 and 2.0+.&quot;&gt;App-vNext/Polly: Polly is a .NET resilience and transient-fault-handling library that allows developers to express policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner. From version 6.0.1, Polly targets .NET Standard 1.1 and 2.0+.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;graphql-ec-improving-online-shopping-site-performance-which-using-the-graphql-speaker-deck&quot;&gt;GraphQL를 사용한 사이트에서 풀 수 있는 성능 개선(EC사이트를 소재로) / Improving online shopping site performance which using the GraphQL - Speaker Deck(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/nobuhikosawai/improving-online-shopping-site-performance-which-using-the-graphql&quot; title=&quot;G GraphQL를 사용한 사이트에서 풀 수 있는 성능 개선(EC사이트를 소재로) / Improving online shopping site performance which using the GraphQL - Speaker Deck&quot;&gt;speakerdeck.com/nobuhikosawai/improving-online-shopping-site-performance-which-using-the-graphql&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GraphQL 성능 개선을 주제로한 슬라이드입니다.&lt;br&gt;
-Datadog APM를 사용한 서버 사이트의 GraphQL 쿼리 트레이스를 읽는 방법과 프런트엔드에서 불필요한 데이터를 가져오는 쿼리의 개선 방법에 대해 이야기합니다.&lt;br&gt;
-쿼리와 화면을 연계하기 위한 Fragment과 Colocation도 설명합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.apollographql.com/docs/react/data/fragments/&quot; title=&quot;Using fragments - Client (React) - Apollo GraphQL Docs&quot;&gt;Using fragments - Client (React) - Apollo GraphQL Docs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;open-source-labs-reactime-chrome-extension-for-state-debugging-in-react-applications&quot;&gt;open-source-labs/reactime: Chrome extension for state debugging in React applications&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/open-source-labs/reactime&quot; title=&quot;open-source-labs/reactime: Chrome extension for state debugging in React applications&quot;&gt;github.com/open-source-labs/reactime&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Extension&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;React 애플리케이션의 State를 디버깅하는데 사용할 수 있는 브라우저 확장 도구입니다.&lt;br&gt;
-특정 시점의 State 표시하고 State의 변화를 기록해 원하는 시점의 State로 되돌릴 수 있습니다. &lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;style-guide-redux&quot;&gt;Style Guide · Redux&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://redux.js.org/style-guide/style-guide&quot; title=&quot;Style Guide · Redux&quot;&gt;redux.js.org/style-guide/style-guide&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Redux의 스타일을 설명하는 공식 문서입니다.&lt;br&gt;
-Essential, Strongly Recommended, Recommended 세 개의 카테고리로 스타일과 관련된 가이드가 정리돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;who-can-use&quot;&gt;Who Can Use&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://whocanuse.com/&quot; title=&quot;Who Can Use&quot;&gt;whocanuse.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;배경색, 글자색, 글자 크기를 지정해 미리 살펴볼 수 있고 명암비나 WCAG 그레이드를 산출해 주는 도구입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;fab-frontend-application-bundles&quot;&gt;FAB — Frontend Application Bundles&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://fab.dev/&quot; title=&quot;FAB — Frontend Application Bundles&quot;&gt;fab.dev/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;spec&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;프런트엔드 애플리케이션을 호스팅 서비스에 배포(deploy) 할 때의 패키징 방식이나 발신하는 Node.js 서버에 대한 사양을 정의하고 있습니다.&lt;br&gt;
-프레임워크 마다 출력 형식이 다르고 호스티 서비스 환경마다 설정이 각기 다른 문제를 보완하기 위한 중간 포맷을 설계합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/fab-spec/fab/tree/next/packages/fab-static&quot; title=&quot;@fab/static&quot;&gt;@fab/static&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;linc-the-perfect-ci-cd-pipeline-for-your-frontend&quot;&gt;Linc – The Perfect CI/CD Pipeline for your Frontend&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://linc.sh/&quot; title=&quot;Linc – The Perfect CI/CD Pipeline for your Frontend&quot;&gt;linc.sh/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CI &lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CD&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;프런트엔드 애플리케이션 용 CI 웹 서비스입니다.&lt;br&gt;
-&lt;a href=&quot;https://fab.dev/%EC%9D%98&quot;&gt;https://fab.dev/의&lt;/a&gt; 패키지(사양)를 지원하고 있고 커밋 별 테스트, 애플리케이션 프리뷰를 제공합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;killedbyapixel-jsoncrush-compress-json-into-url-friendly-strings&quot;&gt;KilledByAPixel/JSONCrush: Compress JSON into URL friendly strings&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/KilledByAPixel/JSONCrush&quot; title=&quot;KilledByAPixel/JSONCrush: Compress JSON into URL friendly strings&quot;&gt;github.com/KilledByAPixel/JSONCrush&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JSON&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JSON 문자열을 URL 안전하게 인코딩 / 디코딩하는 라이브러리입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;grubersjoe-reflow-babel-plugin-to-transpile-flow-code-to-typescript-with-cli-wrapper&quot;&gt;grubersjoe/reflow: Babel plugin to transpile Flow code to TypeScript with CLI wrapper&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/grubersjoe/reflow&quot; title=&quot;grubersjoe/reflow: Babel plugin to transpile Flow code to TypeScript with CLI wrapper&quot;&gt;github.com/grubersjoe/reflow&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flowtype&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Flow 코드를 TypeScript 코드로 변환하는 CLI 도구입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;billinghamj-fix-es-imports-fixes-your-es-import-paths-from-node-style-to-explicit-filenames&quot;&gt;billinghamj/fix-es-imports: Fixes your ES import paths - from Node-style to explicit filenames&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/billinghamj/fix-es-imports&quot; title=&quot;billinghamj/fix-es-imports: Fixes your ES import paths - from Node-style to explicit filenames&quot;&gt;github.com/billinghamj/fix-es-imports&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;require&lt;/code&gt;에서는 생략 가능한 모듈 임포트의 &lt;code&gt;index.js&lt;/code&gt;나 확장자를 추가하는 도구입니다.&lt;br&gt;
-ECMAScript에서는 확장자 등은 생략할 수 없기 때문에 관련한 &lt;code&gt;import&lt;/code&gt; 문을 일괄 수정하는데 사용할 수 있는 도구입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;neomjs-neo-the-webworkers-driven-ui-framework-beta-version&quot;&gt;neomjs/neo: The webworkers driven UI framework (BETA version)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/neomjs/neo&quot; title=&quot;neomjs/neo: The webworkers driven UI framework (BETA version)&quot;&gt;github.com/neomjs/neo&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebWorker 기반의 UI 프레임워크 입니다.&lt;br&gt;
-Worker 내에서 컴포넌트를 처리 합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/neomjs/neo&quot; title=&quot;neomjs/neo: The webworkers driven UI framework (BETA version)&quot;&gt;neomjs/neo: The webworkers driven UI framework (BETA version)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/neomjs/neo/blob/dev/.github/VISION.md&quot; title=&quot;neo/VISION.md at dev · neomjs/neo&quot;&gt;neo/VISION.md at dev · neomjs/neo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;도서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript-kids&quot;&gt;아이부터 어른까지 술술 읽을 수 있는 JavaScript 후리가나 Kids 프로그래밍, 게임을 만들어 보면서 즐겁게 배우자! - 임프레스 북스(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://book.impress.co.jp/books/1118101174&quot; title=&quot;아이부터 어른까지 술술 읽을 수 있는 JavaScript 후리가나 Kids 프로그래밍, 게임을 만들어 보면서 재미있게 학습하자! - 임프레스 북스&quot;&gt;book.impress.co.jp/books/1118101174&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScript 코드와 본문에 후리가나를 활용한 프로그래밍 서적입니다.&lt;br&gt;
-HTML과 JavaScript를 사용한 게임을 만들어 보면서 프로그래밍에 대해서 학습할 수 있도록 작성돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 03 Dec 2019 12:22:10 +0900</pubDate>
-        <link>https://jser.info/ko/2019/12/03/got-10node.js-httpfabfrontend-application-bundles/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2019/12/03/got-10node.js-httpfabfrontend-application-bundles/</guid>
-        
-        <category>Node.js</category>
-        
-        <category>HTTP</category>
-        
-        <category>bundler</category>
         
         
         <category>JSer</category>
