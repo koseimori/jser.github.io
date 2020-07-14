@@ -5,9 +5,267 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 14 Jul 2020 11:14:05 +0900</pubDate>
-    <lastBuildDate>Tue, 14 Jul 2020 11:14:05 +0900</lastBuildDate>
+    <pubDate>Tue, 14 Jul 2020 12:28:14 +0900</pubDate>
+    <lastBuildDate>Tue, 14 Jul 2020 12:28:14 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-07-14のJS: fastify 3.0.0、The future of hapi、Malina.js、Solid.js</title>
+        <description>&lt;p&gt;JSer.info #496 - Node.jsウェブフレームワークのfastify 3.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/fastify/fastify/releases/tag/v3.0.0&quot;&gt;Release v3.0.0 · fastify/fastify&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@fastifyjs/fastify-v3-released-da4601d79a5&quot;&gt;Fastify v3 released. We are thrilled to announce the final… | by Fastify | Jul, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Express middlewareを使う場合は、直接ではなく&lt;code&gt;fastify-express&lt;/code&gt;プラグインを使うように変更されています。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;v2:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Using the Express `cors` middleware in Fastify v2.&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;fastify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cors'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;v3:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Using the Express `cors` middleware in Fastify v3.&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fastify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fastify-express'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;fastify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cors'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;その他の非互換な変更として、loggerのserializersのシグネチャーの変更、&lt;code&gt;preParsing&lt;/code&gt; hookに&lt;code&gt;payload&lt;/code&gt;引数の追加、TypeScriptの型定義の変更なども行われています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Node.jsウェブフレームワークの&lt;a href=&quot;https://hapi.dev/&quot;&gt;hapi&lt;/a&gt;のコアメンテナーである&lt;a href=&quot;https://github.com/hueniverse&quot;&gt;@hueniverse&lt;/a&gt;が、商用サポートの採算的な問題とモチベーションの問題からhapiのメンテナンスを今年で終了することが伝えられていました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hapi.dev/support/&quot;&gt;hapiのslack&lt;/a&gt;の&lt;code&gt;#next&lt;/code&gt;チャンネル(元々は&lt;code&gt;#end&lt;/code&gt;チャンネル)での議論の結果、&lt;br&gt;
+hapi v19までは&lt;a href=&quot;https://github.com/hueniverse&quot;&gt;@hueniverse&lt;/a&gt;によるサポートがされますが、&lt;br&gt;
+hapi v20からはコミュニティ主導のメンテナンスに切り替わる予定です。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4111&quot;&gt;The future of the hapi project, a prelude · Issue #4111 · hapijs/hapi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;v20からのコミュニティベースでのhapiリリースについては次のIssueにまとめられています。&lt;br&gt;
+hapiのTechnical Steering Committee (TSC)を設立して、コミュニティでメンテナンスしていく方針について書かれています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4113&quot;&gt;The future of the hapi project · Issue #4113 · hapijs/hapi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、hapiの中でも独立して使われている&lt;a href=&quot;https://github.com/hapijs/joi&quot;&gt;@hapi/joi&lt;/a&gt;は、&lt;code&gt;joi&lt;/code&gt;パッケージとしてhapi orgnizationの外に移動させる予定とのことです。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;eran  12:39&lt;/p&gt;
+
+&lt;p&gt;@channel I&amp;#39;ve decided to keep joi. It will be moving out of the hapi org and going back to joi on npm.&lt;br&gt;
+&lt;a href=&quot;https://app.slack.com/client/T6ATU7T16/C6CEEUE06/thread/C015JQPME23-1594335104.212300&quot;&gt;https://app.slack.com/client/T6ATU7T16/C6CEEUE06/thread/C015JQPME23-1594335104.212300&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I am going to work on it as a separate project. I don&amp;#39;t want to keep it in the org.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;grunt-1-2-0-released-grunt-the-javascript-task-runner&quot;&gt;Grunt 1.2.0 released - Grunt: The JavaScript Task Runner&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gruntjs.com/blog/2020-07-03-grunt-1.2.0-released&quot; title=&quot;Grunt 1.2.0 released - Grunt: The JavaScript Task Runner&quot;&gt;gruntjs.com/blog/2020-07-03-grunt-1.2.0-released&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Grunt&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Grunt 1.2.0リリース。&lt;br&gt;
+プラグインの読み込みが&lt;code&gt;require.resolve&lt;/code&gt;ベースで行えるように、CoffeeScriptの依存を削除、長いコマンド名での無限ループのバグを修正など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v3-0-0-fastify-fastify&quot;&gt;Release v3.0.0 · fastify/fastify&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/fastify/fastify/releases/tag/v3.0.0&quot; title=&quot;Release v3.0.0 · fastify/fastify&quot;&gt;github.com/fastify/fastify/releases/tag/v3.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Fastify v3リリース。&lt;br&gt;
+Express middlewareを使う場合は&lt;code&gt;fastify-express&lt;/code&gt;プラグインを使うように、loggerのserializersのシグネチャーの変更、TypeScriptの型定義の変更など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@fastifyjs/fastify-v3-released-da4601d79a5&quot; title=&quot;Fastify v3 released - Fastify - Medium&quot;&gt;Fastify v3 released - Fastify - Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;yarn-2-1-git-workspaces-focused-installs-loose-mode-live-playground-dev-community&quot;&gt;Yarn 2.1 🐱‍🏍 Git Workspaces, Focused Installs, Loose mode, Live Playground, ... - DEV Community 👩‍💻👨‍💻&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://dev.to/arcanis/yarn-2-1-git-workspaces-focused-installs-loose-mode-live-playground-4kfc&quot; title=&quot;Yarn 2.1 🐱‍🏍 Git Workspaces, Focused Installs, Loose mode, Live Playground, ... - DEV Community 👩‍💻👨‍💻&quot;&gt;dev.to/arcanis/yarn-2-1-git-workspaces-focused-installs-loose-mode-live-playground-4kfc&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Yarn 2.1リリース。&lt;br&gt;
+&lt;code&gt;node_modules&lt;/code&gt;を使うインストールの互換性改善、&lt;code&gt;git:&lt;/code&gt; protocolの対応改善、&lt;code&gt;package-lock.json&lt;/code&gt;などからどのパッケージマネージャかを判定するように。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-future-of-the-hapi-project-issue-4113-hapijs-hapi&quot;&gt;The future of the hapi project · Issue #4113 · hapijs/hapi&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4113&quot; title=&quot;The future of the hapi project · Issue #4113 · hapijs/hapi&quot;&gt;github.com/hapijs/hapi/issues/4113&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;issue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;現在のコアメンテナーが今年でメンテナンス終了を予定しているhapiの今後について。&lt;br&gt;
+hapiのTechnical Steering Committee (TSC)を設立して、コミュニティでメンテナンスしていく方針について。&lt;br&gt;
+メンテナーがTSCに移ったら新しいmajorバージョンをリリースする予定&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4111&quot; title=&quot;The future of the hapi project, a prelude · Issue #4111 · hapijs/hapi&quot;&gt;The future of the hapi project, a prelude · Issue #4111 · hapijs/hapi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v1-2-0-denoland-deno&quot;&gt;Release v1.2.0 · denoland/deno&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/denoland/deno/releases/tag/v1.2.0&quot; title=&quot;Release v1.2.0 · denoland/deno&quot;&gt;github.com/denoland/deno/releases/tag/v1.2.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;deno&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Deno 1.2.0リリース。&lt;br&gt;
+&lt;code&gt;deno bundle&lt;/code&gt;でlock fileのサポート、&lt;br&gt;
+User-timing　APIベースの&lt;code&gt;performance&lt;/code&gt; APIの追加、&lt;code&gt;deno info --json&lt;/code&gt;のサポートなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introducing-the-storage-access-api-microsoft-edge-blog&quot;&gt;Introducing the Storage Access API - Microsoft Edge Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2020/07/08/introducing-storage-access-api/&quot; title=&quot;Introducing the Storage Access API - Microsoft Edge Blog&quot;&gt;blogs.windows.com/msedgedev/2020/07/08/introducing-storage-access-api/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ストレージへのアクセス権限を持っているかを判定、許諾を得るStorage Access APIについて。&lt;br&gt;
+&lt;code&gt;hasStorageAccess()&lt;/code&gt;でのアクセスチェック、&lt;code&gt;requestStorageAccess()&lt;/code&gt;でのリクエストについて。&lt;br&gt;
+またiframeの&lt;code&gt;sandbox&lt;/code&gt;属性や、許諾ダイアログについてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;dates-and-times-in-javascript-igalia-compilers-team&quot;&gt;Dates and Times in JavaScript – Igalia Compilers Team&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.igalia.com/compilers/2020/06/23/dates-and-times-in-javascript/&quot; title=&quot;Dates and Times in JavaScript – Igalia Compilers Team&quot;&gt;blogs.igalia.com/compilers/2020/06/23/dates-and-times-in-javascript/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;spec&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;現在Stage 2のECMAScript ProposalであるTemporalについて。&lt;br&gt;
+DateとTimeの扱いを改善する目的の新しいビルトインオブジェクトで、実際のユースケースに適しているかのフィードバックを募集しているという話。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://tc39.es/proposal-temporal/docs/index.html&quot; title=&quot;Temporal documentation&quot;&gt;Temporal documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tc39/proposal-temporal&quot; title=&quot;tc39/proposal-temporal: Provides standard objects and functions for working with dates and times.&quot;&gt;tc39/proposal-temporal: Provides standard objects and functions for working with dates and times.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;perf-track&quot;&gt;Perf Track&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://perf-track.web.app/&quot; title=&quot;Perf Track&quot;&gt;perf-track.web.app/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;HTTP ArchiveとChrome UX Reportのデータを元にしたフレームワークごとのサイトデータのまとめ。&lt;br&gt;
+Angular、Vue、ReactなどのフレームワークごとにWeb Vitalsの値、サイトのJavaScript/画像のサイズなどを一覧できる&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;fontcdn-search-and-proxy-for-google-web-fonts&quot;&gt;FontCDN: Search and Proxy for Google web fonts&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://fontcdn.toolforge.org/&quot; title=&quot;FontCDN: Search and Proxy for Google web fonts&quot;&gt;fontcdn.toolforge.org/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;fonts&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;cdn&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Wikimediaのweb fonts CDNサービス&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;skypack&quot;&gt;Skypack&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.skypack.dev/&quot; title=&quot;Skypack&quot;&gt;www.skypack.dev/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;cdn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScript Package CDNサービス。&lt;br&gt;
+元Pika CDN。&lt;br&gt;
+npmパッケージをES Moudulesとして読み込めるCDN。&lt;br&gt;
+パッケージバージョンの指定、minifyなどの最適化したビルドの配布、UAに合わたtranspileとpolyfillを含めたビルドの配布などができる&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;foal-ts-node-js-and-typescript-framework-for-building-web-applications&quot;&gt;Foal TS - Node.JS and TypeScript framework for building web applications&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://foalts.org/&quot; title=&quot;Foal TS - Node.JS and TypeScript framework for building web applications&quot;&gt;foalts.org/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsフレームワーク。&lt;br&gt;
+Decoratorを使ったルーティング、バリデーション、DI、TypeORMを使ったDBなどをもつHTTPサーバフレームワーク&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/typeorm/typeorm&quot; title=&quot;TypeORM&quot;&gt;TypeORM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;malinajs-malinajs-frontend-compiler-inspired-by-svelte&quot;&gt;malinajs/malinajs: Frontend compiler, inspired by Svelte&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/malinajs/malinajs&quot; title=&quot;malinajs/malinajs: Frontend compiler, inspired by Svelte&quot;&gt;github.com/malinajs/malinajs&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;SvelteライクなJavaScriptにコンパイルされるUIフレームワーク。&lt;br&gt;
+Svelteとは異なる変更検知の仕組みやDOM更新の仕組みを使う&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/javascript-in-plain-english/svelte-js-and-malina-js-b33c55253271&quot; title=&quot;I created the same app in Svelte.js and Malina.js. Here are the differences. | by Oleg Nechaev | JavaScript In Plain English | Jul, 2020 | Medium&quot;&gt;I created the same app in Svelte.js and Malina.js. Here are the differences. | by Oleg Nechaev | JavaScript In Plain English | Jul, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ryansolid-solid-a-declarative-efficient-and-flexible-javascript-library-for-building-user-interfaces&quot;&gt;ryansolid/solid: A declarative, efficient, and flexible JavaScript library for building user interfaces.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ryansolid/solid&quot; title=&quot;ryansolid/solid: A declarative, efficient, and flexible JavaScript library for building user interfaces.&quot;&gt;github.com/ryansolid/solid&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;jsx&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JSXで書いてDOM APIを使ったRuntimeで動かすUIフレームワークとコンパイラ。&lt;br&gt;
+React HooksライクなReactivityやControl Flowを扱うComponentを持っている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://dev.to/ryansolid/why-solidjs-do-we-need-another-js-ui-library-1mdc&quot; title=&quot;Why SolidJS: Do we need another JS UI Library? - DEV Community 👩‍💻👨‍💻&quot;&gt;Why SolidJS: Do we need another JS UI Library? - DEV Community 👩‍💻👨‍💻&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;make-smaller-faster-and-more-secure-native-apps-tauri-studio&quot;&gt;Make smaller, faster and more secure native apps | Tauri Studio&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tauri.studio/&quot; title=&quot;Make smaller, faster and more secure native apps | Tauri Studio&quot;&gt;tauri.studio/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Rust&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebViewを使ったデスクトップアプリケーションフレームワーク。&lt;br&gt;
+HTML、JS、CSSを使ったフロントエンドとRustを使ったバックエンドでアプリケーションを作成できる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2020/07/tiny-desktop-apps-tauri-vuejs/&quot; title=&quot;Creating Tiny Desktop Apps With Tauri And Vue.js — Smashing Magazine&quot;&gt;Creating Tiny Desktop Apps With Tauri And Vue.js — Smashing Magazine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 14 Jul 2020 11:29:59 +0900</pubDate>
+        <link>https://jser.info/2020/07/14/fastify-3.0.0-the-future-of-hapi-malina.js-solid.js/</link>
+        <guid isPermaLink="true">https://jser.info/2020/07/14/fastify-3.0.0-the-future-of-hapi-malina.js-solid.js/</guid>
+        
+        <category>Node.js</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-07-06のJS: Firefox 78、Vue 3 Statusとリリーススケジュール</title>
@@ -2509,281 +2767,6 @@ HTTP/2 in Actionの翻訳本&lt;/p&gt;
         <category>Next.js</category>
         
         <category>npm</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2020-05-07のJS: Firefox 76、Jest 26、Web Vitals</title>
-        <description>&lt;p&gt;JSer.info #486 - Firefox 76がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/05/firefox-76-audio-worklets-and-other-tricks/&quot;&gt;Firefox 76: Audio worklets and other tricks - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/76&quot;&gt;Firefox 76 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/en-CA/releases/76/&quot;&gt;Firefox 76 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/76.0/releasenotes/&quot;&gt;Firefox 76.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Firefox 76では開発者ツールに多くの改善が含まれています。&lt;br&gt;
-特定のディレクトリをDebuggerの対象から除外できるように、&amp;quot;Copy stack trace&amp;quot;の追加、Action CableのWebSocket Inspectionのサポートなどが追加されています。&lt;/p&gt;
-
-&lt;p&gt;機能追加としてAudio workletsのサポート、CSS System Colorsのサポートが行われています。&lt;br&gt;
-その他には未知のプロトコルへのNavigation移動をブロックするように変更なども含まれています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;JavaScriptテストフレームワークのJest 26がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jestjs.io/blog/2020/05/05/jest-26&quot;&gt;Jest 26: Tick Tock · Jest&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/sinonjs/fake-timers&quot;&gt;@sinonjs/fake-timers&lt;/a&gt;ベースの新しいFake Timerの追加、&lt;code&gt;it&lt;/code&gt;や&lt;code&gt;describe&lt;/code&gt;などをexportする&lt;code&gt;@jest/globals&lt;/code&gt;の追加、Native ESMのサポートなどが含まれています。&lt;br&gt;
-破壊的な変更として、Node.js 8未満のサポートを終了しいくつかのコアモジュールでES5のビルドを提供しないように変更しています。&lt;br&gt;
-今後の変更予定として、Jest 27でデフォルトのtestRunnerを&lt;a href=&quot;https://github.com/facebook/jest/tree/master/packages/jest-circus&quot;&gt;&amp;quot;jest-circus&amp;quot;&lt;/a&gt;に変更しenvironmentを&amp;quot;node&amp;quot;に変更する予定です。&lt;br&gt;
-また、Jest 28で&amp;quot;jest-jasmine2&amp;quot;と&amp;quot;jest-environment-jsdom&amp;quot;をコアから別のパッケージへと分離する予定となっています。&lt;/p&gt;
-
-&lt;p&gt;まとめると次のような変更が予定されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jestjs.io/docs/ja/configuration#testrunner-string&quot;&gt;testRunner&lt;/a&gt;: &lt;a href=&quot;https://github.com/facebook/jest/tree/master/packages/jest-jasmine2&quot;&gt;jasmine2&lt;/a&gt; → &lt;a href=&quot;https://github.com/facebook/jest/tree/master/packages/jest-circus&quot;&gt;circus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://jestjs.io/docs/ja/configuration#testenvironment-string&quot;&gt;testEnvironment&lt;/a&gt;: &lt;a href=&quot;https://github.com/facebook/jest/tree/master/packages/jest-environment-jsdom&quot;&gt;jsdom&lt;/a&gt; → &lt;a href=&quot;https://github.com/facebook/jest/tree/master/packages/jest-environment-node&quot;&gt;node&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/vitals/&quot;&gt;Web Vitals&lt;/a&gt;という記事では、ウェブサイトのパフォーマンスに関する重要な指標をCore Web Vitalsという概念にまとめて、Google/Chrome系のプロダクトで利用できるようにする話が書かれています。&lt;/p&gt;
-
-&lt;p&gt;現在のCore Web Vitalsは次の3つの指標で構成されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/lcp/&quot;&gt;Largest Contentful Paint (LCP)&lt;/a&gt;: ロードに関する指標&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/fid/&quot;&gt;First Input Delay (FID)&lt;/a&gt;: インタラクションに関する指標&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/cls/&quot;&gt;Cumulative Layout Shift (CLS)&lt;/a&gt;: 描画に関する指標&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;これらの指標を取得できる&lt;a href=&quot;https://github.com/GoogleChrome/web-vitals&quot;&gt;web-vitals&lt;/a&gt;というJavaScriptライブラリの提供(&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver&quot;&gt;Performance Observer&lt;/a&gt;の値を利用するため&lt;a href=&quot;https://github.com/GoogleChrome/web-vitals#browser-support&quot;&gt;Chromeでしか取れない指標&lt;/a&gt;もある)や&lt;a href=&quot;https://github.com/GoogleChrome/web-vitals-extension&quot;&gt;ブラウザ拡張機能&lt;/a&gt;の提供なども行っています。&lt;/p&gt;
-
-&lt;p&gt;今後は&lt;a href=&quot;https://developers.google.com/web/tools/chrome-user-experience-report&quot;&gt;Chrome User Experience Report&lt;/a&gt;(既に対応済み)、&lt;a href=&quot;https://developers.google.com/speed/pagespeed/insights/&quot;&gt;PageSpeed Insights&lt;/a&gt;、Search Console などのツールでもこの指標を利用できるようにしていくとのことです。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;firefox-76-audio-worklets-and-other-tricks-mozilla-hacks-the-web-developer-blog&quot;&gt;Firefox 76: Audio worklets and other tricks - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/05/firefox-76-audio-worklets-and-other-tricks/&quot; title=&quot;Firefox 76: Audio worklets and other tricks - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2020/05/firefox-76-audio-worklets-and-other-tricks/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 76リリース。&lt;br&gt;
-開発者ツールの改善、Audio workletsのサポート、CSS System Colorsのサポート、未知のプロトコルへのNavigation移動をブロックするように変更など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/76&quot; title=&quot;Firefox 76 for developers - Mozilla | MDN&quot;&gt;Firefox 76 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/en-CA/releases/76/&quot; title=&quot;Firefox 76 Site Compatibility | Firefox Site Compatibility&quot;&gt;Firefox 76 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/76.0/releasenotes/&quot; title=&quot;Firefox 76.0, See All New Features, Updates and Fixes&quot;&gt;Firefox 76.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v12-16-3-lts-node-js&quot;&gt;Node v12.16.3 (LTS) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v12.16.3/&quot; title=&quot;Node v12.16.3 (LTS) | Node.js&quot;&gt;nodejs.org/en/blog/release/v12.16.3/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 12.16.3リリース。&lt;br&gt;
-Experimentalで実装されているconditional exportsに関するwarningメッセージが削除された&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-typescript-3-9-rc-typescript&quot;&gt;Announcing TypeScript 3.9 RC | TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-9-rc/&quot; title=&quot;Announcing TypeScript 3.9 RC | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-9-rc/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.9 RCリリース。&lt;br&gt;
-&lt;code&gt;Promise.all&lt;/code&gt;の型改善、ビルドパフォーマンスの改善、Type Errorとなることを期待する&lt;code&gt;// @ts-expect-error&lt;/code&gt;コメントの追加など。 また、ECMAScript仕様にあわせてGetter/Setterをトランスパイルするように変更など&lt;br&gt;
-&lt;code&gt;awaited&lt;/code&gt; typeは延期&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jquery-3-5-1-released-fixing-a-regression-official-jquery-blog&quot;&gt;jQuery 3.5.1 Released: Fixing a Regression | Official jQuery Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.jquery.com/2020/05/04/jquery-3-5-1-released-fixing-a-regression/&quot; title=&quot;jQuery 3.5.1 Released: Fixing a Regression | Official jQuery Blog&quot;&gt;blog.jquery.com/2020/05/04/jquery-3-5-1-released-fixing-a-regression/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;jQuery 3.5.1リリース。&lt;br&gt;
-jQuery 3.5.0でのリグレッションを修正。3.5ではXSSに対するセキュリティ修正のため、意図的に後方互換性がない部分も含まれる&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jest-26-tick-tock-jest&quot;&gt;Jest 26: Tick Tock · Jest&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jestjs.io/blog/2020/05/05/jest-26&quot; title=&quot;Jest 26: Tick Tock · Jest&quot;&gt;jestjs.io/blog/2020/05/05/jest-26&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Jest 26リリース。&lt;br&gt;
-&lt;code&gt;@sinonjs/fake-timers&lt;/code&gt;ベースの新しいFake Timerの追加、&lt;code&gt;it&lt;/code&gt;や&lt;code&gt;describe&lt;/code&gt;などをexportする&lt;code&gt;@jest/globals&lt;/code&gt;の追加、Native ESMのサポートなど。&lt;br&gt;
-いくつかのコアモジュールでES5のビルドを提供しないように変更し、Node.js 8未満のサポートを終了。&lt;br&gt;
-今後の変更として、Jest 27でデフォルトのtestRunnerを&amp;quot;jest-circus&amp;quot;に変更しenvironmentを&amp;quot;node&amp;quot;に変更する。&lt;br&gt;
-また、Jest 28で&amp;quot;jest-jasmine2&amp;quot;と&amp;quot;jest-environment-jsdom&amp;quot;をコアから別のパッケージへと分離する予定。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v1-6-0-mdx-js-mdx&quot;&gt;Release v1.6.0 · mdx-js/mdx&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/mdx-js/mdx/releases/tag/v1.6.0&quot; title=&quot;Release v1.6.0 · mdx-js/mdx&quot;&gt;github.com/mdx-js/mdx/releases/tag/v1.6.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Markdown&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MarkdownにJSXを拡張するMDX 1.6.0リリース。&lt;br&gt;
-Vueをベータサポート&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;what-s-in-that-wasm-introducing-wasm-decompile-v8&quot;&gt;What’s in that .wasm? Introducing: wasm-decompile · V8&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://v8.dev/blog/wasm-decompile&quot; title=&quot;What’s in that .wasm? Introducing: wasm-decompile · V8&quot;&gt;v8.dev/blog/wasm-decompile&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;wasm-decompile&lt;/code&gt;でのWebAssemblyのデコンパイルについて&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/WebAssembly/wabt/blob/master/docs/decompiler.md&quot; title=&quot;wabt/decompiler.md at master · WebAssembly/wabt&quot;&gt;wabt/decompiler.md at master · WebAssembly/wabt&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;window-location-cheatsheet-dev-community&quot;&gt;window.location Cheatsheet - DEV Community 👩‍💻👨‍💻&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://dev.to/samanthaming/window-location-cheatsheet-4edl&quot; title=&quot;window.location Cheatsheet - DEV Community 👩‍💻👨‍💻&quot;&gt;dev.to/samanthaming/window-location-cheatsheet-4edl&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;チートシート&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;window.location&lt;/code&gt;オブジェクトのプロパティやメソッドの挙動を解説している記事&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;improved-next-js-and-gatsby-page-load-performance-with-granular-chunking&quot;&gt;Improved Next.js and Gatsby page load performance with granular chunking&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/granular-chunking-nextjs/&quot; title=&quot;Improved Next.js and Gatsby page load performance with granular chunking&quot;&gt;web.dev/granular-chunking-nextjs/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpackの&lt;code&gt;SplitChunksPlugin&lt;/code&gt;を行うことでNext.js 9.2やGatsbyのページ間でのCommon chunkを分けた話。&lt;br&gt;
-HTTP/2における&lt;code&gt;maxInitialRequests&lt;/code&gt;の設定によるcリクエスト数の増加の影響調査、ルーティングとchunkの分離についてなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/gatsbyjs/gatsby/pull/22253&quot; title=&quot;feat(gatsby): enable granular chunks by wardpeet · Pull Request #22253 · gatsbyjs/gatsby&quot;&gt;feat(gatsby): enable granular chunks by wardpeet · Pull Request #22253 · gatsbyjs/gatsby&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;web-vitals&quot;&gt;Web Vitals&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/vitals/&quot; title=&quot;Web Vitals&quot;&gt;web.dev/vitals/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ウェブページのパフォーマンス計測の重なメトリクスをCore Web Vitalsとしてまとめたという話。&lt;br&gt;
-Core Web VitalsはLargest Contentful Paint(LCP)、First Input Delay(FID)、Cumulative Layout Shift(CLS)。&lt;br&gt;
-同時に&lt;code&gt;web-vitals&lt;/code&gt;というそれぞれのメトリクスを計測できるライブラリも提供し、 PageSpeed InsightsやSearch Consoleなどもそれぞれ対応していく予定&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/web-vitals&quot; title=&quot;GoogleChrome/web-vitals: Essential metrics for a healthy site.&quot;&gt;GoogleChrome/web-vitals: Essential metrics for a healthy site.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/web-vitals-extension&quot; title=&quot;GoogleChrome/web-vitals-extension: A Chrome extension to measure essential metrics for a healthy site&quot;&gt;GoogleChrome/web-vitals-extension: A Chrome extension to measure essential metrics for a healthy site&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;rinsuki-play-flv-in-browser-play-flv-in-browser&quot;&gt;rinsuki/play-flv-in-browser: Play FLV in Browser!&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/rinsuki/play-flv-in-browser&quot; title=&quot;rinsuki/play-flv-in-browser: Play FLV in Browser!&quot;&gt;github.com/rinsuki/play-flv-in-browser&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;flash&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ffmepgをWebAssemblyにコンパイルしたものを使ってflv/mp4をブラウザで再生するデモ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;antfu-i18n-ally-all-in-one-i18n-extension-for-vs-code&quot;&gt;antfu/i18n-ally: 🌍 All in one i18n extension for VS Code&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/antfu/i18n-ally&quot; title=&quot;antfu/i18n-ally: 🌍 All in one i18n extension for VS Code&quot;&gt;github.com/antfu/i18n-ally&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;VSCode&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Extension&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;EmEditor&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;VSCode上に作られたi18n編集システム。&lt;br&gt;
-エディタ上で翻訳キーの代わりに翻訳結果の表示などローカライズの支援をする拡張機能。&lt;br&gt;
-さまざまなフレームワークに対応している&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;addaleax-gen-esm-wrapper-generate-esm-wrapper-files-for-commonjs-modules&quot;&gt;addaleax/gen-esm-wrapper: Generate ESM wrapper files for CommonJS modules&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/addaleax/gen-esm-wrapper&quot; title=&quot;addaleax/gen-esm-wrapper: Generate ESM wrapper files for CommonJS modules&quot;&gt;github.com/addaleax/gen-esm-wrapper&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CommonJS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CommonJSからESM Wrapperを生成するツール&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jesseduffield-lazynpm-terminal-ui-for-npm&quot;&gt;jesseduffield/lazynpm: terminal UI for npm&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jesseduffield/lazynpm&quot; title=&quot;jesseduffield/lazynpm: terminal UI for npm&quot;&gt;github.com/jesseduffield/lazynpm&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;lazygit, lazydockerライクなnpmのターミナルUIツール。&lt;br&gt;
-パッケージの情報表示、パッケージの管理、スクリプトの実行など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;quantum-javascript-q-js&quot;&gt;Quantum JavaScript (Q.js)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://quantumjavascript.app/&quot; title=&quot;Quantum JavaScript (Q.js)&quot;&gt;quantumjavascript.app/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;量子回路シミュレーターライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;tackling-typescript-upgrading-from-javascript&quot;&gt;Tackling TypeScript: Upgrading from JavaScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://exploringjs.com/tackling-ts/&quot; title=&quot;Tackling TypeScript: Upgrading from JavaScript&quot;&gt;exploringjs.com/tackling-ts/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Dr. AxelによるTypeScriptの入門書&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Thu, 07 May 2020 13:42:34 +0900</pubDate>
-        <link>https://jser.info/2020/05/07/firefox-76-jest-26-web-vitals/</link>
-        <guid isPermaLink="true">https://jser.info/2020/05/07/firefox-76-jest-26-web-vitals/</guid>
-        
-        <category>Firefox</category>
-        
-        <category>Jest</category>
-        
-        <category>Chrome</category>
-        
-        <category>Performance</category>
         
         
         <category>JSer</category>
