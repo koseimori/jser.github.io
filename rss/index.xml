@@ -5,9 +5,257 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 29 Jul 2020 16:34:25 +0900</pubDate>
-    <lastBuildDate>Wed, 29 Jul 2020 16:34:25 +0900</lastBuildDate>
+    <pubDate>Tue, 04 Aug 2020 12:08:08 +0900</pubDate>
+    <lastBuildDate>Tue, 04 Aug 2020 12:08:08 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-08-04のJS: Firefox 79、Babel 7.11.0、Speculation in JavaScriptCore</title>
+        <description>&lt;p&gt;JSer.info #499 - Firefox 79がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/07/firefox-79/&quot;&gt;Firefox 79: The safe return of shared memory, new tooling, and platform updates - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/79&quot;&gt;Firefox 79 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;非同期処理のスタックトレースのサポート、デバッガの改善が行われています。&lt;br&gt;
+&lt;code&gt;target=_blank&lt;/code&gt;のリンクに対して暗黙的に&lt;code&gt;rel=noopener&lt;/code&gt;を同じ扱いをするようになりました。&lt;br&gt;
+また、&lt;code&gt;crossOriginIsolated&lt;/code&gt;が有効の場合に&lt;code&gt;SharedArrayBuffer&lt;/code&gt;が利用可能になっています。&lt;/p&gt;
+
+&lt;p&gt;詳しくは次の記事で解説されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/07/safely-reviving-shared-memory/&quot;&gt;Safely reviving shared memory - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://web.dev/why-coop-coep/&quot;&gt;Why you need &amp;quot;cross-origin isolated&amp;quot; for powerful features&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;JavaScriptではStage 4の&lt;code&gt;Promise.any&lt;/code&gt;、Logical assignment、WeakRefのサポートしています。&lt;br&gt;
+WebAssemblyのBulk memory operations、Reference types、Threads のサポートなども含まれています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Babel 7.11.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://babeljs.io/blog/2020/07/30/7.11.0&quot;&gt;7.11.0 Released: ECMAScript 2021 support in preset-env, TypeScript 4.0 support, printing config and the future of &lt;code&gt;babel-eslint&lt;/code&gt; · Babel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;@babel/preset-env&lt;/code&gt;にStage 4となったProposalのLogical Assignment、Numeric Separatorのサポートが追加されています。&lt;br&gt;
+&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-beta/&quot;&gt;TypeScript 4.0で追加される構文&lt;/a&gt;のサポートが追加されています。&lt;br&gt;
+また、Stage 1の&lt;a href=&quot;https://github.com/tc39/proposal-decimal&quot;&gt;Decimal Literal&lt;/a&gt;の構文パースをサポート、&lt;code&gt;BABEL_SHOW_CONFIG_FOR&lt;/code&gt;での設定出力をサポートしています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/babel/website/pull/2302&quot;&gt;feat: add SHOW_CONFIG docs by JLHwung · Pull Request #2302 · babel/website&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また&lt;a href=&quot;https://github.com/babel/babel-eslint&quot;&gt;&lt;code&gt;babel-eslint&lt;/code&gt;&lt;/a&gt;がmonorepo内の&lt;a href=&quot;https://github.com/babel/babel/tree/main/eslint/babel-eslint-parser&quot;&gt;&lt;code&gt;@babel/eslint-parser&lt;/code&gt;&lt;/a&gt;に移動しています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/189/announcing-squirrelfish/&quot;&gt;Speculation in JavaScriptCore | WebKit&lt;/a&gt;という記事ではWebKitのJavaScriptCoreの投機的コンパイラでのJavaScriptの最適化について解説されています。&lt;/p&gt;
+
+&lt;p&gt;投機処理、JITコンパイラなどについてかなり詳しく解説されているので興味がある人は読んでみると良さそうです。&lt;br&gt;
+とても長い記事/スライドなので、一番下のRelated WorkとConclusionから読んでみるとどういう話をしているかがつかみやすいかもしれません。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;firefox-79-the-safe-return-of-shared-memory-new-tooling-and-platform-updates-mozilla-hacks-the-web-developer-blog&quot;&gt;Firefox 79: The safe return of shared memory, new tooling, and platform updates - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/07/firefox-79/&quot; title=&quot;Firefox 79: The safe return of shared memory, new tooling, and platform updates - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2020/07/firefox-79/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;relre&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Firefox 79リリース。&lt;br&gt;
+非同期処理のスタックトレースのサポート、デバッガの改善。&lt;br&gt;
+&lt;code&gt;target=_blank&lt;/code&gt;のリンクに対して暗黙的に&lt;code&gt;rel=noopener&lt;/code&gt;を同じ処理をするように、&lt;code&gt;crossOriginIsolated&lt;/code&gt;が有効の場合に&lt;code&gt;SharedArrayBuffer&lt;/code&gt;が利用可能に。&lt;br&gt;
+Stage 4の&lt;code&gt;Promise.any&lt;/code&gt;、Logical assignment、WeakRefのサポート。&lt;br&gt;
+WebAssemblyのBulk memory operations、Reference types、Threads のサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/79.0/releasenotes/&quot;&gt;Firefox 79.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/79&quot;&gt;Firefox 79 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;safely-reviving-shared-memory-mozilla-hacks-the-web-developer-blog&quot;&gt;Safely reviving shared memory - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/07/safely-reviving-shared-memory/&quot; title=&quot;Safely reviving shared memory - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2020/07/safely-reviving-shared-memory/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;FirefoxでSpectreへの対応として無効になっていた&lt;code&gt;SharedArrayBuffer&lt;/code&gt;が再度利用できるようになる話。&lt;br&gt;
+プロセス分離、&lt;code&gt;Cross-Origin-Opener-Policy&lt;/code&gt;と&lt;code&gt;Cross-Origin-Embedder-Policy&lt;/code&gt;でCross-origin isolationについて。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://web.dev/why-coop-coep/&quot; title=&quot;Why you need &amp;amp;amp;quot;cross-origin isolated&amp;amp;amp;quot; for powerful features&quot;&gt;Why you need &amp;quot;cross-origin isolated&amp;quot; for powerful features&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;7-11-0-released-ecmascript-2021-support-in-preset-env-typescript-4-0-support-printing-config-and-the-future-of-babel-eslint-babel&quot;&gt;7.11.0 Released: ECMAScript 2021 support in preset-env, TypeScript 4.0 support, printing config and the future of `babel-eslint` · Babel&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://babeljs.io/blog/2020/07/30/7.11.0&quot; title=&quot;7.11.0 Released: ECMAScript 2021 support in preset-env, TypeScript 4.0 support, printing config and the future of \`babel-eslint\` · Babel&quot;&gt;babeljs.io/blog/2020/07/30/7.11.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;babel&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Babel 7.11.0リリース。&lt;br&gt;
+&lt;code&gt;@babel/preset-env&lt;/code&gt;がStage 4となったProposalのLogical Assignment、Numeric Separatorのサポート、TypeScript 4.0で追加される構文のサポート。&lt;br&gt;
+Stage 1のDecimal Literalをサポート、&lt;code&gt;BABEL_SHOW_CONFIG_FOR&lt;/code&gt;での設定出力をサポート、&lt;code&gt;babel-eslint&lt;/code&gt;が&lt;code&gt;@babel/eslint-parser&lt;/code&gt;に移動など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;snowpack-2-7&quot;&gt;Snowpack 2.7&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.snowpack.dev/posts/2020-07-30-snowpack-2-7-release/&quot; title=&quot;Snowpack 2.7&quot;&gt;www.snowpack.dev/posts/2020-07-30-snowpack-2-7-release/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;フロントエンドビルドツールのSnowpack 2.7リリース。&lt;br&gt;
+Plugin APIの変更、&lt;code&gt;snowpack.config.json&lt;/code&gt;の書式の変更など。&lt;br&gt;
+どちらもv2の間は後方互換性があるが、新しい形式に移行を推奨している。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v3-0-0-ykzts-node-xmlhttprequest&quot;&gt;Release v3.0.0 · ykzts/node-xmlhttprequest&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ykzts/node-xmlhttprequest/releases/tag/v3.0.0&quot; title=&quot;Release v3.0.0 · ykzts/node-xmlhttprequest&quot;&gt;github.com/ykzts/node-xmlhttprequest/releases/tag/v3.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;XHR&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsでのXMLHttpRequestの実装ライブラリであるnode-xmlhttprequest 3.0.0リリース&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;speculation-in-javascriptcore-webkit&quot;&gt;Speculation in JavaScriptCore | WebKit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10308/speculation-in-javascriptcore/&quot; title=&quot;Speculation in JavaScriptCore | WebKit&quot;&gt;webkit.org/blog/10308/speculation-in-javascriptcore/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JIT&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webkit&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Filip PizloによるJavaScriptCoreの投機的コンパイル、JITについて詳しい解説。&lt;br&gt;
+JavaScriptCoreにおける4層のコンパイル処理の解説、投機的コンパイル、再コンパイル、プロファイリング、インラインキャッシュなど。&lt;br&gt;
+投機的コンパイルは動的に型付けの言語においてどんな型を持っているかを推測して最適化する手法。その推測には、複数の実行層を使ったプロファイリングなどを基にして最適化を行う話&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;blog-next-js-9-5-next-js&quot;&gt;Blog - Next.js 9.5 | Next.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nextjs.org/blog/next-9-5&quot; title=&quot;Blog - Next.js 9.5 | Next.js&quot;&gt;nextjs.org/blog/next-9-5&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Next.js 9.5リリース。&lt;br&gt;
+&lt;code&gt;revalidate&lt;/code&gt;、&lt;code&gt;basePath&lt;/code&gt;、&lt;code&gt;trailingSlash&lt;/code&gt;のオプションの追加、&lt;code&gt;rewrites&lt;/code&gt;と&lt;code&gt;redirects&lt;/code&gt;の設定が可能になった。&lt;br&gt;
+Page Bundleのビルドキャッシュの有効化、ProductionでReactのプロファイルができるようになるなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ink-3-vadims-blog&quot;&gt;Ink 3 - Vadim&amp;#39;s Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://vadimdemedes.com/posts/ink-3&quot; title=&quot;Ink 3 - Vadim&amp;#39;s Blog&quot;&gt;vadimdemedes.com/posts/ink-3&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Reactを使ったコンソールUIライブラリであるInk 3リリース。&lt;br&gt;
+パフォーマンスの改善、&lt;code&gt;&amp;lt;Color&amp;gt;&lt;/code&gt;は&lt;code&gt;&amp;lt;Text&amp;gt;&lt;/code&gt;コンポーネントにマージ、&lt;code&gt;useInput&lt;/code&gt;や&lt;code&gt;useFocus&lt;/code&gt;などのHookの提供など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/vadimdemedes/ink/releases/tag/v3.0.0&quot; title=&quot;Release v3.0.0 · vadimdemedes/ink&quot;&gt;Release v3.0.0 · vadimdemedes/ink&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;performance-monitoring-with-lighthouse-ci&quot;&gt;Performance monitoring with Lighthouse CI&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/lighthouse-ci/&quot; title=&quot;Performance monitoring with Lighthouse CI&quot;&gt;web.dev/lighthouse-ci/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Lighthouse CIについての記事。&lt;br&gt;
+設定方法、CIでテストとして使う方法、GitHub Actionの連携について&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-new-default-referrer-policy-for-chrome-strict-origin-when-cross-origin&quot;&gt;A new default Referrer-Policy for Chrome: strict-origin-when-cross-origin&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default&quot; title=&quot;A new default Referrer-Policy for Chrome: strict-origin-when-cross-origin&quot;&gt;developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ChromeのReferrer-Policyのデフォルト値が&lt;code&gt;strict-origin-when-cross-origin&lt;/code&gt;に変更されることによる影響について。&lt;br&gt;
+&lt;code&gt;Origin&lt;/code&gt;や&lt;code&gt;Sec-Fetch-Site&lt;/code&gt;での代替えなどについて&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://web.dev/referrer-best-practices/&quot; title=&quot;Referer and Referrer-Policy best practices&quot;&gt;Referer and Referrer-Policy best practices&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;date-and-times-in-javascript-from-scratch&quot;&gt;【翻訳】Date and Times in JavaScript - from scratch&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://yosuke-furukawa.hatenablog.com/entry/2020/07/28/102821&quot; title=&quot;【翻訳】Date and Times in JavaScript - from scratch&quot;&gt;yosuke-furukawa.hatenablog.com/entry/2020/07/28/102821&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;proposal&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;translate&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Dateを置き換えるProposalであるTemporalについての翻訳&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;different-versions-of-your-site-can-be-running-at-the-same-time-jakearchibald-com&quot;&gt;Different versions of your site can be running at the same time - JakeArchibald.com&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jakearchibald.com/2020/multiple-versions-same-time/&quot; title=&quot;Different versions of your site can be running at the same time - JakeArchibald.com&quot;&gt;jakearchibald.com/2020/multiple-versions-same-time/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;デプロイ中に複数のバージョンが同じサイトで動く問題についてどのように対処するかという話。&lt;br&gt;
+再ビルドによるchunkファイルの404、Storageスキーマの変更、APIレスポンスの変更に対してどのような対策を取るかについて書かれている&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;web-http-http-nwtgck-ryo-ota&quot;&gt;Webブラウザ上で純粋なHTTPだけで単方向リアルタイム通信を可能にするHTTPのストリーミングアップロードが遂にやってくる - nwtgck / Ryo Ota&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://scrapbox.io/nwtgck/Web%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E4%B8%8A%E3%81%A7%E7%B4%94%E7%B2%8B%E3%81%AAHTTP%E3%81%A0%E3%81%91%E3%81%A7%E5%8D%98%E6%96%B9%E5%90%91%E3%83%AA%E3%82%A2%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%A0%E9%80%9A%E4%BF%A1%E3%82%92%E5%8F%AF%E8%83%BD%E3%81%AB%E3%81%99%E3%82%8BHTTP%E3%81%AE%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%8C%E9%81%82%E3%81%AB%E3%82%84%E3%81%A3%E3%81%A6%E3%81%8F%E3%82%8B&quot; title=&quot;Webブラウザ上で純粋なHTTPだけで単方向リアルタイム通信を可能にするHTTPのストリーミングアップロードが遂にやってくる - nwtgck / Ryo Ota&quot;&gt;scrapbox.io/nwtgck/Web%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E4%B8%8A%E3%81%A7%E7%B4%94%E7%B2%8B%E3%81%AAHTTP%E3%81%A0%E3%81%91%E3%81%A7%E5%8D%98%E6%96%B9%E5%90%91%E3%83%AA%E3%82%A2%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%A0%E9%80%9A%E4%BF%A1%E3%82%92%E5%8F%AF%E8%83%BD%E3%81%AB%E3%81%99%E3%82%8BHTTP%E3%81%AE%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%8C%E9%81%82%E3%81%AB%E3%82%84%E3%81%A3%E3%81%A6%E3%81%8F%E3%82%8B&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Fetch&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 85βで実装されているFetch upload streamingについての記事&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;lamplightdev-aeon-a-lightweight-date-picker-built-with-web-components-that-can-be-used-anywhere&quot;&gt;lamplightdev/aeon: A lightweight date picker built with web components that can be used anywhere&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/lamplightdev/aeon&quot; title=&quot;lamplightdev/aeon: A lightweight date picker built with web components that can be used anywhere&quot;&gt;github.com/lamplightdev/aeon&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Date PickerのWeb Componentsライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;apoorv-mishra-moment-guess-a-utility-package-for-guessing-dates-format&quot;&gt;apoorv-mishra/moment-guess: A utility package for guessing date&amp;#39;s format&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/apoorv-mishra/moment-guess&quot; title=&quot;apoorv-mishra/moment-guess: A utility package for guessing date&amp;#39;s format&quot;&gt;github.com/apoorv-mishra/moment-guess&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;多種多様な日付文字列をパースして、その日付にマッチするフォーマットを返すツール&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 04 Aug 2020 11:14:59 +0900</pubDate>
+        <link>https://jser.info/2020/08/04/firefox-79-babel-7.11.0-speculation-in-javascriptcore/</link>
+        <guid isPermaLink="true">https://jser.info/2020/08/04/firefox-79-babel-7.11.0-speculation-in-javascriptcore/</guid>
+        
+        <category>Firefox</category>
+        
+        <category>Babel</category>
+        
+        <category>WebKit</category>
+        
+        <category>JavaScriptCore</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-07-28のJS: SvelteのTypeScriptサポート、Chrome 85 beta、Web Speed Hackathon Online</title>
@@ -2488,288 +2736,6 @@ Riot.jsについての書籍&lt;/p&gt;
         <category>bundler</category>
         
         <category>chrome</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2020-05-25のJS: Chrome 83、Electron 9.0.0、typescript-eslint 3.0.0</title>
-        <description>&lt;p&gt;JSer.info #489 - Chrome 83がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/05/nic83&quot;&gt;New in Chrome 83  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/03/devtools&quot;&gt;What&amp;#39;s New In DevTools (Chrome 83)  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/04/chrome-83-deps-rems&quot;&gt;Deprecations and removals in Chrome 83  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#milestone%3D83&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://v8.dev/blog/v8-release-83&quot;&gt;V8 release v8.3 · V8&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Trusted Typesのサポート、フォームコントロールUIのアップデート、COOP(Cross-Origin-Opener-Policy)とCOEP(Cross-Origin-Embedder-Policy)が実装されています。&lt;br&gt;
-COOPとCOEPはSite Isolationと深い関係がある仕組みなので、詳細は次の記事を参照してください。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://web.dev/coop-coep/&quot;&gt;Making your website &amp;quot;cross-origin isolated&amp;quot; using COOP and COEP&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.jxck.io/entries/2020-05-22/site-isolation.html&quot;&gt;Site Isolation 及び Web のセキュリティモデルの更新 | blog.jxck.io&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また、Origin Trialとして&lt;code&gt;performance.measureMemory()&lt;/code&gt;や&lt;code&gt;Scheduler.postTask()&lt;/code&gt;が追加されています。&lt;br&gt;
-その他にはBarcode Detection APIやCSS &lt;code&gt;prefers-color-scheme&lt;/code&gt;のサポートなどが行われています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Electron 9.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.electronjs.org/blog/electron-9-0#highlight-features&quot;&gt;Electron 9.0.0 | Electron Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;9.0.0ではChromium 83、Node 12.14、V8 8.3へアップデートが行われています。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;enableRemoteModle&lt;/code&gt;オプションを使わずに&lt;code&gt;remote&lt;/code&gt;モジュールを使うことを非推奨化されています。&lt;br&gt;
-これは、&lt;code&gt;remote&lt;/code&gt;モジュールをコアから外していく作業の一環です。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/electron/electron/issues/21408&quot;&gt;Deprecate the &amp;#39;remote&amp;#39; module and move it to userland · Issue #21408 · electron/electron&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@nornagon/electrons-remote-module-considered-harmful-70d69500f31&quot;&gt;Electron’s ‘remote’ module considered harmful - Jeremy Apthorp - Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;その他には、&lt;code&gt;app.enableRendererProcessReuse&lt;/code&gt;をデフォルトで&lt;code&gt;true&lt;/code&gt;に変更、スペルチェッカーの改善、PDFビューアの有効化なども行われています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;TypeScript向けのESLintプラグインであるtypescript-eslint 3.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/typescript-eslint/typescript-eslint/releases/tag/v3.0.0&quot;&gt;Release v3.0.0 · typescript-eslint/typescript-eslint&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2020/02/whats-coming-in-eslint-7.0.0&quot;&gt;ESLint 7&lt;/a&gt;をサポート、TypeScript 3.9で挙動が変更されたOptional ChainingとNon-Null Assertionsの変更に追従したサポートが含まれます。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#parsing-differences-in-optional-chaining-and-non-null-assertions&quot;&gt;TypeScript: Handbook - TypeScript 3.9&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また、同時にNode.js 8とTypeScript 3.2のサポートを終了しています。&lt;/p&gt;
-
-&lt;p&gt;その他には、&lt;code&gt;@typescript-eslint/recommended&lt;/code&gt;と&lt;code&gt;@typescript-eslint/recommended-requiring-typechecking&lt;/code&gt;が&lt;code&gt;@typescript-eslint/eslint-recommended&lt;/code&gt;を継承するように変更されています。&lt;br&gt;
-またルールのデフォルト値の変更、Deprecatedなルールの削除なども行われています。&lt;/p&gt;
-
-&lt;p&gt;具体的なrecommendedルールセットにおける設定値の変更は次のIssueにまとめられています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/typescript-eslint/typescript-eslint/issues/1273&quot;&gt;Changes to the &lt;code&gt;eslint-recommended&lt;/code&gt; ruleset for 3.0.0 · Issue #1273 · typescript-eslint/typescript-eslint&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/typescript-eslint/typescript-eslint/issues/1423&quot;&gt;Changes to the &lt;code&gt;recommended&lt;/code&gt; sets for 3.0.0 · Issue #1423 · typescript-eslint/typescript-eslint&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v14-3-0-current-node-js&quot;&gt;Node v14.3.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v14.3.0/&quot; title=&quot;Node v14.3.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v14.3.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js 14.3.0リリース。&lt;br&gt;
-REPLでoutput previewの改善、Top-Level Awaitのサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-83-web-google-developers&quot;&gt;New in Chrome 83  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/05/nic83&quot; title=&quot;New in Chrome 83  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2020/05/nic83&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 83リリース。&lt;br&gt;
-Trusted Typesのサポート、フォームコントロールUIのアップデート、COOPとCOEPの実装。&lt;br&gt;
-Origin Trialとして&lt;code&gt;performance.measureMemory()&lt;/code&gt;や&lt;code&gt;Scheduler.postTask()&lt;/code&gt;の追加。&lt;br&gt;
-その他にはBarcode Detection APIやCSS &lt;code&gt;prefers-color-scheme&lt;/code&gt;のサポートなど&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2020/04/chrome-83-beta-cross-site-scripting.html&quot; title=&quot;Chromium Blog: Chrome 83 Beta: Cross-site Scripting Protection, Improved Form Controls, and Safe Cross-origin Resource Sharing&quot;&gt;Chromium Blog: Chrome 83 Beta: Cross-site Scripting Protection, Improved Form Controls, and Safe Cross-origin Resource Sharing&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v3-0-0-typescript-eslint-typescript-eslint&quot;&gt;Release v3.0.0 · typescript-eslint/typescript-eslint&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/typescript-eslint/typescript-eslint/releases/tag/v3.0.0&quot; title=&quot;Release v3.0.0 · typescript-eslint/typescript-eslint&quot;&gt;github.com/typescript-eslint/typescript-eslint/releases/tag/v3.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;typescript-eslint 3.0.0リリース。&lt;br&gt;
-ESLint 7をサポート、TS 3.9のサポート。 &lt;br&gt;
-Node.js 8とTypeScript 3.2のサポート終了。&lt;br&gt;
-&lt;code&gt;recommended&lt;/code&gt;と&lt;code&gt;recommended-requiring-typechecking&lt;/code&gt;が&lt;code&gt;eslint-recommended&lt;/code&gt;を継承するように変更。&lt;br&gt;
-ルールのデフォルト値の変更、Deprecatedなルールの削除など。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;electron-9-0-0-electron-blog&quot;&gt;Electron 9.0.0 | Electron Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.electronjs.org/blog/electron-9-0&quot; title=&quot;Electron 9.0.0 | Electron Blog&quot;&gt;www.electronjs.org/blog/electron-9-0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Electron&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Electron 9.0.0リリース。&lt;br&gt;
-Chromium 83、Node 12.14、V8 8.3へアップデート。&lt;br&gt;
-&lt;code&gt;enableRemoteModle&lt;/code&gt;オプションを使わずに&lt;code&gt;remote&lt;/code&gt;モジュールを使うことを非推奨化、&lt;code&gt;app.enableRendererProcessReuse&lt;/code&gt;をデフォルトで&lt;code&gt;true&lt;/code&gt;に変更など。&lt;br&gt;
-その他には、スペルチェッカーの改善、PDFビューアの有効化など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;preparing-for-appcache-removal&quot;&gt;Preparing for AppCache removal&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/appcache-removal/&quot; title=&quot;Preparing for AppCache removal&quot;&gt;web.dev/appcache-removal/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ChromeのAppCache削除プラン。&lt;br&gt;
-Chrome 90で完全に消える予定。&lt;br&gt;
-Chrome on iOSではService Workerが使えないため、代用方法はない環境もある。他のブラウザでのAppCacheの削除予定についてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;chromium-blog-the-science-behind-web-vitals&quot;&gt;Chromium Blog: The Science Behind Web Vitals&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.chromium.org/2020/05/the-science-behind-web-vitals.html&quot; title=&quot;Chromium Blog: The Science Behind Web Vitals&quot;&gt;blog.chromium.org/2020/05/the-science-behind-web-vitals.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Web Vitalsの背景にあるUX調査について。&lt;br&gt;
-LCPの2.5秒未満、CLSの0.1未満、FIDの100ミリ秒未満の推奨値の算出に関する調査についてまとめた記事&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;site-isolation-web-blog-jxck-io&quot;&gt;Site Isolation 及び Web のセキュリティモデルの更新 | blog.jxck.io&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.jxck.io/entries/2020-05-22/site-isolation.html&quot; title=&quot;Site Isolation 及び Web のセキュリティモデルの更新 | blog.jxck.io&quot;&gt;blog.jxck.io/entries/2020-05-22/site-isolation.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;異なるサイトのコードの実行やリソースを読み込みを観測することで情報を取得できるサイドチャネル攻撃を防止する仕組みについて。&lt;br&gt;
-ブラウザのプロセスを分離する方法とウェブサイト側でオプトインとしてクロスオリジンリクエストを制御する仕組みについて。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introducing-app-service-static-web-apps-microsoft-tech-community-1394451&quot;&gt;Introducing App Service Static Web Apps - Microsoft Tech Community - 1394451&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://techcommunity.microsoft.com/t5/azure-app-service/introducing-app-service-static-web-apps/ba-p/1394451&quot; title=&quot;Introducing App Service Static Web Apps - Microsoft Tech Community - 1394451&quot;&gt;techcommunity.microsoft.com/t5/azure-app-service/introducing-app-service-static-web-apps/ba-p/1394451&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webservice&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Azure&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Azureの静的サイトホスティングサービスのApp Service Static Web Appsについて。&lt;br&gt;
-ルーティングルール、GitHubアカウントなどを使った認証、Azure FunctionsでのサーバAPIの実装、GitHub Actionsを使ったデプロイなどができる&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;module-bundler&quot;&gt;module bundlerの作り方(準備編) - 技術探し&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.hiroppy.me/entry/create-module-bundler-preparation&quot; title=&quot;module bundlerの作り方(準備編) - 技術探し&quot;&gt;blog.hiroppy.me/entry/create-module-bundler-preparation&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;BabelのJavaScriptパーサを使って基本的なmodule bundlerを作成するチュートリアル&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;swyx-writing-ie11-mainstream-end-of-life-in-oct-2020&quot;&gt;swyx Writing | IE11 Mainstream End Of Life in Oct 2020&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.swyx.io/writing/ie11-eol/&quot; title=&quot;swyx Writing | IE11 Mainstream End Of Life in Oct 2020&quot;&gt;www.swyx.io/writing/ie11-eol/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;IE&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;opinion&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;IE 11の「メインストリーム」でのサポート終了についての意見/記事。&lt;br&gt;
-Windows 10のextended supportは2025年までだが、「メインストリーム」のサポートは2020年までのため、IE 11の「メインストリーム」サポートも2020年までではという話。&lt;br&gt;
-ChromiumベースのMSEdgeのリリースと、Windows Update経由での自動ロールアウトも2020年中には完了することも加味している。&lt;br&gt;
-また、IE 11のシェア、IE 11のサポートを終了しているサービスについてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;whats-new-in-lighthouse-6-0&quot;&gt;What&amp;#39;s New in Lighthouse 6.0&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/lighthouse-whats-new-6.0/&quot; title=&quot;What&amp;#39;s New in Lighthouse 6.0&quot;&gt;web.dev/lighthouse-whats-new-6.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Lighthouse 6.0リリース。&lt;br&gt;
-Web Vitalsに基づく新しいメトリクスとしてLCP/CLSの追加、Performanceスコア計算の変更。&lt;br&gt;
-新しいAuditsとして、Unused JavaScript、axe-coreベースのAccessibility Auditなどの追加。&lt;br&gt;
-Lighthouse拡張はPageSpeed Insights APIを使うように変更など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse/releases/tag/v6.0.0&quot; title=&quot;Release v6.0.0 · GoogleChrome/lighthouse&quot;&gt;Release v6.0.0 · GoogleChrome/lighthouse&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://googlechrome.github.io/lighthouse/scorecalc/&quot; title=&quot;Lighthouse Scoring calculator&quot;&gt;Lighthouse Scoring calculator&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse-ci&quot; title=&quot;GoogleChrome/lighthouse-ci: Automate running Lighthouse for every commit, viewing the changes, and preventing regressions&quot;&gt;GoogleChrome/lighthouse-ci: Automate running Lighthouse for every commit, viewing the changes, and preventing regressions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;webgl-guide-part-1-2&quot;&gt;WebGL guide (part 1/2)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://xem.github.io/articles/webgl-guide.html&quot; title=&quot;WebGL guide (part 1/2)&quot;&gt;xem.github.io/articles/webgl-guide.html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebGL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebGL/GLSLについてのチュートリアル&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introduction-nuxt-content&quot;&gt;Introduction - Nuxt Content&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://content.nuxtjs.org/&quot; title=&quot;Introduction - Nuxt Content&quot;&gt;content.nuxtjs.org/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Nuxt.jsからMarkdown、JSON、CSVなどのコンテンツデータを取得して、埋め込めるNuxt.jsモジュール。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;cacjs-cac-simple-yet-powerful-framework-for-building-command-line-apps&quot;&gt;cacjs/cac: Simple yet powerful framework for building command-line apps.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/cacjs/cac&quot; title=&quot;cacjs/cac: Simple yet powerful framework for building command-line apps.&quot;&gt;github.com/cacjs/cac&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;コマンドラインツール向けのライブラリ。&lt;br&gt;
-引数パーサ、ヘルプ表示、バージョン表示、サブコマンドの仕組みを持っている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;loreanvictor-rxxpress-an-experimental-mashup-of-rxjs-and-express&quot;&gt;loreanvictor/rxxpress: An Experimental Mashup of RxJS and Express&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/loreanvictor/rxxpress/&quot; title=&quot;loreanvictor/rxxpress: An Experimental Mashup of RxJS and Express&quot;&gt;github.com/loreanvictor/rxxpress/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Rx&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;RxJSを使ったExpressライクなサーバライブラリ。&lt;br&gt;
-ExpressのRouterと組み合わせ利用できるように設計されている&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;umijs-umi-request-a-request-tool-based-on-fetch&quot;&gt;umijs/umi-request: A request tool based on fetch.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/umijs/umi-request&quot; title=&quot;umijs/umi-request: A request tool based on fetch.&quot;&gt;github.com/umijs/umi-request&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Fetch&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Fetch APIベースのHTTPリクエストライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Mon, 25 May 2020 23:18:36 +0900</pubDate>
-        <link>https://jser.info/2020/05/25/chrome-83-electron-9.0.0-typescript-eslint-3.0.0/</link>
-        <guid isPermaLink="true">https://jser.info/2020/05/25/chrome-83-electron-9.0.0-typescript-eslint-3.0.0/</guid>
-        
-        <category>Chrome</category>
-        
-        <category>Electron</category>
-        
-        <category>TypeScript</category>
-        
-        <category>ESLint</category>
         
         
         <category>JSer</category>
