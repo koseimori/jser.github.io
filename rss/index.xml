@@ -5,8 +5,8 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 11 Aug 2020 12:44:15 +0900</pubDate>
-    <lastBuildDate>Tue, 11 Aug 2020 12:44:15 +0900</lastBuildDate>
+    <pubDate>Tue, 11 Aug 2020 12:53:38 +0900</pubDate>
+    <lastBuildDate>Tue, 11 Aug 2020 12:53:38 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -201,6 +201,240 @@ JSer.infoの更新フローは、紹介記事データの更新とJSer.infoの�
         <guid isPermaLink="true">https://jser.info/2020/08/11/500/</guid>
         
         <category>JSer</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
+    
+      <item>
+        <title>2020-08-11のJS: React 17.0 RC、Rome、Thinking in Microfrontend</title>
+        <description>&lt;p&gt;JSer.info #500 - React 17.0 RC(Release Candidate)がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactjs.org/blog/2020/08/10/react-v17-rc.html&quot;&gt;React v17.0 Release Candidate: No New Features – React Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;機能的な追加ではなくReactの内部的な仕組みの更新を目的としたメジャーアップデートです。&lt;br&gt;
+新しいバージョンのReactから古いバージョンReactのルートコンポーネントをLazy Loadして利用できるようにするGradual Upgradesが主な目的となっています。&lt;br&gt;
+複数のバージョンのReactを同時に使えるようにすることで、React 18など未来のアップデートを段階的にしやすくすることを目的としています。&lt;br&gt;
+これはAngularJS(1.x)からAngular(2.x)への&lt;a href=&quot;https://angular.jp/guide/upgrade#ngupgrade-%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89&quot;&gt;ngUpgrade を使ったアップグレード&lt;/a&gt;と似た話かもしれません。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/reactjs/react-gradual-upgrade-demo/&quot; title=&quot;reactjs/react-gradual-upgrade-demo: Demonstration of how to gradually upgrade an app to a new version of React&quot;&gt;reactjs/react-gradual-upgrade-demo: Demonstration of how to gradually upgrade an app to a new version of React&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;関連する変更としてイベントの仕組みを変更し複数のReactを同一ページ内で動くように、イベントの仕組みが変わったためEvent Poolongを削除したため&lt;code&gt;event.persist()&lt;/code&gt;は何もしないようになり、エラー時のコンポーネントスタックの改善などが行われています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;フロントエンドのlinter/compiler/bundlerなどを統合したモノリシックツールを目指す&lt;a href=&quot;https://romefrontend.dev/&quot;&gt;Rome&lt;/a&gt;がベータリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://romefrontend.dev/blog/2020/08/08/introducing-rome.html&quot;&gt;Introducing Rome&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;現時点ではJavaScriptを対象としたLinterとFormatterのみが機能として公開されています。&lt;/p&gt;
+
+&lt;p&gt;記事では、Linter/Compiler/Bundlerなどコードを扱うものをモノリシックツール内で扱うことでよりパワフルな処理ができる可能性について書かれています。&lt;/p&gt;
+
+&lt;p&gt;これはLint処理を統合的にしていた&lt;a href=&quot;https://jshint.com/&quot;&gt;JSHint&lt;/a&gt;に対して、プラグインで拡張できる&lt;a href=&quot;https://eslint.org/&quot;&gt;ESLint&lt;/a&gt;とは逆のアプローチではあります。&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Rome aims to replace ESLint, Babel, Webpack, Prettier, and Jest.&lt;a href=&quot;https://t.co/VSNT8TzZag&quot;&gt;https://t.co/VSNT8TzZag&lt;/a&gt;&lt;br&gt;&lt;br&gt;Fascinating and ambitious. It will be interesting to see if this catches on. (It took nearly five years before ESLint overtook JSHint, so we may not know for a while.)&lt;/p&gt;&amp;mdash; Nicholas C. Zakas (@slicknet) &lt;a href=&quot;https://twitter.com/slicknet/status/1292851576072048641?ref_src=twsrc%5Etfw&quot;&gt;August 10, 2020&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
+
+&lt;p&gt;一方でRomeとBabelの作者でもある@sebmckが&lt;a href=&quot;https://babeljs.io/blog/2015/10/29/6.0.0&quot;&gt;Babel 6.0.0&lt;/a&gt;でBabelをプラグインで拡張できるようにするために、BabelのAPIを広く公開したことで、変更が難しくなった話についても書かれています。&lt;/p&gt;
+
+&lt;p&gt;現時点では、JavaScript(JS/JSX/TS)を対象としていますが、&lt;a href=&quot;https://romefrontend.dev/#language-support&quot;&gt;CSSやHTMLなどのLintなどもサポート&lt;/a&gt;していく予定のようです。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;part-2a003bb4b350ea2b&quot;&gt;お知らせ&lt;/h2&gt;
+
+&lt;p&gt;今回の投稿でJSer.infoは500回の投稿を迎えました。&lt;br&gt;
+次の記事で500回の振り返りを書いています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jser.info/2020/08/04/500&quot;&gt;JSer.info 500回目の更新 - Slackワークスペース作成、コラボレータ募集、10年に向けて&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;新しい試みとして&lt;a href=&quot;https://join.slack.com/t/jserinfo/shared_invite/zt-g2shzp7o-f_tj6OaphCAFw5Qlt2Jw0A&quot;&gt;JSer.info slackワークスペース&lt;/a&gt;を作成したので、ぜひ雑談しに参加してみてください！&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://join.slack.com/t/jserinfo/shared_invite/zt-g2shzp7o-f_tj6OaphCAFw5Qlt2Jw0A&quot;&gt;JSer.info slackに参加する&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;testcafe-v1-9-0-released-testcafe&quot;&gt;TestCafe v1.9.0 Released | TestCafe&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devexpress.github.io/testcafe/blog/testcafe-v1-9-0-released.html&quot; title=&quot;TestCafe v1.9.0 Released | TestCafe&quot;&gt;devexpress.github.io/testcafe/blog/testcafe-v1-9-0-released.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TestCafe v1.9.0リリース。&lt;br&gt;
+Multi Windowのテストをサポート、失敗したAssertionsのDiffの詳細を表示するようになるなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-typescript-4-0-rc-typescript&quot;&gt;Announcing TypeScript 4.0 RC | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-rc/&quot; title=&quot;Announcing TypeScript 4.0 RC | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-4-0-rc/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 4.0 RCリリース。 Variadic Tuple Types、Labeled Tuple Elements、コンストラクタからClass Propertyの推論ができるように。 &lt;code&gt;catch&lt;/code&gt;節の変数が&lt;code&gt;any&lt;/code&gt;から&lt;code&gt;unknown&lt;/code&gt;に変更。 Stage 4のlogical assignmentをサポート、&lt;code&gt;jsxFragmentFactory&lt;/code&gt;オプションのサポート、&lt;code&gt;--incremental&lt;/code&gt;と&lt;code&gt;--noEmit&lt;/code&gt;の組み合わせをサポート。&lt;br&gt;
+TypeScript公式ウェブサイトの刷新など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introducing-rome&quot;&gt;Introducing Rome&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://romefrontend.dev/blog/2020/08/08/introducing-rome.html&quot; title=&quot;Introducing Rome&quot;&gt;romefrontend.dev/blog/2020/08/08/introducing-rome.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptツールチェインのRomeベータリリース。&lt;br&gt;
+JavaScript Compiler、Bundler、Tester、Linterなどを包含的に含むモノリシックツール&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;react-v17-0-release-candidate-no-new-features-react-blog&quot;&gt;React v17.0 Release Candidate: No New Features – React Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://reactjs.org/blog/2020/08/10/react-v17-rc.html&quot; title=&quot;React v17.0 Release Candidate: No New Features – React Blog&quot;&gt;reactjs.org/blog/2020/08/10/react-v17-rc.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React 17.0 RCリリース。&lt;br&gt;
+Reactの内部的な仕組みの更新をしたため、メジャーアップデートしている。&lt;br&gt;
+新しいバージョンのReactから古いバージョンReactのルートコンポーネントをLazy Loadして利用できるようにするGradual Upgradesが主な目的。&lt;br&gt;
+イベントの仕組みを変更し複数のReactを同一ページ内で動くように、イベントの仕組みが変わったためEvent Poolongを削除、エラー時のコンポーネントスタックの改善など。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/reactjs/react-gradual-upgrade-demo/&quot; title=&quot;reactjs/react-gradual-upgrade-demo: Demonstration of how to gradually upgrade an app to a new version of React&quot;&gt;reactjs/react-gradual-upgrade-demo: Demonstration of how to gradually upgrade an app to a new version of React&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;changes-to-samesite-cookie-behavior-a-call-to-action-for-web-developers-mozilla-hacks-the-web-developer-blog&quot;&gt;Changes to SameSite Cookie Behavior - A Call to Action for Web Developers - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/08/changes-to-samesite-cookie-behavior/&quot; title=&quot;Changes to SameSite Cookie Behavior - A Call to Action for Web Developers - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2020/08/changes-to-samesite-cookie-behavior/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;FirefoxもCookieの&lt;code&gt;SameSite&lt;/code&gt;属性をデフォルトLaxに変更していくという話。&lt;br&gt;
+現時点ではBetaでテストしているが、Stableリリースのスケジュールは未定。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-the-new-typescript-website-typescript&quot;&gt;Announcing the new TypeScript Website | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-the-new-typescript-website/&quot; title=&quot;Announcing the new TypeScript Website | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-the-new-typescript-website/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScriptの公式サイトがアップデートされた。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;setting-up-redux-for-use-in-a-real-world-application-smashing-magazine&quot;&gt;Setting Up Redux For Use In A Real-World Application — Smashing Magazine&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2020/08/redux-real-world-application/&quot; title=&quot;Setting Up Redux For Use In A Real-World Application — Smashing Magazine&quot;&gt;www.smashingmagazine.com/2020/08/redux-real-world-application/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React + Redux + @reduxjs/toolkitを使ったアプリケーション開発のチュートリアル&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;how-to-launch-child-processes-in-node-js-digitalocean&quot;&gt;How To Launch Child Processes in Node.js | DigitalOcean&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-launch-child-processes-in-node-js&quot; title=&quot;How To Launch Child Processes in Node.js | DigitalOcean&quot;&gt;www.digitalocean.com/community/tutorials/how-to-launch-child-processes-in-node-js&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsの&lt;code&gt;child_process&lt;/code&gt;についての記事&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;microfrontends-english-md-at-master-phodal-microfrontends&quot;&gt;microfrontends/english.md at master · phodal/microfrontends&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/phodal/microfrontends/blob/master/english.md&quot; title=&quot;microfrontends/english.md at master · phodal/microfrontends&quot;&gt;github.com/phodal/microfrontends/blob/master/english.md&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MicroFrontend&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;opinion&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Microfrontendについての記事。&lt;br&gt;
+MicroServiceがサービス間の依存を切り離すのに対して、MicroFrontendは複数のアプリケーションを1つのアプリケーションに見えるように集約する。&lt;br&gt;
+ルーティングによる分散/iframeのコンテナの利用/MicroFrontEnd/アプリケーションをモジュール化/Web Componentsでの実装についての比較。&lt;br&gt;
+MicroFrontendのコンセプト、mooaでのMicroFrontend設計について。&lt;br&gt;
+Lazy LoadingとRoutingだけでビルド時に統合をすると個別のアプリケーションをデプロイできなくなる問題、サブアプリケーションモデルでの複数チームの並行開発について&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/phodal/microfrontends&quot; title=&quot;phodal/microfrontends: Micro-frontend Architecture in Action-微前端的那些事儿&quot;&gt;phodal/microfrontends: Micro-frontend Architecture in Action-微前端的那些事儿&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;migrating-large-typescript-codebases-to-project-references&quot;&gt;Migrating Large TypeScript Codebases To Project References&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://engineering.shopify.com/blogs/engineering/migrating-large-typescript-codebases-project-references&quot; title=&quot;Migrating Large TypeScript Codebases To Project References&quot;&gt;engineering.shopify.com/blogs/engineering/migrating-large-typescript-codebases-project-references&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;大きなTypeScriptのコードベースのビルド速度や解析速度をProject Referencesで改善した話。&lt;br&gt;
+どのようにProject Referencesへ移行したかについて&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/project-references.html&quot; title=&quot;TypeScript: Handbook - Project References&quot;&gt;TypeScript: Handbook - Project References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;a-roadmap-for-angular-at-the-beginning-of-2020-at-ng-conf-by-jules-kremer-aug-2020-angular-blog&quot;&gt;A Roadmap for Angular. At the beginning of 2020 at ng-conf… | by Jules Kremer | Aug, 2020 | Angular Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.angular.io/a-roadmap-for-angular-1b4fa996a771&quot; title=&quot;A Roadmap for Angular. At the beginning of 2020 at ng-conf… | by Jules Kremer | Aug, 2020 | Angular Blog&quot;&gt;blog.angular.io/a-roadmap-for-angular-1b4fa996a771&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Angularのロードマップが公開された。&lt;br&gt;
+TypeScript 4.0への対応、RxJS v7への対応、Trusted Typesのサポートなどが進行中。&lt;br&gt;
+将来的な予定としてZone.jsのオプショナル化、Legacy View Engineの削除、NgModulesの削除などが予定されている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://angular.io/guide/roadmap&quot; title=&quot;Angular - Angular Roadmap&quot;&gt;Angular - Angular Roadmap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;indexeddbshim-indexeddbshim-a-polyfill-for-indexeddb-using-websql&quot;&gt;indexeddbshim/IndexedDBShim: A polyfill for IndexedDB using WebSql&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/indexeddbshim/IndexedDBShim&quot; title=&quot;indexeddbshim/IndexedDBShim: A polyfill for IndexedDB using WebSql&quot;&gt;github.com/indexeddbshim/IndexedDBShim&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;WebSQL、SQLiteを使ったブラウザとNode.jsで動くIndexedDBのpolyfill&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;shikijs-shiki-a-beautiful-syntax-highlighter&quot;&gt;shikijs/shiki: A beautiful Syntax Highlighter.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/shikijs/shiki&quot; title=&quot;shikijs/shiki: A beautiful Syntax Highlighter.&quot;&gt;github.com/shikijs/shiki&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TextMateの構文を使ったシンタックスハイライトをしたHTMLを出力できるライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 11 Aug 2020 11:06:38 +0900</pubDate>
+        <link>https://jser.info/2020/08/11/react-17.0-rc-rome-thinking-in-microfrontend/</link>
+        <guid isPermaLink="true">https://jser.info/2020/08/11/react-17.0-rc-rome-thinking-in-microfrontend/</guid>
+        
+        <category>React</category>
+        
+        <category>Rome</category>
+        
+        <category>MicroFrontend</category>
         
         
         <category>JSer</category>
@@ -2288,277 +2522,6 @@ Node.jsの&lt;code&gt;events&lt;/code&gt;への依存を削除、&lt;code&gt;pag
         <category>TypeScript</category>
         
         <category>Flow</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2020-06-09のJS: Firefox 77.0、HTML5 Boilerplate 8.0.0、React TypeScript Cheatsheets</title>
-        <description>&lt;p&gt;JSer.info #491 - Firefox 77がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/06/new-in-firefox-77-devtool-improvements-and-web-platform-updates/&quot;&gt;New in Firefox 77: DevTool improvements and web platform updates - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/77.0/releasenotes/&quot;&gt;Firefox 77.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/ja/releases/77/&quot;&gt;Firefox 77 サイト互換性情報 | Firefox サイト互換性情報&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/77&quot;&gt;Firefox 77 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;開発者ツールのSource Mapロード時間の改善、デバッガーのステップ実行の改善、ネットワークパネルの改善などが行われています。&lt;br&gt;
-またES 2021で入る予定の&lt;code&gt;String#replaceAll&lt;/code&gt;の実装、JPEG画像がExifデータに基づいて回転するように、&lt;code&gt;maxlength&lt;/code&gt;以上の長さの文字列をペーストした場合に切り詰めしないように変更なども行われています。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/CSS/image-orientation&quot;&gt;image-orientation&lt;/a&gt;プロパティの初期値が&lt;code&gt;none&lt;/code&gt;から&lt;code&gt;from-image&lt;/code&gt;に変更されています。&lt;br&gt;
-そのため、JavaScriptなどでメタデータを読み込んで画像を回転されているサイトなどには、この変更の影響が出るかもしれません。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/ja/docs/2020/jpeg-images-are-now-rotated-by-default-according-to-exif-data/&quot;&gt;JPEG 画像が初期設定で Exif データに従い回転させられるようになりました (影響あり) | Firefox サイト互換性情報&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;HTML5 Boilerplate 8.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://htmlcssjavascript.com/web/html5-boilerplate-8-0-0-released/&quot;&gt;HTML5 Boilerplate 8.0.0 Released – HTML + CSS + JavaScript&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;HTML5 Boilerplateは、HTML5のタグを使ったサイトのテンプレートを提供するプロジェクトで、初回のリリースから&lt;a href=&quot;https://htmlcssjavascript.com/web/10-years-of-html5-boilerplate/&quot;&gt;10年&lt;/a&gt;経ちます。&lt;br&gt;
-今回のアップデートでは&lt;a href=&quot;https://github.com/h5bp/create-html5-boilerplate&quot;&gt;create-html5-boilerplate&lt;/a&gt;というセットアップツールの追加、サンプルの&lt;code&gt;package.json&lt;/code&gt;に&lt;a href=&quot;https://parceljs.org/&quot;&gt;Parcel&lt;/a&gt;を使ったビルドの追加、jQueryの依存を削除などが行われています。&lt;/p&gt;
-
-&lt;p&gt;その他にも依存のアップデートやドキュメントの更新などが行われています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://html5boilerplate.com/&quot;&gt;HTML5 Boilerplate: The web’s most popular front-end template&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;june-2020-security-releases-node-js&quot;&gt;June 2020 Security Releases | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/vulnerability/june-2020-security-releases/&quot; title=&quot;June 2020 Security Releases | Node.js&quot;&gt;nodejs.org/en/blog/vulnerability/june-2020-security-releases/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsのセキュリティアップデートそれぞれのバージョンがアップデートされている&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Node.js v10.21.0 (LTS)&lt;/li&gt;
-&lt;li&gt;Node.js v12.18.0 (LTS)&lt;/li&gt;
-&lt;li&gt;Node.js v14.4.0 (Current)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-firefox-77-devtool-improvements-and-web-platform-updates-mozilla-hacks-the-web-developer-blog&quot;&gt;New in Firefox 77: DevTool improvements and web platform updates - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/06/new-in-firefox-77-devtool-improvements-and-web-platform-updates/&quot; title=&quot;New in Firefox 77: DevTool improvements and web platform updates - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2020/06/new-in-firefox-77-devtool-improvements-and-web-platform-updates/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 77リリース。&lt;br&gt;
-開発者ツールのSource Mapロード時間の改善、デバッガーのステップ実行の改善、ネットワークパネルの改善など。&lt;br&gt;
-またString#replaceAllの実装、JPEG画像がExifデータに基づいて回転するように、&lt;code&gt;maxlength&lt;/code&gt;以上の長さの文字列をペーストした場合に切り詰めしないように変更など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/ja/releases/77/&quot; title=&quot;Firefox 77 サイト互換性情報 | Firefox サイト互換性情報&quot;&gt;Firefox 77 サイト互換性情報 | Firefox サイト互換性情報&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/77&quot; title=&quot;Firefox 77 for developers - Mozilla | MDN&quot;&gt;Firefox 77 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/77.0/releasenotes/&quot; title=&quot;Firefox 77.0, See All New Features, Updates and Fixes&quot;&gt;Firefox 77.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;html5-boilerplate-8-0-0-released-html-css-javascript&quot;&gt;HTML5 Boilerplate 8.0.0 Released – HTML + CSS + JavaScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://htmlcssjavascript.com/web/html5-boilerplate-8-0-0-released/&quot; title=&quot;HTML5 Boilerplate 8.0.0 Released – HTML + CSS + JavaScript&quot;&gt;htmlcssjavascript.com/web/html5-boilerplate-8-0-0-released/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;HTML5&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;HTML5 Boilerplate 8.0.0リリース。&lt;br&gt;
-&lt;code&gt;npx create-html5-boilerplate&lt;/code&gt;の追加、Pracelを使ったサンプルの追加、jQueryの削除、レガシーIE向けのブラウザアップグレードプロンプトを削除など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;eslint-v7-2-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v7.2.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2020/06/eslint-v7.2.0-released&quot; title=&quot;ESLint v7.2.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2020/06/eslint-v7.2.0-released&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ESLint 7.2.0リリース。&lt;br&gt;
-ES2020で入る予定のNullish coalescing operatorや&lt;code&gt;import.meta&lt;/code&gt;などをサポート(Optional Chainはまだ未サポート)。&lt;br&gt;
-&lt;code&gt;no-extra-parens&lt;/code&gt;に&lt;code&gt;enforceForFunctionPrototypeMethods&lt;/code&gt;オプションの追加など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/mysticatea/items/9215050e4546c1e2d486&quot; title=&quot;ESLint v7.2.0 - Qiita&quot;&gt;ESLint v7.2.0 - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;angular-js-changelog-md-at-master-angular-angular-js&quot;&gt;angular.js/CHANGELOG.md at master · angular/angular.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/angular/angular.js/blob/master/CHANGELOG.md#180-nested-vaccination-2020-06-01&quot; title=&quot;angular.js/CHANGELOG.md at master · angular/angular.js&quot;&gt;github.com/angular/angular.js/blob/master/CHANGELOG.md#180-nested-vaccination-2020-06-01&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AngularJS 1.8.0リリース。&lt;br&gt;
-jQuery 3.5で修正されたXSSの問題に対するために、一部非互換な変更を含むセキュリティアップデート&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jquery.com/upgrade-guide/3.5/&quot; title=&quot;jQuery Core 3.5 Upgrade Guide | jQuery&quot;&gt;jQuery Core 3.5 Upgrade Guide | jQuery&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;webpack-assetmodules&quot;&gt;webpackの次のバージョンで入るassetModulesの紹介 - 技術探し&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.hiroppy.me/entry/webpack-asset-modules&quot; title=&quot;webpackの次のバージョンで入るassetModulesの紹介 - 技術探し&quot;&gt;blog.hiroppy.me/entry/webpack-asset-modules&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpack 5で導入される予定のAsset Modulesについて&lt;br&gt;
-raw-loader. file-loader, url-loaderの代わりとなるplugin&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;securing-javascript-modules-agoric-medium&quot;&gt;Securing JavaScript Modules - Agoric - Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/agoric/ses-support-for-ecmascript-modules-28fc1beb709c&quot; title=&quot;Securing JavaScript Modules - Agoric - Medium&quot;&gt;medium.com/agoric/ses-support-for-ecmascript-modules-28fc1beb709c&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Secure EcmaScript (SES)についての記事。&lt;br&gt;
-SESにおけるObject-capability model、SES shimsの実装、compartment(enviroment)について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;case-study-analyzing-notion-app-performance-perfperfperf&quot;&gt;Case study: Analyzing Notion app performance · PerfPerfPerf&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://3perf.com/blog/notion/&quot; title=&quot;Case study: Analyzing Notion app performance · PerfPerfPerf&quot;&gt;3perf.com/blog/notion/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;jacvas&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Notionのページをリバースエンジニアリングしてパフォーマンスの改善ポイントを見ていく話。&lt;br&gt;
-ロード関するJavaScriptコードの分離、初期化処理の遅延実行、webpackの&lt;code&gt;concatenateModules&lt;/code&gt;オプション。&lt;br&gt;
-利用していないコードの削除、core-jsの複数バージョンが含まれる問題、サードパーティスクリプトの遅延ロード、SSR時のstateの渡し方とscriptのpreloadについてなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;service-worker-lifecycle-explained-felix-gerschau&quot;&gt;Service Worker Lifecycle Explained | Felix Gerschau&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://felixgerschau.com/service-worker-lifecycle-update/&quot; title=&quot;Service Worker Lifecycle Explained | Felix Gerschau&quot;&gt;felixgerschau.com/service-worker-lifecycle-update/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ServiceWorker&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Service Workerのライフサイクルについて解説した記事&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;layout-shift-web-mizdras-blog&quot;&gt;画像による Layout Shift が無くなる Web がやって来る - mizdra&amp;#39;s blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.mizdra.net/entry/2020/05/31/192613&quot; title=&quot;画像による Layout Shift が無くなる Web がやって来る - mizdra&amp;#39;s blog&quot;&gt;www.mizdra.net/entry/2020/05/31/192613&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ブラウザのデフォルトスタイルシートに&lt;code&gt;aspect-ratio&lt;/code&gt;の指定が入ることで、widthとheight属性に値を入れることでLayout Shiftが抑えられることについて&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;img {
-  aspect-ratio: attr(width) / attr(height);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;スライド、動画関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;typescript-speaker-deck&quot;&gt;大規模改修の裏でTypeScriptとテスト導入をすすめた話 - Speaker Deck&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/pittan/da-gui-mo-gai-xiu-falseli-detypescripttotesutodao-ru-wosusumetahua&quot; title=&quot;大規模改修の裏でTypeScriptとテスト導入をすすめた話 - Speaker Deck&quot;&gt;speakerdeck.com/pittan/da-gui-mo-gai-xiu-falseli-detypescripttotesutodao-ru-wosusumetahua&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Prototype.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;テストがないJavaScriptのコードをTypeScriptへの移行とテストコードを少しずつ追加していく話。&lt;br&gt;
-段階的なTypeScriptへの移行について&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;agoric-ses-shim-ses-secure-ecmascript-is-a-secure-runtime-for-executing-third-party-code-safely&quot;&gt;Agoric/SES-shim: SES (Secure EcmaScript) is a secure runtime for executing third-party code safely&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Agoric/ses-shim&quot; title=&quot;Agoric/SES-shim: SES (Secure EcmaScript) is a secure runtime for executing third-party code safely&quot;&gt;github.com/Agoric/ses-shim&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;SES(Secure EcmaScript)のshimライブラリ。&lt;br&gt;
-オブジェクトの書き換えできなくしたり環境できなくした環境でコードを実行する機能、セキュリティモデル。&lt;br&gt;
-一種のsandboxでコードを実行するための仕様の実装。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/agoric/ses-support-for-ecmascript-modules-28fc1beb709c&quot; title=&quot;Securing JavaScript Modules - Agoric - Medium&quot;&gt;Securing JavaScript Modules - Agoric - Medium&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;tc39-podcast&quot;&gt;TC39 Podcast&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://tc39er.us/&quot; title=&quot;TC39 Podcast&quot;&gt;tc39er.us/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TC39&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;podcast&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ECMAScriptの策定グループであるTC39についてのPodcast&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;react-typescript-cheatsheets-react-typescript-cheatsheets&quot;&gt;React TypeScript Cheatsheets | React TypeScript Cheatsheets&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://react-typescript-cheatsheet.netlify.app/&quot; title=&quot;React TypeScript Cheatsheets | React TypeScript Cheatsheets&quot;&gt;react-typescript-cheatsheet.netlify.app/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript + Reactについてのドキュメント。&lt;br&gt;
-コンポーネントや特定の機能における型定義の方法、型定義のパターン、TypeScriptへの移行方法などついて書かれてる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;mvasilkov-assert-equal-html-assert-the-equality-of-two-html-fragments&quot;&gt;mvasilkov/assert-equal-html: Assert the equality of two HTML fragments&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/mvasilkov/assert-equal-html&quot; title=&quot;mvasilkov/assert-equal-html: Assert the equality of two HTML fragments&quot;&gt;github.com/mvasilkov/assert-equal-html&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;HTMLの断片同士を比較する関数。&lt;br&gt;
-パーサでHTMLをパースしてその結果を比較している&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;developit-redaxios-the-axios-api-as-an-800-byte-fetch-wrapper&quot;&gt;developit/redaxios: The Axios API, as an 800 byte Fetch wrapper.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/developit/redaxios&quot; title=&quot;developit/redaxios: The Axios API, as an 800 byte Fetch wrapper.&quot;&gt;github.com/developit/redaxios&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Fetch&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Fetch APIを使ったAxiosライクなAPIを実装する目的のHTTPライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;garronej-denoify-for-npm-module-authors-that-would-like-to-support-deno-but-do-not-want-to-write-and-maintain-a-port-for-it&quot;&gt;garronej/denoify: 🦕For NPM module authors that would like to support Deno but do not want to write and maintain a port for it.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/garronej/denoify&quot; title=&quot;garronej/denoify: 🦕For NPM module authors that would like to support Deno but do not want to write and maintain a port for it.&quot;&gt;github.com/garronej/denoify&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;deno&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npmモジュールをDenoから読み込めるように変換するtranspiler。&lt;br&gt;
-&lt;code&gt;fs&lt;/code&gt;などの互換モジュールの変換なども行う&lt;/p&gt;
-</description>
-        <pubDate>Tue, 09 Jun 2020 11:47:09 +0900</pubDate>
-        <link>https://jser.info/2020/06/09/firefox-77.0-html5-boilerplate-8.0.0-react-typescript-cheatsheets/</link>
-        <guid isPermaLink="true">https://jser.info/2020/06/09/firefox-77.0-html5-boilerplate-8.0.0-react-typescript-cheatsheets/</guid>
-        
-        <category>Firefox</category>
-        
-        <category>HTML5</category>
-        
-        <category>React</category>
-        
-        <category>TypeScript</category>
         
         
         <category>JSer</category>
