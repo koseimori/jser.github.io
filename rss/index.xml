@@ -5,9 +5,314 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 12 Aug 2020 13:55:04 +0900</pubDate>
-    <lastBuildDate>Wed, 12 Aug 2020 13:55:04 +0900</lastBuildDate>
+    <pubDate>Tue, 18 Aug 2020 11:08:08 +0900</pubDate>
+    <lastBuildDate>Tue, 18 Aug 2020 11:08:08 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-08-18のJS: Storybook 6.0.0、npm 7 beta、hapi 20(Maintainerの交代)</title>
+        <description>&lt;p&gt;JSer.info #501 - Storybook 6.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-6-0-1e14a2071000&quot;&gt;Storybook 6.0. Production-grade component development | by Michael Shilman | Storybook | Aug, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybookjs/storybook/releases/tag/v6.0.0&quot;&gt;Release v6.0.0 · storybookjs/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md#600-august-10-2020&quot;&gt;storybook/CHANGELOG.md at next · storybookjs/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TypeScriptのビルトインサポート、ストーリー関数の最初の引数にArgsオブジェクトを渡すように、addon-knobsの代わりとなるaddon-controlsの導入。&lt;br&gt;
+複数のStoryboardを1つのStorybookにまとめることができるようになるなど。&lt;br&gt;
+それぞれの機能追加に関する記事も公開されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/zero-config-storybook-66e7c4798e5d&quot;&gt;Zero-config Storybook. Simple setup, instant productivity | by Michael Shilman | Storybook | Aug, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/introducing-storybook-args-2dadcdb777cc&quot;&gt;Introducing Storybook Args. Next-gen, dynamic component examples | by Michael Shilman | Storybook | Jul, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-composition-af0da9084fba&quot;&gt;Storybook Composition. Combine multiple Storybooks into one | by Dominic Nguyen | Storybook | Jun, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-controls-ce82af93e430&quot;&gt;Storybook Controls. Live edit UI components w/ no code | by Michael Shilman | Storybook | Jul, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また5.3から6.0へのマイグレーションガイドとマイグレーションコマンド(&lt;code&gt;npx sb upgrade&lt;/code&gt;)も公開されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-6-migration-guide-200346241bb5&quot;&gt;Storybook 6 Migration Guide. Level up your component development… | by Michael Shilman | Storybook | Aug, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-53x-to-60x&quot;&gt;storybook/MIGRATION.md at next · storybookjs/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;npm 7のベータがリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.npmjs.org/post/626173315965468672/npm-v7-series-beta-release-and-semver-major&quot;&gt;The npm Blog — npm v7 Series - Beta Release! And: SemVer-Major...&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;peerDependencies&lt;/code&gt;がデフォルトでインストールされるようになり、npm 6の挙動を再現する&lt;code&gt;--legacy-peer-deps&lt;/code&gt;の追加されています。&lt;br&gt;
+npmは2までは&lt;code&gt;peerDependencies&lt;/code&gt;を自動インストールしていましたが、3で&lt;code&gt;peerDependencies&lt;/code&gt;をデフォルトでインストールしないように変更しています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/npm/npm/releases/tag/v3.0.0&quot;&gt;Release v3.0.0 · npm/npm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;peerDependencies&lt;/code&gt;に関する&lt;a href=&quot;https://yarnpkg.com/&quot;&gt;yarn&lt;/a&gt;や&lt;a href=&quot;https://github.com/pnpm/pnpm&quot;&gt;pnpm&lt;/a&gt;のスタンスについては、次のRFC Issueにかかれています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/npm/rfcs/pull/43&quot;&gt;Let&amp;#39;s install peer deps again! by isaacs · Pull Request #43 · npm/rfcs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;機能追加としては&lt;code&gt;acceptDependencies&lt;/code&gt;のサポート、&lt;code&gt;package-lock.json&lt;/code&gt;の形式変更と&lt;code&gt;yarn.lock&lt;/code&gt;のサポート、&lt;code&gt;workspaces&lt;/code&gt;フィールドのサポートなども含まれています。&lt;br&gt;
+また、npm run-scriptにおける&lt;a href=&quot;https://github.com/npm/rfcs/blob/latest/accepted/0021-reduce-lifecycle-script-environment.md&quot;&gt;&lt;code&gt;npm_package_*&lt;/code&gt;と&lt;code&gt;npm_package_*&lt;/code&gt;の環境変数の削除/変更&lt;/a&gt;が行われています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Node.jsウェブフレームワークのhapi 20.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4138&quot;&gt;20.0.0 Release Notes · Issue #4138 · hapijs/hapi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;このMajor updateには機能的な破壊的な変更はありませんが、メンテナーが&lt;a href=&quot;https://github.com/hueniverse&quot;&gt;Eran Hammer&lt;/a&gt;から&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4113&quot;&gt;Technical Steering Committee&lt;/a&gt;へと引き継がれる変更が含まれています。&lt;/p&gt;
+
+&lt;p&gt;経緯については次のIssueで解説されていますが、商用サポートの採算的な問題とモチベーションの問題からhapiの作者である&lt;a href=&quot;https://github.com/hueniverse&quot;&gt;Eran Hammer&lt;/a&gt;によるメンテナンスを今年で終了することが伝えられていました。&lt;br&gt;
+この問題を受けてメンテナンスを引き継ぐための&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4113&quot;&gt;hapi Technical Steering Committee(TSC)&lt;/a&gt;が設立され、20.0.0からはTSCがhapiのメンテナーとなります。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4111&quot;&gt;The future of the hapi project, a prelude · Issue #4111 · hapijs/hapi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4113&quot;&gt;The future of the hapi project · Issue #4113 · hapijs/hapi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v6-0-0-storybookjs-storybook&quot;&gt;Release v6.0.0 · storybookjs/storybook&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/storybookjs/storybook/releases/tag/v6.0.0&quot; title=&quot;Release v6.0.0 · storybookjs/storybook&quot;&gt;github.com/storybookjs/storybook/releases/tag/v6.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Storybook 6.0.0リリース。&lt;br&gt;
+TypeScriptのビルトインサポート、ストーリー関数の最初の引数にArgsオブジェクトを渡すように、addon-knobsの代わりとなるaddon-controlsの導入。&lt;br&gt;
+複数のStoryboardを1つのStorybookにまとめることができるようになるなど。&lt;br&gt;
+また5.3から6.0へのマイグレーションガイドも公開されている&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md#600-august-10-2020&quot; title=&quot;storybook/CHANGELOG.md at next · storybookjs/storybook&quot;&gt;storybook/CHANGELOG.md at next · storybookjs/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-53x-to-60x&quot; title=&quot;storybook/MIGRATION.md at next · storybookjs/storybook&quot;&gt;storybook/MIGRATION.md at next · storybookjs/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-npm-blog-npm-v7-series-beta-release-and-semver-major&quot;&gt;The npm Blog — npm v7 Series - Beta Release! And: SemVer-Major...&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.npmjs.org/post/626173315965468672/npm-v7-series-beta-release-and-semver-major&quot; title=&quot;The npm Blog — npm v7 Series - Beta Release! And: SemVer-Major...&quot;&gt;blog.npmjs.org/post/626173315965468672/npm-v7-series-beta-release-and-semver-major&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm 7 betaリリース。&lt;br&gt;
+&lt;code&gt;peerDependencies&lt;/code&gt;がデフォルトでインストールされるようになり、過去の挙動を再現する&lt;code&gt;--legacy-peer-deps&lt;/code&gt;の追加された。&lt;br&gt;
+&lt;code&gt;acceptDependencies&lt;/code&gt;のサポート、&lt;code&gt;package-lock.json&lt;/code&gt;の形式変更と&lt;code&gt;yarn.lock&lt;/code&gt;のサポート、&lt;code&gt;workspaces&lt;/code&gt;フィールドのサポートなど。&lt;br&gt;
+また、npm run-scriptにおける&lt;code&gt;npm_package_*&lt;/code&gt;と&lt;code&gt;npm_package_*&lt;/code&gt;の環境変数の削除などが行われている&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v14-8-0-current-node-js&quot;&gt;Node v14.8.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v14.8.0/&quot; title=&quot;Node v14.8.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v14.8.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 14.8.0リリース。&lt;br&gt;
+Top-Level Awaitのデフォルトサポート、&lt;code&gt;async_hooks&lt;/code&gt;モジュールに&lt;code&gt;AsyncResource.bind&lt;/code&gt;の追加など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-version-8-0-0-acornjs-acorn&quot;&gt;Release Version 8.0.0 · acornjs/acorn&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/acornjs/acorn/releases/tag/8.0.0&quot; title=&quot;Release Version 8.0.0 · acornjs/acorn&quot;&gt;github.com/acornjs/acorn/releases/tag/8.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptパーサであるAcorn 8.0.0リリース。&lt;br&gt;
+ECMAScript moduleとしてロードできるように、&lt;code&gt;ecmaVersion&lt;/code&gt;オプションが必須となった&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;update-for-customers-using-phonegap-and-phonegap-build-by-adobe-i-o-aug-2020-phonegap&quot;&gt;Update for Customers Using PhoneGap and PhoneGap Build | by Adobe I/O | Aug, 2020 | PhoneGap&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c&quot; title=&quot;Update for Customers Using PhoneGap and PhoneGap Build | by Adobe I/O | Aug, 2020 | PhoneGap&quot;&gt;blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ウェブ技術を使ってネイティブアプリを作れるPhoneGapのビルドサービスが2020年10月で終了する。&lt;br&gt;
+代替としてApache Cordova、Ionicなどがあることについて。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;20-0-0-release-notes-issue-4138-hapijs-hapi&quot;&gt;20.0.0 Release Notes · Issue #4138 · hapijs/hapi&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4138&quot; title=&quot;20.0.0 Release Notes · Issue #4138 · hapijs/hapi&quot;&gt;github.com/hapijs/hapi/issues/4138&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;hapi 20.0.0リリース。&lt;br&gt;
+コアメンテナーが交代しTechnical Steering Committee (TSC) ベースのプロジェクトに変更がメインのアップデート。&lt;br&gt;
+&lt;code&gt;@hapi/joi&lt;/code&gt;から&lt;code&gt;@hapi/validate&lt;/code&gt;に変更、Node.js 14のサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4113&quot; title=&quot;The future of the hapi project · Issue #4113 · hapijs/hapi&quot;&gt;The future of the hapi project · Issue #4113 · hapijs/hapi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;emscripten-changelog-md-at-master-emscripten-core-emscripten&quot;&gt;emscripten/ChangeLog.md at master · emscripten-core/emscripten&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/emscripten-core/emscripten/blob/master/ChangeLog.md#200-08102020&quot; title=&quot;emscripten/ChangeLog.md at master · emscripten-core/emscripten&quot;&gt;github.com/emscripten-core/emscripten/blob/master/ChangeLog.md#200-08102020&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;C/C++などをWebAssemblyにコンパイルするEmscripten 2.0リリース。&lt;br&gt;
+fastcomp backendの削除、Python 2のサポートを削除。&lt;br&gt;
+また例外情報のメタデータをJSではなく&lt;code&gt;WebAssembly.Memory&lt;/code&gt;に保存することで例外処理がスレッドセーフになるような変更など&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sbc100&quot; title=&quot;Remove fastcomp · Issue #11319 · emscripten-core/emscripten&quot;&gt;Remove fastcomp · Issue #11319 · emscripten-core/emscripten&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-2-11-0-qunitjs-qunit&quot;&gt;Release 2.11.0 · qunitjs/qunit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/qunitjs/qunit/releases/tag/2.11.0&quot; title=&quot;Release 2.11.0 · qunitjs/qunit&quot;&gt;github.com/qunitjs/qunit/releases/tag/2.11.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;QUnit 2.11.0リリース。&lt;br&gt;
+Node.js 10未満のサポートを削除、&lt;code&gt;assert.true&lt;/code&gt;と&lt;code&gt;assert.false&lt;/code&gt;の追加、HTMLレポートの検索改善など&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ajv-joins-openjs-foundation-as-an-incubation-project-openjs-foundation&quot;&gt;Ajv Joins OpenJS Foundation as an Incubation Project - OpenJS Foundation&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://openjsf.org/blog/2020/08/14/ajv-joins-openjs-foundation-as-an-incubation-project/&quot; title=&quot;Ajv Joins OpenJS Foundation as an Incubation Project - OpenJS Foundation&quot;&gt;openjsf.org/blog/2020/08/14/ajv-joins-openjs-foundation-as-an-incubation-project/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JSON&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JSON SchemaバリデーターであるAjvがOpenJS Foundationに入った。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.poberezkin.com/posts/2020-08-14-ajv-json-validator-mozilla-open-source-grant-openjs-foundation.html&quot; title=&quot;Evgeny Poberezkin - Ajv JSON Schema validator: Mozilla MOSS grant and OpenJS Foundation&quot;&gt;Evgeny Poberezkin - Ajv JSON Schema validator: Mozilla MOSS grant and OpenJS Foundation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-js-knqyf263s-blog&quot;&gt;Node.jsでプロトタイプ汚染後に任意コード実行まで繋げた事例 - knqyf263&amp;#39;s blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://knqyf263.hatenablog.com/entry/2020/08/11/050342&quot; title=&quot;Node.jsでプロトタイプ汚染後に任意コード実行まで繋げた事例 - knqyf263&amp;amp;#39;s blog&quot;&gt;knqyf263.hatenablog.com/entry/2020/08/11/050342&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsにおけるプロトタイプ汚染の実例を紹介している記事&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-golden-rule-of-generics&quot;&gt;The Golden Rule of Generics&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://effectivetypescript.com/2020/08/12/generics-golden-rule/&quot; title=&quot;The Golden Rule of Generics&quot;&gt;effectivetypescript.com/2020/08/12/generics-golden-rule/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScriptのGenericsを使うべきかを判断するとき目安として「型パラメーターは2回表示されるとき」というルールについて。&lt;br&gt;
+いろいろなコード例ともにGenericsの利用例を紹介している&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://microsoft.github.io/TypeScript-New-Handbook/everything/#guidelines-for-writing-good-generic-functions&quot; title=&quot;Handbook Page&quot;&gt;Handbook Page&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;optimizing-css-for-faster-page-loads-tomas-pustelniks-personal-website&quot;&gt;Optimizing CSS for faster page loads - Tomas Pustelnik&amp;#39;s personal website&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pustelto.com/blog/optimizing-css-for-faster-page-loads/&quot; title=&quot;Optimizing CSS for faster page loads - Tomas Pustelnik&amp;#39;s personal website&quot;&gt;pustelto.com/blog/optimizing-css-for-faster-page-loads/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSSのCritical Pathの最適化について。&lt;br&gt;
+CSSのロードタイムに与える影響、Critical CSSの分離と遅延ロード、CSSのCode Splittingについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-js-and-the-struggles-of-being-an-eventtarget&quot;&gt;Node.js and the struggles of being an EventTarget&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.nearform.com/blog/node-js-and-the-struggles-of-being-an-eventtarget/&quot; title=&quot;Node.js and the struggles of being an EventTarget&quot;&gt;www.nearform.com/blog/node-js-and-the-struggles-of-being-an-eventtarget/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsに&lt;code&gt;EventTarget&lt;/code&gt;がなぜ実装されたのかについて。&lt;br&gt;
+Node.jsにFethやAbortControllerなどのウェブ標準のAPIを実装するためにブラウザと互換性のある&lt;code&gt;EventTarget&lt;/code&gt; APIが必要である点について。&lt;br&gt;
+&lt;code&gt;EventTarget&lt;/code&gt;を実装するにあたっての互換性、複数継承、パフォーマンスの問題をどう解決したかについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;twilco-kosmonaut-a-web-browser-engine-for-the-space-age&quot;&gt;twilco/kosmonaut: A web browser engine for the space age&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/twilco/kosmonaut&quot; title=&quot;twilco/kosmonaut: A web browser engine for the space age&quot;&gt;github.com/twilco/kosmonaut&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Rust&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;ServoをインスパイアしたRust製のブラウザエンジン。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;shopify-web-foundation-principles-decision-logs-best-practices-and-common-configuration-for-building-web-apps-at-shopify&quot;&gt;Shopify/web-foundation: Principles, decision logs, best practices, and common configuration for building web apps at Shopify&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Shopify/web-foundation&quot; title=&quot;Shopify/web-foundation: Principles, decision logs, best practices, and common configuration for building web apps at Shopify&quot;&gt;github.com/Shopify/web-foundation&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Shopifyのウェブ開発における設定やその解説ドキュメントをまとめたリポジトリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ealush-vest-vest-declarative-validations-framework&quot;&gt;ealush/vest: Vest ✅ Declarative validations framework&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ealush/vest&quot; title=&quot;ealush/vest: Vest ✅ Declarative validations framework&quot;&gt;github.com/ealush/vest&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;テストフレームワークライクなバリデーションライブラリ。&lt;br&gt;
+テストコードのようにバリデーションのコードを書けるライブラリ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;run-javascript-everywhere&quot;&gt;Run JavaScript Everywhere.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.dev/&quot; title=&quot;Run JavaScript Everywhere.&quot;&gt;nodejs.dev/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.jsについての入門ドキュメントサイト&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;native-mobile-apps-in-javascript-fast-and-secure-framework-tabris&quot;&gt;Native mobile apps in JavaScript. Fast and secure framework. - Tabris&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tabris.com/&quot; title=&quot;Native mobile apps in JavaScript. Fast and secure framework. - Tabris&quot;&gt;tabris.com/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Native&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;iOS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Android&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React NativeのようにJavaScriptで書いてOSネイティブのUIを描画できるモバイルアプリ作成フレームワーク。&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 18 Aug 2020 09:56:08 +0900</pubDate>
+        <link>https://jser.info/2020/08/18/storybook-6.0.0-npm-7-beta-hapi-20maintainer/</link>
+        <guid isPermaLink="true">https://jser.info/2020/08/18/storybook-6.0.0-npm-7-beta-hapi-20maintainer/</guid>
+        
+        <category>Storybook</category>
+        
+        <category>npm</category>
+        
+        <category>Node.js</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>JSer.info 500回目の更新 - Slackワークスペース作成、コラボレータ募集、10年に向けて</title>
@@ -2305,223 +2610,6 @@ Service Workerを使う方法、Fetch、XHR、&lt;code&gt;http&lt;/code&gt;モ�
         <category>CSS</category>
         
         <category>Safari</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2020-06-16のJS: Mocha 8.0.0(Parallel)、history.js 5.0.0、hegel(Type Checker)</title>
-        <description>&lt;p&gt;JSer.info #492 - テストフレームワークであるMocha 8.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mochajs/mocha/releases/tag/v8.0.0&quot;&gt;https://github.com/mochajs/mocha/releases/tag/v8.0.0&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Mocha 8.0.0ではNode.js 10未満のサポートを終了しています。&lt;br&gt;
-また、Mocha 7.0.0でDreprecatedとなった&lt;code&gt;mocha.opts&lt;/code&gt;のサポートも削除して、&lt;code&gt;.mocharc.{js,json,yml}&lt;/code&gt;のみを設定ファイルとしてサポートになっています。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;mocha.opts&lt;/code&gt;から&lt;code&gt;.mocharc.*&lt;/code&gt;への移行は次のスクリプトで行えます。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://efcl.info/2020/04/16/mocha-opts-to-mocharc/&quot;&gt;Mocha v7のmocha.optsから.mocharc.{json,js,yml,yaml}にマイグレーションするスクリプト&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また、Mocha 8.0.0では&lt;code&gt;--parallel&lt;/code&gt;フラグをつけることで、テストの並行実行をサポートしています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://mochajs.org/#parallel-tests&quot;&gt;https://mochajs.org/#parallel-tests&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;History APIを扱うライブラリであるhistory.js 5.0.0がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/ReactTraining/history/releases/tag/v5.0.0&quot;&gt;https://github.com/ReactTraining/history/releases/tag/v5.0.0&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;5.0.0ではHistory APIをサポートしていないブラウザのサポートを終了しています。&lt;br&gt;
-また、ファイルサイズを半分程度小さくする改善やiframesに対するhistoryの対応なども含まれています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;JavaScriptで書かれたJavaScriptの型チェッカーであるhegelがリリースされています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/JSMonk/hegel&quot;&gt;https://github.com/JSMonk/hegel&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;hegelは静的な型チェックが通ったら実行時にエラーが出ないようにする目的を持つ型チェッカーです。そのため&lt;code&gt;any&lt;/code&gt;のような実行時エラーを引き起こすような型は持ちません。型はアノテーションのみで、Babelなどで型アノテーションを取り除けばJavaScriptのコードとなるようにデザインされています。&lt;/p&gt;
-
-&lt;p&gt;またFlowがOCamlで書かれていたの対してhegelはJavaScriptで書かれています。(現時点ではコードベースはFlowでチェックされています)&lt;/p&gt;
-
-&lt;p&gt;また、ライブラリの型定義として既存のTypeScriptの&lt;code&gt;.d.ts&lt;/code&gt;ファイルを利用できるようになっています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v8-0-0-mochajs-mocha&quot;&gt;Release v8.0.0 · mochajs/mocha&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/mochajs/mocha/releases/tag/v8.0.0&quot; title=&quot;Release v8.0.0 · mochajs/mocha&quot;&gt;github.com/mochajs/mocha/releases/tag/v8.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Mocha 8.0.0リリース。&lt;br&gt;
-Node 10未満のサポート終了、&lt;code&gt;mocha.opts&lt;/code&gt;のサポート終了、&lt;code&gt;enableTimeout()&lt;/code&gt;の削除など。&lt;br&gt;
-&lt;code&gt;--parallel&lt;/code&gt;でパラレルテストをサポート、&lt;code&gt;--require&lt;/code&gt;オプションでES Modulesを読み込めるようになるなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v5-0-0-reacttraining-history&quot;&gt;Release v5.0.0 · ReactTraining/history&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/ReactTraining/history/releases/tag/v5.0.0&quot; title=&quot;Release v5.0.0 · ReactTraining/history&quot;&gt;github.com/ReactTraining/history/releases/tag/v5.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;history.js 5.0.0リリース。&lt;br&gt;
-HTML5 history APIをサポートしてないブラウザのサポート終了、TypeScriptのサポート、ファイルサイズの削減など。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v1-1-0-denoland-deno&quot;&gt;Release v1.1.0 · denoland/deno&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/denoland/deno/releases/tag/v1.1.0&quot; title=&quot;Release v1.1.0 · denoland/deno&quot;&gt;github.com/denoland/deno/releases/tag/v1.1.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;deno&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Deno v1.1.0 リリース。&lt;br&gt;
-&lt;code&gt;deno eval -p&lt;/code&gt;の追加、&lt;code&gt;deno lint&lt;/code&gt;コマンドの追加、ファイルシステムのメソッドが&lt;code&gt;file:&lt;/code&gt;なURLをサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v2-0-0-rwaldron-johnny-five&quot;&gt;Release v2.0.0 · rwaldron/johnny-five&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/rwaldron/johnny-five/releases/tag/v2.0.0&quot; title=&quot;Release v2.0.0 · rwaldron/johnny-five&quot;&gt;github.com/rwaldron/johnny-five/releases/tag/v2.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;IoT&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;IoTフレームワークのjohnny-five 2.0リリース&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-108-webkit&quot;&gt;Release Notes for Safari Technology Preview 108 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10840/release-notes-for-safari-technology-preview-108/&quot; title=&quot;Release Notes for Safari Technology Preview 108 | WebKit&quot;&gt;webkit.org/blog/10840/release-notes-for-safari-technology-preview-108/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 108リリース。&lt;br&gt;
-&lt;code&gt;ParentNode.replaceChildren()&lt;/code&gt;の実装、Async Clipboard APIで&lt;code&gt;&amp;quot;image/png&amp;quot;&lt;/code&gt;の読み込みをサポートなど&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-v4-0-0-puppeteer-puppeteer&quot;&gt;Release v4.0.0 · puppeteer/puppeteer&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/puppeteer/puppeteer/releases/tag/v4.0.0&quot; title=&quot;Release v4.0.0 · puppeteer/puppeteer&quot;&gt;github.com/puppeteer/puppeteer/releases/tag/v4.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Puppeteer v4.0.0リリース。&lt;br&gt;
-Node.jsの&lt;code&gt;events&lt;/code&gt;への依存を削除、&lt;code&gt;page.isJavaScriptEnabled()&lt;/code&gt;の追加など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;eventemitter-eventmit-web-scratch&quot;&gt;小さなEventEmitterライブラリ - eventmitを書いた | Web Scratch&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://efcl.info/2020/06/13/eventmit/&quot; title=&quot;小さなEventEmitterライブラリ - eventmitを書いた | Web Scratch&quot;&gt;efcl.info/2020/06/13/eventmit/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;1種類のイベントに対して1つのオブジェクトを作るEventEmitter的なライブラリについて。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/azu/eventmit&quot; title=&quot;azu/eventmit: Simple EventEmitter. A single event object per an event.&quot;&gt;azu/eventmit: Simple EventEmitter. A single event object per an event.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;introducing-the-mdn-web-docs-front-end-developer-learning-pathway-mozilla-hacks-the-web-developer-blog&quot;&gt;Introducing the MDN Web Docs Front-end developer learning pathway - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/06/introducing-the-mdn-web-docs-front-end-developer-learning-pathway/&quot; title=&quot;Introducing the MDN Web Docs Front-end developer learning pathway - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2020/06/introducing-the-mdn-web-docs-front-end-developer-learning-pathway/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;mdn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MDNのフロントエンド開発者向けのドキュメントについての紹介記事&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-complete-guide-to-css-media-queries-polypane-browser-for-developers&quot;&gt;The complete guide to CSS media queries | Polypane browser for developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://polypane.app/blog/the-complete-guide-to-css-media-queries/&quot; title=&quot;The complete guide to CSS media queries | Polypane browser for developers&quot;&gt;polypane.app/blog/the-complete-guide-to-css-media-queries/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSS Media Queryの使い方の解説。&lt;br&gt;
-構文的な使い方の解説、ユースケースについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;googlecloudplatform-require-so-slow-require-s-taking-too-much-time-profile-em&quot;&gt;GoogleCloudPlatform/require-so-slow: `require`s taking too much time? Profile &amp;#39;em.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleCloudPlatform/require-so-slow&quot; title=&quot;GoogleCloudPlatform/require-so-slow: \`require\`s taking too much time? Profile &amp;#39;em.&quot;&gt;github.com/GoogleCloudPlatform/require-so-slow&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;npmモジュールのロード時間をChrome Timeline Viewerで見られるようにプロファイルを取るツール。&lt;br&gt;
-モジュール内での&lt;code&gt;require&lt;/code&gt;にかかっている時間を可視化できる&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jsmonk-hegel-an-advanced-static-type-checker&quot;&gt;JSMonk/hegel: An advanced static type checker&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/JSMonk/hegel&quot; title=&quot;JSMonk/hegel: An advanced static type checker&quot;&gt;github.com/JSMonk/hegel&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScriptで書かれたJavaScriptの型チェッカ。&lt;br&gt;
-型アノテーションを書くことで型チェックを行える。TypeScriptとは異なり静的な型チェックが通った場合に実行時エラーが出ないような実装をしている。ライブラリの型チェックにはTypeScriptの型定義ファイルを利用できる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://hegel.js.org/docs&quot; title=&quot;What &amp;amp;amp; Why | Hegel&quot;&gt;What &amp;amp; Why | Hegel&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;bcoe-http2spy-test-helpers-for-working-with-node-js-http2-module&quot;&gt;bcoe/http2spy: test helpers for working with Node.js&amp;#39; http2 module&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/bcoe/http2spy&quot; title=&quot;bcoe/http2spy: test helpers for working with Node.js&amp;#39; http2 module&quot;&gt;github.com/bcoe/http2spy&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;HTTP2&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;http2&lt;/code&gt;モジュールのspyライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;bradtraversy-vanillawebprojects-mini-projects-built-with-html5-css-javascript-no-frameworks-or-libraries&quot;&gt;bradtraversy/vanillawebprojects: Mini projects built with HTML5, CSS &amp;amp; JavaScript. No frameworks or libraries&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/bradtraversy/vanillawebprojects&quot; title=&quot;bradtraversy/vanillawebprojects: Mini projects built with HTML5, CSS &amp;amp; JavaScript. No frameworks or libraries&quot;&gt;github.com/bradtraversy/vanillawebprojects&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;example&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ライブラリやフレームワークを使わずにHTML/JavaScript/CSSで書いたアプリケーションのサンプル集&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 16 Jun 2020 00:16:17 +0900</pubDate>
-        <link>https://jser.info/2020/06/16/mocha-8.0.0parallel-history.js-5.0.0-hegeltype-checker/</link>
-        <guid isPermaLink="true">https://jser.info/2020/06/16/mocha-8.0.0parallel-history.js-5.0.0-hegeltype-checker/</guid>
-        
-        <category>Mocha</category>
-        
-        <category>Browser</category>
-        
-        <category>TypeScript</category>
-        
-        <category>Flow</category>
         
         
         <category>JSer</category>
