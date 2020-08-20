@@ -5,9 +5,320 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 18 Aug 2020 11:20:43 +0900</pubDate>
-    <lastBuildDate>Tue, 18 Aug 2020 11:20:43 +0900</lastBuildDate>
+    <pubDate>Thu, 20 Aug 2020 17:51:42 +0900</pubDate>
+    <lastBuildDate>Thu, 20 Aug 2020 17:51:42 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-08-18: Storybook 6.0.0, npm 7 beta, hapi 20(Maintainer 교체)</title>
+        <description>&lt;p&gt;JSer.info #501 - Storybook 6.0.0이 릴리스 됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-6-0-1e14a2071000&quot;&gt;Storybook 6.0. Production-grade component development | by Michael Shilman | Storybook | Aug, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybookjs/storybook/releases/tag/v6.0.0&quot;&gt;Release v6.0.0 · storybookjs/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md#600-august-10-2020&quot;&gt;storybook/CHANGELOG.md at next · storybookjs/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TypeScript를 빌트인 지원하며 스토리 함수 첫 번째 인수에 Args 객체를 전달하도록 개선됐고 addon-knobs를 대신하는 addon-controls가 도입됐습니다.&lt;br&gt;
+그리고 여러개의 Storybook을 하나의 Storybook으로 조합해서 살펴 볼 수 있도록 변경됐습니다.&lt;br&gt;
+새롭게 추가된 각 기능에 대한 글도 함께 공개 됐으니 살펴보시면 좋을 거 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/zero-config-storybook-66e7c4798e5d&quot;&gt;Zero-config Storybook. Simple setup, instant productivity | by Michael Shilman | Storybook | Aug, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/introducing-storybook-args-2dadcdb777cc&quot;&gt;Introducing Storybook Args. Next-gen, dynamic component examples | by Michael Shilman | Storybook | Jul, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-composition-af0da9084fba&quot;&gt;Storybook Composition. Combine multiple Storybooks into one | by Dominic Nguyen | Storybook | Jun, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-controls-ce82af93e430&quot;&gt;Storybook Controls. Live edit UI components w/ no code | by Michael Shilman | Storybook | Jul, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;5.3에서 6.0으로의 이전 가이드와 이전 명령어(&lt;code&gt;npx sb upgrade&lt;/code&gt;)도 공개 됐으니 참고해주세요.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/storybookjs/storybook-6-migration-guide-200346241bb5&quot;&gt;Storybook 6 Migration Guide. Level up your component development… | by Michael Shilman | Storybook | Aug, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-53x-to-60x&quot;&gt;storybook/MIGRATION.md at next · storybookjs/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;npm 7 베타가 릴리스 됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.npmjs.org/post/626173315965468672/npm-v7-series-beta-release-and-semver-major&quot;&gt;The npm Blog — npm v7 Series - Beta Release! And: SemVer-Major...&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;peerDependencies&lt;/code&gt;가 기본적으로 설치되도록 변경됐으며 이와 함께 npm 6의 방식도 지원하는 &lt;code&gt;--legacy-peer-deps&lt;/code&gt;가 추가됐습니다.&lt;br&gt;
+npm 2까지는 &lt;code&gt;peerDependencies&lt;/code&gt;를 자동으로 설치했지만, 3에서 &lt;code&gt;peerDependencies&lt;/code&gt;를 기본적으로 설치하지 않도록 변경했습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/npm/npm/releases/tag/v3.0.0&quot;&gt;Release v3.0.0 · npm/npm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;peerDependencies&lt;/code&gt;에 관한 &lt;a href=&quot;https://yarnpkg.com/&quot;&gt;yarn&lt;/a&gt;이나 &lt;a href=&quot;https://github.com/pnpm/pnpm&quot;&gt;pnpm&lt;/a&gt;의 정책은 다음 RFC 이슈에 정리돼 있으니 참고하시길 바랍니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/npm/rfcs/pull/43&quot;&gt;Let&amp;#39;s install peer deps again! by isaacs · Pull Request #43 · npm/rfcs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;새로운 기능으로는 &lt;code&gt;acceptDependencies&lt;/code&gt;, &lt;code&gt;workspaces&lt;/code&gt; 필드, &lt;code&gt;yarn.lock&lt;/code&gt;을 지원하며 &lt;code&gt;package-lock.json&lt;/code&gt;의 형식 변경이 이뤄졌습니다.&lt;br&gt;
+또, &lt;code&gt;npm run-script&lt;/code&gt;에서 활용할 수 있는 &lt;a href=&quot;https://github.com/npm/rfcs/blob/latest/accepted/0021-reduce-lifecycle-script-environment.md&quot;&gt;&lt;code&gt;npm_package_*&lt;/code&gt;와 &lt;code&gt;npm_package_*&lt;/code&gt;의 환경 변수 삭제 또는 변경&lt;/a&gt;됐으니 참고하시길 바랍니다.&lt;/p&gt;
+
+&lt;p&gt;그 외로 &lt;code&gt;npx&lt;/code&gt; 대신 사용할 수 있는 &lt;code&gt;npm exec&lt;/code&gt; 명령어가 추가됐으며 &lt;code&gt;npx&lt;/code&gt;는 &lt;code&gt;npm exec&lt;/code&gt;의 별칭(alias)으로 변경될 예정입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/npm/npx/issues/30&quot;&gt;[QUESTION] (How) Is this maintained? · Issue #30 · npm/npx&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Node.js 웹 프레임워크인 hapi 20.0.0이 릴리스 됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4138&quot;&gt;20.0.0 Release Notes · Issue #4138 · hapijs/hapi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;메이저 업데이트이지만 비호환적인 기능 변경은 없으며 단지 메인테이너가 &lt;a href=&quot;https://github.com/hueniverse&quot;&gt;에란 해머(Eran Hammer)&lt;/a&gt;에서 &lt;a href=&quot;https://github.com/hapijs/hapi/issues/4113&quot;&gt;Technical Steering Committee(기술 개발에 대한 조정역할 및 포럼의 방향을 정립하는 위원회)&lt;/a&gt;로 인계되면서 발생한 변경 사항을 포함하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;경위는 다음 이슈에 잘 정리돼 있으며 상용 지원의 채산적인 문제와 모티베이션 문제로 hapi의 개발자인 &lt;a href=&quot;https://github.com/hueniverse&quot;&gt;에란 해머&lt;/a&gt;에 의한 유지보수를 금년부로 종료한다고 알려왔습니다.&lt;br&gt;
+이 문제와 함께 유지보수를 인수하기 위한 &lt;a href=&quot;https://github.com/hapijs/hapi/issues/4113&quot;&gt;hapi Technical Steering Committee(TSC)&lt;/a&gt;가 설립됐고 20.0.0 부터는 TSC가 hapi의 메인테이너가 됩니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4111&quot;&gt;The future of the hapi project, a prelude · Issue #4111 · hapijs/hapi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4113&quot;&gt;The future of the hapi project · Issue #4113 · hapijs/hapi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v6-0-0-storybookjs-storybook&quot;&gt;Release v6.0.0 · storybookjs/storybook&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/storybookjs/storybook/releases/tag/v6.0.0&quot; title=&quot;Release v6.0.0 · storybookjs/storybook&quot;&gt;github.com/storybookjs/storybook/releases/tag/v6.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;UI&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Storybook 6.0.0이 릴리스 됐습니다.&lt;br&gt;
+TypeScript를 빌트인 지원하며 스토리 함수 첫 번째 인수에 Args 객체를 전달하도록 개선됐고 addon-knobs를 대신하는 addon-controls가 도입됐습니다.&lt;br&gt;
+여러개의 Storybook을 하나의 Storybook으로 조합해서 살펴 볼 수 있도록 변경 되는 등 많은 개선이 이뤄졌습니다.&lt;br&gt;
+또, 5.3에서 6.0으로의 이전 가이드도 공개 됐으니 참고하세요.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybookjs/storybook/blob/next/CHANGELOG.md#600-august-10-2020&quot; title=&quot;storybook/CHANGELOG.md at next · storybookjs/storybook&quot;&gt;storybook/CHANGELOG.md at next · storybookjs/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-53x-to-60x&quot; title=&quot;storybook/MIGRATION.md at next · storybookjs/storybook&quot;&gt;storybook/MIGRATION.md at next · storybookjs/storybook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-npm-blog-npm-v7-series-beta-release-and-semver-major&quot;&gt;The npm Blog — npm v7 Series - Beta Release! And: SemVer-Major...&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.npmjs.org/post/626173315965468672/npm-v7-series-beta-release-and-semver-major&quot; title=&quot;The npm Blog — npm v7 Series - Beta Release! And: SemVer-Major...&quot;&gt;blog.npmjs.org/post/626173315965468672/npm-v7-series-beta-release-and-semver-major&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;npm 7 beta가 릴리스 됐습니다.&lt;br&gt;
+&lt;code&gt;peerDependencies&lt;/code&gt;가 기본적으로 설치되도록 변경됐으며 이와 함께 npm 6의 방식도 지원하는 &lt;code&gt;--legacy-peer-deps&lt;/code&gt;가 추가됐습니다.&lt;br&gt;
+새로운 기능으로는 &lt;code&gt;acceptDependencies&lt;/code&gt;, &lt;code&gt;workspaces&lt;/code&gt; 필드, &lt;code&gt;yarn.lock&lt;/code&gt;을 지원하며 &lt;code&gt;package-lock.json&lt;/code&gt;의 형식 변경이 이뤄졌습니다.&lt;br&gt;
+또, &lt;code&gt;npm run-script&lt;/code&gt;에서 활용할 수 있는 &lt;code&gt;npm_package_*&lt;/code&gt;와 &lt;code&gt;npm_package_*&lt;/code&gt;의 환경 변수 삭제가 이뤄졌습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-v14-8-0-current-node-js&quot;&gt;Node v14.8.0 (Current) | Node.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v14.8.0/&quot; title=&quot;Node v14.8.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v14.8.0/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js 14.8.0이 릴리스 됐습니다.&lt;br&gt;
+Top-Level Await를 기본적으로 지원하며 &lt;code&gt;async_hooks&lt;/code&gt; 모듈에 &lt;code&gt;AsyncResource.bind&lt;/code&gt;가 추가됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-version-8-0-0-acornjs-acorn&quot;&gt;Release Version 8.0.0 · acornjs/acorn&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/acornjs/acorn/releases/tag/8.0.0&quot; title=&quot;Release Version 8.0.0 · acornjs/acorn&quot;&gt;github.com/acornjs/acorn/releases/tag/8.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ECMAScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScript 파서 Acorn 8.0.0이 릴리스 됐습니다.&lt;br&gt;
+패키지를 ECMAScript module로 불러올 수 있도록 개선됐으며 &lt;code&gt;ecmaVersion&lt;/code&gt; 옵션이 필수로 변경됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;update-for-customers-using-phonegap-and-phonegap-build-by-adobe-i-o-aug-2020-phonegap&quot;&gt;Update for Customers Using PhoneGap and PhoneGap Build | by Adobe I/O | Aug, 2020 | PhoneGap&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c&quot; title=&quot;Update for Customers Using PhoneGap and PhoneGap Build | by Adobe I/O | Aug, 2020 | PhoneGap&quot;&gt;blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;웹 기술을 이용해 네이티브 애플리케이션을 만들 수 있는 PhoneGap 빌드 서비스가 2020년 10월에 종료됩니다.&lt;br&gt;
+대체재로 Apache Cordova, Ionic을 소개하고 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;20-0-0-release-notes-issue-4138-hapijs-hapi&quot;&gt;20.0.0 Release Notes · Issue #4138 · hapijs/hapi&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4138&quot; title=&quot;20.0.0 Release Notes · Issue #4138 · hapijs/hapi&quot;&gt;github.com/hapijs/hapi/issues/4138&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;hapi 20.0.0이 릴리스 됐습니다.&lt;br&gt;
+메인터넌스가 교체 돼 Technical Steering Committee(TSC) 기반 프로젝트로 변경됐습니다.&lt;br&gt;
+그 외로 &lt;code&gt;@hapi/joi&lt;/code&gt;에서 &lt;code&gt;@hapi/validate&lt;/code&gt;로 변경됐으며 Node.js 14를 지원합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hapijs/hapi/issues/4113&quot; title=&quot;The future of the hapi project · Issue #4113 · hapijs/hapi&quot;&gt;The future of the hapi project · Issue #4113 · hapijs/hapi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;emscripten-changelog-md-at-master-emscripten-core-emscripten&quot;&gt;emscripten/ChangeLog.md at master · emscripten-core/emscripten&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/emscripten-core/emscripten/blob/master/ChangeLog.md#200-08102020&quot; title=&quot;emscripten/ChangeLog.md at master · emscripten-core/emscripten&quot;&gt;github.com/emscripten-core/emscripten/blob/master/ChangeLog.md#200-08102020&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;C/C++ 등을 WebAssembly로 컴파일하는 Emscripten 2.0이 릴리스 됐습니다.&lt;br&gt;
+fastcomp backend 삭제하고 Python 2 지원이 종료됐습니다.&lt;br&gt;
+또, 예외 정보 메타 데이터를 JS가 아니라 &lt;code&gt;WebAssembly.Memory&lt;/code&gt;에 보존하여 예외 처리가 쓰레드 세이프하도록 변경됐습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sbc100&quot; title=&quot;Remove fastcomp · Issue #11319 · emscripten-core/emscripten&quot;&gt;Remove fastcomp · Issue #11319 · emscripten-core/emscripten&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-2-11-0-qunitjs-qunit&quot;&gt;Release 2.11.0 · qunitjs/qunit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/qunitjs/qunit/releases/tag/2.11.0&quot; title=&quot;Release 2.11.0 · qunitjs/qunit&quot;&gt;github.com/qunitjs/qunit/releases/tag/2.11.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;QUnit 2.11.0이 릴리스 됐습니다.&lt;br&gt;
+Node.js 10 미만 지원이 종료됐고 &lt;code&gt;assert.true&lt;/code&gt;와 &lt;code&gt;assert.false&lt;/code&gt;가 추가됐으며 HTML 보고서 검색 기능이 개선됐습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ajv-joins-openjs-foundation-as-an-incubation-project-openjs-foundation&quot;&gt;Ajv Joins OpenJS Foundation as an Incubation Project - OpenJS Foundation&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://openjsf.org/blog/2020/08/14/ajv-joins-openjs-foundation-as-an-incubation-project/&quot; title=&quot;Ajv Joins OpenJS Foundation as an Incubation Project - OpenJS Foundation&quot;&gt;openjsf.org/blog/2020/08/14/ajv-joins-openjs-foundation-as-an-incubation-project/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JSON&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JSON Schema 검증 도구인 Ajv가 OpenJS Foundation에 들어갔습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.poberezkin.com/posts/2020-08-14-ajv-json-validator-mozilla-open-source-grant-openjs-foundation.html&quot; title=&quot;Evgeny Poberezkin - Ajv JSON Schema validator: Mozilla MOSS grant and OpenJS Foundation&quot;&gt;Evgeny Poberezkin - Ajv JSON Schema validator: Mozilla MOSS grant and OpenJS Foundation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-js-knqyf263s-blog&quot;&gt;Node.js에서 프로토타입 오염 후 임의 코드를 실행하기 까지의 사례 - knqyf263&amp;#39;s blog(일본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://knqyf263.hatenablog.com/entry/2020/08/11/050342&quot; title=&quot;Node.js에서 프로토타입 오염 후 임의 코드를 실행하기 까지의 사례 - knqyf263&amp;amp;#39;s blog&quot;&gt;knqyf263.hatenablog.com/entry/2020/08/11/050342&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js에서의 프로토타입 오염 실사례를 소개하는 글입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;the-golden-rule-of-generics&quot;&gt;The Golden Rule of Generics&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://effectivetypescript.com/2020/08/12/generics-golden-rule/&quot; title=&quot;The Golden Rule of Generics&quot;&gt;effectivetypescript.com/2020/08/12/generics-golden-rule/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript의 Generics을 사용해야 하는지 판단할 때의 기준으로 「타입 매개변수는 두 번 표시돼야한다」라는 규칙에 대해 이야기합니다.&lt;br&gt;
+다양한 코드를 활용한 예와 함께 Generics 사용이 좋은 경우를 소개합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://microsoft.github.io/TypeScript-New-Handbook/everything/#guidelines-for-writing-good-generic-functions&quot; title=&quot;Handbook Page&quot;&gt;Handbook Page&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;optimizing-css-for-faster-page-loads-tomas-pustelniks-personal-website&quot;&gt;Optimizing CSS for faster page loads - Tomas Pustelnik&amp;#39;s personal website&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pustelto.com/blog/optimizing-css-for-faster-page-loads/&quot; title=&quot;Optimizing CSS for faster page loads - Tomas Pustelnik&amp;#39;s personal website&quot;&gt;pustelto.com/blog/optimizing-css-for-faster-page-loads/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSS의 Critical Path 최적화에 대해서 소개합니다.&lt;br&gt;
+CSS를 불러오는 타임에 미치는 영향, Critical CSS 분리와 지연 로드, CSS의 Code Splitting에 대해서 이야기합니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;node-js-and-the-struggles-of-being-an-eventtarget&quot;&gt;Node.js and the struggles of being an EventTarget&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.nearform.com/blog/node-js-and-the-struggles-of-being-an-eventtarget/&quot; title=&quot;Node.js and the struggles of being an EventTarget&quot;&gt;www.nearform.com/blog/node-js-and-the-struggles-of-being-an-eventtarget/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js에 &lt;code&gt;EventTarget&lt;/code&gt;이 왜 필요하고 구현되는지 이야기합니다.&lt;br&gt;
+Node.js에 Fetch나 AbortController 등의 웹 표준 API를 구현하기 위해 브라우저와 호환성 있는 &lt;code&gt;EventTarget&lt;/code&gt; API 필요한 점에 대해서 언급합니다.&lt;br&gt;
+&lt;code&gt;EventTarget&lt;/code&gt;을 구현하는 과정에서 호환성, 다중 상속(multiple inheritance), 성능 문제를 어떻게 해결했는지에 대해서도 작성 돼 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;twilco-kosmonaut-a-web-browser-engine-for-the-space-age&quot;&gt;twilco/kosmonaut: A web browser engine for the space age&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/twilco/kosmonaut&quot; title=&quot;twilco/kosmonaut: A web browser engine for the space age&quot;&gt;github.com/twilco/kosmonaut&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Rust&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Servo에 영감을 받은 Rust 기반 브라우저 엔진입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;shopify-web-foundation-principles-decision-logs-best-practices-and-common-configuration-for-building-web-apps-at-shopify&quot;&gt;Shopify/web-foundation: Principles, decision logs, best practices, and common configuration for building web apps at Shopify&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Shopify/web-foundation&quot; title=&quot;Shopify/web-foundation: Principles, decision logs, best practices, and common configuration for building web apps at Shopify&quot;&gt;github.com/Shopify/web-foundation&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Shopify가 웹 개발에 사용하는 설정과 각 설명 문서가 정리 돼 있는 저장소 입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ealush-vest-vest-declarative-validations-framework&quot;&gt;ealush/vest: Vest ✅ Declarative validations framework&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ealush/vest&quot; title=&quot;ealush/vest: Vest ✅ Declarative validations framework&quot;&gt;github.com/ealush/vest&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;테스트 프레임워크 스럽게 설계 된 검증 라이브러리입니다.&lt;br&gt;
+테스트 코드를 작성하는 느낌으로 검증 코드르 구현할 수 있습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;run-javascript-everywhere&quot;&gt;Run JavaScript Everywhere.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.dev/&quot; title=&quot;Run JavaScript Everywhere.&quot;&gt;nodejs.dev/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Node.js에 입문할 때 도움을 줄 수 있는 문서 사이트입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;native-mobile-apps-in-javascript-fast-and-secure-framework-tabris&quot;&gt;Native mobile apps in JavaScript. Fast and secure framework. - Tabris&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tabris.com/&quot; title=&quot;Native mobile apps in JavaScript. Fast and secure framework. - Tabris&quot;&gt;tabris.com/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Native&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;iOS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Android&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React Native 처럼 JavaScript(JSX)로 OS 네이티브 UI를 개발 할 수 있는 모바일 앱 개발 프레임워크 입니다.&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 18 Aug 2020 09:56:08 +0900</pubDate>
+        <link>https://jser.info/ko/2020/08/18/storybook-6.0.0-npm-7-beta-hapi-20maintainer/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2020/08/18/storybook-6.0.0-npm-7-beta-hapi-20maintainer/</guid>
+        
+        <category>Storybook</category>
+        
+        <category>npm</category>
+        
+        <category>Node.js</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-08-11: React 17.0 RC, Rome, Thinking in Microfrontend</title>
@@ -2398,204 +2709,6 @@ JavaScript 개발자가 새로운 언어 기능의 프로토타이핑을 쉽게 
         <category>WebDriver</category>
         
         <category>Browser</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2020-02-25: TypeScript 3.8 정식 릴리스, ESLint 7.0.0 변경 예정 사항</title>
-        <description>&lt;p&gt;JSer.info #476 - TypeScript 3.8이 정식 릴리스 됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-8/&quot;&gt;Announcing TypeScript 3.8 | TypeScript&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;타입 정의만 가져오거나 내보낼 수 있는 &lt;code&gt;import type&lt;/code&gt; / &lt;code&gt;export type&lt;/code&gt;이 추가됐고 ECMAScript Proposal Stage 3의 &lt;a href=&quot;https://github.com/tc39/proposal-private-fields&quot;&gt;ECMAScript Private Fields&lt;/a&gt;, &lt;a href=&quot;https://github.com/tc39/proposal-top-level-await&quot;&gt;Top-Level &lt;code&gt;await&lt;/code&gt;&lt;/a&gt;을 지원합니다.&lt;/p&gt;
-
-&lt;p&gt;또, &lt;code&gt;tsconfig.json&lt;/code&gt;의 &lt;code&gt;target&lt;/code&gt;과 &lt;code&gt;module&lt;/code&gt; 옵션에 &lt;code&gt;es2020&lt;/code&gt;이 추가됐으며 &lt;code&gt;watchOptions&lt;/code&gt;으로 &lt;code&gt;--watch&lt;/code&gt; 시의 동작 방식을 설정할 수 있습니다. 이어 &lt;code&gt;assumeChangesOnlyAffectDirectDependencies&lt;/code&gt; 컴파일 옵션을 활성화해 &amp;quot;Fast and Loose&amp;quot;한 인크리멘탈 빌드를 사용할 수 있도록 변경됐습니다. 이 옵션을 활성화하면 모든 파일을 확인하고 다시 빌드(rechecking/rebuilding) 하지 않고 변경된 파일만 확인하고 빌드 합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;ESLint 7(현재 &lt;a href=&quot;https://github.com/eslint/eslint/releases/tag/v7.0.0-alpha.1&quot;&gt;v7.0.0-alpha.1&lt;/a&gt;가 공개돼 있음)의 변경 예정 사항이 정리된 문서가 공개돼 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://eslint.org/blog/2020/02/whats-coming-in-eslint-7.0.0&quot;&gt;What&amp;#39;s coming in ESLint v7.0.0 - ESLint - Pluggable JavaScript linter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;이 문서에는 주로 비호환적 변경 사항에 대해 다루고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;Node.js 8.x의 지원을 종료하며 &lt;code&gt;CLIEngine&lt;/code&gt; 클래스를 비권장 함과 동시에 &lt;code&gt;ESLint&lt;/code&gt; 클래스가 도입될 예정입니다.&lt;br&gt;
-&lt;code&gt;ESLint&lt;/code&gt; 클래스에 대해서는 RFC에 정리돼 있습니다. 간단하게 기존의 &lt;code&gt;CLIEngine&lt;/code&gt; 클래스는 동기적으로 처리했던 것에 비해 &lt;code&gt;ESLint&lt;/code&gt;는 비동기 처리에 대응합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/rfcs/pull/40&quot;&gt;New: &lt;code&gt;ESLint&lt;/code&gt; Class Replacing &lt;code&gt;CLIEngine&lt;/code&gt; by mysticatea · Pull Request #40 · eslint/rfcs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;또, ESLint에 포함돼 있던 Node.js나 CommonJS 관련 규칙을 &lt;a href=&quot;https://github.com/mysticatea/eslint-plugin-node&quot;&gt;&lt;code&gt;eslint-plugin-node&lt;/code&gt;&lt;/a&gt;로 옮길 예정입니다. &lt;br&gt;
-이 외로는 directive comments에 코멘트를 작성할 수 있도록 변경되며 홈 디렉터리에 있는 &lt;code&gt;~/.eslintrc&lt;/code&gt; 이용 시 경고가 출력됩니다. 이어 기본 ignore patterns가 갱신 됩니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-typescript-3-8-typescript&quot;&gt;Announcing TypeScript 3.8 | TypeScript&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-3-8/&quot; title=&quot;Announcing TypeScript 3.8 | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-3-8/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;TypeScript 3.8이 릴리스됐습니다.&lt;br&gt;
-&lt;code&gt;import type&lt;/code&gt; / &lt;code&gt;export type&lt;/code&gt;가 추가됐고 Stage 3의 ES Private Fields와 Top-Level &lt;code&gt;await&lt;/code&gt;을 지원합니다.&lt;br&gt;
-이어 &lt;code&gt;target&lt;/code&gt;과 &lt;code&gt;module&lt;/code&gt; 옵션에 &lt;code&gt;es2020&lt;/code&gt;이 추가됐으며 &lt;code&gt;watchOptions&lt;/code&gt;로 &lt;code&gt;--watch&lt;/code&gt; 시의 도악ㅈㅇ르 설정할 수 있도록 변경됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;node-v13-9-0-current-node-js&quot;&gt;Node v13.9.0 (Current) | Node.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/blog/release/v13.9.0/&quot; title=&quot;Node v13.9.0 (Current) | Node.js&quot;&gt;nodejs.org/en/blog/release/v13.9.0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node v13.9.0이 릴리스 됐습니다.&lt;br&gt;
-&lt;code&gt;async_hooks&lt;/code&gt; 모듈에 &lt;code&gt;executionAsyncResource&lt;/code&gt;가 추가됐고 &lt;code&gt;crypto&lt;/code&gt; 모듈에 &lt;code&gt;diffieHellman&lt;/code&gt;가 추가됐습니다.&lt;br&gt;
-또, Diagnostic Report가 worker_threds를 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/report.html&quot; title=&quot;Diagnostic Report | Node.js v13.9.0 Documentation&quot;&gt;Diagnostic Report | Node.js v13.9.0 Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-initial-release-1-0-0-reduxjs-cra-template-redux&quot;&gt;Release Initial Release: 1.0.0 · reduxjs/cra-template-redux&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/reduxjs/cra-template-redux/releases/tag/v1.0.0&quot; title=&quot;Release Initial Release: 1.0.0 · reduxjs/cra-template-redux&quot;&gt;github.com/reduxjs/cra-template-redux/releases/tag/v1.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;redux&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;create-react-app 용 Redux 템플릿 1.0.0이 릴리스됐습니다.&lt;br&gt;
-&lt;code&gt;npx create-react-app my-app --template redux&lt;/code&gt; 명령어로 설치할 수 있습니다.&lt;br&gt;
-Redux Toolkit을 이용하고 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://redux-toolkit.js.org/&quot; title=&quot;Redux Toolkit | Redux Toolkit&quot;&gt;Redux Toolkit | Redux Toolkit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-3-4-0-avajs-ava&quot;&gt;Release 3.4.0 · avajs/ava&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/avajs/ava/releases/tag/v3.4.0&quot; title=&quot;Release 3.4.0 · avajs/ava&quot;&gt;github.com/avajs/ava/releases/tag/v3.4.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;AVA 3.4.0이 릴리스됐습니다.&lt;br&gt;
-테스트 실패없이 Assertion을 살펴볼 수 있는 &lt;code&gt;t.try()&lt;/code&gt;를 지원합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;understanding-the-initial-inherit-and-unset-css-keywords&quot;&gt;Understanding the “Initial”, “Inherit” and “Unset” CSS Keywords&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@elad/understanding-the-initial-inherit-and-unset-css-keywords-2d70b7121695&quot; title=&quot;Understanding the “Initial”, “Inherit” and “Unset” CSS Keywords&quot;&gt;medium.com/@elad/understanding-the-initial-inherit-and-unset-css-keywords-2d70b7121695&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CSS의 &lt;code&gt;initial&lt;/code&gt;, &lt;code&gt;inherit&lt;/code&gt;, &lt;code&gt;unset&lt;/code&gt;, &lt;code&gt;revert&lt;/code&gt;에 대해서 설명합니다.&lt;br&gt;
-CSS 프로퍼티 초기값의 차이와 각 의미에 대해서 작성돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;the-circuit-breaker-pattern&quot;&gt;The Circuit Breaker Pattern&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.bearer.sh/circuit-breaker-design-pattern/&quot; title=&quot;The Circuit Breaker Pattern&quot;&gt;blog.bearer.sh/circuit-breaker-design-pattern/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt; node&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.js로 Circuit Breaker 패턴을 살펴보면서 학습하는 튜토리얼입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.bearer.sh/build-a-circuit-breaker-in-node-js/&quot; title=&quot;Building a Circuit Breaker in Node.js (Part 1)&quot;&gt;Building a Circuit Breaker in Node.js (Part 1)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;dom-dom-hub-web&quot;&gt;가상 DOM은 정말 &amp;quot;빠른가?&amp;quot; DOM 조작의 새로운 사고를 프레임워크를 구현해 이해하자 - 엔지니어Hub｜젊은 Web 엔지니어의 커리어를 생각하다!(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://employment.en-japan.com/engineerhub/entry/2020/02/18/103000&quot; title=&quot;가상 DOM은 정말 \&amp;quot;빠른가\&amp;quot; DOM 조작의 새로운 사고를 프레임워크를 구현해 이해하자 - 엔지니어Hub｜젊은 Web 엔지니어의 커리어를 생각하다!&quot;&gt;employment.en-japan.com/engineerhub/entry/2020/02/18/103000&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;VirtualDOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Virtual DOM란 무엇이며 어떻게 구현돼 있는지 소개합니다.&lt;br&gt;
-왜 Virtual DOM은 느리기 어려운지에 대해서도 이야기합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;aborting-a-fetch-request&quot;&gt;Aborting a fetch request&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://meetguns.com/blog/aborting-a-fetch-request/&quot; title=&quot;Aborting a fetch request&quot;&gt;meetguns.com/blog/aborting-a-fetch-request/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Fetch&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;AbortController&lt;/code&gt;를 사용해 Fetch의 취소 기능을 구현하는 방법을 소개합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;angular-9-what-s-new&quot;&gt;Angular 9: What’s New?&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://auth0.com/blog/angular-9-whats-new/&quot; title=&quot;Angular 9: What’s New?&quot;&gt;auth0.com/blog/angular-9-whats-new/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Angular 9의 변경 사항이 정리돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;whats-coming-in-eslint-v7-0-0-eslint-pluggable-javascript-linter&quot;&gt;What&amp;#39;s coming in ESLint v7.0.0 - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2020/02/whats-coming-in-eslint-7.0.0&quot; title=&quot;What&amp;#39;s coming in ESLint v7.0.0 - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2020/02/whats-coming-in-eslint-7.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ESLint 7.0.0의 변경 예정 사항에 대해 소개돼 있습니다.&lt;br&gt;
-&lt;code&gt;CLIEngine&lt;/code&gt; 클래스는 비권장 되며 새로운 &lt;code&gt;ESLint&lt;/code&gt; 클래스가 도입됩니다. 그리고 Node.js나 CommonJS와 관계된 규칙은 &lt;code&gt;eslint-plugin-node&lt;/code&gt;로 옮겨집니다.&lt;br&gt;
-또, directive comments에 코멘트를 작성할 수 있으며 &lt;code&gt;~/.eslintrc&lt;/code&gt; 이용 시 경고가 출력되고 기본 ignore patterns이 갱신됩니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;benawad-destiny-prettier-for-file-structures&quot;&gt;benawad/destiny: Prettier for File Structures&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/benawad/destiny&quot; title=&quot;benawad/destiny: Prettier for File Structures&quot;&gt;github.com/benawad/destiny&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;프로젝트의 파일 구조를 컴포넌트 별로 분리되도록 성형하는 도구입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;suchipi-hex-engine-a-modern-2d-game-engine-for-the-browser&quot;&gt;suchipi/hex-engine: A modern 2D game engine for the browser.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/suchipi/hex-engine&quot; title=&quot;suchipi/hex-engine: A modern 2D game engine for the browser.&quot;&gt;github.com/suchipi/hex-engine&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;game&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Canvas를 사용한 2D 게임 엔진 라이브러리입니다. React에서 영감 받아 설계된 API를 제공합니다.&lt;br&gt;
-음성 동기, 스프라이트 시트와 에니메이션, 물리 엔진 등을 지원합니다.&lt;br&gt;
-또 Aseprite, Tiled, BMFont 등 오쏘링 도구도 제공하고 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.aseprite.org/&quot; title=&quot;Aseprite - Animated sprite editor &amp;amp;amp; pixel art tool&quot;&gt;Aseprite - Animated sprite editor &amp;amp; pixel art tool&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mapeditor.org/&quot; title=&quot;Tiled Map Editor | A flexible level editor&quot;&gt;Tiled Map Editor | A flexible level editor&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.angelcode.com/products/bmfont/&quot; title=&quot;BMFont - AngelCode.com&quot;&gt;BMFont - AngelCode.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 25 Feb 2020 11:30:48 +0900</pubDate>
-        <link>https://jser.info/ko/2020/02/25/typescript-3.8-eslint-7.0.0/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2020/02/25/typescript-3.8-eslint-7.0.0/</guid>
-        
-        <category>TypeScript</category>
-        
-        <category>ESLint</category>
         
         
         <category>JSer</category>
