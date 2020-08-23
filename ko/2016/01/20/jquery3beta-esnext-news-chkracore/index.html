@@ -148,9 +148,9 @@
                 
                 <span class="post-translator">Translator: U-Yeong Ju</span>
                 
-                <span class="svg-icon"><img src="/public/svg/github.svg" alt=""/></span>
+                <span class="svg-icon"><img src="/public/svg/github.svg" alt="" /></span>
                 <a class="btn edit-on-github" href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ko/_posts/2016/2016-01-20-jquery3beta-esnext-news-chkracore.md"><span class="edit-on-github-label"></span>Edit on GitHub</a>
-                <span class="svg-icon"><img src="/public/svg/git.svg" alt=""/></span>
+                <span class="svg-icon"><img src="/public/svg/git.svg" alt="" /></span>
                 <a class="btn revision-on-github" href="https://github.com/jser/jser.github.io/commits/develop/_i18n/ko/_posts/2016/2016-01-20-jquery3beta-esnext-news-chkracore.md"><span class="revision-on-github-label"></span>See Revisions</a>
             </div>
 
@@ -496,15 +496,21 @@ Progressive Web App는 무엇인지 설명합니다.</p>
     </article>
 
     <div class="post-post-toolbar">
-        <span class="svg-icon"><img src="/public/svg/github.svg" alt=""/></span>
+        <span class="svg-icon"><img src="/public/svg/github.svg" alt="" /></span>
         <a class="btn edit-on-github"
-           href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ko/_posts/2016/2016-01-20-jquery3beta-esnext-news-chkracore.md"><span
+            href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ko/_posts/2016/2016-01-20-jquery3beta-esnext-news-chkracore.md"><span
                 class="edit-on-github-label"></span>Pull Request to this article</a>
+        <nav>
+            <span class="svg-icon"><img src="/public/svg/slack.svg" alt="" /></span>
+            <a class="btn"
+                href="https://join.slack.com/t/jserinfo/shared_invite/zt-g2shzp7o-f_tj6OaphCAFw5Qlt2Jw0A"><span
+                    class="join-to-slack"></span>Join to JSer.info Slack</a>
+        </nav>
         
-        <nav class="tags"
-             id="js-post-tags"
-             data-post-tags='["jQuery","ECMAScript","MSEdge","CHakraCore"]'>
-            <span><span class="svg-icon"><img src="/public/svg/tag.svg" alt=""/></span>Tags:</span>
+        <nav class="tags" id="js-post-tags"
+            data-post-tags='["jQuery","ECMAScript","MSEdge","CHakraCore"]'>
+            <span><span class="svg-icon"><img src="/public/svg/tag.svg"
+                        alt="" /></span>Tags:</span>
             <ul>
                 
                 <li>jQuery</li>
@@ -549,20 +555,19 @@ Progressive Web App는 무엇인지 설명합니다.</p>
 <script>
     (function (w, d) {
         var s, e = d.getElementsByTagName("script")[0],
-                a = function (u, f) {
-                    if (!d.getElementById(f)) {
-                        s = d.createElement("script");
-                        s.async = true;
-                        s.src = u;
-                        e.parentNode.insertBefore(s, e);
-                    }
-                };
+            a = function (u, f) {
+                if (!d.getElementById(f)) {
+                    s = d.createElement("script");
+                    s.async = true;
+                    s.src = u;
+                    e.parentNode.insertBefore(s, e);
+                }
+            };
         a("//b.st-hatena.com/js/bookmark_button_wo_al.js");
         a("//platform.twitter.com/widgets.js");
         a("//widgets.getpocket.com/v1/j/btn.js?v=1");
     })(window, document);
 </script>
-
         </div>
     </article>
     <aside>
@@ -678,30 +683,32 @@ Progressive Web App는 무엇인지 설명합니다.</p>
     }
 
     .ping-show-button {
-        color: #fff;
+        color: #000000;
         z-index: 100;
         position: fixed;
         bottom: 0;
         right: 10px;
         padding: 1em 3em;
-        background-color: #36bc98;
-        border: 0;
+        background-color: #ffffff;
+        border: 1px solid #868686;
         border-top-left-radius: .5em;
         border-top-right-radius: .5em;
         font-size: 12px;
         text-align: center;
         text-decoration: none;
         cursor: pointer;
-        -webkit-transition: all .3s ease;
-        transition: all .3s ease;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
 <a 
     class="ping-show-button"
-    href="https://jser.info/ping/"
+    href="https://join.slack.com/t/jserinfo/shared_invite/zt-g2shzp7o-f_tj6OaphCAFw5Qlt2Jw0A"
     ga-on="click"
-    ga-event-category="Ping"
+    ga-event-category="Slack"
     ga-event-action="click"
->記事を紹介する</a>
+><img src="/public/svg/slack.svg" alt="" width="28" height="28" /><span>JSer.info Slackに参加する</span></a>
 </body>
 </html>

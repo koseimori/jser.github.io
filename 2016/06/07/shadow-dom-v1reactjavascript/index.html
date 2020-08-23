@@ -154,9 +154,9 @@
             <div class="pre-post-toolbar">
                 <span class="post-date">2016年06月07日</span>
                 
-                <span class="svg-icon"><img src="/public/svg/github.svg" alt=""/></span>
+                <span class="svg-icon"><img src="/public/svg/github.svg" alt="" /></span>
                 <a class="btn edit-on-github" href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2016/2016-06-07-shadow-dom-v1reactjavascript.md"><span class="edit-on-github-label"></span>Edit on GitHub</a>
-                <span class="svg-icon"><img src="/public/svg/git.svg" alt=""/></span>
+                <span class="svg-icon"><img src="/public/svg/git.svg" alt="" /></span>
                 <a class="btn revision-on-github" href="https://github.com/jser/jser.github.io/commits/develop/_i18n/ja/_posts/2016/2016-06-07-shadow-dom-v1reactjavascript.md"><span class="revision-on-github-label"></span>編集履歴を見る</a>
             </div>
 
@@ -545,20 +545,26 @@ jQuery、ESLint、Connect、gulp、Reduxなどのプラグインの仕組みを�
     </article>
 
     <div class="post-post-toolbar">
-        <span class="svg-icon"><img src="/public/svg/github.svg" alt=""/></span>
+        <span class="svg-icon"><img src="/public/svg/github.svg" alt="" /></span>
         <a class="btn edit-on-github"
-           href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2016/2016-06-07-shadow-dom-v1reactjavascript.md"><span
+            href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2016/2016-06-07-shadow-dom-v1reactjavascript.md"><span
                 class="edit-on-github-label"></span>この記事へ修正リクエストをする</a>
-        
         <nav>
-            <span class="svg-icon"><img src="/public/svg/favorite.svg" alt=""/></span>
-            <span>JSer.infoへ記事を紹介したい場合は<a href="https://jser.info/support/">こちら</a>から</span>
+            <span class="svg-icon"><img src="/public/svg/slack.svg" alt="" /></span>
+            <a class="btn"
+                href="https://join.slack.com/t/jserinfo/shared_invite/zt-g2shzp7o-f_tj6OaphCAFw5Qlt2Jw0A"><span
+                    class="join-to-slack"></span>JSer.info Slackに参加する</a>
         </nav>
         
-        <nav class="tags"
-             id="js-post-tags"
-             data-post-tags='["WebComponent","React","JavaScript","plguin","book"]'>
-            <span><span class="svg-icon"><img src="/public/svg/tag.svg" alt=""/></span>タグ:</span>
+        <nav>
+            <span class="svg-icon"><img src="/public/svg/favorite.svg" alt="" /></span>
+            <span>JSer.infoへ記事を紹介したい場合は<a href="https://jser.info/support/">Pingで紹介</a></span>
+        </nav>
+        
+        <nav class="tags" id="js-post-tags"
+            data-post-tags='["WebComponent","React","JavaScript","plguin","book"]'>
+            <span><span class="svg-icon"><img src="/public/svg/tag.svg"
+                        alt="" /></span>タグ:</span>
             <ul>
                 
                 <li>WebComponent</li>
@@ -607,20 +613,19 @@ jQuery、ESLint、Connect、gulp、Reduxなどのプラグインの仕組みを�
 <script>
     (function (w, d) {
         var s, e = d.getElementsByTagName("script")[0],
-                a = function (u, f) {
-                    if (!d.getElementById(f)) {
-                        s = d.createElement("script");
-                        s.async = true;
-                        s.src = u;
-                        e.parentNode.insertBefore(s, e);
-                    }
-                };
+            a = function (u, f) {
+                if (!d.getElementById(f)) {
+                    s = d.createElement("script");
+                    s.async = true;
+                    s.src = u;
+                    e.parentNode.insertBefore(s, e);
+                }
+            };
         a("//b.st-hatena.com/js/bookmark_button_wo_al.js");
         a("//platform.twitter.com/widgets.js");
         a("//widgets.getpocket.com/v1/j/btn.js?v=1");
     })(window, document);
 </script>
-
         </div>
     </article>
     <aside>
@@ -744,30 +749,32 @@ jQuery、ESLint、Connect、gulp、Reduxなどのプラグインの仕組みを�
     }
 
     .ping-show-button {
-        color: #fff;
+        color: #000000;
         z-index: 100;
         position: fixed;
         bottom: 0;
         right: 10px;
         padding: 1em 3em;
-        background-color: #36bc98;
-        border: 0;
+        background-color: #ffffff;
+        border: 1px solid #868686;
         border-top-left-radius: .5em;
         border-top-right-radius: .5em;
         font-size: 12px;
         text-align: center;
         text-decoration: none;
         cursor: pointer;
-        -webkit-transition: all .3s ease;
-        transition: all .3s ease;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
 <a 
     class="ping-show-button"
-    href="https://jser.info/ping/"
+    href="https://join.slack.com/t/jserinfo/shared_invite/zt-g2shzp7o-f_tj6OaphCAFw5Qlt2Jw0A"
     ga-on="click"
-    ga-event-category="Ping"
+    ga-event-category="Slack"
     ga-event-action="click"
->記事を紹介する</a>
+><img src="/public/svg/slack.svg" alt="" width="28" height="28" /><span>JSer.info Slackに参加する</span></a>
 </body>
 </html>
