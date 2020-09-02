@@ -5,9 +5,306 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/ko/</link>
     <atom:link href="https://jser.info/ko/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 31 Aug 2020 21:58:08 +0900</pubDate>
-    <lastBuildDate>Mon, 31 Aug 2020 21:58:08 +0900</lastBuildDate>
+    <pubDate>Wed, 02 Sep 2020 10:13:56 +0900</pubDate>
+    <lastBuildDate>Wed, 02 Sep 2020 10:13:56 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-08-31: Firefox 80, D3.js 6.0.0, Chrome 85, Puppeteer &amp; Playwright</title>
+        <description>&lt;p&gt;JSer.info #503 - Firefox 80이 릴리스 됐다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/80.0/releasenotes/&quot;&gt;Firefox 80.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/80#Changes_for_web_developers&quot;&gt;Firefox 80 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/en-CA/releases/80/&quot;&gt;Firefox 80 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ES2020의 &lt;code&gt;export * as namespace&lt;/code&gt; 문법을 지원하고 CSS의 &lt;code&gt;appearance&lt;/code&gt; 프로퍼티를 prefix 없이 지원한다.&lt;br&gt;
+또, &lt;code&gt;window.open()&lt;/code&gt;가 &lt;code&gt;outerWidth&lt;/code&gt;와 &lt;code&gt;outerHeight&lt;/code&gt;를 무시하도록 변경됐고 &lt;code&gt;Cache-Control&lt;/code&gt;이 설정돼 있는 경우 &lt;code&gt;Pragma&lt;/code&gt; 헤더가 무시 되도록 변경됐다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;D3.js 6.0.0이 릴리스됐다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/d3/d3/releases/tag/v6.0.0&quot;&gt;Release v6.0.0 · d3/d3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/d3/d3/blob/master/CHANGES.md#changes-in-d3-60&quot;&gt;d3/CHANGES.md at master · d3/d3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ES2015의 네이티브 Iterable, Map, Set을 사용하도록 변경됐다.&lt;br&gt;
+&lt;code&gt;d3.event&lt;/code&gt; 전역을 경유해 이벤트를 받는 게 아닌 listner 함수의 첫번째 인수로 &lt;code&gt;event&lt;/code&gt;를 전달받을 수 있도록 하는 등 이벤트 구조가 변경됐다.&lt;/p&gt;
+
+&lt;p&gt;그 외에도 일부 패키지 비권장(삭제)이나 비호환성 변경이 이뤄졌다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;d3-collection&lt;/code&gt; 삭제 → Map이나 Set 네이티브나 &lt;a href=&quot;https://github.com/d3/d3-array&quot;&gt;d3-array&lt;/a&gt; 사용&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;d3-voronoi&lt;/code&gt; 삭제 → &lt;a href=&quot;https://github.com/d3/d3-delaunay/blob/master/README.md&quot;&gt;d3-delaunay&lt;/a&gt; 사용&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;d3.mouse&lt;/code&gt;, &lt;code&gt;d3.touch&lt;/code&gt;, &lt;code&gt;d3.touches&lt;/code&gt;, &lt;code&gt;d3.clientPoint&lt;/code&gt; 삭제 →　&lt;a href=&quot;https://github.com/d3/d3-selection/blob/master/README.md#pointer&quot;&gt;d3.pointer&lt;/a&gt;, &lt;a href=&quot;https://github.com/d3/d3-selection/blob/master/README.md#pointers&quot;&gt;d3.pointers&lt;/a&gt; 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이전 가이드도 함께 공개 됐으니 살펴보길 바란다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://observablehq.com/d/f91cccf0cad5e9cb&quot;&gt;D3 6.0 migration guide / D3 / Observable&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Chrome 85가 릴리스 됐다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/08/nic85&quot;&gt;New in Chrome 85  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/06/devtools&quot;&gt;What&amp;#39;s New In DevTools (Chrome 85)  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/07/chrome-85-deps-rems&quot;&gt;Deprecations and removals in Chrome 85  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#milestone%3D85&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;JavaScript에는 &lt;a href=&quot;https://github.com/tc39/proposals/blob/master/finished-proposals.md&quot;&gt;ES2021에 들어갈 예정&lt;/a&gt;인 &lt;code&gt;Promise.any&lt;/code&gt;와 &lt;code&gt;AggregateError&lt;/code&gt;, &lt;code&gt;String.prototype.replaceAll&lt;/code&gt;, Logical assignment operators를 지원한다. 관련 기능의 문법은 V8 8.5 블로그에 정리돼 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://v8.dev/blog/v8-release-85&quot;&gt;V8 release v8.5 · V8&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;CSS &lt;code&gt;content-visibility&lt;/code&gt; 구현, CSS Properties를 CSS로 정의하는 &lt;code&gt;@property&lt;/code&gt; 구현, AVIF 이미지를 지원한다.&lt;br&gt;
+Fetch API의 Streaming requests, WebHID, Declarative Shadow DOM, Portal를 Origin Trial로 지원한다. &lt;br&gt;
+또, Referrer Policy 기본값이 &lt;code&gt;strict-origin-when-cross-origin&lt;/code&gt;으로 변경됐고 &lt;code&gt;Secure&lt;/code&gt; 속성 없는 &lt;code&gt;SameSite=None&lt;/code&gt; 지원이 종료됐다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://theheadless.dev/&quot;&gt;theheadless.dev - Learn Puppeteer &amp;amp; Playwright&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;이 사이트에는 Puppeteer와 Playwright의 기본적인 사용 방법부터 E2E 테스트 및 스크래핑 등의 유스케이스가 정리돼 있다.&lt;/p&gt;
+
+&lt;p&gt;이어서 같은 시점에 &lt;a href=&quot;https://www.testim.io/&quot;&gt;Testim&lt;/a&gt;에서 &lt;a href=&quot;https://github.com/testimio/root-cause&quot;&gt;testimio/root-cause&lt;/a&gt;라는 Puppeteer와 Playwright에서 좀 더 효율적인 E2E 테스트를 지원하는 프레임워크를 공개했다.&lt;br&gt;
+&lt;a href=&quot;https://github.com/testimio/root-cause&quot;&gt;testimio/root-cause&lt;/a&gt;는 각 실행 단계를 스크린샷으로 저장하고 콘솔 로그나 네트워크(HAR) 파일을 저장해 직관적으로 테스트의 흐름을 보여주며 어디에서 테스트가 실패했고 원인은 무엇인지 분석할 수 있도록 한다.&lt;br&gt;
+독자적으로 실행할 수 있는 방법과 Jest나 Mocha 등의 테스크 프레임워크를 통합할 수 있는 관련 라이브러리도 함께 제공하고 있다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;firefox-80-0-see-all-new-features-updates-and-fixes&quot;&gt;Firefox 80.0, See All New Features, Updates and Fixes&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/80.0/releasenotes/&quot; title=&quot;Firefox 80.0, See All New Features, Updates and Fixes&quot;&gt;www.mozilla.org/en-US/firefox/80.0/releasenotes/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Firefox 80.0이 릴리스 됐다.&lt;br&gt;
+ES2020의 &lt;code&gt;export * as namespace&lt;/code&gt; 문법 지원한다.&lt;br&gt;
+&lt;code&gt;window.open()&lt;/code&gt;가 &lt;code&gt;outerWidth&lt;/code&gt;와 &lt;code&gt;outerHeight&lt;/code&gt;을 무시하도록 변경됐고 &lt;code&gt;Cache-Control&lt;/code&gt;이 지정돼 있는 경우 &lt;code&gt;Pragma&lt;/code&gt; 헤더가 무시되도록 변경됐다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/80#Changes_for_web_developers&quot; title=&quot;Firefox 80 for developers - Mozilla | MDN&quot;&gt;Firefox 80 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/en-CA/releases/80/&quot; title=&quot;Firefox 80 Site Compatibility | Firefox Site Compatibility&quot;&gt;Firefox 80 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v6-0-0-d3-d3&quot;&gt;Release v6.0.0 · d3/d3&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/d3/d3/releases/tag/v6.0.0&quot; title=&quot;Release v6.0.0 · d3/d3&quot;&gt;github.com/d3/d3/releases/tag/v6.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;d3.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;D3.js 6.0.0이 릴리스 됐다.&lt;br&gt;
+ES2015의 Iterable, Map, Set을 사용하도록 변경, bower 지원 삭제.&lt;br&gt;
+&lt;code&gt;d3-selection&lt;/code&gt; 등 이벤트 구조 변경, &lt;code&gt;d3-collection&lt;/code&gt; 비권장.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/d3/d3/blob/master/CHANGES.md#changes-in-d3-60&quot; title=&quot;d3/CHANGES.md at master · d3/d3&quot;&gt;d3/CHANGES.md at master · d3/d3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;new-in-chrome-85-web-google-developers&quot;&gt;New in Chrome 85  |  Web  |  Google Developers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/08/nic85&quot; title=&quot;New in Chrome 85  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2020/08/nic85&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 85 릴리스 됐다.&lt;br&gt;
+CSS &lt;code&gt;content-visibility&lt;/code&gt; 구현, CSS Properties를 CSS로 지정하는 &lt;code&gt;@property&lt;/code&gt; 구현, AVIF 이미지 지원.&lt;br&gt;
+Fetch API의 Streaming requests, WebHID, Declarative Shadow DOM, Portal을 Origin Trial로 지원.&lt;br&gt;
+또, Referrer Policy의 기본값이 &lt;code&gt;strict-origin-when-cross-origin&lt;/code&gt;로 변경됐다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;v8-release-v8-5-v8&quot;&gt;V8 release v8.5 · V8&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://v8.dev/blog/v8-release-85&quot; title=&quot;V8 release v8.5 · V8&quot;&gt;v8.dev/blog/v8-release-85&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;V8&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;V8 8.5가 릴리스 됐다.&lt;br&gt;
+ES2021에 도입될 예정인 &lt;code&gt;Promise.any&lt;/code&gt;과 &lt;code&gt;AggregateError&lt;/code&gt;, String#replaceAll, Logical assignment operators 지원.&lt;br&gt;
+WebAssembly의 baseline compiler인 Liftoff가 모든 플랫폼에서 사용되도록 변경.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;yarn-2-2-dedupe-faster-lighter-dev-community&quot;&gt;Yarn 2.2 🚅🌟 Dedupe, Faster, Lighter, ... - DEV Community 👩‍💻👨‍💻&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://dev.to/arcanis/yarn-2-2-dedupe-faster-lighter-ha5&quot; title=&quot;Yarn 2.2 🚅🌟 Dedupe, Faster, Lighter, ... - DEV Community 👩‍💻👨‍💻&quot;&gt;dev.to/arcanis/yarn-2-2-dedupe-faster-lighter-ha5&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Yarn 2.2가 릴리스 됐다.&lt;br&gt;
+&lt;code&gt;yarn dedupe&lt;/code&gt; 추가, 성능 개선, 옵트아웃 방식으로 Yarn의 이용 정보를 Datadog로 전송.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yarnpkg/berry/blob/master/CHANGELOG.md#220&quot; title=&quot;berry/CHANGELOG.md at master · yarnpkg/berry&quot;&gt;berry/CHANGELOG.md at master · yarnpkg/berry&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;content-visibility-the-new-css-property-that-boosts-your-rendering-performance&quot;&gt;content-visibility: the new CSS property that boosts your rendering performance&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/content-visibility/&quot; title=&quot;content-visibility: the new CSS property that boosts your rendering performance&quot;&gt;web.dev/content-visibility/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 85에 구현된 CSS &lt;code&gt;content-visibility&lt;/code&gt; 속성 소개.&lt;br&gt;
+CSS Containment에 의존한 사양.&lt;br&gt;
+DOM의 서브 트리에 예측 가능한 공간을 정의하여 브라우저가 렌더링을 생략하고 최적화하기 위한 구조.&lt;br&gt;
+&lt;code&gt;display: none&lt;/code&gt;, &lt;code&gt;visibility: hidden&lt;/code&gt;와의 차이, &lt;code&gt;content-visibility&lt;/code&gt; 프로퍼티의 유스케이스 중 하나로 무한스크롤 기능 소개.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introducing-danfo-js-a-pandas-like-library-in-javascript-the-tensorflow-blog&quot;&gt;Introducing Danfo.js, a Pandas-like Library in JavaScript — The TensorFlow Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.tensorflow.org/2020/08/introducing-danfo-js-pandas-like-library-in-javascript.html&quot; title=&quot;Introducing Danfo.js, a Pandas-like Library in JavaScript — The TensorFlow Blog&quot;&gt;blog.tensorflow.org/2020/08/introducing-danfo-js-pandas-like-library-in-javascript.html&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MachineLearning&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Pandas에 영감을 받아 개발된 라이브러리인 Danfo.js 소개.&lt;br&gt;
+TensorFlow.js와 조합해 사용할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/opensource9ja/danfojs&quot; title=&quot;opensource9ja/danfojs: danfo.js is an open source, JavaScript library providing high performance, intuitive, and easy to use data structures for manipulating and processing structured data.&quot;&gt;opensource9ja/danfojs: danfo.js is an open source, JavaScript library providing high performance, intuitive, and easy to use data structures for manipulating and processing structured data.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;vue-js-with-tsx-from-vue-2-x-to-vue-3-v_tokyo11-speaker-deck&quot;&gt;Vue.js with TSX - From Vue 2.x to Vue 3 #v_tokyo11 - Speaker Deck(일본어)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/potato4d/vue-dot-js-with-tsx-from-vue-2-dot-x-to-vue-3-number-v-tokyo11&quot; title=&quot;Vue.js with TSX - From Vue 2.x to Vue 3 #v\_tokyo11 - Speaker Deck&quot;&gt;speakerdeck.com/potato4d/vue-dot-js-with-tsx-from-vue-2-dot-x-to-vue-3-number-v-tokyo11&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;jsx&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vue에서 TSX 사용 방법 소개.&lt;br&gt;
+Vue2 / Vue3에서의 TSX 사용 방법과 제한, Vue의 SFC와 TSX 비교.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;사이트, 서비스, 문서&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;gluesql-gluesql-gluesql-is-quite-sticky-it-attaches-to-anywhere&quot;&gt;gluesql/gluesql: GlueSQL is quite sticky, it attaches to anywhere.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/gluesql/gluesql&quot; title=&quot;gluesql/gluesql: GlueSQL is quite sticky, it attaches to anywhere.&quot;&gt;github.com/gluesql/gluesql&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Rust&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DB &lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;SQL 기반 데이터베이스 라이브러리.&lt;br&gt;
+Rust와 WebAssembly(JavaScript)로 구현 및 제공된다.&lt;br&gt;
+JavaScript 버전은 InMemoery, LocalStorage 에서 동작.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;testimio-root-cause&quot;&gt;testimio/root-cause&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/testimio/root-cause&quot; title=&quot;testimio/root-cause&quot;&gt;github.com/testimio/root-cause&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;testing&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Puppeteer와 Playwright을 사용한 E2E 테스트 보조 도구.&lt;br&gt;
+각 실행 스텝을 스크린샷으로 저장, 콘솔 로그나 네트워크(HAR) 파일을 저장하여 보고서를 통해 테스트가 실패한 원인을 분석할 수 있다.&lt;br&gt;
+독자적으로 실행하는 방법과 Jest나 Mocha 등 테스트 프레임워크와 조합해 사용할 수 있는 라이브러리도 제공한다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.testim.io/root-cause/&quot; title=&quot;Root Cause - Fast authoring of AI-stabilized end-to-end tests—codeless, coded, or both&quot;&gt;Root Cause - Fast authoring of AI-stabilized end-to-end tests—codeless, coded, or both&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.testim.io/docs/root-cause&quot; title=&quot;Testim Root Cause overview&quot;&gt;Testim Root Cause overview&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;theheadless-dev-learn-puppeteer-playwright&quot;&gt;theheadless.dev - Learn Puppeteer &amp;amp; Playwright&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://theheadless.dev/&quot; title=&quot;theheadless.dev - Learn Puppeteer &amp;amp; Playwright&quot;&gt;theheadless.dev/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;document&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Puppeteer와 Playwright 사용 방법과 유스케이스를 소개하는 사이트.&lt;br&gt;
+기본적인 사용 방법, E2E 테스트나 스크래핑 등의 각 유스케이스도 소개돼 있다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;dsherret-ts-morph-typescript-compiler-api-wrapper-for-static-analysis-and-programmatic-code-changes&quot;&gt;dsherret/ts-morph: TypeScript Compiler API wrapper for static analysis and programmatic code changes.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/dsherret/ts-morph&quot; title=&quot;dsherret/ts-morph: TypeScript Compiler API wrapper for static analysis and programmatic code changes.&quot;&gt;github.com/dsherret/ts-morph&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;AST&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript Compiler API 랩퍼 라이브러리.&lt;br&gt;
+TypeScript의 AST와 파일을 다룰 수 있는 API를 제공한다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;davidkpiano-xactor-actors-for-the-modern-web&quot;&gt;davidkpiano/xactor: Actors for the modern web&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/davidkpiano/xactor&quot; title=&quot;davidkpiano/xactor: Actors for the modern web&quot;&gt;github.com/davidkpiano/xactor&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScript와 TypeScript에서 사용할 수 있는 Actor 모델 구현 라이브러리.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;ztext-js-3d-typography-for-the-web&quot;&gt;ztext.js | 3D Typography for the Web&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bennettfeely.com/ztext/&quot; title=&quot;ztext.js | 3D Typography for the Web&quot;&gt;bennettfeely.com/ztext/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;fonts&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;3D 타이포그래피 라이브러리.&lt;br&gt;
+문자열을 3D로 출력한다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;bnaya-objectbuffer-javascript-object-like-api-backed-by-an-arraybuffer&quot;&gt;Bnaya/objectbuffer: JavaScript Object like api, backed by an arraybuffer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Bnaya/objectbuffer&quot; title=&quot;Bnaya/objectbuffer: JavaScript Object like api, backed by an arraybuffer&quot;&gt;github.com/Bnaya/objectbuffer&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;webworker&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ArrayBuffer&lt;/code&gt;를 백엔드에 사용한 오브젝트 데이터 라이브러리.&lt;br&gt;
+보통의 객체는 Web Worker 등에 전달할 때 복사되지만 &lt;code&gt;ArrayBuffer&lt;/code&gt; 등 전송 가능(transferable)한 객체라면 복사하지 않고 전달하는 것이 목적.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;edwinm-carbonium-carbonium-for-easy-manipulation-of-the-dom&quot;&gt;edwinm/carbonium: Carbonium, for easy manipulation of the DOM&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/edwinm/carbonium&quot; title=&quot;edwinm/carbonium: Carbonium, for easy manipulation of the DOM&quot;&gt;github.com/edwinm/carbonium&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;DOM&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Proxy를 사용한 DOM 조작 라이브러리.&lt;br&gt;
+셀렉터로 요소를 선택, 선택한 여러개의 요소를 순회하며 &lt;code&gt;style&lt;/code&gt;나 &lt;code&gt;classList&lt;/code&gt; 등의 순수 DOM API를 이용해 조작할 수 있다.&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Mon, 31 Aug 2020 19:43:01 +0900</pubDate>
+        <link>https://jser.info/ko/2020/08/31/firefox-80-d3.js-6.0.0-chrome-85-puppeteer-and-playwright/</link>
+        <guid isPermaLink="true">https://jser.info/ko/2020/08/31/firefox-80-d3.js-6.0.0-chrome-85-puppeteer-and-playwright/</guid>
+        
+        <category>Firefox</category>
+        
+        <category>D3.js</category>
+        
+        <category>Chrome</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-08-25: TypeScript 4.0, Cypress 5.0, Electron 10.0</title>
@@ -2432,282 +2729,6 @@ Composition API, Fragment, Teleport, Suspense, Custom Renderer API를 지원하�
         <category>Chrome</category>
         
         <category>Vue</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2020-04-14: jQuery 3.5.0(securify fix), Firefox 75, Chrome 81</title>
-        <description>&lt;p&gt;JSer.info #483 - jQuery 3.5.0이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/&quot;&gt;jQuery 3.5.0 Released! | Official jQuery Blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;jQuery 3.5.0에서는 jQuery 4.0에서 삭제될 예정의 비표준 &lt;code&gt;:even&lt;/code&gt;, &lt;code&gt;:odd&lt;/code&gt; 셀렉터 대신에 사용할 수 있는 &lt;code&gt;.even()&lt;/code&gt;과 &lt;code&gt;.odd()&lt;/code&gt; 메서드가 추가됐습니다.&lt;/p&gt;
-
-&lt;p&gt;또 3.5.0은 마이너 업데이트지만 비호환적 내용을 포함한 보안 업데이트가 이뤄졌습니다. 내용은 다음과 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://api.jquery.com/jQuery.htmlPrefilter/&quot;&gt;jQuery.htmlPrefilter&lt;/a&gt;에서는 정규표현을 사용해 &lt;code&gt;$(&amp;quot;&amp;lt;div /&amp;gt;&amp;quot;)&lt;/code&gt;와 같은 XHTML의 self-close 태그를 &lt;code&gt;$(&amp;quot;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&amp;quot;)&lt;/code&gt;으로 전개하는 처리가 이뤄졌습니다. 이 정규표현의 전개 처리를 이용한 XSS가 발견돼 jQuery 3.5.0에서 이 정규 표현을 이용한 전개를 삭제했습니다.&lt;/p&gt;
-
-&lt;p&gt;단일 &lt;code&gt;$(&amp;quot;&amp;lt;div /&amp;gt;&amp;quot;)&lt;/code&gt;과 같은 경우는 특별히 이 변경으로 인한 동작 차이가 없습니다.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&amp;lt;div/&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;가 추가 됨.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;하지만 다음과 같이 self-closed 태그를 복합적으로 사용한 경우 3.4와 3.5의 동작이 달라집니다.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;div/&amp;gt;&amp;lt;span/&amp;gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;jQuery 3.4까지는 &lt;a href=&quot;https://api.jquery.com/jQuery.htmlPrefilter/&quot;&gt;jQuery.htmlPrefilter&lt;/a&gt;에 의해 다음과 같이 전개됩니다.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;jQuery 3.5에서는 위처럼 전개되지 않고 다음과 같이 동작합니다.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이 보안 업데이트로 인해 jQuery를 사용한 라이브러리에도 일부 영향을 미치고 있는 것 같습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/jquery/jquery/issues/4664&quot;&gt;3.5 incompatible with FullCalendar 3 · Issue #4664 · jquery/jquery&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jquery/jquery-migrate&quot;&gt;jQuery Migrate&lt;/a&gt;를 사용한 해결법과 상세한 내용은 아래 마이그레이션 가이드 문서에 정리돼 있으니 참고하시길 바랍니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jquery.com/upgrade-guide/3.5/&quot;&gt;jQuery Core 3.5 Upgrade Guide | jQuery&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Firefox 75.0이 릴리스됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/04/firefox-75-ambitions-for-april/&quot;&gt;Firefox 75: Ambitions for April - Mozilla Hacks - the Web developer blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/75.0/releasenotes/&quot;&gt;Firefox 75.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/ja/versions/75/&quot;&gt;Firefox 75 사이트 호환성 정보 | Firefox 사이트 호환성 정보&lt;/a&gt;(일본어)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/75&quot;&gt;Firefox 75 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;개발자 도구의 콘솔에 Instant evaluation previews 추가, Async Stack Trace을 지원합니다.&lt;br&gt;
-자바스크립트에서 &lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Classes/Class_fields#Public_static_fields&quot;&gt;Public static fields&lt;/a&gt;와 &lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Locale&quot;&gt;Intl.Locale&lt;/a&gt;을 지원합니다.&lt;br&gt;
-이 외로 &lt;code&gt;&amp;lt;img loading=lazy&amp;gt;&lt;/code&gt;를 이용한 이미지 지연 로드 지원, CSS의 &lt;code&gt;min()&lt;/code&gt;/&lt;code&gt;max()&lt;/code&gt;/&lt;code&gt;clamp()&lt;/code&gt; 지원, Web Animations API의 개선이 이뤄졌습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;앞서 릴리스가 연기됐었던 Chrome 81가 릴리스 됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/04/nic81&quot;&gt;New in Chrome 81  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;연기로 인해 릴리스 스케줄이 어긋나기 Chrome 82는 생략되고 83이 3주 빠르게 릴리스될 예정입니다. &lt;br&gt;
-향후 릴리스 일정은 아래 문서에서 확인할 수 있습니다. &lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features/schedule&quot;&gt;Chrome Platform Status&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://chromiumdash.appspot.com/schedule&quot;&gt;Chromium Dash&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;pr-javascript-primer&quot;&gt;[PR] JavaScript Primer 출간 예정&lt;/h2&gt;
-
-&lt;p&gt;지난 몇 년간 집필하던 JavaScript Primer라는 자바스크립트 입문서가 2020년 4월 27일 출간될 예정입니다.&lt;/p&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-&lt;a href=&quot;https://www.amazon.co.jp/dp/4048930737/&quot;&gt;&lt;img src=&quot;https://efcl.info/wp-content/uploads/2020/04/jsprimer.jpg&quot; width=&quot;500&quot; alt=&quot;JavaScript Primer 헤매지 않기 위한 입문서&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4048930737/&quot;&gt;JavaScript Primer 헤매지 않기 위한 입문서 | azu, Suguru Inatomi&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt;도서는 &lt;a href=&quot;https://www.amazon.co.jp/dp/4048930737/&quot;&gt;Amazon&lt;/a&gt;에서 예약할 수 있으니 참고해주세요. 전자책(Kindle/epub/PDF)도 추후 발매됩니다.&lt;/p&gt;
-
-&lt;p&gt;도서의 내용은 OSS로 공개하고 있는 웹 버전 &lt;a href=&quot;https://jsprimer.net/&quot;&gt;https://jsprimer.net/&lt;/a&gt;과 동일하지만 레이아웃 등이 책으로 읽기 쉽게 최적화돼 있습니다.&lt;/p&gt;
-
-&lt;p&gt;자세한 내용은 아래 문서를 참고해주세요.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://efcl.info/2020/04/14/pre-jsprimer/&quot;&gt;JavaScript Primer 도서가 4월 27일에 발매 예정입니다! | Web Scratch&lt;/a&gt;(일본어)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;헤드라인&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-10-4-0-preactjs-preact&quot;&gt;Release 10.4.0 · preactjs/preact&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/preactjs/preact/releases/tag/10.4.0&quot; title=&quot;Release 10.4.0 · preactjs/preact&quot;&gt;github.com/preactjs/preact/releases/tag/10.4.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Preact 10.4.0이 리릴스 됐습니다.&lt;br&gt;
-vnode의 세밀한 비교를 통한 성능 개선, SSR 시에 hydration이 잘 실행되지 않을 때의 fallback이 추가됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;jquery-3-5-0-released-official-jquery-blog&quot;&gt;jQuery 3.5.0 Released! | Official jQuery Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/&quot; title=&quot;jQuery 3.5.0 Released! | Official jQuery Blog&quot;&gt;blog.jquery.com/2020/04/10/jquery-3-5-0-released/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;jQuery&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;jQuery 3.5.0이 릴리스 됐습니다.&lt;br&gt;
-&lt;code&gt;jQuery.htmlPrefilter&lt;/code&gt;의 정규표현을 이용한 태그 전개에 의한 XSS 발생 문제가 수정됐습니다. 이 수정으로 인해 &lt;code&gt;$(&amp;quot;&amp;lt;div&amp;gt;&amp;lt;div/&amp;gt;&amp;lt;/div&amp;gt;&amp;quot;)&lt;/code&gt;처럼 self-closed 태그와 그렇지 않은 태그를 조합해 사용할 경우 다른 버전과 동작이 달라지는 비호환적 변경이 포함됐습니다.&lt;br&gt;
-4.0에서 삭제될 예정인 &lt;code&gt;:even&lt;/code&gt;, &lt;code&gt;:odd&lt;/code&gt; 대신 &lt;code&gt;.even()&lt;/code&gt;, &lt;code&gt;.odd()&lt;/code&gt;가 추가 됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/jquery/jquery/issues/4664&quot; title=&quot;3.5 incompatible with FullCalendar 3 · Issue #4664 · jquery/jquery&quot;&gt;3.5 incompatible with FullCalendar 3 · Issue #4664 · jquery/jquery&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;firefox-75-ambitions-for-april-mozilla-hacks-the-web-developer-blog&quot;&gt;Firefox 75: Ambitions for April - Mozilla Hacks - the Web developer blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hacks.mozilla.org/2020/04/firefox-75-ambitions-for-april/&quot; title=&quot;Firefox 75: Ambitions for April - Mozilla Hacks - the Web developer blog&quot;&gt;hacks.mozilla.org/2020/04/firefox-75-ambitions-for-april/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Firefox&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Firefox 75가 릴리스됐습니다.&lt;br&gt;
-개발자 도구 콘솔에 Instant evaluation previews가 추가됐고 Async Stack Trace를 지원합니다.&lt;br&gt;
-또, &lt;code&gt;&amp;lt;img loading=lazy&amp;gt;&lt;/code&gt;를 이용한 이미지 지연 로드와 CSS의 &lt;code&gt;min()&lt;/code&gt;/&lt;code&gt;max()&lt;/code&gt;/&lt;code&gt;clamp()&lt;/code&gt; 지원하며 Web Animations API가 개선됐습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/en-US/firefox/75.0/releasenotes/&quot; title=&quot;Firefox 75.0, See All New Features, Updates and Fixes&quot;&gt;Firefox 75.0, See All New Features, Updates and Fixes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/versions/75/&quot; title=&quot;Firefox 75 Site Compatibility | Firefox Site Compatibility&quot;&gt;Firefox 75 Site Compatibility | Firefox Site Compatibility&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en/docs/Mozilla/Firefox/Releases/75&quot; title=&quot;Firefox 75 for developers - Mozilla | MDN&quot;&gt;Firefox 75 for developers - Mozilla | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-81-web-google-developers&quot;&gt;New in Chrome 81  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/04/nic81&quot; title=&quot;New in Chrome 81  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2020/04/nic81&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;앞서 연기 됐던 Chrome 81이 릴리스됐습니다.&lt;br&gt;
-다음 Chrome 82는 건너뛰고 83이 3주 빠르게 릴리스됩니다.&lt;br&gt;
-Badging API를 지원하며 Intl.DisplayNames 구현됐고 Origin Trial로 Web NFC API가 추가됐습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-notes-for-safari-technology-preview-104-webkit&quot;&gt;Release Notes for Safari Technology Preview 104 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10264/release-notes-for-safari-technology-preview-104/&quot; title=&quot;Release Notes for Safari Technology Preview 104 | WebKit&quot;&gt;webkit.org/blog/10264/release-notes-for-safari-technology-preview-104/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webkit&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari Technology Preview 104가 릴리스됐습니다.&lt;br&gt;
-(macOS의 개발 버전에서) HTTP3를 플래그를 붙여 지원하며 CSS의 &lt;code&gt;:is()&lt;/code&gt;, WebRTC HEVC(H.265)를 지원합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://webrtcbydralex.com/index.php/2020/04/03/h265-hevc-hardware-accelerated-in-webrtc-done-well-almost/&quot; title=&quot;H265 / HEVC, hardware accelerated, in #Webrtc – DONE … well, almost. | WebRTC by Dr Alex&quot;&gt;H265 / HEVC, hardware accelerated, in #Webrtc – DONE … well, almost. | WebRTC by Dr Alex&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;아티클&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;web-animations-in-safari-13-1-webkit&quot;&gt;Web Animations in Safari 13.1 | WebKit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://webkit.org/blog/10266/web-animations-in-safari-13-1/&quot; title=&quot;Web Animations in Safari 13.1 | WebKit&quot;&gt;webkit.org/blog/10266/web-animations-in-safari-13-1/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;safari&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Safari 13.1에서 지원하는 Web Animations API를 소개하는 글입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;websocketstream-integrating-streams-with-the-websocket-api&quot;&gt;WebSocketStream: integrating streams with the WebSocket API&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/websocketstream/&quot; title=&quot;WebSocketStream: integrating streams with the WebSocket API&quot;&gt;web.dev/websocketstream/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebSocket&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;strem&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Promise 기반인 WebSocketStream API를 소개하는 글입니다.&lt;br&gt;
-&lt;code&gt;ReadableStream&lt;/code&gt;이나 &lt;code&gt;WritableStream&lt;/code&gt; 등의 기본적인 사용법, Backpressure, Stream을 닫는 방법 등에 대해서 정리돼 있습니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;digging-into-the-privacy-sandbox&quot;&gt;Digging into the Privacy Sandbox&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://web.dev/digging-into-the-privacy-sandbox/&quot; title=&quot;Digging into the Privacy Sandbox&quot;&gt;web.dev/digging-into-the-privacy-sandbox/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;privacy&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;개인 정보 보호에 관한 API 세트인 Privacy Sandbox를 소개하는 글입니다.&lt;br&gt;
-현재 Privacy Sandbox와 관련된 제안이나 개요, 목표 그리고 관련 용어를 설명합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;under-the-hood-of-web-bundlers-e-g-webpack-itnext&quot;&gt;Under-the-hood of web bundlers (e.g. Webpack) - ITNEXT&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://itnext.io/under-the-hood-of-web-bundlers-e-g-webpack-926e868f7f5e&quot; title=&quot;Under-the-hood of web bundlers (e.g. Webpack) - ITNEXT&quot;&gt;itnext.io/under-the-hood-of-web-bundlers-e-g-webpack-926e868f7f5e&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;video&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScript의 Bundler를 주제로 한 발표 영상을 글로 정리한 문서입니다.&lt;br&gt;
-bundler가 하고 있는 일 설명, 작은 컴파일러를 만들어 보면서 bundler의 동작 소개, 실제 bundler를 사용해 웹 애플리케이션을 출력하는 과정까지 자세히 작성돼 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=JAY10_75vFw&quot; title=&quot;Under-the-hood of web bundlers (e.g. Webpack) - YouTube&quot;&gt;Under-the-hood of web bundlers (e.g. Webpack) - YouTube&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/craigtaub/our-own-webpack&quot; title=&quot;craigtaub/our-own-webpack: Our own version of Webpack in &amp;amp;lt;200 lines&quot;&gt;craigtaub/our-own-webpack: Our own version of Webpack in &amp;lt;200 lines&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;슬라이드, 영상&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;chromium-google&quot;&gt;전자정보학 특론：Chromium 아키텍처를 풀어내다 - Google 슬라이드(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.google.com/presentation/d/1AzBcuN-dmctk7v1IMZHivfpFAiXwCnsjyJS3wQ4sgE4/preview#slide=id.g82989a6582_1_134&quot; title=&quot;전자정보학 특론：Chromium 아키텍처를 풀어내다 - Google 슬라이드(일본어)&quot;&gt;docs.google.com/presentation/d/1AzBcuN-dmctk7v1IMZHivfpFAiXwCnsjyJS3wQ4sgE4/preview#slide&amp;#x3D;id.g82989a6582_1_134&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;slide&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;architecture&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;security&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chromium의 프로세스 아키텍처를 설명하는 슬라이드입니다.&lt;br&gt;
-멀티 프로세스 아키텍처, 임베딩 컨텐츠에서의 Spectre의 메모리 독해, iframe에서의 Site Isolation, Chrome의 GC에 대해서 이야기합니다.&lt;br&gt;
-또, 렌더링 처리가 파싱, 스타일, 레이어링, 레스터 단계로 나누고 중간 데이터를 각각 다룸으로써 동적인 변경에 대응하고 있다고 합니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;소프트웨어, 도구, 라이브러리&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;hopding-pdf-lib-create-and-modify-pdf-documents-in-any-javascript-environment&quot;&gt;Hopding/pdf-lib: Create and modify PDF documents in any JavaScript environment&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Hopding/pdf-lib&quot; title=&quot;Hopding/pdf-lib: Create and modify PDF documents in any JavaScript environment&quot;&gt;github.com/Hopding/pdf-lib&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;PDF&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;PDF를 작성할 수 있는 Node.js 라이브러리입니다.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;도서&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;javascript-primer-azu-suguru-inatomi-amazon&quot;&gt;JavaScript Primer 헤매지 않기 위한 입문서 | azu, Suguru Inatomi | 책 | 통신판매 | Amazon(일본어)&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4048930737/&quot; title=&quot;JavaScript Primer 迷わないための入門書 | azu, Suguru Inatomi |本 | 通販 | Amazon&quot;&gt;www.amazon.co.jp/dp/4048930737/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;2020년 4월 27일 출간 예정인 JavaScript 입문서입니다.&lt;br&gt;
-&lt;a href=&quot;https://jsprimer.net/%EC%9D%98&quot;&gt;https://jsprimer.net/의&lt;/a&gt; 정식 출판 버전입니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://efcl.info/2020/04/14/pre-jsprimer/&quot;&gt;JavaScript Primer 도서가 4월 27일에 발매 예정입니다! | Web Scratch&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 14 Apr 2020 09:57:37 +0900</pubDate>
-        <link>https://jser.info/ko/2020/04/14/jquery-3.5.0securify-fix-firefox-75-chrome-81/</link>
-        <guid isPermaLink="true">https://jser.info/ko/2020/04/14/jquery-3.5.0securify-fix-firefox-75-chrome-81/</guid>
-        
-        <category>jquery</category>
-        
-        <category>Firefox</category>
-        
-        <category>Chrome</category>
         
         
         <category>JSer</category>
