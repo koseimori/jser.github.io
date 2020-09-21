@@ -5,9 +5,319 @@
     <description>JavaScriptの最新情報を紹介する週刊ブログ</description>
     <link>https://jser.info/</link>
     <atom:link href="https://jser.info/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 21 Sep 2020 13:29:00 +0900</pubDate>
-    <lastBuildDate>Mon, 21 Sep 2020 13:29:00 +0900</lastBuildDate>
+    <pubDate>Mon, 21 Sep 2020 16:20:45 +0900</pubDate>
+    <lastBuildDate>Mon, 21 Sep 2020 16:20:45 +0900</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>2020-09-21のJS: Moment.jsのステータス、PostCSS 8.0.0、Vue 3.0.0、DOMの順序を表示順序の一致</title>
+        <description>&lt;p&gt;JSer.info #506 - Moment.jsのウェブサイトに&lt;a href=&quot;https://momentjs.com/docs/#/-project-status/&quot;&gt;Project Status&lt;/a&gt;が追加されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://momentjs.com/docs/&quot;&gt;Moment.js | Docs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Moment.jsに新しい機能の追加などはしないメンテンスモードであることが書かれています。&lt;br&gt;
+互換性保ちつつ新しい機能や仕組みを入れるのは難しい状態であるため、別のライブラリの利用を推奨しています。&lt;/p&gt;
+
+&lt;p&gt;代替となるライブラリとして&lt;a href=&quot;https://moment.github.io/luxon/&quot; title=&quot;Luxon&quot;&gt;Luxon&lt;/a&gt;、&lt;a href=&quot;https://day.js.org/&quot; title=&quot;Day.js · 2kB JavaScript date utility library&quot;&gt;Day.js&lt;/a&gt;、&lt;a href=&quot;https://js-joda.github.io/js-joda/&quot; title=&quot;Manual | js-joda&quot;&gt;js-joda&lt;/a&gt;&lt;a href=&quot;https://date-fns.org/&quot; title=&quot;date-fns - modern JavaScript date utility library&quot;&gt;date-fns&lt;/a&gt;について紹介されています。&lt;br&gt;
+また、&lt;code&gt;Intl&lt;/code&gt; APIや現在策定中の&lt;a href=&quot;https://tc39.es/proposal-temporal/docs/index.html&quot;&gt;Temporal&lt;/a&gt;についても書かれています。&lt;/p&gt;
+
+&lt;p&gt;このプロジェクトステータスの明示の発端は、Chrome Dev ToolsのLighthouseにmoment.js利用の警告を表示したことに起因しています。&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;If JavaScript libraries are proving costly, replace them with smaller alternatives. &lt;br&gt;&lt;br&gt;Lighthouse in &lt;a href=&quot;https://twitter.com/ChromeDevTools?ref_src=twsrc%5Etfw&quot;&gt;@ChromeDevTools&lt;/a&gt; now recommends smaller libraries that improve bundle size. &lt;a href=&quot;https://t.co/VFe8TFV9Y5&quot;&gt;pic.twitter.com/VFe8TFV9Y5&lt;/a&gt;&lt;/p&gt;&amp;mdash; Addy Osmani (@addyosmani) &lt;a href=&quot;https://twitter.com/addyosmani/status/1304676118822174721?ref_src=twsrc%5Etfw&quot;&gt;September 12, 2020&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;We&amp;#39;re working on adding a statement to the website. Will likely merge tomorrow.&lt;a href=&quot;https://t.co/jq0m56Kynf&quot;&gt;https://t.co/jq0m56Kynf&lt;/a&gt;&lt;/p&gt;&amp;mdash; Matt Johnson-Pint (@mattjohnsonpint) &lt;a href=&quot;https://twitter.com/mattjohnsonpint/status/1305275314277240832?ref_src=twsrc%5Etfw&quot;&gt;September 13, 2020&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
+
+&lt;p&gt;今まで、Moment.jsのステータスは少し暗黙的でしたが、今回の件で&lt;a href=&quot;https://moment.github.io/luxon/&quot; title=&quot;Luxon&quot;&gt;Luxon&lt;/a&gt;などの後継や代替ライブラリがあることを示して、Moment.jsを新しく使うことは非推奨であることを明示するようになりました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@timrwood/moment-endof-term-522d8965689&quot;&gt;moment().endOf(‘term’). Five years ago, inspired by the… | by Tim Wood | Medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;JavaScriptでCSSを変換/拡張するツールであるPostCSS 8.0.0がリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/postcss/postcss/releases/tag/8.0.0&quot;&gt;Release 8.0 “President Ose” · postcss/postcss&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Node.js 8以下のサポート終了、ES2015のコードをそのまま配布するように、&lt;code&gt;postcss.vendor&lt;/code&gt; APIの削除などが行われています。&lt;br&gt;
+また、PostCSS Plugin APIの変更、パーサの改善、Source Mapサポートの改善、TypeScriptのサポートなども行われています。&lt;/p&gt;
+
+&lt;p&gt;Plugin APIの変更とマイグレーションについてはついては、次の記事で解説されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://evilmartians.com/chronicles/postcss-8-plugin-migration&quot; title=&quot;PostCSS 8.0: Plugin migration guide — Martian Chronicles, Evil Martians’ team blog&quot;&gt;PostCSS 8.0: Plugin migration guide — Martian Chronicles, Evil Martians’ team blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、PostCSS 8.0.0に対応した&lt;a href=&quot;https://github.com/postcss/autoprefixer/releases/tag/10.0.0&quot;&gt;Autoprefixer 10.0&lt;/a&gt;もリリースされています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Vue 3.0.0が正式にリリースされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/vue-next/releases/tag/v3.0.0&quot;&gt;Release v3.0.0 One Piece · vuejs/vue-next&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;コードベースをTypeScriptで書き直し、コアモジュールのパッケージ化が行われています。&lt;br&gt;
+新しくComposition API、Teleport、Fragmentsのサポートをしています。&lt;br&gt;
+実験的なAPIとして&lt;code&gt;&amp;lt;script setup&amp;gt;&lt;/code&gt;と&lt;code&gt;&amp;lt;style vars&amp;gt;&lt;/code&gt;のサポートしています。&lt;/p&gt;
+
+&lt;p&gt;2.xからの破壊的な変更として&lt;code&gt;Vue.*&lt;/code&gt;以下のグローバルAPIをインスタンスAPIに移動、Template Directiveの挙動の変更、ライフサイクルオプション名のリネーム、Filterの削除などが行われています。&lt;/p&gt;
+
+&lt;p&gt;削除されたAPIや変更されたAPIについては次のマイグレーションガイドにかかれています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://v3.vuejs.org/guide/migration/introduction.html&quot;&gt;Introduction | Vue.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、Vue 3.0.0時点ではIE 11のサポートは含まれていませんが、今後のminorアップデートでサポートしていくようです。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;moment-js-docs&quot;&gt;Moment.js | Docs&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://momentjs.com/docs/#/-project-status/&quot; title=&quot;Moment.js | Docs&quot;&gt;momentjs.com/docs/#/-project-status/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;news&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Moment.jsのプロジェクトステータスについてのドキュメントが追加された。&lt;br&gt;
+Moment.jsに新しい機能の追加などはしないメンテンスモードであるということについてや代替となるライブラリとしてLuxon、Day.js、date-fns、js-jodaの紹介をしている。&lt;br&gt;
+また、ECMA-402の&lt;code&gt;Intl&lt;/code&gt;オブジェクトとTemporal Proposalについて紹介している&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://moment.github.io/luxon/&quot; title=&quot;Luxon&quot;&gt;Luxon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://day.js.org/&quot; title=&quot;Day.js · 2kB JavaScript date utility library&quot;&gt;Day.js · 2kB JavaScript date utility library&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://js-joda.github.io/js-joda/&quot; title=&quot;Manual | js-joda&quot;&gt;Manual | js-joda&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://date-fns.org/&quot; title=&quot;date-fns - modern JavaScript date utility library&quot;&gt;date-fns - modern JavaScript date utility library&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-8-0-president-ose-postcss-postcss&quot;&gt;Release 8.0 “President Ose” · postcss/postcss&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/postcss/postcss/releases/tag/8.0.0&quot; title=&quot;Release 8.0 “President Ose” · postcss/postcss&quot;&gt;github.com/postcss/postcss/releases/tag/8.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;PostCSS 8.0リリース。&lt;br&gt;
+Node.js 8以下のサポート終了、ES2015のコードをそのまま配布するように、&lt;code&gt;postcss.vendor&lt;/code&gt; APIの削除。&lt;br&gt;
+PostCSS Plugin APIの変更、パーサの改善、Source Mapサポートの改善、TypeScriptのサポートなど&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/postcss/autoprefixer/releases/tag/10.0.0&quot; title=&quot;Release 10.0 “Alis volat propriis” · postcss/autoprefixer&quot;&gt;Release 10.0 “Alis volat propriis” · postcss/autoprefixer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://evilmartians.com/chronicles/postcss-8-plugin-migration&quot; title=&quot;PostCSS 8.0: Plugin migration guide — Martian Chronicles, Evil Martians’ team blog&quot;&gt;PostCSS 8.0: Plugin migration guide — Martian Chronicles, Evil Martians’ team blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;release-v3-0-0-one-piece-vuejs-vue-next&quot;&gt;Release v3.0.0 One Piece · vuejs/vue-next&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/vuejs/vue-next/releases/tag/v3.0.0&quot; title=&quot;Release v3.0.0 One Piece · vuejs/vue-next&quot;&gt;github.com/vuejs/vue-next/releases/tag/v3.0.0&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Vue 3.0.0リリース。&lt;br&gt;
+コードベースをTypeScriptで書き直し、コアモジュールのパッケージ化。&lt;br&gt;
+Composition API、Teleport、Fragmentsのサポート。&lt;br&gt;
+実験的なAPIとして&lt;code&gt;&amp;lt;script setup&amp;gt;&lt;/code&gt;と&lt;code&gt;&amp;lt;style vars&amp;gt;&lt;/code&gt;のサポート。&lt;br&gt;
+破壊的な変更として&lt;code&gt;Vue.*&lt;/code&gt;以下のグローバルAPIをインスタンスAPIに移動、Template Directiveの挙動の変更、ライフサイクルオプション名のリネーム、Filterの削除など。&lt;br&gt;
+また、Vue 3.0.0時点ではIE 11のサポートは含まれていない。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Vp5ANvd88x0&quot; title=&quot;Evan You // Keynote: Live Free Online Announcement // Vuejs Global Online - YouTube&quot;&gt;Evan You // Keynote: Live Free Online Announcement // Vuejs Global Online - YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://v3.vuejs.org/guide/migration/introduction.html&quot; title=&quot;Introduction | Vue.js&quot;&gt;Introduction | Vue.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;announcing-typescript-4-1-beta-typescript&quot;&gt;Announcing TypeScript 4.1 Beta | TypeScript&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-4-1-beta/&quot; title=&quot;Announcing TypeScript 4.1 Beta | TypeScript&quot;&gt;devblogs.microsoft.com/typescript/announcing-typescript-4-1-beta/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;TypeScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScript 4.1 Betaリリース。&lt;br&gt;
+Template Literal Types、Mapped TypesでKeyのRemappingをサポート、再帰的なConditional Typesのサポート。&lt;br&gt;
+インデックスアクセス時に&lt;code&gt;undefined&lt;/code&gt;となる可能性を考慮する&lt;code&gt;noUncheckedIndexedAccess&lt;/code&gt;オプションの追加、&lt;code&gt;baseUrl&lt;/code&gt;なしで&lt;code&gt;paths&lt;/code&gt;オプションを指定できるように。&lt;br&gt;
+破壊的な変更として、&lt;code&gt;new Promise&lt;/code&gt;における&lt;code&gt;resolve&lt;/code&gt;関数の引数がOptionalではなくなるなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;kea-2-2-the-typescript-release-kea-2-2&quot;&gt;Kea 2.2: The TypeScript Release | Kea 2.2&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://kea.js.org/blog/kea-2.2/&quot; title=&quot;Kea 2.2: The TypeScript Release | Kea 2.2&quot;&gt;kea.js.org/blog/kea-2.2/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;React向けのステート管理ライブラリであるKea 2.2リリース。&lt;br&gt;
+TypeScriptのサポート&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://kea.js.org/docs/guide/typescript/&quot; title=&quot;TypeScript | Kea 2.2&quot;&gt;TypeScript | Kea 2.2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;jschallenger&quot;&gt;JSchallenger&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.jschallenger.com/&quot; title=&quot;JSchallenger&quot;&gt;www.jschallenger.com/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptのテストを通るように関数を実装するJavaScriptの練習問題集&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;how-to-simplify-svg-code-using-basic-shapes-css-tricks&quot;&gt;How to Simplify SVG Code Using Basic Shapes | CSS-Tricks&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://css-tricks.com/how-to-simplify-svg-code-using-basic-shapes/&quot; title=&quot;How to Simplify SVG Code Using Basic Shapes | CSS-Tricks&quot;&gt;css-tricks.com/how-to-simplify-svg-code-using-basic-shapes/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;SVGを手書きするチュートリアル&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;working-with-javascript-media-queries-css-tricks&quot;&gt;Working with JavaScript Media Queries | CSS-Tricks&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://css-tricks.com/working-with-javascript-media-queries/&quot; title=&quot;Working with JavaScript Media Queries | CSS-Tricks&quot;&gt;css-tricks.com/working-with-javascript-media-queries/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScriptでのMediaQueryの利用方法について。&lt;br&gt;
+&lt;code&gt;window.matchMedia&lt;/code&gt;の使い方、&lt;code&gt;resize&lt;/code&gt;イベントを見る場合とのパフォーマンスの違いについて&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;introducing-source-order-viewer-in-the-microsoft-edge-devtools-microsoft-edge-blog&quot;&gt;Introducing Source Order Viewer in the Microsoft Edge DevTools - Microsoft Edge Blog&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.windows.com/msedgedev/2020/09/15/source-order-viewer-edge-devtools/&quot; title=&quot;Introducing Source Order Viewer in the Microsoft Edge DevTools - Microsoft Edge Blog&quot;&gt;blogs.windows.com/msedgedev/2020/09/15/source-order-viewer-edge-devtools/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MSEdge&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;MSEdge/Chrome 85に実験的な機能として要素のソースコードにおける順番を表示する機能が追加された。&lt;br&gt;
+CSS Grid/FlexboxなどのCSSの機能で要素の順番を変更しやすくなったため、スクリーンリーダーなどの読み上げで問題が起きるケースを分かりやすくデバッグする機能。&lt;br&gt;
+WCAG C27の&amp;quot;DOMの順序を表示順序と一致させる&amp;quot;の実装をデバッグする目的の機能。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://adrianroselli.com/2015/09/source-order-matters.html&quot; title=&quot;Source Order Matters | Adrian Roselli&quot;&gt;Source Order Matters | Adrian Roselli&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://adrianroselli.com/2020/08/source-order-viewer-in-canary.html&quot; title=&quot;Source Order Viewer in Canary | Adrian Roselli&quot;&gt;Source Order Viewer in Canary | Adrian Roselli&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.w3.org/TR/WCAG20-TECHS/C27.html&quot; title=&quot;C27: Making the DOM order match the visual order | Techniques for WCAG 2.0&quot;&gt;C27: Making the DOM order match the visual order | Techniques for WCAG 2.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://waic.jp/docs/WCAG-TECHS/C27&quot; title=&quot;C27: DOM の順序を表示順序と一致させる | WCAG 2.0 達成方法集&quot;&gt;C27: DOM の順序を表示順序と一致させる | WCAG 2.0 達成方法集&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;how-to-detect-fullscreen-mode-using-css-amit-merchant-a-blog-on-php-javascript-and-more&quot;&gt;How to detect fullscreen mode using CSS – Amit Merchant – A blog on PHP, JavaScript and more&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amitmerchant.com/how-to-detect-fullscreen-mode-using-css/&quot; title=&quot;How to detect fullscreen mode using CSS – Amit Merchant – A blog on PHP, JavaScript and more&quot;&gt;www.amitmerchant.com/how-to-detect-fullscreen-mode-using-css/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;CSS Media Queryを使ってブラウザがフルスクリーンであるかを判定する方法について。&lt;br&gt;
+&lt;code&gt;display-mode: fullscreen&lt;/code&gt;をMedia Queryを使い判定することでフルスクリーンとなった場合の処理やCSSを実装できる&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;managing-several-displays-with-the-multi-screen-window-placement-api&quot;&gt;Managing several displays with the Multi-Screen Window Placement API&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/multi-screen-window-placement/&quot; title=&quot;Managing several displays with the Multi-Screen Window Placement API&quot;&gt;web.dev/multi-screen-window-placement/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;WebPlatformAPI&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Chrome 86でOrigin Trialとして実装されているMulti-Screen Window Placement APIについて。&lt;br&gt;
+複数のスクリーンかの判定、それぞれのスクリーン情報の取得、スクリーン変更の検知、フルスクリーン化するスクリーンの指定についてなど&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;rewriting-facebooks-recoil-react-library-from-scratch-in-100-lines&quot;&gt;Rewriting Facebook&amp;#39;s &amp;quot;Recoil&amp;quot; React library from scratch in 100 lines&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bennetthardwick.com/blog/recoil-js-clone-from-scratch-in-100-lines/&quot; title=&quot;Rewriting Facebook&amp;#39;s \&amp;quot;Recoil\&amp;quot; React library from scratch in 100 lines&quot;&gt;bennetthardwick.com/blog/recoil-js-clone-from-scratch-in-100-lines/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Recoil的なObserver Patternのステート管理を実装しながら仕組みを見ていく話&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;flareact-flareact-edge-rendered-react-framework-built-for-cloudflare-workers&quot;&gt;flareact/flareact: Edge-rendered React framework built for Cloudflare Workers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/flareact/flareact&quot; title=&quot;flareact/flareact: Edge-rendered React framework built for Cloudflare Workers&quot;&gt;github.com/flareact/flareact&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;cdn&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Cloudflare WorkerのEdgeで動くReactフレームワーク&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.cloudflare.com/rendering-react-on-the-edge-with-flareact-and-cloudflare-workers/&quot; title=&quot;Rendering React on the Edge with Flareact and Cloudflare Workers&quot;&gt;Rendering React on the Edge with Flareact and Cloudflare Workers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;nextauthjs-next-auth-authentication-for-next-js&quot;&gt;nextauthjs/next-auth: Authentication for Next.js&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nextauthjs/next-auth&quot; title=&quot;nextauthjs/next-auth: Authentication for Next.js&quot;&gt;github.com/nextauthjs/next-auth&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;OAuth&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Next.js向けのAuthentication library。&lt;br&gt;
+Auth0、Apple、Facebook、Googleなどいろいろなプロバイダーに対応している。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;web-padawan-vanilla-colorful-a-tiny-color-picker-custom-element-for-modern-web-apps&quot;&gt;web-padawan/vanilla-colorful: A tiny color picker custom element for modern web apps&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/web-padawan/vanilla-colorful&quot; title=&quot;web-padawan/vanilla-colorful: A tiny color picker custom element for modern web apps&quot;&gt;github.com/web-padawan/vanilla-colorful&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;color&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;依存がないカラーピッカーの実装ライブラリ&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;bgjar-free-svg-background-image-generator-for-your-websites&quot;&gt;BGJar | Free svg background image generator for your websites&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bgjar.com/&quot; title=&quot;BGJar | Free svg background image generator for your websites&quot;&gt;bgjar.com/&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Tools&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;SVGでパターン背景を生成するジェネレーターツール&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;pmndrs-jotai-primitive-flexible-state-management-for-react&quot;&gt;pmndrs/jotai: 👻 Primitive, flexible state management for React&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/pmndrs/jotai&quot; title=&quot;pmndrs/jotai: 👻 Primitive, flexible state management for React&quot;&gt;github.com/pmndrs/jotai&lt;/a&gt;&lt;br&gt;
+&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;RecoilインスパイアなReact向けのステート管理ライブラリ。&lt;br&gt;
+プリミティブな値をAtomでwrap、unwrapするAPIをもつ。&lt;br&gt;
+UtilsとしてAtomを使ったHigh Level APIを提供する&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Mon, 21 Sep 2020 15:35:18 +0900</pubDate>
+        <link>https://jser.info/2020/09/21/moment.js-postcss-8.0.0-vue-3.0.0-dom/</link>
+        <guid isPermaLink="true">https://jser.info/2020/09/21/moment.js-postcss-8.0.0-vue-3.0.0-dom/</guid>
+        
+        <category>Date</category>
+        
+        <category>CSS</category>
+        
+        <category>Vue</category>
+        
+        <category>Accessibility</category>
+        
+        
+        <category>JSer</category>
+        
+      </item>
     
       <item>
         <title>2020-09-15のJS: playwright 1.4.0、snowpack 2.11.1、Migrating to JavaScript modules(Chrome Dev Tools)</title>
@@ -2298,299 +2608,6 @@ Python/JavaScript/Go/Java/C/JSONなどに対してパターンマッチでの検
         <category>Chrome</category>
         
         <category>Performance</category>
-        
-        
-        <category>JSer</category>
-        
-      </item>
-    
-      <item>
-        <title>2020-07-21のJS: Chrome 84(SameSite Cookie)、Vue 3 RC、React Spectrum</title>
-        <description>&lt;p&gt;JSer.info #497 - Chrome 84がリリースされました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/07/nic84&quot;&gt;New in Chrome 84  |  Web  |  Google Developers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2020/05/chrome-84-beta-web-otp-web-animations.html&quot;&gt;Chromium Blog: Chrome 84 Beta: Web OTP, Web Animations, New Origin Trials and More&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.chromestatus.com/features#milestone%3D84&quot;&gt;Chrome Platform Status: milestone=84&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Web animations APIの対応改善、Content Indexing API、Wake lock API、&lt;code&gt;WeakRef&lt;/code&gt;のサポートなどが含まれています。&lt;br&gt;
-また、Origin trialsとしてIdle detection、Web Assembly SIMDのサポートされています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://v8.dev/features/simd&quot;&gt;Fast, parallel applications with WebAssembly SIMD · V8&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;元々Chrome 80でロールアウト予定だったSame Site Cookieのロールアウトの再開がされています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2020/05/resuming-samesite-cookie-changes-in-july.html&quot;&gt;Chromium Blog: Resuming SameSite Cookie Changes in July&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;その他にはTLS 1.0と1.1のサポートの削除されています。&lt;br&gt;
-実際にTLS 1.0や1.1での接続を確認するには&lt;a href=&quot;https://badssl.com/&quot;&gt;badssl.com&lt;/a&gt;などが利用できます。&lt;/p&gt;
-
-&lt;p&gt;この変更はFirefoxとSafariでも予定されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://webkit.org/blog/9526/release-notes-for-safari-technology-preview-91/&quot;&gt;Release Notes for Safari Technology Preview 91 | WebKit&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.fxsitecompat.dev/ja/docs/2020/tls-1-0-1-1-support-has-been-disabled-by-default/&quot;&gt;TLS 1.0/1.1 対応が初期設定で無効化されました (影響あり) | Firefox サイト互換性情報&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Vue 3 RCがリリースされています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/vuejs/rfcs/issues/189&quot;&gt;Vue 3 is now in RC! · Issue #189 · vuejs/rfcs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Vue 3の正式リリースは8月の予定です。&lt;br&gt;
-RCのリリースに合わせて、マイグレーションガイドが公開されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://v3.vuejs.org/guide/migration/introduction.html&quot;&gt;Introduction | Vue.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;RCではまだIE11サポートが完了していないため、正式リリースまでには対応していく予定とのことです。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Adobeからデザインシステム向けのReactフレームワークが公開されています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/adobe/react-spectrum&quot;&gt;adobe/react-spectrum: A collection of libraries and tools that help you build adaptive, accessible, and robust user experiences.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://react-spectrum.adobe.com/index.html&quot;&gt;React Spectrum Libraries&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://react-spectrum.adobe.com/react-aria/getting-started.html&quot;&gt;React Aria&lt;/a&gt;はWAI-ARIAに対応する機能を提供するReact Hooks、&lt;a href=&quot;https://react-spectrum.adobe.com/react-stately/getting-started.html&quot;&gt;React Stately&lt;/a&gt;は一般的なコンポーネントの状態管理をするReact Hooksです。&lt;br&gt;
-これらはWAI-ARIAやキーボード操作などのアクセシビリティ、i18の仕組みなどを提供することが目的で、他のデザインシステムでも利用できるような作りになっています。&lt;/p&gt;
-
-&lt;p&gt;また、これらを利用したAdobeのデザインシステムのReactコンポーネントの実装のライブラリとして&lt;a href=&quot;https://react-spectrum.adobe.com/react-spectrum/getting-started.html&quot;&gt;React Spectrum&lt;/a&gt;が公開されています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ヘッドライン&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;new-in-chrome-84-web-google-developers&quot;&gt;New in Chrome 84  |  Web  |  Google Developers&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2020/07/nic84&quot; title=&quot;New in Chrome 84  |  Web  |  Google Developers&quot;&gt;developers.google.com/web/updates/2020/07/nic84&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Chrome&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Chrome 84リリース。&lt;br&gt;
-Content Indexing API、Wake lock API、&lt;code&gt;WeakRef&lt;/code&gt;のサポート。&lt;br&gt;
-Origin trialsとしてIdle detection、Web Assembly SIMDのサポート。&lt;br&gt;
-Same Site Cookieのロールアウトの再開、TLS 1.0と1.1のサポートの削除など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://v8.dev/blog/v8-release-84&quot; title=&quot;V8 release v8.4 · V8&quot;&gt;V8 release v8.4 · V8&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.chromium.org/2020/05/chrome-84-beta-web-otp-web-animations.html&quot; title=&quot;Chromium Blog: Chrome 84 Beta: Web OTP, Web Animations, New Origin Trials and More&quot;&gt;Chromium Blog: Chrome 84 Beta: Web OTP, Web Animations, New Origin Trials and More&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;vue-3-is-now-in-rc-issue-189-vuejs-rfcs&quot;&gt;Vue 3 is now in RC! · Issue #189 · vuejs/rfcs&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/vuejs/rfcs/issues/189&quot; title=&quot;Vue 3 is now in RC! · Issue #189 · vuejs/rfcs&quot;&gt;github.com/vuejs/rfcs/issues/189&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Vue 3 RCリリース。&lt;br&gt;
-マイグレーションガイドも合わせて公開されている。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://v3.vuejs.org/guide/migration/introduction.html&quot; title=&quot;Introduction | Vue.js&quot;&gt;Introduction | Vue.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;release-2-0-0-naver-billboard-js&quot;&gt;Release 2.0.0 · naver/billboard.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/naver/billboard.js/releases/tag/2.0.0&quot; title=&quot;Release 2.0.0 · naver/billboard.js&quot;&gt;github.com/naver/billboard.js/releases/tag/2.0.0&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;D3.jsベースのチャートライブラリであるbillboard.js 2.0.0リリース。&lt;br&gt;
-TypeScriptでの書き直し、ファイルサイズとパフォーマンスの改善、一部オプションのシグネチャーの変更、&lt;code&gt;.transform()&lt;/code&gt;の非推奨化など&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@alberto.park/billboard-js-2-0-is-out-15e84b52ab11&quot; title=&quot;📊 billboard.js 2.0 is out! 🎉🎊, more smaller and faster. | by Jae Sung Park | Jul, 2020 | Medium&quot;&gt;📊 billboard.js 2.0 is out! 🎉🎊, more smaller and faster. | by Jae Sung Park | Jul, 2020 | Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/naver/billboard.js/wiki/CHANGELOG-v2&quot; title=&quot;CHANGELOG v2 · naver/billboard.js Wiki&quot;&gt;CHANGELOG v2 · naver/billboard.js Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;eslint-v7-5-0-released-eslint-pluggable-javascript-linter&quot;&gt;ESLint v7.5.0 released - ESLint - Pluggable JavaScript linter&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://eslint.org/blog/2020/07/eslint-v7.5.0-released&quot; title=&quot;ESLint v7.5.0 released - ESLint - Pluggable JavaScript linter&quot;&gt;eslint.org/blog/2020/07/eslint-v7.5.0-released&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;ReleaseNote&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ESLint 7.5.0リリース。&lt;br&gt;
-Optional Chainingのサポート、&lt;code&gt;id-blacklist&lt;/code&gt;を非推奨化し&lt;code&gt;id-denylist&lt;/code&gt;に変更など&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;announcing-the-release-of-apollo-client-3-0-apollo-blog&quot;&gt;Announcing the Release of Apollo Client 3.0 - Apollo Blog&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.apollographql.com/blog/announcing-the-release-of-apollo-client-3-0/&quot; title=&quot;Announcing the Release of Apollo Client 3.0 - Apollo Blog&quot;&gt;www.apollographql.com/blog/announcing-the-release-of-apollo-client-3-0/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;GraphQL&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;GraphQL ClientのApollo Client 3.0リリース。&lt;br&gt;
-&lt;code&gt;InMemoryCache&lt;/code&gt;に&lt;code&gt;evict()&lt;/code&gt;や&lt;code&gt;gc()&lt;/code&gt;などを追加、&lt;code&gt;makeVar&lt;/code&gt;によるReactive variablesの追加など。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/apollographql/apollo-client/releases/tag/v3.0.0&quot; title=&quot;Release 3.0.0 · apollographql/apollo-client&quot;&gt;Release 3.0.0 · apollographql/apollo-client&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;アーティクル&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;generating-uuids-at-scale-on-the-web-by-matthieu-wipliez-teads-engineering-jul-2020-medium&quot;&gt;Generating UUIDs at scale on the Web | by Matthieu Wipliez | Teads Engineering | Jul, 2020 | Medium&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/teads-engineering/generating-uuids-at-scale-on-the-web-2877f529d2a2&quot; title=&quot;Generating UUIDs at scale on the Web | by Matthieu Wipliez | Teads Engineering | Jul, 2020 | Medium&quot;&gt;medium.com/teads-engineering/generating-uuids-at-scale-on-the-web-2877f529d2a2&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;クライアントサイトでのUUID生成について。&lt;br&gt;
-&lt;code&gt;URL.createObjectURL&lt;/code&gt;と&lt;code&gt;crypto.getRandomValues&lt;/code&gt;を使ったランダムなUUIDの生成とcollisionについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;dynamic-css-components-without-javascript-every-layout&quot;&gt;Dynamic CSS Components Without JavaScript: Every Layout&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://every-layout.dev/blog/css-components/&quot; title=&quot;Dynamic CSS Components Without JavaScript: Every Layout&quot;&gt;every-layout.dev/blog/css-components/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;style属性でCSS Custom Propertyを指定することで、CSSに対して値を渡す方法について。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.infoq.com/jp/news/2020/07/css-variables-design-systems/&quot; title=&quot;なぜ私たちはCSSフレームワークを使わないのか - Scott Tolinksi氏、Reactive Conf&quot;&gt;なぜ私たちはCSSフレームワークを使わないのか - Scott Tolinksi氏、Reactive Conf&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;eslint-plugin-vue-vue-js-3-base&quot;&gt;eslint-plugin-vue で来たる Vue.js 3 のリリースに備えよう - BASE開発チームブログ&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://devblog.thebase.in/entry/2020/07/16/141446&quot; title=&quot;eslint-plugin-vue で来たる Vue.js 3 のリリースに備えよう - BASE開発チームブログ&quot;&gt;devblog.thebase.in/entry/2020/07/16/141446&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;ESLint&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;article&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ESLintを使ったVue 3の対応チェックについて。&lt;br&gt;
-Vueで非推奨となった機能やVue3で廃止される機能をESLintでチェックする話&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;サイト、サービス、ドキュメント&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;adobe-react-spectrum-a-collection-of-libraries-and-tools-that-help-you-build-adaptive-accessible-and-robust-user-experiences&quot;&gt;adobe/react-spectrum: A collection of libraries and tools that help you build adaptive, accessible, and robust user experiences.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/adobe/react-spectrum&quot; title=&quot;adobe/react-spectrum: A collection of libraries and tools that help you build adaptive, accessible, and robust user experiences.&quot;&gt;github.com/adobe/react-spectrum&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;accessibility&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Keyboard&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WAI-ARIAとコンポーネントの状態管理をするReact Hooks、AdobeのデザインシステムのReactコンポーネントの実装のライブラリ。&lt;br&gt;
-WAI-ARIAやキーボード操作などのアクセシビリティ、i18の仕組みなどを提供することが目的&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://react-spectrum.adobe.com/index.html&quot; title=&quot;React Spectrum&quot;&gt;React Spectrum&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;richardanaya-tour_of_rust-a-tour-of-rusts-language-features&quot;&gt;richardanaya/tour_of_rust: A tour of rust&amp;#39;s language features&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/richardanaya/tour_of_rust&quot; title=&quot;richardanaya/tour\_of\_rust: A tour of rust&amp;#39;s language features&quot;&gt;github.com/richardanaya/tour_of_rust&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;WebAssembly&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;tutorial&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;WebAssemblyのツアー式チュートリアル&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;iamakulov-awesome-webpack-perf-a-curated-list-of-webpack-tools-for-web-performance&quot;&gt;iamakulov/awesome-webpack-perf: A curated list of webpack tools for web performance&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/iamakulov/awesome-webpack-perf&quot; title=&quot;iamakulov/awesome-webpack-perf: A curated list of webpack tools for web performance&quot;&gt;github.com/iamakulov/awesome-webpack-perf&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;webpack&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;webpackのパフォーマンス関係のプラグイン、Loaderのまとめ。&lt;br&gt;
-最適化を行うloaderやbundleの分析を行うプラグインなどをまとめたもの&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;zizzamia-perfume-js-web-performance-library-for-measuring-all-user-centric-performance-metrics&quot;&gt;Zizzamia/perfume.js: Web performance library for measuring all User-centric performance metrics&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/zizzamia/perfume.js&quot; title=&quot;Zizzamia/perfume.js: Web performance library for measuring all User-centric performance metrics&quot;&gt;github.com/zizzamia/perfume.js&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;performance&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;ブラウザのさまざまなパフォーマンスメトリクスを取得できるJavaScriptライブラリ。&lt;br&gt;
-Navigation Timing、Element Timing、Web Vitalsなどに対応している&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;ソフトウェア、ツール、ライブラリ関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;breejs-bree-bree-is-the-best-job-scheduler-for-node-js-with-support-for-cron-dates-ms-later-and-human-friendly-strings-uses-workers-and-spawns-sandboxed-processes-supports-async-await-retries-throttling-concurrency-and-cancelable-jobs-graceful-shutdown-simple-fast-and-the-most-lightweight-tool-for-the-job-made-for-forward-email-and-lad&quot;&gt;breejs/bree: Bree is the best job scheduler for Node.js with support for cron, dates, ms, later, and human-friendly strings. Uses workers and spawns sandboxed processes. Supports async/await, retries, throttling, concurrency, and cancelable jobs (graceful shutdown). Simple, fast, and the most lightweight tool for the job. Made for Forward Email and Lad.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/breejs/bree&quot; title=&quot;breejs/bree: Bree is the best job scheduler for Node.js with support for cron, dates, ms, later, and human-friendly strings. Uses workers and spawns sandboxed processes. Supports async/await, retries, throttling, concurrency, and cancelable jobs (graceful shutdown). Simple, fast, and the most lightweight tool for the job. Made for Forward Email and Lad.&quot;&gt;github.com/breejs/bree&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Node.jsのjob scheduler/cron処理ライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;getify-moduloze-convert-commonjs-cjs-modules-to-umd-and-esm-formats&quot;&gt;getify/moduloze: Convert CommonJS (CJS) modules to UMD and ESM formats&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/getify/moduloze&quot; title=&quot;getify/moduloze: Convert CommonJS (CJS) modules to UMD and ESM formats&quot;&gt;github.com/getify/moduloze&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;node.js&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;Bluetooth&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;CommonJSをUMDとES Modulesに変換するツール&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;lukeed-dequal-a-tiny-305b-utility-for-check-for-deep-equality&quot;&gt;lukeed/dequal: A tiny (305B) utility for check for deep equality&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/lukeed/dequal&quot; title=&quot;lukeed/dequal: A tiny (305B) utility for check for deep equality&quot;&gt;github.com/lukeed/dequal&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;deep-equalライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;lukeed-klona-a-tiny-423b-and-fast-utility-to-deep-clone-objects-arrays-dates-regexps-and-more&quot;&gt;lukeed/klona: A tiny (423B) and fast utility to &amp;quot;deep clone&amp;quot; Objects, Arrays, Dates, RegExps, and more!&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/lukeed/klona&quot; title=&quot;lukeed/klona: A tiny (423B) and fast utility to \&amp;quot;deep clone\&amp;quot; Objects, Arrays, Dates, RegExps, and more!&quot;&gt;github.com/lukeed/klona&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;JavaScript&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;library&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;deep-cloneライブラリ&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h1 class=&quot;site-genre&quot;&gt;書籍関係&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;building-micro-frontends-the-book-building-micro-frontends&quot;&gt;Building Micro-Frontends: the book - Building Micro-Frontends&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.buildingmicrofrontends.com/&quot; title=&quot;Building Micro-Frontends: the book - Building Micro-Frontends&quot;&gt;www.buildingmicrofrontends.com/&lt;/a&gt;&lt;br&gt;
-&lt;p class=&quot;jser-tags jser-tag-icon&quot;&gt;&lt;span class=&quot;jser-tag&quot;&gt;MicroFrontend&lt;/span&gt; &lt;span class=&quot;jser-tag&quot;&gt;book&lt;/span&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;MicroFrontendについての書籍。&lt;br&gt;
-DAZNでのMicroFrontendアーキテクチャについて&lt;/p&gt;
-
-&lt;hr&gt;
-</description>
-        <pubDate>Tue, 21 Jul 2020 11:20:24 +0900</pubDate>
-        <link>https://jser.info/2020/07/21/chrome-84samesite-cookie-vue-3-rc-react-spectrum/</link>
-        <guid isPermaLink="true">https://jser.info/2020/07/21/chrome-84samesite-cookie-vue-3-rc-react-spectrum/</guid>
-        
-        <category>Chrome</category>
-        
-        <category>Vue</category>
-        
-        <category>React</category>
         
         
         <category>JSer</category>
